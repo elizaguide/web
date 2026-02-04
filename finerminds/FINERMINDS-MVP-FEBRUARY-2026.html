@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finerminds MVP - February 2026 Scope</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <link rel="stylesheet" href="../public/mindvalley-font.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #0f131a;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .header .deadline {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .back-nav {
+            margin-bottom: 40px;
+        }
+        
+        .back-link {
+            color: #7a12d4;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .back-link:hover {
+            color: #8b5cf6;
+        }
+        
+        .core-principle {
+            background: #f0fdf4;
+            border-left: 6px solid #22c55e;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+        
+        .core-principle h2 {
+            color: #166534;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .core-principle .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #0f131a;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .must-prove {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .proof-item {
+            background: rgba(34, 197, 94, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: #166534;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-category {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .feature-header {
+            background: #22c55e;
+            color: white;
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .feature-list {
+            padding: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #22c55e;
+        }
+        
+        .feature-text {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        .out-of-scope {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .out-of-scope h2 {
+            color: #dc2626;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .not-building {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .excluded-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ef4444;
+            font-size: 0.9rem;
+        }
+        
+        .timeline {
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .timeline h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0f131a;
+        }
+        
+        .weeks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .week-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .week-header {
+            background: #7a12d4;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            position: absolute;
+            top: -12px;
+            left: 20px;
+        }
+        
+        .week-content {
+            margin-top: 20px;
+        }
+        
+        .week-tasks {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .week-tasks li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .week-tasks li::before {
+            content: "•";
+            color: #7a12d4;
+            font-weight: bold;
+        }
+        
+        .success-metrics {
+            background: #eff6ff;
+            border: 2px solid #dbeafe;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .success-metrics h2 {
+            color: #1e40af;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .metric-category {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .metric-title {
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        
+        .metric-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .metric-list li {
+            padding: 3px 0;
+            font-size: 0.9rem;
+        }
+        
+        .definition-done {
+            background: #fef3c7;
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .definition-done h2 {
+            color: #92400e;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .criteria-category {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f131a;
+            margin: 50px 0 30px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .features-grid,
+            .not-building,
+            .weeks-grid,
+            .metrics-grid,
+            .criteria-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Finerminds MVP</h1>
+            <div class="subtitle">February 2026 Delivery Scope</div>
+            <div class="deadline">📅 DEADLINE: February 28, 2026</div>
+        </div>
+        
+        <div class="content">
+            <div class="back-nav">
+                <a href="index.html" class="back-link">← Back to Finerminds Hub</a>
+            </div>
+            
+            <div class="core-principle">
+                <h2>🎯 MVP Core Principle</h2>
+                <div class="quote">"The simplest version that proves the 3-level concept works and delivers unique value"</div>
+                
+                <div class="must-prove">
+                    <div class="proof-item">3-level hierarchy functioning</div>
+                    <div class="proof-item">People-first architecture</div>
+                    <div class="proof-item">Exclusive community feeling</div>
+                    <div class="proof-item">Chat-only Level 3 benefit</div>
+                    <div class="proof-item">Real-world connections</div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">✅ MUST-HAVE Features</h2>
+            
+            <div class="features-grid">
+                <div class="feature-category">
+                    <div class="feature-header">🔐 User System & Authentication</div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>User registration</strong> with email/password</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Profile creation</strong> with bio, photo, interests</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Raya-style approval system</strong> (3-person approval)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Mindvalley integration check</strong> (basic qualification)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>User dashboard</strong> with profile management</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-category">
+                    <div class="feature-header">🏗️ 3-Level Community Structure</div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Level 1: Networks</strong> (pre-created, join functionality)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Level 2: Groups</strong> (member-created, join/leave freely)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Level 3: Discussions</strong> (user-created, admin controls)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Network pages</strong> with info and member counts</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Group pages</strong> with descriptions and member lists</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-category">
+                    <div class="feature-header">💬 Communication System</div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Activity Feeds</strong> (Levels 1 & 2 ONLY)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Chat System</strong> (ALL levels - real-time messaging)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Direct Messages</strong> (1-on-1 messaging)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Comments and replies</strong> on activity feed posts</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Message history and search</strong></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-category">
+                    <div class="feature-header">👥 People Discovery & Networking</div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>People Directory</strong> (within networks only)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Cross-Level People View</strong> (see networks/groups)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Member Lists</strong> (network/group directories)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Basic search</strong> by name, interests, location</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Profile pages</strong> with bio and activity</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-category">
+                    <div class="feature-header">📅 Basic Event System</div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Event Creation</strong> (Network/Group level)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>RSVP System</strong> (Yes/No/Maybe responses)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Event Discovery</strong> (upcoming events feed)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Attendee list visibility</strong></div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Basic search and filtering</strong></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-category">
+                    <div class="feature-header">🧭 Navigation & User Experience</div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Clear Level Hierarchy Display</strong> (breadcrumbs)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Responsive Design</strong> (mobile-friendly)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Search Functionality</strong> (global + level-specific)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Easy navigation</strong> between levels</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-checkbox">□</div>
+                            <div class="feature-text"><strong>Level-specific navigation menus</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="out-of-scope">
+                <h2>🚫 EXPLICITLY OUT OF SCOPE</h2>
+                <p style="margin-bottom: 20px;"><strong>These features are planned for Phase 2 (March) or Phase 3 (Q2) - NOT February MVP:</strong></p>
+                
+                <div class="not-building">
+                    <div class="excluded-item"><strong>Advanced Chat Features</strong> (GetStream integration)</div>
+                    <div class="excluded-item"><strong>Event Monetization</strong> (ticket sales)</div>
+                    <div class="excluded-item"><strong>"I'm Looking For" Feature</strong> (peer support)</div>
+                    <div class="excluded-item"><strong>Secret Crush</strong> (dating features)</div>
+                    <div class="excluded-item"><strong>AI Matching</strong> (compatibility)</div>
+                    <div class="excluded-item"><strong>Advanced Analytics</strong> (usage tracking)</div>
+                    <div class="excluded-item"><strong>Push Notifications</strong> (mobile app features)</div>
+                    <div class="excluded-item"><strong>Video/Audio Posts</strong> (rich media)</div>
+                    <div class="excluded-item"><strong>Detailed User Preferences</strong> (advanced settings)</div>
+                    <div class="excluded-item"><strong>Integration APIs</strong> (third-party connections)</div>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <h2>📅 Development Sprint Breakdown</h2>
+                
+                <div class="weeks-grid">
+                    <div class="week-card">
+                        <div class="week-header">WEEK 1 (Feb 3-7)</div>
+                        <div class="week-content">
+                            <h4>Foundation</h4>
+                            <ul class="week-tasks">
+                                <li>User authentication system</li>
+                                <li>Basic database design and migrations</li>
+                                <li>3-level community structure (backend)</li>
+                                <li>Basic UI framework and navigation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="week-card">
+                        <div class="week-header">WEEK 2 (Feb 10-14)</div>
+                        <div class="week-content">
+                            <h4>Core Features</h4>
+                            <ul class="week-tasks">
+                                <li>Activity feed system (Levels 1 & 2)</li>
+                                <li>Basic chat functionality (all levels)</li>
+                                <li>User profiles and people discovery</li>
+                                <li>Approval system implementation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="week-card">
+                        <div class="week-header">WEEK 3 (Feb 17-21)</div>
+                        <div class="week-content">
+                            <h4>Integration</h4>
+                            <ul class="week-tasks">
+                                <li>Event creation and RSVP system</li>
+                                <li>Content and resource sharing</li>
+                                <li>Search functionality</li>
+                                <li>Basic moderation tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="week-card">
+                        <div class="week-header">WEEK 4 (Feb 24-28)</div>
+                        <div class="week-content">
+                            <h4>Polish & Launch</h4>
+                            <ul class="week-tasks">
+                                <li>UI/UX refinement</li>
+                                <li>Mobile responsiveness</li>
+                                <li>Security review and fixes</li>
+                                <li>User testing and bug fixes</li>
+                                <li>Beta launch preparation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="success-metrics">
+                <h2>🚀 Success Metrics (End of February)</h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-category">
+                        <div class="metric-title">📊 Engagement Metrics</div>
+                        <ul class="metric-list">
+                            <li><strong>User Registration:</strong> 50+ approved members</li>
+                            <li><strong>Daily Active Users:</strong> 20+ people daily</li>
+                            <li><strong>Content Creation:</strong> 100+ posts/messages</li>
+                            <li><strong>Event Participation:</strong> 10+ events with RSVPs</li>
+                            <li><strong>Cross-Level Activity:</strong> Multi-level participation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-category">
+                        <div class="metric-title">⚡ Technical Metrics</div>
+                        <ul class="metric-list">
+                            <li><strong>Page Load Time:</strong> <3 seconds average</li>
+                            <li><strong>Uptime:</strong> 95%+ availability</li>
+                            <li><strong>Chat Response Time:</strong> <1 second delivery</li>
+                            <li><strong>Search Performance:</strong> <2 seconds results</li>
+                            <li><strong>Mobile Usage:</strong> 60%+ traffic from mobile</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-category">
+                        <div class="metric-title">✨ Quality Metrics</div>
+                        <ul class="metric-list">
+                            <li><strong>User Approval Rate:</strong> 80%+ approved</li>
+                            <li><strong>Content Quality:</strong> <5% requiring moderation</li>
+                            <li><strong>User Satisfaction:</strong> Positive core flow feedback</li>
+                            <li><strong>Technical Stability:</strong> No major blocking bugs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="definition-done">
+                <h2>✅ Definition of Done (February 28, 2026)</h2>
+                
+                <div class="criteria-grid">
+                    <div class="criteria-category">
+                        <div class="metric-title">📱 Product Acceptance</div>
+                        <ul class="metric-list">
+                            <li>3 sample networks with active content</li>
+                            <li>5+ sample groups across networks</li>
+                            <li>10+ sample discussions with chat</li>
+                            <li>20+ test users approved and participating</li>
+                            <li>5+ sample events with RSVP working</li>
+                            <li>All core user flows tested</li>
+                            <li>Mobile responsive on iOS/Android</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="criteria-category">
+                        <div class="metric-title">⚙️ Technical Acceptance</div>
+                        <ul class="metric-list">
+                            <li>Database migrations complete</li>
+                            <li>Authentication secure and reliable</li>
+                            <li>Real-time chat without delays</li>
+                            <li>File uploads working properly</li>
+                            <li>Search returns relevant results</li>
+                            <li>Error handling prevents crashes</li>
+                            <li>Basic monitoring in place</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="criteria-category">
+                        <div class="metric-title">📈 Business Acceptance</div>
+                        <ul class="metric-list">
+                            <li>Vishen approval on core functionality</li>
+                            <li>Team walkthrough demonstrating features</li>
+                            <li>Basic analytics showing engagement</li>
+                            <li>Feedback collection system ready</li>
+                            <li>Launch readiness for Mindvalley beta</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; padding: 40px 0; color: #6b7280; border-top: 2px solid #e5e7eb;">
+                <p><strong>MVP Scope prepared by:</strong> Eliza (AI Product Analyst) • <strong>Date:</strong> February 4, 2026</p>
+                <p><em>This scope is ambitious but achievable - focused on proving core value while enabling rapid iteration</em></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
