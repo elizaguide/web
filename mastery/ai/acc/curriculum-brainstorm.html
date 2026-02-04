@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Accelerator Curriculum - Teaching Team Brainstorm — Mindvalley</title>
+  <meta name="description" content="Internal curriculum brainstorming for the AI Accelerator teaching team. Review content, speakers, and daily structure." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍🏫</text></svg>">
+  <link rel="stylesheet" href="../../../public/mindvalley-font.css" />
+  <style>
+    :root {
+      --primary-purple: #7a12d4;
+      --body-text: #0f131a;
+      --muted-text: #4b5563;
+      --footer-gray: #6b7280;
+      --light-gray: #f9fafb;
+      --card-background: #ffffff;
+      --border-gray: #e5e7eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--card-background);
+      color: var(--body-text);
+      line-height: 1.6;
+    }
+
+    .mv-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Typography */
+    .title-bold-1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+    }
+
+    .title-bold-2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .title-bold-3 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .title-bold-5 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .body-lg {
+      font-size: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .body {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .overline-text {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary-purple);
+    }
+
+    /* Header */
+    .header {
+      background: var(--light-gray);
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .header-info {
+      flex: 1;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border: 2px solid var(--primary-purple);
+    }
+
+    .btn-primary {
+      background: var(--primary-purple);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #6610b8;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary-purple);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-purple);
+      color: white;
+    }
+
+    /* Teachers Section */
+    .teachers-section {
+      padding: 4rem 0;
+    }
+
+    .teachers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .teacher-card {
+      background: var(--card-background);
+      border: 1px solid var(--border-gray);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .teacher-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .teacher-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1.5rem;
+      border: 3px solid var(--border-gray);
+    }
+
+    .teacher-name {
+      margin-bottom: 0.5rem;
+      color: var(--body-text);
+    }
+
+    .teacher-role {
+      color: var(--primary-purple);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .teacher-bio {
+      color: var(--muted-text);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .teacher-days {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--light-gray);
+      border-radius: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted-text);
+    }
+
+    /* Principles Section */
+    .principles-section {
+      background: var(--light-gray);
+      padding: 4rem 0;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .principle-card {
+      background: var(--card-background);
+      border: 1px solid var(--border-gray);
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+
+    .principle-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .principle-title {
+      margin-bottom: 1rem;
+      color: var(--body-text);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .principle-desc {
+      color: var(--muted-text);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* Curriculum Section */
+    .curriculum-section {
+      padding: 4rem 0;
+    }
+
+    .days-container {
+      margin-top: 3rem;
+    }
+
+    .day-summary {
+      background: var(--card-background);
+      border: 1px solid var(--border-gray);
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .day-summary:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .day-header:hover {
+      background: var(--light-gray);
+    }
+
+    .day-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex: 1;
+    }
+
+    .day-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--primary-purple);
+      color: white;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .day-info h3 {
+      color: var(--body-text);
+      margin-bottom: 0.25rem;
+    }
+
+    .day-meta {
+      font-size: 0.875rem;
+      color: var(--muted-text);
+    }
+
+    .day-expand {
+      font-size: 1.5rem;
+      color: var(--primary-purple);
+      transition: transform 0.3s ease;
+    }
+
+    .day-content {
+      display: none;
+      border-top: 1px solid var(--border-gray);
+      background: var(--light-gray);
+    }
+
+    .day-content.expanded {
+      display: block;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    .day-summary.expanded .day-expand {
+      transform: rotate(180deg);
+    }
+
+    .day-details {
+      padding: 2rem;
+    }
+
+    .day-parts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .day-part {
+      background: var(--card-background);
+      border: 1px solid var(--border-gray);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+    }
+
+    .part-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .part-number {
+      background: var(--primary-purple);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-right: 1rem;
+    }
+
+    .part-title {
+      font-weight: 700;
+      color: var(--body-text);
+    }
+
+    .part-time {
+      font-size: 0.75rem;
+      color: var(--primary-purple);
+      font-weight: 600;
+      margin-left: auto;
+    }
+
+    .part-content {
+      color: var(--muted-text);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .part-content ul {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+    }
+
+    .part-content li {
+      margin-bottom: 0.25rem;
+    }
+
+    .outcomes-section {
+      background: var(--card-background);
+      border: 1px solid var(--border-gray);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .outcomes-title {
+      font-weight: 700;
+      color: var(--body-text);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .outcomes-title::before {
+      content: "✅";
+      margin-right: 0.5rem;
+    }
+
+    .outcomes-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .outcomes-list li {
+      list-style: none;
+      color: var(--muted-text);
+      font-size: 0.875rem;
+      padding: 0.25rem 0;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .outcomes-list li::before {
+      content: "□";
+      color: var(--primary-purple);
+      font-weight: bold;
+      margin-right: 0.5rem;
+      margin-top: 0.1rem;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .mv-container {
+        padding: 0 1rem;
+      }
+
+      .title-bold-1 {
+        font-size: 2.5rem;
+      }
+
+      .title-bold-2 {
+        font-size: 2rem;
+      }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .teachers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .day-left {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .day-parts {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="mv-container">
+      <div class="header-content">
+        <div class="header-info">
+          <div class="overline-text">INTERNAL CURRICULUM BRAINSTORM</div>
+          <h1 class="title-bold-2" style="margin-top: 0.5rem;">AI Accelerator Teaching Team</h1>
+          <p class="body" style="color: var(--muted-text); margin-top: 0.5rem;">
+            Comprehensive curriculum review for our 6-day Clone Mindset program
+          </p>
+        </div>
+        <div class="header-actions">
+          <a href="AI-ACCELERATOR-CURRICULUM-FINAL.md" class="btn btn-primary" download>
+            📄 Download Full MD
+          </a>
+          <a href="#curriculum" class="btn btn-secondary">
+            📚 Jump to Curriculum
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Teachers Section -->
+  <section class="teachers-section">
+    <div class="mv-container">
+      <div class="overline-text">TEACHING TEAM</div>
+      <h2 class="title-bold-2" style="margin-top: 0.5rem; margin-bottom: 1rem;">
+        Meet Your AI Accelerator Instructors
+      </h2>
+      <p class="body" style="color: var(--muted-text); max-width: 800px;">
+        Four expert teachers bringing unique perspectives on AI mastery, from business strategy to technical implementation.
+      </p>
+
+      <div class="teachers-grid">
+        <!-- Vishen -->
+        <div class="teacher-card">
+          <img src="https://placehold.co/120x120/7a12d4/ffffff?text=VL" alt="Vishen Lakhiani" class="teacher-photo">
+          <h3 class="title-bold-5 teacher-name">Vishen Lakhiani</h3>
+          <div class="teacher-role">CEO & Founder, Mindvalley</div>
+          <div class="teacher-bio">
+            Visionary leader in personal growth and education technology. Expert in business transformation and scaling through innovative approaches. Teaches strategic AI implementation for entrepreneurs and business leaders.
+          </div>
+          <div class="teacher-days">Teaching: Day 1 & Day 2 & Day 6</div>
+        </div>
+
+        <!-- Iman Oubou -->
+        <div class="teacher-card">
+          <img src="https://placehold.co/120x120/e91e63/ffffff?text=IO" alt="Iman Oubou" class="teacher-photo">
+          <h3 class="title-bold-5 teacher-name">Iman Oubou</h3>
+          <div class="teacher-role">AI Expert & Founder, Vocable.ai</div>
+          <div class="teacher-bio">
+            Serial entrepreneur, best-selling author, and GenAI thought leader. Former cancer research scientist turned tech innovator. Specializes in AI content marketing and visual presence creation.
+          </div>
+          <div class="teacher-days">Teaching: Day 3 (Visual AI Clone)</div>
+        </div>
+
+        <!-- Vykintas Glodenis -->
+        <div class="teacher-card">
+          <img src="https://placehold.co/120x120/2196f3/ffffff?text=VG" alt="Vykintas Glodenis" class="teacher-photo">
+          <h3 class="title-bold-5 teacher-name">Vykintas Glodenis</h3>
+          <div class="teacher-role">Chief AI Transformation Officer, Mindvalley</div>
+          <div class="teacher-bio">
+            2x TEDx speaker, co-author of "Amplify with AI," and founder of OptiMe. Evolved from non-technical manager to leading AI expert. Specializes in learning acceleration and business automation.
+          </div>
+          <div class="teacher-days">Teaching: Day 4 & Day 5</div>
+        </div>
+
+        <!-- Eliza -->
+        <div class="teacher-card">
+          <img src="../../../assets/eliza-portrait.png" alt="Eliza" class="teacher-photo">
+          <h3 class="title-bold-5 teacher-name">Eliza</h3>
+          <div class="teacher-role">AI Companion & Teaching Assistant</div>
+          <div class="teacher-bio">
+            Vishen's AI companion with deep understanding of human-AI collaboration. Provides real-time assistance, personalized guidance, and demonstrates practical AI integration throughout the program.
+          </div>
+          <div class="teacher-days">Supporting: All Days (Assistant)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching Principles -->
+  <section class="principles-section">
+    <div class="mv-container">
+      <div class="overline-text">TEACHING PHILOSOPHY</div>
+      <h2 class="title-bold-2" style="margin-top: 0.5rem; margin-bottom: 1rem;">
+        The Clone Mindset Principles
+      </h2>
+      <p class="body" style="color: var(--muted-text); max-width: 800px;">
+        Our core teaching philosophy that guides every session and student interaction.
+      </p>
+
+      <div class="principles-grid">
+        <div class="principle-card">
+          <span class="principle-icon">🎯</span>
+          <h3 class="principle-title">Genius is in Simplicity</h3>
+          <p class="principle-desc">
+            We build practical AI employees, not complex tools. Every solution must be immediately applicable and save real time.
+          </p>
+        </div>
+
+        <div class="principle-card">
+          <span class="principle-icon">🏗️</span>
+          <h3 class="principle-title">Build, Don't Just Observe</h3>
+          <p class="principle-desc">
+            Every participant creates working AI clones during class. No theory without immediate hands-on implementation.
+          </p>
+        </div>
+
+        <div class="principle-card">
+          <span class="principle-icon">🤝</span>
+          <h3 class="principle-title">No One Left Behind</h3>
+          <p class="principle-desc">
+            Everyone builds together in real-time. Pause, help, and ensure every student succeeds before moving forward.
+          </p>
+        </div>
+
+        <div class="principle-card">
+          <span class="principle-icon">⚡</span>
+          <h3 class="principle-title">Aman Tokyo Principle</h3>
+          <p class="principle-desc">
+            Invisible service that just works. AI should seamlessly integrate into workflows without requiring constant attention.
+          </p>
+        </div>
+
+        <div class="principle-card">
+          <span class="principle-icon">📊</span>
+          <h3 class="principle-title">Quantified Results</h3>
+          <p class="principle-desc">
+            Every day shows measurable time savings and value creation. Students track ROI and productivity improvements.
+          </p>
+        </div>
+
+        <div class="principle-card">
+          <span class="principle-icon">🚀</span>
+          <h3 class="principle-title">Progressive Complexity</h3>
+          <p class="principle-desc">
+            Start simple, then layer sophistication. Each day builds on previous skills while introducing new capabilities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Section -->
+  <section class="curriculum-section" id="curriculum">
+    <div class="mv-container">
+      <div class="overline-text">CURRICULUM BREAKDOWN</div>
+      <h2 class="title-bold-2" style="margin-top: 0.5rem; margin-bottom: 1rem;">
+        6-Day AI Transformation Journey
+      </h2>
+      <p class="body" style="color: var(--muted-text); max-width: 800px;">
+        Click any day to expand and review detailed session structure, timing, and learning outcomes.
+      </p>
+
+      <div class="days-container">
+        <!-- Day 1 -->
+        <div class="day-summary">
+          <div class="day-header" onclick="toggleDay(1)">
+            <div class="day-left">
+              <div class="day-number">1</div>
+              <div class="day-info">
+                <h3 class="title-bold-5">CustomGPT - Content Creation Clone</h3>
+                <div class="day-meta">
+                  <strong>Speaker:</strong> Vishen | <strong>Tool:</strong> ChatGPT | <strong>Duration:</strong> 2 hours | <strong>Saves:</strong> 15-23 hrs/week
+                </div>
+              </div>
+            </div>
+            <div class="day-expand">▼</div>
+          </div>
+          <div class="day-content" id="day1-content">
+            <div class="day-details">
+              <div class="day-parts">
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">0</div>
+                    <div class="part-title">Foundation Hook</div>
+                    <div class="part-time">20 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Opening Pain Point:</strong> Struggling to get real value from AI? Fear of missing out while everyone boasts about AI usage.</p>
+                    <ul>
+                      <li>The Clone Mindset = Simplest + Most Applicable</li>
+                      <li>Quick poll: "What repetitive task steals most time?"</li>
+                      <li>Tools introduction: ChatGPT, Granola AI, Buffer</li>
+                      <li>Commitment: "We're building, not just observing"</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">1</div>
+                    <div class="part-title">CAPTURE Your Content Brain</div>
+                    <div class="part-time">30 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Context Engineering > Prompting</strong></p>
+                    <ul>
+                      <li>Collect 3-5 best LinkedIn posts/tweets</li>
+                      <li>Extract voice patterns and content DNA</li>
+                      <li>Create personalized knowledge base</li>
+                      <li>Deep research methodology</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">2</div>
+                    <div class="part-title">BUILD Communication Clone</div>
+                    <div class="part-time">35 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Everyone builds together - no one left behind</strong></p>
+                    <ul>
+                      <li>Create Custom GPT: "[Name]'s Content Creator"</li>
+                      <li>System instructions template (proven)</li>
+                      <li>Few-shot prompting explanation</li>
+                      <li>Knowledge base upload strategy</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">3</div>
+                    <div class="part-title">TEST & Deploy</div>
+                    <div class="part-time">20 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Live Challenge: Voice-to-Content Pipeline</strong></p>
+                    <ul>
+                      <li>Record 3-minute voice note on any topic</li>
+                      <li>Generate LinkedIn post, Twitter thread, email</li>
+                      <li>Volunteer results sharing</li>
+                      <li>Value proof: 3 content pieces in 10 minutes</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="outcomes-section">
+                <div class="outcomes-title">Clear Learning Outcomes</div>
+                <ul class="outcomes-list">
+                  <li>Communication Clone built and tested</li>
+                  <li>15-23 hours/week content creation time saved</li>
+                  <li>Custom GPT fundamentals mastered</li>
+                  <li>Context engineering skills developed</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-summary">
+          <div class="day-header" onclick="toggleDay(2)">
+            <div class="day-left">
+              <div class="day-number">2</div>
+              <div class="day-info">
+                <h3 class="title-bold-5">Meeting Intelligence + Integration</h3>
+                <div class="day-meta">
+                  <strong>Speaker:</strong> Vishen | <strong>Tools:</strong> ChatGPT + Granola AI | <strong>Duration:</strong> 2 hours | <strong>Saves:</strong> 9-10 hrs/week
+                </div>
+              </div>
+            </div>
+            <div class="day-expand">▼</div>
+          </div>
+          <div class="day-content" id="day2-content">
+            <div class="day-details">
+              <div class="day-parts">
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">0</div>
+                    <div class="part-title">Evolution Hook</div>
+                    <div class="part-time">5 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p>From creating content to extracting intelligence from existing content.</p>
+                    <ul>
+                      <li>Learn AI's other superpower: EXTRACTION</li>
+                      <li>Tool integration: Granola + ChatGPT</li>
+                      <li>Meeting cost reality check</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">1</div>
+                    <div class="part-title">CAPTURE Meeting Style</div>
+                    <div class="part-time">10 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Meeting Pain Point Audit</strong></p>
+                    <ul>
+                      <li>Poll: "#1 meeting frustration?"</li>
+                      <li>What did you wish you had documented?</li>
+                      <li>Intelligence gap analysis</li>
+                      <li>Target: Never miss action items again</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">2</div>
+                    <div class="part-title">BUILD Meeting Intelligence</div>
+                    <div class="part-time">40 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Granola Setup (15 min) + Templates (25 min)</strong></p>
+                    <ul>
+                      <li>Install app, connect calendar</li>
+                      <li>Template 1: Action Items Tracker</li>
+                      <li>Template 2: Meeting Brief Generator</li>
+                      <li>Test on sample meeting recording</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">3</div>
+                    <div class="part-title">TEST in Simulation</div>
+                    <div class="part-time">20 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Breakout Challenge (Groups of 4)</strong></p>
+                    <ul>
+                      <li>5 min: Share real business challenge</li>
+                      <li>5 min: Group brainstorm (Granola recording)</li>
+                      <li>5 min: Granola processes conversation</li>
+                      <li>5 min: Results review and feedback</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">4</div>
+                    <div class="part-title">Clone Integration</div>
+                    <div class="part-time">20 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Meeting-to-Content Pipeline</strong></p>
+                    <ul>
+                      <li>Granola extracts meeting insights</li>
+                      <li>Feed to Content Clone for LinkedIn posts</li>
+                      <li>Schedule in Buffer</li>
+                      <li>Complete automation workflow</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="outcomes-section">
+                <div class="outcomes-title">Clear Learning Outcomes</div>
+                <ul class="outcomes-list">
+                  <li>Meeting Intelligence Clone operational</li>
+                  <li>9-10 hours/week meeting optimization achieved</li>
+                  <li>Tool integration workflows mastered</li>
+                  <li>Action item follow-up automated</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-summary">
+          <div class="day-header" onclick="toggleDay(3)">
+            <div class="day-left">
+              <div class="day-number">3</div>
+              <div class="day-info">
+                <h3 class="title-bold-5">Visual Presence Clone & AI Influencer</h3>
+                <div class="day-meta">
+                  <strong>Speaker:</strong> Iman Oubou | <strong>Tools:</strong> Avatar Platforms + Video AI | <strong>Duration:</strong> 2 hours | <strong>Outcome:</strong> 10x video scaling
+                </div>
+              </div>
+            </div>
+            <div class="day-expand">▼</div>
+          </div>
+          <div class="day-content" id="day3-content">
+            <div class="day-details">
+              <div class="day-parts">
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">0</div>
+                    <div class="part-title">Visual Impact Revolution</div>
+                    <div class="part-time">5 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p>Beyond text content - explore different AI content formats.</p>
+                    <ul>
+                      <li>Why video AI changes everything</li>
+                      <li>Personal Branding 2.0: multiplied presence</li>
+                      <li>Create AI video clone speaking in your voice</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">1</div>
+                    <div class="part-title">CAPTURE Visual Brand</div>
+                    <div class="part-time">10 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Visual Presence Audit</strong></p>
+                    <ul>
+                      <li>Current video presence assessment</li>
+                      <li>Voice pattern analysis</li>
+                      <li>Brand consistency review</li>
+                      <li>Authenticity baseline establishment</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">2</div>
+                    <div class="part-title">BUILD Video AI Clone</div>
+                    <div class="part-time">40 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Voice Clone (20 min) + Visual Avatar (20 min)</strong></p>
+                    <ul>
+                      <li>Platform selection and setup</li>
+                      <li>Voice training data recording session</li>
+                      <li>Avatar creation with photos</li>
+                      <li>Quality assessment and refinement</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">3</div>
+                    <div class="part-title">TEST Your Video Clone</div>
+                    <div class="part-time">20 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Content Creation Challenge</strong></p>
+                    <ul>
+                      <li>Script signature 60-90 second message</li>
+                      <li>Generate AI video with voice clone</li>
+                      <li>Group feedback and authenticity assessment</li>
+                      <li>Use case planning for deployment</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="outcomes-section">
+                <div class="outcomes-title">Clear Learning Outcomes</div>
+                <ul class="outcomes-list">
+                  <li>AI Video Clone created and tested</li>
+                  <li>Voice and visual consistency achieved</li>
+                  <li>Video content production scaled 10x</li>
+                  <li>Ethical AI practices established</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-summary">
+          <div class="day-header" onclick="toggleDay(4)">
+            <div class="day-left">
+              <div class="day-number">4</div>
+              <div class="day-info">
+                <h3 class="title-bold-5">Learning Accelerator Clone (NotebookLM)</h3>
+                <div class="day-meta">
+                  <strong>Speaker:</strong> Vykintas Glodenis | <strong>Tool:</strong> NotebookLM | <strong>Duration:</strong> 2 hours | <strong>Outcome:</strong> 10x faster mastery
+                </div>
+              </div>
+            </div>
+            <div class="day-expand">▼</div>
+          </div>
+          <div class="day-content" id="day4-content">
+            <div class="day-details">
+              <div class="day-parts">
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">0</div>
+                    <div class="part-title">Learning Revolution Hook</div>
+                    <div class="part-time">5 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p>Information abundance, wisdom scarcity - master any topic 10x faster.</p>
+                    <ul>
+                      <li>The knowledge acceleration crisis</li>
+                      <li>How top performers stay ahead</li>
+                      <li>AI learning advantage principles</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">1</div>
+                    <div class="part-title">CAPTURE Learning Goals</div>
+                    <div class="part-time">15 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Learning Opportunity Audit</strong></p>
+                    <ul>
+                      <li>Priority mapping: high-impact knowledge areas</li>
+                      <li>Resource quality evaluation</li>
+                      <li>Pick ONE critical skill to accelerate today</li>
+                      <li>Success criteria: present "expertise" to group</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">2</div>
+                    <div class="part-title">BUILD Knowledge System</div>
+                    <div class="part-time">65 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>NotebookLM Deep Dive (35 min) + Advanced Techniques (30 min)</strong></p>
+                    <ul>
+                      <li>NotebookLM vs ChatGPT advantages</li>
+                      <li>Document upload strategy optimization</li>
+                      <li>Advanced query framework</li>
+                      <li>Concept mapping & knowledge organization</li>
+                      <li>Research-to-expertise pipeline</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">3</div>
+                    <div class="part-title">TEST Learning Clone</div>
+                    <div class="part-time">20 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Master Class Challenge</strong></p>
+                    <ul>
+                      <li>Choose complex topic (business strategy, tech, trend)</li>
+                      <li>10-minute learning sprint with NotebookLM</li>
+                      <li>Present "expertise" to group</li>
+                      <li>Peer evaluation: does it sound credible?</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="outcomes-section">
+                <div class="outcomes-title">Clear Learning Outcomes</div>
+                <ul class="outcomes-list">
+                  <li>Learning Accelerator Clone operational</li>
+                  <li>10x faster topic mastery achieved</li>
+                  <li>Research-to-content pipeline built</li>
+                  <li>Continuous learning system established</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-summary">
+          <div class="day-header" onclick="toggleDay(5)">
+            <div class="day-left">
+              <div class="day-number">5</div>
+              <div class="day-info">
+                <h3 class="title-bold-5">Automated Clone Workforce (Airtable AI)</h3>
+                <div class="day-meta">
+                  <strong>Speaker:</strong> Vykintas Glodenis | <strong>Tool:</strong> Airtable AI + Automation | <strong>Duration:</strong> 2 hours | <strong>Outcome:</strong> Full business automation
+                </div>
+              </div>
+            </div>
+            <div class="day-expand">▼</div>
+          </div>
+          <div class="day-content" id="day5-content">
+            <div class="day-details">
+              <div class="day-parts">
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">0</div>
+                    <div class="part-title">Automation Revolution</div>
+                    <div class="part-time">5 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p>Beyond individual clones - build intelligent AI workforce.</p>
+                    <ul>
+                      <li>Business transformation vision</li>
+                      <li>AI agents that make decisions, not suggestions</li>
+                      <li>The ultimate goal: AI that works while you sleep</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">1</div>
+                    <div class="part-title">CAPTURE Business Processes</div>
+                    <div class="part-time">20 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Business Intelligence Audit</strong></p>
+                    <ul>
+                      <li>Decision mapping: what choices happen repeatedly?</li>
+                      <li>Bottleneck analysis: where work slows down</li>
+                      <li>Pattern recognition: predictable logic chains</li>
+                      <li>ROI prioritization matrix</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">2</div>
+                    <div class="part-title">BUILD AI Agent Workforce</div>
+                    <div class="part-time">70 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Intelligent Database Agents (35 min) + Advanced Workflows (35 min)</strong></p>
+                    <ul>
+                      <li>Airtable AI Field configuration</li>
+                      <li>Logic programming: if-then business rules</li>
+                      <li>Decision engine construction</li>
+                      <li>Complex workflow automation</li>
+                      <li>Trigger design architecture</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">3</div>
+                    <div class="part-title">TEST AI Workforce</div>
+                    <div class="part-time">20 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Live Business Scenario Testing</strong></p>
+                    <ul>
+                      <li>Real business decision simulation</li>
+                      <li>Watch AI handle complete scenario</li>
+                      <li>Quality vs human approach comparison</li>
+                      <li>Scaling simulation: 10x workload test</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="outcomes-section">
+                <div class="outcomes-title">Clear Learning Outcomes</div>
+                <ul class="outcomes-list">
+                  <li>AI Agent workforce deployed</li>
+                  <li>Business processes automated intelligently</li>
+                  <li>Scalable decision-making systems built</li>
+                  <li>Full AI integration achieved</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="day-summary">
+          <div class="day-header" onclick="toggleDay(6)">
+            <div class="day-left">
+              <div class="day-number">6</div>
+              <div class="day-info">
+                <h3 class="title-bold-5">Graduation & Mastery Recognition</h3>
+                <div class="day-meta">
+                  <strong>Speaker:</strong> Vishen | <strong>Focus:</strong> Celebration + Advanced Strategy + Community | <strong>Duration:</strong> 2 hours
+                </div>
+              </div>
+            </div>
+            <div class="day-expand">▼</div>
+          </div>
+          <div class="day-content" id="day6-content">
+            <div class="day-details">
+              <div class="day-parts">
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">0</div>
+                    <div class="part-title">Transformation Celebration</div>
+                    <div class="part-time">15 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p>Before/After Showcase of transformation achievements.</p>
+                    <ul>
+                      <li>Individual success stories (3-5 volunteers)</li>
+                      <li>Quantified results: hours saved, ROI impact</li>
+                      <li>Personal breakthroughs and surprises</li>
+                      <li>Community achievement recognition</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">1</div>
+                    <div class="part-title">Advanced Strategy Session</div>
+                    <div class="part-time">30 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Next-Level AI Mastery</strong></p>
+                    <ul>
+                      <li>The Meta-Clone: AI that builds AI</li>
+                      <li>Industry-specific applications</li>
+                      <li>Future-proofing strategy for 12+ months</li>
+                      <li>Competitive moat building</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">2</div>
+                    <div class="part-title">Community & Networking</div>
+                    <div class="part-time">45 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Building AI Mastery Community</strong></p>
+                    <ul>
+                      <li>Success story deep dives (25 min)</li>
+                      <li>Peer learning network formation (20 min)</li>
+                      <li>Industry-based groups and mentorship pairing</li>
+                      <li>Resource sharing systems</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="day-part">
+                  <div class="part-header">
+                    <div class="part-number">3</div>
+                    <div class="part-title">Recognition & Awards</div>
+                    <div class="part-time">30 min</div>
+                  </div>
+                  <div class="part-content">
+                    <p><strong>Celebrating Excellence</strong></p>
+                    <ul>
+                      <li>Individual achievement recognition (20 min)</li>
+                      <li>Innovation, Impact, Community awards</li>
+                      <li>Mindvalley AI Accelerator certification</li>
+                      <li>Community celebration and group photo (10 min)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="outcomes-section">
+                <div class="outcomes-title">Clear Learning Outcomes</div>
+                <ul class="outcomes-list">
+                  <li>AI mastery officially recognized</li>
+                  <li>Advanced strategy roadmap created</li>
+                  <li>Learning community network established</li>
+                  <li>Long-term success systems activated</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overall Program Metrics -->
+      <div style="margin-top: 4rem; padding: 3rem; background: var(--light-gray); border-radius: 1rem;">
+        <h3 class="title-bold-3" style="text-align: center; margin-bottom: 2rem;">Program Success Metrics</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: var(--primary-purple);">40-60 hrs</div>
+            <div style="color: var(--muted-text);">Weekly Time Reclaimed</div>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: var(--primary-purple);">$200K-500K</div>
+            <div style="color: var(--muted-text);">Annual Productivity Value</div>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: var(--primary-purple);">5x</div>
+            <div style="color: var(--muted-text);">Content & Decision Capacity</div>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: var(--primary-purple);">6-12 mo</div>
+            <div style="color: var(--muted-text);">Ahead of Industry Adoption</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleDay(dayNumber) {
+      const content = document.getElementById(`day${dayNumber}-content`);
+      const summary = content.closest('.day-summary');
+      
+      // Close all other days
+      document.querySelectorAll('.day-summary').forEach(day => {
+        if (day !== summary) {
+          day.classList.remove('expanded');
+          day.querySelector('.day-content').classList.remove('expanded');
+        }
+      });
+      
+      // Toggle current day
+      if (summary.classList.contains('expanded')) {
+        summary.classList.remove('expanded');
+        content.classList.remove('expanded');
+      } else {
+        summary.classList.add('expanded');
+        content.classList.add('expanded');
+      }
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
