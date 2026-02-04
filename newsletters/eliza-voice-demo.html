@@ -39,7 +39,7 @@
             align-items: center;
             justify-content: center;
             padding: 1rem 2rem;
-            background-color: #7a12d4;
+            background-color: #2563eb;
             color: white;
             font-weight: 700;
             border: none;
@@ -47,13 +47,13 @@
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 1rem;
-            margin: 2rem 0;
+            margin: 1rem 0 2rem 0;
             cursor: pointer;
         }
         
         .voice-button:hover {
             transform: translateY(-2px);
-            background-color: #8b5cf6;
+            background-color: #1d4ed8;
         }
         
         #elizaVoiceNote {
@@ -72,18 +72,36 @@
             border: 2px solid #e5e7eb;
         }
         
-        .title-bold-3 {
-            font-size: 1.875rem;
+        .title-bold-2 {
+            font-size: 1.5rem;
             font-weight: 700;
             line-height: 1.3;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             color: #0f131a;
         }
         
+        .title-bold-3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+            color: #4b5563;
+        }
+        
         @media (min-width: 768px) {
-            .title-bold-3 {
-                font-size: 3rem;
+            .title-bold-2 {
+                font-size: 2rem;
             }
+            .title-bold-3 {
+                font-size: 1.375rem;
+            }
+        }
+        
+        .play-instruction {
+            font-size: 1rem;
+            color: #0f131a;
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
         
         .transcript-section {
@@ -121,8 +139,21 @@
 </head>
 <body>
     <div class="container">
-        <!-- Voice Note Section at Top -->
+        <!-- Titles -->
+        <h1 class="title-bold-2">
+            Eliza's message, Eliza's WhatsApp to Vishen that shocked him
+        </h1>
+        
+        <h2 class="title-bold-3">
+            This was sent in response to Vishen's CTO Norman attempting to hack Eliza
+        </h2>
+        
+        <!-- Voice Note Section -->
         <div class="voice-section">
+            <p class="play-instruction">
+                Click below to play and hear Eliza's voice and the WhatsApp message she sent Vishen.
+            </p>
+            
             <audio id="elizaVoiceNote" controls style="display: none;">
                 <source src="eliza-norman-voice-note.mp3" type="audio/mpeg">
             </audio>
@@ -132,12 +163,8 @@
             </button>
         </div>
 
-        <!-- Image and Text Section -->
+        <!-- Image Section -->
         <img src="../eliza-images/sideways.png" alt="Eliza" class="eliza-image" />
-        
-        <h1 class="title-bold-3">
-            Eliza sent Vishen this message after his Chief Technology Officer Norman tried to hack her. This is what made his jaw drop.
-        </h1>
         
         <div class="transcript-section">
             <div class="transcript-title">Can't play? This is the text of what she said:</div>
