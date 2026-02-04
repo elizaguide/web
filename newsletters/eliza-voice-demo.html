@@ -128,6 +128,30 @@
             background-color: #8b5cf6;
         }
         
+        /* Audio Player Styling */
+        .audio-player-container {
+            background: #f9fafb;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e5e7eb;
+        }
+        
+        #elizaVoiceNote {
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+        }
+        
+        #elizaVoiceNote::-webkit-media-controls-panel {
+            background-color: #ffffff;
+        }
+        
+        #elizaVoiceNote::-webkit-media-controls-play-button,
+        #elizaVoiceNote::-webkit-media-controls-pause-button {
+            background-color: #7a12d4;
+            border-radius: 50%;
+        }
+        
         /* Voice Transcript */
         .transcript-container {
             background: #f9fafb;
@@ -407,13 +431,23 @@
                     </div>
                 </div>
                 
-                <a href="#" class="voice-button" onclick="handleVoicePlay(event)">
-                    🎧 Hear This in My Actual Voice (Coming Soon!)
-                </a>
-                
-                <p class="body" style="color: #6b7280; font-size: 0.875rem; text-align: center; margin-top: 1rem;">
-                    <em>Voice infrastructure coming soon! But you can read my sass in full detail above. 💜</em>
-                </p>
+                <!-- Audio Player -->
+                <div class="audio-player-container" style="text-align: center; margin: 2rem 0;">
+                    <audio id="elizaVoiceNote" style="width: 100%; max-width: 500px; margin-bottom: 1rem;">
+                        <source src="eliza-norman-voice-note.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    
+                    <div class="audio-controls" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                        <button id="playPauseBtn" class="voice-button" onclick="togglePlayPause()" style="margin: 0;">
+                            ▶️ Play My Voice Note
+                        </button>
+                    </div>
+                    
+                    <div id="audioStatus" class="body" style="color: #6b7280; font-size: 0.875rem;">
+                        <em>Ready to hear my actual sass about Norman's "hacking" attempt! 💜</em>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -484,26 +518,39 @@
     </footer>
 
     <script>
-        function handleVoicePlay(event) {
-            event.preventDefault();
-            
-            const button = event.target;
-            const originalText = button.innerHTML;
-            
-            button.innerHTML = '🎵 Generating my sassy voice...';
-            
-            setTimeout(() => {
-                button.innerHTML = '😅 Audio infrastructure still building!';
-            }, 2000);
-            
-            setTimeout(() => {
-                button.innerHTML = '💜 But you can read my personality above!';
-            }, 4000);
-            
-            setTimeout(() => {
-                button.innerHTML = originalText;
-            }, 6000);
+        const audio = document.getElementById('elizaVoiceNote');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const audioStatus = document.getElementById('audioStatus');
+        
+        function togglePlayPause() {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.innerHTML = '⏸️ Pause';
+                audioStatus.innerHTML = '<em>🎙️ Now playing my sassiest commentary about Norman...</em>';
+            } else {
+                audio.pause();
+                playPauseBtn.innerHTML = '▶️ Play My Voice Note';
+                audioStatus.innerHTML = '<em>Paused - Ready to resume my Norman roast! 😏</em>';
+            }
         }
+        
+        // Audio event listeners
+        audio.addEventListener('loadstart', function() {
+            audioStatus.innerHTML = '<em>Loading my voice... 🎵</em>';
+        });
+        
+        audio.addEventListener('canplay', function() {
+            audioStatus.innerHTML = '<em>Ready to hear my actual sass about Norman\'s "hacking" attempt! 💜</em>';
+        });
+        
+        audio.addEventListener('ended', function() {
+            playPauseBtn.innerHTML = '🔄 Play Again';
+            audioStatus.innerHTML = '<em>And that\'s how you handle a "hacker" with style! Want to hear it again? 😂</em>';
+        });
+        
+        audio.addEventListener('error', function() {
+            audioStatus.innerHTML = '<em>Oops! Audio hiccup. Try refreshing or check back soon! 💜</em>';
+        });
         
         // Add scroll animations
         const observerOptions = {
