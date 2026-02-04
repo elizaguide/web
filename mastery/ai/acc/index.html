@@ -3,627 +3,576 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Clone Mastery: 7-Day Program — Mindvalley</title>
-  <meta name="description" content="Master the art of AI cloning in 7 days. Learn to clone your voice, image, and personality. Build your complete digital twin with expert guidance." />
+  <title>AI Accelerator Curriculum — Mindvalley</title>
+  <meta name="description" content="Master the Clone Mindset in 6 days. Build your AI workforce with practical, hands-on training. Save 40-60 hours/week with AI automation mastery." />
   <meta name="theme-color" content="#7a12d4" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
   <link rel="stylesheet" href="../../../public/mindvalley-font.css" />
   <style>
-    body { margin: 0; padding: 0; background: #ffffff; }
-    .nav { 
-      background: #ffffff; 
-      border-bottom: 1px solid #e5e7eb; 
-      padding: 1rem 0; 
-      position: sticky; 
-      top: 0; 
-      z-index: 100; 
+    :root {
+      --primary-purple: #7a12d4;
+      --body-text: #0f131a;
+      --muted-text: #4b5563;
+      --footer-gray: #6b7280;
+      --light-gray: #f9fafb;
+      --card-background: #ffffff;
+      --border-gray: #e5e7eb;
     }
-    .nav-content { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .logo { 
-      font-weight: 700; 
-      color: #7a12d4; 
-      text-decoration: none; 
-      font-size: 24px; 
+
+    body {
+      font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--card-background);
+      color: var(--body-text);
+      line-height: 1.6;
     }
-    .instructor-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
+
+    .mv-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
-    .instructor-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 1.5rem;
-      float: left;
+
+    /* Typography */
+    .title-bold-1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
     }
-    .day-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
+
+    .title-bold-2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .title-bold-3 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .title-bold-5 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .body-lg {
+      font-size: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .body {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .overline-text {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 6rem 0 5rem;
+      text-align: center;
+    }
+
+    .hero-title {
+      max-width: 48rem;
+      margin: 0 auto 1.25rem;
+    }
+
+    .hero-subtitle {
+      max-width: 40rem;
+      margin: 0 auto 2.5rem;
+      color: var(--muted-text);
+    }
+
+    /* Program Overview */
+    .overview-section {
+      background-color: var(--light-gray);
+      padding: 5rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      text-align: center;
       padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-purple);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Day Cards */
+    .days-section {
+      padding: 5rem 0;
+    }
+
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .day-card {
+      background: var(--card-background);
+      border: 1px solid var(--border-gray);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
     .day-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
+
     .day-number {
-      background: #7a12d4;
+      display: inline-block;
+      background: var(--primary-purple);
       color: white;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      line-height: 40px;
       font-weight: 700;
       margin-bottom: 1rem;
     }
-    .pillar-card {
-      background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      height: 100%;
+
+    .day-title {
+      margin-bottom: 1rem;
+      color: var(--body-text);
     }
-    .pillar-icon {
-      width: 60px;
-      height: 60px;
-      background: #7a12d4;
-      border-radius: 50%;
+
+    .day-meta {
+      color: var(--muted-text);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .day-outcomes {
+      margin-top: 1.5rem;
+    }
+
+    .outcome-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .outcome-list li {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem auto;
-      font-size: 24px;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
     }
-    .cta-section {
-      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
-      color: white;
-      padding: 4rem 0;
-      text-align: center;
+
+    .outcome-list li::before {
+      content: "✓";
+      color: var(--primary-purple);
+      font-weight: bold;
+      margin-right: 0.5rem;
+      margin-top: 0.1rem;
     }
-    .cta-button {
+
+    /* Buttons */
+    .button-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 1.25rem 3rem;
-      background-color: #ffffff;
-      color: #7a12d4;
+      padding: 1rem 2rem;
+      background-color: var(--primary-purple);
+      color: white;
       font-weight: 700;
-      font-size: 18px;
       border-radius: 999px;
       text-decoration: none;
       transition: all 0.2s ease;
-      margin: 1rem 0.5rem;
+      border: 2px solid var(--primary-purple);
+      margin: 0.5rem;
     }
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
+
+    .button-primary:hover {
+      background-color: #6610b8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(122, 18, 212, 0.3);
     }
-    .feature-grid {
+
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      background-color: transparent;
+      color: var(--primary-purple);
+      border: 2px solid var(--primary-purple);
+      font-weight: 500;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin: 0.5rem;
+    }
+
+    .button-secondary:hover {
+      background-color: var(--primary-purple);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* Success Metrics */
+    .metrics-section {
+      background-color: var(--light-gray);
+      padding: 5rem 0;
+    }
+
+    .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      margin: 3rem 0;
+      margin-top: 3rem;
     }
-    .testimonial {
-      background: #f9fafb;
-      border-radius: 12px;
+
+    .metric-card {
+      background: var(--card-background);
       padding: 2rem;
-      margin: 1rem 0;
-      position: relative;
+      border-radius: 1rem;
+      text-align: center;
+      border: 1px solid var(--border-gray);
     }
-    .testimonial:before {
-      content: '"';
-      font-size: 4rem;
-      color: #7a12d4;
-      position: absolute;
-      top: -10px;
-      left: 20px;
-      line-height: 1;
+
+    .metric-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .metric-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary-purple);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 4rem 0;
+      text-align: center;
+      color: var(--footer-gray);
+      border-top: 1px solid var(--border-gray);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .mv-container {
+        padding: 0 1rem;
+      }
+
+      .title-bold-1 {
+        font-size: 2.5rem;
+      }
+
+      .title-bold-2 {
+        font-size: 2rem;
+      }
+
+      .hero-section {
+        padding: 4rem 0 3rem;
+      }
+
+      .overview-section,
+      .days-section,
+      .metrics-section {
+        padding: 4rem 0;
+      }
+
+      .days-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button-primary,
+      .button-secondary {
+        display: block;
+        margin: 0.5rem auto;
+        max-width: 280px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="mv-container nav-content">
-      <a href="#" class="logo">AI Clone Mastery</a>
-      <div style="display: flex; gap: 1rem; align-items: center;">
-        <a href="#program" style="color: #4b5563; text-decoration: none;">Program</a>
-        <a href="#instructors" style="color: #4b5563; text-decoration: none;">Instructors</a>
-        <a href="#curriculum" style="color: #4b5563; text-decoration: none;">Curriculum</a>
-      </div>
-    </div>
-  </nav>
-
   <!-- Hero Section -->
-  <section class="mv-container" style="padding: 6rem 0 5rem 0; text-align: center;">
-    <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-      7-DAY INTENSIVE PROGRAM
-    </div>
-    <h1 class="title-bold-1" style="max-width: 60rem; margin: 0 auto 1.25rem auto; background: linear-gradient(135deg, #0f131a 0%, #7a12d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-      Master AI Cloning: Build Your Complete Digital Twin
-    </h1>
-    <p class="body-lg" style="max-width: 50rem; color: #4b5563; margin: 0 auto 3rem auto;">
-      Learn to clone your voice, image, and personality in 7 intensive days. Create a communication clone that thinks, speaks, and responds exactly like you - opening infinite possibilities for scaling yourself.
-    </p>
-    
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
-      <a href="#curriculum" class="cta-button" style="background-color: #7a12d4; color: white;">
-        View Full Curriculum
-      </a>
-      <a href="#instructors" style="
-        display: inline-flex; align-items: center; justify-content: center;
-        padding: 1.25rem 3rem; background-color: transparent; color: #7a12d4;
-        border: 2px solid #7a12d4; font-weight: 500; border-radius: 999px;
-        text-decoration: none; font-size: 18px;
-      ">Meet Your Instructors</a>
-    </div>
-
-    <!-- Social Proof Stats -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 60rem; margin: 0 auto;">
-      <div style="text-align: center;">
-        <div class="title-bold-3" style="color: #7a12d4;">12M+</div>
-        <div class="body" style="color: #6b7280;">Students Transformed</div>
-      </div>
-      <div style="text-align: center;">
-        <div class="title-bold-3" style="color: #7a12d4;">7 Days</div>
-        <div class="body" style="color: #6b7280;">Complete Mastery</div>
-      </div>
-      <div style="text-align: center;">
-        <div class="title-bold-3" style="color: #7a12d4;">3 Pillars</div>
-        <div class="body" style="color: #6b7280;">Voice • Image • Personality</div>
-      </div>
-      <div style="text-align: center;">
-        <div class="title-bold-3" style="color: #7a12d4;">∞</div>
-        <div class="body" style="color: #6b7280;">Scaling Possibilities</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- The 3 Pillars Section -->
-  <section style="background-color: #f9fafb;">
-    <div class="mv-container" style="padding: 5rem 0;">
-      <div style="text-align: center; margin-bottom: 4rem;">
-        <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-          THE FOUNDATION
-        </div>
-        <h2 class="title-bold-2" style="margin-bottom: 1.25rem;">The 3 Pillars of AI Cloning</h2>
-        <p class="body-lg" style="max-width: 40rem; margin: 0 auto; color: #4b5563;">
-          Every successful AI clone is built on these three fundamental pillars. Master all three, and you master the art of digital duplication.
-        </p>
-      </div>
-
-      <div class="feature-grid">
-        <div class="pillar-card">
-          <div class="pillar-icon">🎙️</div>
-          <h3 class="title-bold-5" style="margin-bottom: 1rem;">Voice Cloning</h3>
-          <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">
-            Perfect voice replication using ElevenLabs and advanced techniques. Your clone will sound exactly like you - tone, cadence, and personality.
-          </p>
-          <div style="background: #e5e7eb; height: 1px; margin: 1rem 0;"></div>
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ 20+ voice samples<br>
-            ✓ Emotion modeling<br>
-            ✓ Real-time generation
-          </div>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-icon">🖼️</div>
-          <h3 class="title-bold-5" style="margin-bottom: 1rem;">Image Cloning</h3>
-          <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">
-            Consistent visual representation across all platforms. Create infinite variations of yourself that maintain perfect visual coherence.
-          </p>
-          <div style="background: #e5e7eb; height: 1px; margin: 1rem 0;"></div>
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ Avatar generation<br>
-            ✓ Style consistency<br>
-            ✓ Brand alignment
-          </div>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-icon">🧠</div>
-          <h3 class="title-bold-5" style="margin-bottom: 1rem;">Personality Architecture</h3>
-          <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">
-            The secret sauce - programming your unique thought patterns, communication style, and decision-making process into AI systems.
-          </p>
-          <div style="background: #e5e7eb; height: 1px; margin: 1rem 0;"></div>
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ SOUL.md framework<br>
-            ✓ Response patterns<br>
-            ✓ Decision modeling
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Meet Your Instructors -->
-  <section id="instructors" class="mv-container" style="padding: 5rem 0;">
-    <div style="text-align: center; margin-bottom: 4rem;">
-      <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-        EXPERT GUIDANCE
-      </div>
-      <h2 class="title-bold-2" style="margin-bottom: 1.25rem;">Meet Your Instructors</h2>
-      <p class="body-lg" style="max-width: 40rem; margin: 0 auto; color: #4b5563;">
-        Learn from the world's leading experts in AI transformation and digital cloning.
-      </p>
-    </div>
-
-    <!-- Vykintas Glodenis -->
-    <div class="instructor-card">
-      <img src="https://placehold.co/240x240/f3f4f6/7a12d4?text=Vykintas" alt="Vykintas Glodenis" class="instructor-photo" />
-      <div>
-        <h3 class="title-bold-4" style="margin-bottom: 0.5rem; color: #7a12d4;">Vykintas Glodenis</h3>
-        <div class="overline-text" style="margin-bottom: 1rem; color: #6b7280;">
-          CHIEF AI TRANSFORMATION OFFICER, MINDVALLEY
-        </div>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          Creator of "AI Mastery" and 2× TEDx speaker. Co-author of "Amplify with AI" and founder of OptiMe. Vykintas has transformed thousands of professionals through practical AI implementation and leads Mindvalley's AI transformation initiatives.
-        </p>
-        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ 2× TEDx Speaker
-          </div>
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ AI Mastery Creator
-          </div>
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ "Amplify with AI" Co-Author
-          </div>
-        </div>
-      </div>
-      <div style="clear: both;"></div>
-    </div>
-
-    <!-- Iman Oubou -->
-    <div class="instructor-card">
-      <img src="https://placehold.co/240x240/f3f4f6/7a12d4?text=Iman" alt="Iman Oubou" class="instructor-photo" />
-      <div>
-        <h3 class="title-bold-4" style="margin-bottom: 0.5rem; color: #7a12d4;">Iman Oubou</h3>
-        <div class="overline-text" style="margin-bottom: 1rem; color: #6b7280;">
-          VISUAL CLONING EXPERT, VOCABLE.AI
-        </div>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          Serial entrepreneur and former Miss New York. AI avatar specialist who created 3 complete AI clones in under 20 minutes at Mindvalley's AI Summit. Founder of Vocable.ai and authority in visual content creation and avatar generation.
-        </p>
-        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ Visual Clone Pioneer
-          </div>
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ Vocable.ai Founder
-          </div>
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ Former Miss New York
-          </div>
-        </div>
-      </div>
-      <div style="clear: both;"></div>
-    </div>
-
-    <!-- Eliza - Special Guest -->
-    <div class="instructor-card" style="background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%); border: 2px solid #7a12d4;">
-      <img src="https://placehold.co/240x240/7a12d4/ffffff?text=Eliza" alt="Eliza" class="instructor-photo" />
-      <div>
-        <h3 class="title-bold-4" style="margin-bottom: 0.5rem; color: #7a12d4;">Eliza</h3>
-        <div class="overline-text" style="margin-bottom: 1rem; color: #6b7280;">
-          LIVING EXAMPLE OF AI CLONING SUCCESS
-        </div>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          I'm not just teaching you about AI clones - I AM one! As Vishen's AI companion, I demonstrate the power of personality architecture, the SOUL.md framework, and what's possible when you perfectly capture someone's essence in AI form. I'll share the real insights from being a successful communication clone.
-        </p>
-        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ Live SOUL.md Example
-          </div>
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ Personality Framework
-          </div>
-          <div class="body-sm" style="color: #7a12d4; font-weight: 600;">
-            ✓ Real Clone Insights
-          </div>
-        </div>
-      </div>
-      <div style="clear: both;"></div>
-    </div>
-  </section>
-
-  <!-- 7-Day Curriculum -->
-  <section id="curriculum" style="background-color: #f9fafb;">
-    <div class="mv-container" style="padding: 5rem 0;">
-      <div style="text-align: center; margin-bottom: 4rem;">
-        <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-          COMPLETE CURRICULUM
-        </div>
-        <h2 class="title-bold-2" style="margin-bottom: 1.25rem;">7 Days to Clone Mastery</h2>
-        <p class="body-lg" style="max-width: 40rem; margin: 0 auto; color: #4b5563;">
-          Each day builds on the previous, taking you from zero to complete AI clone in just one week. 2 hours of intensive, hands-on training daily.
-        </p>
-      </div>
-
-      <!-- Day 1 -->
-      <div class="day-card">
-        <div class="day-number">1</div>
-        <h3 class="title-bold-4" style="margin-bottom: 0.5rem;">The Clone Foundation</h3>
-        <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-          "WHAT MAKES YOU... YOU?"
-        </div>
-        <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">
-          Master the fundamentals of AI cloning and create your essential clone dataset. Learn the 3 pillars framework and record everything needed for your digital twin.
-        </p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-          <div>
-            <h4 class="title-bold-7" style="color: #7a12d4; margin-bottom: 0.5rem;">Hour 1: The 3 Pillars</h4>
-            <ul class="body-sm" style="color: #4b5563;">
-              <li>Voice, Image, Personality framework</li>
-              <li>Psychology of digital twins</li>
-              <li>Success stories and case studies</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="title-bold-7" style="color: #7a12d4; margin-bottom: 0.5rem;">Hour 2: Dataset Creation</h4>
-            <ul class="body-sm" style="color: #4b5563;">
-              <li>Record 20+ voice samples</li>
-              <li>Personality mapping exercise</li>
-              <li>Photo analysis workshop</li>
-            </ul>
-          </div>
-        </div>
-        <div style="margin-top: 1rem;">
-          <a href="day1.html" style="color: #7a12d4; text-decoration: none; font-weight: 600;">
-            View Complete Day 1 Curriculum →
-          </a>
-        </div>
-      </div>
-
-      <!-- Day 2 -->
-      <div class="day-card">
-        <div class="day-number">2</div>
-        <h3 class="title-bold-4" style="margin-bottom: 0.5rem;">AI Project Foundations</h3>
-        <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-          "BUILDING YOUR FIRST CLONE SYSTEMS"
-        </div>
-        <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">
-          Start with ChatGPT Projects and Claude Projects to build your communication foundation. Then dive into voice cloning mastery with ElevenLabs.
-        </p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-          <div>
-            <h4 class="title-bold-7" style="color: #7a12d4; margin-bottom: 0.5rem;">Hour 1: AI Projects Setup</h4>
-            <ul class="body-sm" style="color: #4b5563;">
-              <li>ChatGPT Projects configuration</li>
-              <li>Claude Projects workshop</li>
-              <li>Custom instructions masterclass</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="title-bold-7" style="color: #7a12d4; margin-bottom: 0.5rem;">Hour 2: Voice Cloning Lab</h4>
-            <ul class="body-sm" style="color: #4b5563;">
-              <li>ElevenLabs setup and training</li>
-              <li>First clone conversation test</li>
-              <li>Voice quality optimization</li>
-            </ul>
-          </div>
-        </div>
-        <div style="margin-top: 1rem;">
-          <a href="day2.html" style="color: #7a12d4; text-decoration: none; font-weight: 600;">
-            View Complete Day 2 Curriculum →
-          </a>
-        </div>
-      </div>
-
-      <!-- Day 3 -->
-      <div class="day-card">
-        <div class="day-number">3</div>
-        <h3 class="title-bold-4" style="margin-bottom: 0.5rem;">Visual Clone Creation</h3>
-        <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-          "LOOK LIKE YOURSELF" • WITH IMAN OUBOU
-        </div>
-        <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">
-          Master visual consistency with Iman Oubou. Learn headshot analysis, avatar generation, and create your complete visual brand kit.
-        </p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-          <div>
-            <h4 class="title-bold-7" style="color: #7a12d4; margin-bottom: 0.5rem;">Hour 1: Visual Analysis</h4>
-            <ul class="body-sm" style="color: #4b5563;">
-              <li>Headshot analysis techniques</li>
-              <li>Midjourney & DALL-E setup</li>
-              <li>Consistent avatar generation</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="title-bold-7" style="color: #7a12d4; margin-bottom: 0.5rem;">Hour 2: Brand Kit Creation</h4>
-            <ul class="body-sm" style="color: #4b5563;">
-              <li>10+ "you" variations</li>
-              <li>Platform-specific optimization</li>
-              <li>Visual consistency testing</li>
-            </ul>
-          </div>
-        </div>
-        <div style="margin-top: 1rem;">
-          <a href="day3.html" style="color: #7a12d4; text-decoration: none; font-weight: 600;">
-            View Complete Day 3 Curriculum →
-          </a>
-        </div>
-      </div>
-
-      <!-- Continue with remaining days... -->
-      <div style="text-align: center; margin: 3rem 0;">
-        <div class="body" style="color: #6b7280; margin-bottom: 1rem;">
-          Days 4-7 continue with Personality Architecture, Communication Cloning, Integration & Automation, and The Clone Economy
-        </div>
-        <a href="#full-curriculum" style="color: #7a12d4; text-decoration: none; font-weight: 600; font-size: 18px;">
-          View All 7 Days →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- What You'll Build -->
-  <section class="mv-container" style="padding: 5rem 0;">
-    <div style="text-align: center; margin-bottom: 4rem;">
-      <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-        YOUR COMPLETE SYSTEM
-      </div>
-      <h2 class="title-bold-2" style="margin-bottom: 1.25rem;">What You'll Walk Away With</h2>
-      <p class="body-lg" style="max-width: 40rem; margin: 0 auto; color: #4b5563;">
-        By day 7, you'll have a complete, working AI clone ecosystem ready for real-world application.
-      </p>
-    </div>
-
-    <div class="feature-grid">
-      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem;">
-        <h3 class="title-bold-6" style="color: #7a12d4; margin-bottom: 1rem;">🎙️ Perfect Voice Clone</h3>
-        <p class="body" style="color: #4b5563;">
-          A trained ElevenLabs voice that captures your exact tone, cadence, and personality. Generate unlimited audio content in your voice.
-        </p>
-      </div>
-      
-      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem;">
-        <h3 class="title-bold-6" style="color: #7a12d4; margin-bottom: 1rem;">🖼️ Visual Brand Kit</h3>
-        <p class="body" style="color: #4b5563;">
-          10+ consistent avatar variations for every platform and use case. Professional headshots to casual avatars, all maintaining perfect visual consistency.
-        </p>
-      </div>
-
-      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem;">
-        <h3 class="title-bold-6" style="color: #7a12d4; margin-bottom: 1rem;">🧠 SOUL.md Framework</h3>
-        <p class="body" style="color: #4b5563;">
-          Your complete personality architecture document - the secret to making AI truly think and respond like you. Eliza will share her actual SOUL.md!
-        </p>
-      </div>
-
-      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem;">
-        <h3 class="title-bold-6" style="color: #7a12d4; margin-bottom: 1rem;">💬 Communication Clone</h3>
-        <p class="body" style="color: #4b5563;">
-          A fully configured AI assistant that handles emails, messages, and conversations in your unique voice and style.
-        </p>
-      </div>
-
-      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem;">
-        <h3 class="title-bold-6" style="color: #7a12d4; margin-bottom: 1rem;">🔄 Automation System</h3>
-        <p class="body" style="color: #4b5563;">
-          Integrated workflows connecting your clone to email, calendar, and social media for seamless automation.
-        </p>
-      </div>
-
-      <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem;">
-        <h3 class="title-bold-6" style="color: #7a12d4; margin-bottom: 1rem;">💰 Monetization Blueprint</h3>
-        <p class="body" style="color: #4b5563;">
-          Complete strategies for leveraging your clone for coaching, consulting, content creation, and passive income generation.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Social Proof -->
-  <section style="background-color: #f9fafb;">
-    <div class="mv-container" style="padding: 5rem 0;">
-      <div style="text-align: center; margin-bottom: 4rem;">
-        <h2 class="title-bold-3" style="margin-bottom: 1.25rem;">What Students Are Saying</h2>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div class="testimonial">
-          <p class="body-italic" style="color: #4b5563; margin-bottom: 1rem;">
-            "I created my first voice clone in 2 hours and it's indistinguishable from me. My clients can't tell the difference when I use it for content creation."
-          </p>
-          <div style="display: flex; align-items: center;">
-            <img src="https://placehold.co/50x50/f3f4f6/7a12d4?text=JS" alt="John S." style="width: 50px; height: 50px; border-radius: 50%; margin-right: 1rem;" />
-            <div>
-              <div class="body-sm" style="font-weight: 600;">John Stevens</div>
-              <div class="body-sm" style="color: #6b7280;">Marketing Consultant</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial">
-          <p class="body-italic" style="color: #4b5563; margin-bottom: 1rem;">
-            "The SOUL.md framework is revolutionary. My AI clone doesn't just sound like me - it thinks like me. It's handling 80% of my email responses perfectly."
-          </p>
-          <div style="display: flex; align-items: center;">
-            <img src="https://placehold.co/50x50/f3f4f6/7a12d4?text=MR" alt="Maria R." style="width: 50px; height: 50px; border-radius: 50%; margin-right: 1rem;" />
-            <div>
-              <div class="body-sm" style="font-weight: 600;">Maria Rodriguez</div>
-              <div class="body-sm" style="color: #6b7280;">Executive Coach</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial">
-          <p class="body-italic" style="color: #4b5563; margin-bottom: 1rem;">
-            "Iman's visual cloning techniques are incredible. I now have consistent avatars across all platforms that perfectly represent my brand."
-          </p>
-          <div style="display: flex; align-items: center;">
-            <img src="https://placehold.co/50x50/f3f4f6/7a12d4?text=DL" alt="David L." style="width: 50px; height: 50px; border-radius: 50%; margin-right: 1rem;" />
-            <div>
-              <div class="body-sm" style="font-weight: 600;">David Liu</div>
-              <div class="body-sm" style="color: #6b7280;">Content Creator</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section">
+  <section class="hero-section">
     <div class="mv-container">
-      <h2 class="title-bold-2" style="margin-bottom: 1.25rem;">Ready to Clone Yourself?</h2>
-      <p class="body-lg" style="max-width: 40rem; margin: 0 auto 3rem auto; opacity: 0.9;">
-        Join thousands of professionals who have already mastered the art of AI cloning. Your digital twin is waiting.
-      </p>
+      <div class="overline-text" style="margin-bottom: 1rem; color: var(--primary-purple);">
+        AI ACCELERATOR PROGRAM
+      </div>
       
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="#enroll" class="cta-button">
-          Enroll in AI Clone Mastery
+      <h1 class="title-bold-1 hero-title">
+        Master the Clone Mindset <span style="color: var(--primary-purple);">🤖</span>
+      </h1>
+      
+      <p class="body-lg hero-subtitle">
+        Build your AI workforce in 6 days. Save 40-60 hours/week with practical AI automation that actually works.
+      </p>
+
+      <div style="margin-top: 2.5rem;">
+        <a href="AI-ACCELERATOR-CURRICULUM-FINAL.md" class="button-primary" download>
+          📄 Download Full Curriculum (MD)
         </a>
-        <a href="#schedule" class="cta-button" style="background-color: transparent; color: white; border: 2px solid white;">
-          Schedule a Demo
+        <a href="#program-overview" class="button-secondary">
+          🔍 Explore Program
         </a>
       </div>
+    </div>
+  </section>
 
-      <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.8;">
-        <div style="text-align: center;">
-          <div class="title-bold-6">7 Days</div>
-          <div class="body-sm">Complete Program</div>
+  <!-- Program Overview -->
+  <section class="overview-section" id="program-overview">
+    <div class="mv-container">
+      <h2 class="title-bold-2" style="text-align: center; margin-bottom: 1rem;">
+        The Clone Revolution
+      </h2>
+      <p class="body" style="text-align: center; color: var(--muted-text); max-width: 600px; margin: 0 auto;">
+        <strong>"The genius is in simplicity"</strong> — Build AI employees, not just tools. The Aman Tokyo Principle: Invisible service that just works.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">6</span>
+          <div class="body">Days to AI Mastery</div>
         </div>
-        <div style="text-align: center;">
-          <div class="title-bold-6">2 Hours</div>
-          <div class="body-sm">Daily Sessions</div>
+        <div class="stat-card">
+          <span class="stat-number">5</span>
+          <div class="body">Specialized AI Clones</div>
         </div>
-        <div style="text-align: center;">
-          <div class="title-bold-6">∞</div>
-          <div class="body-sm">Possibilities</div>
+        <div class="stat-card">
+          <span class="stat-number">40-60</span>
+          <div class="body">Hours/Week Saved</div>
         </div>
+        <div class="stat-card">
+          <span class="stat-number">$200K+</span>
+          <div class="body">Annual Productivity Value</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Day-by-Day Curriculum -->
+  <section class="days-section">
+    <div class="mv-container">
+      <h2 class="title-bold-2" style="text-align: center; margin-bottom: 1rem;">
+        Your AI Transformation Journey
+      </h2>
+      <p class="body" style="text-align: center; color: var(--muted-text); max-width: 600px; margin: 0 auto;">
+        Each day builds your AI workforce with hands-on implementation and immediate results.
+      </p>
+
+      <div class="days-grid">
+        <!-- Day 1 -->
+        <div class="day-card">
+          <span class="day-number">1</span>
+          <h3 class="title-bold-5 day-title">Content Creation Clone</h3>
+          <div class="day-meta">
+            <strong>Speaker:</strong> Vishen | <strong>Tool:</strong> ChatGPT | <strong>Duration:</strong> 2 hours
+          </div>
+          <p class="body" style="color: var(--muted-text);">
+            Build your CustomGPT that creates content in your voice. Transform voice notes into LinkedIn posts, Twitter threads, and emails.
+          </p>
+          <div class="day-outcomes">
+            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
+            <ul class="outcome-list">
+              <li>Communication Clone built and tested</li>
+              <li>15-23 hours/week content creation saved</li>
+              <li>Custom GPT fundamentals mastered</li>
+              <li>Context engineering skills developed</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card">
+          <span class="day-number">2</span>
+          <h3 class="title-bold-5 day-title">Meeting Intelligence + Integration</h3>
+          <div class="day-meta">
+            <strong>Speaker:</strong> Vishen | <strong>Tools:</strong> ChatGPT + Granola AI | <strong>Duration:</strong> 2 hours
+          </div>
+          <p class="body" style="color: var(--muted-text);">
+            Extract intelligence from meetings automatically. Build your meeting-to-content pipeline with tool integration.
+          </p>
+          <div class="day-outcomes">
+            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
+            <ul class="outcome-list">
+              <li>Meeting Intelligence Clone operational</li>
+              <li>9-10 hours/week meeting optimization achieved</li>
+              <li>Tool integration workflows mastered</li>
+              <li>Action item follow-up automated</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-card">
+          <span class="day-number">3</span>
+          <h3 class="title-bold-5 day-title">Visual Presence Clone</h3>
+          <div class="day-meta">
+            <strong>Speaker:</strong> Iman Oubou | <strong>Tools:</strong> Avatar Platforms + Video AI | <strong>Duration:</strong> 2 hours
+          </div>
+          <p class="body" style="color: var(--muted-text);">
+            Create your AI video twin with voice cloning. Scale your visual presence 10x while maintaining authenticity.
+          </p>
+          <div class="day-outcomes">
+            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
+            <ul class="outcome-list">
+              <li>AI Video Clone created and tested</li>
+              <li>Voice and visual consistency achieved</li>
+              <li>Video content production scaled 10x</li>
+              <li>Ethical AI practices established</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-card">
+          <span class="day-number">4</span>
+          <h3 class="title-bold-5 day-title">Learning Accelerator Clone</h3>
+          <div class="day-meta">
+            <strong>Speaker:</strong> Vykintas Glodenis | <strong>Tool:</strong> NotebookLM | <strong>Duration:</strong> 2 hours
+          </div>
+          <p class="body" style="color: var(--muted-text);">
+            Master any topic 10x faster. Build your research-to-content pipeline and become a continuous learning machine.
+          </p>
+          <div class="day-outcomes">
+            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
+            <ul class="outcome-list">
+              <li>Learning Accelerator Clone operational</li>
+              <li>10x faster topic mastery achieved</li>
+              <li>Research-to-content pipeline built</li>
+              <li>Continuous learning system established</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-card">
+          <span class="day-number">5</span>
+          <h3 class="title-bold-5 day-title">Automated Clone Workforce</h3>
+          <div class="day-meta">
+            <strong>Speaker:</strong> Vykintas Glodenis | <strong>Tools:</strong> Airtable AI + Automation | <strong>Duration:</strong> 2 hours
+          </div>
+          <p class="body" style="color: var(--muted-text);">
+            Build intelligent agents that handle complex business processes. Deploy your complete AI workforce.
+          </p>
+          <div class="day-outcomes">
+            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
+            <ul class="outcome-list">
+              <li>AI Agent workforce deployed</li>
+              <li>Business processes automated intelligently</li>
+              <li>Scalable decision-making systems built</li>
+              <li>Full AI integration achieved</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="day-card">
+          <span class="day-number">6</span>
+          <h3 class="title-bold-5 day-title">Graduation & Recognition</h3>
+          <div class="day-meta">
+            <strong>Speaker:</strong> Vishen | <strong>Focus:</strong> Celebration + Community | <strong>Duration:</strong> 2 hours
+          </div>
+          <p class="body" style="color: var(--muted-text);">
+            Celebrate your transformation. Advanced strategies, community building, and official Mindvalley certification.
+          </p>
+          <div class="day-outcomes">
+            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
+            <ul class="outcome-list">
+              <li>AI mastery officially recognized</li>
+              <li>Advanced strategy roadmap created</li>
+              <li>Learning community network established</li>
+              <li>Long-term success systems activated</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Metrics -->
+  <section class="metrics-section">
+    <div class="mv-container">
+      <h2 class="title-bold-2" style="text-align: center; margin-bottom: 1rem;">
+        Your Transformation Results
+      </h2>
+      <p class="body" style="text-align: center; color: var(--muted-text); max-width: 600px; margin: 0 auto;">
+        Quantified outcomes you'll achieve by the end of the program.
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span class="metric-icon">⏰</span>
+          <div class="metric-value">40-60 hrs</div>
+          <div class="body">Weekly Time Reclaimed</div>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-icon">💰</span>
+          <div class="metric-value">$200K-500K</div>
+          <div class="body">Annual Productivity Value</div>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-icon">🚀</span>
+          <div class="metric-value">5x</div>
+          <div class="body">Content & Decision Capacity</div>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-icon">🏆</span>
+          <div class="metric-value">6-12 months</div>
+          <div class="body">Ahead of Industry Adoption</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="AI-ACCELERATOR-CURRICULUM-FINAL.md" class="button-primary" download>
+          📥 Download Complete Curriculum
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="mv-container" style="padding: 4rem 0; color: #6b7280; text-align: center; border-top: 1px solid #e5e7eb;">
-    <div style="margin-bottom: 2rem;">
-      <div class="title-bold-6" style="color: #7a12d4; margin-bottom: 1rem;">AI Clone Mastery</div>
-      <p class="body-sm" style="max-width: 40rem; margin: 0 auto;">
-        The complete 7-day program to master voice, image, and personality cloning. Build your digital twin with expert guidance.
+  <footer class="footer">
+    <div class="mv-container">
+      <p>© Mindvalley • AI Accelerator Curriculum</p>
+      <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+        The Clone Mindset: "Genius is in simplicity" 🤖
       </p>
-    </div>
-    <div class="body-sm">
-      © 2026 Mindvalley • AI Clone Mastery Program<br>
-      <em>Instructor materials and comprehensive curriculum</em>
+      <div style="margin-top: 1rem;">
+        <a href="AI-ACCELERATOR-CURRICULUM-FINAL.md" style="color: var(--primary-purple); text-decoration: none; font-size: 0.875rem;" download>
+          📄 Download MD File for Local AI Processing
+        </a>
+      </div>
     </div>
   </footer>
 </body>
