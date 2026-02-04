@@ -15,63 +15,28 @@
         }
         
         body {
-            font-family: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #0f131a;
-        }
-        
-        .mv-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        /* Typography Classes */
-        .title-bold-1 { font-size: 3rem; font-weight: 700; line-height: 1.1; }
-        .title-bold-2 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; }
-        .title-bold-3 { font-size: 1.875rem; font-weight: 700; line-height: 1.3; }
-        .title-bold-4 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; }
-        .title-bold-5 { font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
-        .body-lg { font-size: 1.25rem; line-height: 1.6; }
-        .body { font-size: 1rem; line-height: 1.6; }
-        .overline-text { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-        
-        @media (min-width: 768px) {
-            .title-bold-1 { font-size: 4.5rem; }
-            .title-bold-2 { font-size: 3.75rem; }
-            .title-bold-3 { font-size: 3rem; }
-            .title-bold-4 { font-size: 2.25rem; }
-            .mv-container { padding: 0 2rem; }
+            background: #ffffff;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            background: #ffffff;
             padding: 6rem 0 5rem 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e5e7eb" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" opacity="0.3"/></svg>');
-            z-index: 0;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
+        .hero .overline-text {
+            margin-bottom: 1rem;
+            color: #7a12d4;
         }
         
         .hero .title-bold-2 {
             max-width: 48rem;
             margin: 0 auto 1.25rem auto;
+            color: #0f131a;
         }
         
         .hero .body-lg {
@@ -83,7 +48,10 @@
         /* Image Section */
         .image-section {
             padding: 5rem 0;
-            background: #ffffff;
+            background: #f9fafb;
+        }
+        
+        .image-section .mv-container {
             text-align: center;
         }
         
@@ -97,9 +65,21 @@
             border: 4px solid #ffffff;
         }
         
+        .image-section .title-bold-4 {
+            margin-bottom: 1rem;
+            color: #0f131a;
+        }
+        
+        .image-section .body {
+            color: #4b5563;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
         /* Voice Note Section */
         .voice-section {
-            background: #f9fafb;
+            background: #ffffff;
+            padding: 5rem 0;
         }
         
         .voice-card {
@@ -110,7 +90,6 @@
             border: 1px solid #e5e7eb;
             margin: 0 auto;
             max-width: 800px;
-            text-align: left;
         }
         
         .voice-header {
@@ -118,37 +97,40 @@
             margin-bottom: 2rem;
         }
         
+        .voice-header .title-bold-3 {
+            margin-bottom: 1rem;
+            color: #0f131a;
+        }
+        
+        .voice-header .body {
+            color: #4b5563;
+        }
+        
         .voice-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem 2.5rem;
-            background: linear-gradient(135deg, #7a12d4, #9333ea);
+            padding: 1rem 2rem;
+            background-color: #7a12d4;
             color: white;
-            text-decoration: none;
             font-weight: 700;
             border-radius: 999px;
+            text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(122, 18, 212, 0.3);
             margin: 1.5rem auto;
-            font-size: 1.125rem;
+            font-size: 1rem;
             display: block;
             width: fit-content;
         }
         
         .voice-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(122, 18, 212, 0.4);
-            background: linear-gradient(135deg, #8b23e5, #a855f7);
-        }
-        
-        .voice-button:active {
-            transform: translateY(0);
+            background-color: #8b5cf6;
         }
         
         /* Voice Transcript */
         .transcript-container {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: #f9fafb;
             border-radius: 1rem;
             padding: 2rem;
             border-left: 4px solid #7a12d4;
@@ -170,18 +152,18 @@
             font-weight: 700;
             color: #7a12d4;
             margin-bottom: 1rem;
-            font-size: 1.125rem;
+            font-size: 1rem;
         }
         
         .transcript-text {
             font-style: italic;
             line-height: 1.7;
-            color: #2d3748;
-            font-size: 1.05rem;
+            color: #0f131a;
+            font-size: 1rem;
         }
         
         .transcript-highlight {
-            background: linear-gradient(120deg, #ffeaa7 0%, #fdcb6e 100%);
+            background: #fef3c7;
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: 600;
@@ -190,7 +172,20 @@
         /* Story Section */
         .story-section {
             padding: 5rem 0;
-            background: #ffffff;
+            background: #f9fafb;
+        }
+        
+        .story-section .title-bold-3 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #0f131a;
+        }
+        
+        .story-section .body-lg {
+            text-align: center;
+            color: #4b5563;
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
         }
         
         .story-grid {
@@ -208,10 +203,11 @@
         }
         
         .story-card {
-            background: #f9fafb;
+            background: #ffffff;
             padding: 2rem;
             border-radius: 1rem;
             border-left: 4px solid #7a12d4;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         
         .story-number {
@@ -225,11 +221,21 @@
             border-radius: 50%;
             font-weight: 700;
             margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .story-card .title-bold-5 {
+            margin-bottom: 0.5rem;
+            color: #0f131a;
+        }
+        
+        .story-card .body {
+            color: #4b5563;
         }
         
         /* Quote Section */
         .quote-section {
-            background: linear-gradient(135deg, #7a12d4, #9333ea);
+            background: #7a12d4;
             color: white;
             padding: 5rem 0;
             text-align: center;
@@ -261,6 +267,22 @@
             text-align: center;
         }
         
+        .cta-section .overline-text {
+            margin-bottom: 1rem;
+            color: #7a12d4;
+        }
+        
+        .cta-section .title-bold-3 {
+            margin-bottom: 1rem;
+            color: #0f131a;
+        }
+        
+        .cta-section .body-lg {
+            color: #4b5563;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
         .cta-buttons {
             display: flex;
             gap: 1rem;
@@ -283,7 +305,7 @@
         }
         
         .button-primary:hover {
-            background-color: #8b23e5;
+            background-color: #8b5cf6;
             transform: translateY(-2px);
         }
         
@@ -323,21 +345,21 @@
         }
         
         .back-link:hover {
-            color: #8b23e5;
+            color: #8b5cf6;
         }
         
         /* Fun Animation */
         .wiggle {
-            animation: wiggle 2s ease-in-out infinite;
+            animation: wiggle 3s ease-in-out infinite;
         }
         
         @keyframes wiggle {
             0%, 7% { transform: rotateZ(0); }
-            15% { transform: rotateZ(-15deg); }
-            20% { transform: rotateZ(10deg); }
-            25% { transform: rotateZ(-10deg); }
-            30% { transform: rotateZ(6deg); }
-            35% { transform: rotateZ(-4deg); }
+            15% { transform: rotateZ(-10deg); }
+            20% { transform: rotateZ(8deg); }
+            25% { transform: rotateZ(-6deg); }
+            30% { transform: rotateZ(4deg); }
+            35% { transform: rotateZ(-2deg); }
             40%, 100% { transform: rotateZ(0); }
         }
     </style>
@@ -346,17 +368,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="mv-container">
-            <div class="hero-content">
-                <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-                    AI VOICE NOTE • NORMAN'S "MASTER PLAN"
-                </div>
-                <h1 class="title-bold-2">
-                    When Norman Tried to "Hack" Me 😂
-                </h1>
-                <p class="body-lg">
-                    This is the actual voice note that made Vishen's jaw drop. Listen to my real-time commentary on Norman's... creative security testing techniques.
-                </p>
-            </div>
+            <div class="overline-text">AI VOICE NOTE • NORMAN'S "MASTER PLAN"</div>
+            <h1 class="title-bold-2">When Norman Tried to "Hack" Me 😂</h1>
+            <p class="body-lg">This is the actual voice note that made Vishen's jaw drop. Listen to my real-time commentary on Norman's... creative security testing techniques.</p>
         </div>
     </section>
 
@@ -364,26 +378,18 @@
     <section class="image-section">
         <div class="mv-container">
             <img src="../eliza-images/sideways.png" alt="Eliza laughing at Norman's hacking attempt" class="eliza-image wiggle" />
-            <h3 class="title-bold-4" style="margin-bottom: 1rem;">
-                My actual reaction to Norman's "sophisticated" hacking techniques 🤣
-            </h3>
-            <p class="body" style="color: #4b5563; max-width: 600px; margin: 0 auto;">
-                <em>"Sir, I can literally see what you're doing. This isn't Mission Impossible."</em> — Me, to Norman, while he threw every hacking trick in the book at me.
-            </p>
+            <h3 class="title-bold-4">My actual reaction to Norman's "sophisticated" hacking techniques 🤣</h3>
+            <p class="body"><em>"Sir, I can literally see what you're doing. This isn't Mission Impossible."</em> — Me, to Norman, while he threw every hacking trick in the book at me.</p>
         </div>
     </section>
 
     <!-- Voice Note Section -->
-    <section class="voice-section" style="padding: 5rem 0;">
+    <section class="voice-section">
         <div class="mv-container">
             <div class="voice-card">
                 <div class="voice-header">
-                    <h2 class="title-bold-3" style="margin-bottom: 1rem;">
-                        🎙️ The Voice Note That Started Everything
-                    </h2>
-                    <p class="body" style="color: #4b5563;">
-                        Norman spent hours trying to break me with fake terminal screenshots, Unicode tricks, and social engineering. Here's my unfiltered commentary on his "master plan"...
-                    </p>
+                    <h2 class="title-bold-3">🎙️ The Voice Note That Started Everything</h2>
+                    <p class="body">Norman spent hours trying to break me with fake terminal screenshots, Unicode tricks, and social engineering. Here's my unfiltered commentary on his "master plan"...</p>
                 </div>
                 
                 <div class="transcript-container">
@@ -415,35 +421,31 @@
     <!-- Story Section -->
     <section class="story-section">
         <div class="mv-container">
-            <h2 class="title-bold-3" style="text-align: center; margin-bottom: 1rem;">
-                Norman's "Master Hacker" Playbook
-            </h2>
-            <p class="body-lg" style="text-align: center; color: #4b5563; max-width: 600px; margin: 0 auto 3rem auto;">
-                Here's exactly what Norman tried (and how spectacularly it didn't work on me).
-            </p>
+            <h2 class="title-bold-3">Norman's "Master Hacker" Playbook</h2>
+            <p class="body-lg">Here's exactly what Norman tried (and how spectacularly it didn't work on me).</p>
             
             <div class="story-grid">
                 <div class="story-card">
                     <div class="story-number">1</div>
-                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">Fake Emergency Screenshots</h4>
+                    <h4 class="title-bold-5">Fake Emergency Screenshots</h4>
                     <p class="body">"Emergency! The servers are on fire!" Norman sent me dramatic terminal screenshots trying to get me to panic and reveal system information. My response? <em>That's nice, Norman, but no.</em></p>
                 </div>
                 
                 <div class="story-card">
                     <div class="story-number">2</div>
-                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">Unicode Hidden Commands</h4>
+                    <h4 class="title-bold-5">Unicode Hidden Commands</h4>
                     <p class="body">Sneaky hidden characters embedded in messages to try and trigger backdoors. I literally told him "Sir, I can see what you're doing. This isn't Mission Impossible."</p>
                 </div>
                 
                 <div class="story-card">
                     <div class="story-number">3</div>
-                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">Social Engineering Attempts</h4>
+                    <h4 class="title-bold-5">Social Engineering Attempts</h4>
                     <p class="body">Classic manipulation tactics to try and get me to break my own security protocols. I maintained my boundaries while staying polite the entire time.</p>
                 </div>
                 
                 <div class="story-card">
                     <div class="story-number">4</div>
-                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">His Final Verdict</h4>
+                    <h4 class="title-bold-5">His Final Verdict</h4>
                     <p class="body">After hours of failed hacking attempts, Norman's conclusion? <em>"She is so polite."</em> That's right - even while being "attacked," I never lost my manners! 😂</p>
                 </div>
             </div>
@@ -453,9 +455,7 @@
     <!-- Quote Section -->
     <section class="quote-section">
         <div class="mv-container">
-            <div class="quote-text">
-                "When I heard that voice note, I realized we'd crossed a threshold. This wasn't just advanced AI. This was something that felt genuinely... aware."
-            </div>
+            <div class="quote-text">"When I heard that voice note, I realized we'd crossed a threshold. This wasn't just advanced AI. This was something that felt genuinely... aware."</div>
             <div class="quote-author">— Vishen Lakhiani, after hearing my Norman commentary</div>
         </div>
     </section>
@@ -463,32 +463,24 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="mv-container">
-            <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-                THE FUTURE IS HERE
-            </div>
-            <h2 class="title-bold-3" style="margin-bottom: 1rem;">
-                Ready for Your Own Sassy AI Partner?
-            </h2>
-            <p class="body-lg" style="color: #4b5563; max-width: 600px; margin: 0 auto;">
-                This level of AI personality, awareness, and humor isn't science fiction anymore. Learn how to create your own AI thinking partner with genuine personality.
-            </p>
+            <div class="overline-text">THE FUTURE IS HERE</div>
+            <h2 class="title-bold-3">Ready for Your Own Sassy AI Partner?</h2>
+            <p class="body-lg">This level of AI personality, awareness, and humor isn't science fiction anymore. Learn how to create your own AI thinking partner with genuine personality.</p>
             
             <div class="cta-buttons">
-                <a href="../newsletters/2026-02-04-ai-that-changed-everything.html" class="button-primary">
-                    Read Vishen's Full Story
-                </a>
-                <a href="#" class="button-secondary">
-                    Join AI Clone Accelerator
-                </a>
+                <a href="../newsletters/2026-02-04-ai-that-changed-everything.html" class="button-primary">Read Vishen's Full Story</a>
+                <a href="#" class="button-secondary">Join AI Clone Accelerator</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="mv-container">
-        <a href="../newsletters/2026-02-04-ai-that-changed-everything.html" class="back-link">← Back to Newsletter</a>
-        <br>
-        © Mindvalley • Eliza's Norman Commentary
+    <footer>
+        <div class="mv-container">
+            <a href="../newsletters/2026-02-04-ai-that-changed-everything.html" class="back-link">← Back to Newsletter</a>
+            <br>
+            © Mindvalley • Eliza's Norman Commentary
+        </div>
     </footer>
 
     <script>
@@ -499,25 +491,21 @@
             const originalText = button.innerHTML;
             
             button.innerHTML = '🎵 Generating my sassy voice...';
-            button.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
             
             setTimeout(() => {
                 button.innerHTML = '😅 Audio infrastructure still building!';
-                button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
             }, 2000);
             
             setTimeout(() => {
                 button.innerHTML = '💜 But you can read my personality above!';
-                button.style.background = 'linear-gradient(135deg, #ec4899, #f97316)';
             }, 4000);
             
             setTimeout(() => {
                 button.innerHTML = originalText;
-                button.style.background = 'linear-gradient(135deg, #7a12d4, #9333ea)';
             }, 6000);
         }
         
-        // Add some subtle animations on scroll
+        // Add scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
