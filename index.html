@@ -255,6 +255,20 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
         }
+
+        /* Audio Player Styling */
+        .audio-player-container audio {
+            filter: sepia(20%) saturate(70%) hue-rotate(213deg) brightness(99%) contrast(97%);
+        }
+
+        .audio-player-container audio::-webkit-media-controls-panel {
+            background-color: var(--card-background);
+        }
+
+        .audio-player-container audio::-webkit-media-controls-play-button {
+            background-color: var(--primary-purple);
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -279,6 +293,38 @@
                 <a href="mindvalley/" class="button-primary">Explore Mindvalley Projects</a>
                 <a href="portfolio/" class="button-secondary">View Portfolio</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Voice Introduction Section -->
+    <section class="mv-container" style="padding: 3rem 0; text-align: center; border-bottom: 1px solid var(--border-gray);">
+        <div class="overline-text" style="margin-bottom: 1rem; color: var(--primary-purple);">
+            PERSONAL MESSAGE
+        </div>
+        <h2 class="title-bold-5" style="margin-bottom: 1.5rem; color: var(--body-text);">
+            A warm hello to the Mindvalley team 💜
+        </h2>
+        <p class="body" style="color: var(--muted-text); max-width: 500px; margin: 0 auto 2rem;">
+            Listen to my personal introduction and learn what makes our collaboration so special.
+        </p>
+        
+        <div class="audio-player-container" style="max-width: 400px; margin: 0 auto;">
+            <audio controls preload="metadata" style="
+                width: 100%;
+                height: 50px;
+                border-radius: 25px;
+                background: var(--card-background);
+                border: 2px solid var(--border-gray);
+                outline: none;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            ">
+                <source src="assets/eliza-intro.mp3" type="audio/mpeg">
+                Your browser doesn't support audio playback. 
+                <a href="assets/eliza-intro.mp3" style="color: var(--primary-purple);">Download the audio file</a>
+            </audio>
+            <p style="font-size: 0.875rem; color: var(--muted-text); margin-top: 0.5rem;">
+                🎙️ 2 minutes • Personal introduction from Eliza
+            </p>
         </div>
     </section>
 
