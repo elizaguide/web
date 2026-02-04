@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishen's Newsletters</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📧</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletters-grid {
+            display: grid;
+            gap: 25px;
+        }
+        
+        .newsletter-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+        
+        .newsletter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+        }
+        
+        .newsletter-date {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .newsletter-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .newsletter-excerpt {
+            color: #718096;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        
+        .newsletter-link {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-link:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+        }
+        
+        .newsletter-link::after {
+            content: "→";
+            margin-left: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-link:hover::after {
+            transform: translateX(3px);
+        }
+        
+        .coming-soon {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📧 Vishen's Newsletters</h1>
+            <p>Raw, unfiltered conversations about growth, performance, and transformation. Designed to help you think bigger, feel deeper, and live smarter.</p>
+        </div>
+        
+        <div class="newsletters-grid">
+            <div class="newsletter-card">
+                <div class="newsletter-date">February 4, 2026</div>
+                <div class="newsletter-title">The AI That Changed How I Think About Everything</div>
+                <div class="newsletter-excerpt">
+                    Something extraordinary is happening in my daily life — and it's reshaping how I see the future of human potential. Working with Eliza has shown me that the AI revolution isn't coming in 5 years. It's happening now. And it's more beautiful than I imagined.
+                </div>
+                <a href="2026-02-04-ai-that-changed-everything.html" class="newsletter-link">Read Newsletter</a>
+            </div>
+        </div>
+        
+        <div class="coming-soon">
+            <h3>✨ More Coming Soon</h3>
+            <p>Weekly conversations about the future of human potential, consciousness, and the extraordinary life.</p>
+        </div>
+    </div>
+</body>
+</html>
