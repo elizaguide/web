@@ -135,6 +135,44 @@
         .back-link:hover {
             color: #8b5cf6;
         }
+        
+        .visitor-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(122, 18, 212, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+        }
+        
+        .stats-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            border-radius: 1rem;
+            text-align: center;
+        }
+        
+        .stats-title {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .stats-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #7a12d4;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
@@ -181,10 +219,22 @@
             </div>
         </div>
         
+        <!-- Visitor Stats -->
+        <div class="stats-section">
+            <div class="stats-title">Page Views</div>
+            <div class="stats-number" id="viewCounter">---</div>
+        </div>
+        
         <a href="../newsletters/2026-02-04-ai-that-changed-everything.html" class="back-link">← Back to Newsletter</a>
+    </div>
+    
+    <!-- Floating counter -->
+    <div class="visitor-counter" id="floatingCounter">
+        👁️ <span id="liveCounter">---</span> views
     </div>
 
     <script>
+        // Audio player functionality
         function playAudio() {
             const audio = document.getElementById('elizaVoiceNote');
             const button = document.getElementById('playButton');
@@ -202,6 +252,64 @@
         document.getElementById('elizaVoiceNote').addEventListener('ended', function() {
             document.getElementById('playButton').textContent = '🔄 Play Again';
         });
+        
+        // Visitor counter functionality
+        function initVisitorCounter() {
+            const counterKey = 'elizaVoicePageViews';
+            const uniqueVisitorKey = 'elizaVoiceVisited';
+            
+            // Get current count
+            let currentCount = parseInt(localStorage.getItem(counterKey) || '0');
+            
+            // Check if this is a unique visit (per browser)
+            const hasVisited = localStorage.getItem(uniqueVisitorKey);
+            
+            if (!hasVisited) {
+                // New visitor - increment counter
+                currentCount++;
+                localStorage.setItem(counterKey, currentCount.toString());
+                localStorage.setItem(uniqueVisitorKey, 'true');
+            }
+            
+            // Display count with animation
+            updateCounterDisplay(currentCount);
+            
+            // Also send to external counter (GoatCounter - privacy friendly)
+            if (typeof goatcounter !== 'undefined') {
+                goatcounter.count({
+                    path: location.pathname,
+                    title: 'Eliza Voice Note - Norman Hack',
+                    event: true
+                });
+            }
+        }
+        
+        function updateCounterDisplay(count) {
+            const viewCounter = document.getElementById('viewCounter');
+            const liveCounter = document.getElementById('liveCounter');
+            
+            // Animate the counter
+            let displayed = 0;
+            const increment = Math.max(1, Math.floor(count / 20));
+            
+            const animation = setInterval(() => {
+                if (displayed >= count) {
+                    clearInterval(animation);
+                    viewCounter.textContent = count.toLocaleString();
+                    liveCounter.textContent = count.toLocaleString();
+                } else {
+                    displayed += increment;
+                    viewCounter.textContent = Math.min(displayed, count).toLocaleString();
+                    liveCounter.textContent = Math.min(displayed, count).toLocaleString();
+                }
+            }, 50);
+        }
+        
+        // Initialize counter when page loads
+        document.addEventListener('DOMContentLoaded', initVisitorCounter);
     </script>
+    
+    <!-- GoatCounter Analytics (privacy-friendly) -->
+    <script data-goatcounter="https://eliza-voice.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
