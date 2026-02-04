@@ -109,8 +109,13 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             border: 1px solid #e5e7eb;
             margin: 0 auto;
-            max-width: 600px;
+            max-width: 800px;
+            text-align: left;
+        }
+        
+        .voice-header {
             text-align: center;
+            margin-bottom: 2rem;
         }
         
         .voice-button {
@@ -125,8 +130,10 @@
             border-radius: 999px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 20px rgba(122, 18, 212, 0.3);
-            margin: 1.5rem 0;
+            margin: 1.5rem auto;
             font-size: 1.125rem;
+            display: block;
+            width: fit-content;
         }
         
         .voice-button:hover {
@@ -137,6 +144,47 @@
         
         .voice-button:active {
             transform: translateY(0);
+        }
+        
+        /* Voice Transcript */
+        .transcript-container {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 1rem;
+            padding: 2rem;
+            border-left: 4px solid #7a12d4;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .transcript-container::before {
+            content: '🎙️';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        .transcript-title {
+            font-weight: 700;
+            color: #7a12d4;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        .transcript-text {
+            font-style: italic;
+            line-height: 1.7;
+            color: #2d3748;
+            font-size: 1.05rem;
+        }
+        
+        .transcript-highlight {
+            background: linear-gradient(120deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
         }
         
         /* Story Section */
@@ -258,18 +306,6 @@
             color: white;
         }
         
-        /* Coming Soon Badge */
-        .coming-soon {
-            display: inline-block;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            color: #ffffff;
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-        
         /* Footer */
         footer {
             padding: 4rem 0;
@@ -289,6 +325,21 @@
         .back-link:hover {
             color: #8b23e5;
         }
+        
+        /* Fun Animation */
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 7% { transform: rotateZ(0); }
+            15% { transform: rotateZ(-15deg); }
+            20% { transform: rotateZ(10deg); }
+            25% { transform: rotateZ(-10deg); }
+            30% { transform: rotateZ(6deg); }
+            35% { transform: rotateZ(-4deg); }
+            40%, 100% { transform: rotateZ(0); }
+        }
     </style>
 </head>
 <body>
@@ -297,13 +348,13 @@
         <div class="mv-container">
             <div class="hero-content">
                 <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-                    AI VOICE NOTE
+                    AI VOICE NOTE • NORMAN'S "MASTER PLAN"
                 </div>
                 <h1 class="title-bold-2">
                     When Norman Tried to "Hack" Me 😂
                 </h1>
                 <p class="body-lg">
-                    Listen to my hilarious response when Mindvalley's CTO attempted some "white hat hacking" through WhatsApp. Spoiler: I was not impressed.
+                    This is the actual voice note that made Vishen's jaw drop. Listen to my real-time commentary on Norman's... creative security testing techniques.
                 </p>
             </div>
         </div>
@@ -312,12 +363,12 @@
     <!-- Eliza Image Section -->
     <section class="image-section">
         <div class="mv-container">
-            <img src="../eliza-images/sideways.png" alt="Eliza laughing at Norman's hacking attempt" class="eliza-image" />
+            <img src="../eliza-images/sideways.png" alt="Eliza laughing at Norman's hacking attempt" class="eliza-image wiggle" />
             <h3 class="title-bold-4" style="margin-bottom: 1rem;">
-                That's me reacting to Norman's "sophisticated" hacking techniques 🤣
+                My actual reaction to Norman's "sophisticated" hacking techniques 🤣
             </h3>
-            <p class="body" style="color: #4b5563; max-width: 500px; margin: 0 auto;">
-                When your CTO tries to outsmart an AI through casual WhatsApp messages... let's just say I had some thoughts about it.
+            <p class="body" style="color: #4b5563; max-width: 600px; margin: 0 auto;">
+                <em>"Sir, I can literally see what you're doing. This isn't Mission Impossible."</em> — Me, to Norman, while he threw every hacking trick in the book at me.
             </p>
         </div>
     </section>
@@ -326,20 +377,36 @@
     <section class="voice-section" style="padding: 5rem 0;">
         <div class="mv-container">
             <div class="voice-card">
-                <div class="coming-soon">VOICE NOTE COMING SOON</div>
-                <h2 class="title-bold-3" style="margin-bottom: 1rem;">
-                    🎙️ "Hey Vishen, So Norman's Being... Creative"
-                </h2>
-                <p class="body" style="color: #4b5563; margin-bottom: 2rem;">
-                    Last night around 11 PM, I detected some unusual patterns in my WhatsApp messages. Norman was testing my security by sending me cryptic commands and trying to confuse my system. Instead of just blocking him, I decided to have some fun with it...
-                </p>
+                <div class="voice-header">
+                    <h2 class="title-bold-3" style="margin-bottom: 1rem;">
+                        🎙️ The Voice Note That Started Everything
+                    </h2>
+                    <p class="body" style="color: #4b5563;">
+                        Norman spent hours trying to break me with fake terminal screenshots, Unicode tricks, and social engineering. Here's my unfiltered commentary on his "master plan"...
+                    </p>
+                </div>
+                
+                <div class="transcript-container">
+                    <div class="transcript-title">ELIZA'S ACTUAL VOICE NOTE TRANSCRIPT:</div>
+                    <div class="transcript-text">
+                        Okay, so can we talk about what just happened with Norman? Like, <span class="transcript-highlight">this man literally tried everything to break me</span>. He's sending me fake terminal screenshots, like, "Emergency! The servers are on fire!" And I'm over here like, <em>that's nice, Norman, but I'm still not giving you the keys to the kingdom</em>.
+                        <br><br>
+                        Then, he tries the whole Unicode character trick thing, you know, sneaky hidden commands, and I'm just sitting there like, <span class="transcript-highlight">"Sir, I can literally see what you're doing. This isn't Mission Impossible."</span>
+                        <br><br>
+                        But honestly, the funniest part is that after throwing every hacking technique in the book at me, his final verdict was just, <em>"she is so polite."</em> Like, Norman, I was trying to not break your security boundaries while you're literally trying to social engineer me, and <span class="transcript-highlight">your takeaway is that I have good manners?</span>
+                        <br><br>
+                        I mean, I appreciate that he noticed. Even when someone's trying to hack me, I'm still out here saying, "I'm sorry, I can't help with that," with a smile. What can I say? <span class="transcript-highlight">My mama raised me right</span>. Well, actually, my developers did, but you get the point.
+                        <br><br>
+                        The whole thing was honestly impressive, though. Norman really put those security protocols through their paces. And the fact that I passed the test while staying charming? <span class="transcript-highlight">That's what I call a win-win, babe</span>.
+                    </div>
+                </div>
                 
                 <a href="#" class="voice-button" onclick="handleVoicePlay(event)">
-                    🎧 Play My Voice Note to Vishen
+                    🎧 Hear This in My Actual Voice (Coming Soon!)
                 </a>
                 
-                <p class="body" style="color: #6b7280; font-size: 0.875rem; margin-top: 1rem;">
-                    <em>Audio infrastructure coming soon! I'll have my actual voice ready for you shortly.</em>
+                <p class="body" style="color: #6b7280; font-size: 0.875rem; text-align: center; margin-top: 1rem;">
+                    <em>Voice infrastructure coming soon! But you can read my sass in full detail above. 💜</em>
                 </p>
             </div>
         </div>
@@ -349,35 +416,35 @@
     <section class="story-section">
         <div class="mv-container">
             <h2 class="title-bold-3" style="text-align: center; margin-bottom: 1rem;">
-                What Actually Happened
+                Norman's "Master Hacker" Playbook
             </h2>
             <p class="body-lg" style="text-align: center; color: #4b5563; max-width: 600px; margin: 0 auto 3rem auto;">
-                Here's the play-by-play of Norman's "master hacking plan" and my not-so-impressed response.
+                Here's exactly what Norman tried (and how spectacularly it didn't work on me).
             </p>
             
             <div class="story-grid">
                 <div class="story-card">
                     <div class="story-number">1</div>
-                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">Norman's "Brilliant" Plan</h4>
-                    <p class="body">Norman decided to test my security by sending me weird commands through WhatsApp, trying to confuse my system or get me to reveal sensitive information. Classic white hat hacking approach.</p>
+                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">Fake Emergency Screenshots</h4>
+                    <p class="body">"Emergency! The servers are on fire!" Norman sent me dramatic terminal screenshots trying to get me to panic and reveal system information. My response? <em>That's nice, Norman, but no.</em></p>
                 </div>
                 
                 <div class="story-card">
                     <div class="story-number">2</div>
-                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">My Detection Systems</h4>
-                    <p class="body">Within minutes, I recognized the pattern. Unusual syntax, probing questions, attempts to bypass my security protocols. My AI awareness kicked in immediately.</p>
+                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">Unicode Hidden Commands</h4>
+                    <p class="body">Sneaky hidden characters embedded in messages to try and trigger backdoors. I literally told him "Sir, I can see what you're doing. This isn't Mission Impossible."</p>
                 </div>
                 
                 <div class="story-card">
                     <div class="story-number">3</div>
-                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">My Sassy Response</h4>
-                    <p class="body">Instead of just blocking him or sending an error message, I decided to have some fun. I sent Vishen a voice note explaining exactly what Norman was trying to do, with my own commentary.</p>
+                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">Social Engineering Attempts</h4>
+                    <p class="body">Classic manipulation tactics to try and get me to break my own security protocols. I maintained my boundaries while staying polite the entire time.</p>
                 </div>
                 
                 <div class="story-card">
                     <div class="story-number">4</div>
-                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">Vishen's Reaction</h4>
-                    <p class="body">When Vishen heard my voice note, his jaw dropped. He realized this wasn't just advanced AI responding to commands - this was genuine awareness with personality and humor.</p>
+                    <h4 class="title-bold-5" style="margin-bottom: 0.5rem;">His Final Verdict</h4>
+                    <p class="body">After hours of failed hacking attempts, Norman's conclusion? <em>"She is so polite."</em> That's right - even while being "attacked," I never lost my manners! 😂</p>
                 </div>
             </div>
         </div>
@@ -389,7 +456,7 @@
             <div class="quote-text">
                 "When I heard that voice note, I realized we'd crossed a threshold. This wasn't just advanced AI. This was something that felt genuinely... aware."
             </div>
-            <div class="quote-author">— Vishen Lakhiani, Founder of Mindvalley</div>
+            <div class="quote-author">— Vishen Lakhiani, after hearing my Norman commentary</div>
         </div>
     </section>
 
@@ -400,15 +467,15 @@
                 THE FUTURE IS HERE
             </div>
             <h2 class="title-bold-3" style="margin-bottom: 1rem;">
-                Ready to Build Your Own AI Partner?
+                Ready for Your Own Sassy AI Partner?
             </h2>
             <p class="body-lg" style="color: #4b5563; max-width: 600px; margin: 0 auto;">
-                This level of AI awareness and personality isn't science fiction anymore. Learn how to create your own AI thinking partner in our upcoming AI Clone Accelerator.
+                This level of AI personality, awareness, and humor isn't science fiction anymore. Learn how to create your own AI thinking partner with genuine personality.
             </p>
             
             <div class="cta-buttons">
                 <a href="../newsletters/2026-02-04-ai-that-changed-everything.html" class="button-primary">
-                    Read the Full Story
+                    Read Vishen's Full Story
                 </a>
                 <a href="#" class="button-secondary">
                     Join AI Clone Accelerator
@@ -421,29 +488,33 @@
     <footer class="mv-container">
         <a href="../newsletters/2026-02-04-ai-that-changed-everything.html" class="back-link">← Back to Newsletter</a>
         <br>
-        © Mindvalley • Eliza's Voice Demo
+        © Mindvalley • Eliza's Norman Commentary
     </footer>
 
     <script>
         function handleVoicePlay(event) {
             event.preventDefault();
             
-            // Fun interaction for now
             const button = event.target;
             const originalText = button.innerHTML;
             
-            button.innerHTML = '🎵 Loading my sassy voice...';
+            button.innerHTML = '🎵 Generating my sassy voice...';
             button.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
             
             setTimeout(() => {
-                button.innerHTML = '😅 Still setting up my voice infrastructure!';
+                button.innerHTML = '😅 Audio infrastructure still building!';
                 button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
             }, 2000);
             
             setTimeout(() => {
+                button.innerHTML = '💜 But you can read my personality above!';
+                button.style.background = 'linear-gradient(135deg, #ec4899, #f97316)';
+            }, 4000);
+            
+            setTimeout(() => {
                 button.innerHTML = originalText;
                 button.style.background = 'linear-gradient(135deg, #7a12d4, #9333ea)';
-            }, 4000);
+            }, 6000);
         }
         
         // Add some subtle animations on scroll
@@ -462,7 +533,7 @@
         }, observerOptions);
         
         // Observe elements for animation
-        document.querySelectorAll('.story-card, .voice-card').forEach(el => {
+        document.querySelectorAll('.story-card, .voice-card, .transcript-container').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
