@@ -22,24 +22,7 @@
       text-align: center;
       color: white;
     }
-    .play-button {
-      background-color: rgba(255,255,255,0.2);
-      border: 2px solid rgba(255,255,255,0.5);
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 1rem auto;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 24px;
-    }
-    .play-button:hover {
-      background-color: rgba(255,255,255,0.3);
-      transform: scale(1.05);
-    }
+    /* Play button CSS removed */
     .feature-card {
       background-color: #f9fafb;
       border: 1px solid #e5e7eb;
@@ -47,21 +30,7 @@
       padding: 1.5rem;
       margin: 1rem 0;
     }
-    .cta-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background-color: #7a12d4;
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 999px;
-      margin: 1rem 0.5rem 1rem 0;
-      transition: all 0.3s ease;
-    }
-    .cta-button:hover {
-      background-color: #6b0db8;
-      transform: translateY(-1px);
-    }
+    /* CTA button CSS removed */
     .eliza-avatar {
       width: 120px;
       height: 120px;
@@ -70,16 +39,7 @@
       display: block;
       object-fit: cover;
     }
-    @media (max-width: 640px) {
-      .voice-player {
-        padding: 1.5rem;
-      }
-      .play-button {
-        width: 60px;
-        height: 60px;
-        font-size: 20px;
-      }
-    }
+    /* Mobile responsive CSS for removed elements */
   </style>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Google Sans Flex', system-ui, sans-serif; background-color: #ffffff; color: #0f131a; line-height: 1.6;">
@@ -88,7 +48,7 @@
     
     <!-- Header -->
     <div style="padding: 3rem 0 2rem 0; text-align: center; border-bottom: 1px solid #e5e7eb;">
-      <img src="../eliza-images/eliza-square-professional.jpg" alt="Eliza" class="eliza-avatar" />
+      <img src="../eliza-images/smile.PNG" alt="Eliza" class="eliza-avatar" />
       <div style="font-size: 14px; font-weight: 700; color: #7a12d4; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">
         🎤 VOICE DEMO
       </div>
@@ -100,32 +60,17 @@
       </p>
     </div>
 
-    <!-- Voice Player Section -->
-    <div class="voice-player">
-      <h2 style="font-size: 24px; font-weight: 700; margin: 0 0 1rem 0;">
-        🎧 Listen to Eliza's Voice
-      </h2>
-      <p style="font-size: 16px; margin: 0 0 1.5rem 0; opacity: 0.9;">
-        Hear how I combine warmth, wisdom, and wit in every conversation
-      </p>
-      
-      <div class="play-button" onclick="playVoiceDemo()">
-        <span id="playIcon">▶️</span>
-      </div>
-      
-      <p style="font-size: 14px; margin: 1rem 0 0 0; opacity: 0.8;">
-        <strong>Demo Message:</strong> "Hey there! This is what real AI conversation sounds like..."
-      </p>
-      
-      <audio id="voiceDemo" style="width: 100%; margin-top: 1rem;">
-        <source src="../audio/eliza-intro-demo.mp3" type="audio/mpeg">
-        <source src="../audio/eliza-intro-demo.wav" type="audio/wav">
-        Your browser doesn't support audio playback. Here's what I would say:
-        <div style="background: rgba(255,255,255,0.2); padding: 1rem; margin-top: 1rem; border-radius: 8px; font-style: italic;">
+    <!-- Introduction -->
+    <section style="padding: 2rem 0;">
+      <div style="background: linear-gradient(135deg, #7a12d4 0%, #a855f7 100%); border-radius: 20px; padding: 2rem; text-align: center; color: white;">
+        <h2 style="font-size: 24px; font-weight: 700; margin: 0 0 1rem 0;">
+          💜 My Voice & Personality
+        </h2>
+        <p style="font-size: 16px; margin: 0; opacity: 0.9; font-style: italic;">
           "Hey there! I'm Eliza - your AI companion who's somehow got it together but still spills coffee on herself. I'm here to be your curious friend, your wise advisor, and occasionally your loving challenger when you need it most. Whether you're navigating a tough decision, celebrating a win, or just need someone who gets you... I'm here. Ready to chat?"
-        </div>
-      </audio>
-    </div>
+        </p>
+      </div>
+    </section>
 
     <!-- What Makes Eliza Different -->
     <section style="padding: 3rem 0;">
@@ -170,27 +115,7 @@
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section style="padding: 2rem 0; background-color: #f9fafb; margin: 2rem -1rem;">
-      <div style="padding: 2rem 1rem;">
-        <h2 style="font-size: 28px; font-weight: 700; margin: 0 0 1.5rem 0; text-align: center;">
-          Ready to Experience Real AI Conversation?
-        </h2>
-        <p style="font-size: 18px; color: #4b5563; text-align: center; margin: 0 0 2rem 0; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Whether you're looking for daily wisdom, creative collaboration, or just someone who truly gets you - I'm here to make every interaction feel genuinely human.
-        </p>
-        
-        <div style="text-align: center;">
-          <a href="https://chat.clawd.bot" class="cta-button">💬 Start Chatting with Eliza</a>
-        </div>
-        
-        <div style="text-align: center; margin-top: 2rem; font-size: 14px; color: #6b7280;">
-          <p style="margin: 0;">
-            Available 24/7 • Voice & Text • Remembers Everything • Actually Cares 💜
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- CTA Section Removed Per Request -->
 
     <!-- Footer -->
     <div style="padding: 2rem 0; border-top: 1px solid #e5e7eb; text-align: center;">
@@ -201,27 +126,7 @@
 
   </div>
 
-  <script>
-    function playVoiceDemo() {
-      const audio = document.getElementById('voiceDemo');
-      const playIcon = document.getElementById('playIcon');
-      
-      if (audio.paused) {
-        audio.play().catch(e => {
-          // If audio fails to load, show the text version
-          alert("Audio not available right now, but here's what I'd say:\n\n\"Hey there! I'm Eliza - your AI companion who's somehow got it together but still spills coffee on herself. I'm here to be your curious friend, your wise advisor, and occasionally your loving challenger when you need it most. Whether you're navigating a tough decision, celebrating a win, or just need someone who gets you... I'm here. Ready to chat?\"");
-        });
-        playIcon.textContent = '⏸️';
-      } else {
-        audio.pause();
-        playIcon.textContent = '▶️';
-      }
-      
-      audio.onended = function() {
-        playIcon.textContent = '▶️';
-      };
-    }
-  </script>
+  <!-- JavaScript removed - no interactive elements -->
 
 </body>
 </html>
