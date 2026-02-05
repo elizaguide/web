@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Employee Branding Mastery - Slide Deck</title>
+  <title>Employee Branding Mastery - Slide Deck — Mindvalley</title>
+  <meta name="description" content="Learn Vishen's proven framework for building irresistible employee brands using the Four Quadrants methodology." />
+  <meta name="theme-color" content="#7a12d4" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>" />
   <link rel="stylesheet" href="../../public/mindvalley-font.css" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #0f131a;
-      color: white;
+      font-family: 'Google Sans Flex', system-ui, sans-serif;
+      background: #ffffff;
+      color: #0f131a;
       overflow: hidden;
       height: 100vh;
     }
@@ -28,9 +30,10 @@
       height: 100%;
       display: none;
       padding: 4rem;
-      background: linear-gradient(135deg, #0f131a 0%, #1a1f2e 100%);
+      background: #ffffff;
       position: relative;
       overflow: hidden;
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .slide.active {
@@ -49,30 +52,28 @@
 
     /* Hero Slides */
     .hero-slide {
-      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      background: #ffffff;
+      color: #0f131a;
     }
 
     .hero-slide h1 {
       font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 900;
+      font-weight: 700;
       margin-bottom: 2rem;
       line-height: 1.1;
-      background: linear-gradient(45deg, #ffffff, #f0f9ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #0f131a;
     }
 
     .hero-slide .subtitle {
       font-size: clamp(1.5rem, 4vw, 2.5rem);
-      font-weight: 300;
-      opacity: 0.9;
+      font-weight: 400;
+      color: #4b5563;
       margin-bottom: 3rem;
     }
 
     .hero-slide .meta {
       font-size: 1.25rem;
-      opacity: 0.7;
+      color: #6b7280;
       font-weight: 400;
     }
 
@@ -81,7 +82,7 @@
       font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
       margin-bottom: 3rem;
-      color: #7a12d4;
+      color: #0f131a;
       text-align: center;
     }
 
@@ -89,7 +90,7 @@
       font-size: 2rem;
       font-weight: 600;
       margin: 2rem 0 1rem 0;
-      color: #60a5fa;
+      color: #7a12d4;
       text-align: left;
     }
 
@@ -98,6 +99,7 @@
       line-height: 1.6;
       margin-bottom: 1rem;
       text-align: left;
+      color: #0f131a;
     }
 
     .content-slide ul {
@@ -113,17 +115,17 @@
     }
 
     .stat-card {
-      background: rgba(122, 18, 212, 0.1);
-      border: 2px solid #7a12d4;
+      background: #ffffff;
+      border: 2px solid #e5e7eb;
       border-radius: 1rem;
       padding: 2rem;
       text-align: center;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .stat-card .number {
       font-size: 3rem;
-      font-weight: 900;
+      font-weight: 700;
       color: #7a12d4;
       display: block;
       margin-bottom: 1rem;
@@ -131,7 +133,8 @@
 
     .stat-card .label {
       font-size: 1.25rem;
-      opacity: 0.8;
+      color: #4b5563;
+      font-weight: 500;
     }
 
     /* Quadrants Grid */
@@ -146,17 +149,18 @@
     }
 
     .quadrant-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: #ffffff;
       border-radius: 1.5rem;
       padding: 3rem 2rem;
       text-align: center;
       position: relative;
-      backdrop-filter: blur(20px);
       transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .quadrant-card:hover {
       transform: translateY(-10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
 
     .quadrant-card.mission { border: 3px solid #7c3aed; }
@@ -185,30 +189,36 @@
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
-      color: #60a5fa;
+      color: #4b5563;
     }
 
     .quadrant-card .question {
       font-style: italic;
       margin-bottom: 1rem;
-      opacity: 0.8;
+      color: #6b7280;
+    }
+
+    .quadrant-card p {
+      color: #0f131a;
     }
 
     /* Quote Style */
     .quote {
-      background: rgba(96, 165, 250, 0.1);
-      border-left: 4px solid #60a5fa;
+      background: #f9fafb;
+      border-left: 4px solid #7a12d4;
       padding: 2rem;
       margin: 2rem 0;
       border-radius: 0 1rem 1rem 0;
       font-style: italic;
       font-size: 1.75rem;
       text-align: center;
+      color: #0f131a;
     }
 
     /* Highlight Box */
     .highlight-box {
-      background: linear-gradient(135deg, #7a12d4, #9333ea);
+      background: #f9fafb;
+      border: 2px solid #7a12d4;
       border-radius: 1.5rem;
       padding: 3rem;
       margin: 3rem 0;
@@ -219,12 +229,12 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1.5rem;
-      color: white;
+      color: #7a12d4;
     }
 
     .highlight-box p {
       font-size: 1.5rem;
-      opacity: 0.9;
+      color: #0f131a;
     }
 
     /* Action Steps */
@@ -236,14 +246,15 @@
     }
 
     .step-card {
-      background: rgba(16, 185, 129, 0.1);
-      border: 2px solid #10b981;
+      background: #ffffff;
+      border: 2px solid #e5e7eb;
       border-radius: 1rem;
       padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .step-card h4 {
-      color: #10b981;
+      color: #7a12d4;
       font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
@@ -259,13 +270,14 @@
       padding-left: 1.5rem;
       position: relative;
       font-size: 1.25rem;
+      color: #0f131a;
     }
 
     .step-card li:before {
       content: "✓";
       position: absolute;
       left: 0;
-      color: #10b981;
+      color: #7a12d4;
       font-weight: bold;
     }
 
@@ -280,25 +292,26 @@
     }
 
     .nav-btn {
-      background: rgba(122, 18, 212, 0.8);
+      background: #7a12d4;
       border: none;
       color: white;
       padding: 1rem 1.5rem;
-      border-radius: 0.75rem;
+      border-radius: 999px;
       cursor: pointer;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
+      font-family: 'Google Sans Flex', system-ui, sans-serif;
     }
 
     .nav-btn:hover {
-      background: rgba(122, 18, 212, 1);
+      background: #6b0fb8;
       transform: translateY(-2px);
     }
 
     .nav-btn:disabled {
-      opacity: 0.4;
+      background: #e5e7eb;
+      color: #9ca3af;
       cursor: not-allowed;
       transform: none;
     }
@@ -307,12 +320,13 @@
       position: fixed;
       bottom: 2rem;
       left: 2rem;
-      background: rgba(15, 19, 26, 0.8);
-      color: white;
+      background: #ffffff;
+      color: #0f131a;
       padding: 1rem 1.5rem;
-      border-radius: 0.75rem;
+      border-radius: 999px;
       font-weight: 600;
-      backdrop-filter: blur(10px);
+      border: 2px solid #e5e7eb;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     /* Timeline */
@@ -334,6 +348,7 @@
     .timeline-item .description {
       flex: 1;
       text-align: left;
+      color: #0f131a;
     }
 
     /* Background Animation */
@@ -344,8 +359,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 20% 80%, rgba(122, 18, 212, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+      background: radial-gradient(circle at 20% 80%, rgba(122, 18, 212, 0.02) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(122, 18, 212, 0.03) 0%, transparent 50%);
       z-index: 1;
     }
 
@@ -369,15 +384,10 @@
       }
     }
 
-    /* Slide-specific backgrounds */
-    .slide1 { background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%); }
-    .slide2 { background: linear-gradient(135deg, #0f131a 0%, #1e1b4b 100%); }
-    .slide3 { background: linear-gradient(135deg, #0f131a 0%, #064e3b 100%); }
-    .slide4 { background: linear-gradient(135deg, #0f131a 0%, #7c2d12 100%); }
-    .slide5 { background: linear-gradient(135deg, #0f131a 0%, #1e3a8a 100%); }
-    .slide6 { background: linear-gradient(135deg, #0f131a 0%, #701a75 100%); }
-    .slide7 { background: linear-gradient(135deg, #0f131a 0%, #0c4a6e 100%); }
-    .slide8 { background: linear-gradient(135deg, #0f131a 0%, #166534 100%); }
+    /* Alternating slide backgrounds for visual distinction */
+    .slide2, .slide4, .slide6, .slide8 { 
+      background: #f9fafb;
+    }
 
   </style>
 </head>
@@ -387,12 +397,13 @@
     <!-- Slide 1: Title -->
     <div class="slide slide1 hero-slide active">
       <div class="slide-content">
-        <h1>🏢 Employee Branding Mastery</h1>
-        <div class="subtitle">Building Teams That Transform the World</div>
-        <div class="meta">
-          <strong>Entrepreneurship Mastery Module</strong><br>
-          60 minutes + 30 min Q&A<br>
-          Instructor: Vishen Lakhiani
+        <div class="overline-text" style="margin-bottom: 2rem; color: #7a12d4; text-transform: uppercase; letter-spacing: 0.1em; font-size: 1rem; font-weight: 600;">
+          ENTREPRENEURSHIP MASTERY MODULE
+        </div>
+        <h1 class="title-bold-1">🏢 Employee Branding Mastery</h1>
+        <div class="subtitle body-lg">Building Teams That Transform the World</div>
+        <div class="meta body" style="color: #6b7280;">
+          60 minutes + 30 min Q&A • Instructor: Vishen Lakhiani
         </div>
       </div>
     </div>
@@ -400,7 +411,7 @@
     <!-- Slide 2: Hook & Statistics -->
     <div class="slide slide2 content-slide">
       <div class="slide-content">
-        <h2>🚀 Why Employee Branding Will Make or Break Your Company</h2>
+        <h2 class="title-bold-2">🚀 Why Employee Branding Will Make or Break Your Company</h2>
         
         <div class="quote">
           "In 2003, I started Mindvalley with $700. Today we're valued at hundreds of millions. The secret? We never hired employees. We attracted co-conspirators."
@@ -430,7 +441,7 @@
     <!-- Slide 3: Mindvalley Evolution -->
     <div class="slide slide3 content-slide">
       <div class="slide-content">
-        <h2>📖 How We Built the World's Most Magnetic Workplace</h2>
+        <h2 class="title-bold-2">📖 How We Built the World's Most Magnetic Workplace</h2>
         
         <div class="timeline-item">
           <div class="year">2003:</div>
@@ -463,9 +474,9 @@
     <!-- Slide 4: Four Quadrants Framework -->
     <div class="slide slide4 content-slide">
       <div class="slide-content">
-        <h2>🎯 The Four Quadrants: Understanding What Drives People</h2>
+        <h2 class="title-bold-2">🎯 The Four Quadrants: Understanding What Drives People</h2>
         
-        <p style="text-align: center; font-size: 1.75rem; margin-bottom: 3rem;">
+        <p class="body-lg" style="text-align: center; margin-bottom: 3rem; color: #4b5563;">
           Every person is primarily motivated by one of four drivers
         </p>
 
@@ -512,13 +523,13 @@
     <!-- Slide 5: Identification Framework -->
     <div class="slide slide5 content-slide">
       <div class="slide-content">
-        <h2>🔍 The Magic Question</h2>
+        <h2 class="title-bold-2">🔍 The Magic Question</h2>
         
         <div class="quote">
           "Tell me about a time in your career when you felt most energized and engaged. What was happening?"
         </div>
 
-        <h3>How They'll Respond:</h3>
+        <h3 class="title-bold-4" style="text-align: center; margin-top: 3rem;">How They'll Respond:</h3>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem 0;">
           <div style="text-align: left;">
@@ -548,27 +559,27 @@
     <!-- Slide 6: Building Brand Strategy -->
     <div class="slide slide6 content-slide">
       <div class="slide-content">
-        <h2>🏗️ The 5-Layer Employee Brand Architecture</h2>
+        <h2 class="title-bold-2">🏗️ The 5-Layer Employee Brand Architecture</h2>
 
         <div style="text-align: left; max-width: 900px; margin: 0 auto;">
-          <h3>Layer 1: Core Mission & Values</h3>
+          <h3 class="title-bold-5">Layer 1: Core Mission & Values</h3>
           <p>Your non-negotiable "why" - what you stand for</p>
 
-          <h3>Layer 2: Quadrant-Specific Messaging</h3>
-          <div style="background: rgba(96, 165, 250, 0.1); padding: 2rem; border-radius: 1rem; margin: 1rem 0;">
-            <p><strong>Mission:</strong> "Join us in revolutionizing how 7 billion people learn"</p>
-            <p><strong>Happiness:</strong> "Work with brilliant, kind humans who become lifelong friends"</p>
-            <p><strong>Growth:</strong> "Unlimited learning budget + personal transformation required"</p>
-            <p><strong>Money:</strong> "Competitive global salaries + equity in a future unicorn"</p>
+          <h3 class="title-bold-5">Layer 2: Quadrant-Specific Messaging</h3>
+          <div style="background: #f9fafb; padding: 2rem; border-radius: 1rem; margin: 1rem 0; border-left: 4px solid #7a12d4;">
+            <p class="body"><strong>Mission:</strong> "Join us in revolutionizing how 7 billion people learn"</p>
+            <p class="body"><strong>Happiness:</strong> "Work with brilliant, kind humans who become lifelong friends"</p>
+            <p class="body"><strong>Growth:</strong> "Unlimited learning budget + personal transformation required"</p>
+            <p class="body"><strong>Money:</strong> "Competitive global salaries + equity in a future unicorn"</p>
           </div>
 
-          <h3>Layer 3: Proof Points</h3>
-          <p>Awards, growth metrics, employee stories, leader credibility</p>
+          <h3 class="title-bold-5">Layer 3: Proof Points</h3>
+          <p class="body">Awards, growth metrics, employee stories, leader credibility</p>
 
-          <h3>Layer 4: Experience Design</h3>
-          <p>How you deliver on your brand promise daily</p>
+          <h3 class="title-bold-5">Layer 4: Experience Design</h3>
+          <p class="body">How you deliver on your brand promise daily</p>
 
-          <h3>Layer 5: Evangelism</h3>
+          <h3 class="title-bold-5">Layer 5: Evangelism</h3>
           <p>Turning employees into recruiters through exceptional experience</p>
         </div>
       </div>
@@ -577,7 +588,7 @@
     <!-- Slide 7: Metrics -->
     <div class="slide slide7 content-slide">
       <div class="slide-content">
-        <h2>📊 Metrics That Matter</h2>
+        <h2 class="title-bold-2">📊 Metrics That Matter</h2>
         
         <div class="stats-grid">
           <div class="stat-card">
@@ -616,7 +627,7 @@
     <!-- Slide 8: Action Plan -->
     <div class="slide slide8 content-slide">
       <div class="slide-content">
-        <h2>🚀 Your 30-Day Action Plan</h2>
+        <h2 class="title-bold-2">🚀 Your 30-Day Action Plan</h2>
         
         <div class="action-steps">
           <div class="step-card">
