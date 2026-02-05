@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Navigation Test</title>
+  <style>
+    .slide { display: none; padding: 2rem; font-size: 2rem; }
+    .slide.active { display: block; }
+    .nav-btn { padding: 1rem; margin: 1rem; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="slide active">Slide 1</div>
+  <div class="slide">Slide 2</div>
+  <div class="slide">Slide 3</div>
+  
+  <button onclick="nextSlide()" class="nav-btn">NEXT</button>
+  <button onclick="prevSlide()" class="nav-btn">PREV</button>
+  
+  <div>Current: <span id="counter">1</span> / 3</div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 3;
+
+    function showSlide(n) {
+      if (n > totalSlides) n = totalSlides;
+      if (n < 1) n = 1;
+      currentSlide = n;
+      
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.slide')[currentSlide - 1].classList.add('active');
+      document.getElementById('counter').textContent = currentSlide;
+    }
+
+    function nextSlide() { 
+      console.log('NEXT clicked');
+      if (currentSlide < totalSlides) showSlide(currentSlide + 1); 
+    }
+    function prevSlide() { 
+      console.log('PREV clicked'); 
+      if (currentSlide > 1) showSlide(currentSlide - 1); 
+    }
+  </script>
+</body>
+</html>
