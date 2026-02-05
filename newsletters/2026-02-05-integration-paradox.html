@@ -101,6 +101,25 @@
       z-index: -1;
     }
     
+    .hero-image {
+      max-width: 600px;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 1rem;
+      margin: 3rem auto 2rem auto;
+      display: block;
+      box-shadow: 0 20px 60px rgba(122, 18, 212, 0.2);
+      border: 2px solid rgba(122, 18, 212, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .hero-image {
+        height: 200px;
+        margin: 2rem auto 1.5rem auto;
+      }
+    }
+    
     .hero-content {
       text-align: center;
       max-width: 800px;
@@ -273,6 +292,9 @@
         <div class="overline-text">Mindvalley Newsletter</div>
         <h1 class="title-bold-1">The Integration Paradox: Why Your Next Breakthrough Isn't About Choosing Sides</h1>
         <p class="body-lg">Most people think consciousness evolution means escaping their human limitations. The masters reveal why this thinking keeps you stuck.</p>
+        
+        <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&h=300&fit=crop&crop=center" alt="Person meditating in nature, showing integration of spiritual practice with grounded reality" class="hero-image">
+        
         <div class="cta-buttons">
           <a href="2026-02-05-integration-analysis.html" class="btn-secondary">See Design Analysis</a>
         </div>
