@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day 5: Automated Clone Workforce — AI Accelerator</title>
+  <meta name="description" content="Deploy intelligent agents that handle complex business processes. Build your complete AI workforce with decision-making capabilities." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link rel="stylesheet" href="../../../../public/mindvalley-font.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #0f131a;
+      line-height: 1.6;
+    }
+
+    .nav { 
+      background: #ffffff; 
+      border-bottom: 1px solid #e5e7eb; 
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+    }
+    .nav-content { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .logo { 
+      font-weight: 700; 
+      color: #7a12d4; 
+      text-decoration: none; 
+      font-size: 24px; 
+    }
+    .back-link {
+      color: #7a12d4;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .meta-info {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      background: rgba(255,255,255,0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+    }
+
+    .content {
+      padding: 4rem 0;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .section h2 {
+      color: #7a12d4;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section h3 {
+      color: #0f131a;
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .timing-block {
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-weight: 600;
+    }
+
+    .instructor-note {
+      background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+      border-left: 4px solid #f59e0b;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .instructor-note h4 {
+      color: #92400e;
+      margin-bottom: 0.5rem;
+    }
+
+    .activity-card {
+      background: #ffffff;
+      border: 2px solid #e5e7eb;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .activity-card h4 {
+      color: #7a12d4;
+      margin-bottom: 1rem;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .outcome-card {
+      background: #f0f9ff;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border-left: 4px solid #0ea5e9;
+    }
+
+    .outcome-card h4 {
+      color: #0c4a6e;
+      margin-bottom: 0.5rem;
+    }
+
+    .warning-card {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .warning-card h4 {
+      color: #dc2626;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      margin-left: 2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 1rem; }
+      .meta-info { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="../index.html" class="logo">🤖 AI Accelerator</a>
+      <a href="../index.html" class="back-link">← Back to Curriculum</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>⚡ Day 5: Automated Clone Workforce</h1>
+      <p>Deploy intelligent agents that handle complex business processes. Build your complete AI workforce with scalable decision-making systems.</p>
+      
+      <div class="meta-info">
+        <span class="meta-item">📅 Feb 13</span>
+        <span class="meta-item">⏱️ 2 hours</span>
+        <span class="meta-item">👤 Vykintas Glodenis</span>
+        <span class="meta-item">🛠️ Airtable AI + Automation</span>
+        <span class="meta-item">🎯 Viking Task</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="content">
+    <div class="container">
+
+      <!-- Part 0: Automation Revolution -->
+      <section class="section">
+        <h2>Part 0: Automation Revolution Hook</h2>
+        <div class="timing-block">⏰ 10 minutes</div>
+        
+        <h3>The Business Process Revolution</h3>
+        <ul>
+          <li><strong>Beyond Single Tools:</strong> From individual AI helpers to complete workforce systems</li>
+          <li><strong>Decision Intelligence:</strong> AI that doesn't just execute but thinks and decides</li>
+          <li><strong>Scalable Automation:</strong> Business processes that grow without human bottlenecks</li>
+        </ul>
+
+        <div class="activity-card">
+          <h4>Today's Workforce Transformation</h4>
+          <ul>
+            <li>Build intelligent agents that make complex business decisions</li>
+            <li>Deploy your complete AI workforce with unified systems</li>
+            <li>Create scalable automation that grows with your business</li>
+            <li>Achieve full AI integration across all previous clones</li>
+          </ul>
+        </div>
+
+        <div class="warning-card">
+          <h4>⚠️ Important Context</h4>
+          <p>This is advanced automation. We're building AI systems that make real business decisions. Start conservatively and scale gradually.</p>
+        </div>
+      </section>
+
+      <!-- Part 1: Process Mapping -->
+      <section class="section">
+        <h2>Part 1: CAPTURE Your Business Processes</h2>
+        <div class="timing-block">⏰ 20 minutes</div>
+        
+        <h3>Business Process Audit</h3>
+        <div class="activity-card">
+          <h4>Automation Opportunity Assessment (10 min)</h4>
+          <ul>
+            <li><strong>High-Volume Decisions:</strong> What decisions do you make repeatedly?</li>
+            <li><strong>Data-Driven Processes:</strong> Where do you analyze information to decide?</li>
+            <li><strong>Workflow Bottlenecks:</strong> What slows down your business operations?</li>
+            <li><strong>Human Dependency Map:</strong> Where are you the single point of failure?</li>
+          </ul>
+        </div>
+
+        <h3>Risk Assessment Framework (10 min)</h3>
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <h4>Low-Risk Processes</h4>
+            <ul>
+              <li>Data organization</li>
+              <li>Report generation</li>
+              <li>Email categorization</li>
+              <li>Calendar scheduling</li>
+            </ul>
+          </div>
+          <div class="outcome-card">
+            <h4>Medium-Risk Processes</h4>
+            <ul>
+              <li>Customer inquiry routing</li>
+              <li>Content approval workflows</li>
+              <li>Lead scoring and qualification</li>
+              <li>Project status updates</li>
+            </ul>
+          </div>
+          <div class="warning-card">
+            <h4>High-Risk Processes</h4>
+            <ul>
+              <li>Financial decisions</li>
+              <li>Client communications</li>
+              <li>Legal document review</li>
+              <li>Strategic planning</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 2: Build Workforce -->
+      <section class="section">
+        <h2>Part 2: BUILD Your AI Agent Workforce</h2>
+        <div class="timing-block">⏰ 70 minutes</div>
+        
+        <h3>Airtable AI Foundation (25 min)</h3>
+        <div class="activity-card">
+          <h4>Platform Setup & Understanding</h4>
+          <ul>
+            <li><strong>Airtable vs. Traditional Databases:</strong> Why AI-powered data management matters</li>
+            <li><strong>Automation Triggers:</strong> How data changes trigger intelligent actions</li>
+            <li><strong>Integration Capabilities:</strong> Connecting to your existing business tools</li>
+            <li><strong>AI Field Types:</strong> Smart data processing and decision-making fields</li>
+          </ul>
+        </div>
+
+        <h3>Intelligent Agent Architecture (25 min)</h3>
+        <div class="activity-card">
+          <h4>Agent Design Framework</h4>
+          <ul>
+            <li><strong>Trigger Conditions:</strong> What events should activate your AI agents?</li>
+            <li><strong>Decision Logic:</strong> How should agents analyze data and make choices?</li>
+            <li><strong>Action Execution:</strong> What can agents do automatically?</li>
+            <li><strong>Human Escalation:</strong> When to involve human oversight</li>
+          </ul>
+        </div>
+
+        <h3>Workflow Integration Mastery (20 min)</h3>
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <h4>Cross-Platform Agents</h4>
+            <ul>
+              <li>Email automation triggers</li>
+              <li>CRM data synchronization</li>
+              <li>Social media monitoring</li>
+              <li>Calendar optimization</li>
+            </ul>
+          </div>
+          <div class="outcome-card">
+            <h4>Decision Intelligence</h4>
+            <ul>
+              <li>Data pattern recognition</li>
+              <li>Predictive analytics</li>
+              <li>Risk assessment automation</li>
+              <li>Performance optimization</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 3: Test Deployment -->
+      <section class="section">
+        <h2>Part 3: TEST Your AI Workforce</h2>
+        <div class="timing-block">⏰ 15 minutes</div>
+        
+        <h3>Safe Deployment Protocol</h3>
+        <div class="activity-card">
+          <h4>Testing Framework (10 min)</h4>
+          <ul>
+            <li><strong>Sandbox Environment:</strong> Test with sample data before live deployment</li>
+            <li><strong>Quality Assessment:</strong> Compare AI output to ideal human response</li>
+            <li><strong>Edge Case Testing:</strong> What happens with unusual inputs?</li>
+            <li><strong>Scaling Simulation:</strong> How does performance change with 10x workload?</li>
+          </ul>
+        </div>
+
+        <div class="warning-card">
+          <h4>⚠️ Testing Requirements</h4>
+          <p><strong>Safety First:</strong> No agent goes live without thorough testing. Start with read-only access and gradually increase permissions.</p>
+        </div>
+
+        <div class="instructor-note">
+          <h4>💡 Instructor Note:</h4>
+          <p><strong>Monitoring Focus:</strong> Emphasize the importance of continuous monitoring and human backup systems. AI agents need supervision, especially in early deployment phases.</p>
+        </div>
+      </section>
+
+      <!-- Part 4: Integration Strategy -->
+      <section class="section">
+        <h2>Part 4: Business Integration Strategy</h2>
+        <div class="timing-block">⏰ 5 minutes</div>
+        
+        <h3>Implementation Roadmap</h3>
+        <div class="activity-card">
+          <h4>Safe AI Workforce Deployment</h4>
+          <ul>
+            <li><strong>Rollout Strategy:</strong> Start with low-risk, high-impact processes</li>
+            <li><strong>Team Training:</strong> Preparing humans to work with AI agents</li>
+            <li><strong>Quality Control Systems:</strong> Monitoring AI performance and improvement</li>
+            <li><strong>Gradual Responsibility Transfer:</strong> Increasing AI autonomy over time</li>
+          </ul>
+        </div>
+
+        <div class="activity-card">
+          <h4>Performance Monitoring</h4>
+          <ul>
+            <li><strong>Success Metrics:</strong> Measuring AI workforce effectiveness</li>
+            <li><strong>Cost-Benefit Analysis:</strong> ROI tracking for AI agent deployment</li>
+            <li><strong>Continuous Improvement:</strong> How AI agents learn and evolve</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Clear Outcomes -->
+      <section class="section">
+        <h2>🎯 Clear Outcomes</h2>
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <h4>✅ AI Agent Workforce Deployed</h4>
+            <p>Intelligent automation handling <span class="highlight">complex business processes</span></p>
+          </div>
+          <div class="outcome-card">
+            <h4>✅ Scalable Decision Systems</h4>
+            <p>AI that thinks, decides, and acts <span class="highlight">without human bottlenecks</span></p>
+          </div>
+          <div class="outcome-card">
+            <h4>✅ Business Process Automation</h4>
+            <p>Your operations run intelligently <span class="highlight">24/7 without supervision</span></p>
+          </div>
+          <div class="outcome-card">
+            <h4>✅ Full AI Integration</h4>
+            <p>All your clones working as a <span class="highlight">unified intelligent team</span></p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <h4>🚀 Tomorrow's Celebration</h4>
+          <p>You've built a complete AI workforce. Tomorrow we celebrate your transformation and plan your continued AI evolution with the community!</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>

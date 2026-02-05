@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day 4: Learning Accelerator Clone — AI Accelerator</title>
+  <meta name="description" content="Master any topic 10x faster with AI learning acceleration. Build your research-to-content pipeline using NotebookLM." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+  <link rel="stylesheet" href="../../../../public/mindvalley-font.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #0f131a;
+      line-height: 1.6;
+    }
+
+    .nav { 
+      background: #ffffff; 
+      border-bottom: 1px solid #e5e7eb; 
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+    }
+    .nav-content { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .logo { 
+      font-weight: 700; 
+      color: #7a12d4; 
+      text-decoration: none; 
+      font-size: 24px; 
+    }
+    .back-link {
+      color: #7a12d4;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .meta-info {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      background: rgba(255,255,255,0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+    }
+
+    .content {
+      padding: 4rem 0;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .section h2 {
+      color: #7a12d4;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section h3 {
+      color: #0f131a;
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .timing-block {
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-weight: 600;
+    }
+
+    .instructor-note {
+      background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+      border-left: 4px solid #f59e0b;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .instructor-note h4 {
+      color: #92400e;
+      margin-bottom: 0.5rem;
+    }
+
+    .activity-card {
+      background: #ffffff;
+      border: 2px solid #e5e7eb;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .activity-card h4 {
+      color: #7a12d4;
+      margin-bottom: 1rem;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .outcome-card {
+      background: #f0f9ff;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border-left: 4px solid #0ea5e9;
+    }
+
+    .outcome-card h4 {
+      color: #0c4a6e;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      margin-left: 2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 1rem; }
+      .meta-info { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="../index.html" class="logo">🤖 AI Accelerator</a>
+      <a href="../index.html" class="back-link">← Back to Curriculum</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>📚 Day 4: Learning Accelerator Clone</h1>
+      <p>Master any topic 10x faster. Build your research-to-content pipeline and become a continuous learning machine.</p>
+      
+      <div class="meta-info">
+        <span class="meta-item">📅 Feb 12</span>
+        <span class="meta-item">⏱️ 2 hours</span>
+        <span class="meta-item">👤 Vykintas Glodenis</span>
+        <span class="meta-item">🛠️ NotebookLM</span>
+        <span class="meta-item">🎯 Viking Task</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="content">
+    <div class="container">
+
+      <!-- Part 0: Learning Revolution Hook -->
+      <section class="section">
+        <h2>Part 0: Learning Revolution Hook</h2>
+        <div class="timing-block">⏰ 5 minutes</div>
+        
+        <h3>The Knowledge Acceleration Crisis</h3>
+        <ul>
+          <li><strong>Information Abundance, Wisdom Scarcity:</strong> Drowning in content, starving for insights</li>
+          <li><strong>The Expertise Gap:</strong> How top performers stay ahead while others fall behind</li>
+          <li><strong>AI Learning Advantage:</strong> Master any topic 10x faster than traditional methods</li>
+        </ul>
+
+        <div class="activity-card">
+          <h4>Today's Transformation Promise</h4>
+          <ul>
+            <li>Build your Learning Accelerator Clone</li>
+            <li>Master advanced research techniques</li>
+            <li>Create your research-to-content pipeline</li>
+            <li>Become a learning machine that never stops growing</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Part 1: Learning Goals -->
+      <section class="section">
+        <h2>Part 1: CAPTURE Your Learning Goals</h2>
+        <div class="timing-block">⏰ 15 minutes</div>
+        
+        <h3>Learning Opportunity Audit</h3>
+        <div class="activity-card">
+          <h4>Assessment Framework</h4>
+          <ul>
+            <li><strong>Current State Assessment:</strong> What you need to master vs. time available</li>
+            <li><strong>Priority Mapping Exercise:</strong> Identify high-impact knowledge areas for your goals</li>
+            <li><strong>Resource Quality Evaluation:</strong> Best sources in your domain vs. noise</li>
+            <li><strong>Learning Velocity Gap:</strong> Where you're falling behind and why</li>
+          </ul>
+        </div>
+
+        <h3>Today's Learning Challenge</h3>
+        <div class="activity-card">
+          <h4>Live Challenge Parameters</h4>
+          <ul>
+            <li><strong>Pick ONE Critical Skill:</strong> Choose a complex topic to accelerate today</li>
+            <li><strong>Success Criteria:</strong> By session end, you'll present "expertise" to the group</li>
+            <li><strong>Benchmark Setting:</strong> Traditional learning vs. AI-accelerated comparison</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Part 2: Build System -->
+      <section class="section">
+        <h2>Part 2: BUILD Your Knowledge Acceleration System</h2>
+        <div class="timing-block">⏰ 65 minutes</div>
+        
+        <h3>NotebookLM Deep Dive (35 minutes)</h3>
+        <div class="activity-card">
+          <h4>NotebookLM vs. ChatGPT Understanding (10 min)</h4>
+          <ul>
+            <li><strong>Unique Advantages:</strong> Source-grounded responses, document synthesis</li>
+            <li><strong>Use Case Differentiation:</strong> When to use NotebookLM vs. other AI tools</li>
+            <li><strong>Reliability Factor:</strong> Fact-checking and source attribution</li>
+          </ul>
+        </div>
+
+        <div class="activity-card">
+          <h4>Document Upload Strategy (15 min)</h4>
+          <ul>
+            <li><strong>Optimal Source Selection:</strong> Academic papers, industry reports, expert books</li>
+            <li><strong>Upload Limits and Optimization:</strong> Maximizing knowledge ingestion</li>
+            <li><strong>Source Quality Assessment:</strong> Ensuring reliable foundation knowledge</li>
+            <li><strong>Document Preparation:</strong> How to structure uploads for best results</li>
+          </ul>
+        </div>
+
+        <div class="activity-card">
+          <h4>Advanced Query Framework (10 min)</h4>
+          <ul>
+            <li><strong>Question Engineering:</strong> How to ask AI for breakthrough insights, not just summaries</li>
+            <li><strong>Socratic Dialogue Technique:</strong> AI as your thinking partner</li>
+            <li><strong>Perspective Synthesis:</strong> Combining multiple expert viewpoints</li>
+            <li><strong>Critical Analysis Prompts:</strong> Challenging assumptions and finding gaps</li>
+          </ul>
+        </div>
+
+        <h3>Advanced Learning Techniques (30 minutes)</h3>
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <h4>Concept Mapping (10 min)</h4>
+            <ul>
+              <li>Visual learning architecture</li>
+              <li>Connection discovery</li>
+              <li>Knowledge hierarchy building</li>
+              <li>Mental model creation</li>
+            </ul>
+          </div>
+          <div class="outcome-card">
+            <h4>Retention Methods (10 min)</h4>
+            <ul>
+              <li>AI-optimized spaced repetition</li>
+              <li>Teaching mode activation</li>
+              <li>Application scenario generation</li>
+              <li>Knowledge gap identification</li>
+            </ul>
+          </div>
+          <div class="outcome-card">
+            <h4>Research Pipeline (10 min)</h4>
+            <ul>
+              <li>Rapid domain entry</li>
+              <li>Expert-level questioning</li>
+              <li>Insight synthesis</li>
+              <li>Credibility building</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 3: Test Clone -->
+      <section class="section">
+        <h2>Part 3: TEST Your Learning Clone</h2>
+        <div class="timing-block">⏰ 20 minutes</div>
+        
+        <h3>Master Class Challenge</h3>
+        <div class="activity-card">
+          <h4>Live Learning Acceleration Session</h4>
+          <ul>
+            <li><strong>Phase 1 (2 min):</strong> Choose your complex topic - business strategy, tech, industry trend</li>
+            <li><strong>Phase 2 (10 min):</strong> 10-minute learning sprint using NotebookLM with expert sources</li>
+            <li><strong>Phase 3 (8 min):</strong> "Expert" presentation - 2 volunteers present to the group</li>
+          </ul>
+        </div>
+
+        <div class="instructor-note">
+          <h4>💡 Instructor Note:</h4>
+          <p><strong>Assessment Focus:</strong> Does their explanation sound credible? Compare traditional vs. AI-accelerated results. Look for depth vs. surface understanding.</p>
+        </div>
+      </section>
+
+      <!-- Part 4: Content Transformation -->
+      <section class="section">
+        <h2>Part 4: Content Transformation Mastery</h2>
+        <div class="timing-block">⏰ 10 minutes</div>
+        
+        <h3>Research-to-Content Pipeline</h3>
+        <div class="activity-card">
+          <h4>Content Multiplication Strategy</h4>
+          <p>One Learning Session → Multiple Content Pieces:</p>
+          <ul>
+            <li>LinkedIn thought leadership post</li>
+            <li>Newsletter deep dive</li>
+            <li>Presentation slides for team sharing</li>
+            <li>Twitter thread with key insights</li>
+          </ul>
+        </div>
+
+        <div class="activity-card">
+          <h4>Authority Building System</h4>
+          <ul>
+            <li><strong>Consistent Learning:</strong> Daily knowledge accumulation</li>
+            <li><strong>Public Sharing:</strong> Demonstrating growing expertise</li>
+            <li><strong>Community Teaching:</strong> Sharing insights to reinforce learning</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Clear Outcomes -->
+      <section class="section">
+        <h2>🎯 Clear Outcomes</h2>
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <h4>✅ Learning Accelerator Clone Operational</h4>
+            <p>Master any topic <span class="highlight">10x faster</span> than traditional methods</p>
+          </div>
+          <div class="outcome-card">
+            <h4>✅ Research-to-Content Pipeline Built</h4>
+            <p>Transform learning into <span class="highlight">thought leadership content</span></p>
+          </div>
+          <div class="outcome-card">
+            <h4>✅ Continuous Learning System</h4>
+            <p>Never fall behind in your field again</p>
+          </div>
+          <div class="outcome-card">
+            <h4>✅ NotebookLM Mastery</h4>
+            <p>Advanced AI research techniques beyond ChatGPT</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>
