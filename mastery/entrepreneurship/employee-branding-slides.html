@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Employee Branding Mastery - Slide Deck — Mindvalley</title>
+  <title>Employee Branding Mastery - Complete Slide Deck — Mindvalley</title>
   <meta name="description" content="Learn Vishen's proven framework for building irresistible employee brands using the Four Quadrants methodology." />
   <meta name="theme-color" content="#7a12d4" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>" />
@@ -48,6 +48,99 @@
       text-align: center;
       z-index: 2;
       position: relative;
+    }
+
+    /* Image Slides */
+    .image-slide {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 2rem;
+      gap: 4rem;
+    }
+
+    .image-slide.active {
+      display: grid;
+    }
+
+    .image-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 1rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-slide .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      padding: 2rem;
+    }
+
+    .image-slide h2 {
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: #0f131a;
+    }
+
+    .image-slide .highlight-text {
+      color: #7a12d4;
+      font-weight: 600;
+    }
+
+    .image-slide .stat-number {
+      font-size: clamp(4rem, 8vw, 8rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #7a12d4 0%, #f59e0b 50%, #10b981 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .image-slide p {
+      font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+    }
+
+    .image-slide .quote-box {
+      background: rgba(122, 18, 212, 0.1);
+      border-left: 4px solid #7a12d4;
+      padding: 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    .image-slide .principles-list {
+      margin-top: 2rem;
+    }
+
+    .image-slide .principle-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: rgba(122, 18, 212, 0.05);
+      border-radius: 0.75rem;
+      border-left: 4px solid #7a12d4;
+    }
+
+    .image-slide .principle-item::before {
+      content: "✓";
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-right: 1rem;
     }
 
     /* Hero Slides */
@@ -370,6 +463,11 @@
         padding: 2rem;
       }
       
+      .image-slide {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
       .quadrants-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -385,7 +483,7 @@
     }
 
     /* Alternating slide backgrounds for visual distinction */
-    .slide2, .slide4, .slide6, .slide8 { 
+    .slide2, .slide4, .slide6, .slide8, .slide10, .slide12 { 
       background: #f9fafb;
     }
 
@@ -408,8 +506,37 @@
       </div>
     </div>
 
-    <!-- Slide 2: Hook & Statistics -->
-    <div class="slide slide2 content-slide">
+    <!-- Slide 2: Fancy Offices Don't Matter -->
+    <div class="slide slide2 image-slide">
+      <div class="content">
+        <h2>Fancy Offices<br>Don't Matter</h2>
+        <p>While competitors waste money on <strong>expensive workspaces</strong>, we attracted the world's best talent to a humble office in Kuala Lumpur.</p>
+        <div class="quote-box">
+          "They didn't come for the furniture. They came for the mission."
+        </div>
+        <p>What really attracts top talent isn't <span class="highlight-text">surface-level perks</span>—it's the depth of purpose, the authenticity of culture, and the promise of transformation.</p>
+      </div>
+      <img src="../presentations/employee-branding/fancy-offices-dont-matter-slide.jpg" alt="Early Mindvalley office - humble workspace showing mission matters more than fancy offices">
+    </div>
+
+    <!-- Slide 3: 60 Countries Global Talent Magnet -->
+    <div class="slide slide3 image-slide">
+      <div class="content">
+        <div class="stat-number">60</div>
+        <h2 style="color: #7a12d4; text-transform: uppercase; font-size: 2rem; margin-bottom: 1rem;">Countries</h2>
+        <h2>People Moved to<br><span style="color: #10b981;">Kuala Lumpur</span><br>to Work for Us</h2>
+        <p>When your <span class="highlight-text">company culture is magnetic enough</span>, talented people don't just apply for jobs—they relocate their entire lives to be part of your mission.</p>
+        <div class="principles-list">
+          <div class="principle-item">Relocated from 6 continents</div>
+          <div class="principle-item">Left established careers behind</div>
+          <div class="principle-item">Chose mission over money</div>
+        </div>
+      </div>
+      <img src="../presentations/employee-branding/global-talent-magnet-slide.jpg" alt="Diverse Mindvalley team from 60 countries gathered in Kuala Lumpur">
+    </div>
+
+    <!-- Slide 4: Hook & Statistics -->
+    <div class="slide slide4 content-slide">
       <div class="slide-content">
         <h2 class="title-bold-2">🚀 Why Employee Branding Will Make or Break Your Company</h2>
         
@@ -438,8 +565,8 @@
       </div>
     </div>
 
-    <!-- Slide 3: Mindvalley Evolution -->
-    <div class="slide slide3 content-slide">
+    <!-- Slide 5: Mindvalley Evolution -->
+    <div class="slide slide5 content-slide">
       <div class="slide-content">
         <h2 class="title-bold-2">📖 How We Built the World's Most Magnetic Workplace</h2>
         
@@ -471,8 +598,8 @@
       </div>
     </div>
 
-    <!-- Slide 4: Four Quadrants Framework -->
-    <div class="slide slide4 content-slide">
+    <!-- Slide 6: Four Quadrants Framework -->
+    <div class="slide slide6 content-slide">
       <div class="slide-content">
         <h2 class="title-bold-2">🎯 The Four Quadrants: Understanding What Drives People</h2>
         
@@ -520,8 +647,22 @@
       </div>
     </div>
 
-    <!-- Slide 5: Identification Framework -->
-    <div class="slide slide5 content-slide">
+    <!-- Slide 7: Four Pillars Framework Visual -->
+    <div class="slide slide7 image-slide">
+      <div class="content">
+        <h2 style="color: #7a12d4; text-transform: uppercase; font-size: 2rem; margin-bottom: 1rem;">The Four Pillars</h2>
+        <h2>What Drives<br>Every Human</h2>
+        <p>These four fundamental drivers motivate every person on earth. When you build your <span class="highlight-text">company culture</span> around all four pillars, you create magnetic appeal across all personality types.</p>
+        <div class="quote-box">
+          "Most companies focus on just one pillar. We designed our culture to satisfy all four."
+        </div>
+        <p>This <span class="highlight-text">framework becomes your blueprint</span> for creating a workplace that attracts and retains the world's best talent across every motivation type.</p>
+      </div>
+      <img src="../presentations/employee-branding/four-pillars-framework-slide.jpg" alt="Four Pillars Framework showing happiness, abundance, growth, and meaning quadrants">
+    </div>
+
+    <!-- Slide 8: Identification Framework -->
+    <div class="slide slide8 content-slide">
       <div class="slide-content">
         <h2 class="title-bold-2">🔍 The Magic Question</h2>
         
@@ -556,8 +697,27 @@
       </div>
     </div>
 
-    <!-- Slide 6: Building Brand Strategy -->
-    <div class="slide slide6 content-slide">
+    <!-- Slide 9: Bar of Awesomeness -->
+    <div class="slide slide9 image-slide">
+      <div class="content">
+        <div style="font-size: 4rem; font-weight: 900; color: #7a12d4; margin-bottom: 1rem;">#1</div>
+        <h2 style="color: #7a12d4; text-transform: uppercase; font-size: 1.5rem; margin-bottom: 1rem;">Rule of Hiring</h2>
+        <h2>Always Hire Above<br>the <span style="color: #f59e0b;">Bar of Awesomeness</span></h2>
+        <p>This single principle transforms everything. <span style="color: #0ea5e9; font-weight: 600;">Blue dots</span> represent people who raise your team's standard. <span style="color: #ef4444; font-weight: 600;">Red dots</span> represent people who lower it.</p>
+        <div style="background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0; font-weight: 600;">
+          ⚠️ Never compromise on this bar. One below-average hire affects everyone.
+        </div>
+        <div class="principles-list">
+          <div class="principle-item">No exceptions, even for urgent needs</div>
+          <div class="principle-item">Better to wait than settle</div>
+          <div class="principle-item">Every hire elevates the entire team</div>
+        </div>
+      </div>
+      <img src="../presentations/employee-branding/bar-of-awesomeness-slide.jpg" alt="Bar of Awesomeness diagram showing blue dots above the bar and red dots below">
+    </div>
+
+    <!-- Slide 10: Building Brand Strategy -->
+    <div class="slide slide10 content-slide">
       <div class="slide-content">
         <h2 class="title-bold-2">🏗️ The 5-Layer Employee Brand Architecture</h2>
 
@@ -585,8 +745,19 @@
       </div>
     </div>
 
-    <!-- Slide 7: Metrics -->
-    <div class="slide slide7 content-slide">
+    <!-- Slide 11: Culture Infuses Product -->
+    <div class="slide slide11 image-slide">
+      <div class="content">
+        <h2 style="color: #7a12d4; text-transform: uppercase; font-size: 1.5rem; margin-bottom: 1rem;">Designing Mindvalley Culture</h2>
+        <h2>The Culture of Our Company<br>Infuses the Culture<br>of Our Product</h2>
+        <p>Every step of our <span class="highlight-text">cultural design journey</span> becomes embedded in the experiences we create. When we intentionally craft a culture of <span class="highlight-text">transformation, consciousness, and growth</span>, it naturally flows into every product decision.</p>
+        <p>The road ahead isn't just about building better products—it's about <span class="highlight-text">designing the cultural foundation</span> that makes extraordinary user experiences inevitable.</p>
+      </div>
+      <img src="../presentations/employee-branding/designing-mindvalley-culture.jpg" alt="Mindvalley road journey with logo - the cultural design path to transformation">
+    </div>
+
+    <!-- Slide 12: Metrics -->
+    <div class="slide slide12 content-slide">
       <div class="slide-content">
         <h2 class="title-bold-2">📊 Metrics That Matter</h2>
         
@@ -624,8 +795,8 @@
       </div>
     </div>
 
-    <!-- Slide 8: Action Plan -->
-    <div class="slide slide8 content-slide">
+    <!-- Slide 13: Action Plan -->
+    <div class="slide slide13 content-slide">
       <div class="slide-content">
         <h2 class="title-bold-2">🚀 Your 30-Day Action Plan</h2>
         
@@ -684,12 +855,12 @@
 
   <!-- Slide Counter -->
   <div class="slide-counter">
-    <span id="current-slide">1</span> / <span id="total-slides">8</span>
+    <span id="current-slide">1</span> / <span id="total-slides">13</span>
   </div>
 
   <script>
     let currentSlide = 1;
-    const totalSlides = 8;
+    const totalSlides = 13;
 
     function showSlide(n) {
       const slides = document.querySelectorAll('.slide');
