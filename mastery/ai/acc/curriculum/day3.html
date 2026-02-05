@@ -1,557 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Day 3: Visual Presence Clone & AI Influencer — AI Accelerator</title>
-  <meta name="description" content="Create your AI video twin with voice cloning. Scale your visual presence 10x while maintaining authenticity with Iman Oubou." />
-  <meta name="theme-color" content="#7a12d4" />
-  <link rel="stylesheet" href="../../../../public/mindvalley-font.css" />
-  <style>
-    body { margin: 0; padding: 0; background: #ffffff; }
-    .nav { 
-      background: #ffffff; 
-      border-bottom: 1px solid #e5e7eb; 
-      padding: 1rem 0; 
-      position: sticky; 
-      top: 0; 
-      z-index: 100; 
-    }
-    .nav-content { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-    }
-    .logo { 
-      font-weight: 700; 
-      color: #7a12d4; 
-      text-decoration: none; 
-      font-size: 24px; 
-    }
-    .instructor-note {
-      background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
-      border-left: 4px solid #f59e0b;
-      padding: 1.5rem;
-      margin: 2rem 0;
-      border-radius: 0 12px 12px 0;
-    }
-    .instructor-note h4 {
-      color: #92400e;
-      margin-bottom: 0.5rem;
-    }
-    .timing-block {
-      background: #f3f4f6;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      padding: 1rem;
-      margin: 1rem 0;
-    }
-    .activity-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-    .demo-highlight {
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-radius: 6px;
-      padding: 1rem;
-      margin: 1rem 0;
-    }
-    .tool-spotlight {
-      background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin: 2rem 0;
-    }
-    .instructor-profile {
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-      padding: 2rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-    }
-    .instructor-photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 2rem;
-      border: 3px solid #ffffff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-    .mv-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .title-bold-2 { font-size: 2.25rem; font-weight: 700; line-height: 1.15; }
-    .title-bold-3 { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
-    .title-bold-6 { font-size: 1.375rem; font-weight: 700; line-height: 1.3; }
-    .title-bold-7 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
-    .body-lg { font-size: 1.25rem; line-height: 1.7; }
-    .body { font-size: 1rem; line-height: 1.6; }
-    .body-sm { font-size: 0.875rem; line-height: 1.6; }
-    .overline-text { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
-    @media (max-width: 768px) {
-      .mv-container { padding: 0 1rem; }
-      .title-bold-2 { font-size: 2rem; }
-      .instructor-profile { flex-direction: column; text-align: center; }
-      .instructor-photo { margin-right: 0; margin-bottom: 1rem; }
-    }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Day 3: Visual Presence Clone with Iman Oubou — AI Accelerator</title>
+    <meta name="description" content="Curriculum suggestions for Iman Oubou's Visual Presence Clone session. Strategic AI content creation with her proven 3-tool methodology." />
+    <meta name="theme-color" content="#7a12d4" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>" />
+    <link rel="stylesheet" href="../../../../public/mindvalley-font.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        @media (min-width: 768px) {
+            .mv-container { padding: 0 2rem; }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #7a12d4 0%, #9333ea 50%, #7a12d4 100%);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #7a12d4;
+            border-radius: 50%;
+            position: absolute;
+            left: -6px;
+            top: 4px;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -1px;
+            top: 20px;
+            bottom: -20px;
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .suggestion-banner {
+            background: linear-gradient(45deg, #fef3c7, #fde047);
+            border-left: 4px solid #f59e0b;
+        }
+    </style>
 </head>
-<body>
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="mv-container nav-content">
-      <a href="index.html" class="logo">AI Accelerator</a>
-      <div style="display: flex; gap: 1rem; align-items: center;">
-        <span class="body-sm" style="color: #6b7280;">Day 3 of 6</span>
-        <a href="index.html" style="color: #4b5563; text-decoration: none;">← Back to Program</a>
-      </div>
-    </div>
-  </nav>
+<body class="bg-white">
 
-  <!-- Hero -->
-  <section class="mv-container" style="padding: 4rem 0 3rem 0;">
-    <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
-      DAY 3 • VISUAL PRESENCE
-    </div>
-    <h1 class="title-bold-2" style="margin-bottom: 1.25rem;">Visual Presence Clone & AI Influencer</h1>
-    <p class="body-lg" style="max-width: 50rem; color: #4b5563; margin-bottom: 2rem;">
-      <strong>"Your Digital Twin Goes Visual"</strong><br>
-      Create your AI video clone with voice cloning technology. Scale your visual presence 10x while maintaining authenticity and ethical standards.
-    </p>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 60rem;">
-      <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; text-align: center;">
-        <div class="title-bold-6" style="color: #0369a1;">2 Hours</div>
-        <div class="body-sm" style="color: #0369a1;">Intensive Training</div>
-      </div>
-      <div style="background: #fef3c7; padding: 1rem; border-radius: 8px; text-align: center;">
-        <div class="title-bold-6" style="color: #92400e;">Voice + Video</div>
-        <div class="body-sm" style="color: #92400e;">AI Avatar Creation</div>
-      </div>
-      <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px; text-align: center;">
-        <div class="title-bold-6" style="color: #166534;">10x Scaling</div>
-        <div class="body-sm" style="color: #166534;">Content Production</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Instructor Profile -->
-  <section class="mv-container" style="padding: 2rem 0;">
-    <div class="instructor-profile">
-      <img src="https://media.licdn.com/dms/image/D4E03AQGhk7X7g5Xw3Q/profile-displayphoto-shrink_800_800/0/1702326891111?e=1743033600&v=beta&t=4uKG0Y9ZS4C7Rj_xP6BJ9y6Y6gZJl8gDqEYlW2N5Qp8" 
-           alt="Iman Oubou" class="instructor-photo">
-      <div>
-        <h3 class="title-bold-6" style="color: #4c1d95; margin-bottom: 0.5rem;">Iman Oubou</h3>
-        <div style="color: #7c3aed; font-weight: 600; margin-bottom: 1rem;">AI Expert & Founder, Vocable.ai</div>
-        <p class="body" style="color: #4c1d95; margin-bottom: 1rem;">
-          Serial entrepreneur, best-selling author, and GenAI thought leader. Former cancer research scientist turned tech innovator. Keynote speaker at Harvard, MIT, and Forbes Content Summit.
-        </p>
-        <div class="body-sm" style="color: #6366f1;">
-          <strong>Expertise:</strong> AI Content Marketing, Visual AI, Personal Branding 2.0
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Instructor Overview -->
-  <section style="background: #f9fafb;">
-    <div class="mv-container" style="padding: 3rem 0;">
-      <div class="instructor-note">
-        <h4 class="title-bold-6">🎯 Instructor Overview - Day 3</h4>
-        <p class="body" style="color: #92400e; margin-bottom: 1rem;">
-          <strong>Primary Goal:</strong> Students create working AI video clones and understand the ethical framework for authentic visual AI deployment.
-        </p>
-        <div class="body-sm" style="color: #92400e;">
-          <strong>Key Success Metrics:</strong><br>
-          ✓ Every student has a working voice clone<br>
-          ✓ AI video avatar created and tested<br>
-          ✓ Ethical AI disclosure framework understood<br>
-          ✓ 60-second video content generated and assessed
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hour 1: Visual Impact Revolution -->
-  <section class="mv-container" style="padding: 4rem 0;">
-    <div style="border-left: 4px solid #7a12d4; padding-left: 2rem; margin-bottom: 3rem;">
-      <h2 class="title-bold-3" style="margin-bottom: 0.5rem;">Hour 1: Visual AI Foundation</h2>
-      <p class="body-lg" style="color: #4b5563;">From text-based AI to visual presence - understanding the influence shift and setting up your visual brand audit.</p>
-    </div>
-
-    <!-- Opening Hook (5 minutes) -->
-    <div class="timing-block">
-      <div class="title-bold-6" style="color: #7a12d4; margin-bottom: 0.5rem;">00:00 - 00:05 | Visual Impact Revolution</div>
-      <div class="instructor-note">
-        <h4 class="title-bold-7">🎤 Instructor Notes</h4>
-        <p class="body-sm" style="color: #92400e;">
-          <strong>Energy Level:</strong> Exciting revelation - we're moving beyond text AI into visual influence.<br>
-          <strong>Key Message:</strong> "Video AI doesn't just change content creation - it revolutionizes personal branding and influence at scale."
-        </p>
-      </div>
-      
-      <div class="activity-card">
-        <h4 class="title-bold-6" style="margin-bottom: 1rem;">Opening Hook: "The Influence Shift"</h4>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          "So far we've built AI clones that CREATE content and EXTRACT intelligence. Today, we enter the world of visual influence - where your presence multiplies infinitely."
-        </p>
-        <div class="demo-highlight">
-          <h5 class="title-bold-7" style="color: #166534; margin-bottom: 0.5rem;">🎭 Live Statistics</h5>
-          <div class="body-sm" style="color: #166534;">
-            • Video content gets 1200% more shares than text and image combined<br>
-            • 85% of Facebook video is watched without sound (visual-first consumption)<br>
-            • Personal video content builds 6x more trust than corporate content<br>
-            • AI avatars can produce content 24/7 without creator fatigue
-          </div>
-        </div>
-        <p class="body-sm" style="color: #6b7280;">
-          <strong>Preview:</strong> "By end of today, you'll have an AI video twin that can create authentic content in your voice and visual style."
-        </p>
-      </div>
-    </div>
-
-    <!-- Visual Brand Audit (10 minutes) -->
-    <div class="timing-block">
-      <div class="title-bold-6" style="color: #7a12d4; margin-bottom: 0.5rem;">00:05 - 00:15 | CAPTURE Your Visual Brand</div>
-      
-      <div class="activity-card">
-        <h4 class="title-bold-6" style="margin-bottom: 1rem;">Visual Presence Audit</h4>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          <strong>Individual Exercise:</strong> Students analyze their current video presence and identify authentic visual patterns.
-        </p>
-        
-        <div style="background: #fef3c7; padding: 1rem; border-radius: 6px; margin: 1rem 0;">
-          <h5 class="title-bold-7" style="color: #92400e; margin-bottom: 0.5rem;">📋 Audit Checklist (Everyone Completes)</h5>
-          <div class="body-sm" style="color: #92400e;">
-            <strong>Current State Assessment:</strong><br>
-            • How do you currently show up on video?<br>
-            • What's your typical speaking pace and energy level?<br>
-            • What gestures or mannerisms are uniquely "you"?<br>
-            • What topics make you most animated?<br><br>
-            
-            <strong>Voice Pattern Analysis:</strong><br>
-            • Tone, pitch variation, speaking rhythm<br>
-            • Signature phrases or expressions you use<br>
-            • How your voice changes with different emotions<br>
-            • Pronunciation quirks or accent characteristics<br><br>
-            
-            <strong>Brand Consistency Review:</strong><br>
-            • Visual style (clothing, background, setup)<br>
-            • Messaging themes and key topics<br>
-            • Audience expectations and persona alignment
-          </div>
-        </div>
-        
-        <div class="instructor-note">
-          <h4 class="title-bold-7">🎯 Instructor Facilitation</h4>
-          <p class="body-sm" style="color: #92400e;">
-            Walk around the room, help students identify their authentic patterns. Many won't recognize their own uniqueness - point out what makes each person distinctive.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ethical Framework Setup (10 minutes) -->
-    <div class="timing-block">
-      <div class="title-bold-6" style="color: #7a12d4; margin-bottom: 0.5rem;">00:15 - 00:25 | Ethical AI Framework</div>
-      
-      <div class="activity-card">
-        <h4 class="title-bold-6" style="margin-bottom: 1rem;">Building Trust Through Transparency</h4>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          Before we create AI avatars, we establish the ethical foundation that maintains authenticity and builds audience trust.
-        </p>
-        
-        <div class="demo-highlight">
-          <h5 class="title-bold-7" style="color: #166534; margin-bottom: 0.5rem;">✅ The Transparency Framework</h5>
-          <div class="body-sm" style="color: #166534;">
-            <strong>1. Disclosure Standards:</strong><br>
-            • When and how to identify AI-generated content<br>
-            • Platform-specific disclosure requirements<br>
-            • Building disclaimers that feel natural, not robotic<br><br>
-            
-            <strong>2. Authenticity Boundaries:</strong><br>
-            • Staying true to your actual personality and values<br>
-            • What topics require your human presence vs. AI assistance<br>
-            • Maintaining consistency between AI and human content<br><br>
-            
-            <strong>3. Brand Protection:</strong><br>
-            • Quality control for AI-generated content<br>
-            • Safeguarding your reputation while scaling<br>
-            • Legal considerations and intellectual property
-          </div>
-        </div>
-        
-        <div class="instructor-note">
-          <h4 class="title-bold-7">🎯 Critical Teaching Point</h4>
-          <p class="body-sm" style="color: #92400e;">
-            <strong>Emphasize:</strong> "Ethical AI isn't about limiting what you can do - it's about building sustainable influence that enhances rather than replaces your human connection with your audience."
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Platform Overview (10 minutes) -->
-    <div class="timing-block">
-      <div class="title-bold-6" style="color: #7a12d4; margin-bottom: 0.5rem;">00:25 - 00:35 | Platform Selection & Setup</div>
-      
-      <div class="tool-spotlight">
-        <h4 class="title-bold-6" style="color: #4c1d95; margin-bottom: 1rem;">🛠️ Today's AI Avatar Tools</h4>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-          <div style="background: #ffffff; padding: 1rem; border-radius: 6px;">
-            <h5 class="title-bold-7" style="color: #7c3aed;">Voice Cloning Platform</h5>
-            <p class="body-sm" style="color: #6b7280;">ElevenLabs or similar for voice training and generation</p>
-          </div>
-          <div style="background: #ffffff; padding: 1rem; border-radius: 6px;">
-            <h5 class="title-bold-7" style="color: #7c3aed;">Avatar Creation</h5>
-            <p class="body-sm" style="color: #6b7280;">Platform selection based on use case and quality needs</p>
-          </div>
-          <div style="background: #ffffff; padding: 1rem; border-radius: 6px;">
-            <h5 class="title-bold-7" style="color: #7c3aed;">Video Generation</h5>
-            <p class="body-sm" style="color: #6b7280;">Text-to-video with your avatar and voice combined</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Break & Setup (25 minutes) -->
-    <div class="timing-block">
-      <div class="title-bold-6" style="color: #7a12d4; margin-bottom: 0.5rem;">00:35 - 01:00 | Break & Platform Setup</div>
-      
-      <div class="activity-card">
-        <h4 class="title-bold-6" style="margin-bottom: 1rem;">Platform Setup & Account Creation</h4>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          Students create accounts, set up billing if needed, and prepare materials for voice training.
-        </p>
-        
-        <div style="background: #fef3c7; padding: 1rem; border-radius: 6px;">
-          <h5 class="title-bold-7" style="color: #92400e; margin-bottom: 0.5rem;">📋 Setup Checklist</h5>
-          <div class="body-sm" style="color: #92400e;">
-            ✓ Platform accounts created and verified<br>
-            ✓ Payment methods added (if using premium tiers)<br>
-            ✓ 3-5 high-quality photos selected for avatar training<br>
-            ✓ Recording environment tested for voice training<br>
-            ✓ Consent and terms understood
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hour 2: BUILD Your Video AI Clone -->
-  <section class="mv-container" style="padding: 4rem 0;">
-    <div style="border-left: 4px solid #7a12d4; padding-left: 2rem; margin-bottom: 3rem;">
-      <h2 class="title-bold-3" style="margin-bottom: 0.5rem;">Hour 2: BUILD Your Video AI Clone</h2>
-      <p class="body-lg" style="color: #4b5563;">Hands-on creation of voice clone and visual avatar, with immediate testing and quality assessment.</p>
-    </div>
-
-    <!-- Voice Clone Creation (20 minutes) -->
-    <div class="timing-block">
-      <div class="title-bold-6" style="color: #7a12d4; margin-bottom: 0.5rem;">01:00 - 01:20 | Voice Clone Creation</div>
-      
-      <div class="activity-card">
-        <h4 class="title-bold-6" style="margin-bottom: 1rem;">Phase 1: Voice Training Session</h4>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          <strong>Everyone participates simultaneously</strong> - record voice training data with guided prompts for optimal AI learning.
-        </p>
-        
-        <div class="demo-highlight">
-          <h5 class="title-bold-7" style="color: #166534; margin-bottom: 0.5rem;">🎙️ Voice Training Protocol</h5>
-          <div class="body-sm" style="color: #166534;">
-            <strong>Recording Requirements:</strong><br>
-            • 10-15 minutes of clear, varied speech<br>
-            • Multiple emotions and tones<br>
-            • Different sentence structures and content types<br>
-            • Consistent recording quality and environment<br><br>
-            
-            <strong>Provided Prompts:</strong><br>
-            1. Professional introduction (formal tone)<br>
-            2. Passionate explanation of favorite topic (animated)<br>
-            3. Storytelling segment (narrative style)<br>
-            4. Q&A responses (conversational)<br>
-            5. Call-to-action delivery (persuasive)
-          </div>
-        </div>
-        
-        <div class="instructor-note">
-          <h4 class="title-bold-7">🎯 Quality Control</h4>
-          <p class="body-sm" style="color: #92400e;">
-            Monitor recording quality in real-time. Help students with microphone positioning, background noise reduction, and emotional range expansion. The voice training data quality determines clone success.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Visual Avatar Development (20 minutes) -->
-    <div class="timing-block">
-      <div class="title-bold-6" style="color: #7a12d4; margin-bottom: 0.5rem;">01:20 - 01:40 | Visual Avatar Development</div>
-      
-      <div class="activity-card">
-        <h4 class="title-bold-6" style="margin-bottom: 1rem;">Phase 2: Avatar Creation & Customization</h4>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          While voice clones process, students create visual avatars using photo training datasets and customize movement patterns.
-        </p>
-        
-        <div style="background: #f0f9ff; padding: 1rem; border-radius: 6px; margin: 1rem 0;">
-          <h5 class="title-bold-7" style="color: #0369a1; margin-bottom: 0.5rem;">📸 Photo Requirements & Strategy</h5>
-          <div class="body-sm" style="color: #0369a1;">
-            <strong>Optimal Training Dataset:</strong><br>
-            • 5-10 high-quality photos with varied angles<br>
-            • Consistent lighting and professional quality<br>
-            • Multiple expressions (neutral, smiling, thoughtful)<br>
-            • Clear face visibility and appropriate framing<br><br>
-            
-            <strong>Platform Upload Process:</strong><br>
-            • Photo selection and cropping optimization<br>
-            • Quality assessment and platform feedback<br>
-            • Initial avatar generation and preview<br>
-            • Customization options: gestures, expressions, movements
-          </div>
-        </div>
-        
-        <div class="instructor-note">
-          <h4 class="title-bold-7">🎯 Brand Alignment Check</h4>
-          <p class="body-sm" style="color: #92400e;">
-            <strong>Critical:</strong> Ensure avatars maintain professional authenticity. Help students balance realistic representation with brand consistency. Avoid uncanny valley effects that damage credibility.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Integration & Testing (20 minutes) -->
-    <div class="timing-block">
-      <div class="title-bold-6" style="color: #7a12d4; margin-bottom: 0.5rem;">01:40 - 02:00 | Testing & Content Creation Challenge</div>
-      
-      <div class="activity-card">
-        <h4 class="title-bold-6" style="margin-bottom: 1rem;">Live Video Clone Testing</h4>
-        <p class="body" style="color: #4b5563; margin-bottom: 1rem;">
-          <strong>Content Creation Challenge:</strong> Students create 60-90 second authentic video content using their AI twins.
-        </p>
-        
-        <div class="demo-highlight">
-          <h5 class="title-bold-7" style="color: #166534; margin-bottom: 0.5rem;">🎬 Challenge Structure</h5>
-          <div class="body-sm" style="color: #166534;">
-            <strong>Step 1: Script Your Signature Message (5 min)</strong><br>
-            • Choose topic you're passionate about<br>
-            • Write 60-90 second script in your authentic voice<br>
-            • Include your typical gestures and expressions<br><br>
-            
-            <strong>Step 2: Generate AI Video (10 min)</strong><br>
-            • Input script to AI avatar platform<br>
-            • Apply your trained voice clone<br>
-            • Generate and download initial video<br><br>
-            
-            <strong>Step 3: Quality & Authenticity Assessment (5 min)</strong><br>
-            • Review video for authenticity vs. efficiency<br>
-            • Identify areas for improvement<br>
-            • Plan use cases for deployment
-          </div>
-        </div>
-        
-        <div class="activity-card" style="margin-top: 1rem;">
-          <h5 class="title-bold-7" style="margin-bottom: 0.5rem;">🎤 Volunteer Showcase</h5>
-          <p class="body-sm" style="color: #4b5563;">
-            <strong>2-3 volunteers share their AI videos with the group:</strong><br>
-            • How authentic does it look and sound?<br>
-            • What worked well vs. what needs refinement?<br>
-            • Where would you use this in your content strategy?<br>
-            • How does it compare to your actual on-camera presence?
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Wrap-up & Integration Strategy -->
-  <section style="background: #f9fafb;">
-    <div class="mv-container" style="padding: 3rem 0;">
-      <div style="border-left: 4px solid #7a12d4; padding-left: 2rem; margin-bottom: 2rem;">
-        <h3 class="title-bold-3" style="margin-bottom: 0.5rem;">Integration & Next Steps</h3>
-        <p class="body-lg" style="color: #4b5563;">How video AI fits your content strategy and tomorrow's learning acceleration preview.</p>
-      </div>
-      
-      <div class="activity-card">
-        <h4 class="title-bold-6" style="margin-bottom: 1rem;">Workflow Integration Planning</h4>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          <div>
-            <h5 class="title-bold-7" style="color: #7a12d4; margin-bottom: 0.5rem;">Content Strategy Integration</h5>
-            <div class="body-sm" style="color: #4b5563;">
-              • How video clone fits your overall content approach<br>
-              • Quality standards: when to use AI vs. authentic recording<br>
-              • Efficiency optimization through batch processing
+    <!-- Suggestion Banner -->
+    <div class="suggestion-banner">
+        <div class="mv-container py-4">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">💡</span>
+                <div>
+                    <h3 class="title-bold-7 text-amber-800">Teaching Suggestions Only</h3>
+                    <p class="body-sm text-amber-700">These are flexible suggestions for Iman Oubou to adapt as she feels comfortable. No pressure to follow exactly!</p>
+                </div>
             </div>
-          </div>
-          <div>
-            <h5 class="title-bold-7" style="color: #7a12d4; margin-bottom: 0.5rem;">Deployment Use Cases</h5>
-            <div class="body-sm" style="color: #4b5563;">
-              • Training videos and product demonstrations<br>
-              • Social content for LinkedIn, YouTube, Instagram<br>
-              • Client communications and team updates
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-10">
+        <div class="mv-container py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="../index.html" class="text-purple-600 hover:text-purple-800">← Back to Program</a>
+                    <span class="text-gray-300">|</span>
+                    <span class="font-semibold text-gray-800">Day 3: Visual Presence Clone</span>
+                </div>
+                <div class="text-sm text-gray-600">
+                    Feb 11 • 2 hours • Iman Oubou
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      
-      <div class="instructor-note">
-        <h4 class="title-bold-6">✅ Today's Transformation Summary</h4>
-        <div class="body-sm" style="color: #92400e;">
-          <strong>Students have achieved:</strong><br>
-          ✓ Working AI video clone with authentic voice<br>
-          ✓ Ethical framework for responsible AI deployment<br>
-          ✓ 10x content production capability unlocked<br>
-          ✓ Visual presence scaling without quality compromise<br><br>
-          
-          <strong>Tomorrow's Learning Revolution:</strong><br>
-          We'll master knowledge acceleration with NotebookLM - learning any topic 10x faster and transforming research into expertise with Vykintas.
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Clear Learning Outcomes -->
-  <section class="mv-container" style="padding: 3rem 0;">
-    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 2rem;">
-      <h3 class="title-bold-6" style="color: #166534; margin-bottom: 1.5rem;">✅ Clear Learning Outcomes - Day 3</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
-        <div>
-          <div class="body-sm" style="color: #166534;">
-            <strong>☐ AI Video Clone created and tested</strong><br>
-            Working video avatar with voice consistency
-          </div>
+    <!-- Hero Section -->
+    <section class="gradient-bg">
+        <div class="mv-container" style="padding: 6rem 0 5rem 0;">
+            <div class="text-center text-white">
+                <div class="overline-text" style="margin-bottom: 1rem; color: rgba(255,255,255,0.9);">
+                    DAY 3: AI ACCELERATOR
+                </div>
+                <h1 class="title-bold-1" style="margin: 0 0 1.25rem 0;">
+                    Visual Presence Clone
+                </h1>
+                <p class="body-lg" style="max-width: 40rem; margin: 0 auto 2.5rem auto; color: rgba(255,255,255,0.9);">
+                    Strategic AI content systems with Iman Oubou. Scale your visual presence using proven methodology.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <div class="glass rounded-2xl p-6 text-center">
+                        <div class="text-2xl font-bold text-purple-900 mb-2">2 hrs</div>
+                        <div class="text-sm text-gray-700">Total Session</div>
+                    </div>
+                    <div class="glass rounded-2xl p-6 text-center">
+                        <div class="text-2xl font-bold text-purple-900 mb-2">10x</div>
+                        <div class="text-sm text-gray-700">Video Scaling</div>
+                    </div>
+                    <div class="glass rounded-2xl p-6 text-center">
+                        <div class="text-2xl font-bold text-purple-900 mb-2">3-Tool</div>
+                        <div class="text-sm text-gray-700">Methodology</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-          <div class="body-sm" style="color: #166534;">
-            <strong>☐ Voice and visual consistency achieved</strong><br>
-            Authentic replication maintains brand integrity
-          </div>
-        </div>
-        <div>
-          <div class="body-sm" style="color: #166534;">
-            <strong>☐ Video content production scaled 10x</strong><br>
-            Capability to create weeks of content in minutes
-          </div>
-        </div>
-        <div>
-          <div class="body-sm" style="color: #166534;">
-            <strong>☐ Ethical AI practices established</strong><br>
-            Transparency framework and disclosure standards
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Navigation -->
-  <section class="mv-container" style="padding: 2rem 0;">
-    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e5e7eb; padding-top: 2rem;">
-      <a href="day2.html" style="color: #7a12d4; text-decoration: none; font-weight: 600;">← Day 2: Meetings & Integration</a>
-      <a href="index.html" style="color: #4b5563; text-decoration: none;">Program Overview</a>
-      <a href="day4.html" style="color: #7a12d4; text-decoration: none; font-weight: 600;">Day 4: Learning Accelerator →</a>
-    </div>
-  </section>
+    <!-- Instructor Profile Section -->
+    <section class="mv-container" style="padding: 5rem 0;">
+        <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
+                        SESSION INSTRUCTOR
+                    </div>
+                    <h2 class="title-bold-3" style="margin-bottom: 1.5rem; color: #0f131a;">
+                        Iman Oubou
+                    </h2>
+                    <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">
+                        Co-founder of Vocable.ai and author of "The Glass Ledge." Former BuzzFeed producer who has built 
+                        systematic AI content workflows that scale. Creates strategic content campaigns with her signature 
+                        3-tool methodology and has her own AI clone @justamara.ai.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+                            <span class="body-sm text-gray-600">Co-founder of Vocable.ai</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+                            <span class="body-sm text-gray-600">Former BuzzFeed Producer</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+                            <span class="body-sm text-gray-600">Author: "The Glass Ledge"</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+                            <span class="body-sm text-gray-600">53K Instagram following (@imanoubou)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/300x300/f3f4f6/6b7280?text=Iman+Oubou" 
+                         alt="Iman Oubou - AI Content Systems Expert"
+                         class="w-64 h-64 rounded-2xl object-cover mx-auto shadow-lg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flexible Curriculum Suggestions -->
+    <section style="background-color: #f9fafb;">
+        <div class="mv-container" style="padding: 5rem 0;">
+            <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">
+                Suggested Session Flow ✨
+            </h2>
+            
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-8">
+                <div class="flex items-start space-x-3">
+                    <span class="text-amber-600 text-xl mt-1">📝</span>
+                    <div>
+                        <h4 class="title-bold-7 text-amber-800 mb-2">Note for Iman</h4>
+                        <p class="body-sm text-amber-700">
+                            These are flexible suggestions based on your proven expertise. Feel free to adapt, skip, or restructure 
+                            based on what feels natural to you and what resonates with the audience. Your authentic teaching style 
+                            is what matters most! 💜
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- 90-Minute Core Teaching -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-purple-600 text-xl font-bold">90</span>
+                        </div>
+                        <div>
+                            <h3 class="title-bold-5 mb-1">Core Teaching (Suggested)</h3>
+                            <p class="body-sm text-gray-600">Flexible content blocks to choose from</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-6">
+                        <div class="space-y-4">
+                            <div class="relative">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line"></div>
+                                <h4 class="title-bold-7 mb-2">Strategic Foundation (20 min)</h4>
+                                <p class="body-sm text-gray-600">Share your journey: BuzzFeed → Vocable.ai. System vs. tool mindset.</p>
+                            </div>
+                            <div class="relative">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line"></div>
+                                <h4 class="title-bold-7 mb-2">Your 3-Tool Method (30 min)</h4>
+                                <p class="body-sm text-gray-600">Buzzabout → Vocable.ai → InVideo workflow demo (if comfortable)</p>
+                            </div>
+                            <div class="relative">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line"></div>
+                                <h4 class="title-bold-7 mb-2">@justamara.ai Showcase (25 min)</h4>
+                                <p class="body-sm text-gray-600">Show your AI clone in action, share creation insights</p>
+                            </div>
+                            <div class="relative">
+                                <div class="timeline-dot"></div>
+                                <h4 class="title-bold-7 mb-2">Scaling Strategies (15 min)</h4>
+                                <p class="body-sm text-gray-600">Revenue models, sustainable growth tips</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 30-Minute Hands-On -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-green-600 text-xl font-bold">30</span>
+                        </div>
+                        <div>
+                            <h3 class="title-bold-5 mb-1">Audience Interaction (Optional)</h3>
+                            <p class="body-sm text-gray-600">Choose what feels right in the moment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-6">
+                        <div class="space-y-4">
+                            <div class="relative">
+                                <div class="timeline-dot bg-green-600"></div>
+                                <div class="timeline-line bg-green-200"></div>
+                                <h4 class="title-bold-7 mb-2">Q&A + Insights (15 min)</h4>
+                                <p class="body-sm text-gray-600">Answer questions about your experience</p>
+                            </div>
+                            <div class="relative">
+                                <div class="timeline-dot bg-green-600"></div>
+                                <h4 class="title-bold-7 mb-2">Mini Workshop (15 min)</h4>
+                                <p class="body-sm text-gray-600">Help someone find their content pillar (if you're up for it)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Expertise Areas -->
+    <section class="mv-container" style="padding: 5rem 0;">
+        <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">
+            Your Proven Methodology 🚀
+        </h2>
+        
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+            <div class="bg-purple-50 px-6 py-4">
+                <h3 class="title-bold-6 text-purple-800">Based on Your Real Success:</h3>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="title-bold-7 mb-3 text-purple-600">Content Strategy Systems</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• Your Vocable.ai platform insights</li>
+                            <li>• 30-day campaign methodology</li>
+                            <li>• Systematic vs random content creation</li>
+                            <li>• BuzzFeed viral content principles</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="title-bold-7 mb-3 text-blue-600">Authentic AI Implementation</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• @justamara.ai creation story</li>
+                            <li>• Maintaining authenticity with AI</li>
+                            <li>• Ethical considerations you've learned</li>
+                            <li>• Practical scaling without burnout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suggested Tools (Based on Your Work) -->
+    <section style="background-color: #f9fafb;">
+        <div class="mv-container" style="padding: 5rem 0;">
+            <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">
+                Tools You Could Mention 🛠️
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-500">
+                    <h3 class="title-bold-6 mb-3 text-purple-600">Research</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="body-sm font-medium">Buzzabout.ai</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">Your method</span>
+                        </div>
+                        <div class="body-sm text-gray-600">
+                            The trend discovery tool from your 3-step process
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500">
+                    <h3 class="title-bold-6 mb-3 text-blue-600">Strategy</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="body-sm font-medium">Vocable.ai</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Your platform</span>
+                        </div>
+                        <div class="body-sm text-gray-600">
+                            Your strategic content campaign platform
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-orange-500">
+                    <h3 class="title-bold-6 mb-3 text-orange-600">Production</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="body-sm font-medium">InVideo AI</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded">Your choice</span>
+                        </div>
+                        <div class="body-sm text-gray-600">
+                            From your faceless content methodology
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-amber-400">
+                <div class="flex items-start space-x-3">
+                    <span class="text-amber-500 text-lg mt-1">💡</span>
+                    <div>
+                        <h4 class="title-bold-7 text-amber-800 mb-2">Your Authentic Voice</h4>
+                        <p class="body-sm text-amber-700">
+                            Share what you're actually using and what works for you. Your real experience 
+                            is more valuable than any structured curriculum. The audience wants to learn 
+                            from your genuine journey! 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Potential Outcomes -->
+    <section class="mv-container" style="padding: 5rem 0;">
+        <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">
+            What Participants Could Learn
+        </h2>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-lg">
+                <p class="body-lg text-center mb-8" style="color: #4b5563;">
+                    Based on your expertise, they could gain:
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="title-bold-7 mb-1">Strategic Mindset</h4>
+                                <p class="body-sm text-gray-600">Your journey from random posts to systematic campaigns</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="title-bold-7 mb-1">BuzzFeed Insights</h4>
+                                <p class="body-sm text-gray-600">Viral content principles from your producer background</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="title-bold-7 mb-1">AI Clone Reality</h4>
+                                <p class="body-sm text-gray-600">Real experience creating @justamara.ai</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="title-bold-7 mb-1">Entrepreneurial Journey</h4>
+                                <p class="body-sm text-gray-600">Building Vocable.ai and scaling content businesses</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="title-bold-7 mb-1">Authentic Growth</h4>
+                                <p class="body-sm text-gray-600">How you built 53K Instagram following with systems</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="title-bold-7 mb-1">Practical Wisdom</h4>
+                                <p class="body-sm text-gray-600">Real lessons from "The Glass Ledge" journey</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supportive Message -->
+    <section style="background-color: #f9fafb;">
+        <div class="mv-container" style="padding: 5rem 0;">
+            <div class="max-w-3xl mx-auto bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl p-8 text-center">
+                <span class="text-5xl mb-4 block">💜</span>
+                <h2 class="title-bold-3 mb-4 text-purple-800">You've Got This, Iman!</h2>
+                <p class="body-lg text-purple-700 mb-4">
+                    Your authentic experience and journey are exactly what people need to hear. 
+                    Trust your expertise and share what feels natural to you.
+                </p>
+                <p class="body text-purple-600">
+                    No pressure, no rigid structure. Just you, being amazing and sharing your wisdom! ✨
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mv-container" style="padding: 4rem 0; color: #6b7280; text-align: center;">
+        <div class="border-t border-gray-200 pt-8">
+            <p class="body-sm">💜 AI Accelerator Program • Day 3 Suggestions</p>
+            <p class="body-sm mt-2">For Iman Oubou • February 11, 2026</p>
+        </div>
+    </footer>
+
 </body>
 </html>
