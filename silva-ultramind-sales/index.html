@@ -594,6 +594,62 @@
       white-space: nowrap;
       border: 0;
     }
+    
+    /* FAQ Section */
+    .faq {
+      background: #f9fafb;
+      padding: 6rem 0;
+    }
+    
+    .faq-item {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      margin: 1rem 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      border-color: #7a12d4;
+      box-shadow: 0 5px 15px rgba(122, 18, 212, 0.1);
+    }
+    
+    .faq-question {
+      background: none;
+      border: none;
+      width: 100%;
+      padding: 2rem;
+      text-align: left;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #0f131a;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-answer {
+      padding: 0 2rem 2rem 2rem;
+      color: #4b5563;
+      line-height: 1.6;
+      display: none;
+    }
+    
+    .faq-answer.open {
+      display: block;
+    }
+    
+    .faq-icon {
+      font-size: 1.5rem;
+      color: #7a12d4;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-icon.open {
+      transform: rotate(45deg);
+    }
   </style>
 </head>
 <body>
@@ -674,6 +730,42 @@
       <div style="text-align: center; margin-top: 4rem;">
         <h3 style="font-size: 2rem; margin-bottom: 2rem; color: #0f131a;">The difference is accessing the right brainwave state.</h3>
         <p style="font-size: 1.25rem; color: #4b5563; max-width: 800px; margin: 0 auto;">Most people spend their entire lives trapped in Beta consciousness - the everyday waking state. But indigenous cultures and consciousness researchers have long known that Alpha and Theta states hold the keys to transformation.</p>
+      </div>
+      
+      <!-- Life Areas Transformation -->
+      <div style="margin-top: 6rem;">
+        <h3 style="font-size: 2rem; margin-bottom: 3rem; text-align: center; color: #0f131a;">Transform Every Area of Your Life</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+          <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 2rem; border-radius: 12px;">
+            <h4 style="color: #92400e; font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">🏥 Health & Healing</h4>
+            <p style="color: #78350f;">Accelerate recovery from illness, heal chronic conditions, improve eyesight, overcome hair loss, boost fitness levels, and program your body for optimal health through targeted visualization.</p>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #10b981; padding: 2rem; border-radius: 12px;">
+            <h4 style="color: #065f46; font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">💼 Career & Business</h4>
+            <p style="color: #064e3b;">Solve impossible business problems, manifest perfect opportunities, break through glass ceilings, and receive innovative solutions through higher intelligence guidance.</p>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #fef2f2, #fecaca); border-left: 4px solid #ef4444; padding: 2rem; border-radius: 12px;">
+            <h4 style="color: #7f1d1d; font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">❤️ Relationships</h4>
+            <p style="color: #7f1d1d;">Navigate complex relationship decisions, heal emotional wounds, attract ideal partners, and create deeper connections through enhanced intuition and empathy.</p>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #f0f9ff, #dbeafe); border-left: 4px solid #3b82f6; padding: 2rem; border-radius: 12px;">
+            <h4 style="color: #1e3a8a; font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">🎯 Personal Goals</h4>
+            <p style="color: #1e3a8a;">Break unwanted habits instantly, install empowering behaviors, accelerate skill development, and program your subconscious for automatic success patterns.</p>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #fdf4ff, #f3e8ff); border-left: 4px solid #a855f7; padding: 2rem; border-radius: 12px;">
+            <h4 style="color: #6b21a8; font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">🔮 Psychic Development</h4>
+            <p style="color: #6b21a8;">Develop clairvoyance, psychometry (reading objects), remote viewing abilities, and access information beyond your five senses for better decision-making.</p>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #fffbeb, #fef3c7); border-left: 4px solid #f59e0b; padding: 2rem; border-radius: 12px;">
+            <h4 style="color: #92400e; font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">🌟 Life Purpose</h4>
+            <p style="color: #78350f;">Connect with your authentic purpose, receive guidance on major life decisions, and align with your soul's deepest desires and highest potential.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -774,25 +866,33 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Clinical Results Section -->
   <section class="testimonials">
     <div class="container">
-      <h2 class="section-title">Real Results from Real People</h2>
+      <h2 class="section-title">Scientifically Documented Results</h2>
+      <p style="text-align: center; font-size: 1.25rem; margin-bottom: 3rem; color: #e5e7eb; max-width: 800px; margin: 0 auto 3rem auto;">These aren't just testimonials - they're documented clinical outcomes that changed medical history.</p>
       
       <div class="testimonial-grid">
         <div class="testimonial-card">
-          <div class="testimonial-quote">"After 20 years of trying to solve a business problem, I used the Mental Video technique. Within 48 hours, the perfect solution appeared through a chance encounter. It felt like magic."</div>
-          <div class="testimonial-author">Sarah Chen, Entrepreneur</div>
+          <div class="testimonial-quote">"159 cancer patients given 12 months to live used Silva visualization techniques. Four years later: 63 were alive, 14 showed no cancer, 12 had cancer regressing. Average survival doubled to 24.4 months."</div>
+          <div class="testimonial-author">Dr. Carl Simonton Clinical Study</div>
         </div>
         
         <div class="testimonial-card">
-          <div class="testimonial-quote">"The Three Scenes technique broke my 15-year smoking habit in one session. I visualized myself as a non-smoker and my identity just shifted. No willpower needed."</div>
-          <div class="testimonial-author">Marcus Rodriguez, Executive</div>
+          <div class="testimonial-quote">"I had severe acne that destroyed my confidence for years. Using the Three Scenes technique 3 times daily for 5 weeks, I completely cleared my skin. The symbolism spoke directly to my subconscious."</div>
+          <div class="testimonial-author">Vishen Lakhiani, Your Instructor</div>
         </div>
         
         <div class="testimonial-card">
-          <div class="testimonial-quote">"I was skeptical about psychic abilities until Silva training. Now I regularly get accurate information about people and situations that saves me from costly mistakes."</div>
-          <div class="testimonial-author">Dr. Jennifer Walsh, Physician</div>
+          <div class="testimonial-quote">"When Mr. Wright believed in the treatment, his lymphoma tumors melted overnight and he became cancer-free. When belief was shattered, cancer returned. The mind's healing power is undeniable."</div>
+          <div class="testimonial-author">Dr. Bruno Klopfer Medical Case</div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 4rem;">
+        <div style="background: rgba(255, 255, 255, 0.1); padding: 3rem; border-radius: 20px; max-width: 800px; margin: 0 auto;">
+          <h3 style="color: #7a12d4; font-size: 1.5rem; margin-bottom: 1rem;">"The Silva System is the single most powerful tool I have to offer patients."</h3>
+          <p style="color: #e5e7eb; font-style: italic;">— Dr. Carl Simonton, Pioneer of Mind-Body Cancer Treatment</p>
         </div>
       </div>
     </div>
@@ -899,6 +999,95 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Is the Silva Method scientifically proven?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The Silva Method has over 60 years of research and documentation. Dr. Carl Simonton's clinical study with 159 terminal cancer patients showed doubled survival rates using Silva visualization techniques. The method is based on scientifically-verified brainwave states (Alpha, Theta, Delta) that can be measured with EEG machines.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            How is this different from regular meditation?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Regular meditation typically aims for relaxation or mindfulness. Silva training teaches you to function consciously in Alpha and Theta brainwave states to solve specific problems, manifest goals, and access psychic abilities. You learn precise techniques like Mental Video and Three Scenes for targeted outcomes, not just general relaxation.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Do I need to believe in psychic abilities for this to work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Not at all. Even skeptics get results because the techniques work through natural brainwave states, not belief. Many students start for practical problem-solving and stress reduction, then discover their intuitive abilities naturally develop. The method works through scientific principles of consciousness, not mystical beliefs.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            How much time do I need to practice daily?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Just 15-20 minutes daily for the 28-day program. Once you master the techniques, you can use them as needed. The Three Scenes technique takes only 5 minutes, and the Mental Video can be done in 10 minutes. Many students find they save hours by solving problems faster with these methods.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            What if I can't visualize clearly?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Don't worry - perfect visualization isn't required. The techniques work through intention and symbolic representation. Some people are more visual, others feel sensations, or simply "know" things. Vishen teaches multiple approaches to accommodate different learning styles. Your subconscious understands symbolism regardless of how clearly you see it.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Can children learn the Silva Method?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Children are naturally closer to Alpha states and often learn faster than adults. Jose Silva originally developed these techniques while helping his own children with their studies. The method is completely safe and natural - you're simply learning to access brainwave states you already have.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            How quickly will I see results?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Many students report benefits within the first week - better sleep, reduced stress, increased intuition. For specific problems, results often come within days or weeks depending on complexity. Vishen cleared his skin condition in 5 weeks using the Three Scenes technique. The Mental Video technique can produce solutions through synchronicity within 24-48 hours.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Is this religious or does it conflict with my beliefs?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The Silva Method is completely secular and based on scientific understanding of consciousness. It doesn't require or conflict with any religious beliefs. Students from all faiths practice Silva techniques successfully. The "higher intelligence" concept can be interpreted as intuition, subconscious wisdom, or whatever aligns with your personal beliefs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="final-cta" id="join">
     <div class="container">
@@ -908,6 +1097,62 @@
       <p style="margin-top: 2rem; font-size: 0.875rem; color: #e5e7eb;">15-day money-back guarantee • Instant access • Available on all devices</p>
     </div>
   </section>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleFAQ(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+      
+      // Close all other FAQs
+      document.querySelectorAll('.faq-answer').forEach(ans => {
+        if (ans !== answer) {
+          ans.classList.remove('open');
+        }
+      });
+      
+      document.querySelectorAll('.faq-icon').forEach(ic => {
+        if (ic !== icon) {
+          ic.classList.remove('open');
+          ic.textContent = '+';
+        }
+      });
+      
+      // Toggle current FAQ
+      answer.classList.toggle('open');
+      icon.classList.toggle('open');
+      
+      if (answer.classList.contains('open')) {
+        icon.textContent = '×';
+      } else {
+        icon.textContent = '+';
+      }
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Add loading animation to CTA buttons
+    document.querySelectorAll('.cta-button').forEach(button => {
+      button.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = 'translateY(-2px)';
+        }, 150);
+      });
+    });
+  </script>
 
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
@@ -936,7 +1181,18 @@
       "Psychic development",
       "Problem solving through higher intelligence",
       "Manifestation techniques"
-    ]
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "6000000"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.mindvalley.com/ultramind/",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
   }
   </script>
 
