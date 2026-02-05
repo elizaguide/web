@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finerminds Master PRD</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .toc {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .toc h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-list li {
+            margin: 8px 0;
+        }
+        
+        .toc-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .toc-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: #1a202c;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+        }
+        
+        h4 {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .info-box {
+            background: #e6fffa;
+            border: 1px solid #38b2ac;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-box {
+            background: #fffbf0;
+            border: 1px solid #ed8936;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-card h4 {
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 10px;
+        }
+        
+        .p1 {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        
+        .p2 {
+            background: #feebc8;
+            color: #dd6b20;
+        }
+        
+        .p3 {
+            background: #c6f6d5;
+            color: #2f855a;
+        }
+        
+        .platform-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 2px 4px;
+        }
+        
+        .app-web {
+            background: #3182ce;
+            color: white;
+        }
+        
+        .web-only {
+            background: #ed8936;
+            color: white;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #5a67d8;
+            transform: translateX(-3px);
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Finerminds Master PRD</h1>
+            <p>Complete Product Requirements Document - Level Three Architecture</p>
+        </div>
+        
+        <div class="content">
+            <a href="index.html" class="back-link">← Back to PRD Hub</a>
+            
+            <div class="toc">
+                <h2>📑 Table of Contents</h2>
+                <ul class="toc-list">
+                    <li><a href="#overview">1. Product Overview</a></li>
+                    <li><a href="#architecture">2. Three-Level Architecture</a></li>
+                    <li><a href="#features">3. Feature Requirements</a></li>
+                    <li><a href="#user-flows">4. User Flows</a></li>
+                    <li><a href="#technical">5. Technical Requirements</a></li>
+                    <li><a href="#timeline">6. Development Timeline</a></li>
+                    <li><a href="#success-metrics">7. Success Metrics</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="overview">
+                <h2>1. Product Overview</h2>
+                
+                <div class="highlight-box">
+                    <h3>🎯 Mission Statement</h3>
+                    <p>Finerminds is the exclusive social network for conscious builders - entrepreneurs, wellness practitioners, and personal growth enthusiasts who want to build meaningful businesses while developing themselves.</p>
+                </div>
+                
+                <h3>Core Value Proposition</h3>
+                <ul>
+                    <li><strong>Quality over Quantity:</strong> Curated community through Mindvalley qualification + peer approval</li>
+                    <li><strong>Growth-Focused:</strong> AI-powered matching for professional and personal development</li>
+                    <li><strong>Multi-Dimensional:</strong> Business + Wellness + Consciousness integration</li>
+                    <li><strong>People-First Architecture:</strong> Users span across all networks/groups/discussions</li>
+                </ul>
+                
+                <h3>Target Audience: "Healthy Builders"</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Primary Persona</h4>
+                        <ul>
+                            <li>Wellness-oriented entrepreneurs</li>
+                            <li>Conscious business builders</li>
+                            <li>Personal growth enthusiasts</li>
+                            <li>Mindvalley community members</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Qualification Criteria</h4>
+                        <ul>
+                            <li>1+ year Mindvalley membership</li>
+                            <li>5+ programs completed</li>
+                            <li>OR peer approval (3 endorsements, 0 rejections)</li>
+                            <li>Aligned with conscious business values</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="architecture">
+                <h2>2. Three-Level Architecture</h2>
+                
+                <div class="info-box">
+                    <strong>Key Innovation:</strong> People exist at the universal layer and can participate across ALL networks, groups, and discussions simultaneously - creating unprecedented cross-pollination.
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Description</th>
+                            <th>Activity Feed</th>
+                            <th>Chat</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Level 1: Networks</strong></td>
+                            <td>Broad communities aligned with core interests</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Multi-channel</td>
+                            <td>Wellness Founders Society, Mindvalley Membership</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Level 2: Groups</strong></td>
+                            <td>Focused communities within networks</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Multi-channel</td>
+                            <td>AI Mastery, London Group, Female Founders</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Level 3: Discussions</strong></td>
+                            <td>Topic-specific chat threads</td>
+                            <td>❌ No</td>
+                            <td>✅ Single thread</td>
+                            <td>"Clawdbot Tips", "Brain Health Supplements"</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Architecture Principles</h3>
+                <ol>
+                    <li><strong>Cognitive Simplicity:</strong> Only 2 activity feeds (L1, L2) to reduce mental load</li>
+                    <li><strong>Conversation Depth:</strong> Unlimited discussion creation at L3 for focused topics</li>
+                    <li><strong>Democratic Creation:</strong> Anyone can create discussions and become admin</li>
+                    <li><strong>Spam Protection:</strong> Invite limits and peer-based quality control</li>
+                </ol>
+            </div>
+
+            <div class="section" id="features">
+                <h2>3. Feature Requirements</h2>
+                
+                <h3>Level 1: Networks <span class="priority-badge p1">P1 - Launch Critical</span></h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Activity Feed <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Network-wide posts, announcements, achievements, and member highlights</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Network Chat <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>General network discussion, welcome channel, announcements channel</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Member Directory <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Curated member profiles with bio, expertise, and connection preferences</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Events <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Network events with RSVP, attendee visibility, and post-event networking</p>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>Web-Only Features (P2):</strong> "I'm Looking For" and "Peer Support" will launch web-only initially due to complexity, then migrate to app after validation.
+                </div>
+                
+                <h3>Level 2: Groups <span class="priority-badge p1">P1 - Launch Critical</span></h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Group Activity Feed <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Group-specific posts, discussions, resource shares, and member interactions</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Group Chat Channels <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Multiple themed channels per group (general, resources, events, random)</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Resource Sharing <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Link sharing, file uploads, resource libraries, and collaborative documents</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Discussion Creation <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>One-click creation of Level 3 discussions from group context</p>
+                    </div>
+                </div>
+                
+                <h3>Level 3: Discussions <span class="priority-badge p1">P1 - Launch Critical</span></h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Discussion Chat <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Focused topic discussions with real-time messaging and thread management</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Admin Controls <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Creator becomes admin with invite control, member management, and moderation</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Resource Integration <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Share links, documents, and resources within discussion context</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Invite Management <span class="platform-badge app-web">App + Web</span></h4>
+                        <p>Configurable invite limits (default: 50) with spam prevention</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="user-flows">
+                <h2>4. User Flows</h2>
+                
+                <h3>Primary Flow: Network → Group → Discussion</h3>
+                <ol>
+                    <li><strong>Entry:</strong> User joins network (Mindvalley qualification or peer approval)</li>
+                    <li><strong>Discovery:</strong> Browses network activity feed, discovers relevant groups</li>
+                    <li><strong>Group Engagement:</strong> Joins group, participates in group chat and activity feed</li>
+                    <li><strong>Discussion Creation:</strong> Starts focused discussion on specific topic</li>
+                    <li><strong>Community Building:</strong> Invites relevant members, builds focused community</li>
+                    <li><strong>Cross-Network Value:</strong> Discussion attracts members from multiple networks</li>
+                </ol>
+                
+                <h3>Alternative Flows</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Event-Driven Entry</h4>
+                        <p>External users join via event invitations, get limited access, then apply for full membership</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Direct Network Invite</h4>
+                        <p>Existing members invite new users directly to networks with peer approval process</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Cross-Network Discovery</h4>
+                        <p>Users discover discussions and groups across all their networks via unified activity feed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="technical">
+                <h2>5. Technical Requirements</h2>
+                
+                <h3>Chat Integration: GetStream</h3>
+                <div class="info-box">
+                    <strong>Decision:</strong> Use GetStream for chat functionality on both web and app platforms for reliable real-time messaging.
+                </div>
+                
+                <h4>Chat Architecture</h4>
+                <ul>
+                    <li><strong>Network Chat:</strong> Multiple channels per network (general, announcements, welcome)</li>
+                    <li><strong>Group Chat:</strong> Multiple channels per group (general, resources, events, random)</li>
+                    <li><strong>Discussion Chat:</strong> Single thread per discussion with admin controls</li>
+                    <li><strong>Access Control:</strong> Membership-based access with role permissions</li>
+                </ul>
+                
+                <h3>Database Schema (Key Entities)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Entity</th>
+                            <th>Key Relationships</th>
+                            <th>Critical Fields</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Users</td>
+                            <td>Many-to-many with Networks, Groups, Discussions</td>
+                            <td>mindvalley_qualification, approval_status, bio, expertise</td>
+                        </tr>
+                        <tr>
+                            <td>Networks</td>
+                            <td>One-to-many with Groups, Events</td>
+                            <td>qualification_criteria, admin_users, member_count</td>
+                        </tr>
+                        <tr>
+                            <td>Groups</td>
+                            <td>Belongs to Network, has many Discussions</td>
+                            <td>parent_network, admin_users, chat_channels</td>
+                        </tr>
+                        <tr>
+                            <td>Discussions</td>
+                            <td>Belongs to Group, has creator/admin</td>
+                            <td>creator_id, invite_limit, member_list, getstream_channel_id</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>API Requirements</h3>
+                <ul>
+                    <li><strong>User Management:</strong> Registration, qualification checking, peer approval workflow</li>
+                    <li><strong>Network Operations:</strong> Join requests, member management, activity feed generation</li>
+                    <li><strong>Group Operations:</strong> Group creation, membership, chat channel management</li>
+                    <li><strong>Discussion Operations:</strong> Creation, invitation, admin controls, GetStream integration</li>
+                    <li><strong>Cross-Platform Sync:</strong> Real-time sync between web and mobile apps</li>
+                </ul>
+            </div>
+
+            <div class="section" id="timeline">
+                <h2>6. Development Timeline</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Duration</th>
+                            <th>Key Deliverables</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Phase 1: PRD & Design</strong></td>
+                            <td>Today - Friday</td>
+                            <td>Complete PRDs, Clickable mockups, Team approval</td>
+                            <td>🟢 In Progress</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phase 2: Core Architecture</strong></td>
+                            <td>Week 1</td>
+                            <td>Database schema, API foundation, GetStream integration</td>
+                            <td>🟡 Planned</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phase 3: Level 3 Implementation</strong></td>
+                            <td>Week 2</td>
+                            <td>Discussion creation, chat functionality, admin controls</td>
+                            <td>🟡 Planned</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phase 4: Integration & Testing</strong></td>
+                            <td>Week 3</td>
+                            <td>Full system integration, internal beta testing</td>
+                            <td>🟡 Planned</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phase 5: Launch</strong></td>
+                            <td>Week 4</td>
+                            <td>Production deployment, Mindvalley user onboarding</td>
+                            <td>🟡 Planned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section" id="success-metrics">
+                <h2>7. Success Metrics</h2>
+                
+                <h3>Launch Metrics (Month 1)</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Community Growth</h4>
+                        <ul>
+                            <li>500+ qualified members</li>
+                            <li>10+ active networks</li>
+                            <li>50+ active groups</li>
+                            <li>200+ discussions created</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Engagement Quality</h4>
+                        <ul>
+                            <li>70% weekly active users</li>
+                            <li>5+ messages per user per week</li>
+                            <li>80% discussion completion rate</li>
+                            <li>4.5+ app store rating</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Long-term Success Indicators</h3>
+                <ul>
+                    <li><strong>Network Effects:</strong> Cross-network discussion participation > 30%</li>
+                    <li><strong>Quality Control:</strong> Peer approval acceptance rate > 85%</li>
+                    <li><strong>Business Impact:</strong> Member-reported business connections and deals</li>
+                    <li><strong>Retention:</strong> 90-day retention rate > 60%</li>
+                    <li><strong>Organic Growth:</strong> 70% new members from peer referrals</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h3>🎯 North Star Metric</h3>
+                    <p><strong>Meaningful Connections per User per Month:</strong> Track the number of substantial professional or personal connections made through the platform, measured by mutual endorsement or collaboration initiation.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 40px 0; color: #718096;">
+                <p>Last updated: February 4, 2026 | Version: 1.0 | Status: Ready for Review</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finerminds Chat System PRD</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #5a67d8;
+            transform: translateX(-3px);
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: #1a202c;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+        }
+        
+        h4 {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .info-box {
+            background: #e6fffa;
+            border: 1px solid #38b2ac;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-box {
+            background: #fffbf0;
+            border: 1px solid #ed8936;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .chat-flow {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 25px 0;
+            border-left: 5px solid #38b2ac;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .chat-mockup {
+            background: #2d3748;
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .chat-message {
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        
+        .user-message {
+            background: #667eea;
+            margin-left: 20px;
+        }
+        
+        .system-message {
+            background: #38b2ac;
+            font-style: italic;
+            opacity: 0.8;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 10px;
+        }
+        
+        .p1 {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        
+        .p2 {
+            background: #feebc8;
+            color: #dd6b20;
+        }
+        
+        .platform-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 2px 4px;
+        }
+        
+        .app-web {
+            background: #3182ce;
+            color: white;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💬 Chat System PRD</h1>
+            <p>Multi-Channel Chat Architecture with GetStream Integration</p>
+        </div>
+        
+        <div class="content">
+            <a href="index.html" class="back-link">← Back to PRD Hub</a>
+
+            <div class="section">
+                <h2>1. Chat System Overview</h2>
+                
+                <div class="highlight-box">
+                    <h3>🎯 Chat Philosophy</h3>
+                    <p>Reddit-style simplicity meets Slack-level functionality. Chat exists at ALL three levels with different purposes and access controls, creating natural conversation flow from broad networking to focused collaboration.</p>
+                </div>
+                
+                <h3>Core Principles</h3>
+                <ul>
+                    <li><strong>Multi-Level Access:</strong> Chat functionality spans all three architecture levels</li>
+                    <li><strong>Context-Aware:</strong> Chat behavior adapts based on level (network/group/discussion)</li>
+                    <li><strong>Permission-Based:</strong> Access controlled by membership at each level</li>
+                    <li><strong>Cross-Platform:</strong> Seamless experience between web and mobile apps</li>
+                    <li><strong>Quality-First:</strong> Built-in moderation and admin controls</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. Three-Level Chat Architecture</h2>
+                
+                <div class="chat-flow">
+                    <h3>🌍 Level 1: Network Chat</h3>
+                    <h4>Purpose: Broad Community Networking</h4>
+                    <ul>
+                        <li><strong>General Channel:</strong> Open discussion for all network members</li>
+                        <li><strong>Announcements:</strong> Admin-only posting, member reactions/comments</li>
+                        <li><strong>Welcome Channel:</strong> New member introductions and community onboarding</li>
+                        <li><strong>Events Channel:</strong> Event announcements, RSVP discussions, follow-ups</li>
+                    </ul>
+                </div>
+                
+                <div class="chat-flow">
+                    <h3>👥 Level 2: Group Chat</h3>
+                    <h4>Purpose: Focused Topic Collaboration</h4>
+                    <ul>
+                        <li><strong>General Channel:</strong> Group-specific discussions and collaboration</li>
+                        <li><strong>Resources Channel:</strong> Link sharing, file uploads, collaborative documents</li>
+                        <li><strong>Events Channel:</strong> Group events, workshops, meetups coordination</li>
+                        <li><strong>Random Channel:</strong> Off-topic discussions, community building</li>
+                    </ul>
+                </div>
+                
+                <div class="chat-flow">
+                    <h3>💬 Level 3: Discussion Chat</h3>
+                    <h4>Purpose: Deep-Dive Topic Conversations</h4>
+                    <ul>
+                        <li><strong>Single Thread:</strong> One focused conversation per discussion topic</li>
+                        <li><strong>Resource Integration:</strong> Inline sharing of relevant links and documents</li>
+                        <li><strong>Admin Controls:</strong> Creator manages invites, moderation, and access</li>
+                        <li><strong>Notification System:</strong> Real-time updates for all discussion participants</li>
+                    </ul>
+                </div>
+                
+                <div class="info-box">
+                    <strong>Key Insight:</strong> Each level serves different conversation depths - from networking (L1) to collaboration (L2) to deep focus (L3). Users naturally flow between levels based on their needs.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>3. GetStream Integration Requirements</h2>
+                
+                <h3>Why GetStream?</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>✅ Proven Reliability</h4>
+                        <p>Battle-tested chat infrastructure with 99.9% uptime and global CDN support</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>✅ Cross-Platform SDKs</h4>
+                        <p>Native support for React (web) and React Native (mobile) with consistent APIs</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>✅ Advanced Features</h4>
+                        <p>Real-time messaging, file uploads, reactions, threading, and moderation tools</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>✅ Scalability</h4>
+                        <p>Handles millions of concurrent users with automatic scaling and performance optimization</p>
+                    </div>
+                </div>
+                
+                <h3>GetStream Channel Architecture</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Channel Type</th>
+                            <th>Naming Convention</th>
+                            <th>Access Control</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Network</td>
+                            <td>team</td>
+                            <td>network-{network_id}-{channel_type}</td>
+                            <td>Network membership required</td>
+                        </tr>
+                        <tr>
+                            <td>Group</td>
+                            <td>team</td>
+                            <td>group-{group_id}-{channel_type}</td>
+                            <td>Group membership required</td>
+                        </tr>
+                        <tr>
+                            <td>Discussion</td>
+                            <td>messaging</td>
+                            <td>discussion-{discussion_id}</td>
+                            <td>Invite-only by admin</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Integration Specifications</h3>
+                
+                <h4>Authentication & Authorization</h4>
+                <div class="code-block">
+// User token generation with Finerminds permissions
+const userToken = streamClient.generateUserToken({
+  user_id: user.id,
+  role: user.role, // admin, moderator, member
+  networks: user.networks.map(n => n.id),
+  groups: user.groups.map(g => g.id),
+  discussions: user.discussions.map(d => d.id)
+});
+                </div>
+                
+                <h4>Channel Creation Flow</h4>
+                <div class="code-block">
+// Network channel creation
+const networkChannel = streamClient.channel('team', `network-${networkId}-general`, {
+  name: `${networkName} - General`,
+  members: networkMemberIds,
+  created_by_id: adminUserId,
+  custom: {
+    level: 'network',
+    network_id: networkId,
+    channel_type: 'general'
+  }
+});
+
+// Discussion channel creation (invite-only)
+const discussionChannel = streamClient.channel('messaging', `discussion-${discussionId}`, {
+  name: discussionTitle,
+  members: invitedMemberIds,
+  created_by_id: creatorUserId,
+  custom: {
+    level: 'discussion',
+    discussion_id: discussionId,
+    group_id: parentGroupId,
+    invite_limit: inviteLimit
+  }
+});
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>4. Chat Features & Functionality</h2>
+                
+                <h3>Core Messaging Features <span class="priority-badge p1">P1 - Launch Critical</span></h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Real-Time Messaging <span class="platform-badge app-web">App + Web</span></h4>
+                        <ul>
+                            <li>Instant message delivery and read receipts</li>
+                            <li>Typing indicators and online presence</li>
+                            <li>Message history and search</li>
+                            <li>Rich text formatting (bold, italics, links)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>File & Media Sharing <span class="platform-badge app-web">App + Web</span></h4>
+                        <ul>
+                            <li>Image and document uploads</li>
+                            <li>Link previews and metadata extraction</li>
+                            <li>File type restrictions and size limits</li>
+                            <li>Media gallery and resource library</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Reactions & Engagement <span class="platform-badge app-web">App + Web</span></h4>
+                        <ul>
+                            <li>Emoji reactions on messages</li>
+                            <li>Message threading for focused discussions</li>
+                            <li>Message pinning for important information</li>
+                            <li>Mention system (@username notifications)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Moderation Tools <span class="platform-badge app-web">App + Web</span></h4>
+                        <ul>
+                            <li>Message deletion and editing</li>
+                            <li>User muting and channel management</li>
+                            <li>Admin controls for each level</li>
+                            <li>Spam prevention and content filtering</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Advanced Features <span class="priority-badge p2">P2 - Post-Launch</span></h3>
+                <ul>
+                    <li><strong>Voice Messages:</strong> Quick audio recording and playback</li>
+                    <li><strong>Screen Sharing:</strong> Live collaboration and presentation tools</li>
+                    <li><strong>Video Calls:</strong> Integrated video chat for discussions</li>
+                    <li><strong>AI Summaries:</strong> Automatic conversation summarization</li>
+                    <li><strong>Translation:</strong> Real-time message translation for global community</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. User Experience Design</h2>
+                
+                <h3>Mobile Chat Interface</h3>
+                <div class="chat-mockup">
+<div class="system-message">💬 Welcome to AI Mastery - General Chat</div>
+<div class="chat-message"><strong>Sarah M:</strong> Just finished the Clawdbot setup! Anyone else testing AI for content creation?</div>
+<div class="user-message"><strong>You:</strong> Yes! Been using it for Instagram planning. Which prompts work best for you?</div>
+<div class="chat-message"><strong>Marcus P:</strong> @You check out the Resources channel - I shared my prompt library there 📎</div>
+<div class="chat-message"><strong>Lisa K:</strong> Should we start a focused discussion on this? Seems like there's lots of interest</div>
+<div class="user-message"><strong>You:</strong> Great idea! I'll create "Clawdbot for Content Creation" discussion</div>
+<div class="system-message">🎯 You created discussion: "Clawdbot for Content Creation"</div>
+                </div>
+                
+                <h3>Navigation Patterns</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Level Switching</h4>
+                        <p>Clear breadcrumb navigation: Network → Group → Discussion with easy level switching</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Channel Lists</h4>
+                        <p>Collapsible channel lists per level with unread indicators and priority sorting</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Quick Actions</h4>
+                        <p>One-tap discussion creation, member invites, and resource sharing</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h4>Notification Center</h4>
+                        <p>Unified notifications across all levels with smart prioritization</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>6. Technical Implementation</h2>
+                
+                <h3>Frontend Integration</h3>
+                
+                <h4>React Web Implementation</h4>
+                <div class="code-block">
+import { StreamChat } from 'stream-chat';
+import { ChannelList, Channel, MessageList, MessageInput } from 'stream-chat-react';
+
+// Initialize Stream client with Finerminds auth
+const client = StreamChat.getInstance(process.env.REACT_APP_STREAM_KEY);
+await client.connectUser(userToken, user);
+
+// Multi-level channel filtering
+const networkFilter = { 
+  type: 'team', 
+  custom: { level: 'network', network_id: currentNetworkId } 
+};
+
+const groupFilter = { 
+  type: 'team', 
+  custom: { level: 'group', group_id: currentGroupId } 
+};
+
+const discussionFilter = { 
+  type: 'messaging', 
+  custom: { level: 'discussion', discussion_id: currentDiscussionId } 
+};
+                </div>
+                
+                <h4>React Native Mobile Implementation</h4>
+                <div class="code-block">
+import { StreamChat } from 'stream-chat';
+import { ChannelList, Channel, MessageList, MessageInput } from 'stream-chat-expo';
+
+// Cross-platform consistency with shared chat logic
+const FinermindsChat = ({ level, levelId, channelType = 'general' }) => {
+  const channelId = `${level}-${levelId}-${channelType}`;
+  const channel = client.channel('team', channelId);
+  
+  return (
+    &lt;Channel channel={channel}&gt;
+      &lt;MessageList /&gt;
+      &lt;MessageInput /&gt;
+    &lt;/Channel&gt;
+  );
+};
+                </div>
+                
+                <h3>Backend Integration</h3>
+                <ul>
+                    <li><strong>User Management:</strong> Sync Finerminds users with GetStream user system</li>
+                    <li><strong>Channel Management:</strong> Automatic channel creation/deletion based on network/group lifecycle</li>
+                    <li><strong>Permission Sync:</strong> Real-time permission updates when membership changes</li>
+                    <li><strong>Webhook Integration:</strong> Process chat events for analytics and moderation</li>
+                </ul>
+                
+                <h3>Security & Privacy</h3>
+                <div class="warning-box">
+                    <strong>Critical Requirements:</strong>
+                    <ul>
+                        <li>End-to-end encryption for sensitive discussions</li>
+                        <li>GDPR compliance for message data and user privacy</li>
+                        <li>Role-based access control with granular permissions</li>
+                        <li>Audit logging for all administrative actions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>7. Testing & Quality Assurance</h2>
+                
+                <h3>Test Scenarios</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Expected Behavior</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>User joins network</td>
+                            <td>Automatic access to network channels, welcome message</td>
+                            <td>P1</td>
+                        </tr>
+                        <tr>
+                            <td>Discussion creation</td>
+                            <td>New GetStream channel, creator becomes admin, invite flow</td>
+                            <td>P1</td>
+                        </tr>
+                        <tr>
+                            <td>Cross-platform sync</td>
+                            <td>Messages appear instantly on web and mobile</td>
+                            <td>P1</td>
+                        </tr>
+                        <tr>
+                            <td>Permission changes</td>
+                            <td>Chat access updates immediately when membership changes</td>
+                            <td>P1</td>
+                        </tr>
+                        <tr>
+                            <td>Moderation actions</td>
+                            <td>Admin controls work correctly, spam prevention active</td>
+                            <td>P2</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Performance Requirements</h3>
+                <ul>
+                    <li><strong>Message Latency:</strong> < 100ms for real-time messaging</li>
+                    <li><strong>Channel Loading:</strong> < 2 seconds for channel history</li>
+                    <li><strong>File Upload:</strong> < 5 seconds for documents up to 10MB</li>
+                    <li><strong>Offline Support:</strong> Queue messages when offline, sync when reconnected</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>8. Launch Strategy</h2>
+                
+                <h3>Phased Rollout</h3>
+                <ol>
+                    <li><strong>Internal Beta:</strong> Mindvalley team testing with limited networks</li>
+                    <li><strong>Qualified Users:</strong> Existing Mindvalley members with 1+ year qualification</li>
+                    <li><strong>Peer Approval:</strong> Open peer approval system for broader community</li>
+                    <li><strong>Feature Expansion:</strong> Advanced features based on usage patterns</li>
+                </ol>
+                
+                <div class="highlight-box">
+                    <h3>🎯 Success Metrics</h3>
+                    <ul>
+                        <li><strong>Engagement:</strong> 70% of users send 5+ messages per week</li>
+                        <li><strong>Retention:</strong> 80% of discussion creators remain active after 30 days</li>
+                        <li><strong>Quality:</strong> Less than 1% of messages require moderation</li>
+                        <li><strong>Cross-Level Flow:</strong> 60% of users participate across multiple levels</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 40px 0; color: #718096;">
+                <p>Last updated: February 4, 2026 | Version: 1.0 | Status: Ready for Implementation</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finerminds Technical Architecture</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #5a67d8;
+            transform: translateX(-3px);
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: #1a202c;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+        }
+        
+        h4 {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .info-box {
+            background: #e6fffa;
+            border: 1px solid #38b2ac;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-box {
+            background: #fffbf0;
+            border: 1px solid #ed8936;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .tech-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .tech-card h4 {
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .api-endpoint {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .method-get {
+            border-left: 4px solid #38b2ac;
+        }
+        
+        .method-post {
+            border-left: 4px solid #667eea;
+        }
+        
+        .method-patch {
+            border-left: 4px solid #ed8936;
+        }
+        
+        .method-delete {
+            border-left: 4px solid #e53e3e;
+        }
+        
+        .architecture-diagram {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 25px 0;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .layer {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            border: 1px solid #cbd5e0;
+            display: inline-block;
+            min-width: 150px;
+        }
+        
+        .layer-frontend {
+            background: #e6fffa;
+            border-color: #38b2ac;
+        }
+        
+        .layer-api {
+            background: #ebf8ff;
+            border-color: #3182ce;
+        }
+        
+        .layer-business {
+            background: #f0fff4;
+            border-color: #48bb78;
+        }
+        
+        .layer-data {
+            background: #fef5e7;
+            border-color: #ed8936;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 10px;
+        }
+        
+        .p1 {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        
+        .p2 {
+            background: #feebc8;
+            color: #dd6b20;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .tech-stack {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 Technical Architecture</h1>
+            <p>Backend Systems, APIs, and Integration Specifications</p>
+        </div>
+        
+        <div class="content">
+            <a href="index.html" class="back-link">← Back to PRD Hub</a>
+
+            <div class="section">
+                <h2>1. System Overview</h2>
+                
+                <div class="highlight-box">
+                    <h3>🎯 Architecture Philosophy</h3>
+                    <p>Scalable, event-driven architecture that supports people-first multi-level participation with real-time chat integration. Built for rapid iteration and seamless cross-platform experiences.</p>
+                </div>
+                
+                <div class="architecture-diagram">
+                    <h3>System Architecture Layers</h3>
+                    <div style="margin: 20px 0;">
+                        <div class="layer layer-frontend">
+                            <strong>Frontend Layer</strong><br>
+                            React Web + React Native Mobile
+                        </div>
+                        <div style="display: block; margin: 10px 0; color: #718096;">↓ API Calls ↓</div>
+                        <div class="layer layer-api">
+                            <strong>API Gateway</strong><br>
+                            REST + GraphQL + WebSocket
+                        </div>
+                        <div style="display: block; margin: 10px 0; color: #718096;">↓ Business Logic ↓</div>
+                        <div class="layer layer-business">
+                            <strong>Business Services</strong><br>
+                            Auth, Networks, Groups, Discussions
+                        </div>
+                        <div style="display: block; margin: 10px 0; color: #718096;">↓ Data Persistence ↓</div>
+                        <div class="layer layer-data">
+                            <strong>Data Layer</strong><br>
+                            PostgreSQL + Redis + GetStream
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Core Principles</h3>
+                <ul>
+                    <li><strong>Event-Driven:</strong> Real-time updates across all clients using WebSocket connections</li>
+                    <li><strong>Microservices Ready:</strong> Modular design allows future service separation</li>
+                    <li><strong>API-First:</strong> All features accessible via REST/GraphQL APIs</li>
+                    <li><strong>Cross-Platform:</strong> Single API serves web and mobile clients</li>
+                    <li><strong>Third-Party Integration:</strong> Clean abstraction layer for GetStream and Mindvalley APIs</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. Technology Stack</h2>
+                
+                <div class="tech-stack">
+                    <div class="tech-card">
+                        <h4>🎨 Frontend</h4>
+                        <ul>
+                            <li><strong>Web:</strong> React 18, TypeScript, TailwindCSS</li>
+                            <li><strong>Mobile:</strong> React Native, Expo SDK</li>
+                            <li><strong>State:</strong> Zustand + React Query</li>
+                            <li><strong>Chat:</strong> GetStream React SDK</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>🖥️ Backend</h4>
+                        <ul>
+                            <li><strong>Runtime:</strong> Node.js 18+, TypeScript</li>
+                            <li><strong>Framework:</strong> Express.js with Helmet, CORS</li>
+                            <li><strong>API:</strong> REST + GraphQL (Apollo Server)</li>
+                            <li><strong>Auth:</strong> JWT + Passport.js</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>💾 Database</h4>
+                        <ul>
+                            <li><strong>Primary:</strong> PostgreSQL 15+</li>
+                            <li><strong>Cache:</strong> Redis 7+</li>
+                            <li><strong>ORM:</strong> Prisma</li>
+                            <li><strong>Search:</strong> Full-text search (PostgreSQL)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>🔌 Integrations</h4>
+                        <ul>
+                            <li><strong>Chat:</strong> GetStream Chat API</li>
+                            <li><strong>Auth:</strong> Mindvalley OAuth/SSO</li>
+                            <li><strong>Storage:</strong> AWS S3 / Cloudflare R2</li>
+                            <li><strong>CDN:</strong> Cloudflare</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>🚀 Infrastructure</h4>
+                        <ul>
+                            <li><strong>Hosting:</strong> Vercel (web) + Railway (API)</li>
+                            <li><strong>Database:</strong> Supabase / Railway PostgreSQL</li>
+                            <li><strong>Monitoring:</strong> Sentry + LogRocket</li>
+                            <li><strong>Analytics:</strong> Mixpanel + PostHog</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>🛠️ DevOps</h4>
+                        <ul>
+                            <li><strong>CI/CD:</strong> GitHub Actions</li>
+                            <li><strong>Testing:</strong> Jest + Playwright</li>
+                            <li><strong>Linting:</strong> ESLint + Prettier</li>
+                            <li><strong>Type Safety:</strong> TypeScript strict mode</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <strong>Tech Stack Rationale:</strong> Chosen for rapid development speed, excellent TypeScript support, and seamless integration with GetStream. This stack allows the team to move quickly while maintaining code quality and scalability.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>3. Database Schema</h2>
+                
+                <h3>Core Entities</h3>
+                <div class="code-block">
+<span style="color: #ffd700;">// User Model</span>
+model User {
+  id                    String   @id @default(cuid())
+  email                String   @unique
+  username             String   @unique
+  display_name         String
+  bio                  String?
+  avatar_url           String?
+  
+  <span style="color: #ffd700;">// Mindvalley Integration</span>
+  mindvalley_user_id   String?  @unique
+  qualification_status QualificationStatus
+  programs_completed   Int      @default(0)
+  member_since         DateTime?
+  
+  <span style="color: #ffd700;">// Relationships</span>
+  network_memberships  NetworkMember[]
+  group_memberships    GroupMember[]
+  discussion_memberships DiscussionMember[]
+  created_discussions  Discussion[] @relation("DiscussionCreator")
+  
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+}
+
+<span style="color: #ffd700;">// Network Model</span>
+model Network {
+  id                  String    @id @default(cuid())
+  name               String
+  description        String
+  slug               String    @unique
+  avatar_url         String?
+  banner_url         String?
+  
+  <span style="color: #ffd700;">// Access Control</span>
+  qualification_type QualificationType
+  requires_approval  Boolean   @default(true)
+  is_public         Boolean   @default(false)
+  
+  <span style="color: #ffd700;">// Relationships</span>
+  members           NetworkMember[]
+  groups            Group[]
+  admin_ids         String[]
+  
+  <span style="color: #ffd700;">// GetStream Integration</span>
+  getstream_channels String[] <span style="color: #888;">// [general, announcements, welcome, events]</span>
+  
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+}
+
+<span style="color: #ffd700;">// Group Model</span>
+model Group {
+  id                String    @id @default(cuid())
+  name             String
+  description      String
+  slug             String
+  avatar_url       String?
+  
+  <span style="color: #ffd700;">// Hierarchy</span>
+  network          Network   @relation(fields: [network_id], references: [id])
+  network_id       String
+  
+  <span style="color: #ffd700;">// Relationships</span>
+  members          GroupMember[]
+  discussions      Discussion[]
+  admin_ids        String[]
+  
+  <span style="color: #ffd700;">// GetStream Integration</span>
+  getstream_channels String[] <span style="color: #888;">// [general, resources, events, random]</span>
+  
+  created_at       DateTime @default(now())
+  updated_at       DateTime @updatedAt
+}
+
+<span style="color: #ffd700;">// Discussion Model (Level 3)</span>
+model Discussion {
+  id                    String    @id @default(cuid())
+  title                String
+  description          String?
+  
+  <span style="color: #ffd700;">// Hierarchy</span>
+  group                Group     @relation(fields: [group_id], references: [id])
+  group_id             String
+  creator              User      @relation("DiscussionCreator", fields: [creator_id], references: [id])
+  creator_id           String
+  
+  <span style="color: #ffd700;">// Settings</span>
+  invite_limit         Int       @default(50)
+  is_private          Boolean   @default(false)
+  allow_member_invites Boolean   @default(true)
+  status              DiscussionStatus @default(ACTIVE)
+  
+  <span style="color: #ffd700;">// Relationships</span>
+  members             DiscussionMember[]
+  admin_ids           String[]
+  
+  <span style="color: #ffd700;">// GetStream Integration</span>
+  getstream_channel_id String   @unique
+  
+  <span style="color: #ffd700;">// Analytics</span>
+  total_messages      Int      @default(0)
+  total_resources     Int      @default(0)
+  last_activity       DateTime @default(now())
+  
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+}
+                </div>
+                
+                <h3>Membership Models</h3>
+                <div class="code-block">
+<span style="color: #ffd700;">// Network Membership</span>
+model NetworkMember {
+  id         String            @id @default(cuid())
+  user       User              @relation(fields: [user_id], references: [id])
+  user_id    String
+  network    Network           @relation(fields: [network_id], references: [id])
+  network_id String
+  role       MemberRole        @default(MEMBER)
+  status     MembershipStatus  @default(ACTIVE)
+  joined_at  DateTime          @default(now())
+  
+  @@unique([user_id, network_id])
+}
+
+<span style="color: #ffd700;">// Group Membership</span>
+model GroupMember {
+  id       String       @id @default(cuid())
+  user     User         @relation(fields: [user_id], references: [id])
+  user_id  String
+  group    Group        @relation(fields: [group_id], references: [id])
+  group_id String
+  role     MemberRole   @default(MEMBER)
+  joined_at DateTime    @default(now())
+  
+  @@unique([user_id, group_id])
+}
+
+<span style="color: #ffd700;">// Discussion Membership</span>
+model DiscussionMember {
+  id            String     @id @default(cuid())
+  user          User       @relation(fields: [user_id], references: [id])
+  user_id       String
+  discussion    Discussion @relation(fields: [discussion_id], references: [id])
+  discussion_id String
+  role          MemberRole @default(MEMBER)
+  invited_by    String?
+  joined_at     DateTime   @default(now())
+  
+  @@unique([user_id, discussion_id])
+}
+
+<span style="color: #ffd700;">// Enums</span>
+enum QualificationStatus {
+  PENDING
+  QUALIFIED
+  REJECTED
+}
+
+enum QualificationType {
+  MINDVALLEY_MEMBER
+  PEER_APPROVAL
+  OPEN
+}
+
+enum MemberRole {
+  ADMIN
+  MODERATOR
+  MEMBER
+}
+
+enum MembershipStatus {
+  ACTIVE
+  INACTIVE
+  BANNED
+}
+
+enum DiscussionStatus {
+  ACTIVE
+  ARCHIVED
+  CONCLUDED
+  DELETED
+}
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>4. API Specifications</h2>
+                
+                <h3>Authentication Endpoints</h3>
+                <div class="api-endpoint method-post">
+                    <strong>POST</strong> /api/auth/login<br>
+                    <small>Authenticate user with Mindvalley credentials or email/password</small>
+                </div>
+                <div class="code-block">
+{
+  "email": "user@mindvalley.com",
+  "password": "secure_password",
+  "mindvalley_token": "optional_mv_token"
+}
+
+<span style="color: #ffd700;">// Response</span>
+{
+  "user": { user_object },
+  "jwt_token": "eyJ...",
+  "getstream_token": "stream_jwt_token"
+}
+                </div>
+                
+                <div class="api-endpoint method-get">
+                    <strong>GET</strong> /api/auth/me<br>
+                    <small>Get current user profile and permissions</small>
+                </div>
+                
+                <h3>Network Management</h3>
+                <div class="api-endpoint method-get">
+                    <strong>GET</strong> /api/networks<br>
+                    <small>List user's networks with membership status</small>
+                </div>
+                
+                <div class="api-endpoint method-post">
+                    <strong>POST</strong> /api/networks/{id}/join<br>
+                    <small>Request to join network (triggers approval process if needed)</small>
+                </div>
+                
+                <div class="api-endpoint method-get">
+                    <strong>GET</strong> /api/networks/{id}/members<br>
+                    <small>List network members with pagination and filtering</small>
+                </div>
+                
+                <h3>Discussion Operations <span class="priority-badge p1">P1 - Critical</span></h3>
+                <div class="api-endpoint method-post">
+                    <strong>POST</strong> /api/groups/{id}/discussions<br>
+                    <small>Create new discussion in group</small>
+                </div>
+                <div class="code-block">
+{
+  "title": "Clawdbot for Content Creation",
+  "description": "Share experiences and best practices...",
+  "invite_limit": 50,
+  "is_private": false,
+  "allow_member_invites": true,
+  "initial_invites": ["user_001", "user_002"]
+}
+
+<span style="color: #ffd700;">// Response</span>
+{
+  "discussion": {
+    "id": "disc_001",
+    "title": "Clawdbot for Content Creation",
+    "getstream_channel_id": "discussion-disc_001",
+    "invite_code": "inv_abc123",
+    ...
+  },
+  "getstream_channel": {
+    "channel": { getstream_channel_object }
+  }
+}
+                </div>
+                
+                <div class="api-endpoint method-post">
+                    <strong>POST</strong> /api/discussions/{id}/members<br>
+                    <small>Invite members to discussion</small>
+                </div>
+                <div class="code-block">
+{
+  "user_ids": ["user_003", "user_004"],
+  "invitation_message": "Join our discussion about AI tools!"
+}
+                </div>
+                
+                <div class="api-endpoint method-patch">
+                    <strong>PATCH</strong> /api/discussions/{id}<br>
+                    <small>Update discussion settings (admin only)</small>
+                </div>
+                
+                <div class="api-endpoint method-get">
+                    <strong>GET</strong> /api/groups/{id}/discussions<br>
+                    <small>List discussions in group with activity indicators</small>
+                </div>
+                <div class="code-block">
+{
+  "discussions": [
+    {
+      "id": "disc_001",
+      "title": "Clawdbot for Content Creation",
+      "member_count": 12,
+      "unread_count": 3,
+      "last_activity": "2026-02-04T15:45:00Z",
+      "last_message_preview": "Great workflow tips! Thanks everyone 🚀",
+      "is_member": true,
+      "can_join": true
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "total": 25,
+    "has_next": true
+  }
+}
+                </div>
+                
+                <h3>Real-Time Events</h3>
+                <div class="warning-box">
+                    <strong>WebSocket Events:</strong> All real-time updates are handled through WebSocket connections for live UI updates.
+                </div>
+                
+                <div class="code-block">
+<span style="color: #ffd700;">// WebSocket Event Types</span>
+{
+  "discussion.created": {
+    "discussion_id": "disc_001",
+    "group_id": "group_ai_mastery",
+    "creator": { user_object }
+  },
+  
+  "discussion.member_joined": {
+    "discussion_id": "disc_001",
+    "user": { user_object },
+    "member_count": 13
+  },
+  
+  "discussion.message_count_updated": {
+    "discussion_id": "disc_001",
+    "total_messages": 48,
+    "unread_count": 4
+  },
+  
+  "network.member_approved": {
+    "network_id": "network_001",
+    "user": { user_object }
+  }
+}
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>5. GetStream Integration</h2>
+                
+                <h3>Channel Management Strategy</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Channel Naming</th>
+                            <th>Channel Type</th>
+                            <th>Member Sync</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Network</td>
+                            <td>network-{id}-{type}</td>
+                            <td>team</td>
+                            <td>Auto-sync on membership change</td>
+                        </tr>
+                        <tr>
+                            <td>Group</td>
+                            <td>group-{id}-{type}</td>
+                            <td>team</td>
+                            <td>Auto-sync on membership change</td>
+                        </tr>
+                        <tr>
+                            <td>Discussion</td>
+                            <td>discussion-{id}</td>
+                            <td>messaging</td>
+                            <td>Manual invite-only management</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Integration Architecture</h3>
+                <div class="code-block">
+<span style="color: #ffd700;">// GetStream Service Layer</span>
+class GetStreamService {
+  
+  <span style="color: #ffd700;">// Discussion Channel Creation</span>
+  async createDiscussionChannel(discussion: Discussion, creator: User) {
+    const channelId = `discussion-${discussion.id}`;
+    
+    const channel = this.client.channel('messaging', channelId, {
+      name: discussion.title,
+      created_by_id: creator.id,
+      members: [creator.id],
+      custom: {
+        level: 'discussion',
+        discussion_id: discussion.id,
+        group_id: discussion.group_id,
+        invite_limit: discussion.invite_limit,
+        finerminds_data: {
+          group_name: discussion.group.name,
+          network_name: discussion.group.network.name
+        }
+      }
+    });
+    
+    await channel.create();
+    await this.sendWelcomeMessage(channel, discussion);
+    
+    return channel;
+  }
+  
+  <span style="color: #ffd700;">// Member Synchronization</span>
+  async syncDiscussionMembers(discussionId: string, memberIds: string[]) {
+    const channelId = `discussion-${discussionId}`;
+    const channel = this.client.channel('messaging', channelId);
+    
+    <span style="color: #ffd700;">// Add new members</span>
+    await channel.addMembers(memberIds);
+    
+    <span style="color: #ffd700;">// Send notification about new members</span>
+    await this.sendMemberJoinedNotification(channel, memberIds);
+  }
+  
+  <span style="color: #ffd700;">// Webhook Processing</span>
+  async processWebhook(event: GetStreamEvent) {
+    switch(event.type) {
+      case 'message.new':
+        await this.handleNewMessage(event);
+        break;
+      case 'member.added':
+        await this.handleMemberAdded(event);
+        break;
+      case 'channel.updated':
+        await this.handleChannelUpdated(event);
+        break;
+    }
+  }
+}
+                </div>
+                
+                <h3>Performance Optimizations</h3>
+                <ul>
+                    <li><strong>Channel Caching:</strong> Cache frequently accessed channels in Redis</li>
+                    <li><strong>Batch Operations:</strong> Group member additions/removals for efficiency</li>
+                    <li><strong>Lazy Loading:</strong> Load channel history only when needed</li>
+                    <li><strong>Connection Pooling:</strong> Reuse GetStream client connections</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. Security & Privacy</h2>
+                
+                <h3>Authentication & Authorization</h3>
+                <div class="tech-stack">
+                    <div class="tech-card">
+                        <h4>🔐 JWT Implementation</h4>
+                        <ul>
+                            <li>Short-lived access tokens (15 min)</li>
+                            <li>Refresh token rotation</li>
+                            <li>Role-based permissions in JWT payload</li>
+                            <li>Automatic token validation middleware</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>🛡️ Permission System</h4>
+                        <ul>
+                            <li>Network-level access control</li>
+                            <li>Group membership validation</li>
+                            <li>Discussion invite-only enforcement</li>
+                            <li>Admin action authorization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>🔒 Data Protection</h4>
+                        <ul>
+                            <li>HTTPS/TLS 1.3 encryption</li>
+                            <li>Database connection encryption</li>
+                            <li>PII data pseudonymization</li>
+                            <li>GDPR deletion compliance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>🚨 Security Monitoring</h4>
+                        <ul>
+                            <li>Rate limiting on all endpoints</li>
+                            <li>Suspicious activity detection</li>
+                            <li>Audit logging for admin actions</li>
+                            <li>Real-time security alerts</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Privacy Controls</h3>
+                <div class="warning-box">
+                    <strong>GDPR Compliance Requirements:</strong>
+                    <ul>
+                        <li>Right to data portability (export all user data)</li>
+                        <li>Right to erasure (complete data deletion)</li>
+                        <li>Data processing transparency (clear privacy policy)</li>
+                        <li>Consent management for data collection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>7. Performance & Scalability</h2>
+                
+                <h3>Performance Targets</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Target</th>
+                            <th>Monitoring Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>API Response Time</td>
+                            <td>&lt; 200ms (95th percentile)</td>
+                            <td>APM monitoring + health checks</td>
+                        </tr>
+                        <tr>
+                            <td>Database Query Time</td>
+                            <td>&lt; 50ms (95th percentile)</td>
+                            <td>Query performance monitoring</td>
+                        </tr>
+                        <tr>
+                            <td>Real-time Message Latency</td>
+                            <td>&lt; 100ms</td>
+                            <td>GetStream analytics + WebSocket monitoring</td>
+                        </tr>
+                        <tr>
+                            <td>Page Load Time</td>
+                            <td>&lt; 2s (LCP)</td>
+                            <td>Core Web Vitals monitoring</td>
+                        </tr>
+                        <tr>
+                            <td>Uptime</td>
+                            <td>99.9%</td>
+                            <td>Synthetic monitoring + alerting</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Scaling Strategy</h3>
+                <div class="info-box">
+                    <strong>Horizontal Scaling Plan:</strong>
+                    <ul>
+                        <li><strong>Phase 1 (0-10k users):</strong> Single server deployment with connection pooling</li>
+                        <li><strong>Phase 2 (10k-100k users):</strong> Load balancer + multiple API servers + read replicas</li>
+                        <li><strong>Phase 3 (100k+ users):</strong> Microservices architecture + CDN + database sharding</li>
+                    </ul>
+                </div>
+                
+                <h3>Caching Strategy</h3>
+                <div class="code-block">
+<span style="color: #ffd700;">// Multi-Layer Caching</span>
+
+<span style="color: #ffd700;">// 1. Application Cache (Redis)</span>
+const cacheKey = `user:${userId}:networks`;
+const cachedNetworks = await redis.get(cacheKey);
+if (cachedNetworks) {
+  return JSON.parse(cachedNetworks);
+}
+
+<span style="color: #ffd700;">// 2. Database Query Cache</span>
+const networks = await prisma.network.findMany({
+  where: { members: { some: { user_id: userId } } },
+  include: { _count: { select: { members: true } } },
+  <span style="color: #ffd700;">// Cache at Prisma level</span>
+  cacheStrategy: { ttl: 300 }
+});
+
+<span style="color: #ffd700;">// 3. CDN Cache (Static Assets)</span>
+<span style="color: #888;">// Avatar images, documents cached at edge</span>
+
+<span style="color: #ffd700;">// 4. Browser Cache (API Responses)</span>
+app.get('/api/networks/:id', (req, res) => {
+  res.set('Cache-Control', 'public, max-age=300');
+  <span style="color: #888;">// Client-side caching for 5 minutes</span>
+});
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>8. Development Workflow</h2>
+                
+                <h3>Environment Strategy</h3>
+                <ul>
+                    <li><strong>Development:</strong> Local environment with Docker Compose</li>
+                    <li><strong>Staging:</strong> Production-like environment for testing</li>
+                    <li><strong>Production:</strong> Live environment with monitoring</li>
+                </ul>
+                
+                <h3>CI/CD Pipeline</h3>
+                <div class="code-block">
+<span style="color: #ffd700;"># GitHub Actions Workflow</span>
+name: Deploy Finerminds
+
+on:
+  push:
+    branches: [main, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run type checking
+        run: npm run type-check
+      
+      - name: Run tests
+        run: npm run test
+        env:
+          DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
+      
+      - name: Run E2E tests
+        run: npm run test:e2e
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to Production
+        run: |
+          # Deploy API to Railway
+          # Deploy Frontend to Vercel
+          # Run database migrations
+          # Update GetStream configuration
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>🚀 Deployment Checklist</h3>
+                    <ul>
+                        <li>✅ All tests passing (unit + integration + E2E)</li>
+                        <li>✅ Database migrations applied</li>
+                        <li>✅ GetStream channels configured</li>
+                        <li>✅ Environment variables updated</li>
+                        <li>✅ Monitoring and alerts active</li>
+                        <li>✅ Rollback plan prepared</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 40px 0; color: #718096;">
+                <p>Last updated: February 4, 2026 | Version: 1.0 | Status: Ready for Implementation</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
