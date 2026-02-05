@@ -516,7 +516,7 @@
         </div>
         <p>What really attracts top talent isn't <span class="highlight-text">surface-level perks</span>—it's the depth of purpose, the authenticity of culture, and the promise of transformation.</p>
       </div>
-      <img src="../presentations/employee-branding/fancy-offices-dont-matter-slide.jpg" alt="Early Mindvalley office - humble workspace showing mission matters more than fancy offices">
+      <img src="../../presentations/employee-branding/fancy-offices-dont-matter-slide.jpg" alt="Early Mindvalley office - humble workspace showing mission matters more than fancy offices">
     </div>
 
     <!-- Slide 3: 60 Countries Global Talent Magnet -->
@@ -532,7 +532,7 @@
           <div class="principle-item">Chose mission over money</div>
         </div>
       </div>
-      <img src="../presentations/employee-branding/global-talent-magnet-slide.jpg" alt="Diverse Mindvalley team from 60 countries gathered in Kuala Lumpur">
+      <img src="../../presentations/employee-branding/global-talent-magnet-slide.jpg" alt="Diverse Mindvalley team from 60 countries gathered in Kuala Lumpur">
     </div>
 
     <!-- Slide 4: Hook & Statistics -->
@@ -658,7 +658,7 @@
         </div>
         <p>This <span class="highlight-text">framework becomes your blueprint</span> for creating a workplace that attracts and retains the world's best talent across every motivation type.</p>
       </div>
-      <img src="../presentations/employee-branding/four-pillars-framework-slide.jpg" alt="Four Pillars Framework showing happiness, abundance, growth, and meaning quadrants">
+      <img src="../../presentations/employee-branding/four-pillars-framework-slide.jpg" alt="Four Pillars Framework showing happiness, abundance, growth, and meaning quadrants">
     </div>
 
     <!-- Slide 8: Identification Framework -->
@@ -713,7 +713,7 @@
           <div class="principle-item">Every hire elevates the entire team</div>
         </div>
       </div>
-      <img src="../presentations/employee-branding/bar-of-awesomeness-slide.jpg" alt="Bar of Awesomeness diagram showing blue dots above the bar and red dots below">
+      <img src="../../presentations/employee-branding/bar-of-awesomeness-slide.jpg" alt="Bar of Awesomeness diagram showing blue dots above the bar and red dots below">
     </div>
 
     <!-- Slide 10: Building Brand Strategy -->
@@ -753,7 +753,7 @@
         <p>Every step of our <span class="highlight-text">cultural design journey</span> becomes embedded in the experiences we create. When we intentionally craft a culture of <span class="highlight-text">transformation, consciousness, and growth</span>, it naturally flows into every product decision.</p>
         <p>The road ahead isn't just about building better products—it's about <span class="highlight-text">designing the cultural foundation</span> that makes extraordinary user experiences inevitable.</p>
       </div>
-      <img src="../presentations/employee-branding/designing-mindvalley-culture.jpg" alt="Mindvalley road journey with logo - the cultural design path to transformation">
+      <img src="../../presentations/employee-branding/designing-mindvalley-culture.jpg" alt="Mindvalley road journey with logo - the cultural design path to transformation">
     </div>
 
     <!-- Slide 12: Metrics -->
@@ -864,30 +864,46 @@
 
     function showSlide(n) {
       const slides = document.querySelectorAll('.slide');
+      
+      // Bound checking
+      if (n > totalSlides) {
+        currentSlide = totalSlides;
+      } else if (n < 1) {
+        currentSlide = 1;
+      } else {
+        currentSlide = n;
+      }
+      
+      // Remove active from all slides
       slides.forEach(slide => slide.classList.remove('active'));
       
-      if (n > totalSlides) currentSlide = totalSlides;
-      if (n < 1) currentSlide = 1;
+      // Add active to current slide
+      const currentSlideElement = slides[currentSlide - 1];
+      if (currentSlideElement) {
+        currentSlideElement.classList.add('active');
+      }
       
-      slides[currentSlide - 1].classList.add('active');
+      // Update slide counter
       document.getElementById('current-slide').textContent = currentSlide;
       
       // Update navigation buttons
       const prevBtn = document.querySelector('.nav-btn:first-child');
       const nextBtn = document.querySelector('.nav-btn:last-child');
       
-      prevBtn.disabled = currentSlide === 1;
-      nextBtn.disabled = currentSlide === totalSlides;
+      if (prevBtn) prevBtn.disabled = currentSlide === 1;
+      if (nextBtn) nextBtn.disabled = currentSlide === totalSlides;
     }
 
     function nextSlide() {
-      currentSlide++;
-      showSlide(currentSlide);
+      if (currentSlide < totalSlides) {
+        showSlide(currentSlide + 1);
+      }
     }
 
     function previousSlide() {
-      currentSlide--;
-      showSlide(currentSlide);
+      if (currentSlide > 1) {
+        showSlide(currentSlide - 1);
+      }
     }
 
     // Keyboard navigation
