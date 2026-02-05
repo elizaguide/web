@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Accelerator Curriculum — Mindvalley</title>
-  <meta name="description" content="Master the Clone Mindset in 6 days. Build your AI workforce with practical, hands-on training. Save 40-60 hours/week with AI automation mastery." />
+  <title>AI Accelerator: Master the Clone Mindset — Mindvalley</title>
+  <meta name="description" content="Build your AI workforce in 6 days. Save 40-60 hours/week with practical AI automation mastery. From CustomGPT to AI agents - become the architect of your digital team." />
   <meta name="theme-color" content="#7a12d4" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
   <link rel="stylesheet" href="../../../public/mindvalley-font.css" />
@@ -13,8 +13,9 @@
       --primary-purple: #7a12d4;
       --body-text: #0f131a;
       --muted-text: #4b5563;
-      --footer-gray: #6b7280;
-      --light-gray: #f9fafb;
+      --light-purple: #f3f4f6;
+      --success-green: #10b981;
+      --warning-orange: #f59e0b;
       --card-background: #ffffff;
       --border-gray: #e5e7eb;
     }
@@ -84,6 +85,8 @@
 
     /* Hero Section */
     .hero-section {
+      background: linear-gradient(135deg, var(--primary-purple) 0%, #9333ea 100%);
+      color: white;
       padding: 6rem 0 5rem;
       text-align: center;
     }
@@ -95,26 +98,40 @@
 
     .hero-subtitle {
       max-width: 40rem;
-      margin: 0 auto 2.5rem;
-      color: var(--muted-text);
+      margin: 0 auto 2rem;
+      opacity: 0.9;
     }
 
-    /* Program Overview */
-    .overview-section {
-      background-color: var(--light-gray);
-      padding: 5rem 0;
+    .hero-philosophy {
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.1rem;
+      font-style: italic;
+      opacity: 0.8;
+      border: 2px solid rgba(255,255,255,0.3);
+      padding: 1.5rem;
+      border-radius: 1rem;
+    }
+
+    /* Program Stats */
+    .stats-section {
+      background: var(--light-purple);
+      padding: 4rem 0;
     }
 
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     .stat-card {
+      background: var(--card-background);
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .stat-number {
@@ -125,45 +142,79 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Day Cards */
+    /* Days Section */
     .days-section {
       padding: 5rem 0;
     }
 
     .days-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
     }
 
     .day-card {
       background: var(--card-background);
-      border: 1px solid var(--border-gray);
+      border: 2px solid var(--border-gray);
       border-radius: 1rem;
       padding: 2rem;
       transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
     }
 
     .day-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 12px 25px rgba(122, 18, 212, 0.15);
+      border-color: var(--primary-purple);
+    }
+
+    .day-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
     }
 
     .day-number {
-      display: inline-block;
       background: var(--primary-purple);
       color: white;
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      line-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 700;
-      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      margin-right: 1rem;
+    }
+
+    .lesson-type {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .viking-task {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .vision-session {
+      background: #dbeafe;
+      color: #2563eb;
     }
 
     .day-title {
-      margin-bottom: 1rem;
+      flex: 1;
+      margin-bottom: 0.5rem;
       color: var(--body-text);
     }
 
@@ -171,33 +222,48 @@
       color: var(--muted-text);
       font-size: 0.875rem;
       margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .day-outcomes {
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .day-description {
+      color: var(--muted-text);
+      margin-bottom: 1.5rem;
+    }
+
+    .outcomes-preview {
       margin-top: 1.5rem;
     }
 
-    .outcome-list {
-      list-style: none;
-      margin-top: 1rem;
+    .outcome-tag {
+      display: inline-block;
+      background: #f3f4f6;
+      color: var(--body-text);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin: 0.25rem 0.5rem 0.25rem 0;
     }
 
-    .outcome-list li {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 0.5rem;
-      font-size: 0.875rem;
+    .time-saved {
+      background: #dcfce7;
+      color: var(--success-green);
+      font-weight: 600;
     }
 
-    .outcome-list li::before {
-      content: "✓";
-      color: var(--primary-purple);
-      font-weight: bold;
-      margin-right: 0.5rem;
-      margin-top: 0.1rem;
+    .cta-section {
+      background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+      padding: 4rem 0;
+      text-align: center;
     }
 
-    /* Buttons */
     .button-primary {
       display: inline-flex;
       align-items: center;
@@ -240,46 +306,42 @@
       transform: translateY(-1px);
     }
 
-    /* Success Metrics */
-    .metrics-section {
-      background-color: var(--light-gray);
-      padding: 5rem 0;
+    .requirements-section {
+      background: var(--card-background);
+      padding: 4rem 0;
+      border-top: 1px solid var(--border-gray);
     }
 
-    .metrics-grid {
+    .tools-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
 
-    .metric-card {
-      background: var(--card-background);
-      padding: 2rem;
-      border-radius: 1rem;
-      text-align: center;
+    .tool-card {
       border: 1px solid var(--border-gray);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      text-align: center;
     }
 
-    .metric-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .metric-value {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--primary-purple);
+    .tool-icon {
+      font-size: 2rem;
       margin-bottom: 0.5rem;
     }
 
-    /* Footer */
+    .tool-price {
+      color: var(--success-green);
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
     .footer {
-      padding: 4rem 0;
+      background: var(--body-text);
+      color: white;
+      padding: 3rem 0;
       text-align: center;
-      color: var(--footer-gray);
-      border-top: 1px solid var(--border-gray);
     }
 
     /* Responsive */
@@ -300,14 +362,29 @@
         padding: 4rem 0 3rem;
       }
 
-      .overview-section,
-      .days-section,
-      .metrics-section {
-        padding: 4rem 0;
-      }
-
       .days-grid {
         grid-template-columns: 1fr;
+      }
+
+      .day-header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .day-number {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+
+      .lesson-type {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 1rem;
+      }
+
+      .day-meta {
+        justify-content: center;
       }
 
       .button-primary,
@@ -323,37 +400,42 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="mv-container">
-      <div class="overline-text" style="margin-bottom: 1rem; color: var(--primary-purple);">
+      <div class="overline-text" style="margin-bottom: 1rem;">
         AI ACCELERATOR PROGRAM
       </div>
       
       <h1 class="title-bold-1 hero-title">
-        Master the Clone Mindset <span style="color: var(--primary-purple);">🤖</span>
+        Master the Clone Mindset <span>🤖</span>
       </h1>
       
       <p class="body-lg hero-subtitle">
-        Build your AI workforce in 6 days. Save 40-60 hours/week with practical AI automation that actually works.
+        Build your AI workforce in 6 days. Save 40-60 hours/week with practical automation that actually works.
       </p>
 
-      <div style="margin-top: 2.5rem;">
+      <div class="hero-philosophy">
+        <strong>"The genius is in simplicity"</strong> — Build AI employees, not just tools.<br>
+        <em>The Aman Tokyo Principle: Invisible service that just works.</em>
+      </div>
+
+      <div>
         <a href="AI-ACCELERATOR-CURRICULUM-FINAL.md" class="button-primary" download>
-          📄 Download Full Curriculum (MD)
+          📄 Download Complete Curriculum
         </a>
-        <a href="#program-overview" class="button-secondary">
-          🔍 Explore Program
+        <a href="#day-by-day" class="button-secondary">
+          🚀 Explore Lessons
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Program Overview -->
-  <section class="overview-section" id="program-overview">
+  <!-- Program Stats -->
+  <section class="stats-section">
     <div class="mv-container">
       <h2 class="title-bold-2" style="text-align: center; margin-bottom: 1rem;">
-        The Clone Revolution
+        Your AI Transformation Results
       </h2>
-      <p class="body" style="text-align: center; color: var(--muted-text); max-width: 600px; margin: 0 auto;">
-        <strong>"The genius is in simplicity"</strong> — Build AI employees, not just tools. The Aman Tokyo Principle: Invisible service that just works.
+      <p class="body" style="text-align: center; color: var(--muted-text);">
+        Quantified outcomes you'll achieve by week's end
       </p>
 
       <div class="stats-grid">
@@ -367,7 +449,7 @@
         </div>
         <div class="stat-card">
           <span class="stat-number">40-60</span>
-          <div class="body">Hours/Week Saved</div>
+          <div class="body">Hours/Week Reclaimed</div>
         </div>
         <div class="stat-card">
           <span class="stat-number">$200K+</span>
@@ -378,189 +460,248 @@
   </section>
 
   <!-- Day-by-Day Curriculum -->
-  <section class="days-section">
+  <section class="days-section" id="day-by-day">
     <div class="mv-container">
       <h2 class="title-bold-2" style="text-align: center; margin-bottom: 1rem;">
-        Your AI Transformation Journey
+        Your 6-Day AI Workforce Journey
       </h2>
       <p class="body" style="text-align: center; color: var(--muted-text); max-width: 600px; margin: 0 auto;">
-        Each day builds your AI workforce with hands-on implementation and immediate results.
+        Each day builds your AI arsenal with hands-on implementation and immediate results
       </p>
 
       <div class="days-grid">
-        <!-- Day 1 -->
-        <div class="day-card">
-          <span class="day-number">1</span>
-          <h3 class="title-bold-5 day-title">Content Creation Clone</h3>
-          <div class="day-meta">
-            <strong>Speaker:</strong> Vishen | <strong>Tool:</strong> ChatGPT | <strong>Duration:</strong> 2 hours
+        <!-- Day 1: CustomGPT -->
+        <div class="day-card" onclick="window.open('curriculum/day1.html', '_blank')">
+          <div class="lesson-type viking-task">VIKING TASK</div>
+          <div class="day-header">
+            <span class="day-number">1</span>
+            <div>
+              <h3 class="title-bold-5 day-title">CustomGPT: Content Creation Clone</h3>
+              <div class="day-meta">
+                <span class="meta-item">📅 Feb 9</span>
+                <span class="meta-item">⏱️ 2 hours</span>
+                <span class="meta-item">👤 Vishen</span>
+                <span class="meta-item">🛠️ ChatGPT</span>
+              </div>
+            </div>
           </div>
-          <p class="body" style="color: var(--muted-text);">
-            Build your CustomGPT that creates content in your voice. Transform voice notes into LinkedIn posts, Twitter threads, and emails.
+          
+          <p class="day-description">
+            Build your CustomGPT that creates content in your voice. Transform voice notes into LinkedIn posts, Twitter threads, and emails using context engineering mastery.
           </p>
-          <div class="day-outcomes">
-            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
-            <ul class="outcome-list">
-              <li>Communication Clone built and tested</li>
-              <li>15-23 hours/week content creation saved</li>
-              <li>Custom GPT fundamentals mastered</li>
-              <li>Context engineering skills developed</li>
-            </ul>
+
+          <div class="outcomes-preview">
+            <span class="outcome-tag time-saved">15-23 hrs/week saved</span>
+            <span class="outcome-tag">Communication Clone built</span>
+            <span class="outcome-tag">Custom GPT fundamentals</span>
+            <span class="outcome-tag">Context engineering skills</span>
           </div>
         </div>
 
-        <!-- Day 2 -->
-        <div class="day-card">
-          <span class="day-number">2</span>
-          <h3 class="title-bold-5 day-title">Meeting Intelligence + Integration</h3>
-          <div class="day-meta">
-            <strong>Speaker:</strong> Vishen | <strong>Tools:</strong> ChatGPT + Granola AI | <strong>Duration:</strong> 2 hours
+        <!-- Day 2: Meeting Intelligence -->
+        <div class="day-card" onclick="window.open('curriculum/day2.html', '_blank')">
+          <div class="lesson-type viking-task">VIKING TASK</div>
+          <div class="day-header">
+            <span class="day-number">2</span>
+            <div>
+              <h3 class="title-bold-5 day-title">Meeting Intelligence + Integration</h3>
+              <div class="day-meta">
+                <span class="meta-item">📅 Feb 10</span>
+                <span class="meta-item">⏱️ 2 hours</span>
+                <span class="meta-item">👤 Vishen</span>
+                <span class="meta-item">🛠️ ChatGPT + Granola AI</span>
+              </div>
+            </div>
           </div>
-          <p class="body" style="color: var(--muted-text);">
-            Extract intelligence from meetings automatically. Build your meeting-to-content pipeline with tool integration.
+          
+          <p class="day-description">
+            Extract intelligence from meetings automatically. Build your meeting-to-content pipeline with seamless tool integration workflows.
           </p>
-          <div class="day-outcomes">
-            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
-            <ul class="outcome-list">
-              <li>Meeting Intelligence Clone operational</li>
-              <li>9-10 hours/week meeting optimization achieved</li>
-              <li>Tool integration workflows mastered</li>
-              <li>Action item follow-up automated</li>
-            </ul>
+
+          <div class="outcomes-preview">
+            <span class="outcome-tag time-saved">9-10 hrs/week saved</span>
+            <span class="outcome-tag">Meeting Intelligence Clone</span>
+            <span class="outcome-tag">Tool integration mastery</span>
+            <span class="outcome-tag">Action item automation</span>
           </div>
         </div>
 
-        <!-- Day 3 -->
-        <div class="day-card">
-          <span class="day-number">3</span>
-          <h3 class="title-bold-5 day-title">Visual Presence Clone</h3>
-          <div class="day-meta">
-            <strong>Speaker:</strong> Iman Oubou | <strong>Tools:</strong> Avatar Platforms + Video AI | <strong>Duration:</strong> 2 hours
+        <!-- Day 3: Visual Presence Clone -->
+        <div class="day-card" onclick="window.open('curriculum/day3.html', '_blank')">
+          <div class="lesson-type viking-task">VIKING TASK</div>
+          <div class="day-header">
+            <span class="day-number">3</span>
+            <div>
+              <h3 class="title-bold-5 day-title">Visual Presence Clone</h3>
+              <div class="day-meta">
+                <span class="meta-item">📅 Feb 11</span>
+                <span class="meta-item">⏱️ 2 hours</span>
+                <span class="meta-item">👤 Iman Oubou</span>
+                <span class="meta-item">🛠️ Avatar Platforms + Video AI</span>
+              </div>
+            </div>
           </div>
-          <p class="body" style="color: var(--muted-text); margin-bottom: 1rem;">
-            Create your AI video twin with voice cloning. Scale your visual presence 10x while maintaining authenticity.
+          
+          <p class="day-description">
+            Create your AI video twin with voice cloning. Scale your visual presence 10x while maintaining authenticity. Learn from the expert who created 3 AI clones in 20 minutes.
           </p>
-          <div class="body" style="color: var(--muted-text); font-size: 0.875rem; margin-bottom: 1rem; font-style: italic;">
-            <strong>About Iman Oubou:</strong> Award-winning AI entrepreneur, former cancer scientist, and former Miss New York. Known for creating 3 AI clones in under 20 minutes at Mindvalley's AI Summit. Expert in AI avatars and the future of content creation.
-          </div>
-          <div class="day-outcomes">
-            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
-            <ul class="outcome-list">
-              <li>AI Video Clone created and tested</li>
-              <li>Voice and visual consistency achieved</li>
-              <li>Video content production scaled 10x</li>
-              <li>Ethical AI practices established</li>
-              <li>Professional avatar creation mastered</li>
-              <li>Voice cloning techniques learned</li>
-            </ul>
+
+          <div class="outcomes-preview">
+            <span class="outcome-tag time-saved">10x video scaling</span>
+            <span class="outcome-tag">AI Video Clone created</span>
+            <span class="outcome-tag">Voice consistency</span>
+            <span class="outcome-tag">Ethical AI practices</span>
           </div>
         </div>
 
-        <!-- Day 4 -->
-        <div class="day-card">
-          <span class="day-number">4</span>
-          <h3 class="title-bold-5 day-title">Learning Accelerator Clone</h3>
-          <div class="day-meta">
-            <strong>Speaker:</strong> Vykintas Glodenis | <strong>Tool:</strong> NotebookLM | <strong>Duration:</strong> 2 hours
+        <!-- Day 4: Learning Accelerator -->
+        <div class="day-card" onclick="window.open('curriculum/index.html', '_blank')">
+          <div class="lesson-type viking-task">VIKING TASK</div>
+          <div class="day-header">
+            <span class="day-number">4</span>
+            <div>
+              <h3 class="title-bold-5 day-title">Learning Accelerator Clone</h3>
+              <div class="day-meta">
+                <span class="meta-item">📅 Feb 12</span>
+                <span class="meta-item">⏱️ 2 hours</span>
+                <span class="meta-item">👤 Vykintas Glodenis</span>
+                <span class="meta-item">🛠️ NotebookLM</span>
+              </div>
+            </div>
           </div>
-          <p class="body" style="color: var(--muted-text);">
-            Master any topic 10x faster. Build your research-to-content pipeline and become a continuous learning machine.
+          
+          <p class="day-description">
+            Master any topic 10x faster. Build your research-to-content pipeline and become a continuous learning machine using Google's NotebookLM.
           </p>
-          <div class="day-outcomes">
-            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
-            <ul class="outcome-list">
-              <li>Learning Accelerator Clone operational</li>
-              <li>10x faster topic mastery achieved</li>
-              <li>Research-to-content pipeline built</li>
-              <li>Continuous learning system established</li>
-            </ul>
+
+          <div class="outcomes-preview">
+            <span class="outcome-tag time-saved">10x faster learning</span>
+            <span class="outcome-tag">Learning Accelerator operational</span>
+            <span class="outcome-tag">Research pipeline built</span>
+            <span class="outcome-tag">Continuous learning system</span>
           </div>
         </div>
 
-        <!-- Day 5 -->
-        <div class="day-card">
-          <span class="day-number">5</span>
-          <h3 class="title-bold-5 day-title">Automated Clone Workforce</h3>
-          <div class="day-meta">
-            <strong>Speaker:</strong> Vykintas Glodenis | <strong>Tools:</strong> Airtable AI + Automation | <strong>Duration:</strong> 2 hours
+        <!-- Day 5: Automated Workforce -->
+        <div class="day-card" onclick="window.open('curriculum/index.html', '_blank')">
+          <div class="lesson-type viking-task">VIKING TASK</div>
+          <div class="day-header">
+            <span class="day-number">5</span>
+            <div>
+              <h3 class="title-bold-5 day-title">Automated Clone Workforce</h3>
+              <div class="day-meta">
+                <span class="meta-item">📅 Feb 13</span>
+                <span class="meta-item">⏱️ 2 hours</span>
+                <span class="meta-item">👤 Vykintas Glodenis</span>
+                <span class="meta-item">🛠️ Airtable AI + Automation</span>
+              </div>
+            </div>
           </div>
-          <p class="body" style="color: var(--muted-text);">
-            Build intelligent agents that handle complex business processes. Deploy your complete AI workforce.
+          
+          <p class="day-description">
+            Build intelligent agents that handle complex business processes. Deploy your complete AI workforce with decision-making capabilities.
           </p>
-          <div class="day-outcomes">
-            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
-            <ul class="outcome-list">
-              <li>AI Agent workforce deployed</li>
-              <li>Business processes automated intelligently</li>
-              <li>Scalable decision-making systems built</li>
-              <li>Full AI integration achieved</li>
-            </ul>
+
+          <div class="outcomes-preview">
+            <span class="outcome-tag time-saved">Full automation achieved</span>
+            <span class="outcome-tag">AI Agent workforce deployed</span>
+            <span class="outcome-tag">Business processes automated</span>
+            <span class="outcome-tag">Scalable decision systems</span>
           </div>
         </div>
 
-        <!-- Day 6 -->
-        <div class="day-card">
-          <span class="day-number">6</span>
-          <h3 class="title-bold-5 day-title">Graduation & Recognition</h3>
-          <div class="day-meta">
-            <strong>Speaker:</strong> Vishen | <strong>Focus:</strong> Celebration + Community | <strong>Duration:</strong> 2 hours
+        <!-- Day 6: Graduation -->
+        <div class="day-card" onclick="window.open('curriculum/index.html', '_blank')">
+          <div class="lesson-type vision-session">VISION SESSION</div>
+          <div class="day-header">
+            <span class="day-number">6</span>
+            <div>
+              <h3 class="title-bold-5 day-title">Graduation & Recognition</h3>
+              <div class="day-meta">
+                <span class="meta-item">📅 Feb 15</span>
+                <span class="meta-item">⏱️ 2 hours</span>
+                <span class="meta-item">👤 Vishen</span>
+                <span class="meta-item">🛠️ Celebration + Community</span>
+              </div>
+            </div>
           </div>
-          <p class="body" style="color: var(--muted-text);">
-            Celebrate your transformation. Advanced strategies, community building, and official Mindvalley certification.
+          
+          <p class="day-description">
+            Celebrate your AI transformation. Advanced strategies, community building, and official Mindvalley certification. Plan your AI-powered future.
           </p>
-          <div class="day-outcomes">
-            <strong style="color: var(--body-text);">Clear Outcomes:</strong>
-            <ul class="outcome-list">
-              <li>AI mastery officially recognized</li>
-              <li>Advanced strategy roadmap created</li>
-              <li>Learning community network established</li>
-              <li>Long-term success systems activated</li>
-            </ul>
+
+          <div class="outcomes-preview">
+            <span class="outcome-tag">AI mastery certified</span>
+            <span class="outcome-tag">Advanced strategy roadmap</span>
+            <span class="outcome-tag">Community network established</span>
+            <span class="outcome-tag">Long-term success systems</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Success Metrics -->
-  <section class="metrics-section">
+  <!-- Requirements Section -->
+  <section class="requirements-section">
     <div class="mv-container">
       <h2 class="title-bold-2" style="text-align: center; margin-bottom: 1rem;">
-        Your Transformation Results
+        Required Tools & Investment
       </h2>
       <p class="body" style="text-align: center; color: var(--muted-text); max-width: 600px; margin: 0 auto;">
-        Quantified outcomes you'll achieve by the end of the program.
+        Minimal investment for maximum returns. All tools pay for themselves within the first week.
       </p>
 
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <span class="metric-icon">⏰</span>
-          <div class="metric-value">40-60 hrs</div>
-          <div class="body">Weekly Time Reclaimed</div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon">🤖</div>
+          <h4 style="margin-bottom: 0.5rem;">ChatGPT Plus</h4>
+          <p style="font-size: 0.875rem; color: var(--muted-text); margin-bottom: 0.5rem;">Foundation for all clones</p>
+          <div class="tool-price">$20/month</div>
         </div>
-
-        <div class="metric-card">
-          <span class="metric-icon">💰</span>
-          <div class="metric-value">$200K-500K</div>
-          <div class="body">Annual Productivity Value</div>
+        <div class="tool-card">
+          <div class="tool-icon">🎙️</div>
+          <h4 style="margin-bottom: 0.5rem;">Granola AI</h4>
+          <p style="font-size: 0.875rem; color: var(--muted-text); margin-bottom: 0.5rem;">Meeting intelligence</p>
+          <div class="tool-price">Free Tier</div>
         </div>
-
-        <div class="metric-card">
-          <span class="metric-icon">🚀</span>
-          <div class="metric-value">5x</div>
-          <div class="body">Content & Decision Capacity</div>
+        <div class="tool-card">
+          <div class="tool-icon">📱</div>
+          <h4 style="margin-bottom: 0.5rem;">Buffer</h4>
+          <p style="font-size: 0.875rem; color: var(--muted-text); margin-bottom: 0.5rem;">Content scheduling</p>
+          <div class="tool-price">Free Tier</div>
         </div>
-
-        <div class="metric-card">
-          <span class="metric-icon">🏆</span>
-          <div class="metric-value">6-12 months</div>
-          <div class="body">Ahead of Industry Adoption</div>
+        <div class="tool-card">
+          <div class="tool-icon">📚</div>
+          <h4 style="margin-bottom: 0.5rem;">NotebookLM</h4>
+          <p style="font-size: 0.875rem; color: var(--muted-text); margin-bottom: 0.5rem;">Learning acceleration</p>
+          <div class="tool-price">Free</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">⚡</div>
+          <h4 style="margin-bottom: 0.5rem;">Airtable</h4>
+          <p style="font-size: 0.875rem; color: var(--muted-text); margin-bottom: 0.5rem;">Automation workflows</p>
+          <div class="tool-price">Starts Free</div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div style="text-align: center; margin-top: 3rem;">
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="mv-container">
+      <h2 class="title-bold-2" style="margin-bottom: 1rem;">
+        Ready to Build Your AI Workforce?
+      </h2>
+      <p class="body-lg" style="color: var(--muted-text); max-width: 600px; margin: 0 auto 2rem;">
+        Join the AI revolution. Start building your clones and reclaim 40-60 hours per week.
+      </p>
+
+      <div>
         <a href="AI-ACCELERATOR-CURRICULUM-FINAL.md" class="button-primary" download>
-          📥 Download Complete Curriculum
+          📥 Get Complete Curriculum
+        </a>
+        <a href="curriculum/day1.html" class="button-secondary" target="_blank">
+          🚀 Start Day 1 Now
         </a>
       </div>
     </div>
@@ -569,16 +710,13 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="mv-container">
-      <p>© Mindvalley • AI Accelerator Curriculum</p>
-      <p style="margin-top: 0.5rem; font-size: 0.875rem;">
-        The Clone Mindset: "Genius is in simplicity" 🤖
+      <h3 style="margin-bottom: 1rem;">🤖 AI Accelerator Program</h3>
+      <p>Master the Clone Mindset • Build Your AI Workforce</p>
+      <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.7;">
+        "The genius is in simplicity" — Mindvalley Academy • 2026
       </p>
-      <div style="margin-top: 1rem;">
-        <a href="AI-ACCELERATOR-CURRICULUM-FINAL.md" style="color: var(--primary-purple); text-decoration: none; font-size: 0.875rem;" download>
-          📄 Download MD File for Local AI Processing
-        </a>
-      </div>
     </div>
   </footer>
+
 </body>
 </html>
