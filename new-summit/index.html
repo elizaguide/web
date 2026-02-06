@@ -7,494 +7,179 @@
     <meta name="description" content="Strategic transformation guide for Mindvalley events. Learn Bari's proven frameworks for high-converting webinars and method-based summits.">
     <meta name="theme-color" content="#7a12d4">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
-    <link rel="stylesheet" href="../public/mindvalley-font.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #0f131a;
-            background-color: #ffffff;
-        }
-        
-        .mv-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .mv-container {
-                padding: 0 2rem;
-            }
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 6rem 0 5rem 0;
-            text-align: center;
-        }
-        
-        .eyebrow {
-            margin-bottom: 1rem;
-            color: #7a12d4;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.875rem;
-        }
-        
-        /* Content Sections */
-        .content-section {
-            padding: 5rem 0;
-        }
-        
-        .content-section:nth-child(even) {
-            background-color: #f9fafb;
-        }
-        
-        /* Problem-Solution Grid */
-        .problem-solution {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .problem-solution {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .comparison-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .problem-card {
-            border-left: 4px solid #ef4444;
-        }
-        
-        .solution-card {
-            border-left: 4px solid #10b981;
-        }
-        
-        .comparison-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .comparison-card li {
-            margin-bottom: 0.75rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-        
-        .problem-card li::before {
-            content: "❌";
-            position: absolute;
-            left: 0;
-        }
-        
-        .solution-card li::before {
-            content: "✅";
-            position: absolute;
-            left: 0;
-        }
-        
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-        
-        .stat-card {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            background: #ffffff;
-            border-radius: 1rem;
-            border: 1px solid #e5e7eb;
-            border-top: 3px solid #7a12d4;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #7a12d4;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 0.875rem;
-            color: #6b7280;
-        }
-        
-        /* Timeline */
-        .timeline-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .timeline-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .timeline-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid #e5e7eb;
-            text-align: center;
-            border-top: 4px solid #7a12d4;
-        }
-        
-        .timeline-card h4 {
-            color: #7a12d4;
-            margin-bottom: 1rem;
-        }
-        
-        .timeline-card ul {
-            text-align: left;
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-        }
-        
-        .timeline-card li {
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-        
-        .timeline-card li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #7a12d4;
-        }
-        
-        /* Add bullet points to comparison cards */
-        .comparison-card li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #7a12d4;
-        }
-        
-        /* Comparison Sections */
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .comparison-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .before-card {
-            background: #fef2f2;
-            border: 2px solid #fecaca;
-            padding: 2rem;
-            border-radius: 1rem;
-        }
-        
-        .after-card {
-            background: #f0fdf4;
-            border: 2px solid #bbf7d0;
-            padding: 2rem;
-            border-radius: 1rem;
-        }
-        
-        .before-card h4 {
-            color: #dc2626;
-            margin-bottom: 1rem;
-        }
-        
-        .after-card h4 {
-            color: #16a34a;
-            margin-bottom: 1rem;
-        }
-        
-        /* Highlight Box */
-        .highlight-box {
-            background: #fef3c7;
-            border: 2px solid #fde047;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            margin: 2rem 0;
-            font-weight: 600;
-        }
-        
-        /* Action Items */
-        .action-section {
-            background: #7a12d4;
-            color: white;
-            padding: 4rem 0;
-            margin-top: 3rem;
-        }
-        
-        .action-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .action-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 1rem;
-            backdrop-filter: blur(10px);
-        }
-        
-        /* Footer */
-        .footer {
-            padding: 4rem 0;
-            color: #6b7280;
-            text-align: center;
-        }
-        
-        /* Links */
-        .nav-link {
-            color: #7a12d4;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 0 1rem;
-        }
-        
-        .nav-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 4rem 0 3rem 0;
-            }
-            
-            .content-section {
-                padding: 3rem 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../skills/mindvalley-design/mindvalley-core.css">
+    <link rel="stylesheet" href="../skills/mindvalley-design/mindvalley-utilities.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav style="padding: 1rem 0; background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
-        <div class="mv-container" style="text-align: center;">
-            <span style="color: #7a12d4; font-weight: 700;">Overview</span>
-            <a href="webinars.html" class="nav-link">Webinars</a>
-            <a href="summits.html" class="nav-link">Summits</a>
-            <a href="bari-questions.html" class="nav-link">Bari Q&A</a>
+    <nav class="mv-bg-gray-lighter mv-py-4" style="border-bottom: 1px solid #e5e7eb;">
+        <div class="mv-container mv-text-center">
+            <span class="mv-text-dark" style="font-weight: 700;">Overview</span>
+            <a href="webinars.html" class="mv-text-purple mv-mx-4">Webinars</a>
+            <a href="summits.html" class="mv-text-purple mv-mx-4">Summits</a>
+            <a href="bari-questions.html" class="mv-text-purple mv-mx-4">Bari Q&A</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="mv-hero-quick">
         <div class="mv-container">
-            <div class="eyebrow overline-text">STRATEGIC TRANSFORMATION</div>
-            <h1 class="title-bold-2" style="max-width: 48rem; margin: 0 auto 1.25rem auto;">
-                🎯 New Event Model
-            </h1>
-            <p class="body-lg" style="max-width: 40rem; color: #4b5563; margin: 0 auto 2.5rem auto;">
-                Strategic insights from Bari to transform Mindvalley events from "buffet experiences" to high-converting methodology-based frameworks
-            </p>
-            
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="webinars.html" style="
-                    display: inline-flex; align-items: center; justify-content: center;
-                    padding: 1rem 2rem; background-color: #7a12d4; color: white;
-                    font-weight: 700; border-radius: 999px; text-decoration: none;
-                ">🎯 Webinar Strategy</a>
-                <a href="summits.html" style="
-                    display: inline-flex; align-items: center; justify-content: center;
-                    padding: 1rem 2rem; background-color: transparent; color: #7a12d4;
-                    border: 2px solid #7a12d4; font-weight: 500; border-radius: 999px;
-                    text-decoration: none;
-                ">🎪 Summit Strategy</a>
+            <div class="overline-text mv-mb-4" style="color: rgba(255,255,255,0.9);">
+                COMPLETE EVENT STRATEGY
             </div>
+            <h1 class="title-bold-1 mv-mb-4">
+                🎯 Mindvalley Event Transformation
+            </h1>
+            <p class="body-lg mv-mb-8 mv-max-w-3xl mv-mx-auto" style="opacity: 0.9;">
+                Strategic transformation guide based on Bari Baumgardner's proven frameworks for high-converting webinars and method-based summits
+            </p>
         </div>
     </section>
 
     <!-- Two Strategies Overview -->
-    <section class="content-section">
+    <section class="mv-section">
         <div class="mv-container">
-            <h2 class="title-bold-3" style="margin-bottom: 2rem; text-align: center;">Two Strategic Transformations</h2>
+            <h2 class="title-bold-2 mv-text-center mv-mb-8 mv-text-purple">Two Revolutionary Strategies</h2>
             
-            <div class="problem-solution">
-                <div class="comparison-card" style="border-left: 4px solid #7a12d4;">
-                    <h3 class="title-bold-5" style="margin-bottom: 1.5rem; color: #7a12d4;">🎯 Webinar Strategy</h3>
-                    <p class="body" style="margin-bottom: 1.5rem;">Transform 90-minute endurance tests into high-converting 60-minute experiences.</p>
-                    <ul>
-                        <li><strong>60-minute promise:</strong> "Done in exactly one hour"</li>
-                        <li><strong>15-15-15-15 structure:</strong> Content → Pain → Decision → Q&A</li>
-                        <li><strong>Audience psychology:</strong> 70% logical buyers need strategic Q&A</li>
-                        <li><strong>Simple but deep:</strong> One concept taught powerfully</li>
+            <div class="mv-mobile-stack mv-gap-8">
+                <!-- Webinars Strategy -->
+                <div class="mv-card mv-text-center">
+                    <div class="mv-text-6xl mv-mb-4">💻</div>
+                    <h3 class="title-bold-4 mv-text-purple mv-mb-4">Perfect Webinar Formula</h3>
+                    <p class="body mv-mb-6">
+                        Transform your webinar conversions with Bari's proven framework. Built for busy entrepreneurs who need quick, repeatable results.
+                    </p>
+                    <ul class="body mv-text-left mv-mb-6 mv-space-y-2">
+                        <li><strong>✅ 90-minute perfect structure</strong> - Opening to close</li>
+                        <li><strong>✅ Emotional + logical buyer strategies</strong> - Both personalities covered</li>
+                        <li><strong>✅ Real-time objection handling</strong> - Convert skeptics live</li>
+                        <li><strong>✅ $2K-$5K price point optimization</strong> - Sweet spot psychology</li>
                     </ul>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="webinars.html" style="color: #7a12d4; text-decoration: none; font-weight: 600;">
-                            Learn the complete webinar strategy →
-                        </a>
-                    </div>
+                    <a href="webinars.html" class="mv-btn mv-btn-primary">View Webinar Strategy</a>
                 </div>
-                <div class="comparison-card" style="border-left: 4px solid #10b981;">
-                    <h3 class="title-bold-5" style="margin-bottom: 1.5rem; color: #10b981;">🎪 Complete Summit Strategy v2.0</h3>
-                    <p class="body" style="margin-bottom: 1.5rem;">Revolutionary summit transformation integrating Tony Robbins' $40M model + Bari's advanced insights.</p>
-                    <ul>
-                        <li><strong>Enhanced revenue model:</strong> $6.38M per summit (52% increase)</li>
-                        <li><strong>Celebrity integration:</strong> Strategic use vs. $250K backfire prevention</li>
-                        <li><strong>Live sales lobbies:</strong> Real-time conversion vs. delayed calls</li>
-                        <li><strong>Overwhelm solution:</strong> Compressed high-value offers</li>
-                        <li><strong>Deep avatar research:</strong> Target overwhelmed 99%, not technical 1%</li>
+
+                <!-- Summits Strategy -->
+                <div class="mv-card mv-text-center">
+                    <div class="mv-text-6xl mv-mb-4">🎪</div>
+                    <h3 class="title-bold-4 mv-text-purple mv-mb-4">Method-Based Summit Revolution</h3>
+                    <p class="body mv-mb-6">
+                        Scale to $6M+ summits using Tony Robbins' proven model integrated with Bari's advanced insights. Celebrity strategy included.
+                    </p>
+                    <ul class="body mv-text-left mv-mb-6 mv-space-y-2">
+                        <li><strong>✅ Tony's $40M model breakdown</strong> - 700K→$40M summit</li>
+                        <li><strong>✅ Live sales lobby revolution</strong> - 3.5% conversion vs 2%</li>
+                        <li><strong>✅ Celebrity integration without backfire</strong> - $250K lesson learned</li>
+                        <li><strong>✅ Compressed program psychology</strong> - 30-day > 6-month</li>
                     </ul>
-                    <div style="margin-top: 1.5rem;">
-                        <div style="background: #f0fdf4; color: #059669; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1rem; font-size: 0.875rem; font-weight: 600;">
-                            ✨ UPDATED: Now includes all Bari Hour 2 insights + Tony's proven model
-                        </div>
-                        <a href="summits.html" style="color: #10b981; text-decoration: none; font-weight: 600;">
-                            Learn the complete summit strategy v2.0 →
-                        </a>
-                    </div>
+                    <a href="summits.html" class="mv-btn mv-btn-primary">View Summit Strategy</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Insights -->
-    <section class="content-section">
+    <!-- Who This Is For -->
+    <section class="mv-section mv-bg-gray-lighter">
         <div class="mv-container">
-            <h2 class="title-bold-3" style="margin-bottom: 2rem; text-align: center;">📊 Key Insights from Bari</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">60min</div>
-                    <div class="stat-label">Optimal webinar length (not 90min)</div>
+            <h2 class="title-bold-2 mv-text-center mv-mb-8 mv-text-purple">Who This Strategy Is For</h2>
+            
+            <div class="mv-grid-1 md:mv-grid-3 mv-gap-6">
+                <div class="mv-card mv-text-center">
+                    <div class="mv-text-4xl mv-mb-4">👥</div>
+                    <h3 class="title-bold-5 mv-text-purple mv-mb-3">Event Teams</h3>
+                    <p class="body">Stop guessing. Use proven frameworks that deliver consistent results every time.</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">70%</div>
-                    <div class="stat-label">Logical buyers need strategic Q&A</div>
+                
+                <div class="mv-card mv-text-center">
+                    <div class="mv-text-4xl mv-mb-4">💼</div>
+                    <h3 class="title-bold-5 mv-text-purple mv-mb-3">Marketing Leaders</h3>
+                    <p class="body">Scale revenue predictably with conversion psychology that works for both personalities.</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">Day 2</div>
-                    <div class="stat-label">When main pitch should happen</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">Method</div>
-                    <div class="stat-label">People buy frameworks, not tips</div>
+                
+                <div class="mv-card mv-text-center">
+                    <div class="mv-text-4xl mv-mb-4">🚀</div>
+                    <h3 class="title-bold-5 mv-text-purple mv-mb-3">Growth Teams</h3>
+                    <p class="body">Move from tactical execution to strategic transformation with method-based approaches.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Problems -->
-    <section class="content-section">
+    <!-- Key Insights -->
+    <section class="mv-section">
         <div class="mv-container">
-            <h2 class="title-bold-3" style="margin-bottom: 2rem;">🚨 What's Not Working</h2>
+            <h2 class="title-bold-2 mv-text-center mv-mb-8 mv-text-purple">Revolutionary Insights</h2>
             
-            <div class="comparison-card" style="border-left: 4px solid #ef4444; margin-bottom: 2rem;">
-                <h3 class="title-bold-5" style="color: #ef4444; margin-bottom: 1.5rem;">The "Buffet Event" Problem</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                    <div>
-                        <h4 class="title-bold-7" style="margin-bottom: 1rem;">Webinar Issues:</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">90-minute attention span problem</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">Teaching too much content</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">Q&A feels purely transactional</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="title-bold-7" style="margin-bottom: 1rem;">Summit Issues:</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">Speaker buffet allows cherry-picking</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">No cohesive methodology</li>
-                            <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative;">Attendance drops Day 1 → Day 3</li>
-                        </ul>
-                    </div>
+            <div class="mv-mobile-stack mv-gap-6">
+                <div class="mv-card mv-bg-gradient-dark mv-text-white">
+                    <h3 class="title-bold-5 mv-mb-4">🧠 The Psychology Breakthrough</h3>
+                    <p class="body mv-mb-4">
+                        <strong>Emotional buyers (30%)</strong> convert immediately during presentations. 
+                        <strong>Logical buyers (70%)</strong> need Q&A time to process and decide.
+                    </p>
+                    <p class="body-sm">
+                        Most events only design for emotional buyers and lose 70% of potential revenue.
+                    </p>
+                </div>
+
+                <div class="mv-card mv-bg-gradient-purple mv-text-white">
+                    <h3 class="title-bold-5 mv-mb-4">⚡ The Overwhelm Solution</h3>
+                    <p class="body mv-mb-4">
+                        <strong>Counter-intuitive pricing:</strong> 30-day programs at the SAME price as 6-month programs convert better.
+                    </p>
+                    <p class="body-sm">
+                        Today's audiences want LESS content, MORE results. "Premium for speed" psychology wins.
+                    </p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="highlight-box">
-                💡 <strong>Root Cause:</strong> We're selling random collections of tips instead of proven, step-by-step methodologies. People buy frameworks, not buffets.
+    <!-- Results Preview -->
+    <section class="mv-section mv-bg-purple mv-text-white">
+        <div class="mv-container mv-text-center">
+            <h2 class="title-bold-2 mv-mb-6">Expected Results</h2>
+            
+            <div class="mv-grid-1 md:mv-grid-2 mv-gap-8">
+                <div class="mv-bg-white mv-bg-opacity-20 mv-p-6 mv-rounded-xl">
+                    <div class="mv-text-4xl mv-mb-4">💻</div>
+                    <h3 class="title-bold-4 mv-mb-4">Webinar Revenue</h3>
+                    <div class="mv-text-3xl mv-font-bold mv-mb-2">$500K - $2M</div>
+                    <p class="body">Per campaign using perfect webinar structure</p>
+                </div>
+                
+                <div class="mv-bg-white mv-bg-opacity-20 mv-p-6 mv-rounded-xl">
+                    <div class="mv-text-4xl mv-mb-4">🎪</div>
+                    <h3 class="title-bold-4 mv-mb-4">Summit Revenue</h3>
+                    <div class="mv-text-3xl mv-font-bold mv-mb-2">$6M+</div>
+                    <p class="body">Per summit using Tony's proven model</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Next Steps -->
-    <section class="action-section">
-        <div class="mv-container">
-            <h3 class="title-bold-3" style="margin-bottom: 1.5rem; text-align: center;">🚀 Choose Your Strategy</h3>
-            <p class="body-lg" style="text-align: center; margin-bottom: 3rem; opacity: 0.9;">
-                Select the format you want to optimize first. Each page contains complete implementation guides.
+    <section class="mv-section">
+        <div class="mv-container mv-text-center">
+            <h2 class="title-bold-2 mv-text-purple mv-mb-6">Choose Your Path</h2>
+            <p class="body-lg mv-mb-8 mv-max-w-2xl mv-mx-auto">
+                Both strategies are complete and ready for implementation. Start with the one that fits your current goals.
             </p>
-            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-                <a href="webinars.html" style="
-                    display: block; background: rgba(255,255,255,0.1); padding: 2.5rem;
-                    border-radius: 1rem; text-decoration: none; color: white;
-                    text-align: center; min-width: 300px; backdrop-filter: blur(10px);
-                    border: 2px solid rgba(255,255,255,0.2);
-                ">
-                    <h4 class="title-bold-5" style="margin-bottom: 1rem;">🎯 Webinar Strategy</h4>
-                    <p class="body">60-minute framework with psychology-driven Q&A for higher conversion rates</p>
-                    <div style="margin-top: 1.5rem; font-weight: 700; color: #fde047;">
-                        Get the Complete Guide →
-                    </div>
-                </a>
-                <a href="summits.html" style="
-                    display: block; background: rgba(255,255,255,0.1); padding: 2.5rem;
-                    border-radius: 1rem; text-decoration: none; color: white;
-                    text-align: center; min-width: 300px; backdrop-filter: blur(10px);
-                    border: 2px solid rgba(255,255,255,0.2);
-                ">
-                    <h4 class="title-bold-5" style="margin-bottom: 1rem;">🎪 Summit Strategy</h4>
-                    <p class="body">Method-based 3-day events with through-lines and strategic day-by-day planning</p>
-                    <div style="margin-top: 1.5rem; font-weight: 700; color: #fde047;">
-                        Get the Complete Guide →
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Big Picture Transformation -->
-    <section class="content-section">
-        <div class="mv-container">
-            <h2 class="title-bold-3" style="margin-bottom: 2rem;">🎪 The Big Picture Transformation</h2>
-            <div class="highlight-box" style="text-align: center; font-size: 1.1rem;">
-                <strong>FROM:</strong> "Buffet of amazing experts teaching different things"<br>
-                <strong>TO:</strong> "Proven step-by-step system taught by the world's best teachers"
-            </div>
             
-            <p class="body-lg" style="margin-top: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto; text-align: center;">
-                The goal is to move from being seen as a collection of random speakers to being seen as 
-                <strong>the definitive source</strong> for a specific methodology. When someone wants to learn 
-                your framework, they should think: "I need to attend this entire event because every piece 
-                builds on the last."
-            </p>
+            <div class="mv-mobile-stack mv-gap-4 mv-max-w-md mv-mx-auto">
+                <a href="webinars.html" class="mv-btn mv-btn-primary">Start with Webinars</a>
+                <a href="summits.html" class="mv-btn mv-btn-secondary">Scale to Summits</a>
+                <a href="bari-questions.html" class="mv-btn mv-btn-outline">Strategic Questions</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="mv-section mv-bg-gray-lighter mv-text-center">
         <div class="mv-container">
-            <p class="body-sm">© Mindvalley • New Summit Model Strategic Framework</p>
+            <p class="body-sm mv-text-gray">© Mindvalley 2026 • Event Strategy Guide</p>
+            <p class="body-sm mv-text-gray mv-mt-2">
+                Based on Bari Baumgardner's proven frameworks + Tony Robbins' $40M model
+            </p>
         </div>
     </footer>
 </body>
