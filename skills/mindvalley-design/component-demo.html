@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindvalley Component Library - Live Demo</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧩</text></svg>">
+    <link rel="stylesheet" href="mindvalley-core.css">
+    <link rel="stylesheet" href="mindvalley-utilities.css">
+    <style>
+        .component-demo {
+            border: 2px dashed #7a12d4;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+        .component-label {
+            position: absolute;
+            top: -12px;
+            left: 1rem;
+            background: #7a12d4;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        .code-example {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+        .component-preview {
+            background: white;
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Header -->
+    <div class="mv-bg-gradient-purple mv-text-white mv-py-12">
+        <div class="mv-container mv-text-center">
+            <h1 class="title-bold-1 mv-mb-4">🧩 Component Library</h1>
+            <p class="body-lg">Pre-built Mindvalley components for lightning-fast development</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="mv-bg-white mv-py-4 mv-shadow">
+        <div class="mv-container">
+            <nav class="mv-flex mv-gap-6 mv-text-sm">
+                <a href="#hero" class="mv-text-purple">Hero</a>
+                <a href="#features" class="mv-text-purple">Features</a>
+                <a href="#testimonial" class="mv-text-purple">Testimonial</a>
+                <a href="#cta" class="mv-text-purple">CTA</a>
+                <a href="#benefits" class="mv-text-purple">Benefits</a>
+                <a href="#faq" class="mv-text-purple">FAQ</a>
+                <a href="#stats" class="mv-text-purple">Stats</a>
+                <a href="#media" class="mv-text-purple">Media</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="mv-container mv-py-8">
+
+        <!-- Hero Component Demo -->
+        <section id="hero">
+            <h2 class="title-bold-3 mv-mb-4">1. Hero Component</h2>
+            <p class="body mv-mb-4">Perfect for landing page headers with title, subtitle, and CTA</p>
+            
+            <div class="code-example">
+<pre><code>// JavaScript Usage
+MV.hero({
+  title: "Transform Your Mindset",
+  subtitle: "Discover the tools to unlock your extraordinary life",
+  cta: "Start Journey",
+  ctaLink: "#signup"
+})</code></pre>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Hero Component</div>
+                <div id="hero-demo" class="component-preview"></div>
+            </div>
+        </section>
+
+        <!-- Features Component Demo -->
+        <section id="features">
+            <h2 class="title-bold-3 mv-mb-4">2. Features Grid</h2>
+            <p class="body mv-mb-4">Auto-responsive grid that stacks on mobile, spreads on desktop</p>
+            
+            <div class="code-example">
+<pre><code>// JavaScript Usage
+MV.features({
+  title: "Why Choose Our Program",
+  features: [
+    {title: "Expert Guidance", description: "Learn from world-class teachers", icon: "🎯"},
+    {title: "Proven Methods", description: "Science-backed transformational tools", icon: "🧠"},
+    {title: "Global Community", description: "Connect with like-minded learners", icon: "🌍"}
+  ]
+})</code></pre>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Features Component</div>
+                <div id="features-demo" class="component-preview"></div>
+            </div>
+        </section>
+
+        <!-- Testimonial Component Demo -->
+        <section id="testimonial">
+            <h2 class="title-bold-3 mv-mb-4">3. Testimonial</h2>
+            <p class="body mv-mb-4">Social proof section with quote, author, and role</p>
+            
+            <div class="code-example">
+<pre><code>// JavaScript Usage
+MV.testimonial({
+  quote: "This program completely shifted my perspective. The results were incredible!",
+  author: "Maria Rodriguez",
+  role: "Mindvalley Graduate"
+})</code></pre>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Testimonial Component</div>
+                <div id="testimonial-demo" class="component-preview"></div>
+            </div>
+        </section>
+
+        <!-- CTA Component Demo -->
+        <section id="cta">
+            <h2 class="title-bold-3 mv-mb-4">4. Call-to-Action</h2>
+            <p class="body mv-mb-4">Conversion-focused section to drive action</p>
+            
+            <div class="code-example">
+<pre><code>// JavaScript Usage
+MV.cta({
+  title: "Ready to Begin?",
+  subtitle: "Join thousands transforming their lives today",
+  cta: "Get Started Now",
+  ctaLink: "#signup"
+})</code></pre>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">CTA Component</div>
+                <div id="cta-demo" class="component-preview"></div>
+            </div>
+        </section>
+
+        <!-- Benefits Component Demo -->
+        <section id="benefits">
+            <h2 class="title-bold-3 mv-mb-4">5. Benefits + Pricing</h2>
+            <p class="body mv-mb-4">Benefits list with integrated pricing box</p>
+            
+            <div class="code-example">
+<pre><code>// JavaScript Usage
+MV.benefits({
+  title: "What's Included",
+  benefits: [
+    "12 comprehensive modules",
+    "Expert video tutorials", 
+    "Downloadable resources",
+    "Lifetime access"
+  ]
+})</code></pre>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Benefits Component</div>
+                <div id="benefits-demo" class="component-preview"></div>
+            </div>
+        </section>
+
+        <!-- FAQ Component Demo -->
+        <section id="faq">
+            <h2 class="title-bold-3 mv-mb-4">6. FAQ Accordion</h2>
+            <p class="body mv-mb-4">Expandable FAQ section to address common concerns</p>
+            
+            <div class="code-example">
+<pre><code>// JavaScript Usage
+MV.faq({
+  title: "Common Questions",
+  faqs: [
+    {
+      question: "How long is the program?", 
+      answer: "Complete at your own pace, typically 6-8 weeks."
+    },
+    {
+      question: "Is there support available?", 
+      answer: "Yes! 24/7 community support and weekly Q&A sessions."
+    }
+  ]
+})</code></pre>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">FAQ Component</div>
+                <div id="faq-demo" class="component-preview"></div>
+            </div>
+        </section>
+
+        <!-- Stats Component Demo -->
+        <section id="stats">
+            <h2 class="title-bold-3 mv-mb-4">7. Stats/Numbers</h2>
+            <p class="body mv-mb-4">Social proof through impressive numbers</p>
+            
+            <div class="code-example">
+<pre><code>// JavaScript Usage
+MV.stats({
+  title: "Our Impact",
+  stats: [
+    {number: "500K+", label: "Lives Transformed"},
+    {number: "98%", label: "Satisfaction Rate"},
+    {number: "100+", label: "Countries Reached"},
+    {number: "5★", label: "Average Rating"}
+  ]
+})</code></pre>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Stats Component</div>
+                <div id="stats-demo" class="component-preview"></div>
+            </div>
+        </section>
+
+        <!-- Media Component Demo -->
+        <section id="media">
+            <h2 class="title-bold-3 mv-mb-4">8. Video/Media</h2>
+            <p class="body mv-mb-4">Video section with thumbnail and play button</p>
+            
+            <div class="code-example">
+<pre><code>// JavaScript Usage
+MV.media({
+  title: "See the Transformation",
+  subtitle: "Watch real success stories from our community",
+  videoUrl: "#play-video",
+  cta: "Watch Stories"
+})</code></pre>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Media Component</div>
+                <div id="media-demo" class="component-preview"></div>
+            </div>
+        </section>
+
+        <!-- Quick Start Guide -->
+        <section class="mv-section mv-bg-gray-lighter mv-rounded-xl mv-p-8">
+            <h2 class="title-bold-3 mv-mb-6">⚡ Quick Start Guide</h2>
+            
+            <div class="mv-grid-1 md:mv-grid-2 mv-gap-8">
+                <div>
+                    <h3 class="title-bold-6 mv-text-purple mv-mb-4">1. Include the Library</h3>
+                    <div class="code-example">
+<pre><code>&lt;link rel="stylesheet" href="mindvalley-core.css"&gt;
+&lt;link rel="stylesheet" href="mindvalley-utilities.css"&gt;
+&lt;script src="mindvalley-components.js"&gt;&lt;/script&gt;</code></pre>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="title-bold-6 mv-text-purple mv-mb-4">2. Generate Components</h3>
+                    <div class="code-example">
+<pre><code>// In JavaScript
+document.getElementById('hero').innerHTML = MV.hero({
+  title: "Your Title",
+  subtitle: "Your subtitle"
+});
+
+// Or use data attributes
+&lt;div data-mv-component="hero" data-mv-config='{"title":"Your Title"}'&gt;&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Complete Page Generator -->
+        <section class="mv-section">
+            <h2 class="title-bold-3 mv-mb-6">🚀 Complete Page Generator</h2>
+            <p class="body mv-mb-4">Generate entire landing pages with one function call:</p>
+            
+            <div class="code-example">
+<pre><code>// Generate complete landing page
+const page = MV.landingPage({
+  hero: {title: "Transform Your Life", cta: "Start Now"},
+  features: {title: "Why Choose Us", features: [...]},
+  testimonial: {quote: "Amazing results!", author: "John Doe"},
+  cta: {title: "Ready to Begin?", cta: "Get Started"}
+});
+
+// Write to file or inject into page
+document.body.innerHTML = page;</code></pre>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Include the component library -->
+    <script src="mindvalley-components.js"></script>
+    
+    <!-- Generate live demos -->
+    <script>
+        // Generate all component demos
+        document.getElementById('hero-demo').innerHTML = MV.hero({
+            title: "Transform Your Mindset",
+            subtitle: "Discover the tools to unlock your extraordinary life",
+            cta: "Start Journey"
+        });
+        
+        document.getElementById('features-demo').innerHTML = MV.features({
+            title: "Why Choose Our Program",
+            features: [
+                {title: "Expert Guidance", description: "Learn from world-class teachers", icon: "🎯"},
+                {title: "Proven Methods", description: "Science-backed transformational tools", icon: "🧠"},
+                {title: "Global Community", description: "Connect with like-minded learners", icon: "🌍"}
+            ]
+        });
+        
+        document.getElementById('testimonial-demo').innerHTML = MV.testimonial({
+            quote: "This program completely shifted my perspective. The results were incredible!",
+            author: "Maria Rodriguez",
+            role: "Mindvalley Graduate"
+        });
+        
+        document.getElementById('cta-demo').innerHTML = MV.cta({
+            title: "Ready to Begin?",
+            subtitle: "Join thousands transforming their lives today",
+            cta: "Get Started Now"
+        });
+        
+        document.getElementById('benefits-demo').innerHTML = MV.benefits({
+            title: "What's Included",
+            benefits: [
+                "12 comprehensive modules",
+                "Expert video tutorials", 
+                "Downloadable resources",
+                "Lifetime access"
+            ]
+        });
+        
+        document.getElementById('faq-demo').innerHTML = MV.faq({
+            title: "Common Questions",
+            faqs: [
+                {question: "How long is the program?", answer: "Complete at your own pace, typically 6-8 weeks."},
+                {question: "Is there support available?", answer: "Yes! 24/7 community support and weekly Q&A sessions."}
+            ]
+        });
+        
+        document.getElementById('stats-demo').innerHTML = MV.stats({
+            title: "Our Impact",
+            stats: [
+                {number: "500K+", label: "Lives Transformed"},
+                {number: "98%", label: "Satisfaction Rate"},
+                {number: "100+", label: "Countries Reached"},
+                {number: "5★", label: "Average Rating"}
+            ]
+        });
+        
+        document.getElementById('media-demo').innerHTML = MV.media({
+            title: "See the Transformation",
+            subtitle: "Watch real success stories from our community",
+            cta: "Watch Stories"
+        });
+    </script>
+
+</body>
+</html>
