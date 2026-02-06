@@ -15,8 +15,9 @@
   /* --------------------------------------------------------------------------
      Font Families
      Google Sans Flex with Verdana fallback (per brand guidelines)
+     Added emoji font support for proper emoji rendering
      -------------------------------------------------------------------------- */
-  --font-brand: "Google Sans Flex", Verdana, sans-serif;
+  --font-brand: "Google Sans Flex", Verdana, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
 
   /* --------------------------------------------------------------------------
      Font Sizes
