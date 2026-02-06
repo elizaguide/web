@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 New Summit Model - Bari's Strategic Insights</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #0f131a;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #7a12d4 0%, #9d4edd 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(122, 18, 212, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #7a12d4;
+        }
+        
+        .problem-card {
+            border-left-color: #dc3545;
+        }
+        
+        .solution-card {
+            border-left-color: #28a745;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0f131a;
+        }
+        
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .problem-card li::before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+        
+        .solution-card li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #7a12d4;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .timeline {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .day {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 4px solid #7a12d4;
+            text-align: center;
+        }
+        
+        .day h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #7a12d4;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .before, .after {
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .before {
+            background: #fff5f5;
+            border: 2px solid #fed7d7;
+        }
+        
+        .after {
+            background: #f0fff4;
+            border: 2px solid #c6f6d5;
+        }
+        
+        .before h4 {
+            color: #c53030;
+            margin-bottom: 1rem;
+        }
+        
+        .after h4 {
+            color: #38a169;
+            margin-bottom: 1rem;
+        }
+        
+        .action-items {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        
+        .action-items h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .action-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .action-item h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-top: 3px solid #7a12d4;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #7a12d4;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .problem-solution,
+            .timeline,
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎯 New Summit Model</h1>
+            <p>Strategic insights from Bari to transform Mindvalley summits from "buffet events" to high-converting methodology-based experiences</p>
+        </header>
+
+        <div class="problem-solution">
+            <div class="card problem-card">
+                <h3>🚨 Current Problems</h3>
+                <ul>
+                    <li>"Buffet events" - people cherry-pick sessions</li>
+                    <li>Detailed agendas enable skipping</li>
+                    <li>Attendance drops Day 1 → Day 3</li>
+                    <li>Same pitch repeated on Day 2 & 3</li>
+                    <li>No cohesive methodology</li>
+                    <li>90-minute webinars lose attention</li>
+                </ul>
+            </div>
+            <div class="card solution-card">
+                <h3>✅ New Approach</h3>
+                <ul>
+                    <li>Method-based events with throughlines</li>
+                    <li>Hide schedules, emphasize frameworks</li>
+                    <li>Sequential steps that build on each other</li>
+                    <li>Day 2 pitch, Day 3 Q&A strategy</li>
+                    <li>Proven 5-step methodologies</li>
+                    <li>60-minute focused webinars</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>📊 Key Statistics & Insights</h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">60%</div>
+                    <div class="stat-label">Female buyers (logical decision makers)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">550</div>
+                    <div class="stat-label">$1K AI Accelerator sales from 7K webinar</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">Mastery buyers come from members</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Sales increase with focused collections</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>⏱️ New Event Structure</h2>
+            
+            <div class="comparison">
+                <div class="before">
+                    <h4>❌ OLD: 90-Minute Webinar</h4>
+                    <ul>
+                        <li>Too long, attention drops</li>
+                        <li>Q&A at the end feels pitchy</li>
+                        <li>Teaching too much content</li>
+                        <li>Same offer repeated</li>
+                    </ul>
+                </div>
+                <div class="after">
+                    <h4>✅ NEW: 60-Minute Webinar</h4>
+                    <ul>
+                        <li>Promise: "Done in exactly one hour"</li>
+                        <li>Simple concept, deep but fast</li>
+                        <li>Strategic Q&A that repitches</li>
+                        <li>Hook for staying until bonus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight">
+                🎯 <strong>Webinar Structure:</strong> 15 min content/connection → 15 min pain/solution → 15 min decision → 15 min Q&A repitch
+            </div>
+
+            <h3>3-Day Summit Flow</h3>
+            <div class="timeline">
+                <div class="day">
+                    <h4>📚 Day 1</h4>
+                    <p><strong>Content, Community, Connection</strong></p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>• No selling at all</li>
+                        <li>• Build trust and value</li>
+                        <li>• Establish methodology</li>
+                        <li>• Create community</li>
+                    </ul>
+                </div>
+                <div class="day">
+                    <h4>💰 Day 2</h4>
+                    <p><strong>Main Sales Pitch</strong></p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>• More content + pain building</li>
+                        <li>• THE sales presentation</li>
+                        <li>• Emotional buyers convert</li>
+                        <li>• Afternoon timing optimal</li>
+                    </ul>
+                </div>
+                <div class="day">
+                    <h4>❓ Day 3</h4>
+                    <p><strong>Scripted Q&A + Soft Repitch</strong></p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>• Address logical buyers</li>
+                        <li>• Scripted questions</li>
+                        <li>• Repitch through answers</li>
+                        <li>• Close logical buyers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🧠 Methodology Creation Framework</h2>
+            
+            <div class="comparison">
+                <div class="before">
+                    <h4>❌ Current: Speaker Buffet</h4>
+                    <p>"Here are 20 amazing experts talking about different aspects of AI/manifesting/etc."</p>
+                    <ul>
+                        <li>Speakers choose their own topics</li>
+                        <li>No connection between sessions</li>
+                        <li>People can skip sessions</li>
+                        <li>No urgency to attend all</li>
+                    </ul>
+                </div>
+                <div class="after">
+                    <h4>✅ New: Method-Based</h4>
+                    <p>"Here's our proven 5-step framework taught by world-class experts."</p>
+                    <ul>
+                        <li>Each speaker teaches ONE step</li>
+                        <li>Sequential building blocks</li>
+                        <li>"Miss one step = miss the method"</li>
+                        <li>Must attend everything</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight">
+                💡 <strong>Key Insight:</strong> "People buy frameworks, not random collection of tips. Every speaker must teach to YOUR method, not their own."
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎯 Audience Psychology: Logical vs Emotional Buyers</h2>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">65-70%</div>
+                    <div class="stat-label">Women in audience (logical buyers)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Q&A</div>
+                    <div class="stat-label">Critical for logical buyer conversion</div>
+                </div>
+            </div>
+
+            <div class="comparison">
+                <div class="before">
+                    <h4>🧠 Logical Buyers (Mostly Women)</h4>
+                    <ul>
+                        <li>Need emotional language to connect</li>
+                        <li>Ask questions as part of buying process</li>
+                        <li>Gather information before deciding</li>
+                        <li>Need Q&A to get out of their head</li>
+                        <li>Require heart-centered stories</li>
+                    </ul>
+                </div>
+                <div class="after">
+                    <h4>❤️ Emotional Buyers (Mostly Men)</h4>
+                    <ul>
+                        <li>"Love it, where's my credit card?"</li>
+                        <li>Make quick decisions</li>
+                        <li>Hunter/gatherer mentality</li>
+                        <li>Convert during main pitch</li>
+                        <li>Less questions needed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight">
+                🎪 <strong>Q&A Strategy:</strong> "My team tells me you have questions - let me address the top ones" then tie every answer back to program benefits
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📝 Marketing & Messaging Changes</h2>
+            
+            <div class="comparison">
+                <div class="before">
+                    <h4>❌ Stop Saying</h4>
+                    <ul>
+                        <li>"Here's our detailed schedule"</li>
+                        <li>"20 amazing speakers on different topics"</li>
+                        <li>"Pick the sessions you want"</li>
+                        <li>"Can't make Day 2? Join us Day 3!"</li>
+                    </ul>
+                </div>
+                <div class="after">
+                    <h4>✅ Start Saying</h4>
+                    <ul>
+                        <li>"Here's our proven framework"</li>
+                        <li>"These experts teach our method"</li>
+                        <li>"Every session builds on the last"</li>
+                        <li>"Miss a little, miss a lot"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight">
+                🔒 <strong>No More Detailed Agendas:</strong> Only show speakers, topics, and times. Let them trust your methodology instead of cherry-picking sessions.
+            </div>
+        </section>
+
+        <div class="action-items">
+            <h3>🚀 Immediate Action Items</h3>
+            <div class="action-grid">
+                <div class="action-item">
+                    <h4>1. Create Methodologies</h4>
+                    <p>Develop 5-step frameworks for each summit topic (AI Mastery Method, Manifesting Method, etc.)</p>
+                </div>
+                <div class="action-item">
+                    <h4>2. Restructure Speaker Briefs</h4>
+                    <p>Each speaker teaches ONE specific step of your method, not their own random topic</p>
+                </div>
+                <div class="action-item">
+                    <h4>3. Rewrite Landing Pages</h4>
+                    <p>Hide detailed schedules, emphasize methodology and sequential learning</p>
+                </div>
+                <div class="action-item">
+                    <h4>4. Script Day 3 Q&As</h4>
+                    <p>Prepare logical buyer questions that allow you to repitch program benefits naturally</p>
+                </div>
+                <div class="action-item">
+                    <h4>5. Test Timing</h4>
+                    <p>Consider weekday events for your audience (busy professionals with families)</p>
+                </div>
+                <div class="action-item">
+                    <h4>6. Shorten Webinars</h4>
+                    <p>Move to 60-minute format with upfront promise and strategic Q&A</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>🎪 The Big Picture Transformation</h2>
+            <div class="highlight">
+                <strong>FROM:</strong> "Buffet of amazing experts teaching different things"<br>
+                <strong>TO:</strong> "Proven step-by-step system taught by the world's best teachers"
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 1.1rem; line-height: 1.7;">
+                The goal is to move from being seen as a collection of random speakers to being seen as 
+                <strong>the definitive source</strong> for a specific methodology. When someone wants to learn 
+                your framework, they should think: "I need to attend this entire event because every piece 
+                builds on the last."
+            </p>
+        </section>
+    </div>
+</body>
+</html>
