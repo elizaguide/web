@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindvalley Utility CSS - Example</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <link rel="stylesheet" href="skills/mindvalley-design/mindvalley-core.css">
+    <link rel="stylesheet" href="skills/mindvalley-design/mindvalley-utilities.css">
+</head>
+<body>
+    
+    <!-- Quick Hero Section -->
+    <section class="mv-hero-quick">
+        <div class="mv-container">
+            <h1 class="title-bold-1 mv-mb-4">Speed Up Development</h1>
+            <p class="body-lg mv-mb-8 mv-max-w-2xl mv-mx-auto">
+                Pre-built utilities for rapid Mindvalley-branded page creation
+            </p>
+            <a href="#features" class="mv-btn mv-btn-primary">Explore Utilities</a>
+        </div>
+    </section>
+
+    <!-- Feature Grid -->
+    <section id="features" class="mv-section-lg">
+        <div class="mv-container">
+            <h2 class="title-bold-3 mv-text-center mv-mb-12">Mobile-First Utilities</h2>
+            
+            <div class="mv-features">
+                <div class="mv-card">
+                    <h3 class="title-bold-6 mv-text-purple mv-mb-4">🎨 Colors & Branding</h3>
+                    <p class="body mv-text-gray">Complete Mindvalley color system with utilities like <code>mv-text-purple</code> and <code>mv-bg-gradient-purple</code></p>
+                </div>
+                
+                <div class="mv-card">
+                    <h3 class="title-bold-6 mv-text-purple mv-mb-4">📱 Mobile-First Grid</h3>
+                    <p class="body mv-text-gray">Responsive grid classes: <code>mv-grid-1 md:mv-grid-3</code> - mobile column, desktop 3-column</p>
+                </div>
+                
+                <div class="mv-card">
+                    <h3 class="title-bold-6 mv-text-purple mv-mb-4">⚡ Quick Components</h3>
+                    <p class="body mv-text-gray">Ready patterns like <code>mv-hero-quick</code>, <code>mv-features</code>, <code>mv-btn-primary</code></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Examples -->
+    <section class="mv-section mv-bg-gray-lighter">
+        <div class="mv-container">
+            <h2 class="title-bold-3 mv-text-center mv-mb-8">Before vs After</h2>
+            
+            <div class="mv-mobile-stack mv-gap-8">
+                <!-- Before -->
+                <div class="mv-flex-1">
+                    <h3 class="title-bold-6 mv-text-error mv-mb-4">❌ Before (Custom CSS)</h3>
+                    <pre class="mv-bg-white mv-p-4 mv-rounded mv-text-sm"><code>/* Custom CSS every time */
+.hero {
+  padding: 3rem 0 6rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #7a12d4 0%, #9945e8 100%);
+  color: white;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}</code></pre>
+                </div>
+                
+                <!-- After -->
+                <div class="mv-flex-1">
+                    <h3 class="title-bold-6 mv-text-success mv-mb-4">✅ After (Utilities)</h3>
+                    <pre class="mv-bg-white mv-p-4 mv-rounded mv-text-sm"><code><!-- Just HTML classes -->
+&lt;section class="mv-hero-quick"&gt;
+  &lt;div class="mv-container"&gt;
+    &lt;h1 class="title-bold-1 mv-mb-4"&gt;Title&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;div class="mv-features"&gt;
+  &lt;div class="mv-card"&gt;Feature 1&lt;/div&gt;
+  &lt;div class="mv-card"&gt;Feature 2&lt;/div&gt;
+  &lt;div class="mv-card"&gt;Feature 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Patterns -->
+    <section class="mv-section">
+        <div class="mv-container">
+            <h2 class="title-bold-3 mv-text-center mv-mb-12">Common Patterns</h2>
+            
+            <!-- Mobile Stack -->
+            <div class="mv-card mv-mb-8">
+                <h3 class="title-bold-6 mv-mb-4">📱 Mobile Stack Pattern</h3>
+                <p class="body mv-mb-4">Stacks vertically on mobile, horizontal on desktop:</p>
+                <div class="mv-mobile-stack mv-bg-gray-lighter mv-p-4 mv-rounded">
+                    <div class="mv-bg-purple mv-text-white mv-p-3 mv-rounded">Item 1</div>
+                    <div class="mv-bg-purple mv-text-white mv-p-3 mv-rounded">Item 2</div>
+                    <div class="mv-bg-purple mv-text-white mv-p-3 mv-rounded">Item 3</div>
+                </div>
+                <code class="mv-text-sm">mv-mobile-stack</code>
+            </div>
+            
+            <!-- Button Examples -->
+            <div class="mv-card mv-mb-8">
+                <h3 class="title-bold-6 mv-mb-4">🎯 Button Variations</h3>
+                <div class="mv-flex mv-gap-4 mv-flex-wrap">
+                    <button class="mv-btn mv-btn-primary">Primary Button</button>
+                    <button class="mv-btn mv-btn-secondary">Secondary Button</button>
+                </div>
+            </div>
+            
+            <!-- Typography Scale -->
+            <div class="mv-card">
+                <h3 class="title-bold-6 mv-mb-4">✍️ Typography Scale</h3>
+                <div class="mv-text-xs mv-mb-2">Extra Small Text (mv-text-xs)</div>
+                <div class="mv-text-sm mv-mb-2">Small Text (mv-text-sm)</div>
+                <div class="mv-text-base mv-mb-2">Base Text (mv-text-base)</div>
+                <div class="mv-text-lg mv-mb-2">Large Text (mv-text-lg)</div>
+                <div class="mv-text-xl mv-mb-2">XL Text (mv-text-xl)</div>
+                <div class="mv-text-2xl mv-mb-2">2XL Text (mv-text-2xl)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="mv-section mv-bg-gray-lighter">
+        <div class="mv-container">
+            <div class="mv-testimonial mv-max-w-2xl mv-mx-auto">
+                <p class="body-lg mv-mb-4">This utility system reduced our page development time from hours to minutes. The mobile-first approach means everything just works.</p>
+                <div class="mv-font-semibold mv-text-purple">- Vishen Lakhiani, CEO Mindvalley</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mv-cta-section">
+        <div class="mv-container">
+            <h2 class="title-bold-2 mv-mb-4">Ready to Speed Up?</h2>
+            <p class="body-lg mv-mb-8 mv-max-w-xl mv-mx-auto">Start using Mindvalley utilities in your next project</p>
+            <a href="#" class="mv-btn mv-btn-secondary">Get Started</a>
+        </div>
+    </section>
+
+</body>
+</html>
