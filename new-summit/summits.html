@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Method-Based Summit Strategy — Mindvalley</title>
+    <meta name="description" content="Transform from speaker buffet events to high-converting methodology-based 3-day summits using proven through-line frameworks and strategic day-by-day planning.">
+    <meta name="theme-color" content="#7a12d4">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <link rel="stylesheet" href="../public/mindvalley-font.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #0f131a;
+            background-color: #ffffff;
+        }
+        
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .mv-container {
+                padding: 0 2rem;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 5rem 0;
+            text-align: center;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 5rem 0;
+        }
+        
+        .content-section:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        
+        /* Cards */
+        .comparison-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 1.5rem;
+        }
+        
+        .before-card {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+        }
+        
+        .after-card {
+            background: #f0fdf4;
+            border: 2px solid #bbf7d0;
+        }
+        
+        .before-card h4 {
+            color: #dc2626;
+            margin-bottom: 1.5rem;
+        }
+        
+        .after-card h4 {
+            color: #16a34a;
+            margin-bottom: 1.5rem;
+        }
+        
+        .problem-card {
+            border-left: 4px solid #ef4444;
+        }
+        
+        .solution-card {
+            border-left: 4px solid #10b981;
+        }
+        
+        /* Grid Layouts */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Timeline for 3-day structure */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .timeline-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            border-top: 4px solid #7a12d4;
+        }
+        
+        .timeline-card h4 {
+            color: #7a12d4;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-card ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .timeline-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        
+        .timeline-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #7a12d4;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: #fef3c7;
+            border: 2px solid #fde047;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            font-weight: 600;
+        }
+        
+        /* Action Section */
+        .action-section {
+            background: #7a12d4;
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .action-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Lists */
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .content-section li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .content-section li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #7a12d4;
+            font-weight: bold;
+        }
+        
+        /* Framework Steps */
+        .framework-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .framework-step {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+        }
+        
+        .step-icon {
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            background: #7a12d4;
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            line-height: 3rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 4rem 0;
+            color: #6b7280;
+            text-align: center;
+        }
+        
+        /* Links */
+        .nav-link {
+            color: #7a12d4;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 1rem;
+        }
+        
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="padding: 1rem 0; background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
+        <div class="mv-container" style="text-align: center;">
+            <a href="index.html" class="nav-link">Overview</a>
+            <a href="webinars.html" class="nav-link">Webinars</a>
+            <span style="color: #7a12d4; font-weight: 700;">Summits</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="mv-container">
+            <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">
+                METHOD-BASED SUMMITS
+            </div>
+            <h1 class="title-bold-2" style="max-width: 48rem; margin: 0 auto 1.25rem auto;">
+                🎪 From Buffet to Methodology
+            </h1>
+            <p class="body-lg" style="max-width: 40rem; color: #4b5563; margin: 0 auto;">
+                Transform your 3-day summits from random speaker collections to cohesive, high-converting methodology-based events with proven through-lines.
+            </p>
+        </div>
+    </section>
+
+    <!-- The Core Problem -->
+    <section class="content-section">
+        <div class="mv-container">
+            <h2 class="title-bold-3" style="margin-bottom: 2rem;">🚨 The "Buffet Event" Problem</h2>
+            
+            <div class="problem-solution">
+                <div class="comparison-card problem-card">
+                    <h3 class="title-bold-5" style="margin-bottom: 1.5rem;">❌ Current "Buffet" Model</h3>
+                    <ul>
+                        <li>"Here are 20 amazing speakers on different topics"</li>
+                        <li>Detailed agendas enable cherry-picking sessions</li>
+                        <li>Attendance drops Day 1 → Day 3</li>
+                        <li>No connection between speakers or sessions</li>
+                        <li>"Can't make Day 2? Join us Day 3!" mentality</li>
+                        <li>People choose what to attend vs. what to skip</li>
+                    </ul>
+                </div>
+                <div class="comparison-card solution-card">
+                    <h3 class="title-bold-5" style="margin-bottom: 1.5rem;">✅ New Method-Based Model</h3>
+                    <ul>
+                        <li>"Here's our proven 5-step framework"</li>
+                        <li>Hide schedules, emphasize methodology</li>
+                        <li>Every session builds on the previous one</li>
+                        <li>Each speaker teaches ONE step of YOUR method</li>
+                        <li>"Miss a little, miss a lot" urgency</li>
+                        <li>Must attend everything to get the complete system</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                💡 <strong>Key Insight:</strong> "People buy frameworks, not random collection of tips. Every speaker must teach to YOUR method, not their own."
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Day Structure -->
+    <section class="content-section">
+        <div class="mv-container">
+            <h2 class="title-bold-3" style="margin-bottom: 2rem;">📅 New 3-Day Summit Structure</h2>
+            
+            <div class="comparison-grid" style="margin-bottom: 3rem;">
+                <div class="before-card">
+                    <h4 class="title-bold-5">❌ Old Approach</h4>
+                    <ul class="body">
+                        <li><strong>Day 2:</strong> 30-min rapid sales pitch</li>
+                        <li><strong>Day 3:</strong> 1-hour detailed sales pitch (same content, deeper)</li>
+                        <li>Logical buyers don't have time for questions</li>
+                        <li>Feels overly salesy</li>
+                    </ul>
+                </div>
+                <div class="after-card">
+                    <h4 class="title-bold-5">✅ New Strategic Flow</h4>
+                    <ul class="body">
+                        <li><strong>Day 2:</strong> THE main sales presentation (afternoon)</li>
+                        <li><strong>Day 3:</strong> Scripted Q&A + soft repitch</li>
+                        <li>Logical buyers get questions answered</li>
+                        <li>Never feels like repeated pitching</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="title-bold-4" style="margin-bottom: 2rem; text-align: center;">The Proven 3-Day Flow</h3>
+            <div class="timeline-grid">
+                <div class="timeline-card">
+                    <h4 class="title-bold-5">📚 Day 1</h4>
+                    <p class="body" style="font-weight: 600; margin-bottom: 1rem;">Content, Community, Connection</p>
+                    <ul>
+                        <li><strong>No selling at all</strong></li>
+                        <li>Build trust and deliver massive value</li>
+                        <li>Establish your methodology framework</li>
+                        <li>Create community and connection</li>
+                        <li>Introduce speakers as method experts</li>
+                    </ul>
+                </div>
+                <div class="timeline-card">
+                    <h4 class="title-bold-5">💰 Day 2</h4>
+                    <p class="body" style="font-weight: 600; margin-bottom: 1rem;">Main Sales Pitch</p>
+                    <ul>
+                        <li><strong>More great content + pain building</strong></li>
+                        <li>THE main sales presentation (afternoon)</li>
+                        <li>Emotional buyers convert immediately</li>
+                        <li>Create urgency and desire</li>
+                        <li>15 minutes total pitch time (not more!)</li>
+                    </ul>
+                </div>
+                <div class="timeline-card">
+                    <h4 class="title-bold-5">❓ Day 3</h4>
+                    <p class="body" style="font-weight: 600; margin-bottom: 1rem;">Scripted Q&A + Soft Repitch</p>
+                    <ul>
+                        <li><strong>Address logical buyers' concerns</strong></li>
+                        <li>Pre-scripted strategic questions</li>
+                        <li>Repitch through helpful answers</li>
+                        <li>Heart-centered stories for women</li>
+                        <li>Close logical buyers naturally</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                ⏰ <strong>Critical Timing:</strong> Emotional buyers (30%) convert on Day 2. Logical buyers (70%) need Day 3 Q&A to process and decide. Both are essential for maximum conversion.
+            </div>
+        </div>
+    </section>
+
+    <!-- Creating Your Methodology -->
+    <section class="content-section">
+        <div class="mv-container">
+            <h2 class="title-bold-3" style="margin-bottom: 2rem;">🧠 Creating Your Summit Methodology</h2>
+
+            <div class="comparison-card" style="margin-bottom: 2rem; border-left: 4px solid #7a12d4;">
+                <h3 class="title-bold-5" style="color: #7a12d4; margin-bottom: 1.5rem;">The Through-Line Framework</h3>
+                <p class="body" style="margin-bottom: 1.5rem;">Every successful summit needs a central methodology that connects all speakers and sessions into one cohesive learning journey.</p>
+                
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 0.5rem;">
+                    <h4 class="title-bold-7" style="margin-bottom: 1rem; color: #7a12d4;">Example: AI Mastery Method (5 Steps)</h4>
+                    <ol style="list-style: decimal; margin-left: 2rem; color: #4b5563;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Foundation:</strong> Understanding AI fundamentals (Speaker teaches this step)</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Setup:</strong> Tools and platforms (Different speaker, same method)</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Implementation:</strong> Building your first AI system</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Optimization:</strong> Improving and scaling your results</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Integration:</strong> Making AI part of your daily workflow</li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3 class="title-bold-4" style="margin-bottom: 2rem;">How to Structure Your Method</h3>
+            <div class="framework-steps">
+                <div class="framework-step">
+                    <div class="step-icon">1</div>
+                    <h4 class="title-bold-7" style="margin-bottom: 0.5rem;">Define Outcome</h4>
+                    <p class="body-sm">What specific transformation will attendees get?</p>
+                </div>
+                <div class="framework-step">
+                    <div class="step-icon">2</div>
+                    <h4 class="title-bold-7" style="margin-bottom: 0.5rem;">Break Into Steps</h4>
+                    <p class="body-sm">Create 5-7 sequential steps to achieve that outcome</p>
+                </div>
+                <div class="framework-step">
+                    <div class="step-icon">3</div>
+                    <h4 class="title-bold-7" style="margin-bottom: 0.5rem;">Assign Speakers</h4>
+                    <p class="body-sm">Each expert teaches ONE step of YOUR method</p>
+                </div>
+                <div class="framework-step">
+                    <div class="step-icon">4</div>
+                    <h4 class="title-bold-7" style="margin-bottom: 0.5rem;">Brief Speakers</h4>
+                    <p class="body-sm">They teach to YOUR framework, not their own</p>
+                </div>
+                <div class="framework-step">
+                    <div class="step-icon">5</div>
+                    <h4 class="title-bold-7" style="margin-bottom: 0.5rem;">Connect Everything</h4>
+                    <p class="body-sm">Intro/outro each speaker to maintain through-line</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Changes -->
+    <section class="content-section">
+        <div class="mv-container">
+            <h2 class="title-bold-3" style="margin-bottom: 2rem;">📝 Marketing & Messaging Transformation</h2>
+
+            <div class="comparison-grid">
+                <div class="before-card">
+                    <h4 class="title-bold-5">❌ Old Speaker-Focused Marketing</h4>
+                    <ul class="body">
+                        <li>"Here's our detailed schedule and agenda"</li>
+                        <li>"20 amazing speakers on different topics"</li>
+                        <li>"Pick the sessions that interest you"</li>
+                        <li>"Can't make Day 2? Join us Day 3!"</li>
+                        <li>Enables cherry-picking and partial attendance</li>
+                    </ul>
+                </div>
+                <div class="after-card">
+                    <h4 class="title-bold-5">✅ New Method-Focused Marketing</h4>
+                    <ul class="body">
+                        <li>"Here's our proven step-by-step framework"</li>
+                        <li>"World-class experts teaching our method"</li>
+                        <li>"Every session builds on the previous one"</li>
+                        <li>"Miss a little, miss a lot"</li>
+                        <li>Creates urgency for complete attendance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                🔒 <strong>No More Detailed Agendas:</strong> Only show speakers, general topics, and times. Hide detailed session descriptions that enable cherry-picking. Trust builds attendance, not transparency.
+            </div>
+
+            <div class="comparison-card" style="margin-top: 2rem;">
+                <h3 class="title-bold-5" style="margin-bottom: 1.5rem;">📱 Landing Page Copy Framework</h3>
+                <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 0.5rem; margin: 1rem 0;">
+                    <h4 class="title-bold-7" style="margin-bottom: 1rem; color: #16a34a;">✅ Method-Based Copy</h4>
+                    <p class="body-sm" style="font-style: italic;">
+                        "Join us for the complete AI Mastery Method—a proven 5-step framework taught by the world's leading AI experts. Each session builds on the last, taking you from complete beginner to AI-powered professional in just 3 days. Every expert teaches one crucial step of our methodology."
+                    </p>
+                </div>
+                <div style="background: #fef2f2; padding: 1.5rem; border-radius: 0.5rem; margin: 1rem 0;">
+                    <h4 class="title-bold-7" style="margin-bottom: 1rem; color: #dc2626;">❌ Speaker-Focused Copy</h4>
+                    <p class="body-sm" style="font-style: italic;">
+                        "Join 15 amazing AI experts as they share their unique insights on artificial intelligence. Day 1: John talks about ChatGPT, Sarah covers automation. Day 2: Mike discusses..."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker Management -->
+    <section class="content-section">
+        <div class="mv-container">
+            <h2 class="title-bold-3" style="margin-bottom: 2rem;">🎤 Managing Speakers in Your Method</h2>
+
+            <div class="comparison-grid">
+                <div class="before-card">
+                    <h4 class="title-bold-5">❌ Old: Speaker Freedom</h4>
+                    <ul class="body">
+                        <li>Speakers choose their own topics</li>
+                        <li>"Talk about whatever you want in your expertise"</li>
+                        <li>No connection between sessions</li>
+                        <li>Each speaker promotes their own method</li>
+                        <li>Confusing array of different approaches</li>
+                    </ul>
+                </div>
+                <div class="after-card">
+                    <h4 class="title-bold-5">✅ New: Method Alignment</h4>
+                    <ul class="body">
+                        <li>You assign specific steps to each speaker</li>
+                        <li>"Teach Step 3 of our AI Mastery Method"</li>
+                        <li>Pre-brief speakers on your framework</li>
+                        <li>They teach to YOUR method, not theirs</li>
+                        <li>Cohesive, building progression</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="comparison-card" style="margin-top: 2rem;">
+                <h3 class="title-bold-5" style="margin-bottom: 1.5rem;">📋 Speaker Brief Template</h3>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 0.5rem;">
+                    <p class="body-sm" style="margin-bottom: 1rem;"><strong>Hi [Speaker],</strong></p>
+                    <p class="body-sm" style="margin-bottom: 1rem;">
+                        You'll be teaching <strong>Step 3: Implementation</strong> of our AI Mastery Method. This comes after students have learned Foundation (Step 1) and Setup (Step 2), so they'll be ready to build their first AI system.
+                    </p>
+                    <p class="body-sm" style="margin-bottom: 1rem;">
+                        <strong>Your specific focus:</strong> Help them create their first working AI automation using the tools introduced in Step 2. Don't worry about explaining basics—focus purely on implementation.
+                    </p>
+                    <p class="body-sm">
+                        <strong>Time:</strong> 45 minutes | <strong>Outcome:</strong> Every student leaves with a working AI system they built during your session.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation -->
+    <section class="action-section">
+        <div class="mv-container">
+            <h3 class="title-bold-3" style="margin-bottom: 1.5rem;">🚀 Summit Transformation Checklist</h3>
+            <div class="action-grid">
+                <div class="action-card">
+                    <h4 class="title-bold-6" style="margin-bottom: 1rem;">1. Create Your Method</h4>
+                    <p class="body">Develop a 5-7 step framework for your summit topic. Make it simple but comprehensive.</p>
+                </div>
+                <div class="action-card">
+                    <h4 class="title-bold-6" style="margin-bottom: 1rem;">2. Restructure 3-Day Flow</h4>
+                    <p class="body">Day 1: Content only. Day 2: Content + main pitch. Day 3: Scripted Q&A repitch.</p>
+                </div>
+                <div class="action-card">
+                    <h4 class="title-bold-6" style="margin-bottom: 1rem;">3. Assign Speaker Steps</h4>
+                    <p class="body">Each speaker teaches ONE step of your method, not their own random topic.</p>
+                </div>
+                <div class="action-card">
+                    <h4 class="title-bold-6" style="margin-bottom: 1rem;">4. Rewrite Landing Pages</h4>
+                    <p class="body">Focus on methodology, not speaker lineup. Hide detailed schedules.</p>
+                </div>
+                <div class="action-card">
+                    <h4 class="title-bold-6" style="margin-bottom: 1rem;">5. Script Day 3 Q&As</h4>
+                    <p class="body">Prepare logical buyer questions that let you repitch program benefits naturally.</p>
+                </div>
+                <div class="action-card">
+                    <h4 class="title-bold-6" style="margin-bottom: 1rem;">6. Test Timing</h4>
+                    <p class="body">Consider weekday events for busy professionals with weekend family commitments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Result -->
+    <section class="content-section">
+        <div class="mv-container">
+            <h2 class="title-bold-3" style="margin-bottom: 2rem;">🎪 The Big Picture Transformation</h2>
+            
+            <div class="highlight-box" style="text-align: center; font-size: 1.1rem;">
+                <strong>FROM:</strong> "Buffet of amazing experts teaching different things"<br>
+                <strong>TO:</strong> "Proven step-by-step system taught by the world's best teachers"
+            </div>
+            
+            <p class="body-lg" style="margin-top: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto; text-align: center;">
+                The goal is to move from being seen as a collection of random speakers to being seen as 
+                <strong>the definitive source</strong> for a specific methodology. When someone wants to learn 
+                your framework, they should think: "I need to attend this entire event because every piece 
+                builds on the last."
+            </p>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <div style="display: inline-block; background: #7a12d4; color: white; padding: 1rem 2rem; border-radius: 999px; font-weight: 700;">
+                    Result: Higher attendance, better retention, more conversions
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="mv-container">
+            <p class="body-sm">© Mindvalley • Method-Based Summit Strategy</p>
+        </div>
+    </footer>
+</body>
+</html>
