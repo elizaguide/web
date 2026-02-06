@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrantly - All Builds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="mindvalley-font.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mv: {
+                            purple: '#7a12d4',
+                            dark: '#0f131a',
+                            blue: '#00d2ff',
+                            green: '#4ecdc4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(122, 18, 212, 0.1), 0 10px 10px -5px rgba(122, 18, 212, 0.04); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-mv-purple to-mv-blue text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-2">🧬 Vibrantly</h1>
+                <p class="text-lg text-blue-100">All Build Versions - Choose Your Experience</p>
+                <p class="text-sm text-blue-200 mt-2">Vishen's Complete Health Optimization Platform</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Build 1: Interactive MVP -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-mv-purple/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-mv-purple to-mv-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Interactive MVP</h3>
+                    <p class="text-gray-600 text-sm">Complete user flow with supplement recommendations</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Full interactive experience
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Supplement flow & recommendations
+                    </div>
+                </div>
+                <a href="mvp/index.html" target="_blank" 
+                   class="block w-full bg-mv-purple hover:bg-mv-purple/90 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
+            </div>
+
+            <!-- Build 2: Enhanced Dashboard V2 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-mv-blue/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-mv-blue to-mv-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Enhanced Dashboard V2</h3>
+                    <p class="text-gray-600 text-sm">Advanced health metrics with improved UI</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Advanced analytics
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Enhanced user interface
+                    </div>
+                </div>
+                <a href="enhanced-health-dashboard-v2.html" target="_blank"
+                   class="block w-full bg-mv-blue hover:bg-mv-blue/90 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
+            </div>
+
+            <!-- Build 3: Ultimate Supplement Dashboard -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-mv-green/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-mv-green to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Ultimate Supplements</h3>
+                    <p class="text-gray-600 text-sm">Comprehensive supplement tracking & optimization</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                        Supplement-focused interface
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                        Advanced tracking features
+                    </div>
+                </div>
+                <a href="ultimate-supplement-dashboard.html" target="_blank"
+                   class="block w-full bg-mv-green hover:bg-mv-green/90 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
+            </div>
+
+            <!-- Build 4: Comprehensive Health Dashboard -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-purple-500/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Comprehensive Dashboard</h3>
+                    <p class="text-gray-600 text-sm">Complete health overview with all metrics</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        Complete health overview
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        All-in-one interface
+                    </div>
+                </div>
+                <a href="comprehensive-health-dashboard.html" target="_blank"
+                   class="block w-full bg-purple-500 hover:bg-purple-600 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
+            </div>
+
+            <!-- Build 5: Everfit Integration -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-orange-500/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">5</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Everfit Integration</h3>
+                    <p class="text-gray-600 text-sm">Fitness-focused with Everfit workout data</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Everfit workout integration
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Fitness-focused dashboard
+                    </div>
+                </div>
+                <a href="everfit-dashboard.html" target="_blank"
+                   class="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
+            </div>
+
+            <!-- Build 6: Bloodwork Analysis -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-red-500/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">6</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Bloodwork Analysis</h3>
+                    <p class="text-gray-600 text-sm">Advanced lab results & biomarker tracking</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                        Lab results interface
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                        Biomarker analysis
+                    </div>
+                </div>
+                <a href="bloodwork.html" target="_blank"
+                   class="block w-full bg-red-500 hover:bg-red-600 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="mt-16 text-center">
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto">
+                <h4 class="text-xl font-bold text-gray-900 mb-4">🎯 Which Build to Choose?</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+                    <div>
+                        <strong class="text-mv-purple">New Users:</strong> Start with Build #1 (Interactive MVP)
+                    </div>
+                    <div>
+                        <strong class="text-mv-blue">Advanced Users:</strong> Try Build #2 (Enhanced Dashboard)
+                    </div>
+                    <div>
+                        <strong class="text-mv-green">Supplement Focus:</strong> Use Build #3 (Ultimate Supplements)
+                    </div>
+                    <div>
+                        <strong class="text-purple-500">Complete Overview:</strong> Try Build #4 (Comprehensive)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-mv-dark text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-300">🧬 Vibrantly - Vishen's Health Optimization Platform</p>
+            <p class="text-gray-500 text-sm mt-2">Built with 💜 by Eliza AI</p>
+        </div>
+    </footer>
+</body>
+</html>
