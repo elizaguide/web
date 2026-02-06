@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibrantly - Vishen's Health Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Vibrantly - Vishen's Health Platform</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="mindvalley-font.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#00D2FF',
-                        secondary: '#3A7BD5',
-                        accent: '#FF6B6B',
-                        success: '#4ECDC4',
-                        warning: '#FFE66D',
-                        dark: '#1A1A1A'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        mv: {
+                            purple: '#7a12d4',
+                            dark: '#0f131a',
+                            blue: '#00d2ff',
+                            green: '#4ecdc4'
+                        }
                     }
                 }
             }
@@ -28,234 +25,205 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
         .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-        .progress-ring { transition: stroke-dasharray 0.5s ease-in-out; }
-        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 5px rgba(0, 210, 255, 0.5); } 50% { box-shadow: 0 0 20px rgba(0, 210, 255, 0.8); } }
-        .pulse-glow { animation: pulse-glow 2s infinite; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(122, 18, 212, 0.1), 0 10px 10px -5px rgba(122, 18, 212, 0.04); }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 min-h-screen">
     <!-- Header -->
-    <header class="gradient-bg text-white">
-        <div class="container mx-auto px-6 py-6">
-            <div class="flex items-center justify-between">
-                <div>
-                    <h1 class="text-3xl font-bold">Vibrantly</h1>
-                    <p class="text-blue-100">Vishen's Complete Health Dashboard</p>
-                </div>
-                <div class="text-right">
-                    <div class="text-2xl font-bold">92%</div>
-                    <div class="text-sm text-blue-100">Health Score</div>
-                </div>
+    <header class="bg-gradient-to-r from-mv-purple to-mv-blue text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-2">🧬 Vibrantly</h1>
+                <p class="text-lg text-blue-100">Choose Your Health Experience</p>
+                <p class="text-sm text-blue-200 mt-2">Vishen's Complete Health Optimization Platform</p>
             </div>
         </div>
     </header>
 
-    <!-- Quick Stats -->
-    <section class="container mx-auto px-6 py-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div class="bg-white rounded-xl p-4 shadow-sm card-hover">
-                <div class="text-2xl font-bold text-success">16/20</div>
-                <div class="text-sm text-gray-600">Running Speed</div>
-                <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
-                    <div class="bg-success h-2 rounded-full" style="width: 80%"></div>
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Build 1: Interactive MVP -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-mv-purple/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-mv-purple to-mv-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Interactive MVP</h3>
+                    <p class="text-gray-600 text-sm">Complete user flow with supplement recommendations</p>
                 </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Full interactive experience
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Supplement flow & recommendations
+                    </div>
+                </div>
+                <a href="mvp/index.html" target="_blank" 
+                   class="block w-full bg-mv-purple hover:bg-mv-purple/90 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
             </div>
-            <div class="bg-white rounded-xl p-4 shadow-sm card-hover">
-                <div class="text-2xl font-bold text-accent">24kg</div>
-                <div class="text-sm text-gray-600">Kettlebell PR</div>
-                <div class="text-xs text-green-600 mt-1">↗ +2kg this week</div>
+
+            <!-- Build 2: Enhanced Dashboard V2 -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-mv-blue/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-mv-blue to-mv-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Enhanced Dashboard V2</h3>
+                    <p class="text-gray-600 text-sm">Advanced health metrics with improved UI</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Advanced analytics
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Enhanced user interface
+                    </div>
+                </div>
+                <a href="enhanced-health-dashboard-v2.html" target="_blank"
+                   class="block w-full bg-mv-blue hover:bg-mv-blue/90 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
             </div>
-            <div class="bg-white rounded-xl p-4 shadow-sm card-hover">
-                <div class="text-2xl font-bold text-warning">1</div>
-                <div class="text-sm text-gray-600">Pending Reminder</div>
-                <div class="text-xs text-orange-600 mt-1">OneRebel Pilates</div>
+
+            <!-- Build 3: Ultimate Supplement Dashboard -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-mv-green/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-mv-green to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Ultimate Supplements</h3>
+                    <p class="text-gray-600 text-sm">Comprehensive supplement tracking & optimization</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                        Supplement-focused interface
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                        Advanced tracking features
+                    </div>
+                </div>
+                <a href="ultimate-supplement-dashboard.html" target="_blank"
+                   class="block w-full bg-mv-green hover:bg-mv-green/90 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
             </div>
-            <div class="bg-white rounded-xl p-4 shadow-sm card-hover">
-                <div class="text-2xl font-bold text-primary">-4yr</div>
-                <div class="text-sm text-gray-600">Bio Age Goal</div>
-                <div class="text-xs text-blue-600 mt-1">3 months target</div>
+
+            <!-- Build 4: Comprehensive Health Dashboard -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-purple-500/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Comprehensive Dashboard</h3>
+                    <p class="text-gray-600 text-sm">Complete health overview with all metrics</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        Complete health overview
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        All-in-one interface
+                    </div>
+                </div>
+                <a href="comprehensive-health-dashboard.html" target="_blank"
+                   class="block w-full bg-purple-500 hover:bg-purple-600 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
             </div>
-        </div>
 
-        <!-- Navigation Cards -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Workouts -->
-            <a href="workouts.html" class="block">
-                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border-l-4 border-success">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold">💪 Workouts</h3>
-                        <div class="bg-success bg-opacity-10 text-success px-3 py-1 rounded-full text-sm">2 this week</div>
+            <!-- Build 5: Everfit Integration -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-orange-500/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">5</span>
                     </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Latest: DABBS</span>
-                            <span class="font-medium">Today</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Next: OneRebel</span>
-                            <span class="font-medium text-primary">Book Pilates</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Progress</span>
-                            <span class="font-medium text-green-600">↗ Strong gains</span>
-                        </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Everfit Integration</h3>
+                    <p class="text-gray-600 text-sm">Fitness-focused with Everfit workout data</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Everfit workout integration
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        Fitness-focused dashboard
                     </div>
                 </div>
-            </a>
+                <a href="everfit-dashboard.html" target="_blank"
+                   class="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
+            </div>
 
-            <!-- Supplements -->
-            <a href="supplements.html" class="block">
-                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border-l-4 border-primary">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold">💊 Supplements</h3>
-                        <div class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">8 daily</div>
+            <!-- Build 6: Bloodwork Analysis -->
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-red-500/20">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white font-bold">6</span>
                     </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Morning Stack</span>
-                            <span class="font-medium">6 pills</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Evening</span>
-                            <span class="font-medium">2 pills</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Interactions</span>
-                            <span class="font-medium text-yellow-600">1 warning</span>
-                        </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Bloodwork Analysis</h3>
+                    <p class="text-gray-600 text-sm">Advanced lab results & biomarker tracking</p>
+                </div>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                        Lab results interface
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                        Biomarker analysis
                     </div>
                 </div>
-            </a>
-
-            <!-- Blood Work -->
-            <a href="bloodwork.html" class="block">
-                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border-l-4 border-accent">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold">🩸 Blood Work</h3>
-                        <div class="bg-accent bg-opacity-10 text-accent px-3 py-1 rounded-full text-sm">Oct 2025</div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">LDL Cholesterol</span>
-                            <span class="font-medium text-red-600">171 ↑</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Testosterone</span>
-                            <span class="font-medium text-green-600">30.5 ✓</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Vitamin D</span>
-                            <span class="font-medium text-green-600">41.8 ✓</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Goals -->
-            <a href="goals.html" class="block">
-                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border-l-4 border-warning">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold">🎯 Goals</h3>
-                        <div class="bg-warning bg-opacity-10 text-warning px-3 py-1 rounded-full text-sm">Q1 2026</div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Muscle Gain</span>
-                            <span class="font-medium text-green-600">On Track</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Waist: 82→79cm</span>
-                            <span class="font-medium">-1cm so far</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Bio Age -4yr</span>
-                            <span class="font-medium text-blue-600">3mo target</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Reminders -->
-            <a href="reminders.html" class="block">
-                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border-l-4 border-purple-500 pulse-glow">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold">⏰ Reminders</h3>
-                        <div class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">1 urgent</div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">OneRebel Pilates</span>
-                            <span class="font-medium text-red-600">Book now</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Blood work follow-up</span>
-                            <span class="font-medium">Next month</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Supplement review</span>
-                            <span class="font-medium">2 weeks</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Health Insights -->
-            <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 shadow-sm">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-xl font-semibold">🧠 AI Insights</h3>
-                    <div class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Updated</div>
-                </div>
-                <div class="space-y-3">
-                    <p class="text-gray-700 text-sm">Your 24kg kettlebell pulls show excellent functional strength gains. Perfect for martial arts prep.</p>
-                    <p class="text-gray-700 text-sm">LDL levels suggest adding more cardio. OneRebel classes are ideal.</p>
-                    <p class="text-gray-700 text-sm">Consistent HIIT could reverse biological age by 2-4 years based on current progress.</p>
-                </div>
+                <a href="bloodwork.html" target="_blank"
+                   class="block w-full bg-red-500 hover:bg-red-600 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors">
+                    Launch Build →
+                </a>
             </div>
         </div>
-    </section>
 
-    <!-- Family Section -->
-    <section class="container mx-auto px-6 py-8">
-        <div class="bg-white rounded-2xl p-6 shadow-sm">
-            <h3 class="text-xl font-semibold mb-4">👨‍👦 Family Fitness</h3>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-blue-50 rounded-xl p-4">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="font-medium">Vishen</span>
-                        <span class="text-blue-600 font-bold">Speed 16</span>
+        <!-- Footer Info -->
+        <div class="mt-16 text-center">
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto">
+                <h4 class="text-xl font-bold text-gray-900 mb-4">🎯 Which Build to Choose?</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+                    <div>
+                        <strong class="text-mv-purple">New Users:</strong> Start with Build #1 (Interactive MVP)
                     </div>
-                    <div class="text-sm text-gray-600">Latest: DABBS Fitness (24kg kettlebell)</div>
-                    <div class="text-sm text-gray-600">Next: OneRebel Pilates</div>
-                </div>
-                <div class="bg-green-50 rounded-xl p-4">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="font-medium">Hayden</span>
-                        <span class="text-green-600 font-bold">Speed 21</span>
+                    <div>
+                        <strong class="text-mv-blue">Advanced Users:</strong> Try Build #2 (Enhanced Dashboard)
                     </div>
-                    <div class="text-sm text-gray-600">Latest: OneRebel Reshape</div>
-                    <div class="text-sm text-gray-600">Schedule: DABBS 12 PM</div>
+                    <div>
+                        <strong class="text-mv-green">Supplement Focus:</strong> Use Build #3 (Ultimate Supplements)
+                    </div>
+                    <div>
+                        <strong class="text-purple-500">Complete Overview:</strong> Try Build #4 (Comprehensive)
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <script>
-        // Add some interactive elements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate progress bars
-            const progressBars = document.querySelectorAll('[style*="width"]');
-            progressBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0%';
-                setTimeout(() => {
-                    bar.style.width = width;
-                    bar.style.transition = 'width 1s ease-out';
-                }, 300);
-            });
-        });
-    </script>
+    <!-- Footer -->
+    <footer class="bg-mv-dark text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-300">🧬 Vibrantly - Vishen's Health Optimization Platform</p>
+            <p class="text-gray-500 text-sm mt-2">Built with 💜 by Eliza AI</p>
+        </div>
+    </footer>
 </body>
 </html>
