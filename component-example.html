@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Example - Mindset Mastery Program</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="stylesheet" href="skills/mindvalley-design/mindvalley-core.css">
+    <link rel="stylesheet" href="skills/mindvalley-design/mindvalley-utilities.css">
+</head>
+<body>
+    
+    <!-- Generated with: MV.hero() -->
+    <div id="hero"></div>
+    
+    <!-- Generated with: MV.features() -->
+    <div id="features"></div>
+    
+    <!-- Generated with: MV.testimonial() -->
+    <div id="testimonial"></div>
+    
+    <!-- Generated with: MV.benefits() -->
+    <div id="benefits"></div>
+    
+    <!-- Generated with: MV.faq() -->
+    <div id="faq"></div>
+    
+    <!-- Generated with: MV.cta() -->
+    <div id="cta"></div>
+
+    <!-- Include component library -->
+    <script src="skills/mindvalley-design/mindvalley-components.js"></script>
+    
+    <!-- Generate complete page in seconds -->
+    <script>
+        // Hero section - 10 seconds to customize
+        document.getElementById('hero').innerHTML = MV.hero({
+            title: "Master Your Mindset in 21 Days",
+            subtitle: "Transform limiting beliefs into unstoppable confidence with Vishen Lakhiani's proven system",
+            cta: "Join the Program",
+            ctaLink: "#signup"
+        });
+        
+        // Features grid - 30 seconds to customize
+        document.getElementById('features').innerHTML = MV.features({
+            title: "Why This Program Works",
+            features: [
+                {
+                    title: "Daily Practices",
+                    description: "Simple 10-minute exercises that rewire your brain for success",
+                    icon: "🧘"
+                },
+                {
+                    title: "Expert Guidance", 
+                    description: "Personal coaching from Vishen Lakhiani and certified trainers",
+                    icon: "🎯"
+                },
+                {
+                    title: "Global Community",
+                    description: "Connect with 1000+ participants on the same transformation journey",
+                    icon: "🌍"
+                }
+            ]
+        });
+        
+        // Social proof - 15 seconds
+        document.getElementById('testimonial').innerHTML = MV.testimonial({
+            quote: "I went from constant self-doubt to unshakeable confidence. This program literally changed my entire life trajectory.",
+            author: "Maria Rodriguez",
+            role: "Program Graduate, Entrepreneur"
+        });
+        
+        // Benefits + pricing - 45 seconds
+        document.getElementById('benefits').innerHTML = MV.benefits({
+            title: "Everything You Get",
+            benefits: [
+                "21 daily video lessons with Vishen",
+                "Downloadable meditation tracks",
+                "Private community access",
+                "Mindset transformation workbook",
+                "Live Q&A sessions",
+                "30-day money-back guarantee"
+            ]
+        });
+        
+        // FAQ section - 60 seconds to customize
+        document.getElementById('faq').innerHTML = MV.faq({
+            title: "Common Questions",
+            faqs: [
+                {
+                    question: "How much time does this require daily?",
+                    answer: "Just 10-15 minutes per day. The practices are designed to fit into any schedule."
+                },
+                {
+                    question: "What if I don't see results?",
+                    answer: "We offer a full 30-day money-back guarantee. If you don't experience a shift in your mindset, we'll refund every penny."
+                },
+                {
+                    question: "Is this suitable for beginners?",
+                    answer: "Absolutely! This program is designed for anyone, regardless of experience with personal development."
+                },
+                {
+                    question: "How long do I have access?",
+                    answer: "You get lifetime access to all materials, plus any future updates we release."
+                }
+            ]
+        });
+        
+        // Final CTA - 10 seconds
+        document.getElementById('cta').innerHTML = MV.cta({
+            title: "Your Transformation Starts Today",
+            subtitle: "Join thousands who've already mastered their mindset",
+            cta: "Enroll Now - $97",
+            ctaLink: "#checkout"
+        });
+        
+        // Total customization time: ~3 minutes
+        // Result: Professional landing page that would normally take 2+ hours
+    </script>
+
+</body>
+</html>
