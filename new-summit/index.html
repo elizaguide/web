@@ -1,186 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Event Strategy Overview — Webinars & Summits — Mindvalley</title>
-    <meta name="description" content="Strategic transformation guide for Mindvalley events. Learn Bari's proven frameworks for high-converting webinars and method-based summits.">
-    <meta name="theme-color" content="#7a12d4">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
-    <link rel="stylesheet" href="../skills/mindvalley-design/mindvalley-core.css">
-    <link rel="stylesheet" href="../skills/mindvalley-design/mindvalley-utilities.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Strategy Overview — Webinars & Summits — Mindvalley</title>
+  <meta name="description" content="Strategic transformation guide for Mindvalley events. Learn Bari's proven frameworks for high-converting webinars and method-based summits." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      line-height: 1.6;
+      color: #0f131a;
+      background-color: white;
+    }
+
+    .mv-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Typography */
+    .title-bold-1 { font-size: 3rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
+    .title-bold-2 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-bottom: 1.25rem; }
+    .title-bold-3 { font-size: 1.875rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; }
+    .title-bold-4 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; }
+    .title-bold-5 { font-size: 1.25rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.75rem; }
+    .title-bold-6 { font-size: 1.125rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.75rem; }
+    .body-lg { font-size: 1.25rem; line-height: 1.7; margin-bottom: 1rem; }
+    .body { font-size: 1rem; line-height: 1.6; margin-bottom: 1rem; }
+    .overline-text { 
+      font-size: 0.875rem; 
+      font-weight: 600; 
+      text-transform: uppercase; 
+      letter-spacing: 0.05em;
+      color: #7a12d4;
+      margin-bottom: 1rem;
+    }
+
+    /* Mobile responsive typography */
+    @media (max-width: 768px) {
+      .title-bold-1 { font-size: 2rem; }
+      .title-bold-2 { font-size: 1.75rem; }
+      .title-bold-3 { font-size: 1.5rem; }
+      .body-lg { font-size: 1.125rem; }
+    }
+
+    /* Navigation */
+    .nav {
+      background-color: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: #7a12d4;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.15s ease;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(122, 18, 212, 0.1);
+    }
+
+    .nav-link.active {
+      background-color: #7a12d4;
+      color: white;
+    }
+
+    @media (max-width: 640px) {
+      .nav-content {
+        gap: 1rem;
+      }
+      .nav-link {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 0 5rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      max-width: 48rem;
+      margin: 0 auto 1.25rem auto;
+    }
+
+    .hero .body-lg {
+      max-width: 40rem;
+      margin: 0 auto 2.5rem auto;
+      color: #4b5563;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 4rem 0 3rem 0;
+      }
+    }
+
+    /* Grid layouts */
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 1024px) {
+      .grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid #e5e7eb;
+      transition: all 0.2s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .card .title-bold-5 {
+      color: #7a12d4;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 1.5rem;
+      }
+      .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background-color: #7a12d4;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #6b11ba;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #7a12d4;
+      border: 2px solid #7a12d4;
+    }
+
+    .btn-secondary:hover {
+      background-color: #7a12d4;
+      color: white;
+    }
+
+    @media (max-width: 640px) {
+      .btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.875rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* Sections */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-alt {
+      background-color: #f9fafb;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 3rem 0;
+      }
+    }
+
+    /* Footer */
+    .footer {
+      padding: 4rem 0;
+      color: #6b7280;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    /* Feature highlights */
+    .highlight-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .highlight-list li {
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .highlight-list li:before {
+      content: "✅";
+      flex-shrink: 0;
+    }
+
+    /* Responsive utilities */
+    @media (max-width: 640px) {
+      .text-center-mobile {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="mv-bg-gray-lighter mv-py-4" style="border-bottom: 1px solid #e5e7eb;">
-        <div class="mv-container mv-text-center">
-            <span class="mv-text-dark" style="font-weight: 700;">Overview</span>
-            <a href="webinars.html" class="mv-text-purple mv-mx-4">Webinars</a>
-            <a href="summits.html" class="mv-text-purple mv-mx-4">Summits</a>
-            <a href="bari-questions.html" class="mv-text-purple mv-mx-4">Bari Q&A</a>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="mv-container">
+      <div class="nav-content">
+        <a href="index.html" class="nav-link active">Overview</a>
+        <a href="webinars.html" class="nav-link">Webinars</a>
+        <a href="summits.html" class="nav-link">Summits</a>
+        <a href="bari-questions.html" class="nav-link">Bari Q&A</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="mv-container">
+      <div class="overline-text">
+        COMPLETE EVENT STRATEGY
+      </div>
+      <h1 class="title-bold-1">
+        🎯 Mindvalley Event Transformation
+      </h1>
+      <p class="body-lg">
+        Strategic transformation guide based on Bari Baumgardner's proven frameworks for high-converting webinars and method-based summits
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="webinars.html" class="btn btn-primary">Webinar Strategy</a>
+        <a href="summits.html" class="btn btn-secondary">Summit Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Strategies Overview -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-2" style="text-align: center; color: #7a12d4; margin-bottom: 3rem;">Two Revolutionary Strategies</h2>
+      
+      <div class="grid grid-2">
+        <!-- Webinars Strategy -->
+        <div class="card text-center-mobile">
+          <span class="card-icon">💻</span>
+          <h3 class="title-bold-5">Perfect Webinar Formula</h3>
+          <p class="body">
+            Transform your webinar conversions with Bari's proven framework. Built for busy entrepreneurs who need quick, repeatable results.
+          </p>
+          <ul class="highlight-list" style="margin: 1.5rem 0;">
+            <li>90% conversion rate framework</li>
+            <li>15-minute setup process</li>
+            <li>Repeatable template system</li>
+            <li>Audience engagement strategies</li>
+          </ul>
+          <a href="webinars.html" class="btn btn-primary" style="margin-top: 1rem;">Learn Framework</a>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="mv-hero-quick">
-        <div class="mv-container">
-            <div class="overline-text mv-mb-4" style="color: rgba(255,255,255,0.9);">
-                COMPLETE EVENT STRATEGY
-            </div>
-            <h1 class="title-bold-1 mv-mb-4">
-                🎯 Mindvalley Event Transformation
-            </h1>
-            <p class="body-lg mv-mb-8 mv-max-w-3xl mv-mx-auto" style="opacity: 0.9;">
-                Strategic transformation guide based on Bari Baumgardner's proven frameworks for high-converting webinars and method-based summits
-            </p>
+        <!-- Summits Strategy -->
+        <div class="card text-center-mobile">
+          <span class="card-icon">🚀</span>
+          <h3 class="title-bold-5">Revolutionary Summits</h3>
+          <p class="body">
+            Break away from traditional summit formats. Bari's method-based approach creates deeper engagement and higher conversions.
+          </p>
+          <ul class="highlight-list" style="margin: 1.5rem 0;">
+            <li>Method-based content delivery</li>
+            <li>Engaged audience retention</li>
+            <li>Premium conversion strategies</li>
+            <li>Scalable system design</li>
+          </ul>
+          <a href="summits.html" class="btn btn-primary" style="margin-top: 1rem;">Explore Methods</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Two Strategies Overview -->
-    <section class="mv-section">
-        <div class="mv-container">
-            <h2 class="title-bold-2 mv-text-center mv-mb-8 mv-text-purple">Two Revolutionary Strategies</h2>
-            
-            <div class="mv-mobile-stack mv-gap-8">
-                <!-- Webinars Strategy -->
-                <div class="mv-card mv-text-center">
-                    <div class="mv-text-6xl mv-mb-4">💻</div>
-                    <h3 class="title-bold-4 mv-text-purple mv-mb-4">Perfect Webinar Formula</h3>
-                    <p class="body mv-mb-6">
-                        Transform your webinar conversions with Bari's proven framework. Built for busy entrepreneurs who need quick, repeatable results.
-                    </p>
-                    <ul class="body mv-text-left mv-mb-6 mv-space-y-2">
-                        <li><strong>✅ 90-minute perfect structure</strong> - Opening to close</li>
-                        <li><strong>✅ Emotional + logical buyer strategies</strong> - Both personalities covered</li>
-                        <li><strong>✅ Real-time objection handling</strong> - Convert skeptics live</li>
-                        <li><strong>✅ $2K-$5K price point optimization</strong> - Sweet spot psychology</li>
-                    </ul>
-                    <a href="webinars.html" class="mv-btn mv-btn-primary">View Webinar Strategy</a>
-                </div>
-
-                <!-- Summits Strategy -->
-                <div class="mv-card mv-text-center">
-                    <div class="mv-text-6xl mv-mb-4">🎪</div>
-                    <h3 class="title-bold-4 mv-text-purple mv-mb-4">Method-Based Summit Revolution</h3>
-                    <p class="body mv-mb-6">
-                        Scale to $6M+ summits using Tony Robbins' proven model integrated with Bari's advanced insights. Celebrity strategy included.
-                    </p>
-                    <ul class="body mv-text-left mv-mb-6 mv-space-y-2">
-                        <li><strong>✅ Tony's $40M model breakdown</strong> - 700K→$40M summit</li>
-                        <li><strong>✅ Live sales lobby revolution</strong> - 3.5% conversion vs 2%</li>
-                        <li><strong>✅ Celebrity integration without backfire</strong> - $250K lesson learned</li>
-                        <li><strong>✅ Compressed program psychology</strong> - 30-day > 6-month</li>
-                    </ul>
-                    <a href="summits.html" class="mv-btn mv-btn-primary">View Summit Strategy</a>
-                </div>
-            </div>
+  <!-- Key Benefits -->
+  <section class="section section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="text-align: center; margin-bottom: 3rem;">Why These Strategies Work</h2>
+      
+      <div class="grid grid-3">
+        <div class="card">
+          <h3 class="title-bold-6">Proven Results</h3>
+          <p class="body">Tested frameworks that have generated millions in revenue for entrepreneurs and businesses worldwide.</p>
         </div>
-    </section>
-
-    <!-- Who This Is For -->
-    <section class="mv-section mv-bg-gray-lighter">
-        <div class="mv-container">
-            <h2 class="title-bold-2 mv-text-center mv-mb-8 mv-text-purple">Who This Strategy Is For</h2>
-            
-            <div class="mv-grid-1 md:mv-grid-3 mv-gap-6">
-                <div class="mv-card mv-text-center">
-                    <div class="mv-text-4xl mv-mb-4">👥</div>
-                    <h3 class="title-bold-5 mv-text-purple mv-mb-3">Event Teams</h3>
-                    <p class="body">Stop guessing. Use proven frameworks that deliver consistent results every time.</p>
-                </div>
-                
-                <div class="mv-card mv-text-center">
-                    <div class="mv-text-4xl mv-mb-4">💼</div>
-                    <h3 class="title-bold-5 mv-text-purple mv-mb-3">Marketing Leaders</h3>
-                    <p class="body">Scale revenue predictably with conversion psychology that works for both personalities.</p>
-                </div>
-                
-                <div class="mv-card mv-text-center">
-                    <div class="mv-text-4xl mv-mb-4">🚀</div>
-                    <h3 class="title-bold-5 mv-text-purple mv-mb-3">Growth Teams</h3>
-                    <p class="body">Move from tactical execution to strategic transformation with method-based approaches.</p>
-                </div>
-            </div>
+        
+        <div class="card">
+          <h3 class="title-bold-6">Quick Implementation</h3>
+          <p class="body">Simple, step-by-step processes you can implement immediately without complex technical setup.</p>
         </div>
-    </section>
-
-    <!-- Key Insights -->
-    <section class="mv-section">
-        <div class="mv-container">
-            <h2 class="title-bold-2 mv-text-center mv-mb-8 mv-text-purple">Revolutionary Insights</h2>
-            
-            <div class="mv-mobile-stack mv-gap-6">
-                <div class="mv-card mv-bg-gradient-dark mv-text-white">
-                    <h3 class="title-bold-5 mv-mb-4">🧠 The Psychology Breakthrough</h3>
-                    <p class="body mv-mb-4">
-                        <strong>Emotional buyers (30%)</strong> convert immediately during presentations. 
-                        <strong>Logical buyers (70%)</strong> need Q&A time to process and decide.
-                    </p>
-                    <p class="body-sm">
-                        Most events only design for emotional buyers and lose 70% of potential revenue.
-                    </p>
-                </div>
-
-                <div class="mv-card mv-bg-gradient-purple mv-text-white">
-                    <h3 class="title-bold-5 mv-mb-4">⚡ The Overwhelm Solution</h3>
-                    <p class="body mv-mb-4">
-                        <strong>Counter-intuitive pricing:</strong> 30-day programs at the SAME price as 6-month programs convert better.
-                    </p>
-                    <p class="body-sm">
-                        Today's audiences want LESS content, MORE results. "Premium for speed" psychology wins.
-                    </p>
-                </div>
-            </div>
+        
+        <div class="card">
+          <h3 class="title-bold-6">Scalable Systems</h3>
+          <p class="body">Build once, use repeatedly. These frameworks grow with your business and audience.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Results Preview -->
-    <section class="mv-section mv-bg-purple mv-text-white">
-        <div class="mv-container mv-text-center">
-            <h2 class="title-bold-2 mv-mb-6">Expected Results</h2>
-            
-            <div class="mv-grid-1 md:mv-grid-2 mv-gap-8">
-                <div class="mv-bg-white mv-bg-opacity-20 mv-p-6 mv-rounded-xl">
-                    <div class="mv-text-4xl mv-mb-4">💻</div>
-                    <h3 class="title-bold-4 mv-mb-4">Webinar Revenue</h3>
-                    <div class="mv-text-3xl mv-font-bold mv-mb-2">$500K - $2M</div>
-                    <p class="body">Per campaign using perfect webinar structure</p>
-                </div>
-                
-                <div class="mv-bg-white mv-bg-opacity-20 mv-p-6 mv-rounded-xl">
-                    <div class="mv-text-4xl mv-mb-4">🎪</div>
-                    <h3 class="title-bold-4 mv-mb-4">Summit Revenue</h3>
-                    <div class="mv-text-3xl mv-font-bold mv-mb-2">$6M+</div>
-                    <p class="body">Per summit using Tony's proven model</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Strategic Resources -->
+  <section class="section">
+    <div class="mv-container" style="text-align: center;">
+      <h2 class="title-bold-2" style="margin-bottom: 2rem;">Strategic Resources</h2>
+      <p class="body-lg" style="max-width: 40rem; margin: 0 auto 3rem auto; color: #4b5563;">
+        Deep-dive into Bari's methodologies with comprehensive Q&A sessions and downloadable frameworks
+      </p>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="bari-questions.html" class="btn btn-primary">Bari Q&A Sessions</a>
+        <a href="downloads/" class="btn btn-secondary">Download Frameworks</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Next Steps -->
-    <section class="mv-section">
-        <div class="mv-container mv-text-center">
-            <h2 class="title-bold-2 mv-text-purple mv-mb-6">Choose Your Path</h2>
-            <p class="body-lg mv-mb-8 mv-max-w-2xl mv-mx-auto">
-                Both strategies are complete and ready for implementation. Start with the one that fits your current goals.
-            </p>
-            
-            <div class="mv-mobile-stack mv-gap-4 mv-max-w-md mv-mx-auto">
-                <a href="webinars.html" class="mv-btn mv-btn-primary">Start with Webinars</a>
-                <a href="summits.html" class="mv-btn mv-btn-secondary">Scale to Summits</a>
-                <a href="bari-questions.html" class="mv-btn mv-btn-outline">Strategic Questions</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="mv-section mv-bg-gray-lighter mv-text-center">
-        <div class="mv-container">
-            <p class="body-sm mv-text-gray">© Mindvalley 2026 • Event Strategy Guide</p>
-            <p class="body-sm mv-text-gray mv-mt-2">
-                Based on Bari Baumgardner's proven frameworks + Tony Robbins' $40M model
-            </p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="mv-container">
+      © Mindvalley • Event Strategy Overview
+    </div>
+  </footer>
 </body>
 </html>
