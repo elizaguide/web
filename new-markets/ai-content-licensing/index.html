@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Content Licensing Strategy — Mindvalley</title>
+  <meta name="description" content="Strategic analysis of Mindvalley's $15-40M annual revenue opportunity through AI content licensing partnerships with OpenAI, Anthropic, and major AI companies." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="stylesheet" href="../../public/mindvalley-font.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #0f131a;
+    }
+    
+    .mv-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .mv-container {
+        padding: 0 1rem;
+      }
+    }
+    
+    /* Typography Classes */
+    .title-bold-1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; }
+    .title-bold-2 { font-size: 3.75rem; font-weight: 700; line-height: 1.1; }
+    .title-bold-3 { font-size: 3rem; font-weight: 700; line-height: 1.2; }
+    .title-bold-4 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; }
+    .title-bold-5 { font-size: 1.75rem; font-weight: 700; line-height: 1.3; }
+    .title-bold-6 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; }
+    .title-bold-7 { font-size: 1.375rem; font-weight: 700; line-height: 1.4; }
+    
+    .body-lg { font-size: 1.25rem; line-height: 1.6; }
+    .body { font-size: 1rem; line-height: 1.6; }
+    .body-sm { font-size: 0.875rem; line-height: 1.6; }
+    .overline-text { 
+      font-size: 0.875rem; 
+      font-weight: 600; 
+      text-transform: uppercase; 
+      letter-spacing: 0.05em; 
+    }
+    
+    @media (max-width: 768px) {
+      .title-bold-1 { font-size: 3rem; }
+      .title-bold-2 { font-size: 2.25rem; }
+      .title-bold-3 { font-size: 1.875rem; }
+      .title-bold-4 { font-size: 1.75rem; }
+    }
+    
+    /* Buttons */
+    .button-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      background-color: #7a12d4;
+      color: white;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .button-primary:hover {
+      background-color: #6610b8;
+      transform: translateY(-1px);
+    }
+    
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      background-color: transparent;
+      color: #7a12d4;
+      border: 2px solid #7a12d4;
+      font-weight: 500;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .button-secondary:hover {
+      background-color: #7a12d4;
+      color: white;
+    }
+    
+    /* Grid */
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    
+    /* Cards */
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      transition: all 0.2s;
+    }
+    
+    .card:hover {
+      border-color: #d1d5db;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    
+    /* Utility Classes */
+    .text-purple { color: #7a12d4; }
+    .text-muted { color: #4b5563; }
+    .text-footer { color: #6b7280; }
+    .bg-light { background-color: #f9fafb; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .mb-2 { margin-bottom: 1rem; }
+    .mb-4 { margin-bottom: 1.25rem; }
+    .mb-8 { margin-bottom: 2.5rem; }
+    .mt-8 { margin-top: 2.5rem; }
+    .text-center { text-align: center; }
+    
+    /* Stats */
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #7a12d4;
+      line-height: 1;
+    }
+    
+    /* Timeline */
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .timeline-marker {
+      width: 2rem;
+      height: 2rem;
+      background-color: #7a12d4;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="mv-container" style="padding: 6rem 0 5rem 0;">
+    <div class="overline-text mb-2 text-purple">
+      NEW MARKET OPPORTUNITY
+    </div>
+    <h1 class="title-bold-2 mb-4" style="max-width: 48rem;">
+      AI Content Licensing Strategy
+    </h1>
+    <p class="body-lg text-muted mb-8" style="max-width: 40rem;">
+      A $15-40M annual revenue opportunity through strategic partnerships with AI companies seeking premium educational content.
+    </p>
+    
+    <!-- Key Stats -->
+    <div class="grid grid-3 mb-8">
+      <div class="text-center">
+        <div class="stat-number">$40M</div>
+        <p class="body text-muted">Peak Annual Revenue Potential</p>
+      </div>
+      <div class="text-center">
+        <div class="stat-number">24mo</div>
+        <p class="body text-muted">Time to Full Implementation</p>
+      </div>
+      <div class="text-center">
+        <div class="stat-number">85%</div>
+        <p class="body text-muted">Projected Gross Margins</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Opportunity -->
+  <section class="bg-light">
+    <div class="mv-container" style="padding: 5rem 0;">
+      <h2 class="title-bold-4 mb-8 text-center">Market Opportunity</h2>
+      
+      <div class="grid grid-2">
+        <div>
+          <h3 class="title-bold-6 mb-2 text-purple">Total Addressable Market</h3>
+          <p class="body mb-4">The AI training dataset market is projected to grow from $3.2B (2025) to $16.3B (2033) at 22.6% CAGR. Educational content represents 12-15% of this market.</p>
+          
+          <h3 class="title-bold-6 mb-2 text-purple">Mindvalley's Opportunity</h3>
+          <p class="body">With major AI companies allocating $200M-$500M annually for premium educational content, Mindvalley could capture 3-8% market share: <strong>$6M-$40M annually</strong>.</p>
+        </div>
+        
+        <div class="card">
+          <h4 class="title-bold-7 mb-2">Key Market Drivers</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.75rem;">✅ <strong>Quality Premium:</strong> 5-10x pricing for curated content</li>
+            <li style="margin-bottom: 0.75rem;">✅ <strong>Regulatory Compliance:</strong> Licensed vs. scraped data</li>
+            <li style="margin-bottom: 0.75rem;">✅ <strong>Content Gaps:</strong> Wellness/consciousness underrepresented</li>
+            <li style="margin-bottom: 0.75rem;">✅ <strong>Brand Safety:</strong> Premium content reduces AI toxicity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitive Advantages -->
+  <section class="mv-container" style="padding: 5rem 0;">
+    <h2 class="title-bold-4 mb-8 text-center">Mindvalley's Competitive Advantages</h2>
+    
+    <div class="grid grid-3">
+      <div class="card">
+        <h3 class="title-bold-6 mb-2 text-purple">Expert-Curated Knowledge</h3>
+        <p class="body">Content from world-class teachers (Tony Robbins, Deepak Chopra) with proven pedagogical frameworks vs. random web scraping.</p>
+      </div>
+      
+      <div class="card">
+        <h3 class="title-bold-6 mb-2 text-purple">Unique Content Categories</h3>
+        <p class="body">Consciousness, spirituality, and transformational methodology - significantly underrepresented in current AI training datasets.</p>
+      </div>
+      
+      <div class="card">
+        <h3 class="title-bold-6 mb-2 text-purple">Multi-Modal Assets</h3>
+        <p class="body">Professional video production with transcripts, structured learning paths, and community validation data.</p>
+      </div>
+      
+      <div class="card">
+        <h3 class="title-bold-6 mb-2 text-purple">Clean IP Rights</h3>
+        <p class="body">Direct partnerships with thought leaders and clear intellectual property ownership for worry-free licensing.</p>
+      </div>
+      
+      <div class="card">
+        <h3 class="title-bold-6 mb-2 text-purple">Continuous Innovation</h3>
+        <p class="body">Active content production pipeline enabling real-time dataset creation and exclusive partnerships.</p>
+      </div>
+      
+      <div class="card">
+        <h3 class="title-bold-6 mb-2 text-purple">Global Perspective</h3>
+        <p class="body">Integration of ancient wisdom traditions with modern behavioral science from multicultural teachers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Models -->
+  <section class="bg-light">
+    <div class="mv-container" style="padding: 5rem 0;">
+      <h2 class="title-bold-4 mb-8 text-center">Three-Tier Pricing Strategy</h2>
+      
+      <div class="grid grid-3">
+        <div class="card">
+          <h3 class="title-bold-6 mb-2">Foundation License</h3>
+          <div class="stat-number mb-2" style="font-size: 2rem;">$2-5M</div>
+          <p class="body-sm text-muted mb-4">Annual Revenue</p>
+          
+          <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+            <li class="body-sm" style="margin-bottom: 0.5rem;">📄 Text transcripts & basic materials</li>
+            <li class="body-sm" style="margin-bottom: 0.5rem;">💰 $0.50-$1.00 per 1,000 tokens</li>
+            <li class="body-sm" style="margin-bottom: 0.5rem;">📊 5-10B tokens annually</li>
+            <li class="body-sm" style="margin-bottom: 0.5rem;">🎯 Emerging AI companies</li>
+          </ul>
+        </div>
+        
+        <div class="card" style="border: 2px solid #7a12d4;">
+          <h3 class="title-bold-6 mb-2 text-purple">Premium License</h3>
+          <div class="stat-number mb-2" style="font-size: 2rem;">$8-15M</div>
+          <p class="body-sm text-muted mb-4">Annual Revenue</p>
+          
+          <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+            <li class="body-sm" style="margin-bottom: 0.5rem;">🎥 Full video transcripts & curricula</li>
+            <li class="body-sm" style="margin-bottom: 0.5rem;">💰 $1.50-$3.00 per 1,000 tokens</li>
+            <li class="body-sm" style="margin-bottom: 0.5rem;">📊 3-5B tokens annually</li>
+            <li class="body-sm" style="margin-bottom: 0.5rem;">🎯 OpenAI, Anthropic, Google</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 class="title-bold-6 mb-2">Exclusive Partnership</h3>
+          <div class="stat-number mb-2" style="font-size: 2rem;">$20-40M</div>
+          <p class="body-sm text-muted mb-4">Annual Revenue</p>
+          
+          <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+            <li class="body-sm" style="margin-bottom: 0.5rem;">🔄 Real-time content creation</li>
+            <li class="body-sm" style="margin-bottom: 0.5rem;">💰 $5-10M base + revenue share</li>
+            <li class="body-sm" style="margin-bottom: 0.5rem;">📊 Unlimited + custom datasets</li>
+            <li class="body-sm" style="margin-bottom: 0.5rem;">🎯 Microsoft, Meta partnerships</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation Roadmap -->
+  <section class="mv-container" style="padding: 5rem 0;">
+    <h2 class="title-bold-4 mb-8 text-center">18-Month Implementation Roadmap</h2>
+    
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div class="timeline-item">
+        <div class="timeline-marker">1</div>
+        <div>
+          <h3 class="title-bold-6 mb-1">Foundation Phase (Months 1-6)</h3>
+          <p class="body text-muted">Content audit & cataloging, legal framework development, technology infrastructure, and 2-3 pilot partnerships.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker">2</div>
+        <div>
+          <h3 class="title-bold-6 mb-1">Market Entry (Months 3-9)</h3>
+          <p class="body text-muted">Strategic partnerships with Anthropic & emerging players, content optimization for AI training, first revenue generation ($500K-$1M).</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker">3</div>
+        <div>
+          <h3 class="title-bold-6 mb-1">Scale Phase (Months 6-18)</h3>
+          <p class="body text-muted">Premium partnerships with OpenAI/Google, exclusive category deals, real-time content creation, $8-20M annual run rate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Immediate Next Steps -->
+  <section class="bg-light">
+    <div class="mv-container" style="padding: 5rem 0;">
+      <h2 class="title-bold-4 mb-8 text-center">Immediate Next Steps (30 Days)</h2>
+      
+      <div class="grid grid-2">
+        <div>
+          <div class="card">
+            <h3 class="title-bold-6 mb-4 text-purple">Strategic Decisions</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 1rem;">🎯 <strong>Executive Approval:</strong> Board decision on AI licensing strategy</li>
+              <li style="margin-bottom: 1rem;">⚖️ <strong>Legal Audit:</strong> Review creator agreements & content rights</li>
+              <li style="margin-bottom: 1rem;">🤝 <strong>Market Outreach:</strong> Direct contact with 5-7 AI partners</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div>
+          <div class="card">
+            <h3 class="title-bold-6 mb-4 text-purple">Operational Setup</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 1rem;">👥 <strong>Key Hire:</strong> Head of AI Partnerships (critical role)</li>
+              <li style="margin-bottom: 1rem;">📊 <strong>Content Catalog:</strong> Complete content audit & metadata</li>
+              <li style="margin-bottom: 1rem;">🔧 <strong>Technology:</strong> Content delivery platform MVP</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#" class="button-primary">Begin Implementation</a>
+          <a href="#" class="button-secondary">Schedule Strategy Session</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mv-container" style="padding: 4rem 0; color: #6b7280; text-align: center; border-top: 1px solid #e5e7eb;">
+    <p class="body-sm">© Mindvalley • AI Content Licensing Strategy • February 2026</p>
+  </footer>
+</body>
+</html>
