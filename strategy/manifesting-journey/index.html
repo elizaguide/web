@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifesting Customer Journey | Mindvalley</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌟</text></svg>">
+    
+    <!-- Mindvalley Design System -->
+    <link rel="stylesheet" href="../../skills/mindvalley-design/mindvalley-core.css">
+    <link rel="stylesheet" href="../../skills/mindvalley-design/mindvalley-utilities.css">
+    
+    <style>
+        /* Custom styles for customer journey visualization */
+        .journey-stage {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .journey-stage:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stage-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--mv-purple-600);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(122, 18, 212, 0.3);
+        }
+        
+        .journey-connector {
+            position: relative;
+            height: 2px;
+            background: linear-gradient(90deg, var(--mv-purple-600) 0%, var(--mv-purple-400) 100%);
+            margin: 40px 20px;
+        }
+        
+        .journey-connector::after {
+            content: '→';
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            background: white;
+            color: var(--mv-purple-600);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .program-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(122, 18, 212, 0.2);
+            border-color: var(--mv-purple-400);
+        }
+        
+        .interactive-demo {
+            background: linear-gradient(135deg, var(--mv-purple-900) 0%, var(--mv-purple-700) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .interactive-demo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="star" patternUnits="userSpaceOnUse" width="20" height="20"><text y="18" font-size="16" fill="rgba(255,255,255,0.1)">✨</text></pattern></defs><rect width="100" height="100" fill="url(%23star)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+        
+        .stage-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin: 4px;
+        }
+        
+        .value-prop {
+            background: rgba(122, 18, 212, 0.1);
+            border-left: 4px solid var(--mv-purple-600);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 16px 0;
+        }
+        
+        .metric-highlight {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--mv-purple-600) 0%, var(--mv-purple-400) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="mv-section mv-bg-dark-900 mv-text-white sticky top-0 z-50">
+        <div class="mv-container">
+            <nav class="mv-flex mv-items-center mv-justify-between mv-py-4">
+                <div class="mv-flex mv-items-center mv-gap-6">
+                    <div class="mv-text-2xl mv-font-bold mv-text-purple-400">MV</div>
+                    <div class="mv-text-lg mv-font-semibold">Strategy Framework</div>
+                </div>
+                <div class="mv-hidden md:mv-flex mv-items-center mv-gap-6">
+                    <a href="#overview" class="hover:mv-text-purple-400 mv-transition-colors">Overview</a>
+                    <a href="#journey" class="hover:mv-text-purple-400 mv-transition-colors">Journey</a>
+                    <a href="#programs" class="hover:mv-text-purple-400 mv-transition-colors">Programs</a>
+                    <a href="#results" class="hover:mv-text-purple-400 mv-transition-colors">Results</a>
+                </div>
+                <a href="#contact" class="mv-btn mv-btn-primary mv-text-sm">Contact Strategy Team</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="mv-hero-section mv-bg-gradient-purple mv-text-white mv-py-20">
+        <div class="mv-container mv-text-center">
+            <div class="mv-max-w-4xl mv-mx-auto">
+                <div class="mv-flex mv-items-center mv-justify-center mv-gap-3 mv-mb-6">
+                    <span class="title-bold-5 mv-text-purple-200">🌟</span>
+                    <span class="mv-type-overline mv-text-purple-200">MINDVALLEY STRATEGY FRAMEWORK</span>
+                </div>
+                <h1 class="title-bold-1 mv-mb-6">The Manifesting Customer Journey</h1>
+                <p class="body-lg mv-mb-8 mv-text-purple-100 mv-leading-relaxed">
+                    A sophisticated methodology for guiding customers through their manifesting & abundance transformation—from awareness to advocacy. 
+                    <strong>This is how Mindvalley creates life-changing customer experiences.</strong>
+                </p>
+                
+                <div class="mv-flex mv-flex-col md:mv-flex-row mv-items-center mv-justify-center mv-gap-6 mv-mb-12">
+                    <a href="#journey" class="mv-btn mv-btn-white mv-text-lg mv-px-8">Explore the Journey</a>
+                    <a href="#demo" class="mv-text-white hover:mv-text-purple-200 mv-flex mv-items-center mv-gap-2 mv-font-semibold">
+                        <span>Watch Interactive Demo</span>
+                        <span>▶️</span>
+                    </a>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="mv-grid mv-grid-cols-2 md:mv-grid-cols-4 mv-gap-6 mv-max-w-4xl mv-mx-auto">
+                    <div class="mv-text-center">
+                        <div class="mv-text-3xl mv-font-bold mv-text-purple-200">5</div>
+                        <div class="mv-text-sm mv-text-purple-300">Journey Stages</div>
+                    </div>
+                    <div class="mv-text-center">
+                        <div class="mv-text-3xl mv-font-bold mv-text-purple-200">25+</div>
+                        <div class="mv-text-sm mv-text-purple-300">Touch Points</div>
+                    </div>
+                    <div class="mv-text-center">
+                        <div class="mv-text-3xl mv-font-bold mv-text-purple-200">95%</div>
+                        <div class="mv-text-sm mv-text-purple-300">Completion Rate</div>
+                    </div>
+                    <div class="mv-text-center">
+                        <div class="mv-text-3xl mv-font-bold mv-text-purple-200">2M+</div>
+                        <div class="mv-text-sm mv-text-purple-300">Transformations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Overview -->
+    <section id="overview" class="mv-section mv-bg-white mv-py-20">
+        <div class="mv-container">
+            <div class="mv-text-center mv-max-w-3xl mv-mx-auto mv-mb-16">
+                <div class="mv-type-overline mv-text-purple-600 mv-mb-4">STRATEGIC METHODOLOGY</div>
+                <h2 class="title-bold-2 mv-text-dark-900 mv-mb-6">Beyond Traditional Funnels</h2>
+                <p class="body-lg mv-text-gray-600 mv-leading-relaxed">
+                    While most companies think in linear sales funnels, Mindvalley has pioneered a <strong>transformation-based customer journey</strong> 
+                    that recognizes manifesting abundance as a profound personal evolution requiring different support at each stage.
+                </p>
+            </div>
+
+            <div class="mv-grid md:mv-grid-cols-2 mv-gap-12 mv-items-center">
+                <div>
+                    <h3 class="title-bold-4 mv-text-dark-900 mv-mb-6">The Mindvalley Difference</h3>
+                    
+                    <div class="value-prop">
+                        <h4 class="mv-font-bold mv-text-purple-700 mv-mb-2">🎯 Personalization at Scale</h4>
+                        <p class="body mv-text-gray-700">AI-powered journey customization based on manifesting readiness, learning style, and life circumstances.</p>
+                    </div>
+                    
+                    <div class="value-prop">
+                        <h4 class="mv-font-bold mv-text-purple-700 mv-mb-2">🌱 Transformation-Centric</h4>
+                        <p class="body mv-text-gray-700">Every touchpoint designed to accelerate personal growth, not just drive conversions.</p>
+                    </div>
+                    
+                    <div class="value-prop">
+                        <h4 class="mv-font-bold mv-text-purple-700 mv-mb-2">🔄 Continuous Evolution</h4>
+                        <p class="body mv-text-gray-700">Dynamic journey adaptation based on customer progress and life changes.</p>
+                    </div>
+                </div>
+                
+                <div class="interactive-demo" id="demo">
+                    <h3 class="title-bold-5 mv-text-white mv-mb-4 relative z-10">Interactive Journey Preview</h3>
+                    <p class="body mv-text-purple-200 mv-mb-8 relative z-10">
+                        Experience how a customer progresses through each transformation stage
+                    </p>
+                    <div class="relative z-10">
+                        <button id="startDemo" class="mv-btn mv-btn-white mv-text-lg mv-px-8">Start Demo Experience</button>
+                        <div id="demoProgress" class="mv-hidden mv-mt-6">
+                            <div class="mv-flex mv-items-center mv-justify-center mv-gap-4 mv-mb-4">
+                                <div id="demoStage" class="stage-badge">
+                                    <span id="demoEmoji">🌱</span>
+                                    <span id="demoStageName">Awareness</span>
+                                </div>
+                            </div>
+                            <div id="demoContent" class="mv-text-white mv-text-center">
+                                Starting your manifesting journey...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-Stage Customer Journey -->
+    <section id="journey" class="mv-section mv-bg-gradient-dark mv-text-white mv-py-20">
+        <div class="mv-container">
+            <div class="mv-text-center mv-mb-16">
+                <div class="mv-type-overline mv-text-purple-400 mv-mb-4">THE 5-STAGE FRAMEWORK</div>
+                <h2 class="title-bold-2 mv-mb-6">Manifesting Customer Journey</h2>
+                <p class="body-lg mv-text-purple-200 mv-max-w-3xl mv-mx-auto mv-leading-relaxed">
+                    Each stage represents a distinct phase in the customer's transformation, with unique needs, concerns, and growth opportunities.
+                </p>
+            </div>
+
+            <div class="mv-max-w-6xl mv-mx-auto">
+                <!-- Stage 1: Awareness -->
+                <div class="journey-stage mv-bg-dark-800 mv-p-8 mv-rounded-2xl mv-mb-8" data-stage="1">
+                    <div class="stage-number">1</div>
+                    <div class="mv-grid md:mv-grid-cols-3 mv-gap-8">
+                        <div>
+                            <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                                <span class="mv-text-2xl">🌱</span>
+                                <h3 class="title-bold-4 mv-text-purple-400">Awareness</h3>
+                            </div>
+                            <p class="body mv-text-purple-200 mv-mb-6">
+                                "I feel stuck and want something more, but I'm not sure what's possible."
+                            </p>
+                            <div class="mv-mb-4">
+                                <h4 class="mv-font-bold mv-text-white mv-mb-2">Customer Mindset:</h4>
+                                <ul class="body mv-text-gray-300 mv-space-y-1">
+                                    <li>• Sensing life could be better</li>
+                                    <li>• Curious about manifesting</li>
+                                    <li>• Skeptical but hopeful</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Key Touchpoints:</h4>
+                            <div class="mv-space-y-2">
+                                <div class="stage-badge">
+                                    <span>📱</span>
+                                    <span>Social Media Content</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>🎥</span>
+                                    <span>Free Masterclasses</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>📖</span>
+                                    <span>Blog Articles</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>🎧</span>
+                                    <span>Podcasts</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Success Metrics:</h4>
+                            <div class="mv-space-y-3">
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Content Engagement</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">85%</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Email Sign-ups</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">45%</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Social Shares</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">32%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-connector"></div>
+
+                <!-- Stage 2: Engagement -->
+                <div class="journey-stage mv-bg-dark-800 mv-p-8 mv-rounded-2xl mv-mb-8" data-stage="2">
+                    <div class="stage-number">2</div>
+                    <div class="mv-grid md:mv-grid-cols-3 mv-gap-8">
+                        <div>
+                            <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                                <span class="mv-text-2xl">🔍</span>
+                                <h3 class="title-bold-4 mv-text-purple-400">Engagement</h3>
+                            </div>
+                            <p class="body mv-text-purple-200 mv-mb-6">
+                                "This is interesting! Let me explore more and test some basic practices."
+                            </p>
+                            <div class="mv-mb-4">
+                                <h4 class="mv-font-bold mv-text-white mv-mb-2">Customer Mindset:</h4>
+                                <ul class="body mv-text-gray-300 mv-space-y-1">
+                                    <li>• Active exploration mode</li>
+                                    <li>• Experimenting with free tools</li>
+                                    <li>• Building initial trust</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Key Touchpoints:</h4>
+                            <div class="mv-space-y-2">
+                                <div class="stage-badge">
+                                    <span>📧</span>
+                                    <span>Email Courses</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>🔮</span>
+                                    <span>Free Meditations</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>📱</span>
+                                    <span>Mobile Apps</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>👥</span>
+                                    <span>Community Groups</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Success Metrics:</h4>
+                            <div class="mv-space-y-3">
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Course Completion</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">72%</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Community Participation</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">58%</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Practice Consistency</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">41%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-connector"></div>
+
+                <!-- Stage 3: Consideration -->
+                <div class="journey-stage mv-bg-dark-800 mv-p-8 mv-rounded-2xl mv-mb-8" data-stage="3">
+                    <div class="stage-number">3</div>
+                    <div class="mv-grid md:mv-grid-cols-3 mv-gap-8">
+                        <div>
+                            <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                                <span class="mv-text-2xl">🤔</span>
+                                <h3 class="title-bold-4 mv-text-purple-400">Consideration</h3>
+                            </div>
+                            <p class="body mv-text-purple-200 mv-mb-6">
+                                "I'm seeing results with free tools. Should I invest in a deeper program?"
+                            </p>
+                            <div class="mv-mb-4">
+                                <h4 class="mv-font-bold mv-text-white mv-mb-2">Customer Mindset:</h4>
+                                <ul class="body mv-text-gray-300 mv-space-y-1">
+                                    <li>• Experiencing small wins</li>
+                                    <li>• Evaluating investment options</li>
+                                    <li>• Comparing alternatives</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Key Touchpoints:</h4>
+                            <div class="mv-space-y-2">
+                                <div class="stage-badge">
+                                    <span>🎯</span>
+                                    <span>Product Demos</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>💬</span>
+                                    <span>Success Stories</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>💰</span>
+                                    <span>Free Trials</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>📞</span>
+                                    <span>Consultation Calls</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Success Metrics:</h4>
+                            <div class="mv-space-y-3">
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Trial Conversions</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">34%</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Demo Attendance</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">67%</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Consultation Bookings</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">28%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-connector"></div>
+
+                <!-- Stage 4: Commitment -->
+                <div class="journey-stage mv-bg-dark-800 mv-p-8 mv-rounded-2xl mv-mb-8" data-stage="4">
+                    <div class="stage-number">4</div>
+                    <div class="mv-grid md:mv-grid-cols-3 mv-gap-8">
+                        <div>
+                            <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                                <span class="mv-text-2xl">💎</span>
+                                <h3 class="title-bold-4 mv-text-purple-400">Commitment</h3>
+                            </div>
+                            <p class="body mv-text-purple-200 mv-mb-6">
+                                "I'm ready to invest in my transformation. Let's do this properly!"
+                            </p>
+                            <div class="mv-mb-4">
+                                <h4 class="mv-font-bold mv-text-white mv-mb-2">Customer Mindset:</h4>
+                                <ul class="body mv-text-gray-300 mv-space-y-1">
+                                    <li>• Serious about transformation</li>
+                                    <li>• High engagement & motivation</li>
+                                    <li>• Seeking structured guidance</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Key Touchpoints:</h4>
+                            <div class="mv-space-y-2">
+                                <div class="stage-badge">
+                                    <span>🎓</span>
+                                    <span>Premium Courses</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>👨‍🏫</span>
+                                    <span>Expert Mentoring</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>🏆</span>
+                                    <span>Certification Programs</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>📅</span>
+                                    <span>Progress Tracking</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Success Metrics:</h4>
+                            <div class="mv-space-y-3">
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Course Completion</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">89%</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Satisfaction Score</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">4.8/5</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Skill Mastery</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">76%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-connector"></div>
+
+                <!-- Stage 5: Advocacy -->
+                <div class="journey-stage mv-bg-dark-800 mv-p-8 mv-rounded-2xl" data-stage="5">
+                    <div class="stage-number">5</div>
+                    <div class="mv-grid md:mv-grid-cols-3 mv-gap-8">
+                        <div>
+                            <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                                <span class="mv-text-2xl">🚀</span>
+                                <h3 class="title-bold-4 mv-text-purple-400">Advocacy</h3>
+                            </div>
+                            <p class="body mv-text-purple-200 mv-mb-6">
+                                "This transformed my life! I want to help others experience this too."
+                            </p>
+                            <div class="mv-mb-4">
+                                <h4 class="mv-font-bold mv-text-white mv-mb-2">Customer Mindset:</h4>
+                                <ul class="body mv-text-gray-300 mv-space-y-1">
+                                    <li>• Passionate about the results</li>
+                                    <li>• Eager to share experiences</li>
+                                    <li>• Seeking deeper mastery</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Key Touchpoints:</h4>
+                            <div class="mv-space-y-2">
+                                <div class="stage-badge">
+                                    <span>📣</span>
+                                    <span>Referral Programs</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>📝</span>
+                                    <span>Testimonials</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>🎤</span>
+                                    <span>Speaking Opportunities</span>
+                                </div>
+                                <div class="stage-badge">
+                                    <span>⚡</span>
+                                    <span>Advanced Training</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="mv-font-bold mv-text-white mv-mb-4">Success Metrics:</h4>
+                            <div class="mv-space-y-3">
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Referral Rate</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">43%</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Repeat Purchases</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">67%</span>
+                                </div>
+                                <div class="mv-flex mv-items-center mv-justify-between">
+                                    <span class="body mv-text-gray-300">Community Leadership</span>
+                                    <span class="mv-text-purple-400 mv-font-bold">31%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Mindvalley Programs -->
+    <section id="programs" class="mv-section mv-bg-white mv-py-20">
+        <div class="mv-container">
+            <div class="mv-text-center mv-mb-16">
+                <div class="mv-type-overline mv-text-purple-600 mv-mb-4">REAL IMPLEMENTATIONS</div>
+                <h2 class="title-bold-2 mv-text-dark-900 mv-mb-6">Mindvalley Programs by Journey Stage</h2>
+                <p class="body-lg mv-text-gray-600 mv-max-w-3xl mv-mx-auto mv-leading-relaxed">
+                    See how actual Mindvalley offerings map to each stage of the manifesting customer journey, 
+                    creating seamless progression pathways.
+                </p>
+            </div>
+
+            <div class="mv-space-y-12">
+                <!-- Awareness Stage Programs -->
+                <div class="mv-grid md:mv-grid-cols-4 mv-gap-6">
+                    <div class="md:mv-col-span-1">
+                        <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                            <span class="mv-text-2xl">🌱</span>
+                            <h3 class="title-bold-5 mv-text-purple-700">Awareness</h3>
+                        </div>
+                        <p class="body mv-text-gray-600">Free entry points that introduce manifesting concepts</p>
+                    </div>
+                    <div class="md:mv-col-span-3 mv-grid md:mv-grid-cols-3 mv-gap-4">
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Free Masterclasses</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">60-90 minute sessions introducing manifesting concepts</p>
+                            <div class="mv-text-sm mv-text-purple-600">• "Abundance Blueprint"<br>• "Manifestation Myths"</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Vishen's Podcast</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">"The Mindvalley Podcast" with transformation stories</p>
+                            <div class="mv-text-sm mv-text-purple-600">• 150+ episodes<br>• 5M+ downloads</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Social Content</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">Inspirational posts across all platforms</p>
+                            <div class="mv-text-sm mv-text-purple-600">• Daily affirmations<br>• Success stories</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engagement Stage Programs -->
+                <div class="mv-grid md:mv-grid-cols-4 mv-gap-6">
+                    <div class="md:mv-col-span-1">
+                        <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                            <span class="mv-text-2xl">🔍</span>
+                            <h3 class="title-bold-5 mv-text-purple-700">Engagement</h3>
+                        </div>
+                        <p class="body mv-text-gray-600">Interactive experiences building trust and skills</p>
+                    </div>
+                    <div class="md:mv-col-span-3 mv-grid md:mv-grid-cols-3 mv-gap-4">
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">6 Phase Meditation</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">Free guided meditation practice</p>
+                            <div class="mv-text-sm mv-text-purple-600">• 20-minute daily practice<br>• Mobile app available</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Free Email Courses</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">7-21 day learning sequences</p>
+                            <div class="mv-text-sm mv-text-purple-600">• "Abundance Mindset"<br>• "Manifestation Basics"</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Mindvalley Community</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">Free Facebook groups and forums</p>
+                            <div class="mv-text-sm mv-text-purple-600">• 100K+ members<br>• Daily challenges</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consideration Stage Programs -->
+                <div class="mv-grid md:mv-grid-cols-4 mv-gap-6">
+                    <div class="md:mv-col-span-1">
+                        <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                            <span class="mv-text-2xl">🤔</span>
+                            <h3 class="title-bold-5 mv-text-purple-700">Consideration</h3>
+                        </div>
+                        <p class="body mv-text-gray-600">Low-commitment offerings that demonstrate value</p>
+                    </div>
+                    <div class="md:mv-col-span-3 mv-grid md:mv-grid-cols-3 mv-gap-4">
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Mindvalley Trial</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">15-day access to library</p>
+                            <div class="mv-text-sm mv-text-purple-600">• 100+ quests<br>• All features included</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Mini Quests</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">3-7 day focused programs</p>
+                            <div class="mv-text-sm mv-text-purple-600">• "Money Mindset"<br>• "Abundance Activation"</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Free Consultations</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">Personal guidance sessions</p>
+                            <div class="mv-text-sm mv-text-purple-600">• 30-minute calls<br>• Custom recommendations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commitment Stage Programs -->
+                <div class="mv-grid md:mv-grid-cols-4 mv-gap-6">
+                    <div class="md:mv-col-span-1">
+                        <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                            <span class="mv-text-2xl">💎</span>
+                            <h3 class="title-bold-5 mv-text-purple-700">Commitment</h3>
+                        </div>
+                        <p class="body mv-text-gray-600">Premium transformation programs</p>
+                    </div>
+                    <div class="md:mv-col-span-3 mv-grid md:mv-grid-cols-3 mv-gap-4">
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Mindvalley Membership</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">Complete quest library access</p>
+                            <div class="mv-text-sm mv-text-purple-600">• 100+ transformation quests<br>• Monthly new releases</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Signature Quests</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">30-60 day intensive programs</p>
+                            <div class="mv-text-sm mv-text-purple-600">• "Unlimited Abundance"<br>• "Money EQ"</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Certification Programs</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">Professional-level training</p>
+                            <div class="mv-text-sm mv-text-purple-600">• "Abundance Coach"<br>• "Manifestation Teacher"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advocacy Stage Programs -->
+                <div class="mv-grid md:mv-grid-cols-4 mv-gap-6">
+                    <div class="md:mv-col-span-1">
+                        <div class="mv-flex mv-items-center mv-gap-3 mv-mb-4">
+                            <span class="mv-text-2xl">🚀</span>
+                            <h3 class="title-bold-5 mv-text-purple-700">Advocacy</h3>
+                        </div>
+                        <p class="body mv-text-gray-600">Advanced mastery and leadership opportunities</p>
+                    </div>
+                    <div class="md:mv-col-span-3 mv-grid md:mv-grid-cols-3 mv-gap-4">
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Ambassador Program</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">Referral and leadership opportunities</p>
+                            <div class="mv-text-sm mv-text-purple-600">• Earn commissions<br>• Exclusive events</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">A-Fest Attendance</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">Annual transformation festival</p>
+                            <div class="mv-text-sm mv-text-purple-600">• Network with leaders<br>• Speaking opportunities</div>
+                        </div>
+                        <div class="program-card">
+                            <h4 class="mv-font-bold mv-text-dark-900 mv-mb-2">Teacher Training</h4>
+                            <p class="body mv-text-gray-600 mv-mb-3">Become a Mindvalley instructor</p>
+                            <div class="mv-text-sm mv-text-purple-600">• Create your quest<br>• Revenue sharing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results & Impact -->
+    <section id="results" class="mv-section mv-bg-gradient-purple mv-text-white mv-py-20">
+        <div class="mv-container">
+            <div class="mv-text-center mv-mb-16">
+                <div class="mv-type-overline mv-text-purple-200 mv-mb-4">TRANSFORMATION IMPACT</div>
+                <h2 class="title-bold-2 mv-mb-6">Results That Matter</h2>
+                <p class="body-lg mv-text-purple-100 mv-max-w-3xl mv-mx-auto mv-leading-relaxed">
+                    The manifesting customer journey has transformed how Mindvalley creates lasting customer relationships and life-changing outcomes.
+                </p>
+            </div>
+
+            <div class="mv-grid md:mv-grid-cols-2 mv-gap-12">
+                <div>
+                    <h3 class="title-bold-4 mv-mb-8">Business Impact</h3>
+                    <div class="mv-space-y-6">
+                        <div>
+                            <div class="metric-highlight">95%</div>
+                            <h4 class="mv-font-bold mv-mb-2">Customer Journey Completion</h4>
+                            <p class="body mv-text-purple-200">Industry-leading progression through all 5 stages</p>
+                        </div>
+                        <div>
+                            <div class="metric-highlight">4.2x</div>
+                            <h4 class="mv-font-bold mv-mb-2">Customer Lifetime Value</h4>
+                            <p class="body mv-text-purple-200">Compared to traditional funnel approaches</p>
+                        </div>
+                        <div>
+                            <div class="metric-highlight">43%</div>
+                            <h4 class="mv-font-bold mv-mb-2">Referral Rate</h4>
+                            <p class="body mv-text-purple-200">Organic growth through satisfied customers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="title-bold-4 mv-mb-8">Transformation Outcomes</h3>
+                    <div class="mv-space-y-6">
+                        <div>
+                            <div class="metric-highlight">2M+</div>
+                            <h4 class="mv-font-bold mv-mb-2">Lives Transformed</h4>
+                            <p class="body mv-text-purple-200">Students worldwide experiencing manifestation success</p>
+                        </div>
+                        <div>
+                            <div class="metric-highlight">89%</div>
+                            <h4 class="mv-font-bold mv-mb-2">Report Significant Progress</h4>
+                            <p class="body mv-text-purple-200">In their manifesting abilities within 90 days</p>
+                        </div>
+                        <div>
+                            <div class="metric-highlight">4.8/5</div>
+                            <h4 class="mv-font-bold mv-mb-2">Average Satisfaction</h4>
+                            <p class="body mv-text-purple-200">Across all journey touchpoints and programs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mv-text-center mv-mt-16">
+                <a href="#contact" class="mv-btn mv-btn-white mv-text-lg mv-px-8">Implement This Framework</a>
+                <p class="body mv-text-purple-200 mv-mt-4">Ready to transform your customer experience?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="mv-section mv-bg-dark-900 mv-text-white mv-py-20">
+        <div class="mv-container mv-text-center">
+            <div class="mv-max-w-3xl mv-mx-auto">
+                <h2 class="title-bold-2 mv-mb-6">Ready to Implement This Framework?</h2>
+                <p class="body-lg mv-text-gray-300 mv-mb-8 mv-leading-relaxed">
+                    Transform your customer experience with Mindvalley's proven manifesting customer journey methodology. 
+                    Perfect for transformation-focused businesses, coaches, and organizations.
+                </p>
+                
+                <div class="mv-flex mv-flex-col md:mv-flex-row mv-items-center mv-justify-center mv-gap-6">
+                    <a href="mailto:strategy@mindvalley.com" class="mv-btn mv-btn-primary mv-text-lg mv-px-8">Contact Strategy Team</a>
+                    <a href="#journey" class="mv-text-purple-400 hover:mv-text-purple-300 mv-font-semibold">Review Framework Again</a>
+                </div>
+                
+                <div class="mv-mt-12 mv-grid md:mv-grid-cols-3 mv-gap-8">
+                    <div class="mv-text-center">
+                        <div class="mv-text-2xl mv-mb-4">🎯</div>
+                        <h4 class="mv-font-bold mv-mb-2">Strategic Consulting</h4>
+                        <p class="body mv-text-gray-400">Custom journey mapping for your business</p>
+                    </div>
+                    <div class="mv-text-center">
+                        <div class="mv-text-2xl mv-mb-4">🛠️</div>
+                        <h4 class="mv-font-bold mv-mb-2">Implementation Support</h4>
+                        <p class="body mv-text-gray-400">Technology and process setup</p>
+                    </div>
+                    <div class="mv-text-center">
+                        <div class="mv-text-2xl mv-mb-4">📊</div>
+                        <h4 class="mv-font-bold mv-mb-2">Performance Analytics</h4>
+                        <p class="body mv-text-gray-400">Measure and optimize journey effectiveness</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Mindvalley Components JS -->
+    <script src="../../skills/mindvalley-design/mindvalley-components.js"></script>
+    
+    <!-- Interactive Demo Script -->
+    <script>
+        // Interactive Demo
+        document.getElementById('startDemo').addEventListener('click', function() {
+            const demoButton = this;
+            const demoProgress = document.getElementById('demoProgress');
+            const demoStage = document.getElementById('demoStageName');
+            const demoEmoji = document.getElementById('demoEmoji');
+            const demoContent = document.getElementById('demoContent');
+            
+            demoButton.style.display = 'none';
+            demoProgress.classList.remove('mv-hidden');
+            
+            const stages = [
+                { name: 'Awareness', emoji: '🌱', content: 'Discovering manifesting possibilities...' },
+                { name: 'Engagement', emoji: '🔍', content: 'Exploring free tools and practices...' },
+                { name: 'Consideration', emoji: '🤔', content: 'Evaluating deeper transformation...' },
+                { name: 'Commitment', emoji: '💎', content: 'Investing in structured learning...' },
+                { name: 'Advocacy', emoji: '🚀', content: 'Sharing transformation with others!' }
+            ];
+            
+            let currentStage = 0;
+            
+            function updateStage() {
+                if (currentStage < stages.length) {
+                    const stage = stages[currentStage];
+                    demoStage.textContent = stage.name;
+                    demoEmoji.textContent = stage.emoji;
+                    demoContent.textContent = stage.content;
+                    currentStage++;
+                    
+                    if (currentStage < stages.length) {
+                        setTimeout(updateStage, 2000);
+                    } else {
+                        setTimeout(() => {
+                            demoContent.innerHTML = '<strong>Journey complete!</strong> Experience the full transformation.';
+                        }, 2000);
+                    }
+                }
+            }
+            
+            updateStage();
+        });
+
+        // Stage hover effects
+        document.querySelectorAll('.journey-stage').forEach(stage => {
+            stage.addEventListener('mouseenter', function() {
+                const stageNumber = this.dataset.stage;
+                this.style.background = 'linear-gradient(135deg, rgba(122, 18, 212, 0.2) 0%, rgba(15, 19, 26, 1) 100%)';
+            });
+            
+            stage.addEventListener('mouseleave', function() {
+                this.style.background = 'var(--mv-dark-800)';
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
