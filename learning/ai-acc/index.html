@@ -123,11 +123,14 @@
       margin-bottom: 3rem;
     }
     
-    .lessons-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
+    .lessons-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
       margin: 3rem 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .lesson-card {
@@ -144,6 +147,18 @@
       border-color: #7a12d4;
       transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(122, 18, 212, 0.1);
+    }
+    
+    .lesson-disabled {
+      opacity: 0.4;
+      pointer-events: none;
+      cursor: default;
+    }
+    
+    .lesson-disabled:hover {
+      border-color: #e5e7eb;
+      transform: none;
+      box-shadow: none;
     }
     
     .lesson-day {
@@ -240,7 +255,7 @@
     @media (max-width: 768px) {
       .hero { padding: 4rem 0; }
       .section { padding: 3rem 0; }
-      .lessons-grid { grid-template-columns: 1fr; }
+      .lessons-list { margin: 2rem 0; }
       .password-form { margin: 1rem; padding: 2rem; }
       .stat-number { font-size: 2rem; }
     }
@@ -297,7 +312,7 @@
     <section class="section">
       <div class="mv-container">
         <h2 class="title-bold-3 section-title">Course Lessons</h2>
-        <div class="lessons-grid">
+        <div class="lessons-list">
           
           <!-- Day 1 -->
           <a href="1-communication.html" class="lesson-card">
@@ -315,97 +330,10 @@
             </div>
           </a>
 
-          <!-- Day 2 -->
-          <div class="lesson-card">
+          <!-- Day 2 - Coming Soon (simplified) -->
+          <div class="lesson-card lesson-disabled">
             <div class="lesson-day">DAY 2</div>
-            <h3 class="title-bold-5 lesson-title">Writing & Content Clone</h3>
-            <p class="lesson-description">Create AI that generates emails, social posts, and long-form content in your authentic voice</p>
-            <ul class="lesson-topics">
-              <li>Email automation and templates</li>
-              <li>Social media content generation</li>
-              <li>Blog posts and article writing</li>
-              <li>Content calendar automation</li>
-            </ul>
-            <div class="lesson-status">
-              <span class="status-coming-soon">📅 Coming Soon</span>
-            </div>
-          </div>
-
-          <!-- Day 3 -->
-          <div class="lesson-card">
-            <div class="lesson-day">DAY 3</div>
-            <h3 class="title-bold-5 lesson-title">Sales & Marketing Clone</h3>
-            <p class="lesson-description">Build AI systems that create video sales letters, ad copy, and conversion-focused content</p>
-            <ul class="lesson-topics">
-              <li>VSL (Video Sales Letter) generation</li>
-              <li>Ad copy and marketing automation</li>
-              <li>Sales funnel content creation</li>
-              <li>Conversion optimization</li>
-            </ul>
-            <div class="lesson-status">
-              <span class="status-coming-soon">📅 Coming Soon</span>
-            </div>
-          </div>
-
-          <!-- Day 4 -->
-          <div class="lesson-card">
-            <div class="lesson-day">DAY 4</div>
-            <h3 class="title-bold-5 lesson-title">Meeting & Workflow Clone</h3>
-            <p class="lesson-description">Automate meeting notes, follow-ups, and project management with AI assistants</p>
-            <ul class="lesson-topics">
-              <li>Meeting transcription and summarization</li>
-              <li>Automated follow-up sequences</li>
-              <li>Project management integration</li>
-              <li>Team communication automation</li>
-            </ul>
-            <div class="lesson-status">
-              <span class="status-coming-soon">📅 Coming Soon</span>
-            </div>
-          </div>
-
-          <!-- Day 5 -->
-          <div class="lesson-card">
-            <div class="lesson-day">DAY 5</div>
-            <h3 class="title-bold-5 lesson-title">Learning & Research Clone</h3>
-            <p class="lesson-description">Create AI systems that research, learn, and synthesize information like your personal brain</p>
-            <ul class="lesson-topics">
-              <li>Research automation and data gathering</li>
-              <li>Knowledge synthesis and insights</li>
-              <li>Learning acceleration techniques</li>
-              <li>Information organization systems</li>
-            </ul>
-            <div class="lesson-status">
-              <span class="status-coming-soon">📅 Coming Soon</span>
-            </div>
-          </div>
-
-          <!-- Day 6 -->
-          <div class="lesson-card">
-            <div class="lesson-day">DAY 6</div>
-            <h3 class="title-bold-5 lesson-title">Advanced Automation</h3>
-            <p class="lesson-description">Connect your AI clones to workflows, integrate with tools, and build autonomous systems</p>
-            <ul class="lesson-topics">
-              <li>Zapier and workflow automation</li>
-              <li>API integrations and connections</li>
-              <li>Multi-platform AI deployment</li>
-              <li>Advanced prompt engineering</li>
-            </ul>
-            <div class="lesson-status">
-              <span class="status-coming-soon">📅 Coming Soon</span>
-            </div>
-          </div>
-
-          <!-- Day 7 -->
-          <div class="lesson-card">
-            <div class="lesson-day">DAY 7</div>
-            <h3 class="title-bold-5 lesson-title">AI Business Systems</h3>
-            <p class="lesson-description">Scale your AI clones into complete business operating systems and future-proof strategies</p>
-            <ul class="lesson-topics">
-              <li>Business process automation</li>
-              <li>AI-powered decision making</li>
-              <li>Future-proofing strategies</li>
-              <li>Scaling and optimization</li>
-            </ul>
+            <h3 class="title-bold-5 lesson-title">Lesson 2</h3>
             <div class="lesson-status">
               <span class="status-coming-soon">📅 Coming Soon</span>
             </div>
