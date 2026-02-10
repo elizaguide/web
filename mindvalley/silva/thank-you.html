@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to The Frequency Code - Your Journey Begins Now</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>✅</text></svg>">
+    <link rel="stylesheet" href="mindvalley-core.css">
+    <link rel="stylesheet" href="mindvalley-utilities.css">
+    <style>
+        .success-hero {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            background: white;
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .video-placeholder {
+            background: #1F2937;
+            border-radius: 12px;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+        
+        .play-button {
+            background: #F59E0B;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .next-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .step-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #7C3AED;
+        }
+        
+        .step-number {
+            background: #7C3AED;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        .lesson-preview {
+            background: #F9FAFB;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #F59E0B;
+            margin: 2rem 0;
+        }
+        
+        .engagement-tips {
+            background: linear-gradient(45deg, #FEF3C7, #FDE68A);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .social-share {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        .share-button {
+            background: #3B82F6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            display: inline-block;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+        
+        .share-button:hover {
+            background: #2563EB;
+        }
+        
+        .share-button.facebook {
+            background: #1877F2;
+        }
+        
+        .share-button.twitter {
+            background: #1DA1F2;
+        }
+        
+        .countdown-timer {
+            background: #FEF2F2;
+            border: 2px solid #F87171;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .timer-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #DC2626;
+            margin: 0.5rem 0;
+        }
+        
+        .bonus-section {
+            background: linear-gradient(135deg, #7C3AED 0%, #6B46C1 100%);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 16px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .email-checklist {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #F3F4F6;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checkmark {
+            color: #10B981;
+            font-size: 1.25rem;
+            margin-right: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .video-placeholder {
+                height: 250px;
+            }
+            
+            .next-steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .success-hero {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Success Hero -->
+    <section class="success-hero">
+        <div class="mv-container">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+            <h1 class="title-bold-2 mv-mb-4">Welcome to The Frequency Code!</h1>
+            <p class="body-xl mv-mb-6">
+                You're now part of an exclusive group of 47,000+ conscious creators discovering the science behind manifestation
+            </p>
+            <p class="body-lg">
+                Check your email in the next few minutes for <strong>Lesson 1: The Currency Revolution</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Personal Message from Vishen -->
+    <section class="mv-section">
+        <div class="mv-container">
+            <h2 class="title-bold-3 mv-mb-6 mv-text-center">A Personal Message from Vishen</h2>
+            
+            <div class="video-container">
+                <div class="video-placeholder" id="video-player">
+                    <div class="play-button">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="title-bold-5 mv-mb-2">Why These 9 Lessons Will Change Everything</h3>
+                    <p class="body">Click to play (3 minutes)</p>
+                </div>
+            </div>
+            
+            <!-- Video Script Box -->
+            <div style="background: #F3F4F6; padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h4 class="title-bold-5 mv-mb-3">📝 VIDEO SCRIPT FOR VISHEN:</h4>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #7C3AED;">
+                    <p class="body mv-mb-4">
+                        <strong>VISHEN'S VIDEO SCRIPT (3 minutes):</strong>
+                    </p>
+                    
+                    <p class="body mv-mb-4">
+                        "Hey there, and welcome to The Frequency Code. I'm Vishen Lakhiani, and I'm genuinely excited that you've decided to join this journey.
+                    </p>
+                    
+                    <p class="body mv-mb-4">
+                        What you're about to experience over the next 9 days represents some of the most profound manifestation insights I've encountered in 15+ years of studying consciousness and human potential.
+                    </p>
+                    
+                    <p class="body mv-mb-4">
+                        These aren't just theories. We've tested these concepts with over 12 million students through our programs at Mindvalley. And what we've discovered is that most people are manifesting from a completely wrong paradigm.
+                    </p>
+                    
+                    <p class="body mv-mb-4">
+                        In just a few minutes, you'll receive your first lesson about why your frequency - not your thoughts - is your currency in the cosmic marketplace. This single insight, from our teacher Regan Hillyer, has transformed thousands of lives.
+                    </p>
+                    
+                    <p class="body mv-mb-4">
+                        But here's what's crucial: don't just read these lessons. Apply them. The techniques you're about to learn work, but only if you actually use them.
+                    </p>
+                    
+                    <p class="body mv-mb-4">
+                        Each lesson takes just 5 minutes to read, but I challenge you to spend at least 5 more minutes implementing what you learn. That's where the magic happens.
+                    </p>
+                    
+                    <p class="body mv-mb-4">
+                        And please, share your breakthroughs with us. Email me directly at vishen@mindvalley.com with your results. I read every message, and your success stories inspire me to keep sharing this work.
+                    </p>
+                    
+                    <p class="body">
+                        Get ready to crack The Frequency Code. Your extraordinary life is waiting."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="mv-section" style="background: #F9FAFB;">
+        <div class="mv-container">
+            <h2 class="title-bold-3 mv-mb-6 mv-text-center">What Happens Next</h2>
+            
+            <div class="next-steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="title-bold-5 mv-mb-3">Check Your Email</h3>
+                    <p class="body">
+                        Lesson 1 arrives in the next 5 minutes. If you don't see it, check your spam folder and mark it as "not spam."
+                    </p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="title-bold-5 mv-mb-3">Read Every Day</h3>
+                    <p class="body">
+                        Each lesson takes 5 minutes to read. Set a daily reminder to check your email at the same time each day.
+                    </p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="title-bold-5 mv-mb-3">Apply Immediately</h3>
+                    <p class="body">
+                        Don't just read - implement. The techniques only work when you actually use them in your daily life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lesson 1 Preview -->
+    <section class="mv-section">
+        <div class="mv-container">
+            <div class="lesson-preview">
+                <h3 class="title-bold-4 mv-mb-4">🔮 Coming in 5 Minutes: Lesson 1</h3>
+                <h4 class="title-bold-5 mv-mb-3">"The Currency Revolution"</h4>
+                <p class="body mv-mb-4">
+                    You'll discover why Regan Hillyer says "Your frequency is your currency" and what this means for everything you've been taught about manifestation.
+                </p>
+                <p class="body mv-mb-4">
+                    <strong>Key Insight Preview:</strong> You're not manifesting based on what you want. You're manifesting based on what you ARE. Your energetic state is literally what you're "spending" in the cosmic marketplace.
+                </p>
+                <p class="body">
+                    <strong>Action Step:</strong> You'll learn how to identify your current "frequency" by looking at your external results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Tips -->
+    <section class="mv-section">
+        <div class="mv-container">
+            <div class="engagement-tips">
+                <h3 class="title-bold-4 mv-mb-4">🎯 How to Get Maximum Value from The Frequency Code</h3>
+                
+                <div class="email-checklist">
+                    <div class="checklist-item">
+                        <span class="checkmark">✓</span>
+                        <div>
+                            <strong>Add vishen@mindvalley.com to your contacts</strong> - This ensures you receive every lesson
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <span class="checkmark">✓</span>
+                        <div>
+                            <strong>Set a daily reminder</strong> - Same time each day works best for habit formation
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <span class="checkmark">✓</span>
+                        <div>
+                            <strong>Keep a manifestation journal</strong> - Track your insights and breakthroughs
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <span class="checkmark">✓</span>
+                        <div>
+                            <strong>Apply immediately</strong> - Don't wait until "later" - implement each technique right away
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item">
+                        <span class="checkmark">✓</span>
+                        <div>
+                            <strong>Share your wins</strong> - Email your breakthroughs to vishen@mindvalley.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown to Lesson 1 -->
+    <section class="mv-section" style="background: #F9FAFB;">
+        <div class="mv-container">
+            <div class="countdown-timer">
+                <h3 class="title-bold-5 mv-mb-3">⏰ Your First Lesson Arrives In:</h3>
+                <div class="timer-display" id="countdown">05:00</div>
+                <p class="body">Check your inbox and get ready to discover your frequency currency!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Sharing -->
+    <section class="mv-section">
+        <div class="mv-container">
+            <div class="social-share">
+                <h3 class="title-bold-5 mv-mb-4">Share The Frequency Code with Friends</h3>
+                <p class="body mv-mb-4">
+                    Know someone who's struggling with manifestation? Share this free resource and help them crack the code too.
+                </p>
+                
+                <div style="margin: 1rem 0;">
+                    <a href="#" class="share-button facebook" onclick="shareOnFacebook()">Share on Facebook</a>
+                    <a href="#" class="share-button twitter" onclick="shareOnTwitter()">Share on Twitter</a>
+                    <a href="#" class="share-button" onclick="copyLink()">Copy Link</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exclusive Bonus -->
+    <section class="mv-section">
+        <div class="mv-container">
+            <div class="bonus-section">
+                <h2 class="title-bold-3 mv-mb-4">🎁 Exclusive Bonus for Early Joiners</h2>
+                <p class="body-xl mv-mb-6">
+                    Because you joined The Frequency Code today, you'll also receive:
+                </p>
+                
+                <div class="mv-grid-1 lg:mv-grid-2 mv-gap-6 mv-text-left">
+                    <div>
+                        <h4 class="title-bold-5 mv-mb-2">📱 The Manifestation Alarm Guide</h4>
+                        <p class="body">
+                            Detailed instructions for setting up the frequency alarm technique that changed my life (arrives with Lesson 4).
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="title-bold-5 mv-mb-2">🧠 The "How Dump" Worksheet</h4>
+                        <p class="body">
+                            A practical worksheet for breaking your overthinking addiction using Regan Hillyer's proven method (arrives with Lesson 7).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Encouragement -->
+    <section class="mv-section">
+        <div class="mv-container mv-text-center">
+            <h2 class="title-bold-3 mv-mb-4">Your Manifestation Journey Starts Now</h2>
+            <p class="body-xl mv-mb-6">
+                You've just taken the first step toward understanding the true science of manifestation.
+            </p>
+            <p class="body mv-mb-8">
+                Over the next 9 days, you'll discover insights that most people never learn in a lifetime. Prepare to see reality from a completely new perspective.
+            </p>
+            
+            <div style="background: #F3F4F6; padding: 2rem; border-radius: 12px; max-width: 600px; margin: 0 auto;">
+                <p class="body mv-mb-2">
+                    <strong>Remember:</strong> Your frequency is your currency.
+                </p>
+                <p class="body">
+                    And in just a few minutes, you'll discover exactly what that means.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mv-section" style="background: #1F2937; color: white;">
+        <div class="mv-container mv-text-center">
+            <p class="body mv-mb-2">© 2026 Mindvalley. All rights reserved.</p>
+            <p class="body-sm" style="color: #9CA3AF;">
+                Questions? Email us at support@mindvalley.com
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown timer to lesson 1 (5 minutes)
+        let timeLeft = 300; // 5 minutes in seconds
+        
+        function updateCountdown() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('countdown').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                document.getElementById('countdown').textContent = "Check Your Email!";
+                document.querySelector('.countdown-timer p').textContent = "Lesson 1 should be in your inbox now!";
+            }
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+        
+        // Video player (placeholder)
+        document.getElementById('video-player').addEventListener('click', function() {
+            alert('In the real implementation, this would load Vishen\'s welcome video.');
+        });
+        
+        // Social sharing functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href.replace('thank-you.html', 'landing-page.html'));
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+        
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href.replace('thank-you.html', 'landing-page.html'));
+            const text = encodeURIComponent('I just joined The Frequency Code - 9 free lessons on the science behind manifestation from @vishen and @mindvalley!');
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        }
+        
+        function copyLink() {
+            const url = window.location.href.replace('thank-you.html', 'landing-page.html');
+            navigator.clipboard.writeText(url).then(function() {
+                alert('Link copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
