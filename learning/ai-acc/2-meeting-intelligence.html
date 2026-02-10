@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meeting Intelligence & Data Mastery — AI Accelerator • Mindvalley</title>
+  <meta name="description" content="Transform your meetings and health insights by becoming a 'data squirrel' and mastering AI-powered analysis. Learn meeting intelligence and health optimization." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="stylesheet" href="../public/mindvalley-font.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    .mv-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    @media (max-width: 768px) {
+      .mv-container { padding: 0 1rem; }
+    }
+    
+    body {
+      font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #0f131a;
+      background: #ffffff;
+    }
+    
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 100;
+      padding: 1rem 0;
+    }
+    
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-brand {
+      font-weight: 700;
+      color: #0f131a;
+      text-decoration: none;
+    }
+    
+    .nav-link {
+      color: #7a12d4;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      transition: background-color 0.2s;
+    }
+    
+    .nav-link:hover {
+      background: #f3f4f6;
+    }
+    
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    
+    .lesson-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #7a12d4;
+      color: white;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero h1 {
+      max-width: 48rem;
+      margin: 0 auto 1.5rem auto;
+    }
+    
+    .hero p {
+      max-width: 40rem;
+      margin: 0 auto;
+      color: #4b5563;
+    }
+    
+    /* Section styles */
+    .section {
+      padding: 5rem 0;
+    }
+    
+    .section-alt {
+      background: #f9fafb;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    /* Card styles */
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    
+    .highlight-card {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    
+    .highlight-card h3 {
+      margin-bottom: 1rem;
+    }
+    
+    .insight-emoji {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .step-card {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    
+    .step-card:hover {
+      border-color: #7a12d4;
+      transform: translateY(-5px);
+    }
+    
+    .step-number {
+      background: #7a12d4;
+      color: white;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .step-title {
+      margin-bottom: 1rem;
+    }
+    
+    .health-story {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-radius: 1rem;
+      padding: 3rem;
+      margin: 3rem 0;
+      border-left: 4px solid #0ea5e9;
+    }
+    
+    .quote-highlight {
+      background: #7a12d4;
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      font-style: italic;
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 1.125rem;
+    }
+    
+    .warning-box {
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .tool-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border-left: 4px solid #7a12d4;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .tool-card h4 {
+      color: #7a12d4;
+      margin-bottom: 0.5rem;
+    }
+    
+    .data-squirrel-highlight {
+      background: linear-gradient(135deg, #0f131a 0%, #1f2937 100%);
+      color: white;
+      border-radius: 1rem;
+      padding: 3rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    
+    .data-squirrel-highlight h3 {
+      color: #c084fc;
+      margin-bottom: 1rem;
+    }
+    
+    .key-takeaways {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .takeaway-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      border: 2px solid #e5e7eb;
+      transition: all 0.3s;
+    }
+    
+    .takeaway-card:hover {
+      border-color: #7a12d4;
+      transform: translateY(-2px);
+    }
+    
+    .takeaway-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .takeaway-title {
+      color: #7a12d4;
+      margin-bottom: 1rem;
+    }
+    
+    /* Navigation buttons */
+    .lesson-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 4rem 0;
+      gap: 1rem;
+    }
+    
+    .lesson-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: #7a12d4;
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+    
+    .lesson-nav-btn:hover {
+      background: #6b21a8;
+    }
+    
+    .lesson-nav-btn.secondary {
+      background: #f3f4f6;
+      color: #0f131a;
+    }
+    
+    .lesson-nav-btn.secondary:hover {
+      background: #e5e7eb;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #0f131a;
+      color: #6b7280;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+      .hero { padding: 4rem 0; }
+      .section { padding: 3rem 0; }
+      .step-grid { grid-template-columns: 1fr; }
+      .tool-grid { grid-template-columns: 1fr; }
+      .key-takeaways { grid-template-columns: 1fr; }
+      .lesson-nav { flex-direction: column; text-align: center; }
+      .health-story { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="mv-container">
+      <div class="nav-content">
+        <a href="index.html" class="nav-brand title-bold-5">AI Accelerator</a>
+        <a href="index.html" class="nav-link">← Back to Lessons</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="mv-container">
+      <div class="lesson-badge">DAY 2 • AI ACCELERATOR</div>
+      <h1 class="title-bold-1">Meeting Intelligence & Data Mastery</h1>
+      <p class="body-lg">Transform your meetings and health insights by becoming a "data squirrel" and mastering AI-powered analysis</p>
+    </div>
+  </section>
+
+  <!-- The Data Revolution -->
+  <section class="section">
+    <div class="mv-container">
+      <div class="highlight-card">
+        <div class="insight-emoji">🐿️</div>
+        <h2 class="title-bold-3">The 80% Rule That Changes Everything</h2>
+        <p class="body-lg">"80% of any AI problem is just gathering data" - The Economist, 2020</p>
+      </div>
+      
+      <div class="card">
+        <h3 class="title-bold-4" style="margin-bottom: 1.5rem;">Why Data Collection Matters</h3>
+        <p class="body" style="margin-bottom: 1.5rem;">In 2020, Vishen read a single line in The Economist that changed how he approached AI: <strong>"80% of any AI problem is just gathering data."</strong></p>
+        
+        <h4 class="title-bold-6" style="margin-bottom: 1rem;">This insight led to:</h4>
+        <ul style="list-style-type: disc; margin-left: 2rem; color: #4b5563;">
+          <li style="margin-bottom: 0.5rem;">Millions made investing in AI companies (including NVIDIA)</li>
+          <li style="margin-bottom: 0.5rem;">Building Mindvalley Supplements website with zero designers</li>
+          <li style="margin-bottom: 0.5rem;">Transforming health outcomes through data-driven insights</li>
+          <li style="margin-bottom: 0.5rem;">Revolutionary meeting intelligence and team analysis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Health Story Section -->
+  <section class="section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-2 section-title">Case Study: How Data Saved Vishen's Health</h2>
+      
+      <div class="health-story">
+        <h3 class="title-bold-4" style="margin-bottom: 1.5rem;">The Problem</h3>
+        <p class="body" style="margin-bottom: 1.5rem;"><strong>March 17 - May 25:</strong> Waistline grew from 80cm to 87cm in just 7 weeks</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <div style="padding: 1rem; background: rgba(255, 255, 255, 0.7); border-radius: 0.5rem;">
+            <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">🇪🇺 Europe (Normal)</h4>
+            <p class="body-sm">Clean food with strict regulations</p>
+          </div>
+          <div style="padding: 1rem; background: rgba(255, 255, 255, 0.7); border-radius: 0.5rem;">
+            <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">🇲🇾 Malaysia + 🇺🇸 America</h4>
+            <p class="body-sm">7 weeks of less regulated food = weight gain</p>
+          </div>
+        </div>
+        
+        <div class="quote-highlight">
+          "Something's wrong with what I'm eating. I'm going to photograph everything and feed it into ChatGPT."
+        </div>
+      </div>
+      
+      <div class="step-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4 class="step-title title-bold-5">The Simple Prompt</h4>
+          <p class="body" style="margin-bottom: 1rem;">"I need you to be my eating advisor. I'm going to tell you what I eat every day and you're going to help me with my macros."</p>
+          <p class="body-sm" style="color: #6b7280;">No genius required - just grumpy human with tight pants</p>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4 class="step-title title-bold-5">The Data Collection</h4>
+          <p class="body" style="margin-bottom: 1rem;">Photographed every meal, recorded waistline measurements, fed everything to ChatGPT</p>
+          <p class="body-sm" style="color: #6b7280;">ChatGPT can calculate macros and calories from photos</p>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4 class="step-title title-bold-5">The Breakthrough Discovery</h4>
+          <div class="warning-box" style="margin-bottom: 1rem;">
+            <strong>AI Insight:</strong> "You're likely gaining belly fat due to excessive dietary fat plus not enough fiber."
+          </div>
+          <p class="body-sm" style="color: #6b7280;">97% of men don't eat enough fiber. Fiber feeds your gut microbiome, not just you.</p>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4 class="step-title title-bold-5">The Result</h4>
+          <p class="body" style="margin-bottom: 1rem;"><strong>6 weeks:</strong> 86.8cm → 80.65cm waistline</p>
+          <p class="body-sm" style="color: #6b7280;">All because he became a "data squirrel"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meeting Intelligence Section -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-2 section-title">Meeting Intelligence: Your AI Executive Assistant</h2>
+      
+      <div class="data-squirrel-highlight">
+        <h3 class="title-bold-4">Be a Mad Squirrel 🐿️</h3>
+        <p class="body-lg">Deliberately gather and store meeting data. Everything documented, everything stored, everything analyzed.</p>
+      </div>
+      
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h4 class="title-bold-5">📝 Google Gemini Meeting Notes</h4>
+          <p class="body">Click "Record" in Google Calendar meetings → automatic transcripts emailed to you</p>
+        </div>
+        
+        <div class="tool-card">
+          <h4 class="title-bold-5">🎙️ iPhone/Android Recording</h4>
+          <p class="body">Open memo app, hit record for offline meetings → upload transcript to AI</p>
+        </div>
+        
+        <div class="tool-card">
+          <h4 class="title-bold-5">💻 ChatGPT Desktop App</h4>
+          <p class="body">New record button for up to 2-3 hours of meeting capture</p>
+        </div>
+        
+        <div class="tool-card">
+          <h4 class="title-bold-5">🥣 Granola (Tomorrow's Tool)</h4>
+          <p class="body">Automatic meeting recording and organization based on calendar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Can Build -->
+  <section class="section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-2 section-title">What AI Can Build From Your Meetings</h2>
+      
+      <div class="step-grid">
+        <div class="card">
+          <h4 class="title-bold-5" style="margin-bottom: 1rem;">📋 Beautiful Meeting Summaries</h4>
+          <p class="body" style="margin-bottom: 1rem;">Upload meeting notes to Claude and ask: "Build a simple webpage that summarizes this meeting and shows next steps with responsibilities."</p>
+          <div class="warning-box">
+            <strong>Pro Tip:</strong> Ask for webpages, not just text summaries. You can share webpages with your team!
+          </div>
+        </div>
+        
+        <div class="card">
+          <h4 class="title-bold-5" style="margin-bottom: 1rem;">🧠 Team Psychology Analysis</h4>
+          <p class="body" style="margin-bottom: 1rem;">Upload 4+ meetings and ask: "Analyze these meetings. How is my team evolving? What underlying currents do you find?"</p>
+          <p class="body-sm" style="color: #6b7280;">AI can identify team dynamics, leadership patterns, and individual contributions you might miss.</p>
+        </div>
+        
+        <div class="card">
+          <h4 class="title-bold-5" style="margin-bottom: 1rem;">📊 Leadership Intelligence</h4>
+          <p class="body" style="margin-bottom: 1rem;">Get insights on team member contributions, tensions, and growth patterns across multiple meetings.</p>
+          <p class="body-sm" style="color: #6b7280;">Example: "Bruno is the realist in a visionary room" - valuable leadership insights</p>
+        </div>
+        
+        <div class="card">
+          <h4 class="title-bold-5" style="margin-bottom: 1rem;">🎨 Custom Styled Pages</h4>
+          <p class="body" style="margin-bottom: 1rem;">Tell Claude: "Make this blue and red" or "Put a picture of a banana and make it disgustingly colorful"</p>
+          <p class="body-sm" style="color: #6b7280;">AI follows your design preferences, no matter how specific or unusual</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build Your AI Health Advisor -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-2 section-title">Bonus: Build Your AI Health Advisor</h2>
+      
+      <div class="highlight-card">
+        <h3 class="title-bold-4">The ChatGPT Project Method</h3>
+        <p class="body-lg">Create a ChatGPT project and upload: blood work, supplement lists, medical reports, doctor conversations</p>
+      </div>
+      
+      <div class="tool-grid">
+        <div class="tool-card">
+          <h4 class="title-bold-5">📊 Blood Work Analysis</h4>
+          <p class="body">Upload latest blood work → AI suggests dietary changes based on results</p>
+        </div>
+        
+        <div class="tool-card">
+          <h4 class="title-bold-5">💊 Supplement Optimization</h4>
+          <p class="body">Share supplement list → AI identifies gaps and recommendations</p>
+        </div>
+        
+        <div class="tool-card">
+          <h4 class="title-bold-5">🥗 Daily Food Tracking</h4>
+          <p class="body">Photograph meals → AI calculates macros and suggests improvements</p>
+        </div>
+        
+        <div class="tool-card">
+          <h4 class="title-bold-5">🎯 Targeted Health Goals</h4>
+          <p class="body">Low testosterone? AI suggests Ashwagandha, pine pollen, and lifestyle changes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-2 section-title">Key Takeaways</h2>
+      
+      <div class="key-takeaways">
+        <div class="takeaway-card">
+          <div class="takeaway-emoji">🐿️</div>
+          <h3 class="takeaway-title title-bold-5">Be a Data Squirrel</h3>
+          <p class="body">Relentlessly document everything: meetings, health data, conversations. Data is 80% of AI success.</p>
+        </div>
+        
+        <div class="takeaway-card">
+          <div class="takeaway-emoji">📊</div>
+          <h3 class="takeaway-title title-bold-5">Meeting Intelligence</h3>
+          <p class="body">Transform meeting notes into beautiful webpages, team insights, and leadership intelligence.</p>
+        </div>
+        
+        <div class="takeaway-card">
+          <div class="takeaway-emoji">🏥</div>
+          <h3 class="takeaway-title title-bold-5">Health Mastery</h3>
+          <p class="body">Use AI as your personal health advisor by feeding it your complete health data profile.</p>
+        </div>
+        
+        <div class="takeaway-card">
+          <div class="takeaway-emoji">🌐</div>
+          <h3 class="takeaway-title title-bold-5">Web Creation</h3>
+          <p class="body">Don't just get text summaries—build shareable webpages that look professional and engaging.</p>
+        </div>
+        
+        <div class="takeaway-card">
+          <div class="takeaway-emoji">🧠</div>
+          <h3 class="takeaway-title title-bold-5">Pattern Recognition</h3>
+          <p class="body">AI finds insights you miss—like fiber deficiency or team psychology patterns.</p>
+        </div>
+        
+        <div class="takeaway-card">
+          <div class="takeaway-emoji">⚡</div>
+          <h3 class="takeaway-title title-bold-5">Simple Prompts</h3>
+          <p class="body">No genius required. Grumpy humans with simple prompts can achieve extraordinary results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Action Steps -->
+  <section class="section">
+    <div class="mv-container">
+      <div class="data-squirrel-highlight">
+        <h2 class="title-bold-2" style="margin-bottom: 1.5rem;">Your Assignment: Become a Data Squirrel</h2>
+        <p class="body-lg" style="margin-bottom: 2rem;">Start collecting data for your next AI breakthrough</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="section">
+    <div class="mv-container">
+      <div class="lesson-nav">
+        <a href="1-communication.html" class="lesson-nav-btn secondary">← Previous Lesson</a>
+        <a href="index.html" class="lesson-nav-btn">Back to All Lessons</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="mv-container">
+      <p>&copy; Mindvalley • AI Accelerator Program</p>
+    </div>
+  </footer>
+</body>
+</html>
