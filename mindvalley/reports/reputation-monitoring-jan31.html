@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mindvalley Reputation Monitoring Report — January 31, 2026</title>
+  <meta name="description" content="Comprehensive analysis of Mindvalley's online reputation, customer sentiment, and advertising impact with actionable insights for the marketing team." />
+  <meta name="theme-color" content="#7a12d4" />
+  
+  <!-- Emoji Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --mv-purple: #7a12d4;
+      --mv-dark: #0f131a;
+      --mv-muted: #4b5563;
+      --mv-footer: #6b7280;
+      --mv-light: #f9fafb;
+      --mv-white: #ffffff;
+      --mv-border: #e5e7eb;
+      --mv-success: #10b981;
+      --mv-warning: #f59e0b;
+      --mv-error: #ef4444;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+      color: var(--mv-dark);
+      background-color: var(--mv-white);
+    }
+    
+    .mv-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mv-container {
+        padding: 0 2rem;
+      }
+    }
+    
+    .title-bold-1 { font-size: 3rem; font-weight: 700; line-height: 1.1; }
+    .title-bold-2 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; }
+    .title-bold-3 { font-size: 1.875rem; font-weight: 700; line-height: 1.3; }
+    .title-bold-4 { font-size: 1.5rem; font-weight: 700; line-height: 1.4; }
+    .title-bold-5 { font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
+    .title-bold-6 { font-size: 1.125rem; font-weight: 700; line-height: 1.4; }
+    .body-lg { font-size: 1.25rem; }
+    .body { font-size: 1rem; }
+    .body-sm { font-size: 0.875rem; }
+    .overline-text { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    @media (max-width: 768px) {
+      .title-bold-1 { font-size: 2.5rem; }
+      .title-bold-2 { font-size: 1.875rem; }
+      .title-bold-3 { font-size: 1.5rem; }
+    }
+    
+    .section {
+      padding: 5rem 0;
+    }
+    
+    .section-alt {
+      background-color: var(--mv-light);
+    }
+    
+    .card {
+      background: var(--mv-white);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--mv-border);
+    }
+    
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .status-critical { color: var(--mv-error); }
+    .status-warning { color: var(--mv-warning); }
+    .status-success { color: var(--mv-success); }
+    .status-purple { color: var(--mv-purple); }
+    
+    .metric-large {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    
+    .alert-box {
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border-left: 4px solid;
+      margin: 2rem 0;
+    }
+    
+    .alert-critical {
+      background-color: #fef2f2;
+      border-left-color: var(--mv-error);
+    }
+    
+    .alert-warning {
+      background-color: #fffbeb;
+      border-left-color: var(--mv-warning);
+    }
+    
+    .alert-success {
+      background-color: #f0fdf4;
+      border-left-color: var(--mv-success);
+    }
+    
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 150ms ease;
+    }
+    
+    .button-primary {
+      background-color: var(--mv-purple);
+      color: white;
+    }
+    
+    .button-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(122, 18, 212, 0.3);
+    }
+    
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    
+    .table th,
+    .table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--mv-border);
+    }
+    
+    .table th {
+      background-color: var(--mv-light);
+      font-weight: 600;
+    }
+    
+    .trend-up::after { content: " ↗️"; }
+    .trend-down::after { content: " ↘️"; }
+    .trend-flat::after { content: " →"; }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="mv-container" style="padding: 4rem 0 3rem 0;">
+    <div class="overline-text" style="color: var(--mv-purple); margin-bottom: 1rem;">
+      MINDVALLEY AD TEAM REPORT
+    </div>
+    <h1 class="title-bold-2" style="margin-bottom: 1rem; max-width: 48rem;">
+      📊 Daily Reputation Monitoring Report
+    </h1>
+    <p class="body-lg" style="color: var(--mv-muted); margin-bottom: 0.5rem;">
+      <strong>January 31, 2026</strong> • Monitoring Period: Past 24-48 hours
+    </p>
+    <p class="body" style="color: var(--mv-muted); max-width: 42rem;">
+      Comprehensive analysis of Mindvalley's online reputation, customer sentiment, and advertising impact with actionable insights for immediate strategic response.
+    </p>
+  </section>
+
+  <!-- Executive Summary -->
+  <section class="section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem;">🎯 Executive Summary</h2>
+      
+      <div class="alert-box alert-warning">
+        <h3 class="title-bold-5" style="margin-bottom: 1rem;">Overall Sentiment: ⚠️ MIXED WITH CRITICAL ISSUES</h3>
+        <div class="grid-2" style="margin-top: 1.5rem;">
+          <div>
+            <div class="metric-large status-success">4.1<span class="body">/5</span></div>
+            <p class="body-sm" style="color: var(--mv-muted);">Trustpilot Rating • "Great" status maintained</p>
+          </div>
+          <div>
+            <div class="metric-large status-critical">5</div>
+            <p class="body-sm" style="color: var(--mv-muted);">HIGH PRIORITY: Critical issues requiring immediate attention</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 2rem;">
+        <div class="card">
+          <h4 class="title-bold-6 status-critical" style="margin-bottom: 1rem;">🚨 Critical Issues</h4>
+          <ul style="list-style: none; space-y: 0.5rem;">
+            <li style="margin-bottom: 0.75rem;"><strong>Subscription/Auto-renewal backlash</strong> — Multiple unexpected renewal complaints</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Refund policy disputes</strong> — Customers feel trapped by 15-day policy</li>
+            <li style="margin-bottom: 0.75rem;"><strong>"Lifetime access" controversy</strong> — Everyday Bliss program transition dispute</li>
+            <li><strong>Customer service perception</strong> — Described as "rigid" and "money-driven"</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h4 class="title-bold-6 status-success" style="margin-bottom: 1rem;">✅ Positive Momentum</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 0.75rem;"><strong>Paul McKenna Program</strong> — "Rolls-Royce of courses"</li>
+            <li style="margin-bottom: 0.75rem;"><strong>AI Mastery 2025</strong> — "Skeptic turned advocate" testimonials</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Personal Growth Content</strong> — Consistent quality appreciation</li>
+            <li><strong>Easy Cancellation</strong> — One-click cancel system praised</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem;">📈 Review Metrics (Jan 30-31, 2026)</h2>
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Count</th>
+            <th>Trend</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Total New Reviews</strong></td>
+            <td>15+</td>
+            <td class="trend-up">High volume</td>
+            <td><span class="status-warning">⚠️ Monitor</span></td>
+          </tr>
+          <tr>
+            <td><strong>5-Star Reviews</strong></td>
+            <td>6</td>
+            <td class="trend-up">Strong positive</td>
+            <td><span class="status-success">👍 Good</span></td>
+          </tr>
+          <tr>
+            <td><strong>1-Star Reviews</strong></td>
+            <td>5</td>
+            <td class="trend-up">Critical volume</td>
+            <td><span class="status-critical">🚨 HIGH PRIORITY</span></td>
+          </tr>
+          <tr>
+            <td><strong>Response Rate</strong></td>
+            <td>95%+</td>
+            <td class="trend-flat">Consistent</td>
+            <td><span class="status-success">✅ Excellent</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- High Priority Alerts -->
+  <section class="section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem;">🚨 High Priority Alerts</h2>
+      
+      <div class="alert-box alert-critical">
+        <h3 class="title-bold-5" style="margin-bottom: 1rem;">IMMEDIATE THREATS</h3>
+        <div class="grid-2">
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Multiple Refund Disputes</h4>
+            <p class="body-sm">5+ reviews about refund denials with emotional language</p>
+          </div>
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">"Scam" Allegations</h4>
+            <p class="body-sm">Direct accusations: "turning like a scam," "swindle"</p>
+          </div>
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Auto-renewal Backlash</h4>
+            <p class="body-sm">Pattern of customers feeling "trapped" by billing</p>
+          </div>
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Lifetime Access Controversy</h4>
+            <p class="body-sm">Potential legal/ethical concerns around program transitions</p>
+          </div>
+        </div>
+        
+        <div style="margin-top: 2rem; padding: 1rem; background: rgba(239, 68, 68, 0.1); border-radius: 0.5rem;">
+          <h4 class="title-bold-6 status-critical">🔥 Viral Risk Assessment: MEDIUM</h4>
+          <p class="body-sm" style="margin-top: 0.5rem;">
+            No viral spread yet, but emotional language and "scam" allegations could amplify. Multiple reviewers threatening to "warn people on every platform."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Team Strategic Insights -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem;">🎯 Ad Team Strategic Insights</h2>
+      
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1.5rem;">Campaign Implications</h3>
+          
+          <h4 class="title-bold-6 status-critical" style="margin-bottom: 0.75rem;">⚠️ AVOID:</h4>
+          <ul style="margin-bottom: 1.5rem; padding-left: 1rem;">
+            <li>Aggressive renewal/subscription messaging</li>
+            <li>Any "lifetime access" promises until policy clarified</li>
+          </ul>
+          
+          <h4 class="title-bold-6 status-success" style="margin-bottom: 0.75rem;">✅ AMPLIFY:</h4>
+          <ul style="padding-left: 1rem;">
+            <li>Paul McKenna and AI Mastery success stories</li>
+            <li>Money-back guarantee transparency</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1.5rem;">Messaging Recommendations</h3>
+          
+          <div style="margin-bottom: 1rem;">
+            <h4 class="title-bold-6">1. Lead with Value, Not Urgency</h4>
+            <p class="body-sm" style="color: var(--mv-muted);">Focus on transformation stories vs. scarcity tactics</p>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <h4 class="title-bold-6">2. Transparency First</h4>
+            <p class="body-sm" style="color: var(--mv-muted);">Clear subscription terms, no hidden auto-renewals</p>
+          </div>
+          
+          <div style="margin-bottom: 1rem;">
+            <h4 class="title-bold-6">3. Compassionate Customer Service</h4>
+            <p class="body-sm" style="color: var(--mv-muted);">Highlight support flexibility and understanding</p>
+          </div>
+          
+          <div>
+            <h4 class="title-bold-6">4. Social Proof Strategy</h4>
+            <p class="body-sm" style="color: var(--mv-muted);">Leverage McKenna program testimonials extensively</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" style="margin-top: 2rem;">
+        <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1.5rem;">Creative Guidelines</h3>
+        
+        <div class="grid-3">
+          <div>
+            <h4 class="title-bold-6 status-success">✅ DO:</h4>
+            <p class="body-sm">Showcase genuine transformations (AI Mastery testimonial style)</p>
+          </div>
+          <div>
+            <h4 class="title-bold-6 status-critical">❌ DON'T:</h4>
+            <p class="body-sm">Use pressure tactics or unclear subscription terms</p>
+          </div>
+          <div>
+            <h4 class="title-bold-6 status-purple">🎯 FOCUS:</h4>
+            <p class="body-sm">Community aspect, expert instructors, practical results</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Action Items -->
+  <section class="section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem;">📝 Action Items for Ad Team</h2>
+      
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="title-bold-5 status-critical" style="margin-bottom: 1.5rem;">🔥 Immediate (Next 24-48 hours)</h3>
+          <ol style="padding-left: 1.25rem;">
+            <li style="margin-bottom: 0.75rem;"><strong>Review all subscription-related ad copy</strong> — ensure complete transparency</li>
+            <li style="margin-bottom: 0.75rem;"><strong>Audit "lifetime access" messaging</strong> — remove if inconsistent with current policy</li>
+            <li><strong>Prepare crisis response plan</strong> if negative sentiment amplifies on social media</li>
+          </ol>
+        </div>
+        
+        <div class="card">
+          <h3 class="title-bold-5 status-warning" style="margin-bottom: 1.5rem;">⚡ Short-term (Next Week)</h3>
+          <ol style="padding-left: 1.25rem;">
+            <li style="margin-bottom: 0.75rem;"><strong>A/B test transparent vs. traditional subscription messaging</strong></li>
+            <li style="margin-bottom: 0.75rem;"><strong>Develop customer service-focused creative assets</strong></li>
+            <li><strong>Create testimonial campaign around McKenna/AI Mastery programs</strong></li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="alert-box alert-success" style="margin-top: 2rem;">
+        <h3 class="title-bold-5" style="margin-bottom: 1rem;">💡 Competitive Intelligence Notes</h3>
+        <ul style="list-style: none;">
+          <li style="margin-bottom: 0.5rem;">• Monitor for competitors capitalizing on refund/service complaints</li>
+          <li style="margin-bottom: 0.5rem;">• Watch for comparison content highlighting "better customer service"</li>
+          <li>• Track any mentions linking to competitor platforms</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Report Preview -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem;">📈 Next Report Preview</h2>
+      
+      <div class="card" style="background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);">
+        <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1rem;">Tomorrow's Focus Areas</h3>
+        <div class="grid-2">
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 0.5rem;">• Monitor escalation of current disputes</li>
+            <li style="margin-bottom: 0.5rem;">• Track any new viral negative content</li>
+          </ul>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 0.5rem;">• Continue Reddit monitoring (limited access today)</li>
+            <li>• Google search trend analysis</li>
+          </ul>
+        </div>
+        
+        <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--mv-border);">
+          <p class="body-sm" style="color: var(--mv-muted);">
+            <strong>Next Scheduled Report:</strong> February 1, 2026 08:45 GMT
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mv-container" style="padding: 4rem 0; text-align: center;">
+    <div style="border-top: 1px solid var(--mv-border); padding-top: 2rem;">
+      <p class="body-sm" style="color: var(--mv-footer); margin-bottom: 1rem;">
+        <strong>Report Generated:</strong> 2026-01-31 08:45 GMT by Eliza AI
+      </p>
+      <p class="body-sm" style="color: var(--mv-footer); margin-bottom: 2rem;">
+        This report is based on available public data and social media monitoring. For internal metrics and detailed customer feedback, coordinate with Customer Success team.
+      </p>
+      <div style="color: var(--mv-footer);">
+        © Mindvalley • Reputation Monitoring Report
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
