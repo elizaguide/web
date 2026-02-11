@@ -1,0 +1,101 @@
+id	19bff0a5ab0defaf
+thread_id	19bff0a5ab0defaf
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “PRODUCT Focus [Program Intelligence]” Jan 27, 2026
+date	Tue, 27 Jan 2026 10:40:27 +0000
+
+Notes from “PRODUCT Focus [Program Intelligence]”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 27, 2026, 10:38 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Vishen Lakhiani requested postponing the customer release of program  
+intelligence by a month due to the product's immaturity and development  
+issues, including a lack of Docker usage and improper GitHub practices,  
+despite Naresh Sanchana having a rollout plan and a list of 10,000 active  
+Mind Valley customers for access. Vishen Lakhiani and Dario Bianchi agreed  
+to prioritize building the program intelligence for staff first, with Dario  
+Bianchi assigning Syamsul MJ (Sam) to provide engineering support and set  
+up a proper workflow, including resolving GitHub merge conflicts and  
+configuring Docker usage. Vishen Lakhiani, Rafay Korai, and Shafiu Hussain  
+discussed developing intelligent pathways using lesson-level summaries and  
+integrating program intelligence with Story Block for automated page  
+publishing, while Fariz Salleh demonstrated the Air Table Asset Sync  
+feature, which needs troubleshooting before merging.
+
+
+Suggested next steps
+
+
+Norman Noble will try to find time to teach Vishen Lakhiani, Rafé, and  
+Daniel the proper protocol for Git and to sort out the issues they are  
+having with GitHub.
+
+Syamsul MJ (Sam) will review Vishen Lakhiani's PR requests for program  
+intelligence and check the remote branches to ensure they are clean and  
+healthy.
+
+Syamsul MJ (Sam) will get familiar with the program intelligence code,  
+process, and tools, and then onboard Vishen Lakhiani on the GitHub workflow  
+and Docker setup.
+
+Dario Bianchi will set up the right team for program intelligence and  
+structure the project.
+
+The group will go through a training session on Git to understand the  
+process and solve the ongoing problems.
+
+Shafiu Hussain will show Vishen Lakhiani how to switch the branch and run  
+dev to see the code on local.
+
+Vishen Lakhiani will create a meeting for program intelligence weekly sync  
+every Tuesday and add Syamsul MJ (Sam), Fariz Salleh, Rafay Korai, and  
+Daniel Sabo.
+
+Fariz Salleh will troubleshoot and reach out to Syamsul MJ (Sam) after  
+doing a git pull from the main branch regarding merging his code.
+
+Shafiu Hussain will create a claude skill to turn the program intelligence  
+summary and images into a Mind Valley sales page.
+
+Vishen Lakhiani will add an author management section, including the author  
+table, and pull author data from Mind Valley Brain, using a link to the air  
+table from Fariz Salleh.
+
+Rafay Korai will set up a meeting with Marishia to decide on the Mindset  
+pathway.
+
+Rafay Korai will make the 2026 pathway data collaborative, and update the  
+unified brain information in program intelligence regarding program  
+classification and pathways, to build the pathway collections and sell them  
+instead of full membership.
+
+Shafiu Hussain, Fariz Salleh, and Rafay Korai will set up a time to sync  
+with Abi Abishek on connecting program intelligence to Storyblok to create  
+visual pages.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

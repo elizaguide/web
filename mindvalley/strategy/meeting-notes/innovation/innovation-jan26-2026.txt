@@ -1,0 +1,110 @@
+id	19bfa098fd465ae5
+thread_id	19bfa098fd465ae5
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “INNOVATION Focus [Vibrantly, Six, MV SaaS Solutions]” Jan 26, 2026
+date	Mon, 26 Jan 2026 11:21:28 +0000
+
+Notes from “INNOVATION Focus [Vibrantly, Six, MV SaaS Solutions]”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 26, 2026, 11:19 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Vishen Lakhiani, Shafiu Hussain, Dario Bianchi, Bruno Azenha Goncalves,  
+Justine Ausha Smith, Norman Noble, Euson Chew, Reuben Teo, Chee Ling Wong,  
+and Shamas Bedi discussed the strategy for the six mobile application,  
+agreeing on a full rebuild in React Native due to the high cost and  
+technological misalignment of salvaging the current single-tenant legacy  
+app. Key decisions included uncoupling the core business logic of the  
+current app into a shared backend API, shifting authentication to Superbase  
+initially with a plan for a federated Vibe Inc. ecosystem, and reframing  
+the six app's vision into an event platform and marketplace model, which  
+led to the decision to drop non-essential features like people  
+recommendations and network-wide event scheduling. Vishen Lakhiani also  
+pushed for using AI coding and the GSD framework for faster in-house  
+development, tasked Justine Ausha Smith with brand name research for the  
+Vibe Inc. apps, and directed Euson Chew to revert the "resources" feature  
+to the original specification focused on link sharing and the functional  
+tag manager.
+
+
+Suggested next steps
+
+
+Norman Noble will spend a couple of days examining authentication options  
+for a federated system, and discuss with Bruno Azenha Goncalves and Malay  
+on the best options.
+
+Bruno Azenha Goncalves will spend about a week to uncouple the back end  
+from the front end, and plan the decomposition of the current application  
+to create a backend application for both the app and web application.
+
+Justine Ausha Smith will always convert currency to USD to prevent delays  
+in meetings.
+
+Dario Bianchi will book time with Vishen Lakhiani to have him explain his  
+ideas, take notes, and translate them into a document that the team can  
+understand.
+
+Justine Ausha Smith will ensure that Shamas Bedi and Chee Ling Wong are  
+included in the conversation about the new product naming ideas and lead  
+the research to decide on one name for the Vibe Inc. applications.
+
+Bruno Azenha Goncalves will confirm with the premium programs concierge  
+team about discontinuing the six app and providing a clear migration  
+strategy to the new version of six.
+
+Bruno Azenha Goncalves and Norman Noble will book a call with some of the  
+Everest folks to discuss keeping or discontinuing their work power.
+
+Bruno Azenha Goncalves will help Vishen Lakhiani set up the current version  
+of the six application with Docker during a 30-minute call at 9:30 pm  
+Vishen Lakhiani's time today, and will send him the link and information  
+needed to install Docker beforehand.
+
+Justine Ausha Smith will set up calls this week to go deeper into the other  
+sections of the application.
+
+Vishen Lakhiani will create a briefing file and a PRD for the tag manager  
+feature and share it with the team to replicate the feature in another  
+application.
+
+The group will attend a GSD framework meeting with Shafiu Hussain tomorrow  
+at 11:00 am London time.
+
+Euson Chew and Justine Ausha Smith will implement the tagging system and  
+resource system as specified by Vishen Lakhiani, ensuring that the  
+resources belong to a group and are not shared across the entire network.
+
+Shamas Bedi and Chee Ling Wong will finalize two or three brand names from  
+the list and start mocking them up within the platform.
+
+Chee Ling Wong will be given access to the air table and will come up with  
+a proposal by tomorrow or Wednesday.
+
+Vishen Lakhiani will get Claude's opinion on the domain names.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

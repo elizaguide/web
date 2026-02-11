@@ -1,0 +1,72 @@
+id	19bdf772ce66f538
+thread_id	19bdf772ce66f538
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Product Metrics Update” Jan 21, 2026
+date	Wed, 21 Jan 2026 07:31:27 +0000
+
+Notes from “Product Metrics Update”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 21, 2026, 7:30 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Thomas Yap Meng Tiong opened the product update by highlighting the  
+importance of sharing key product metrics with the broader company, while  
+Thomas Yap Meng Tiong, Lei Siang Saw, Thivakaran Selvarajoo, Sarah Yeoh,  
+and Cheng Yew Ng discussed various performance metrics. Thomas Yap Meng  
+Tiong reported higher year-over-year Monthly Active Users and Subscribers  
+for January, but noted lower metrics in November and December due to Black  
+Friday's influx of "quest only users" who had low engagement, negatively  
+impacting the first 15 days on-app metrics. Lei Siang Saw, supported by  
+Thivakaran Selvarajoo, observed that checkout traffic had recovered  
+post-Black Friday, but conversion rates remained low, partially due to  
+reduced traffic from M media, which Thomas Yap Meng Tiong noted was being  
+fixed, and Thivakaran Selvarajoo confirmed dedicated affiliate tracking had  
+been deployed. Sarah Yeoh and Cheng Yew Ng detailed improvements in  
+engagement and transformation, with Weekly Stickiness recovering, the  
+year-over-year gap closing, and consumption growth attributed to  
+initiatives like the social media summit and fixing standalone meditation  
+access logic, with Thomas Yap Meng Tiong emphasizing that the  
+tight 'Transform' criterion indicated growing user stickiness. Sarah Yeoh  
+also reported on 'If AI' adoption nearing its Q1 target due to a 'Go AI'  
+spillover effect, and Lei Siang Saw shared A/B test results on shifting  
+password creation pre-upsell, which slightly improved the day zero locking  
+rate but significantly decreased the upsell uptake rate, leading Thomas Yap  
+Meng Tiong to support further testing to optimize the checkout flow.  
+Finally, Sarah Yeoh updated on 'Go AI' rollout, noting positive impacts on  
+first 15 days consumption and 'If AI' adoption, a successful rebound in  
+free-to-pay conversion after fixing a missing sales page pop-up, and an  
+identified drop-off opportunity in the 'Go AI' funnel that warrants planned  
+experiments.
+
+
+Suggested next steps
+
+
+Lei Siang Saw will run follow-up tests to resolve issues in the day zero  
+locking, including putting the skin button on top of the upsell page.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

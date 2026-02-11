@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Implementation Roadmap — BARI Transformation Timeline</title>
+  <meta name="description" content="Complete 6-phase implementation plan for transforming Mindvalley using BARI's strategic frameworks. Timelines, priorities, and success metrics." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="stylesheet" href="public/mindvalley-font.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-family);
+      line-height: 1.6;
+      color: #0f131a;
+      background-color: #ffffff;
+    }
+    
+    .nav-bar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    
+    .nav-logo {
+      color: #7a12d4;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 150ms;
+    }
+    
+    .nav-links a:hover {
+      color: #7a12d4;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      color: white;
+      padding: 4rem 0 3rem 0;
+    }
+    
+    .section {
+      padding: 5rem 0;
+    }
+    
+    .section-alt {
+      background-color: #f9fafb;
+    }
+    
+    .phase-timeline {
+      position: relative;
+      margin: 3rem 0;
+    }
+    
+    .timeline-line {
+      position: absolute;
+      left: 1.25rem;
+      top: 3rem;
+      bottom: 3rem;
+      width: 2px;
+      background: #e5e7eb;
+    }
+    
+    .phase-item {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-left: 4rem;
+    }
+    
+    .phase-number {
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: #7a12d4;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      z-index: 1;
+    }
+    
+    .phase-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    .priority-high {
+      border-left: 4px solid #ef4444;
+    }
+    
+    .priority-medium {
+      border-left: 4px solid #f59e0b;
+    }
+    
+    .priority-low {
+      border-left: 4px solid #22c55e;
+    }
+    
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .metric-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    
+    .metric-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #7a12d4;
+      margin-bottom: 0.5rem;
+    }
+    
+    .quick-wins-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .quick-win-card {
+      background: #f0fdf4;
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid #bbf7d0;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 1rem;
+      background: #e5e7eb;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7a12d4, #a855f7);
+      transition: width 300ms ease;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .phase-item {
+        padding-left: 3rem;
+      }
+      
+      .timeline-line {
+        left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="mv-container nav-container">
+      <a href="index.html" class="nav-logo">Mindvalley Strategic Transformation</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="julie-persona.html">Julie Persona</a></li>
+        <li><a href="through-line.html">Through-Line</a></li>
+        <li><a href="implementation.html" style="color: #7a12d4;">Implementation</a></li>
+        <li><a href="divisions.html">Divisions</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="mv-container">
+      <div class="overline-text" style="margin-bottom: 1rem; color: #d1fae5;">
+        TRANSFORMATION ROADMAP
+      </div>
+      <h1 class="title-bold-2" style="max-width: 48rem; margin: 0 0 1.25rem 0;">
+        6-Phase Implementation Plan
+      </h1>
+      <p class="body-lg" style="max-width: 48rem; color: #d1fae5; margin-bottom: 0;">
+        Complete roadmap for implementing BARI's strategic frameworks across all Mindvalley divisions. From quick wins to full transformation over 12 months.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Wins First -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 1.5rem;">🚀 Immediate Quick Wins (Week 1-2)</h2>
+      <p class="body-lg" style="color: #4b5563; max-width: 48rem; margin-bottom: 2rem;">
+        Start with high-impact, low-effort changes that demonstrate the BARI approach immediately. Build momentum before tackling complex systemic changes.
+      </p>
+
+      <div class="quick-wins-grid">
+        <div class="quick-win-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #166534;">📝 Through-Line Messaging Test</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1rem;">Update next summit's speaker briefings to reinforce "Consciousness Engineering makes you extraordinary." Measure belief reinforcement consistency.</p>
+          <p class="body-sm" style="color: #15803d; font-weight: 600;">Impact: Immediate messaging alignment • Effort: 2 hours • Owner: Summit Team</p>
+        </div>
+
+        <div class="quick-win-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #166534;">🎯 Julie-Focused Ad Test</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1rem;">A/B test one ad creative with Julie-specific outcome messaging: "Get 15 hours back per week" vs current feature-focused ads.</p>
+          <p class="body-sm" style="color: #15803d; font-weight: 600;">Impact: Conversion rate validation • Effort: 1 day • Owner: Marketing Team</p>
+        </div>
+
+        <div class="quick-win-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #166534;">⏰ 30-Day Program Pilot</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1rem;">Convert one existing 5-month mastery to 30-day intensive format. Test compressed time = higher value hypothesis.</p>
+          <p class="body-sm" style="color: #15803d; font-weight: 600;">Impact: Completion rate improvement • Effort: 1 week • Owner: Academy Team</p>
+        </div>
+
+        <div class="quick-win-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #166534;">📊 Baseline Metrics</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1rem;">Establish current baselines: completion rates, refund rates, conversion rates, Julie persona percentage in audience.</p>
+          <p class="body-sm" style="color: #15803d; font-weight: 600;">Impact: Measurement foundation • Effort: 3 days • Owner: Analytics Team</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase Timeline -->
+  <section class="section section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem; text-align: center;">Complete Transformation Timeline</h2>
+      
+      <div class="phase-timeline">
+        <div class="timeline-line"></div>
+        
+        <div class="phase-item">
+          <div class="phase-number">1</div>
+          <div class="phase-card priority-high">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #dc2626;">Phase 1: Foundation & Quick Wins (Month 1)</h3>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 85%;"></div>
+            </div>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #6b7280; font-weight: 600;">85% Complete</p>
+            
+            <h4 class="title-bold-7" style="margin-bottom: 1rem;">Key Deliverables:</h4>
+            <ul style="margin-bottom: 1.5rem; color: #4b5563;">
+              <li>✅ Julie persona research and validation</li>
+              <li>✅ Core through-line messaging framework</li>
+              <li>🔄 Current content audit and gap analysis</li>
+              <li>⏳ Speaker briefing template creation</li>
+              <li>⏳ Baseline metrics establishment</li>
+            </ul>
+            
+            <p class="body-sm" style="background: #fef2f2; padding: 1rem; border-radius: 0.5rem; color: #991b1b;">
+              <strong>Critical Priority:</strong> Must complete speaker briefing templates before next summit to test through-line consistency.
+            </p>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-number">2</div>
+          <div class="phase-card priority-high">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #dc2626;">Phase 2: Content Realignment (Month 2-3)</h3>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%;"></div>
+            </div>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #6b7280; font-weight: 600;">45% Complete</p>
+            
+            <h4 class="title-bold-7" style="margin-bottom: 1rem;">Key Deliverables:</h4>
+            <ul style="margin-bottom: 1.5rem; color: #4b5563;">
+              <li>🔄 Retrofit top 5 quests for through-line alignment</li>
+              <li>⏳ Academy mastery format compression (5-month → 30-day)</li>
+              <li>⏳ Speaker training on BARI frameworks</li>
+              <li>⏳ Marketing messaging audit and updates</li>
+              <li>⏳ Method-first approach for new content</li>
+            </ul>
+            
+            <p class="body-sm" style="background: #fef2f2; padding: 1rem; border-radius: 0.5rem; color: #991b1b;">
+              <strong>Critical Priority:</strong> Content team must be trained on through-line consistency before creating new material.
+            </p>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-number">3</div>
+          <div class="phase-card priority-medium">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #d97706;">Phase 3: Product Architecture (Month 4-6)</h3>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 20%;"></div>
+            </div>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #6b7280; font-weight: 600;">20% Complete</p>
+            
+            <h4 class="title-bold-7" style="margin-bottom: 1rem;">Key Deliverables:</h4>
+            <ul style="margin-bottom: 1.5rem; color: #4b5563;">
+              <li>⏳ RIM + ACE mastery architecture implementation</li>
+              <li>⏳ App user experience redesign for outcomes</li>
+              <li>⏳ High-ticket program development ($5K-$25K range)</li>
+              <li>⏳ Summit-to-mastery conversion optimization</li>
+              <li>⏳ Community integration with transformation focus</li>
+            </ul>
+            
+            <p class="body-sm" style="background: #fef3c7; padding: 1rem; border-radius: 0.5rem; color: #92400e;">
+              <strong>Medium Priority:</strong> Product architecture changes require technical resources and longer development cycles.
+            </p>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-number">4</div>
+          <div class="phase-card priority-medium">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #d97706;">Phase 4: Team & Culture Transformation (Month 7-9)</h3>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 10%;"></div>
+            </div>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #6b7280; font-weight: 600;">10% Complete</p>
+            
+            <h4 class="title-bold-7" style="margin-bottom: 1rem;">Key Deliverables:</h4>
+            <ul style="margin-bottom: 1.5rem; color: #4b5563;">
+              <li>⏳ Leadership team consciousness engineering training</li>
+              <li>⏳ Employee onboarding with transformation focus</li>
+              <li>⏳ Internal culture shift to embody teaching</li>
+              <li>⏳ Cross-divisional collaboration systems</li>
+              <li>⏳ Performance metrics aligned with transformation outcomes</li>
+            </ul>
+            
+            <p class="body-sm" style="background: #fef3c7; padding: 1rem; border-radius: 0.5rem; color: #92400e;">
+              <strong>Medium Priority:</strong> Cultural transformation requires sustained leadership commitment and change management.
+            </p>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-number">5</div>
+          <div class="phase-card priority-low">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #059669;">Phase 5: Scale & Optimization (Month 10-12)</h3>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 5%;"></div>
+            </div>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #6b7280; font-weight: 600;">5% Complete</p>
+            
+            <h4 class="title-bold-7" style="margin-bottom: 1rem;">Key Deliverables:</h4>
+            <ul style="margin-bottom: 1.5rem; color: #4b5563;">
+              <li>⏳ Advanced automation for Julie persona targeting</li>
+              <li>⏳ International market expansion with localized messaging</li>
+              <li>⏳ Advanced analytics and prediction systems</li>
+              <li>⏳ Partner and affiliate alignment with through-line</li>
+              <li>⏳ Next-generation product development</li>
+            </ul>
+            
+            <p class="body-sm" style="background: #dcfce7; padding: 1rem; border-radius: 0.5rem; color: #166534;">
+              <strong>Future Priority:</strong> Scale optimization depends on successful completion of foundation phases.
+            </p>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-number">6</div>
+          <div class="phase-card priority-low">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #059669;">Phase 6: Innovation & Evolution (Month 12+)</h3>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #6b7280; font-weight: 600;">Planning Phase</p>
+            
+            <h4 class="title-bold-7" style="margin-bottom: 1rem;">Key Deliverables:</h4>
+            <ul style="margin-bottom: 1.5rem; color: #4b5563;">
+              <li>⏳ Market leadership in transformation category</li>
+              <li>⏳ Industry-defining consciousness engineering standards</li>
+              <li>⏳ Global expansion with consistent messaging</li>
+              <li>⏳ Next-generation learning technologies</li>
+              <li>⏳ Thought leadership and category creation</li>
+            </ul>
+            
+            <p class="body-sm" style="background: #dcfce7; padding: 1rem; border-radius: 0.5rem; color: #166534;">
+              <strong>Vision Phase:</strong> Long-term strategic positioning as the consciousness engineering leader worldwide.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Metrics -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem; text-align: center;">Success Metrics & KPIs</h2>
+      <p class="body-lg" style="color: #4b5563; text-align: center; max-width: 48rem; margin: 0 auto 3rem auto;">
+        How we'll measure the transformation success across all key areas
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">80%</div>
+          <h3 class="title-bold-6" style="margin-bottom: 0.5rem;">Target Completion Rate</h3>
+          <p class="body-sm" style="color: #6b7280;">From current 13% to industry-leading 80% through compressed programs</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">5x</div>
+          <h3 class="title-bold-6" style="margin-bottom: 0.5rem;">Summit Conversion Increase</h3>
+          <p class="body-sm" style="color: #6b7280;">Through proper through-line messaging and Julie-focused outcomes</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">3x</div>
+          <h3 class="title-bold-6" style="margin-bottom: 0.5rem;">Revenue Per Customer</h3>
+          <p class="body-sm" style="color: #6b7280;">Higher value programs priced on transformation outcomes</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">-67%</div>
+          <h3 class="title-bold-6" style="margin-bottom: 0.5rem;">Refund Rate Reduction</h3>
+          <p class="body-sm" style="color: #6b7280;">From 13% to 4% through clear expectations and better targeting</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">90%</div>
+          <h3 class="title-bold-6" style="margin-bottom: 0.5rem;">Through-Line Consistency</h3>
+          <p class="body-sm" style="color: #6b7280;">Percentage of content that reinforces core belief</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">60%</div>
+          <h3 class="title-bold-6" style="margin-bottom: 0.5rem;">Julie Persona Match</h3>
+          <p class="body-sm" style="color: #6b7280;">Percentage of customers who match right-fit profile</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Critical Dependencies -->
+  <section class="section section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem;">🚨 Critical Dependencies & Blockers</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+        <div style="background: #fef2f2; padding: 2rem; border-radius: 1rem; border-left: 4px solid #ef4444;">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #dc2626;">🔴 High Risk Dependencies</h3>
+          <ul style="margin-bottom: 1rem; color: #4b5563;">
+            <li style="margin-bottom: 0.5rem;"><strong>Leadership Alignment:</strong> Vishen and executive team must champion through-line consistency</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Content Team Training:</strong> All creators must understand and apply BARI frameworks</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Speaker Management:</strong> External speakers need strict briefing adherence</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Technical Resources:</strong> App and platform changes require development capacity</li>
+          </ul>
+        </div>
+
+        <div style="background: #fef3c7; padding: 2rem; border-radius: 1rem; border-left: 4px solid #f59e0b;">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #d97706;">🟡 Medium Risk Dependencies</h3>
+          <ul style="margin-bottom: 1rem; color: #4b5563;">
+            <li style="margin-bottom: 0.5rem;"><strong>Customer Education:</strong> Existing customers need to understand program changes</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Partner Alignment:</strong> Affiliates and partners must adapt messaging</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Resource Reallocation:</strong> Budget shifts for high-ticket program development</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Market Testing:</strong> Julie persona validation in different regions</li>
+          </ul>
+        </div>
+
+        <div style="background: #dcfce7; padding: 2rem; border-radius: 1rem; border-left: 4px solid #22c55e;">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #166534;">🟢 Manageable Dependencies</h3>
+          <ul style="margin-bottom: 1rem; color: #4b5563;">
+            <li style="margin-bottom: 0.5rem;"><strong>Marketing Campaigns:</strong> Ad creative updates can be phased gradually</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Community Management:</strong> Culture shift can happen organically with guidance</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Analytics Setup:</strong> New metrics can be implemented incrementally</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Feedback Loops:</strong> Customer response monitoring systems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem; text-align: center;">🎯 Immediate Next Steps</h2>
+      
+      <div style="background: #f8fafc; padding: 3rem; border-radius: 1rem; border: 1px solid #e2e8f0;">
+        <h3 class="title-bold-5" style="margin-bottom: 2rem; color: #7a12d4; text-align: center;">Executive Action Required</h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 1rem;">This Week (Feb 10-16)</h4>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">☐ Executive team review of complete framework</li>
+              <li style="margin-bottom: 0.5rem;">☐ Division lead briefings on transformation plan</li>
+              <li style="margin-bottom: 0.5rem;">☐ Resource allocation for Phase 1 priorities</li>
+              <li style="margin-bottom: 0.5rem;">☐ Speaker briefing template approval</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 1rem;">Next 2 Weeks (Feb 17-Mar 2)</h4>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">☐ Content audit initiation across all divisions</li>
+              <li style="margin-bottom: 0.5rem;">☐ Julie persona research validation</li>
+              <li style="margin-bottom: 0.5rem;">☐ First A/B test launches for messaging</li>
+              <li style="margin-bottom: 0.5rem;">☐ Baseline metrics establishment</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 1rem;">Month 1 Goals (March)</h4>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">☐ All Phase 1 deliverables completed</li>
+              <li style="margin-bottom: 0.5rem;">☐ Content team training on BARI frameworks</li>
+              <li style="margin-bottom: 0.5rem;">☐ First compressed program pilot launch</li>
+              <li style="margin-bottom: 0.5rem;">☐ Success metrics baseline documented</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="divisions.html" class="mv-button-primary">View Division-Specific Plans</a>
+          <a href="resources.html" class="mv-button-secondary" style="margin-left: 1rem;">Implementation Resources</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mv-container" style="padding: 4rem 0; color: #6b7280; border-top: 1px solid #e5e7eb;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+      <div>
+        <p>© Mindvalley • Implementation Roadmap</p>
+        <p class="body-sm">6-Phase Transformation Plan • Based on BARI Framework</p>
+      </div>
+      <div style="display: flex; gap: 2rem;">
+        <a href="through-line.html" style="color: #7a12d4; text-decoration: none;">← Through-Line Framework</a>
+        <a href="divisions.html" style="color: #7a12d4; text-decoration: none;">Division Guides →</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

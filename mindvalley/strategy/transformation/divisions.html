@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Division-Specific Transformation Guides</title>
+  <meta name="description" content="Tailored BARI framework implementation guides for each Mindvalley division: Academy, Summits, Quests, Marketing, Technology, and Culture." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="stylesheet" href="public/mindvalley-font.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-family);
+      line-height: 1.6;
+      color: #0f131a;
+      background-color: #ffffff;
+    }
+    
+    .nav-bar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    
+    .nav-logo {
+      color: #7a12d4;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 150ms;
+    }
+    
+    .nav-links a:hover {
+      color: #7a12d4;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      color: white;
+      padding: 4rem 0 3rem 0;
+    }
+    
+    .section {
+      padding: 5rem 0;
+    }
+    
+    .section-alt {
+      background-color: #f9fafb;
+    }
+    
+    .division-nav {
+      background: #f8fafc;
+      padding: 2rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .division-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    
+    .division-nav-item {
+      padding: 1rem;
+      background: white;
+      border-radius: 0.5rem;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      text-decoration: none;
+      color: #4b5563;
+      transition: all 150ms ease;
+    }
+    
+    .division-nav-item:hover {
+      border-color: #7a12d4;
+      color: #7a12d4;
+    }
+    
+    .division-section {
+      background: white;
+      margin-bottom: 4rem;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+    }
+    
+    .division-header {
+      padding: 2rem;
+      background: linear-gradient(135deg, #7a12d4, #a855f7);
+      color: white;
+    }
+    
+    .division-content {
+      padding: 2rem;
+    }
+    
+    .transformation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .current-state {
+      background: #fef2f2;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid #ef4444;
+    }
+    
+    .future-state {
+      background: #f0fdf4;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid #22c55e;
+    }
+    
+    .action-items {
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+    }
+    
+    .priority-high {
+      border-left: 4px solid #ef4444;
+    }
+    
+    .priority-medium {
+      border-left: 4px solid #f59e0b;
+    }
+    
+    .priority-low {
+      border-left: 4px solid #22c55e;
+    }
+    
+    .okr-card {
+      background: #f0f9ff;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #0ea5e9;
+      margin: 1rem 0;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .transformation-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .division-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="mv-container nav-container">
+      <a href="index.html" class="nav-logo">Mindvalley Strategic Transformation</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="julie-persona.html">Julie Persona</a></li>
+        <li><a href="through-line.html">Through-Line</a></li>
+        <li><a href="implementation.html">Implementation</a></li>
+        <li><a href="divisions.html" style="color: #7a12d4;">Divisions</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="mv-container">
+      <div class="overline-text" style="margin-bottom: 1rem; color: #dbeafe;">
+        DIVISION-SPECIFIC TRANSFORMATION
+      </div>
+      <h1 class="title-bold-2" style="max-width: 48rem; margin: 0 0 1.25rem 0;">
+        Tailored BARI Implementation for Each Team
+      </h1>
+      <p class="body-lg" style="max-width: 48rem; color: #dbeafe; margin-bottom: 0;">
+        Specific action plans, OKRs, and transformation roadmaps for Academy, Summits, Quests, Marketing, Technology, and Culture teams.
+      </p>
+    </div>
+  </section>
+
+  <!-- Division Navigation -->
+  <section class="division-nav">
+    <div class="mv-container">
+      <div class="division-nav-grid">
+        <a href="#academy" class="division-nav-item">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎓</div>
+          <div class="title-bold-7">Academy</div>
+        </a>
+        <a href="#summits" class="division-nav-item">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎤</div>
+          <div class="title-bold-7">Summits</div>
+        </a>
+        <a href="#quests" class="division-nav-item">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧠</div>
+          <div class="title-bold-7">Quests</div>
+        </a>
+        <a href="#marketing" class="division-nav-item">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">📈</div>
+          <div class="title-bold-7">Marketing</div>
+        </a>
+        <a href="#technology" class="division-nav-item">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤖</div>
+          <div class="title-bold-7">Technology</div>
+        </a>
+        <a href="#culture" class="division-nav-item">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+          <div class="title-bold-7">Culture</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academy Division -->
+  <section id="academy" class="section">
+    <div class="mv-container">
+      <div class="division-section">
+        <div class="division-header">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="font-size: 3rem;">🎓</div>
+            <div>
+              <h2 class="title-bold-3">Academy Division Transformation</h2>
+              <p class="body-lg" style="color: #e0e7ff;">From 5-month academic programs to 30-day intensive transformations</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="division-content">
+          <div class="transformation-grid">
+            <div class="current-state">
+              <h3 class="title-bold-6" style="color: #dc2626; margin-bottom: 1rem;">❌ Current State Problems</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">5-month programs with 13% completion rates</li>
+                <li style="margin-bottom: 0.5rem;">Academic-style learning, not transformation-focused</li>
+                <li style="margin-bottom: 0.5rem;">Feature-based pricing: "6 weeks of content"</li>
+                <li style="margin-bottom: 0.5rem;">Overwhelming content dumps causing dropout</li>
+                <li style="margin-bottom: 0.5rem;">European university model template trap</li>
+              </ul>
+            </div>
+
+            <div class="future-state">
+              <h3 class="title-bold-6" style="color: #16a34a; margin-bottom: 1rem;">✅ BARI-Aligned Future</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">30-day intensive programs with 80% completion</li>
+                <li style="margin-bottom: 0.5rem;">Method-first approach: ≤6-step clear systems</li>
+                <li style="margin-bottom: 0.5rem;">Outcome-based pricing: "15 hours back per week"</li>
+                <li style="margin-bottom: 0.5rem;">Compressed time = higher value positioning</li>
+                <li style="margin-bottom: 0.5rem;">RIM + ACE architecture for high-ticket offerings</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="okr-card">
+            <h3 class="title-bold-6" style="color: #0284c7; margin-bottom: 1rem;">🎯 New Academy OKRs</h3>
+            <p class="body" style="margin-bottom: 1rem;"><strong>Objective:</strong> Transform Academy from course provider to consciousness engineering catalyst</p>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;"><strong>KR1:</strong> Achieve 80% completion rate on pilot 30-day program (vs current 13%)</li>
+              <li style="margin-bottom: 0.5rem;"><strong>KR2:</strong> Launch 3 high-ticket RIM+ACE masteries ($5K-$15K range) by Q2</li>
+              <li style="margin-bottom: 0.5rem;"><strong>KR3:</strong> 90% of Julie persona participants report "significant time savings" outcome</li>
+              <li style="margin-bottom: 0.5rem;"><strong>KR4:</strong> Reduce refund rate from 13% to <5% through better targeting</li>
+            </ul>
+          </div>
+
+          <div class="action-items priority-high">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem;">🔴 High Priority Actions (Month 1-2)</h3>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">Convert AI Mastery from 5-month to 30-day pilot program</li>
+              <li style="margin-bottom: 0.5rem;">Design clear ≤6-step methods for each mastery topic</li>
+              <li style="margin-bottom: 0.5rem;">Rewrite sales pages focusing on Julie's time freedom outcome</li>
+              <li style="margin-bottom: 0.5rem;">Implement accountability and community systems (ACE framework)</li>
+              <li style="margin-bottom: 0.5rem;">Train Academy team on consciousness engineering integration</li>
+            </ul>
+          </div>
+
+          <div class="action-items priority-medium">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem;">🟡 Medium Priority Actions (Month 3-6)</h3>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">Develop high-ticket mastery architecture ($5K-$25K programs)</li>
+              <li style="margin-bottom: 0.5rem;">Create enhanced opportunity offerings (RIM framework)</li>
+              <li style="margin-bottom: 0.5rem;">Retrofit existing programs for through-line consistency</li>
+              <li style="margin-bottom: 0.5rem;">Build immersive learning experiences for premium tiers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summits Division -->
+  <section id="summits" class="section section-alt">
+    <div class="mv-container">
+      <div class="division-section">
+        <div class="division-header">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="font-size: 3rem;">🎤</div>
+            <div>
+              <h2 class="title-bold-3">Summits Division Transformation</h2>
+              <p class="body-lg" style="color: #e0e7ff;">Implement 3-day formula and through-line speaker management for 5x conversion</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="division-content">
+          <div class="transformation-grid">
+            <div class="current-state">
+              <h3 class="title-bold-6" style="color: #dc2626; margin-bottom: 1rem;">❌ Current Summit Issues</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">Scattered messaging - each speaker different belief</li>
+                <li style="margin-bottom: 0.5rem;">Self-promo speakers diluting transformation focus</li>
+                <li style="margin-bottom: 0.5rem;">Inconsistent summit-to-mastery conversion rates</li>
+                <li style="margin-bottom: 0.5rem;">Using "mastery" name on free events (bait & switch feel)</li>
+                <li style="margin-bottom: 0.5rem;">No systematic speaker briefing process</li>
+              </ul>
+            </div>
+
+            <div class="future-state">
+              <h3 class="title-bold-6" style="color: #16a34a; margin-bottom: 1rem;">✅ BARI Summit Formula</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">3-day cadence: Value → Pitch → Scripted Q&A</li>
+                <li style="margin-bottom: 0.5rem;">Every speaker reinforces same core through-line</li>
+                <li style="margin-bottom: 0.5rem;">No self-promo rule strictly enforced</li>
+                <li style="margin-bottom: 0.5rem;">Reserve "mastery" exclusively for paid programs</li>
+                <li style="margin-bottom: 0.5rem;">5-step speaker prep with belief integration</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="okr-card">
+            <h3 class="title-bold-6" style="color: #0284c7; margin-bottom: 1rem;">🎯 Summits OKRs</h3>
+            <p class="body" style="margin-bottom: 1rem;"><strong>Objective:</strong> Create industry-leading summit-to-transformation conversion engine</p>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;"><strong>KR1:</strong> Achieve 5x improvement in summit-to-mastery conversion rates</li>
+              <li style="margin-bottom: 0.5rem;"><strong>KR2:</strong> 90% of speakers score ≥8/10 on through-line consistency</li>
+              <li style="margin-bottom: 0.5rem;"><strong>KR3:</strong> Implement BARI's 3-day formula across all summits</li>
+              <li style="margin-bottom: 0.5rem;"><strong>KR4:</strong> Zero self-promo violations through proper briefing system</li>
+            </ul>
+          </div>
+
+          <div class="action-items priority-high">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem;">🔴 Immediate Summit Actions</h3>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">Create speaker briefing template with through-line requirements</li>
+              <li style="margin-bottom: 0.5rem;">Train speaker coordinators on BARI frameworks</li>
+              <li style="margin-bottom: 0.5rem;">Implement 3-day cadence on next upcoming summit</li>
+              <li style="margin-bottom: 0.5rem;">Develop through-line consistency scoring system</li>
+              <li style="margin-bottom: 0.5rem;">Remove "mastery" from all free event names</li>
+            </ul>
+          </div>
+
+          <p class="body" style="background: #f0f9ff; padding: 1rem; border-radius: 0.5rem; border-left: 4px solid #0ea5e9; color: #1e40af;">
+            <strong>BARI's Golden Rule for Summits:</strong> "Every speaker must reinforce the same belief from their unique angle. No exceptions, no self-promo, no scattered messaging."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketing Division -->
+  <section id="marketing" class="section">
+    <div class="mv-container">
+      <div class="division-section">
+        <div class="division-header">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="font-size: 3rem;">📈</div>
+            <div>
+              <h2 class="title-bold-3">Marketing Division Transformation</h2>
+              <p class="body-lg" style="color: #e0e7ff;">Julie-focused messaging and through-line consistency across all channels</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="division-content">
+          <div class="transformation-grid">
+            <div class="current-state">
+              <h3 class="title-bold-6" style="color: #dc2626; margin-bottom: 1rem;">❌ Current Marketing Issues</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">Technical jargon: "optimize neural pathways"</li>
+                <li style="margin-bottom: 0.5rem;">Feature-focused ads: "5 weeks of content"</li>
+                <li style="margin-bottom: 0.5rem;">Broad audience targeting, serving no one deeply</li>
+                <li style="margin-bottom: 0.5rem;">Inconsistent messaging across platforms</li>
+                <li style="margin-bottom: 0.5rem;">Generic bootstrap-blue #007bff aesthetic</li>
+              </ul>
+            </div>
+
+            <div class="future-state">
+              <h3 class="title-bold-6" style="color: #16a34a; margin-bottom: 1rem;">✅ Julie-Focused Marketing</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">Outcome language: "Get 15 hours back per week"</li>
+                <li style="margin-bottom: 0.5rem;">Fourth-grader test: simple, clear messaging</li>
+                <li style="margin-bottom: 0.5rem;">All creative targets Julie's transformation desire</li>
+                <li style="margin-bottom: 0.5rem;">Through-line reinforcement across all touchpoints</li>
+                <li style="margin-bottom: 0.5rem;">Consciousness engineering positioned naturally</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="action-items priority-high">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem;">🔴 Marketing Transformation Actions</h3>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">Audit all ad creative for Julie relevance and through-line consistency</li>
+              <li style="margin-bottom: 0.5rem;">A/B test outcome-based vs feature-based messaging</li>
+              <li style="margin-bottom: 0.5rem;">Rewrite all sales pages focusing on time freedom outcomes</li>
+              <li style="margin-bottom: 0.5rem;">Train marketing team on consciousness engineering messaging</li>
+              <li style="margin-bottom: 0.5rem;">Create Julie persona testing framework for all campaigns</li>
+            </ul>
+          </div>
+
+          <p class="body" style="background: #fef3c7; padding: 1rem; border-radius: 0.5rem; border-left: 4px solid #f59e0b; color: #92400e; margin-top: 2rem;">
+            <strong>Key Messaging Shift:</strong> Instead of "Learn consciousness engineering" → "What if you could get 15 hours back per week using consciousness engineering principles?"
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Division -->
+  <section id="technology" class="section section-alt">
+    <div class="mv-container">
+      <div class="division-section">
+        <div class="division-header">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="font-size: 3rem;">🤖</div>
+            <div>
+              <h2 class="title-bold-3">Technology Division Transformation</h2>
+              <p class="body-lg" style="color: #e0e7ff;">Redesign user experience around transformation outcomes, not content consumption</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="division-content">
+          <div class="transformation-grid">
+            <div class="current-state">
+              <h3 class="title-bold-6" style="color: #dc2626; margin-bottom: 1rem;">❌ Current App Issues</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">Content consumption focus, not transformation</li>
+                <li style="margin-bottom: 0.5rem;">Course library approach vs journey-based UX</li>
+                <li style="margin-bottom: 0.5rem;">Generic recommendations, no Julie targeting</li>
+                <li style="margin-bottom: 0.5rem;">Progress tracking based on completion, not outcomes</li>
+                <li style="margin-bottom: 0.5rem;">No consciousness engineering thread throughout</li>
+              </ul>
+            </div>
+
+            <div class="future-state">
+              <h3 class="title-bold-6" style="color: #16a34a; margin-bottom: 1rem;">✅ Transformation-Focused Tech</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">Onboarding identifies Julie-type users for personalization</li>
+                <li style="margin-bottom: 0.5rem;">Journey-based UX reinforcing through-line belief</li>
+                <li style="margin-bottom: 0.5rem;">AI recommendations focus on consciousness engineering</li>
+                <li style="margin-bottom: 0.5rem;">Progress tracking measures transformation outcomes</li>
+                <li style="margin-bottom: 0.5rem;">Integration with compressed program architecture</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="action-items priority-medium">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem;">🟡 Technology Roadmap</h3>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">Redesign app onboarding to identify Julie persona users</li>
+              <li style="margin-bottom: 0.5rem;">Build transformation outcome tracking vs content completion</li>
+              <li style="margin-bottom: 0.5rem;">Create consciousness engineering learning path recommendations</li>
+              <li style="margin-bottom: 0.5rem;">Integrate 30-day program architecture into app experience</li>
+              <li style="margin-bottom: 0.5rem;">Build community features supporting transformation focus</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture Division -->
+  <section id="culture" class="section">
+    <div class="mv-container">
+      <div class="division-section">
+        <div class="division-header">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="font-size: 3rem;">👥</div>
+            <div>
+              <h2 class="title-bold-3">Culture & Team Transformation</h2>
+              <p class="body-lg" style="color: #e0e7ff;">Internal transformation to embody the consciousness engineering we teach</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="division-content">
+          <div class="transformation-grid">
+            <div class="current-state">
+              <h3 class="title-bold-6" style="color: #dc2626; margin-bottom: 1rem;">❌ Current Culture Gaps</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">Teaching transformation but not embodying it internally</li>
+                <li style="margin-bottom: 0.5rem;">Divided team focus - each division different priorities</li>
+                <li style="margin-bottom: 0.5rem;">Academic mindset vs transformation catalyst identity</li>
+                <li style="margin-bottom: 0.5rem;">Limited cross-divisional collaboration</li>
+                <li style="margin-bottom: 0.5rem;">Performance metrics misaligned with transformation goals</li>
+              </ul>
+            </div>
+
+            <div class="future-state">
+              <h3 class="title-bold-6" style="color: #16a34a; margin-bottom: 1rem;">✅ Consciousness Engineering Culture</h3>
+              <ul style="color: #4b5563;">
+                <li style="margin-bottom: 0.5rem;">Leadership team models consciousness engineering daily</li>
+                <li style="margin-bottom: 0.5rem;">All teams aligned on Julie persona and through-line</li>
+                <li style="margin-bottom: 0.5rem;">Company identity: "We are transformation catalysts"</li>
+                <li style="margin-bottom: 0.5rem;">Cross-functional collaboration on unified vision</li>
+                <li style="margin-bottom: 0.5rem;">KPIs reflect transformation impact, not just engagement</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="action-items priority-medium">
+            <h3 class="title-bold-6" style="margin-bottom: 1rem;">🟡 Culture Transformation Actions</h3>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">Executive team consciousness engineering training program</li>
+              <li style="margin-bottom: 0.5rem;">All-hands education on BARI frameworks and Julie persona</li>
+              <li style="margin-bottom: 0.5rem;">Redesign performance reviews to include through-line alignment</li>
+              <li style="margin-bottom: 0.5rem;">Create cross-divisional collaboration systems</li>
+              <li style="margin-bottom: 0.5rem;">Update company values and mission to reflect transformation focus</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation Coordination -->
+  <section class="section section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem; text-align: center;">🔄 Cross-Division Coordination</h2>
+      
+      <div style="background: white; padding: 3rem; border-radius: 1rem; border: 1px solid #e5e7eb;">
+        <h3 class="title-bold-5" style="margin-bottom: 2rem; color: #7a12d4;">Essential Coordination Points</h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 1rem;">📋 Weekly Alignment</h4>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">Cross-division through-line consistency reviews</li>
+              <li style="margin-bottom: 0.5rem;">Julie persona targeting coordination</li>
+              <li style="margin-bottom: 0.5rem;">Shared success metrics reporting</li>
+              <li style="margin-bottom: 0.5rem;">Resource allocation for transformation priorities</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 1rem;">🎯 Shared KPIs</h4>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">Through-line consistency score (90% target)</li>
+              <li style="margin-bottom: 0.5rem;">Julie persona match rate (60% target)</li>
+              <li style="margin-bottom: 0.5rem;">Transformation outcome achievement</li>
+              <li style="margin-bottom: 0.5rem;">Cross-division collaboration metrics</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="title-bold-6" style="margin-bottom: 1rem;">⚠️ Critical Dependencies</h4>
+            <ul style="color: #4b5563;">
+              <li style="margin-bottom: 0.5rem;">Marketing must align before Academy launches</li>
+              <li style="margin-bottom: 0.5rem;">Summit briefings need Marketing messaging</li>
+              <li style="margin-bottom: 0.5rem;">Tech UX depends on Academy program structure</li>
+              <li style="margin-bottom: 0.5rem;">Culture transformation enables all other changes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="implementation.html" class="mv-button-primary">View Master Implementation Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mv-container" style="padding: 4rem 0; color: #6b7280; border-top: 1px solid #e5e7eb;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+      <div>
+        <p>© Mindvalley • Division-Specific Transformation Guides</p>
+        <p class="body-sm">Tailored BARI framework implementation for each team</p>
+      </div>
+      <div style="display: flex; gap: 2rem;">
+        <a href="implementation.html" style="color: #7a12d4; text-decoration: none;">← Implementation Plan</a>
+        <a href="index.html" style="color: #7a12d4; text-decoration: none;">Back to Overview →</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

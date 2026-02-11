@@ -1,0 +1,63 @@
+id	19bd59821614bcbd
+thread_id	19bd59821614bcbd
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “INNOVATION Focus [Vibrantly, Six, MV SaaS Solutions]” Jan 19, 2026
+date	Mon, 19 Jan 2026 09:31:15 +0000
+
+Notes from “INNOVATION Focus [Vibrantly, Six, MV SaaS Solutions]”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 19, 2026, 1:30 PM GMT+04:00 and  
+may contain errors.
+
+
+Summary
+
+
+Bruno Azenha Goncalves and Shafiu Hussain discussed setting up the domain  
+for "vibrantly," likely **vibrantly.com**, and the preference for  
+authentication emails to come from their own domain, though they are  
+currently believed to be on Mine Valley. Dario Bianchi outlined the agenda,  
+including an update on "vibrancy" and naming, and Justine Ausha Smith asked  
+Dario Bianchi and Shafiu Hussain about the rebranding of the "six app" and  
+domain selection, which they were unaware of. There was a brief discussion  
+about Vish's availability and location, with Norman Noble and Dario Bianchi  
+mentioning Spain and France as possibilities, and Justine Ausha Smith and  
+Bruno Azenha Goncalves providing recent updates on Vish's location. Norman  
+Noble corrected a typo in a message from "Ashraf" to "Iskandar," and Dario  
+Bianchi shared an update that Iskandar would be back on Wednesday  
+after "titly manifesting mastery." Dario Bianchi suggested staying on the  
+call with Justine Ausha Smith and Bruno Azenha Goncalves to shape the  
+premium program discussion and close other analysis before Iskandar's  
+return.
+
+
+Suggested next steps
+
+
+Dario Bianchi will send a message to Shamas or Kim to get more details  
+about the rebranding of six.
+
+Norman Noble will correct the typo in the message where he mistakenly  
+mentioned Ashraf instead of Kandar.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

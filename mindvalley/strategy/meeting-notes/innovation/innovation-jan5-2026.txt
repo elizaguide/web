@@ -1,0 +1,73 @@
+id	19b8d9798ff1ce0b
+thread_id	19b8d9798ff1ce0b
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “INNOVATION Focus [Vibrantly, Six, MV SaaS Solutions]” Jan 5, 2026
+date	Mon, 05 Jan 2026 09:58:00 +0000
+
+Notes from “INNOVATION Focus [Vibrantly, Six, MV SaaS Solutions]”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 5, 2026, 9:56 AM GMT and may  
+contain errors.
+
+
+Summary
+
+Mohamed Maail Rasheed provided a demo of Vibrantly web, with Vishen  
+Lakhiani and Norman Noble suggesting using Vishen Lakhiani's actual blood  
+work data for testing; Norman Noble and Dario Bianchi were updated by  
+Vishen Lakhiani on their experimental projects like "Eliza" and  
+the "Intelligence Engine" concept, which includes the integration of Six  
+and Vibrantly. Norman Noble raised concerns about sequencing multiple apps,  
+while Vishen Lakhiani set a January 29 deadline for Bruno Azenha Goncalves  
+to have a working demo of Six ready for a founder's dinner, and Dario  
+Bianchi agreed to set up customer interviews for Vibrantly to validate the  
+product direction before payment and sales are added. Vishen Lakhiani  
+confirmed that Six, Vibrantly, and other experimental projects are being  
+built under a new entity in Dubai to protect assets and serve as a  
+marketplace, with Norman Noble committing to determine a realistic scope  
+for a demo of the full ecosystem, including the community aspect (Six),  
+requested by Vishen Lakhiani for Gary Brea by the end of the month.
+
+
+Suggested next steps
+
+
+Bruno Azenha Goncalves will deliver a working demo of six for the London  
+Founders Society, including the ability to share resources and see  
+profiles, by January 29.
+
+Norman Noble will work out what can be realistically achieved for the  
+Vibrantly demo by the end of the month and communicate it.
+
+Dario Bianchi will set up customer interviews with Ahmed Amanulla (Aman)  
+and Sha to show Vibrantly and get feedback.
+
+Norman Noble will send Vishen Lakhiani the exact command to use with Claude  
+to fix the high-priority security issues in the Program Intelligence  
+project.
+
+Dario Bianchi and Norman Noble will prepare a presentation on how to  
+implement the forking of the company to a new entity for the strategy  
+meeting in three weeks.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

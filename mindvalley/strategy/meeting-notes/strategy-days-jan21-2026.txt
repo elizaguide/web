@@ -1,0 +1,90 @@
+id	19be0327a55285cd
+thread_id	19be0327a55285cd
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Strategy Days” Jan 21, 2026
+date	Wed, 21 Jan 2026 10:56:02 +0000
+
+Notes from “Strategy Days”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 21, 2026, 10:54 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Vishen Lakhiani proposed the creation of Vibe Inc. as a separate, AI-native  
+software company distinct from Mind Valley, which will focus on building an  
+ecosystem of products, including the To-Do Manager with an Intelligence  
+Engine, the Learning Mastery Platform, Vibrantly (health and longevity  
+pillar), and the Six app (a people introduction and real-world meeting  
+platform). Someone in Envisioning Room @ 23A, Dario, and Alex Dogliotti,  
+along with other participants like Shafiu Hussain and Justine Ausha Smith,  
+discussed the strategic separation of the two companies, the importance of  
+a common UX and centralized authentication through TIE, and the plan to  
+transition Mind Valley's membership platform to a commodity vendor to  
+simplify operations and reduce engineering cost. Key product updates  
+included a demo of the Vibrantly app's biomarker analysis and longevity  
+score calculation by Shafiu Hussain, and an overview of the Six app's  
+network, chat features, and web app development by Justine Ausha Smith.
+
+
+Suggested next steps
+
+
+Vishen Lakhiani will add PRD documentation notes to the Vibe products air  
+table.
+
+Shafiu Hussain will share a cost calculation/estimation for the pricing.
+
+Someone in Envisioning Room @ 23A will come back with the proper costing  
+and recommendations for the meeting on Monday.
+
+Someone in Envisioning Room @ 23A will discuss the mobile app development  
+decision during the six deep dive meeting next week to avoid wasting  
+resources on the old app.
+
+Justine Ausha Smith will send the login details for the six app after the  
+call to Vishen Lakhiani and the executive team, ensuring Vishen Lakhiani  
+gets 'vision@mindval.com' super admin access to the staging site  
+immediately.
+
+The group will have more discussions and a deep dive on the strategy for  
+six.
+
+Someone in Envisioning Room @ 23A will conduct an analysis of commodity  
+platforms over the next month, including options, trade-offs, potential  
+resources freed up, and the possibilities and constraints of using that  
+platform.
+
+Vishen Lakhiani will fork the company by the end of this month by creating  
+a new company called Vibe Inc. with its own Air Table and OKRs, starting  
+with a smaller and leaner team based on the age of AI.
+
+Vishen Lakhiani will build the academy platform and an intelligence to  
+extract knowledge from it for clients and sales, as well as the marketing  
+pages, quizzes, landing pages, and a directory to show prospective  
+customers what content is included in what pillar using platform  
+intelligence.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

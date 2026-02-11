@@ -1,0 +1,109 @@
+id	19be60ec3dd92301
+thread_id	19be60ec3dd92301
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Campaigns Strategy” Jan 22, 2026
+date	Thu, 22 Jan 2026 14:14:45 +0000
+
+Notes from “Campaigns Strategy”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 22, 2026, 12:47 PM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Vishen Lakhiani directed Jaideep Chagger to consolidate all AI-related  
+files into a single AI mastery Air Table, stressing the importance of  
+proper data organization, file formatting (CSV for raw data, TXT for  
+scripts), and secure data management by excluding sensitive information  
+like email addresses. Vishen Lakhiani, Jaideep Chagger, Glen Jason Chittur,  
+and Ramya Rednam worked on structuring the Air Table with fields such  
+as "Description," "Doc Type," and an auto number for survey data, while  
+also addressing copy concerns for the webinar banner and defining the  
+content and deliverables for the AI Clone Accelerator focused on building  
+an AI clone system. Furthermore, Vishen Lakhiani and Jaideep Chagger  
+outlined the AI Clone Accelerator model and pricing strategy, with a  
+proposed accelerator price of $997 or $999 and innovative time-based price  
+increases, and discussed speaker selection for the event, including  
+Dominic, Iman, and potentially Dave Kate.
+
+
+Suggested next steps
+
+
+Jaideep Chagger will kill the current air table and move all data,  
+including AI accelerator survey results and AI summit survey results, into  
+the existing AI mastery air table, ensuring all relevant links are included.
+
+Jaideep Chagger will align with Rhythm and Yani to clean up and improve the  
+existing AI mastery air table instead of building a new one.
+
+Jaideep Chagger will refine the data organization process, ensuring Yana  
+works to have all data sorted out well in advance of future meetings.
+
+Jaideep Chagger will add the survey description in the air table and ensure  
+the data files are in CSV format for raw data and text format for survey  
+questions, including an auto number field, while excluding email addresses  
+for security reasons.
+
+Glen Jason Chittur will convert the content of the Google Doc into a single  
+txt file and upload it into attachments, including video scripts and the  
+campaign AI accelerator webinar key message.
+
+Glen Jason Chittur will run all the scripts on Claude to come up with the  
+refined script for Vishen Lakhiani to show the next day.
+
+Vishen Lakhiani will send the Tony Robbins documents to Jaideep Chagger.
+
+Vishen Lakhiani will share the rough proposal of the agenda with Iman to  
+see if Iman is open to teaching at the AI clone accelerator on February 6th  
+and 7th.
+
+Jaideep Chagger will refine the curriculum and the webinar script based on  
+Vishen Lakhiani's input and critique, and send it to Vishen Lakhiani  
+tomorrow for final decision.
+
+Vishen Lakhiani will film the required videos, including the invite video  
+and the video about cloning, tomorrow on Friday after the strategy meeting.
+
+Glen Jason Chittur will put the filmed videos into production and publish  
+them on Tuesday or Wednesday.
+
+Vishen Lakhiani will leave a message for Dave Kate to invite him to speak  
+and teach something at the weekend AI event on building an AI clone to  
+optimize business.
+
+Jaideep Chagger will send Vishen Lakhiani a summary of the agenda to  
+forward to Dave Kate to ask which areas he wants to teach.
+
+Jaideep Chagger and Jennif will work on a proposal to restructure AI  
+mastery and send it to Barry.
+
+Jaideep Chagger will ensure that the Air Table documents are well adjusted  
+going forward.
+
+Jaideep Chagger will follow up with Enie and the group will get on a call  
+with Barry.
+
+
+Meeting records Document Notes by Gemini Video Recording
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

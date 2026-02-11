@@ -1,0 +1,111 @@
+id	19be54b915852696
+thread_id	19be54b915852696
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Strategy Days” Jan 22, 2026
+date	Thu, 22 Jan 2026 10:41:32 +0000
+
+Notes from “Strategy Days”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 22, 2026, 10:39 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Jenny Sohn reported a decreased payment plan ratio, reduced ad spend, and  
+an improved gross margin for 2025, while also clarifying that a 5.5 million  
+litigation settlement accrual and VAT expenses contributed to a 4.7% net  
+loss. Vishen Lakhiani stressed the critical shift to prioritizing leanness  
+and profitability over growth by drastically reducing the 2026 revenue  
+target to around 100 million and pivoting the business model to "training  
+with software." someone in Envisioning Room @ 23A detailed the strategy to  
+transition the platform from content consumption to a "human transformation  
+system," which includes establishing a "squad" model for pathway ownership,  
+focusing on organic revenue growth, and shortening long mastery programs.  
+Alex Dogliotti and Eni Selfo contributed to discussions regarding the 2026  
+budget, the need for a backup strategy to membership dependency, and the  
+logistics of upcoming summits and program changes.
+
+
+Suggested next steps
+
+
+Jenny Sohn will send the slide deck, ensuring that the columns are clearly  
+labeled with the years 2024 and 2025 instead of 'actual' and 'last year'.
+
+Someone in Envisioning Room @ 23A will remove Wildfit completely out of  
+membership, but can keep it for existing signed-up members for a month.
+
+Someone in Envisioning Room @ 23A will reforcast the budget and present  
+back to Vishen Lakhiani to show how realistic growth can be achieved while  
+also creating cash and bank by focusing on efficiency and cutting  
+non-performing channels.
+
+Vishen Lakhiani will hold the live master class for the Silva Masterass on  
+February 3rd.
+
+Someone in Envisioning Room @ 23A will work with Vishen Lakhiani to build  
+the entire funnel for the new manifesting master class.
+
+Eni Selfo will share the dashboard information from Air Table with the  
+group.
+
+Eni Selfo, Vishen Lakhiani, and The group will schedule a strategy call  
+with Barry within the next week to isolate and lock in a new model for  
+summits and masteries.
+
+Vishen Lakhiani and The group will centralize the financial model and the  
+sales model so that it is structured and not created ad-hoc for every  
+summit or mastery.
+
+The group will focus on testing the evergreen funnel for certification  
+using hypnotherapy with Paul McKenna on a colder audience.
+
+Eni Selfo will send the calendar invites for the Manifesting Summit in LA  
+on May 15th and 16th and put the dates on Vishen Lakhiani's travel  
+spreadsheet.
+
+Alex Dogliotti will ensure the OKR system is synced with Air Table and not  
+Bamboo HR, as Air Table is the single source of truth.
+
+Vishen Lakhiani will finalize the authentication to use for the OKR  
+platform (which will be a Vibe Inc. tool), and will work with someone in  
+Envisioning Room @ 23A, Mule, and Bruno to configure the optimal shared  
+authentication using Superbase for the independent applications.
+
+Eni Selfo will finalize the contractual elements with Barry, join the  
+strategy call, look at moving the AI summit to the following weekend (March  
+20th, 21st, and 22nd), and reach out to the speakers.
+
+Vishen Lakhiani will build a system for the entire company to see his  
+travel and weekly schedule.
+
+Someone in Envisioning Room @ 23A and Vishen Lakhiani will build a software  
+that is the front end of the OKR system, which they will roll out on Air  
+Table.
+
+Vishen Lakhiani and someone in Envisioning Room @ 23A will focus on the  
+exec OKRs as the strategy before working on team and individual OKRs.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

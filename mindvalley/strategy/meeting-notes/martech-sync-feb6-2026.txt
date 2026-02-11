@@ -1,0 +1,68 @@
+id	19c326d87c98ae9f
+thread_id	19c326d87c98ae9f
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Vishen / MarTech” Feb 6, 2026
+date	Fri, 06 Feb 2026 10:09:24 +0000
+
+Notes from “Vishen / MarTech”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on February 6, 2026, 10:08 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Launching New AI-Powered Initiatives
+Mind Valley is launching three new companies—Phineminds, Vibrantly, and  
+Blink Life—due to rapid AI advancement, requiring the Martekch team to  
+pivot their focus to scaling the technology for these new ventures.
+
+Advanced AI Transforms Operations
+The advanced Agentic AI, Eliza, was introduced, capable of scriptwriting,  
+content analysis, and strategy advising, leading to the projection that 50%  
+of current work will be automated within three months.
+
+Strategy Focuses on Hyperpersonalization
+The Martekch strategy was reviewed, emphasizing hyperpersonalization and  
+data completeness for AI scaling, and the company decided to build a new  
+accessible CRM solution integrating data from Brace and Osiris due to  
+existing login and profile access challenges.
+
+
+Suggested next steps
+
+
+Pavel Luzanov will schedule a meeting next week to take Vishen Lakhiani  
+through Brace.
+
+Nicole Chin will message Yana to get the Martekch team on the AI  
+accelerator program.
+
+Nicole Chin will continue speaking to Eliza and WhatsApp Vishen Lakhiani  
+when finished.
+
+Pavel Luzanov will work with Vishen Lakhiani to build a React and Superbase  
+system that can function as a CRM.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

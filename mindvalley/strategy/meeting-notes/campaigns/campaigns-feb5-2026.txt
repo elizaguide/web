@@ -1,0 +1,86 @@
+id	19c2dc9c3e75a5f5
+thread_id	19c2dc9c3e75a5f5
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Campaigns Strategy” Feb 5, 2026
+date	Thu, 05 Feb 2026 12:32:02 +0000
+
+Notes from “Campaigns Strategy”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on February 5, 2026, 12:08 PM GMT and may  
+contain errors.
+
+
+Summary
+
+
+AI Voice and URL Structure
+The team needs to tag the AI to ensure all generated content adopts the  
+specific voice of the organization; furthermore, the current URL structure  
+for the CLC seminar landing page was deemed unacceptable due to its length  
+and difficulty in sharing.
+
+Seminar Strategy and Team Onboarding
+The CLC seminar's strategy focuses on human engagement and  
+being "indestructible" to indirectly lead participants toward coaching,  
+aligning with the 2026 playbook. Concerns were raised regarding the slow  
+onboarding of a new hire, with the decision made that immediate meeting  
+immersion is critical to alleviate team workload pressure.
+
+AI Refinement and Launch Postponement
+The leadership decided to leverage Eliza and Claude Code to refine the  
+seminar's hook and campaign design using prioritized performance data. Due  
+to identified flaws on the landing page, the team agreed to postpone the  
+email and ad traffic launch until the necessary page improvements are  
+completed.
+
+
+Suggested next steps
+
+
+Jaideep Chagger will book a follow-up meeting with Vishen Lakhiani to  
+fine-tune the CLC project and sync on the page updates during the daily  
+huddle tomorrow.
+
+The group will postpone sending the CLC email that was planned for today  
+until tomorrow due to issues with the landing page.
+
+Jaideep Chagger, Ramya Rednam, and Marisha Lakhiani will ensure the new  
+hire is included in every call moving forward to facilitate their  
+onboarding and learning.
+
+The group will ensure that all URLs are set to a single word for Mind  
+Valley pages, like mindbal.com/clone, which can be a redirect.
+
+The group will stick to using photos only from Vishen Lakhiani's correct  
+photo folder and ensure the design team does not use random, unapproved  
+pictures.
+
+The group will change the image used for Nick on the banner of the website  
+to one that does not initially show his malformed hand, reserving the image  
+showing his authenticity for when people scroll down.
+
+The group will convert the live seminar 2026 XLSS file to CSV format so  
+Claude can properly read and utilize the data for the campaign design  
+project.
+
+
+Meeting records Document Notes by Gemini Video Recording
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

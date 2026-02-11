@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindvalley Strategic Analysis 2026 | Executive Briefing</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .header .update-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .analysis-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .analysis-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .analysis-card h2 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .analysis-card .icon {
+            font-size: 1.5rem;
+        }
+
+        .loading-state {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #e2e8f0;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .key-insights {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .key-insights h2 {
+            color: #2d3748;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .insight-item {
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 10px;
+            border-left: 4px solid #4299e1;
+        }
+
+        .insight-item h3 {
+            color: #2d3748;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .insight-item p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .transformation-timeline {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: -20px;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-date {
+            min-width: 120px;
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            margin-right: 1.5rem;
+            height: fit-content;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content h3 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: #4a5568;
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-content ul {
+            margin-left: 1rem;
+            color: #4a5568;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-date {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Mindvalley Strategic Analysis</h1>
+            <div class="subtitle">Executive Leadership Briefing | January-February 2026</div>
+            <div class="update-badge">
+                📊 Live Analysis Generated by Eliza AI | Updated: February 9, 2026
+            </div>
+        </div>
+
+        <div class="loading-state">
+            <div class="loading-spinner"></div>
+            <h2>🔍 Comprehensive Strategic Analysis in Progress</h2>
+            <p>Analyzing 50+ executive meetings, strategy sessions, and financial reports from January 2026...</p>
+            <p><strong>Opus AI</strong> is conducting deep strategic analysis of Mindvalley's transformation.</p>
+        </div>
+
+        <div class="key-insights">
+            <h2>🎯 Key Strategic Developments Discovered</h2>
+            <div class="insights-grid">
+                <div class="insight-item">
+                    <h3>🏢 Dual Company Structure</h3>
+                    <p>Creation of "Vibe Inc" as separate AI-native software company, with Vishen transitioning from Mindvalley CEO to focus on product development.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>📊 Financial Pivot</h3>
+                    <p>Strategic shift from growth to profitability focus. Revenue target reduced to ~$100M for 2026, with emphasis on efficiency over expansion.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>🤖 AI-First Ecosystem</h3>
+                    <p>Launch of 4 interconnected companies: Story OS, Vibrantly, Six, and Program Intelligence, unified by central "Intelligence Engine (TAI)".</p>
+                </div>
+                <div class="insight-item">
+                    <h3>🔄 Business Model Evolution</h3>
+                    <p>Platform transformation from "content consumption" to "human transformation system" with "training with software" approach.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformation-timeline">
+            <h2>📅 Strategic Transformation Timeline</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Jan 7, 2026</div>
+                <div class="timeline-content">
+                    <h3>🚨 Executive Meeting: Foundation Decision</h3>
+                    <p>Major organizational restructuring announced:</p>
+                    <ul>
+                        <li>Vishen stepping down as Mindvalley CEO</li>
+                        <li>Significant non-engineering headcount reduction</li>
+                        <li>4 new tech companies launch in Dubai</li>
+                        <li>50% personnel time dedicated to "new future"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Jan 21, 2026</div>
+                <div class="timeline-content">
+                    <h3>🔧 Strategy Days: Vibe Inc Creation</h3>
+                    <p>Separate AI-native software company established:</p>
+                    <ul>
+                        <li>"Fork the company" by end of January</li>
+                        <li>Dedicated ecosystem of AI-powered products</li>
+                        <li>Strategic separation from Mindvalley operations</li>
+                        <li>Transition to commodity vendor model</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Jan 22, 2026</div>
+                <div class="timeline-content">
+                    <h3>📈 Strategy Days: Mindvalley Pivot</h3>
+                    <p>Critical business model transformation:</p>
+                    <ul>
+                        <li>Shift to "leanness and profitability" focus</li>
+                        <li>Revenue target reduction to ~$100M</li>
+                        <li>Platform becomes "human transformation system"</li>
+                        <li>Address 4.7% net loss and financial challenges</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 2026</div>
+                <div class="timeline-content">
+                    <h3>⚡ Execution Phase: Product Development</h3>
+                    <p>Active development across all four companies:</p>
+                    <ul>
+                        <li>FinerMinds: Elite branding and navigation structure</li>
+                        <li>Vibrantly: Chat-based health interface development</li>
+                        <li>Revenue tracking shows pathway strategy focus</li>
+                        <li>AI Accelerator curriculum development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="analysis-grid">
+            <div class="analysis-card">
+                <h2><span class="icon">🎯</span> Strategic Assessment</h2>
+                <p><em>Comprehensive analysis pending...</em></p>
+                <p>Evaluating strategic coherence, transformation risks, and competitive positioning of the dual-company AI-native approach.</p>
+            </div>
+
+            <div class="analysis-card">
+                <h2><span class="icon">💰</span> Financial Analysis</h2>
+                <p><em>Revenue trends and projections...</em></p>
+                <p>Assessing the financial drivers behind strategic decisions and projected outcomes of the profitability pivot.</p>
+            </div>
+
+            <div class="analysis-card">
+                <h2><span class="icon">🏢</span> Organizational Impact</h2>
+                <p><em>Dual-company structure evaluation...</em></p>
+                <p>Analyzing personnel implications, leadership transition effects, and organizational culture transformation.</p>
+            </div>
+
+            <div class="analysis-card">
+                <h2><span class="icon">⚡</span> Execution Risks</h2>
+                <p><em>Critical failure points identification...</em></p>
+                <p>Identifying execution challenges, resource allocation risks, and potential mitigation strategies.</p>
+            </div>
+
+            <div class="analysis-card">
+                <h2><span class="icon">🚀</span> Market Position</h2>
+                <p><em>Competitive landscape analysis...</em></p>
+                <p>Evaluating market positioning of AI-native approach vs traditional EdTech competitors.</p>
+            </div>
+
+            <div class="analysis-card">
+                <h2><span class="icon">📋</span> Action Plan</h2>
+                <p><em>Strategic recommendations...</em></p>
+                <p>Priority initiatives, resource allocation guidance, and 6-month execution roadmap for leadership team.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🤖 Generated by Eliza AI | Chief Strategy Officer Analysis | Confidential Executive Briefing</p>
+            <p>Based on comprehensive analysis of 50+ meeting transcripts from January-February 2026</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-refresh every 30 seconds to check for Opus analysis completion
+        let refreshInterval;
+        
+        function checkForUpdates() {
+            fetch('analysis-complete.json')
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Analysis not ready');
+                })
+                .then(data => {
+                    if (data.complete) {
+                        clearInterval(refreshInterval);
+                        location.reload(); // Reload page when analysis is complete
+                    }
+                })
+                .catch(error => {
+                    // Analysis not complete yet, continue checking
+                });
+        }
+
+        // Check every 30 seconds
+        refreshInterval = setInterval(checkForUpdates, 30000);
+
+        // Add some dynamic behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.analysis-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

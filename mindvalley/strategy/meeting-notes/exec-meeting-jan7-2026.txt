@@ -1,0 +1,87 @@
+id	19b97b05f30d6ea2
+thread_id	19b97b05f30d6ea2
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Exec Meeting” Jan 7, 2026
+date	Wed, 07 Jan 2026 09:01:16 +0000
+
+Notes from “Exec Meeting”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 7, 2026, 12:59 PM GMT+04:00 and  
+may contain errors.
+
+
+Summary
+
+Vishen Lakhiani announced a major organizational restructuring involving a  
+significant reduction in the non-engineering headcount at Mind Valley and  
+the simultaneous launch of four interconnected, tech-based companies—Story  
+OS, Vibrantly, Six, and Program Intelligence—in Dubai, which will be  
+unified by a central "Intelligence Engine (TAI)." Vishen Lakhiani, who  
+plans to step down as CEO of Mind Valley to focus on product development  
+for the new entity, Vibe Inc., discussed how AI is shifting the role of  
+coders to product design and demonstrated AI solutions like Eliza Day  
+Planner for personal productivity and Program Intelligence for automating  
+Mind Valley operations and improving customer retention. Key participants,  
+including Eni Selfo, Norman Noble, Dario Bianchi, Alex Dogliotti, Marisha  
+Lakhiani, Rafay Korai, and Conny Marquez Fajardo, discussed the development  
+strategy for Story OS (potentially to be renamed Aristotle), the importance  
+of community and network relationships over content for the new platforms,  
+and a strategic shift requiring key personnel to dedicate up to 50% of  
+their time to the new future, with a goal to launch the new software at the  
+Mind Valley University event.
+
+
+Suggested next steps
+
+
+Vishen Lakhiani will continue refining Story OS for the next two and a half  
+months and then decide with the group at the Q2 strategy meeting if it  
+should be launched.
+
+Alex Dogliotti will get the meeting recording to Jenny.
+
+Eni Selfo will send the link of Sarah Snow's platform to Vishen Lakhiani.
+
+Vishen Lakhiani will implement the ability to upload live feedback from  
+sessions into Program Intelligence.
+
+Vishen Lakhiani will build a mastery CRM into Program Intelligence and talk  
+to Abhishek and Shaft about integrating the stories engine and lifebook,  
+respectively, into it.
+
+The group will work together to get the Program Intelligence platform out.
+
+The group will start transferring people to the four new companies in Dubai.
+
+Rafay Korai will figure out how to present and market program intelligence,  
+including the study buddy and quizzes, for the pathway model, and confirm  
+it will be a separate platform from Mind Valley home.
+
+Norman Noble will let Vishen Lakhiani know when he is ready to test the  
+Vibrantly web app.
+
+Alex Dogliotti and Rafay Korai will connect to discuss the intentional  
+strategy around membership and academy, considering its importance as the  
+number one revenue generator while developing the rest of the business.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

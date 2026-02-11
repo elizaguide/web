@@ -1,0 +1,61 @@
+id	19b925b688d383eb
+thread_id	19b925b688d383eb
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Weekly- Revenue Meeting” Jan 6, 2026
+date	Tue, 06 Jan 2026 08:10:22 +0000
+
+Notes from “Weekly- Revenue Meeting”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 6, 2026, 12:08 PM GMT+04:00 and  
+may contain errors.
+
+
+Summary
+
+The meeting, with participants including Jaideep Chagger, Conny Marquez  
+Fajardo, Jill Tan, Rafay Korai, Alex Dogliotti, Vishen Lakhiani, Ramya  
+Rednam, Marisha Lakhiani, and Moniek van Waaijenburg, covered a review of  
+December 2025 performance, 2026 strategies, and data accuracy. Jill Tan  
+reported that 2025 revenue reached $108.5 million, exceeding the target,  
+with December sales at $7.9 million, while the 2026 target is set at $128.1  
+million with a $40.5 million ad spend budget. Conny Marquez Fajardo  
+reported that Premium Programs achieved $34.6 million in 2025, driven by  
+Mastery growth, and aims for $45.9 million in 2026, while Jaideep Chagger  
+updated on the "spiritual challenge" generating $480K and the successful  
+social media summit with 101.3K leads. Vishen Lakhiani raised concerns  
+about double counting in metabase dashboards regarding mastery sales,  
+requested the display of actual net revenue and customers, and strongly  
+recommended promoting Ramya Rednam to lead campaigns holistically.
+
+
+Suggested next steps
+
+
+Jaideep Chagger will cross-check the dates for CLC and CBC on the website  
+to ensure they are updated to Jan and Feb.
+
+Jaideep Chagger will align with Conny Marquez Fajardo in the coming week  
+regarding live coaching preparation as they are less than a month away from  
+going live.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

@@ -1,0 +1,54 @@
+id	19bda738350b483c
+thread_id	19bda738350b483c
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Weekly- Revenue Meeting” Jan 20, 2026
+date	Tue, 20 Jan 2026 08:09:21 +0000
+
+Notes from “Weekly- Revenue Meeting”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 20, 2026, 12:08 PM GMT+04:00 and  
+may contain errors.
+
+
+Summary
+
+
+Rhythm Malhotra opened the meeting, and Rafay Korai confirmed that the work  
+by Marishia and Rama to expand Rama's role is complete, suggesting the item  
+can be revoked. Jill Tan provided a January performance overview, noting a  
+$5 million sales total against a $10.3 million target, highlighting a 16%  
+gap to the month-end target, minus 24% year-over-year performance, and  
+detailing low ROAS for Metabase VSSL and Masterclass. Rafay Korai discussed  
+a new "manifestation pathway" strategy, concerns over Maria's high target,  
+and confirmed that renewals are fine, while Jaideep Chagger presented the  
+$1.55 million in social media mastery sales against a $4 million goal,  
+proposing a downsell for social media mastery and addressing a nearly 50%  
+drop in member sales potentially related to checkout issues, which were  
+discussed with Dario Bianchi. Moniek van Waaijenburg reported a 20%  
+decrease in States' weekly performance due to a ROAS dip, and Thomas Yap  
+Meng Tiong reviewed North Star metrics, noting an upward trend in Monthly  
+Active Users versus Monthly Active Subscribers and confirming the current  
+overall Eve AI adoption rate is about 7% of members who come to the  
+platform every week.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

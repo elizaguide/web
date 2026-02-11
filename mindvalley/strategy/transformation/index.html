@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mindvalley Strategic Transformation — BARI Framework Implementation</title>
+  <meta name="description" content="Comprehensive guide to Mindvalley's strategic transformation based on BARI's consulting frameworks. Internal education resource for company-wide alignment." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="stylesheet" href="public/mindvalley-font.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-family);
+      line-height: 1.6;
+      color: #0f131a;
+      background-color: #ffffff;
+    }
+    
+    .nav-bar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    
+    .nav-logo {
+      color: #7a12d4;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 150ms;
+    }
+    
+    .nav-links a:hover {
+      color: #7a12d4;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+      padding: 6rem 0 5rem 0;
+    }
+    
+    .framework-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .framework-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      transition: all 150ms ease;
+    }
+    
+    .framework-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .framework-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #7a12d4;
+      color: white;
+      border-radius: 50%;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .section {
+      padding: 5rem 0;
+    }
+    
+    .section-alt {
+      background-color: #f9fafb;
+    }
+    
+    .transformation-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    
+    .before-after {
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+    
+    .before {
+      background-color: #fef2f2;
+      border-left: 4px solid #ef4444;
+    }
+    
+    .after {
+      background-color: #f0fdf4;
+      border-left: 4px solid #22c55e;
+    }
+    
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #7a12d4;
+      margin-bottom: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .transformation-comparison {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .hero-section {
+        padding: 4rem 0 3rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="mv-container nav-container">
+      <a href="index.html" class="nav-logo">Mindvalley Strategic Transformation</a>
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="julie-persona.html">Julie Persona</a></li>
+        <li><a href="through-line.html">Through-Line</a></li>
+        <li><a href="implementation.html">Implementation</a></li>
+        <li><a href="divisions.html">Divisions</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="mv-container">
+      <div class="overline-text" style="margin-bottom: 1rem; color: #7a12d4;">
+        STRATEGIC TRANSFORMATION GUIDE
+      </div>
+      <h1 class="title-bold-2" style="max-width: 48rem; margin: 0 0 1.25rem 0;">
+        From Education Company to Transformation Company
+      </h1>
+      <p class="body-lg" style="max-width: 40rem; color: #4b5563; margin-bottom: 0;">
+        Complete internal guide to implementing BARI's strategic frameworks across all Mindvalley divisions. Based on 50+ team meeting analysis and the February strategy sessions.
+      </p>
+      <div style="display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap;">
+        <a href="#overview" class="mv-button-primary">Start Strategic Review</a>
+        <a href="executive-summary.html" class="mv-button-secondary">Executive Summary</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategic Overview -->
+  <section id="overview" class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 1.5rem;">The BARI Transformation Framework</h2>
+      <p class="body-lg" style="color: #4b5563; max-width: 48rem; margin-bottom: 2rem;">
+        Based on intensive strategy sessions with BARI (Dean Graziosi/Tony Robbins consultant) and comprehensive analysis of Mindvalley's current operations, we've identified six critical transformation areas that will shift us from education provider to transformation catalyst.
+      </p>
+
+      <div class="framework-grid">
+        <div class="framework-card">
+          <div class="framework-number">1</div>
+          <h3 class="title-bold-6" style="margin-bottom: 1rem;">Through-Line Alignment</h3>
+          <p class="body" style="color: #4b5563;">One core belief reinforced across every product: "Consciousness Engineering makes you extraordinary" — not scattered messaging.</p>
+          <a href="through-line.html" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Learn Framework →</a>
+        </div>
+
+        <div class="framework-card">
+          <div class="framework-number">2</div>
+          <h3 class="title-bold-6" style="margin-bottom: 1rem;">Julie Persona Focus</h3>
+          <p class="body" style="color: #4b5563;">Build everything for the overwhelmed 40-60 year old solopreneur who wants 15 hours back per week for family.</p>
+          <a href="julie-persona.html" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Meet Julie →</a>
+        </div>
+
+        <div class="framework-card">
+          <div class="framework-number">3</div>
+          <h3 class="title-bold-6" style="margin-bottom: 1rem;">Compressed Programs</h3>
+          <p class="body" style="color: #4b5563;">30-day intensive transformations at higher prices. Compressed time = higher value, better completion rates.</p>
+          <a href="program-structure.html" style="color: #7a12d4; font-weight: 500; text-decoration: none;">See Structure →</a>
+        </div>
+
+        <div class="framework-card">
+          <div class="framework-number">4</div>
+          <h3 class="title-bold-6" style="margin-bottom: 1rem;">Method-First Development</h3>
+          <p class="body" style="color: #4b5563;">Every program needs a clear ≤6-step method before content creation. The method IS the through-line.</p>
+          <a href="method-design.html" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Design Methods →</a>
+        </div>
+
+        <div class="framework-card">
+          <div class="framework-number">5</div>
+          <h3 class="title-bold-6" style="margin-bottom: 1rem;">Outcome-Based Pricing</h3>
+          <p class="body" style="color: #4b5563;">Price on transformation results, not features. "15 hours back" not "6 weeks of content."</p>
+          <a href="pricing-psychology.html" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Pricing Strategy →</a>
+        </div>
+
+        <div class="framework-card">
+          <div class="framework-number">6</div>
+          <h3 class="title-bold-6" style="margin-bottom: 1rem;">RIM + ACE Architecture</h3>
+          <p class="body" style="color: #4b5563;">High-ticket masteries delivering Repetition, Immersion, Modeling + Accountability, Community, Enhanced Opportunity.</p>
+          <a href="mastery-architecture.html" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Build Masteries →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current vs Future State -->
+  <section class="section section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 1.5rem; text-align: center;">The Great Mindvalley Transformation</h2>
+      <p class="body-lg" style="color: #4b5563; text-align: center; max-width: 48rem; margin: 0 auto 3rem auto;">
+        From scattered educational content to focused transformation catalyst
+      </p>
+
+      <div class="transformation-comparison">
+        <div class="before-after before">
+          <h3 class="title-bold-6" style="margin-bottom: 1.5rem; color: #dc2626;">❌ Current State (Education Company)</h3>
+          <ul style="list-style: none; space-y: 1rem;">
+            <li style="margin-bottom: 1rem;">📚 <strong>Academic-style learning</strong> — 5-month programs, low completion</li>
+            <li style="margin-bottom: 1rem;">🎯 <strong>Scattered messaging</strong> — Each division different beliefs</li>
+            <li style="margin-bottom: 1rem;">👥 <strong>Broad audience</strong> — Trying to serve everyone, serving no one deeply</li>
+            <li style="margin-bottom: 1rem;">🔧 <strong>Feature-focused</strong> — "6 weeks of content" pricing</li>
+            <li style="margin-bottom: 1rem;">📈 <strong>13% refund rates</strong> — Overwhelming content dumps</li>
+            <li style="margin-bottom: 1rem;">🏫 <strong>Course provider</strong> — Information delivery focus</li>
+          </ul>
+        </div>
+
+        <div class="before-after after">
+          <h3 class="title-bold-6" style="margin-bottom: 1.5rem; color: #16a34a;">✅ Future State (Transformation Company)</h3>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 1rem;">⚡ <strong>Intensive transformation</strong> — 30-day compressed programs</li>
+            <li style="margin-bottom: 1rem;">🎯 <strong>One core belief</strong> — Consciousness Engineering across all products</li>
+            <li style="margin-bottom: 1rem;">👤 <strong>Julie-focused</strong> — Everything built for right-fit solopreneur</li>
+            <li style="margin-bottom: 1rem;">🎁 <strong>Outcome-focused</strong> — "15 hours back per week" pricing</li>
+            <li style="margin-bottom: 1rem;">📈 <strong>80% completion rates</strong> — Clear methods, fast results</li>
+            <li style="margin-bottom: 1rem;">🚀 <strong>Transformation catalyst</strong> — Identity shift focus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation Impact -->
+  <section class="section">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 1.5rem; text-align: center;">Projected Transformation Impact</h2>
+      <p class="body-lg" style="color: #4b5563; text-align: center; max-width: 40rem; margin: 0 auto 2rem auto;">
+        Based on BARI's experience with similar transformations and Mindvalley's current metrics
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-number">3x</div>
+          <div class="title-bold-7" style="color: #0f131a;">Revenue Per Customer</div>
+          <p class="body-sm" style="color: #6b7280;">Through compressed, high-value programs</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">80%</div>
+          <div class="title-bold-7" style="color: #0f131a;">Completion Rate</div>
+          <p class="body-sm" style="color: #6b7280;">From current 13% through method-first design</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">-67%</div>
+          <div class="title-bold-7" style="color: #0f131a;">Refund Rate</div>
+          <p class="body-sm" style="color: #6b7280;">Through Julie-focused messaging clarity</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">5x</div>
+          <div class="title-bold-7" style="color: #0f131a;">Summit Conversion</div>
+          <p class="body-sm" style="color: #6b7280;">Through proper through-line implementation</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="implementation.html" class="mv-button-primary">View Implementation Plan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Division Quick Links -->
+  <section class="section section-alt">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 2rem; text-align: center;">Division-Specific Transformation Guides</h2>
+      
+      <div class="framework-grid">
+        <div class="framework-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #7a12d4;">🎓 Academy Division</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">Transform masteries from 5-month academic to 30-day intensive. New OKRs and compression strategy.</p>
+          <a href="divisions.html#academy" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Academy Roadmap →</a>
+        </div>
+
+        <div class="framework-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #7a12d4;">🎤 Summits Division</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">Implement 3-day formula, speaker briefings, and sales engine optimization for 5x conversion.</p>
+          <a href="divisions.html#summits" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Summit Strategy →</a>
+        </div>
+
+        <div class="framework-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #7a12d4;">🧠 Quest Content</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">Align all quest messaging to core through-line. Retrofit existing content for Julie persona.</p>
+          <a href="divisions.html#quests" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Quest Alignment →</a>
+        </div>
+
+        <div class="framework-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #7a12d4;">📱 App & Technology</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">Rebuild user experience around transformation outcomes rather than content consumption.</p>
+          <a href="divisions.html#technology" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Tech Strategy →</a>
+        </div>
+
+        <div class="framework-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #7a12d4;">📈 Marketing & Growth</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">Unify all ad creative around single through-line. Julie-focused messaging across all channels.</p>
+          <a href="divisions.html#marketing" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Marketing Alignment →</a>
+        </div>
+
+        <div class="framework-card">
+          <h3 class="title-bold-6" style="margin-bottom: 1rem; color: #7a12d4;">👥 Team & Culture</h3>
+          <p class="body" style="color: #4b5563; margin-bottom: 1.5rem;">Internal transformation to embody the consciousness engineering we teach. Leadership alignment.</p>
+          <a href="divisions.html#culture" style="color: #7a12d4; font-weight: 500; text-decoration: none;">Culture Strategy →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mv-container" style="padding: 4rem 0; color: #6b7280; border-top: 1px solid #e5e7eb;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+      <div>
+        <p>© Mindvalley • Strategic Transformation Guide</p>
+        <p class="body-sm">Based on BARI consulting sessions • February 2026</p>
+      </div>
+      <div style="display: flex; gap: 2rem;">
+        <a href="executive-summary.html" style="color: #7a12d4; text-decoration: none;">Executive Summary</a>
+        <a href="quick-wins.html" style="color: #7a12d4; text-decoration: none;">Quick Wins</a>
+        <a href="resources.html" style="color: #7a12d4; text-decoration: none;">Resources</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

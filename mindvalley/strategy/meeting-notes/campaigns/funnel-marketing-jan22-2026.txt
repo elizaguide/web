@@ -1,0 +1,80 @@
+id	19be501523b8e64c
+thread_id	19be501523b8e64c
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Funnel Marketing Taskforce” Jan 22, 2026
+date	Thu, 22 Jan 2026 09:20:27 +0000
+
+Notes from “Funnel Marketing Taskforce”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 22, 2026, 9:19 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Titus Thana Raj introduced a "brick library" of pre-existing content for  
+rapid video creation, which Matt Coates, Titus Thana Raj, and Charles Cox  
+agreed to use immediately for testing, emphasizing the priority of quick  
+deployment over extensive planning. Participants including Shubham Semwal,  
+Kristin Hollmann, Harri Vishnu Aravinnashan, and Mohammad Saad presented  
+numerous ideas for new hooks and content focused on specific outcomes,  
+while Matt Coates provided critical feedback on the proposed CTAs and  
+hooks, noting that they often lacked directness and required innovation in  
+delivery. Key strategic next steps include Titus Thana Raj's team starting  
+video editing based on shared briefs, Daniel Savov requesting the  
+documentation of creative ideas in AirTable, and Matt Coates outlining a  
+strategy for creating longer "hero assets" structured as VSSLs and  
+prioritizing the "Amplify with AI" outcome pathway for new content creation.
+
+
+Suggested next steps
+
+
+Titus Thana Raj will share the document containing the 'brick library' with  
+the group so they can mix and match components to create different flows  
+for videos.
+
+Titus Thana Raj will have a separate meeting with Estrella Chan and the  
+group to shortlist video ideas and decide which ones to pursue from the  
+shared document.
+
+Matt Coates will prioritize the creation of longer, outcome-related pieces  
+of content (like a 7 to 10 minute VSSL, but not a pure script) that  
+integrate several of the identified hooks and CTAs for submission to film.
+
+Matt Coates will go through the Figma and create three different  
+outcome-based filming documents for Vision, possibly as a script.
+
+Titus Thana Raj will get his team to edit videos using the existing briefs  
+and show the results during the Tuesday creative sync meeting.
+
+Titus Thana Raj will check the script to find additional snippets for the  
+videos.
+
+Harri Vishnu Aravinnashan will talk to Far and Nelo from the design team to  
+determine the page design and ensure the copy for the 'Amplify with AI'  
+outcome is ready, including the headline, subheadline, and a pain section  
+at the top.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

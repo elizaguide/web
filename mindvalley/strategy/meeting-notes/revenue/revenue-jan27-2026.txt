@@ -1,0 +1,86 @@
+id	19bfeab43249f075
+thread_id	19bfeab43249f075
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Weekly- Revenue Meeting” Jan 27, 2026
+date	Tue, 27 Jan 2026 08:56:34 +0000
+
+Notes from “Weekly- Revenue Meeting”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 27, 2026, 8:54 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Jill Tan reported that month-to-date sales reached $6.2 million against a  
+$10.3 million target, a 21% year-over-year decrease, leading Rafay Korai to  
+announce a revision of the annual target from $128 million to $110 million  
+to prioritize efficiency, which Charles Cox noted must include increasing  
+conversion rates, as ad spend efficiency has been challenging. Rafay Korai  
+confirmed that the "pathway" strategy is the primary focus, with Jaideep  
+Chagger and Eni Selfo planning the "Speaking" pathway and Jaideep Chagger  
+confirming the development of the AI Accelerator curriculum, while Vishen  
+Lakhiani requested more scheduled time with the team for deep dives into  
+content creation and showcased "Program Intelligence," a new platform for  
+content generation. Vishen Lakhiani, Dario Bianchi, and Norman Noble  
+discussed the technical architecture for the new application ecosystem,  
+including Blink Life, Tribali, and Vibrantly, with Norman Noble scheduling  
+a design meeting for Monday at 4:00 pm Malaysia time to align on the  
+complex architecture required for TAI, the proactive AI system.
+
+
+Suggested next steps
+
+
+Charles Cox will reduce the spend on some of the Google activity this week  
+to reduce financial risk and optimize what is left.
+
+Charles Cox will launch all campaigns in the new ad account on Meta pathway  
+by pathway, starting with manifesting for the English and US markets today,  
+and then entrepreneurship.
+
+Rafay Korai will ask Har and Shubam to book at least two to three hours of  
+meeting time with Vishen Lakhiani every week to go deep into content  
+creation.
+
+Eni Selfo will follow up with Vicentas and Eric at Medis and decide which  
+Iman to invite to the AI accelerator to discuss cloning visual clones.
+
+Vishen Lakhiani and Jaideep Chagger will sync up for 15-20 minutes today so  
+Jaideep Chagger can provide a briefing for Vishen Lakhiani to shoot the  
+invite video.
+
+Eni Selfo and Rafay Korai will work with Marishia to determine which  
+existing author programs and funnels to make live for the pathways.
+
+Norman Noble will work out how to book a weekly one-on-one call with Vishen  
+Lakhiani.
+
+Norman Noble will share the Figma file with Vishen Lakhiani in the group  
+they created.
+
+Vishen Lakhiani will work on an air table with better labeling so that it  
+is clear what is in the baseline codes.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

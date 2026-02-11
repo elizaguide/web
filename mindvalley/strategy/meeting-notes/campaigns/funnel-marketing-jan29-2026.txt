@@ -1,0 +1,107 @@
+id	19c08ec3acaaba0a
+thread_id	19c08ec3acaaba0a
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Funnel Marketing Taskforce” Jan 29, 2026
+date	Thu, 29 Jan 2026 08:43:44 +0000
+
+Notes from “Funnel Marketing Taskforce”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 29, 2026, 8:42 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+Shift to Outcome-Specific Advertising
+The team needs to transition advertising efforts to be outcome-specific for  
+effective learning and strategy execution, requiring new creative and  
+landing pages that are currently pending. They established a phased user  
+journey from cold masterclass assets to retargeting focused on selling the  
+high-value 'Collection' product.
+
+Standardized Data for AI Training
+A critical need was identified for organizing program data, including  
+transcripts and survey results, into standardized AirTable structures with  
+MD files to efficiently train the Claude AI. This data organization will  
+enable Program Intelligence to quickly draft masterclass scripts and other  
+assets based on Mind Valley's methodology.
+
+Silva Masterclass Asset Prioritization
+The team decided to focus exclusively on creating and filming the Silva  
+Masterclass assets by February 3rd to generate necessary advertising  
+content. AI tools were utilized to quickly draft the webinar script and  
+slides, prioritizing asset generation over a polished live event.
+
+
+Suggested next steps
+
+
+Charles Cox will add Rafay Korai and the group to the retargeting call next  
+week.
+
+Vishen Lakhiani will try to find the claude files on their computer and add  
+them to a new masterclass thing for sharing.
+
+Vishen Lakhiani will send the MD file containing their analyzed Instagram  
+writing style to Matt Coates so he can put anything in their voice.
+
+Rafay Korai will download the CSV files for the Silva data and prepare it  
+for use with Claude.
+
+Matt Coates will go into the masterclass script and make sure that  
+everything is accurate before filming.
+
+The group will start using the Silver Ultramine files and Masterclass  
+Creator to build Silva's masterclass.
+
+Rafay Korai will make Vishen Lakhiani an admin of the pathways WhatsApp  
+group and check with Ramy regarding the scheduling of the Silva Masterclass  
+on the 3rd of Feb and update Vishen Lakhiani's calendar.
+
+Shubham Semwal will share the script, raw docs, ads, and all necessary  
+documents, including the full quest lesson transcript and a CSV of all  
+leads from the air table, for the Silva Ultra Mind webinar with Vishen  
+Lakhiani by tomorrow.
+
+Shubham Semwal will book a one-hour call for Matt Coates, Harri Vishnu  
+Aravinnashan, and Titus Thana Raj tomorrow at 11:00 AM to generate the  
+final script for the Silva Ultra Mind webinar, including preparing hooks,  
+leads, and slides using Claude.
+
+Rafay Korai will process all quest transcripts on the code level and also  
+ask the system to produce an MD file, creating a field where the MD file  
+can be downloaded right away.
+
+Matt Coates will take the long masterclass script document and rewrite it  
+in Vishen Lakhiani's voice using Claude and the MD file.
+
+Shubham Semwal will send a summary of all the documents needed for the  
+Silva Ultra Mind webinar to the WhatsApp group.
+
+Vishen Lakhiani will buy a studio mic for the masterclass filming setup.
+
+Vishen Lakhiani will trash the study buddy custom notes branch and rebuild  
+a new branch for experimentation.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

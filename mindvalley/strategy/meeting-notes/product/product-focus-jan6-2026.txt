@@ -1,0 +1,65 @@
+id	19b92cff7d3fc980
+thread_id	19b92cff7d3fc980
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “PRODUCT Focus [Membership, Mastery]” Jan 6, 2026
+date	Tue, 06 Jan 2026 10:17:41 +0000
+
+Notes from “PRODUCT Focus [Membership, Mastery]”
+
+These notes have been sent to invited guests in your organization.
+
+Open meeting notes
+
+The content was auto-generated on January 6, 2026, 2:16 PM GMT+04:00 and  
+may contain errors.
+
+
+Summary
+
+Naresh Sanchana initiated a feature design review covering the "browse all  
+programs" feature, which Palak Varma explained was intended to make the  
+entire catalog visible within the platform, and Fann Saw's design for a new  
+journal feature. Vishen Lakhiani proposed a strategic pivot to a  
+new "Program Intelligences" application, demonstrating a prototype that  
+integrates programs with user goals and is designed to automate Mind  
+Valley's website and business processes, suggesting a fast rebuild of Mind  
+Valley Home on this system. Norman Noble and Vishen Lakhiani discussed the  
+complexities of rebuilding the legacy platform, agreeing instead to pursue  
+a parallel development strategy where Program Intelligences is an  
+adjacent "sandbox" for rapid feature development, with Vishen Lakhiani also  
+advocating for building the new journal feature within this AI-compatible  
+system despite Dario Bianchi's concern about immediate deployment on the  
+current platform for retention.
+
+
+Suggested next steps
+
+
+Fann Saw will send Vishen Lakhiani the Figma for the journal designs and  
+provide edit rights to the Figma.
+
+Fann Saw will design and prepare a web version of the journal feature using  
+SHA's CSS, and send Vishen Lakhiani a transcript of her thoughts, feelings,  
+and ideas on how the journal app should work and feel for Claude Code to  
+process.
+
+Naresh Sanchana will play around with the program intelligence platform and  
+ask any questions on how to take this further.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+

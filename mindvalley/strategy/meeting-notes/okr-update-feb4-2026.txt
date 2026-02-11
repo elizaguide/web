@@ -1,0 +1,80 @@
+id	19c28571b7f0bfa8
+thread_id	19c28571b7f0bfa8
+label_ids	UNREAD,CATEGORY_PERSONAL,Label_45,INBOX
+from	Gemini <gemini-notes@google.com>
+to	vishen@mindvalley.com
+subject	Notes: “Manager Briefing: OKR Model Update” Feb 4, 2026
+date	Wed, 04 Feb 2026 11:08:42 +0000
+
+Notes from “Manager Briefing: OKR Model Update”
+
+You are receiving this email because you are part of a group that was  
+invited to the meeting.
+
+Open meeting notes
+
+The content was auto-generated on February 4, 2026, 11:07 AM GMT and may  
+contain errors.
+
+
+Summary
+
+
+New AI-Integrated OKR System
+The meeting commenced with an overview of the key logistical and  
+connectivity challenges of the previous two-system OKR structure, leading  
+to the introduction of a new AI-integrated OKR model designed to enhance  
+goal clarity and contribution visibility.
+
+Aligning Structure and Financials
+A significant portion of the discussion focused on accurately defining  
+business units, aligning product classifications, and ensuring the new  
+structure harmonizes with existing financial reporting systems for accurate  
+business reporting and profitability tracking.
+
+OKR System Becomes Single Source
+The primary point of the meeting centered on clarifying that primary  
+metrics must be those that teams own and are accountable for, while  
+confirming that the new OKR system will become the single source of truth  
+for goals, replacing Bamboo HR for goal tracking.
+
+
+Suggested next steps
+
+
+Rafay Korai will book a separate chat with Jill Tan on Friday at 2:00 pm to  
+discuss the finance source of truth and aligning on the business unit  
+structure and profitability reporting.
+
+Rafay Korai will add any missing departments and feed that to the AI to  
+ensure the right source of truth is maintained.
+
+Rafay Korai will add business units and team members to the 'team members'  
+tab with the help of AI.
+
+Melissa Dookie will figure out a way to sync the new OKR system with  
+BambooHR to avoid duplication.
+
+Moniek van Waaijenburg and Rafay Korai will optimize the new system based  
+on any more questions or feedback.
+
+Melissa Dookie and Moniek van Waaijenburg will sync with Rafay Korai to  
+update the team names and people on the list if there are corrections.
+
+Rafay Korai will make it clear for the group how to perform the next step.
+
+
+Meeting records Document Notes by Gemini
+
+
+Is the summary section in this email helpful?
+Not Useful Email Useful Email
+
+
+Google LLC, 1600 Ampitheatre Parkway, Mountain View, CA 94043, USA
+
+You have received this email because meeting artifacts were initiated in  
+Google Meet.
+
+
+
