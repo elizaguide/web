@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ad Creative Generator — Mindvalley</title>
+  <meta name="description" content="Generate high-converting ad creatives and copy for Mindvalley campaigns. Create compelling headlines, CTAs, and ad concepts instantly." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+  
+  <!-- Mindvalley Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary-purple: #7a12d4;
+      --body-text: #0f131a;
+      --muted-text: #4b5563;
+      --footer-gray: #6b7280;
+      --light-gray: #f9fafb;
+      --card-background: #ffffff;
+      --border-gray: #e5e7eb;
+      --font-sans: 'Inter', system-ui, sans-serif;
+    }
+
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--body-text);
+      line-height: 1.6;
+      background-color: white;
+    }
+
+    .mv-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Typography */
+    .title-bold-2 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .title-bold-4 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    .title-bold-6 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .body-lg {
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .body {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .overline-text {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary-purple);
+    }
+
+    /* Mobile responsive typography */
+    @media (max-width: 768px) {
+      .title-bold-2 {
+        font-size: 2.5rem;
+      }
+      .title-bold-4 {
+        font-size: 1.875rem;
+      }
+      .mv-container {
+        padding: 0 1rem;
+      }
+    }
+
+    /* Buttons */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 150ms ease;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button-primary {
+      background-color: var(--primary-purple);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background-color: #6910b5;
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      background-color: transparent;
+      color: var(--primary-purple);
+      border: 2px solid var(--primary-purple);
+    }
+
+    .button-secondary:hover {
+      background-color: var(--primary-purple);
+      color: white;
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--body-text);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--border-gray);
+      border-radius: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      transition: border-color 150ms ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--primary-purple);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-background);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-gray);
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /* Results */
+    .result-card {
+      background: var(--light-gray);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary-purple);
+    }
+
+    .copy-button {
+      padding: 0.5rem 1rem;
+      background: var(--primary-purple);
+      color: white;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 150ms ease;
+    }
+
+    .copy-button:hover {
+      background: #6910b5;
+    }
+
+    /* Loading state */
+    .loading {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid var(--primary-purple);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Utility classes */
+    .text-center { text-align: center; }
+    .mb-4 { margin-bottom: 2rem; }
+    .mt-8 { margin-top: 4rem; }
+    .hidden { display: none; }
+  </style>
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <section class="mv-container" style="padding: 6rem 0 5rem 0;">
+    <div class="text-center">
+      <div class="overline-text" style="margin-bottom: 1rem;">
+        CREATIVE MARKETING TOOLS
+      </div>
+      <h1 class="title-bold-2" style="max-width: 48rem; margin: 0 auto 1.25rem auto;">
+        Ad Creative Generator
+      </h1>
+      <p class="body-lg" style="max-width: 40rem; color: #4b5563; margin: 0 auto;">
+        Generate high-converting ad copy, headlines, and creative concepts for your Mindvalley campaigns
+      </p>
+    </div>
+  </section>
+
+  <!-- Generator Form -->
+  <section class="mv-container" style="padding: 0 0 5rem 0;">
+    <div class="grid grid-2">
+      <!-- Input Form -->
+      <div class="card">
+        <h2 class="title-bold-6" style="margin-bottom: 1.5rem;">Campaign Details</h2>
+        
+        <form id="adForm">
+          <div class="form-group">
+            <label for="product">Product/Program</label>
+            <input type="text" id="product" placeholder="e.g., Mindvalley Membership, Conscious Parenting" required>
+          </div>
+
+          <div class="form-group">
+            <label for="audience">Target Audience</label>
+            <input type="text" id="audience" placeholder="e.g., Working professionals, New parents, Entrepreneurs" required>
+          </div>
+
+          <div class="form-group">
+            <label for="painPoint">Main Pain Point</label>
+            <textarea id="painPoint" placeholder="What problem does your audience face? What keeps them up at night?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="benefit">Key Benefit</label>
+            <textarea id="benefit" placeholder="What's the main transformation or outcome your audience will get?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="adType">Ad Type</label>
+            <select id="adType" required>
+              <option value="">Select ad type</option>
+              <option value="facebook">Facebook/Instagram Ad</option>
+              <option value="google">Google Ads</option>
+              <option value="linkedin">LinkedIn Ad</option>
+              <option value="youtube">YouTube Ad</option>
+              <option value="email">Email Subject Line</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tone">Tone</label>
+            <select id="tone" required>
+              <option value="">Select tone</option>
+              <option value="inspiring">Inspiring & Uplifting</option>
+              <option value="urgent">Urgent & Action-Oriented</option>
+              <option value="educational">Educational & Informative</option>
+              <option value="conversational">Conversational & Friendly</option>
+              <option value="premium">Premium & Exclusive</option>
+            </select>
+          </div>
+
+          <button type="submit" class="button button-primary" style="width: 100%;">
+            <span id="generateText">Generate Ad Creatives</span>
+            <span id="loadingSpinner" class="spinner hidden" style="margin-left: 0.5rem;"></span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Results -->
+      <div class="card">
+        <h2 class="title-bold-6" style="margin-bottom: 1.5rem;">Generated Creatives</h2>
+        
+        <div id="results">
+          <p style="color: var(--muted-text); text-align: center; padding: 2rem;">
+            Fill in the form and click "Generate" to create your ad creatives
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Info -->
+  <section style="background-color: var(--light-gray);">
+    <div class="mv-container" style="padding: 5rem 0;">
+      <h2 class="title-bold-4 text-center mb-4">What You Get</h2>
+      <div class="grid grid-2">
+        <div style="text-align: center;">
+          <h3 class="title-bold-6" style="color: var(--primary-purple); margin-bottom: 0.5rem;">Multiple Variations</h3>
+          <p class="body">Get 3-5 different creative approaches for A/B testing</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 class="title-bold-6" style="color: var(--primary-purple); margin-bottom: 0.5rem;">Optimized Copy</h3>
+          <p class="body">Headlines and body text optimized for your platform</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 class="title-bold-6" style="color: var(--primary-purple); margin-bottom: 0.5rem;">CTA Suggestions</h3>
+          <p class="body">High-converting call-to-action buttons and phrases</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 class="title-bold-6" style="color: var(--primary-purple); margin-bottom: 0.5rem;">Platform-Specific</h3>
+          <p class="body">Tailored for Facebook, Google, LinkedIn, and more</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mv-container" style="padding: 4rem 0; color: var(--footer-gray); text-align: center;">
+    © Mindvalley • Ad Creative Generator
+  </footer>
+
+  <script>
+    const form = document.getElementById('adForm');
+    const results = document.getElementById('results');
+    const generateText = document.getElementById('generateText');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      generateText.textContent = 'Generating...';
+      loadingSpinner.classList.remove('hidden');
+      form.classList.add('loading');
+      
+      // Get form data
+      const formData = new FormData(form);
+      const data = {
+        product: formData.get('product'),
+        audience: formData.get('audience'),
+        painPoint: formData.get('painPoint'),
+        benefit: formData.get('benefit'),
+        adType: formData.get('adType'),
+        tone: formData.get('tone')
+      };
+      
+      // Simulate API call (replace with actual API)
+      try {
+        const creatives = await generateAdCreatives(data);
+        displayResults(creatives);
+      } catch (error) {
+        displayError('Failed to generate creatives. Please try again.');
+      } finally {
+        // Reset loading state
+        generateText.textContent = 'Generate Ad Creatives';
+        loadingSpinner.classList.add('hidden');
+        form.classList.remove('loading');
+      }
+    });
+
+    async function generateAdCreatives(data) {
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Generate different creative types based on the data
+      const creatives = [];
+      
+      // Headlines
+      const headlines = generateHeadlines(data);
+      creatives.push({
+        type: 'Headlines',
+        items: headlines
+      });
+      
+      // Body Copy
+      const bodyCopy = generateBodyCopy(data);
+      creatives.push({
+        type: 'Body Copy',
+        items: bodyCopy
+      });
+      
+      // CTAs
+      const ctas = generateCTAs(data);
+      creatives.push({
+        type: 'Call-to-Actions',
+        items: ctas
+      });
+      
+      return creatives;
+    }
+
+    function generateHeadlines(data) {
+      const { product, audience, painPoint, benefit, tone } = data;
+      
+      const headlines = [];
+      
+      if (tone === 'inspiring') {
+        headlines.push(`Transform Your Life with ${product}`);
+        headlines.push(`${audience}: Your Breakthrough Moment is Here`);
+        headlines.push(`Discover the ${product} That Changes Everything`);
+      } else if (tone === 'urgent') {
+        headlines.push(`Last Chance: ${product} Enrollment Closes Soon`);
+        headlines.push(`Don't Miss Out: ${audience} Are Transforming Their Lives`);
+        headlines.push(`Limited Time: Get ${product} Before It's Gone`);
+      } else if (tone === 'educational') {
+        headlines.push(`The Science Behind ${product}`);
+        headlines.push(`How ${audience} Master ${benefit}`);
+        headlines.push(`New Research Reveals: ${product} Works`);
+      } else if (tone === 'conversational') {
+        headlines.push(`Hey ${audience}, Ready for Real Change?`);
+        headlines.push(`${product}: Finally, Something That Actually Works`);
+        headlines.push(`Tired of ${painPoint}? There's a Better Way`);
+      } else if (tone === 'premium') {
+        headlines.push(`Exclusive: ${product} for Serious ${audience}`);
+        headlines.push(`Join Elite ${audience} in ${product}`);
+        headlines.push(`Premium ${benefit} for Discerning ${audience}`);
+      }
+      
+      return headlines.slice(0, 4);
+    }
+
+    function generateBodyCopy(data) {
+      const { product, audience, painPoint, benefit, adType } = data;
+      
+      const bodyCopy = [];
+      
+      bodyCopy.push(
+        `Are you tired of ${painPoint}? ${product} is specifically designed for ${audience} who want to ${benefit}. Join thousands who have already transformed their lives.`
+      );
+      
+      bodyCopy.push(
+        `${audience} everywhere are discovering ${product} - the breakthrough approach to ${benefit}. Stop struggling with ${painPoint} and start living your best life.`
+      );
+      
+      bodyCopy.push(
+        `What if ${benefit} was easier than you thought? ${product} shows you exactly how. Designed for busy ${audience}, get results without the overwhelm.`
+      );
+      
+      if (adType === 'facebook') {
+        bodyCopy.push(
+          `✨ ${product} ✨\n\n${audience} - this one's for you!\n\n${benefit} in just minutes a day.\n\nNo more ${painPoint}. Just results. 🚀`
+        );
+      }
+      
+      return bodyCopy.slice(0, 3);
+    }
+
+    function generateCTAs(data) {
+      const { product, adType, tone } = data;
+      
+      const ctas = [];
+      
+      if (tone === 'urgent') {
+        ctas.push('Enroll Now - Limited Spots');
+        ctas.push('Get Access Before It\'s Gone');
+        ctas.push('Secure Your Spot Today');
+      } else if (tone === 'educational') {
+        ctas.push('Learn More');
+        ctas.push('Get the Free Guide');
+        ctas.push('Watch the Training');
+      } else {
+        ctas.push('Start Your Journey');
+        ctas.push('Join Now');
+        ctas.push('Get Started Today');
+        ctas.push('Transform Your Life');
+      }
+      
+      if (adType === 'email') {
+        ctas.push('Open to Discover');
+        ctas.push('Your Journey Starts Here');
+      }
+      
+      return ctas.slice(0, 4);
+    }
+
+    function displayResults(creatives) {
+      results.innerHTML = '';
+      
+      creatives.forEach(creative => {
+        const section = document.createElement('div');
+        section.innerHTML = `
+          <h3 style="font-weight: 600; margin-bottom: 1rem; color: var(--primary-purple);">
+            ${creative.type}
+          </h3>
+        `;
+        
+        creative.items.forEach(item => {
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'result-card';
+          itemDiv.innerHTML = `
+            <p style="margin-bottom: 0.75rem; font-weight: 500;">${item}</p>
+            <button class="copy-button" onclick="copyToClipboard('${item.replace(/'/g, "\\'")}')">
+              Copy
+            </button>
+          `;
+          section.appendChild(itemDiv);
+        });
+        
+        results.appendChild(section);
+      });
+    }
+
+    function displayError(message) {
+      results.innerHTML = `
+        <div style="text-align: center; color: #dc2626; padding: 2rem;">
+          <p>${message}</p>
+        </div>
+      `;
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Could add a toast notification here
+        console.log('Copied to clipboard:', text);
+      });
+    }
+  </script>
+</body>
+</html>
