@@ -1,0 +1,130 @@
+/* Mindvalley Typography System */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,opsz,wght@0,8..144,100..1000;1,8..144,100..1000&display=swap');
+
+/* Base Font Stack */
+:root {
+  --font-family-base: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-family-base);
+}
+
+/* Responsive Heading Classes */
+.title-bold-1 {
+  font-family: var(--font-family-base);
+  font-weight: 900;
+  line-height: 1.1;
+  font-size: 48px;
+}
+
+.title-bold-2 {
+  font-family: var(--font-family-base);
+  font-weight: 900;
+  line-height: 1.2;
+  font-size: 36px;
+}
+
+.title-bold-3 {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 30px;
+}
+
+.title-bold-4 {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 28px;
+}
+
+.title-bold-5 {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 24px;
+}
+
+.title-bold-6 {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 22px;
+}
+
+.title-bold-7 {
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  line-height: 1.4;
+  font-size: 20px;
+}
+
+/* Desktop Responsive Breakpoint (768px+) */
+@media (min-width: 768px) {
+  .title-bold-1 { font-size: 72px; }
+  .title-bold-2 { font-size: 60px; }
+  .title-bold-3 { font-size: 48px; }
+  .title-bold-4 { font-size: 36px; }
+  .title-bold-5 { font-size: 28px; }
+  .title-bold-6 { font-size: 24px; }
+  .title-bold-7 { font-size: 22px; }
+}
+
+/* Body Text Classes */
+.body-lg {
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.body {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.body-sm {
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.body-italic {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.overline-text {
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Container for consistent layout */
+.mv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .mv-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mv-container {
+    padding: 0 2rem;
+  }
+}
