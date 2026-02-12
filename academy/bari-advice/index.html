@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Strategy Transformation — Mindvalley Academy</title>
+    <meta name="description" content="Strategic roadmap to transform Mindvalley Academy from content curator to methodology innovator, based on Bari Baumgardner's insights for 2.5x revenue growth." />
+    <meta name="theme-color" content="#7a12d4" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        /* Mindvalley Design System Implementation */
+        :root {
+            --primary-purple: #7a12d4;
+            --body-text: #0f131a;
+            --muted-text: #4b5563;
+            --footer-gray: #6b7280;
+            --light-gray: #f9fafb;
+            --card-background: #ffffff;
+            --border-gray: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--body-text);
+            background-color: #ffffff;
+        }
+
+        /* Typography System */
+        .title-bold-1 { font-size: clamp(2.5rem, 4vw, 4.5rem); font-weight: 700; line-height: 1.1; }
+        .title-bold-2 { font-size: clamp(2rem, 3.5vw, 3.75rem); font-weight: 700; line-height: 1.1; }
+        .title-bold-3 { font-size: clamp(1.75rem, 3vw, 3rem); font-weight: 700; line-height: 1.2; }
+        .title-bold-4 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 700; line-height: 1.2; }
+        .title-bold-5 { font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 600; line-height: 1.3; }
+        .title-bold-6 { font-size: clamp(1.125rem, 1.5vw, 1.5rem); font-weight: 600; line-height: 1.3; }
+        .body-lg { font-size: 1.25rem; line-height: 1.6; }
+        .body { font-size: 1rem; line-height: 1.6; }
+        .body-sm { font-size: 0.875rem; line-height: 1.5; }
+        .overline-text { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* Container */
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Section Spacing */
+        .mv-section { padding: 5rem 0; }
+        .mv-section-lg { padding: 6rem 0; }
+
+        /* Grid System */
+        .mv-grid { display: grid; gap: 2rem; }
+        .mv-grid-1 { grid-template-columns: 1fr; }
+        .mv-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .mv-grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+        /* Cards */
+        .mv-card {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-gray);
+        }
+
+        /* Buttons */
+        .mv-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .mv-btn-primary {
+            background-color: var(--primary-purple);
+            color: white;
+        }
+
+        .mv-btn-primary:hover {
+            background-color: #6b0db8;
+            transform: translateY(-1px);
+        }
+
+        .mv-btn-secondary {
+            background-color: transparent;
+            color: var(--primary-purple);
+            border: 2px solid var(--primary-purple);
+        }
+
+        .mv-btn-secondary:hover {
+            background-color: var(--primary-purple);
+            color: white;
+        }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+        .text-purple { color: var(--primary-purple); }
+        .text-muted { color: var(--muted-text); }
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .max-w-3xl { max-width: 48rem; margin-left: auto; margin-right: auto; }
+
+        /* Navigation */
+        .navigation {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .nav-content {
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--muted-text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--light-gray);
+            color: var(--primary-purple);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+            padding: 6rem 0 5rem 0;
+        }
+
+        /* Metric Cards */
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-gray);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Alternating Sections */
+        .section-alt {
+            background-color: var(--light-gray);
+        }
+
+        /* Framework Box */
+        .framework-box {
+            background: var(--card-background);
+            border: 2px solid var(--primary-purple);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            margin: 2rem 0;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .comparison-table th {
+            background: var(--primary-purple);
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-gray);
+            vertical-align: top;
+        }
+
+        .old-model {
+            background: #fff1f2;
+            color: #dc2626;
+        }
+
+        .new-model {
+            background: #f0fdf4;
+            color: #16a34a;
+        }
+
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary-purple);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Timeline */
+        .timeline {
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary-purple);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .phase-header {
+            background: var(--primary-purple);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        /* Lists */
+        .action-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .action-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-gray);
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .action-list li:last-child {
+            border-bottom: none;
+        }
+
+        .action-list li:before {
+            content: "✓";
+            color: #16a34a;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--body-text);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mv-container {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.875rem;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="mv-container">
+            <div class="nav-content">
+                <div class="nav-links">
+                    <a href="#executive-summary">Executive Summary</a>
+                    <a href="#current-challenges">Challenges</a>
+                    <a href="#strategy">New Strategy</a>
+                    <a href="#implementation">Roadmap</a>
+                    <a href="#team-integration">Team Integration</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="mv-container text-center">
+            <div class="overline-text text-purple mb-4">STRATEGIC TRANSFORMATION ROADMAP</div>
+            <h1 class="title-bold-1 mb-6">AI Strategy Transformation Analysis</h1>
+            <p class="body-lg text-muted mb-8 max-w-3xl">
+                Based on Bari Baumgardner's strategic insights, this comprehensive analysis outlines our transformation from content curator to methodology innovator — positioning Mindvalley Academy for 2.5x revenue growth and market leadership.
+            </p>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-number">2.5x</div>
+                    <p class="body text-muted">Revenue Growth Target</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">75%</div>
+                    <p class="body text-muted">Retention Rate Goal</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">$15M</div>
+                    <p class="body text-muted">2026 Revenue Target</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section id="executive-summary" class="mv-section">
+        <div class="mv-container">
+            <div class="overline-text text-purple mb-2">CRITICAL INSIGHT</div>
+            <h2 class="title-bold-2 mb-6">Executive Summary & Top 10 Transformation Priorities</h2>
+            
+            <div class="framework-box mb-8">
+                <p class="body-lg mb-6">
+                    <strong>Mindvalley's current AI offerings are operating under an outdated "European university model" when the market demands results-driven, methodology-based transformation accelerators.</strong> The shift from academic 5-month programs to focused outcome-delivery represents a $10M+ revenue optimization opportunity.
+                </p>
+            </div>
+
+            <div class="mv-grid mv-grid-2">
+                <div class="mv-card">
+                    <div class="overline-text text-purple mb-2">🔥 HIGHEST IMPACT</div>
+                    <h3 class="title-bold-5 mb-4">1. Develop AI Methodology Framework</h3>
+                    <p class="body mb-4">Replace "speaker buffet" summits with a unified 6-step methodology that attendees must complete sequentially. This creates compound effect and eliminates attendance drop-off.</p>
+                    <p class="body-sm text-muted"><strong>Timeline:</strong> 2 weeks (before February 23rd launch)</p>
+                </div>
+
+                <div class="mv-card">
+                    <div class="overline-text text-purple mb-2">💰 HIGH REVENUE</div>
+                    <h3 class="title-bold-5 mb-4">2. Compress Program Length & Increase Pricing</h3>
+                    <p class="body mb-4">Transform 5-month AI Mastery into focused 30-day program at higher price point. "Pay more to get results faster" - current world reality.</p>
+                    <p class="body-sm text-muted"><strong>Timeline:</strong> 1 month (next cohort launch)</p>
+                </div>
+
+                <div class="mv-card">
+                    <div class="overline-text text-purple mb-2">🚀 CONVERSION BOOST</div>
+                    <h3 class="title-bold-5 mb-4">3. Implement Live Sales Lobbies</h3>
+                    <p class="body mb-4">Replace 2-week sales call delays with immediate "program expert" Zoom lobbies during summits. Strike while iron is hot.</p>
+                    <p class="body-sm text-muted"><strong>Timeline:</strong> 3 weeks (current summit integration)</p>
+                </div>
+
+                <div class="mv-card">
+                    <div class="overline-text text-purple mb-2">🎯 TARGETING</div>
+                    <h3 class="title-bold-5 mb-4">4. Redefine Right-Fit Client Persona</h3>
+                    <p class="body mb-4">Move beyond demographics to psychographics: overwhelmed 40-60 female entrepreneurs who value time over technical complexity.</p>
+                    <p class="body-sm text-muted"><strong>Timeline:</strong> 1 week (immediate research and definition)</p>
+                </div>
+
+                <div class="mv-card">
+                    <div class="overline-text text-purple mb-2">⚡ ENGAGEMENT</div>
+                    <h3 class="title-bold-5 mb-4">5. Eliminate Detailed Agendas</h3>
+                    <p class="body mb-4">Stop giving attendees permission to cherry-pick sessions. Create "accumulation effect" where missing any part breaks the methodology.</p>
+                    <p class="body-sm text-muted"><strong>Timeline:</strong> Immediate (next marketing materials)</p>
+                </div>
+
+                <div class="mv-card">
+                    <div class="overline-text text-purple mb-2">📈 BRAND BUILDING</div>
+                    <h3 class="title-bold-5 mb-4">6. Reduce Celebrity Speaker Dependency</h3>
+                    <p class="body mb-4">Make Vishen the star, not guest speakers. Use celebrities strategically for messaging alignment, not draw power.</p>
+                    <p class="body-sm text-muted"><strong>Timeline:</strong> 6 weeks (speaker contract renegotiation)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Challenges -->
+    <section id="current-challenges" class="section-alt mv-section">
+        <div class="mv-container">
+            <h2 class="title-bold-2 text-center mb-8">Current State Analysis & Challenges</h2>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th class="old-model">Current "Buffet" Model</th>
+                            <th class="new-model">New "Methodology" Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Summit Structure</strong></td>
+                            <td class="old-model">10 speakers, different topics<br>Detailed agenda encourages cherry-picking<br>Weekend format conflicts with family time</td>
+                            <td class="new-model">Unified methodology across all speakers<br>"Secret method" marketing creates FOMO<br>Tue-Thu format respects demo needs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Value Perception</strong></td>
+                            <td class="old-model">"Another online event with good speakers"<br>Competes with free YouTube content<br>No proprietary frameworks</td>
+                            <td class="new-model">"The only place to learn THE method"<br>Proprietary systems = competitive moat<br>Framework-driven transformation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Conversion Flow</strong></td>
+                            <td class="old-model">90-min webinar feels long<br>Day 3 detailed repitch feels salesy<br>$300→$5K gap too large</td>
+                            <td class="new-model">60-min with strategic Q&A<br>Day 2 main offer, Day 3 logical repitch<br>$1K-$1.5K bridge programs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mv-grid mv-grid-3 mt-8">
+                <div class="mv-card">
+                    <h3 class="title-bold-6 mb-4">💸 Revenue Ceiling Problem</h3>
+                    <p class="body">Our speaker-showcase model commoditizes our offering. Students can get similar content elsewhere, limiting our pricing power and conversion rates.</p>
+                </div>
+                <div class="mv-card">
+                    <h3 class="title-bold-6 mb-4">⏰ Demo Misalignment</h3>
+                    <p class="body">Weekend events conflict with family priorities for our core demo: educated women 40+ with teenage children who value family time.</p>
+                </div>
+                <div class="mv-card">
+                    <h3 class="title-bold-6 mb-4">🎯 Conversion Challenges</h3>
+                    <p class="body">No bridge between $300 membership and $5K mastery. Logical buyers (70% women) need different nurturing than current emotional-first approach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Strategy -->
+    <section id="strategy" class="mv-section">
+        <div class="mv-container">
+            <h2 class="title-bold-2 text-center mb-8">The Methodology Innovation Strategy</h2>
+            
+            <div class="framework-box">
+                <div class="overline-text text-purple mb-2">CORE PHILOSOPHY</div>
+                <h3 class="title-bold-4 mb-6">"People buy frameworks, not celebrity buffets. Methodology over speakers, outcomes over features, simplicity over complexity."</h3>
+                
+                <div class="mv-grid mv-grid-3 mt-6">
+                    <div class="text-center">
+                        <h4 class="title-bold-6 mb-4">OLD: Content Curator</h4>
+                        <ul class="action-list">
+                            <li>Collect great speakers</li>
+                            <li>Hope content connects</li>
+                            <li>Compete on speaker quality</li>
+                        </ul>
+                    </div>
+                    <div class="text-center" style="font-size: 3rem; color: var(--primary-purple); align-self: center;">→</div>
+                    <div class="text-center">
+                        <h4 class="title-bold-6 mb-4">NEW: Methodology Innovator</h4>
+                        <ul class="action-list">
+                            <li>Create proprietary systems</li>
+                            <li>Build sequential frameworks</li>
+                            <li>Own the transformation process</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="title-bold-3 mt-8 mb-6">Strategic Pillars</h3>
+            
+            <div class="mv-grid mv-grid-3">
+                <div class="mv-card">
+                    <div class="overline-text text-purple mb-2">PILLAR 1</div>
+                    <h4 class="title-bold-6 mb-4">Proprietary Frameworks</h4>
+                    <p class="body mb-4">Create signature methods for each vertical:</p>
+                    <ul class="action-list">
+                        <li><strong>AI:</strong> The P.R.O.M.P.T. Method</li>
+                        <li><strong>Manifestation:</strong> Heart-Mind Alignment System</li>
+                        <li><strong>Business:</strong> Conscious Enterprise Framework</li>
+                        <li><strong>Health:</strong> Vitality Acceleration Protocol</li>
+                    </ul>
+                </div>
+                
+                <div class="mv-card">
+                    <div class="overline-text text-purple mb-2">PILLAR 2</div>
+                    <h4 class="title-bold-6 mb-4">Demographic Optimization</h4>
+                    <p class="body mb-4">Design for our core audience:</p>
+                    <ul class="action-list">
+                        <li>Tuesday-Thursday format (family-friendly)</li>
+                        <li>Logical buyer nurturing sequence</li>
+                        <li>Implementation-focused messaging</li>
+                        <li>Systems over inspiration positioning</li>
+                    </ul>
+                </div>
+                
+                <div class="mv-card">
+                    <div class="overline-text text-purple mb-2">PILLAR 3</div>
+                    <h4 class="title-bold-6 mb-4">Progressive Value Architecture</h4>
+                    <p class="body mb-4">Eliminate conversion gaps:</p>
+                    <ul class="action-list">
+                        <li>$297 Foundation (methodology intro)</li>
+                        <li>$1,497 Accelerator (deep implementation)</li>
+                        <li>$4,997 Mastery (full transformation)</li>
+                        <li>$7,997 Mastery+ (done-with-you)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Roadmap -->
+    <section id="implementation" class="section-alt mv-section">
+        <div class="mv-container">
+            <h2 class="title-bold-2 text-center mb-8">90-Day Implementation Roadmap</h2>
+            
+            <div class="overline-text text-purple text-center mb-4">🔥 URGENT: First AI Summit invite goes out February 23rd</div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="phase-header">Phase 1: Foundation (Days 1-30)</div>
+                    <h4 class="title-bold-6 mb-4">Methodology Definition & Speaker Briefing</h4>
+                    <ul class="action-list">
+                        <li>Define 6-step AI methodology framework with Vishen + Bari</li>
+                        <li>Map speakers to methodology steps and brief on new requirements</li>
+                        <li>Remove detailed agendas, create mystery positioning</li>
+                        <li>Rewrite copy focusing on methodology outcomes, not speaker features</li>
+                        <li>Launch revised marketing for February 23rd invitation</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="phase-header">Phase 2: Technical Setup (Days 31-60)</div>
+                    <h4 class="title-bold-6 mb-4">Infrastructure & Conversion Optimization</h4>
+                    <ul class="action-list">
+                        <li>Build live lobby Zoom integration for immediate sales support</li>
+                        <li>Launch $1,497 AI Accelerator bridge program</li>
+                        <li>Implement new webinar format (60 min + Q&A)</li>
+                        <li>Train sales team on methodology-focused conversations</li>
+                        <li>Set up methodology progression tracking analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="phase-header">Phase 3: Scale & Optimize (Days 61-90)</div>
+                    <h4 class="title-bold-6 mb-4">Measurement & Replication</h4>
+                    <ul class="action-list">
+                        <li>Execute first methodology-driven AI Summit</li>
+                        <li>Measure and analyze pilot results vs baseline metrics</li>
+                        <li>Develop frameworks for 2-3 additional verticals</li>
+                        <li>Create standard operating procedures for new model</li>
+                        <li>Plan Q2 2026 expanded rollout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Integration -->
+    <section id="team-integration" class="mv-section">
+        <div class="mv-container">
+            <h2 class="title-bold-2 text-center mb-8">Team Integration Strategy</h2>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="overline-text text-purple mb-2">NEWSLETTER TEAM</div>
+                    <h3 class="title-bold-6 mb-4">Ramya/Newsletter Team</h3>
+                    <p class="body mb-4">Strategic Role in Transformation:</p>
+                    <ul class="action-list">
+                        <li>Weekly newsletter sequences teaching AI methodology steps</li>
+                        <li>Gather "15 hours back" transformation stories</li>
+                        <li>Create AI-specific newsletter tracks for methodology progression</li>
+                        <li>Post-summit 30-day implementation guide</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <div class="overline-text text-purple mb-2">MARTECH TEAM</div>
+                    <h3 class="title-bold-6 mb-4">MarTech Team</h3>
+                    <p class="body mb-4">Strategic Role in Transformation:</p>
+                    <ul class="action-list">
+                        <li>Build Zoom integration for immediate sales support</li>
+                        <li>Score attendees based on methodology completion</li>
+                        <li>Track which methodology steps drive highest conversions</li>
+                        <li>Dynamic content based on attendee progression</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <div class="overline-text text-purple mb-2">CONTENT TEAM</div>
+                    <h3 class="title-bold-6 mb-4">Content/Summit Team</h3>
+                    <p class="body mb-4">Strategic Role in Transformation:</p>
+                    <ul class="action-list">
+                        <li>Ensure every speaker delivers assigned methodology step</li>
+                        <li>Design accumulation effect across all sessions</li>
+                        <li>Create seamless progression from pain awareness to solution commitment</li>
+                        <li>Monitor speakers for methodology adherence</li>
+                    </ul>
+                </div>
+
+                <div class="process-step">
+                    <div class="overline-text text-purple mb-2">SALES TEAM</div>
+                    <h3 class="title-bold-6 mb-4">Sales Team</h3>
+                    <p class="body mb-4">Strategic Role in Transformation:</p>
+                    <ul class="action-list">
+                        <li>Compress 45-min sales conversations into 15-min group closes</li>
+                        <li>Position as "program experts" not "sales agents"</li>
+                        <li>Support attendees within minutes, not weeks</li>
+                        <li>Specialize in Q&A for methodology-engaged prospects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="mv-container text-center">
+            <h3 class="title-bold-4 mb-6">Ready to Transform Academy?</h3>
+            <p class="body-lg mb-6">This strategic roadmap positions Mindvalley to evolve from content curator to methodology innovator, directly addressing Bari's insights while optimizing for our specific audience and business objectives.</p>
+            <div class="mb-6">
+                <a href="#executive-summary" class="mv-btn mv-btn-secondary">Review Strategy</a>
+            </div>
+            <p class="body text-muted">
+                <strong>Expected Impact:</strong> 2.5x revenue per summit • 75% retention rate • Market leadership through proprietary methodology recognition
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation links
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id]');
+
+        function highlightNavLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '';
+                link.style.backgroundColor = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = '#7a12d4';
+                    link.style.backgroundColor = '#f9fafb';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNavLink);
+        highlightNavLink(); // Initial call
+    </script>
+</body>
+</html>

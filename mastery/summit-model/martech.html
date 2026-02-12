@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MarTech Integration Strategy — Summit Mastery Hub</title>
+    <meta name="description" content="Strategic framework for integrating Nicole's MarTech team capabilities with Bari's summit transformation model. Pavel, Monique, Alvin implementation roadmap." />
+    <meta name="theme-color" content="#7a12d4" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤝</text></svg>">
+    <link rel="stylesheet" href="../../../skills/mindvalley-design/mindvalley-core.css" />
+    
+    <style>
+        :root {
+            --mv-purple: #7a12d4;
+            --mv-text: #0f131a;
+            --mv-muted: #4b5563;
+            --mv-footer-gray: #6b7280;
+            --mv-light-gray: #f9fafb;
+            --mv-card-bg: #ffffff;
+            --mv-border: #e5e7eb;
+        }
+        
+        body {
+            font-family: 'Google Sans Flex', system-ui, sans-serif;
+            color: var(--mv-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Typography */
+        .title-bold-1 { font-size: 3rem; font-weight: 700; line-height: 1.1; }
+        .title-bold-2 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; }
+        .title-bold-3 { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
+        .title-bold-4 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; }
+        .title-bold-5 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+        .title-bold-6 { font-size: 1.125rem; font-weight: 700; line-height: 1.4; }
+        .title-bold-7 { font-size: 1rem; font-weight: 700; line-height: 1.4; }
+        .body-lg { font-size: 1.25rem; }
+        .body { font-size: 1rem; }
+        .body-sm { font-size: 0.875rem; }
+        .overline-text { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        /* Layout Components */
+        .card {
+            background: var(--mv-card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            transition: all 150ms ease-out;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .team-member-card {
+            background: linear-gradient(135deg, var(--mv-purple), #9333ea);
+            color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(30px, -30px);
+        }
+        
+        .phase-card {
+            border-left: 4px solid var(--mv-purple);
+            background: var(--mv-card-bg);
+            padding: 1.5rem;
+            border-radius: 0 1rem 1rem 0;
+        }
+        
+        .insight-card {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            color: var(--mv-purple);
+            text-decoration: none;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 150ms ease-out;
+            border: 1px solid var(--mv-border);
+        }
+        
+        .nav-link:hover {
+            background: var(--mv-purple);
+            color: white;
+            border-color: var(--mv-purple);
+        }
+        
+        .nav-link.active {
+            background: var(--mv-purple);
+            color: white;
+            border-color: var(--mv-purple);
+        }
+        
+        .connection-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .connection-arrow {
+            color: var(--mv-purple);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .title-bold-1 { font-size: 2rem; }
+            .title-bold-2 { font-size: 1.75rem; }
+            .mv-container { padding: 0 1rem; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="background: var(--mv-light-gray); border-bottom: 1px solid var(--mv-border);">
+        <div class="mv-container" style="padding: 1rem 1.5rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--mv-text);">
+                        <div style="font-size: 1.5rem;">🎯</div>
+                        <span class="title-bold-6" style="color: var(--mv-purple);">Summit Mastery Hub</span>
+                    </a>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="index.html" class="nav-link">Dashboard</a>
+                    <a href="framework.html" class="nav-link">Framework</a>
+                    <span class="nav-link active">MarTech Integration</span>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="mv-container" style="padding: 4rem 1.5rem 3rem;">
+        <div class="overline-text" style="margin-bottom: 1rem; color: var(--mv-purple);">
+            MARTECH TEAM COLLABORATION STRATEGY
+        </div>
+        <h1 class="title-bold-1" style="max-width: 48rem; margin: 0 0 1.25rem 0;">
+            MarTech × Summit Transformation
+        </h1>
+        <p class="body-lg" style="max-width: 50rem; color: var(--mv-muted); margin-bottom: 3rem;">
+            Strategic framework for integrating Nicole's MarTech team capabilities with Bari's summit transformation methodology. <strong>This isn't just MarTech supporting Summits—this is MarTech ENABLING the transformation.</strong>
+        </p>
+
+        <div class="insight-card">
+            <h3 class="title-bold-4" style="margin-bottom: 1rem;">🎯 The Strategic Connection</h3>
+            <p class="body" style="opacity: 0.9;">
+                The MarTech team has <strong>exactly the right capabilities</strong> to transform summits from "educational buffets" to "methodology-driven conversion accelerators." Their 5 focus areas directly enable Bari's vision.
+            </p>
+        </div>
+    </section>
+
+    <!-- Strategic Mapping -->
+    <section style="background: var(--mv-light-gray);">
+        <div class="mv-container" style="padding: 5rem 1.5rem;">
+            <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">Strategic Capability Mapping</h2>
+            <p class="body-lg" style="text-align: center; color: var(--mv-muted); margin-bottom: 4rem;">
+                How each MarTech focus area directly enables Bari's summit transformation requirements
+            </p>
+            
+            <div class="grid-2">
+                <!-- Revenue Efficiency -->
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1rem;">Revenue Efficiency</h3>
+                    <div class="connection-line">
+                        <span class="body"><strong>Bari's Challenge:</strong> Wrong sales timing, declining Day 2/3 attendance</span>
+                        <span class="connection-arrow">→</span>
+                        <span class="body"><strong>MarTech Solution:</strong> Summit conversion optimization</span>
+                    </div>
+                    <ul class="body-sm" style="color: var(--mv-muted);">
+                        <li>Cart abandonment recovery → Summit registration abandonment</li>
+                        <li>Lifecycle monetization → Post-summit nurture campaigns</li>
+                        <li>Lead scoring → High-intent attendee identification</li>
+                    </ul>
+                </div>
+
+                <!-- Data Completeness -->
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1rem;">Data Completeness</h3>
+                    <div class="connection-line">
+                        <span class="body"><strong>Bari's Vision:</strong> Personalized transformation accelerators</span>
+                        <span class="connection-arrow">→</span>
+                        <span class="body"><strong>MarTech Power:</strong> Complete attendee profiles</span>
+                    </div>
+                    <ul class="body-sm" style="color: var(--mv-muted);">
+                        <li>Progressive data capture → Transformation goals, pain points</li>
+                        <li>Behavioral tracking → Session engagement patterns</li>
+                        <li>LTV prediction → Summit engagement analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Operational Efficiency -->
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1rem;">Operational Efficiency</h3>
+                    <div class="connection-line">
+                        <span class="body"><strong>Bari's Need:</strong> Attendee journey optimization</span>
+                        <span class="connection-arrow">→</span>
+                        <span class="body"><strong>MarTech Expertise:</strong> Advanced analytics & attribution</span>
+                    </div>
+                    <ul class="body-sm" style="color: var(--mv-muted);">
+                        <li>Retention metrics → Day 1→2→3 conversion tracking</li>
+                        <li>Engagement scoring → Content that drives enrollment</li>
+                        <li>Attribution analysis → Which touchpoints convert</li>
+                    </ul>
+                </div>
+
+                <!-- Signal Quality -->
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1rem;">Signal Quality</h3>
+                    <div class="connection-line">
+                        <span class="body"><strong>Bari's Need:</strong> Larger, qualified Summit audiences</span>
+                        <span class="connection-arrow">→</span>
+                        <span class="body"><strong>MarTech Strength:</strong> Premium signal engineering</span>
+                    </div>
+                    <ul class="body-sm" style="color: var(--mv-muted);">
+                        <li>Event match rate optimization → Higher quality registrants</li>
+                        <li>Lookalike audiences → Find similar high-converters</li>
+                        <li>Custom audiences → Behavior-based re-targeting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Implementation -->
+    <section class="mv-container" style="padding: 5rem 1.5rem;">
+        <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">Team Member Implementation Framework</h2>
+        
+        <div class="grid-4">
+            <!-- Pavel -->
+            <div class="team-member-card">
+                <h3 class="title-bold-5" style="margin-bottom: 1rem;">Pavel</h3>
+                <p class="body-sm" style="opacity: 0.8; margin-bottom: 1.5rem;">Braze & Automation Specialist</p>
+                <div>
+                    <h4 class="title-bold-7" style="margin-bottom: 0.5rem;">Summit Quick Wins:</h4>
+                    <ul class="body-sm" style="opacity: 0.9;">
+                        <li>Summit abandonment sequences</li>
+                        <li>Post-event methodology reinforcement</li>
+                        <li>Milestone campaigns ("missed Day 2")</li>
+                        <li>Birthday/anniversary campaigns</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Monique -->
+            <div class="team-member-card" style="background: linear-gradient(135deg, #059669, #10b981);">
+                <h3 class="title-bold-5" style="margin-bottom: 1rem;">Monique</h3>
+                <p class="body-sm" style="opacity: 0.8; margin-bottom: 1.5rem;">Data Architecture & Governance</p>
+                <div>
+                    <h4 class="title-bold-7" style="margin-bottom: 0.5rem;">Summit Data Setup:</h4>
+                    <ul class="body-sm" style="opacity: 0.9;">
+                        <li>Summit tracking schema in Braze</li>
+                        <li>Segmentation rules (engaged vs casual)</li>
+                        <li>Consent management for follow-up</li>
+                        <li>Progressive data capture design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Alvin -->
+            <div class="team-member-card" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
+                <h3 class="title-bold-5" style="margin-bottom: 1rem;">Alvin</h3>
+                <p class="body-sm" style="opacity: 0.8; margin-bottom: 1.5rem;">Analytics & Measurement</p>
+                <div>
+                    <h4 class="title-bold-7" style="margin-bottom: 0.5rem;">Summit Analytics:</h4>
+                    <ul class="body-sm" style="opacity: 0.9;">
+                        <li>Real-time summit dashboard</li>
+                        <li>Conversion tracking to masteries</li>
+                        <li>Cohort analysis (methodology vs buffet)</li>
+                        <li>Predictive enrollment modeling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Nicole -->
+            <div class="team-member-card" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+                <h3 class="title-bold-5" style="margin-bottom: 1rem;">Nicole</h3>
+                <p class="body-sm" style="opacity: 0.8; margin-bottom: 1.5rem;">Team Lead & Integration</p>
+                <div>
+                    <h4 class="title-bold-7" style="margin-bottom: 0.5rem;">Operational Support:</h4>
+                    <ul class="body-sm" style="opacity: 0.9;">
+                        <li>Self-service summit dashboards</li>
+                        <li>Incident response monitoring</li>
+                        <li>Cross-platform integration mgmt</li>
+                        <li>Strategic coordination lead</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Phases -->
+    <section style="background: var(--mv-light-gray);">
+        <div class="mv-container" style="padding: 5rem 1.5rem;">
+            <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">3-Phase Implementation Roadmap</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <!-- Phase 1 -->
+                <div class="phase-card">
+                    <h3 class="title-bold-4" style="color: var(--mv-purple); margin-bottom: 1rem;">
+                        Phase 1: Immediate Summit Support (2 Weeks)
+                    </h3>
+                    <div class="grid-3" style="margin-top: 2rem;">
+                        <div>
+                            <h4 class="title-bold-6" style="color: var(--mv-text); margin-bottom: 1rem;">Pavel's Quick Wins</h4>
+                            <ul class="body-sm" style="color: var(--mv-muted);">
+                                <li>Summit abandonment sequences in Braze</li>
+                                <li>7-day methodology reinforcement</li>
+                                <li>"You attended Day 1, here's Day 2" campaigns</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="title-bold-6" style="color: var(--mv-text); margin-bottom: 1rem;">Monique's Data Setup</h4>
+                            <ul class="body-sm" style="color: var(--mv-muted);">
+                                <li>Summit tracking schema implementation</li>
+                                <li>Segmentation rules for engaged attendees</li>
+                                <li>Consent management for follow-up</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="title-bold-6" style="color: var(--mv-text); margin-bottom: 1rem;">Alvin's Analytics</h4>
+                            <ul class="body-sm" style="color: var(--mv-muted);">
+                                <li>Real-time attendance dashboard</li>
+                                <li>Summit-to-mastery conversion tracking</li>
+                                <li>A/B testing framework setup</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="phase-card">
+                    <h3 class="title-bold-4" style="color: var(--mv-purple); margin-bottom: 1rem;">
+                        Phase 2: Advanced Integration (1 Month)
+                    </h3>
+                    <div class="grid-2" style="margin-top: 2rem;">
+                        <div>
+                            <h4 class="title-bold-6" style="color: var(--mv-text); margin-bottom: 1rem;">CRM Integration</h4>
+                            <ul class="body-sm" style="color: var(--mv-muted);">
+                                <li>Connect Braze + Osiris for complete profiles</li>
+                                <li>Universal data platform with Summit behavior</li>
+                                <li>Enable Eliza access for personalized follow-up</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="title-bold-6" style="color: var(--mv-text); margin-bottom: 1rem;">Methodology Implementation</h4>
+                            <ul class="body-sm" style="color: var(--mv-muted);">
+                                <li>Track engagement with Bari's 5-step methodology</li>
+                                <li>Score methodology completion vs random consumption</li>
+                                <li>Trigger sequences based on progression</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="phase-card">
+                    <h3 class="title-bold-4" style="color: var(--mv-purple); margin-bottom: 1rem;">
+                        Phase 3: Full Transformation (3 Months)
+                    </h3>
+                    <div class="grid-2" style="margin-top: 2rem;">
+                        <div>
+                            <h4 class="title-bold-6" style="color: var(--mv-text); margin-bottom: 1rem;">"Sales is Service" Automation</h4>
+                            <ul class="body-sm" style="color: var(--mv-muted);">
+                                <li>Automated pain point detection during summit</li>
+                                <li>Contextual mastery recommendations</li>
+                                <li>Dynamic social proof based on challenges</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="title-bold-6" style="color: var(--mv-text); margin-bottom: 1rem;">Throughline Enforcement</h4>
+                            <ul class="body-sm" style="color: var(--mv-muted);">
+                                <li>Track speaker methodology adherence</li>
+                                <li>Real-time content adjustment based on engagement</li>
+                                <li>A/B testing different methodology approaches</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Metrics -->
+    <section class="mv-container" style="padding: 5rem 1.5rem;">
+        <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">Success Metrics (MarTech Enabled)</h2>
+        
+        <div class="grid-4">
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📈</div>
+                <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 0.5rem;">Attendance Retention</h3>
+                <p class="body-sm" style="color: var(--mv-muted);">
+                    Day 1→2→3 conversion rates via Alvin's dashboards
+                </p>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+                <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 0.5rem;">Methodology Engagement</h3>
+                <p class="body-sm" style="color: var(--mv-muted);">
+                    Completion rates for each step via Braze tracking
+                </p>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 0.5rem;">Conversion Quality</h3>
+                <p class="body-sm" style="color: var(--mv-muted);">
+                    Enrolled attendees vs casual via lead scoring
+                </p>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
+                <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 0.5rem;">Long-term Value</h3>
+                <p class="body-sm" style="color: var(--mv-muted);">
+                    LTV of methodology-engaged vs buffet-style attendees
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breakthrough Opportunities -->
+    <section style="background: var(--mv-light-gray);">
+        <div class="mv-container" style="padding: 5rem 1.5rem;">
+            <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">💡 Breakthrough Opportunities</h2>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1rem;">Real-Time Summit Optimization</h3>
+                    <p class="body">
+                        Use Monique's incident response capabilities to adjust Summit content in real-time based on engagement drops. Dynamic content switching when attendance declines.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1rem;">AI-Powered Follow-up</h3>
+                    <p class="body">
+                        Leverage Eliza + Braze integration for personalized post-Summit voice notes to high-value attendees. Automated but deeply personal touchpoints.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1rem;">Predictive Enrollment</h3>
+                    <p class="body">
+                        Use Alvin's analytics to predict which Summit attendees will enroll in mastery programs before they make the decision. Proactive intervention opportunities.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 1rem;">Methodology Adherence Scoring</h3>
+                    <p class="body">
+                        Track how well each Summit follows Bari's methodology and correlate with conversion rates. Continuous optimization feedback loop.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="mv-container" style="padding: 5rem 1.5rem;">
+        <div class="card" style="background: linear-gradient(135deg, var(--mv-purple), #9333ea); color: white; text-align: center;">
+            <h2 class="title-bold-3" style="margin-bottom: 2rem;">Ready to Transform Summits with MarTech?</h2>
+            <p class="body-lg" style="opacity: 0.9; margin-bottom: 2rem; max-width: 40rem; margin-left: auto; margin-right: auto;">
+                The framework is ready. The team capabilities are perfectly aligned. The revenue potential is $7M+. 
+                Let's schedule the joint planning session to implement Phase 1 quick wins.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../../../teams/summits/martech-summit-support-strategy.md" download 
+                   style="padding: 1rem 2rem; background: white; color: var(--mv-purple); border-radius: 999px; text-decoration: none; font-weight: 700;">
+                   📄 Download Full Strategy Document
+                </a>
+                <a href="framework.html" 
+                   style="padding: 1rem 2rem; background: transparent; color: white; border: 2px solid white; border-radius: 999px; text-decoration: none; font-weight: 700;">
+                   🎯 View Complete Framework
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--mv-light-gray); border-top: 1px solid var(--mv-border);">
+        <div class="mv-container" style="padding: 3rem 1.5rem; text-align: center;">
+            <div style="margin-bottom: 2rem;">
+                <a href="index.html" class="nav-link" style="margin: 0 0.5rem;">Dashboard</a>
+                <a href="framework.html" class="nav-link" style="margin: 0 0.5rem;">Complete Framework</a>
+                <a href="resources.html" class="nav-link" style="margin: 0 0.5rem;">Resources</a>
+            </div>
+            <p style="color: var(--mv-footer-gray); margin: 0;">
+                © Mindvalley • Summit Mastery Strategy Hub • MarTech Integration
+            </p>
+            <p class="body-sm" style="color: var(--mv-footer-gray); margin: 0.5rem 0 0;">
+                Strategic Collaboration Framework: Executive × MarTech × Mastery Teams
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

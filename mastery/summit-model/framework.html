@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Complete Summit Framework — Summit Mastery Hub</title>
+    <meta name="description" content="Complete strategic framework integrating all 5 hours of Bari's insights with Tony Robbins' $40M model. Method-first approach for summit transformation." />
+    <meta name="theme-color" content="#7a12d4" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <link rel="stylesheet" href="../../../skills/mindvalley-design/mindvalley-core.css" />
+    
+    <style>
+        :root {
+            --mv-purple: #7a12d4;
+            --mv-text: #0f131a;
+            --mv-muted: #4b5563;
+            --mv-footer-gray: #6b7280;
+            --mv-light-gray: #f9fafb;
+            --mv-card-bg: #ffffff;
+            --mv-border: #e5e7eb;
+        }
+        
+        body {
+            font-family: 'Google Sans Flex', system-ui, sans-serif;
+            color: var(--mv-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Typography */
+        .title-bold-1 { font-size: 3rem; font-weight: 700; line-height: 1.1; }
+        .title-bold-2 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; }
+        .title-bold-3 { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
+        .title-bold-4 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; }
+        .title-bold-5 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+        .title-bold-6 { font-size: 1.125rem; font-weight: 700; line-height: 1.4; }
+        .title-bold-7 { font-size: 1rem; font-weight: 700; line-height: 1.4; }
+        .body-lg { font-size: 1.25rem; }
+        .body { font-size: 1rem; }
+        .body-sm { font-size: 0.875rem; }
+        .overline-text { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        /* Layout Components */
+        .card {
+            background: var(--mv-card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            transition: all 150ms ease-out;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .framework-card {
+            background: linear-gradient(135deg, var(--mv-purple), #9333ea);
+            color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .insight-card {
+            background: linear-gradient(135deg, #1f2937, #374151);
+            color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        
+        .quote-card {
+            background: var(--mv-light-gray);
+            border-left: 4px solid var(--mv-purple);
+            border-radius: 0 1rem 1rem 0;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .phase-timeline {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            overflow-x: auto;
+            padding: 2rem 0;
+        }
+        
+        .phase-item {
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .phase-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--mv-purple);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .phase-arrow {
+            color: var(--mv-muted);
+            font-size: 2rem;
+            align-self: center;
+        }
+        
+        .principle-card {
+            border: 2px solid var(--mv-purple);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            background: var(--mv-card-bg);
+        }
+        
+        .principle-number {
+            background: var(--mv-purple);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            color: var(--mv-purple);
+            text-decoration: none;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 150ms ease-out;
+            border: 1px solid var(--mv-border);
+        }
+        
+        .nav-link:hover {
+            background: var(--mv-purple);
+            color: white;
+            border-color: var(--mv-purple);
+        }
+        
+        .nav-link.active {
+            background: var(--mv-purple);
+            color: white;
+            border-color: var(--mv-purple);
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .table th,
+        .table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--mv-border);
+        }
+        
+        .table th {
+            background: var(--mv-light-gray);
+            font-weight: 700;
+            color: var(--mv-purple);
+        }
+        
+        @media (max-width: 768px) {
+            .title-bold-1 { font-size: 2rem; }
+            .title-bold-2 { font-size: 1.75rem; }
+            .mv-container { padding: 0 1rem; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .phase-timeline { flex-direction: column; }
+            .phase-arrow { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="background: var(--mv-light-gray); border-bottom: 1px solid var(--mv-border);">
+        <div class="mv-container" style="padding: 1rem 1.5rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--mv-text);">
+                        <div style="font-size: 1.5rem;">🎯</div>
+                        <span class="title-bold-6" style="color: var(--mv-purple);">Summit Mastery Hub</span>
+                    </a>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="index.html" class="nav-link">Dashboard</a>
+                    <span class="nav-link active">Complete Framework</span>
+                    <a href="martech.html" class="nav-link">MarTech Integration</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="mv-container" style="padding: 4rem 1.5rem 3rem;">
+        <div class="overline-text" style="margin-bottom: 1rem; color: var(--mv-purple);">
+            COMPLETE STRATEGIC FRAMEWORK
+        </div>
+        <h1 class="title-bold-1" style="max-width: 48rem; margin: 0 0 1.25rem 0;">
+            Method-Based Summit Transformation
+        </h1>
+        <p class="body-lg" style="max-width: 50rem; color: var(--mv-muted); margin-bottom: 3rem;">
+            Complete integration of Tony Robbins' proven $40M model with all 5 hours of Bari's strategic insights. 
+            Transform summits from "educational buffets" to "methodology-driven conversion accelerators."
+        </p>
+
+        <!-- Tony's Proof -->
+        <div class="insight-card">
+            <h3 class="title-bold-3" style="margin-bottom: 1rem;">🔥 Tony Robbins' $40M Proof</h3>
+            <div class="grid-2" style="gap: 3rem;">
+                <div>
+                    <h4 class="title-bold-5" style="color: #fbbf24; margin-bottom: 1rem;">The Formula That Works</h4>
+                    <p class="body" style="opacity: 0.9; margin-bottom: 1rem;">
+                        <strong>"Don't sell a 5-month $5K program. Pick ONE program and sell that."</strong>
+                    </p>
+                    <ul class="body" style="opacity: 0.8;">
+                        <li><strong>700K</strong> free summit leads</li>
+                        <li><strong>$20M</strong> from single $995 offer</li>
+                        <li><strong>$20M</strong> recurring revenue</li>
+                        <li><strong>$40M total</strong> from one summit</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="title-bold-5" style="color: #fbbf24; margin-bottom: 1rem;">Simple = Powerful</h4>
+                    <p class="body" style="opacity: 0.9;">
+                        Single offer. Single transformation. Single belief system. 
+                        Every speaker reinforces the same methodology from different angles.
+                    </p>
+                    <p class="body-sm" style="opacity: 0.7; margin-top: 1rem;">
+                        Proven at scale. No complexity. No feature stacks. Just results.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Critical Prerequisite -->
+    <section style="background: var(--mv-light-gray);">
+        <div class="mv-container" style="padding: 5rem 1.5rem;">
+            <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">🚨 The Critical Prerequisite</h2>
+            
+            <div class="quote-card">
+                <blockquote class="body-lg" style="font-style: italic; margin: 0 0 1rem 0;">
+                    "Phase 1 (method/framework) is the prerequisite that unlocks everything else. Without it, no other change will stick."
+                </blockquote>
+                <cite class="body-sm" style="color: var(--mv-muted);">— Bari Baumgardner, Strategic Consultant</cite>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="title-bold-4" style="color: var(--mv-purple); margin-bottom: 2rem;">❌ The Problem: No Unified Method</h3>
+                    <p class="body" style="margin-bottom: 1.5rem;">
+                        Mindvalley currently does NOT have a unified method for most mastery programs. Without a method:
+                    </p>
+                    <ul class="body" style="color: var(--mv-muted);">
+                        <li>Can't select the right speakers (what are you selecting them FOR?)</li>
+                        <li>Can't create session continuity (no FOMO if you miss a session)</li>
+                        <li>Can't have a compelling through-line</li>
+                        <li>Can't stop the buffet problem</li>
+                        <li>The 3-day cadence can't work (there's no "step 3" to miss)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="title-bold-4" style="color: var(--mv-purple); margin-bottom: 2rem;">✅ The Solution: Method-First Design</h3>
+                    <p class="body" style="margin-bottom: 1.5rem;">
+                        <strong>Two programs that DO have methods:</strong> Manifesting (Vishen + Reagan) and Speaking (Eric Edmeades). These serve as templates.
+                    </p>
+                    <div style="background: var(--mv-light-gray); padding: 1.5rem; border-radius: 0.5rem;">
+                        <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Required for Each Method:</h4>
+                        <ul class="body-sm">
+                            <li>The "one belief" — single transformation promise</li>
+                            <li>5-7 steps that make up the method (become summit sessions)</li>
+                            <li>The "enhanced opportunity" — what mastery delivers beyond summit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Frameworks -->
+    <section class="mv-container" style="padding: 5rem 1.5rem;">
+        <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">Strategic Frameworks</h2>
+        
+        <div class="grid-2" style="margin-bottom: 4rem;">
+            <!-- RIM Framework -->
+            <div class="framework-card">
+                <h3 class="title-bold-3" style="margin-bottom: 2rem;">RIM Framework</h3>
+                <p class="body" style="opacity: 0.9; margin-bottom: 2rem;">How People Master Anything</p>
+                
+                <table class="table" style="color: white;">
+                    <thead>
+                        <tr>
+                            <th style="background: rgba(255,255,255,0.1); color: white;">Letter</th>
+                            <th style="background: rgba(255,255,255,0.1); color: white;">Meaning</th>
+                            <th style="background: rgba(255,255,255,0.1); color: white;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>R</strong></td>
+                            <td>Repetition</td>
+                            <td>Practice until it sticks. Mastery requires doing the reps.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>I</strong></td>
+                            <td>Immersion</td>
+                            <td>Be surrounded by it. Environment accelerates everything.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M</strong></td>
+                            <td>Modeling</td>
+                            <td>Follow proven practices. Don't reinvent the wheel.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ACE Framework -->
+            <div class="framework-card" style="background: linear-gradient(135deg, #059669, #10b981);">
+                <h3 class="title-bold-3" style="margin-bottom: 2rem;">ACE Framework</h3>
+                <p class="body" style="opacity: 0.9; margin-bottom: 2rem;">What Your High-Ticket Offer Delivers</p>
+                
+                <table class="table" style="color: white;">
+                    <thead>
+                        <tr>
+                            <th style="background: rgba(255,255,255,0.1); color: white;">Letter</th>
+                            <th style="background: rgba(255,255,255,0.1); color: white;">Meaning</th>
+                            <th style="background: rgba(255,255,255,0.1); color: white;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>A</strong></td>
+                            <td>Accountability</td>
+                            <td>Structure, deadlines, check-ins that ensure follow-through.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C</strong></td>
+                            <td>Community</td>
+                            <td>Like-minded people. Shared journeys have higher completion.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E</strong></td>
+                            <td>Enhanced Opportunity</td>
+                            <td><strong>The key differentiator</strong> — faster, simpler, easier than alone.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <blockquote class="body-lg" style="font-style: italic; margin: 0 0 1rem 0;">
+                "If you peel back the curtain on every super successful high-ticket offer in our industry, it does two things: RIM and ACE."
+            </blockquote>
+            <cite class="body-sm" style="color: var(--mv-muted);">— Bari Baumgardner</cite>
+        </div>
+    </section>
+
+    <!-- Core Principles -->
+    <section style="background: var(--mv-light-gray);">
+        <div class="mv-container" style="padding: 5rem 1.5rem;">
+            <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">8 Core Principles (Always Apply)</h2>
+            
+            <div class="grid-4">
+                <div class="principle-card">
+                    <div class="principle-number">1</div>
+                    <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 1rem;">Through-line Above All</h3>
+                    <p class="body-sm">Messaging, content, and offer must align around one core belief and one clear outcome.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-number">2</div>
+                    <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 1rem;">Julie is the Right-Fit Client</h3>
+                    <p class="body-sm">40-60 year old solopreneur, overwhelmed, wants more time for family. Sell outcomes, not mechanisms.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-number">3</div>
+                    <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 1rem;">One Belief, 10 Ways</h3>
+                    <p class="body-sm">(Hormozi) Never scatter messaging. Every speaker reinforces same transformation from different angle.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-number">4</div>
+                    <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 1rem;">Sell Outcome, Not Mechanism</h3>
+                    <p class="body-sm">"When it's hot outside, it's cold inside." Air conditioning, not freon. 15 hours back, not "5 AI clones."</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-number">5</div>
+                    <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 1rem;">Simplicity Converts</h3>
+                    <p class="body-sm">If you have to explain it, cut it. Fourth grader test. One offer. No feature stacks.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-number">6</div>
+                    <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 1rem;">Method First</h3>
+                    <p class="body-sm">Without a defined method (≤6 steps), nothing else works. The method IS the through-line.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-number">7</div>
+                    <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 1rem;">Compressed Time = Higher Value</h3>
+                    <p class="body-sm">$997/30 days beats $997/6 months. Shorter programs, higher prices, better results.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-number">8</div>
+                    <h3 class="title-bold-6" style="color: var(--mv-purple); margin-bottom: 1rem;">The 3-Day Cadence</h3>
+                    <p class="body-sm">Day 1: pure value, no selling. Day 2: main pitch (afternoon). Day 3: scripted Q&A repitch (15 min CTAs).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Timeline -->
+    <section class="mv-container" style="padding: 5rem 1.5rem;">
+        <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">3-Phase Implementation Timeline</h2>
+        
+        <div class="phase-timeline">
+            <!-- Phase 1 -->
+            <div class="phase-item">
+                <div class="phase-circle">1</div>
+                <h3 class="title-bold-5" style="margin-bottom: 1rem;">Define Method/Framework</h3>
+                <p class="body-sm" style="color: var(--mv-muted); margin-bottom: 1rem;"><strong>Timeline:</strong> 2-3 weeks</p>
+                <p class="body-sm" style="color: var(--mv-muted); margin-bottom: 1rem;"><strong>Owner:</strong> Vishen + Bari</p>
+                <div class="card" style="margin-top: 1rem; text-align: left;">
+                    <h4 class="title-bold-7" style="margin-bottom: 1rem;">Deliverables:</h4>
+                    <ul class="body-sm">
+                        <li>One core method per mastery category</li>
+                        <li>The "one belief" for each</li>
+                        <li>5-7 steps (become summit sessions)</li>
+                        <li>"Enhanced opportunity" definition</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="phase-arrow">→</div>
+
+            <!-- Phase 2 -->
+            <div class="phase-item">
+                <div class="phase-circle">2</div>
+                <h3 class="title-bold-5" style="margin-bottom: 1rem;">Right-Fit Client Persona</h3>
+                <p class="body-sm" style="color: var(--mv-muted); margin-bottom: 1rem;"><strong>Timeline:</strong> 2-4 weeks</p>
+                <p class="body-sm" style="color: var(--mv-muted); margin-bottom: 1rem;"><strong>Owner:</strong> JD/Jadeep + Marisha</p>
+                <div class="card" style="margin-top: 1rem; text-align: left;">
+                    <h4 class="title-bold-7" style="margin-bottom: 1rem;">Deliverables:</h4>
+                    <ul class="body-sm">
+                        <li>Refined survey with separated categories</li>
+                        <li>2.5M email list survey deployment</li>
+                        <li>Named persona (like "Julie")</li>
+                        <li>Speaker briefing template</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="phase-arrow">→</div>
+
+            <!-- Phase 3 -->
+            <div class="phase-item">
+                <div class="phase-circle">3</div>
+                <h3 class="title-bold-5" style="margin-bottom: 1rem;">Curriculum Restructure</h3>
+                <p class="body-sm" style="color: var(--mv-muted); margin-bottom: 1rem;"><strong>Timeline:</strong> 1-2 months</p>
+                <p class="body-sm" style="color: var(--mv-muted); margin-bottom: 1rem;"><strong>Owner:</strong> Mastery Team</p>
+                <div class="card" style="margin-top: 1rem; text-align: left;">
+                    <h4 class="title-bold-7" style="margin-bottom: 1rem;">Deliverables:</h4>
+                    <ul class="body-sm">
+                        <li>Method-based session architecture</li>
+                        <li>Speaker coordination system</li>
+                        <li>Through-line enforcement</li>
+                        <li>Q2 2026 pilot preparation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Critical Action Items -->
+    <section style="background: var(--mv-light-gray);">
+        <div class="mv-container" style="padding: 5rem 1.5rem;">
+            <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">🔥 Critical Action Items from Hour 4</h2>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 2rem;">Immediate Language Changes</h3>
+                    <ul class="body">
+                        <li><strong>Rename All Summits</strong> — Drop "Mastery" from event names. Reserve exclusively for $5K product.</li>
+                        <li><strong>Rewrite Solopreneur Messaging</strong> — Replace fear with leverage messaging ("grow without hiring").</li>
+                        <li><strong>Compress Mastery Programs</strong> — Move away from 5-month format. Target 1 month.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="title-bold-5" style="color: var(--mv-purple); margin-bottom: 2rem;">Strategic Realignments</h3>
+                    <ul class="body">
+                        <li><strong>Define Mindvalley's Ultimate Outcome</strong> — "A student comes on our campus — the transformation is... what?"</li>
+                        <li><strong>Inject Consciousness Engineering</strong> — Weave Models of Reality + Systems throughout mastery.</li>
+                        <li><strong>Give Vishen Top Billing</strong> — More prominent hero shots, outcomes higher on page.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="quote-card">
+                <h3 class="title-bold-4" style="color: var(--mv-purple); margin-bottom: 1rem;">🚨 "Mastery" Language KILLS Low-Ticket Offers</h3>
+                <p class="body">
+                    Critical discovery from Hour 4: Using "mastery" language for summit events creates bait & switch perception. 
+                    Attendees expect advanced content but get introductory material, leading to disappointment and lower conversions.
+                </p>
+                <p class="body-sm" style="color: var(--mv-muted); margin-top: 1rem;">
+                    <strong>Solution:</strong> Reserve "mastery" exclusively for $5K+ programs. Use transformation-focused language for summits.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Julie Persona -->
+    <section class="mv-container" style="padding: 5rem 1.5rem;">
+        <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">Meet "Julie" — Your Right-Fit Client</h2>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3 class="title-bold-4" style="color: var(--mv-purple); margin-bottom: 2rem;">👩‍💼 Demographics & Psychographics</h3>
+                <ul class="body">
+                    <li><strong>Age:</strong> 40-60 years old</li>
+                    <li><strong>Business:</strong> Solopreneur, overwhelmed with operations</li>
+                    <li><strong>Goal:</strong> Wants more time for family</li>
+                    <li><strong>Tech Level:</strong> Not technical, uses ChatGPT for basics</li>
+                    <li><strong>Pain Point:</strong> Scaling chaos instead of scaling flow</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="title-bold-4" style="color: var(--mv-purple); margin-bottom: 2rem;">💭 Messaging That Resonates</h3>
+                <ul class="body">
+                    <li><strong>What She Wants:</strong> "Grow without hiring employees"</li>
+                    <li><strong>What She Fears:</strong> "Use AI or be replaced"</li>
+                    <li><strong>Her Language:</strong> Leverage, not mechanisms</li>
+                    <li><strong>Her Success:</strong> 15 hours back per week</li>
+                    <li><strong>Her Outcome:</strong> Business that serves life, not consumes it</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <blockquote class="body-lg" style="font-style: italic; margin: 0 0 1rem 0;">
+                "People buy frameworks, they buy methods. 'There's a formula and a framework I could follow? Well, maybe I could do that.'"
+            </blockquote>
+            <cite class="body-sm" style="color: var(--mv-muted);">— Bari on what converts Julie</cite>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: var(--mv-light-gray);">
+        <div class="mv-container" style="padding: 5rem 1.5rem;">
+            <div class="card" style="background: linear-gradient(135deg, var(--mv-purple), #9333ea); color: white; text-align: center;">
+                <h2 class="title-bold-3" style="margin-bottom: 2rem;">Ready to Implement the Framework?</h2>
+                <p class="body-lg" style="opacity: 0.9; margin-bottom: 2rem; max-width: 40rem; margin-left: auto; margin-right: auto;">
+                    Complete strategic framework with Tony's $40M model + all 5 hours of Bari insights. 
+                    Method-first approach ready for Q2 2026 pilot.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="martech.html" 
+                       style="padding: 1rem 2rem; background: white; color: var(--mv-purple); border-radius: 999px; text-decoration: none; font-weight: 700;">
+                       🤝 View MarTech Integration
+                    </a>
+                    <a href="downloads/integrated-strategy-v2.md" download
+                       style="padding: 1rem 2rem; background: transparent; color: white; border: 2px solid white; border-radius: 999px; text-decoration: none; font-weight: 700;">
+                       📄 Download Complete Strategy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--mv-light-gray); border-top: 1px solid var(--mv-border);">
+        <div class="mv-container" style="padding: 3rem 1.5rem; text-align: center;">
+            <div style="margin-bottom: 2rem;">
+                <a href="index.html" class="nav-link" style="margin: 0 0.5rem;">Dashboard</a>
+                <a href="martech.html" class="nav-link" style="margin: 0 0.5rem;">MarTech Integration</a>
+                <a href="resources.html" class="nav-link" style="margin: 0 0.5rem;">Resources</a>
+            </div>
+            <p style="color: var(--mv-footer-gray); margin: 0;">
+                © Mindvalley • Summit Mastery Strategy Hub • Complete Framework
+            </p>
+            <p class="body-sm" style="color: var(--mv-footer-gray); margin: 0.5rem 0 0;">
+                Method-Based Summit Transformation • $7M+ Revenue Potential
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

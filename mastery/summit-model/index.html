@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Summit Mastery Strategy Hub — Mindvalley</title>
+    <meta name="description" content="Comprehensive strategic overview for Executive, MarTech, and Mastery teams. Tony Robbins $40M model + Bari's 5-hour insights integrated for $7M+ revenue potential." />
+    <meta name="theme-color" content="#7a12d4" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <link rel="stylesheet" href="../../../skills/mindvalley-design/mindvalley-core.css" />
+    
+    <style>
+        :root {
+            --mv-purple: #7a12d4;
+            --mv-text: #0f131a;
+            --mv-muted: #4b5563;
+            --mv-footer-gray: #6b7280;
+            --mv-light-gray: #f9fafb;
+            --mv-card-bg: #ffffff;
+            --mv-border: #e5e7eb;
+        }
+        
+        body {
+            font-family: 'Google Sans Flex', system-ui, sans-serif;
+            color: var(--mv-text);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Typography */
+        .title-bold-1 { font-size: 3rem; font-weight: 700; line-height: 1.1; }
+        .title-bold-2 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; }
+        .title-bold-3 { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
+        .title-bold-4 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; }
+        .title-bold-5 { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+        .title-bold-6 { font-size: 1.125rem; font-weight: 700; line-height: 1.4; }
+        .title-bold-7 { font-size: 1rem; font-weight: 700; line-height: 1.4; }
+        .body-lg { font-size: 1.25rem; }
+        .body { font-size: 1rem; }
+        .body-sm { font-size: 0.875rem; }
+        .overline-text { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        /* Layout Components */
+        .card {
+            background: var(--mv-card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            transition: all 150ms ease-out;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            background: linear-gradient(135deg, var(--mv-purple), #9333ea);
+            color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: var(--mv-card-bg);
+            color: var(--mv-purple);
+            text-decoration: none;
+            border-radius: 999px;
+            border: 2px solid var(--mv-purple);
+            font-weight: 600;
+            transition: all 150ms ease-out;
+        }
+        
+        .nav-link:hover {
+            background: var(--mv-purple);
+            color: white;
+        }
+        
+        .primary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            background: var(--mv-purple);
+            color: white;
+            text-decoration: none;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: all 150ms ease-out;
+        }
+        
+        .primary-btn:hover {
+            background: #6b46c1;
+            transform: translateY(-1px);
+        }
+        
+        .timeline {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            overflow-x: auto;
+            padding: 1rem 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .timeline-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--mv-purple);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-arrow {
+            color: var(--mv-muted);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .title-bold-1 { font-size: 2rem; }
+            .title-bold-2 { font-size: 1.75rem; }
+            .mv-container { padding: 0 1rem; }
+            .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .timeline { flex-direction: column; }
+            .timeline-arrow { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="background: var(--mv-light-gray); border-bottom: 1px solid var(--mv-border);">
+        <div class="mv-container" style="padding: 1rem 1.5rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="font-size: 1.5rem;">🎯</div>
+                    <span class="title-bold-6" style="color: var(--mv-purple);">Summit Mastery Hub</span>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <span class="body-sm" style="background: var(--mv-purple); color: white; padding: 0.5rem 1rem; border-radius: 999px;">
+                        Executive Dashboard
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="mv-container" style="padding: 4rem 1.5rem 3rem;">
+        <div class="overline-text" style="margin-bottom: 1rem; color: var(--mv-purple);">
+            STRATEGIC COMMAND CENTER
+        </div>
+        <h1 class="title-bold-1" style="max-width: 48rem; margin: 0 0 1.25rem 0;">
+            Summit Mastery Strategy Hub
+        </h1>
+        <p class="body-lg" style="max-width: 40rem; color: var(--mv-muted); margin-bottom: 3rem;">
+            Comprehensive strategic framework integrating Tony Robbins' $40M proven model with Bari's 5-hour transformation insights for Executive, MarTech, and Mastery team coordination.
+        </p>
+        
+        <!-- Key Stats -->
+        <div class="grid-3" style="margin-bottom: 3rem;">
+            <div class="stat-card">
+                <div class="stat-number">$7M+</div>
+                <div class="body">Revenue Potential</div>
+                <div class="body-sm" style="opacity: 0.8; margin-top: 0.5rem;">Complete model integration</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #059669, #10b981);">
+                <div class="stat-number">5 Hours</div>
+                <div class="body">Bari Insights</div>
+                <div class="body-sm" style="opacity: 0.8; margin-top: 0.5rem;">Fully integrated strategy</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
+                <div class="stat-number">3 Teams</div>
+                <div class="body">Strategic Alignment</div>
+                <div class="body-sm" style="opacity: 0.8; margin-top: 0.5rem;">Executive • MarTech • Mastery</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Overview -->
+    <section style="background: var(--mv-light-gray);">
+        <div class="mv-container" style="padding: 5rem 1.5rem;">
+            <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">Strategic Framework Overview</h2>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 class="title-bold-5" style="margin-bottom: 1rem; color: var(--mv-purple);">Method-Based Transformation</h3>
+                    <p class="body">
+                        <strong>Tony's Proof:</strong> 700K free summit leads → $20M from single $995 offer → $20M continuity = $40M total
+                    </p>
+                    <p class="body-sm" style="color: var(--mv-muted); margin-top: 1rem;">
+                        Replace "educational buffets" with methodology-driven conversion accelerators
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">💎</div>
+                    <h3 class="title-bold-5" style="margin-bottom: 1rem; color: var(--mv-purple);">Bari's 5 Critical Fixes</h3>
+                    <p class="body">
+                        Live sales lobbies, compressed time programs, celebrity strategy evolution, solopreneur messaging, enhanced opportunity design
+                    </p>
+                    <p class="body-sm" style="color: var(--mv-muted); margin-top: 1rem;">
+                        ALL 5 hours of strategic insights integrated
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
+                    <h3 class="title-bold-5" style="margin-bottom: 1rem; color: var(--mv-purple);">MarTech Integration</h3>
+                    <p class="body">
+                        Nicole's team capabilities perfectly aligned with summit transformation needs: conversion optimization, attendee journey tracking, hyper-personalization
+                    </p>
+                    <p class="body-sm" style="color: var(--mv-muted); margin-top: 1rem;">
+                        Pavel, Monique, Alvin implementation roadmap ready
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Timeline -->
+    <section class="mv-container" style="padding: 5rem 1.5rem;">
+        <h2 class="title-bold-2" style="margin-bottom: 3rem; text-align: center;">Implementation Timeline</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-circle">1</div>
+                <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Method Definition</h4>
+                <p class="body-sm" style="color: var(--mv-muted);">2-3 weeks</p>
+                <p class="body-sm">Core methodology per mastery category</p>
+            </div>
+            <div class="timeline-arrow">→</div>
+            <div class="timeline-item">
+                <div class="timeline-circle">2</div>
+                <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Right-Fit Client</h4>
+                <p class="body-sm" style="color: var(--mv-muted);">2-4 weeks</p>
+                <p class="body-sm">"Julie" persona development & segmentation</p>
+            </div>
+            <div class="timeline-arrow">→</div>
+            <div class="timeline-item">
+                <div class="timeline-circle">3</div>
+                <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">MarTech Integration</h4>
+                <p class="body-sm" style="color: var(--mv-muted);">1 month</p>
+                <p class="body-sm">Braze workflows, tracking, personalization</p>
+            </div>
+            <div class="timeline-arrow">→</div>
+            <div class="timeline-item">
+                <div class="timeline-circle">🚀</div>
+                <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Q2 2026 Pilot</h4>
+                <p class="body-sm" style="color: var(--mv-muted);">Launch ready</p>
+                <p class="body-sm">AI Personal Assistant Mastery</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Navigation -->
+    <section style="background: var(--mv-light-gray);">
+        <div class="mv-container" style="padding: 5rem 1.5rem;">
+            <h2 class="title-bold-2" style="margin-bottom: 1rem; text-align: center;">Strategic Resources</h2>
+            <p class="body-lg" style="text-align: center; color: var(--mv-muted); margin-bottom: 3rem;">
+                Access team-specific strategic frameworks and implementation details
+            </p>
+            
+            <div class="grid-4">
+                <a href="framework.html" class="card" style="text-decoration: none; color: inherit;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 class="title-bold-6" style="margin-bottom: 1rem;">Complete Framework</h3>
+                    <p class="body-sm" style="color: var(--mv-muted);">
+                        All 5 hours of Bari insights + Tony's $40M model integration
+                    </p>
+                </a>
+
+                <a href="martech.html" class="card" style="text-decoration: none; color: inherit;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
+                    <h3 class="title-bold-6" style="margin-bottom: 1rem;">MarTech Integration</h3>
+                    <p class="body-sm" style="color: var(--mv-muted);">
+                        Nicole's team collaboration framework & implementation roadmap
+                    </p>
+                </a>
+
+                <a href="events.html" class="card" style="text-decoration: none; color: inherit;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🎪</div>
+                    <h3 class="title-bold-6" style="margin-bottom: 1rem;">Event Architecture</h3>
+                    <p class="body-sm" style="color: var(--mv-muted);">
+                        Summit design, speaker coordination & webinar frameworks
+                    </p>
+                </a>
+
+                <a href="revenue.html" class="card" style="text-decoration: none; color: inherit;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">💰</div>
+                    <h3 class="title-bold-6" style="margin-bottom: 1rem;">Revenue Engine</h3>
+                    <p class="body-sm" style="color: var(--mv-muted);">
+                        Conversion strategy, sales process & pricing psychology
+                    </p>
+                </a>
+
+                <a href="resources.html" class="card" style="text-decoration: none; color: inherit;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📚</div>
+                    <h3 class="title-bold-6" style="margin-bottom: 1rem;">Resources</h3>
+                    <p class="body-sm" style="color: var(--mv-muted);">
+                        Download center, Bari Q&A system & implementation tools
+                    </p>
+                </a>
+
+                <div class="card" style="background: linear-gradient(135deg, var(--mv-purple), #9333ea); color: white;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+                    <h3 class="title-bold-6" style="margin-bottom: 1rem;">Quick Actions</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="downloads/integrated-strategy-v2.md" download class="body-sm" style="color: white; opacity: 0.9;">📊 Download Complete Strategy</a>
+                        <a href="downloads/action-plan-summary.md" download class="body-sm" style="color: white; opacity: 0.9;">🎯 Download Action Plan</a>
+                        <a href="#bari-insights" class="body-sm" style="color: white; opacity: 0.9;">💎 View Bari Insights</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tony's Model Proof -->
+    <section class="mv-container" style="padding: 5rem 1.5rem;" id="bari-insights">
+        <div class="card" style="background: linear-gradient(135deg, #1f2937, #374151); color: white;">
+            <h2 class="title-bold-3" style="margin-bottom: 2rem;">🔥 Tony Robbins' $40M Proof</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3 class="title-bold-5" style="margin-bottom: 1rem; color: #fbbf24;">The Formula</h3>
+                    <p class="body" style="opacity: 0.9;">
+                        "Don't sell a 5-month $5K program. Pick ONE program (like Build Your AI Clone) and sell that."
+                    </p>
+                    <ul class="body-sm" style="opacity: 0.8; margin-top: 1rem;">
+                        <li>700K free summit leads</li>
+                        <li>$20M from single $995 offer</li>
+                        <li>$20M recurring revenue</li>
+                        <li><strong>$40M total from one summit</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="title-bold-5" style="margin-bottom: 1rem; color: #fbbf24;">Critical Fixes Applied</h3>
+                    <ul class="body-sm" style="opacity: 0.8;">
+                        <li>"Mastery" language KILLED for low-ticket offers</li>
+                        <li>Live sales lobbies (1,200+ people vs "book a call")</li>
+                        <li>30-day vs 6-month compressed delivery</li>
+                        <li>Solopreneur messaging ("grow without hiring")</li>
+                        <li>Celebrity strategy evolution (internal stars)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--mv-light-gray); border-top: 1px solid var(--mv-border);">
+        <div class="mv-container" style="padding: 3rem 1.5rem; text-align: center;">
+            <div style="margin-bottom: 2rem;">
+                <a href="framework.html" class="nav-link" style="margin: 0 0.5rem;">Complete Framework</a>
+                <a href="martech.html" class="nav-link" style="margin: 0 0.5rem;">MarTech Integration</a>
+                <a href="resources.html" class="nav-link" style="margin: 0 0.5rem;">Resources</a>
+            </div>
+            <p style="color: var(--mv-footer-gray); margin: 0;">
+                © Mindvalley • Summit Mastery Strategy Hub • Executive Dashboard
+            </p>
+            <p class="body-sm" style="color: var(--mv-footer-gray); margin: 0.5rem 0 0;">
+                Strategic Command Center for $7M+ Revenue Transformation
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
