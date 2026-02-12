@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Claude for Founders: Your AI Chief Operating Officer | Mindvalley</title>
+    <meta name="description" content="Transform Claude into your $500K/year COO. Master advanced Claude strategies for business automation, strategic planning, and operational excellence." />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    
+    <!-- Inline Mindvalley-Style Design System -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Mindvalley Core Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+        }
+        
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .title-bold-1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; }
+        .title-bold-2 { font-size: 3rem; font-weight: 900; line-height: 1.2; }
+        .title-bold-3 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; }
+        .title-bold-5 { font-size: 1.8rem; font-weight: 700; line-height: 1.3; }
+        .title-bold-6 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; }
+        .body { font-size: 1rem; }
+        .body-lg { font-size: 1.125rem; }
+        .body-xl { font-size: 1.25rem; }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-white { color: white; }
+        .text-yellow-300 { color: #fcd34d; }
+        .text-red-600 { color: #dc2626; }
+        .text-purple-600 { color: #9333ea; }
+        .text-blue-600 { color: #2563eb; }
+        .text-green-600 { color: #059669; }
+        .text-gray-600 { color: #4b5563; }
+        .text-gray-700 { color: #374151; }
+        .bg-gray-50 { background-color: #f9fafb; }
+        .bg-gray-100 { background-color: #f3f4f6; }
+        .bg-white { background-color: white; }
+        
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .px-8 { padding-left: 2rem; padding-right: 2rem; }
+        .px-12 { padding-left: 3rem; padding-right: 3rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        
+        .max-w-3xl { max-width: 48rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        
+        .grid { display: grid; }
+        .flex { display: flex; }
+        .inline-block { display: inline-block; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
+        .space-y-1 > * + * { margin-top: 0.25rem; }
+        .space-y-2 > * + * { margin-top: 0.5rem; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .space-y-6 > * + * { margin-top: 1.5rem; }
+        
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+        
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        
+        .font-bold { font-weight: 700; }
+        .text-sm { font-size: 0.875rem; }
+        .text-xs { font-size: 0.75rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-4xl { font-size: 2.25rem; }
+        
+        .opacity-60 { opacity: 0.6; }
+        .opacity-80 { opacity: 0.8; }
+        .opacity-90 { opacity: 0.9; }
+        
+        .border { border: 1px solid #e5e7eb; }
+        .border-2 { border: 2px solid; }
+        .border-l-4 { border-left: 4px solid; }
+        .border-red-200 { border-color: #fecaca; }
+        .border-red-500 { border-color: #ef4444; }
+        .border-green-200 { border-color: #bbf7d0; }
+        .border-green-500 { border-color: #22c55e; }
+        
+        .w-6 { width: 1.5rem; }
+        .w-8 { width: 2rem; }
+        .w-12 { width: 3rem; }
+        .w-20 { width: 5rem; }
+        .h-6 { height: 1.5rem; }
+        .h-8 { height: 2rem; }
+        .h-12 { height: 3rem; }
+        .h-20 { height: 5rem; }
+        
+        .flex-col { flex-direction: column; }
+        .flex-wrap { flex-wrap: wrap; }
+        .flex-1 { flex: 1; }
+        .items-start { align-items: flex-start; }
+        .justify-between { justify-content: space-between; }
+        
+        /* Responsive Grid */
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+            .md\:flex-row { flex-direction: row; }
+        }
+        
+        /* Advanced Marketing Intelligence Styles */
+        .hero-gradient {
+            background: linear-gradient(135deg, 
+                #667eea 0%, 
+                #764ba2 25%, 
+                #f093fb 50%, 
+                #f5576c 75%, 
+                #4facfe 100%);
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .scarcity-banner {
+            background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .social-proof-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-proof-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .objection-crusher {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #28a745;
+        }
+        
+        .urgency-text {
+            color: #dc3545;
+            font-weight: bold;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #dc3545; }
+            to { text-shadow: 0 0 20px #dc3545, 0 0 30px #dc3545; }
+        }
+        
+        .value-stack {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 2px solid #28a745;
+            position: relative;
+        }
+        
+        .value-stack::after {
+            content: 'BONUS';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .roi-calculator {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .founder-stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .curriculum-module {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .curriculum-module:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .guarantee-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border: 3px solid #f39c12;
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scarcity Banner -->
+    <div class="scarcity-banner text-center py-2">
+        <div class="mv-container">
+            <span class="text-white font-bold">⏰ Early Bird: 48 Hours Left - Save $500 | Only 100 Founder Spots Available</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 text-center text-white">
+        <div class="mv-container">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="title-bold-1 mb-6">
+                    🧠 Turn Claude Into Your<br>
+                    <span class="text-yellow-300">$500K/Year Chief Operating Officer</span>
+                </h1>
+                
+                <p class="body-xl mb-8 opacity-90">
+                    Master the advanced Claude strategies that elite founders use to automate operations, 
+                    accelerate decision-making, and scale without burning out.
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
+                    <button class="cta-button text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105">
+                        🚀 Get Instant Access ($997 → $497)
+                    </button>
+                    <span class="text-sm opacity-80">✅ 30-Day Money-Back Guarantee</span>
+                </div>
+                
+                <div class="founder-stats inline-block px-8 py-4 rounded-full">
+                    <span class="font-bold">⭐ 4.9/5 Rating | 2,847+ Founders Trained | $12M+ Revenue Generated</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Agitation Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="mv-container">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="title-bold-3 mb-8 text-red-600">
+                    Are You Trapped in Your Own Business?
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
+                        <div class="text-4xl mb-4">😰</div>
+                        <h3 class="font-bold mb-2">Drowning in Decisions</h3>
+                        <p class="text-gray-600">Making 100+ decisions daily while your brain turns to mush by 2 PM</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
+                        <div class="text-4xl mb-4">🔥</div>
+                        <h3 class="font-bold mb-2">Constant Firefighting</h3>
+                        <p class="text-gray-600">Every day feels like crisis management instead of strategic growth</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
+                        <div class="text-4xl mb-4">⏰</div>
+                        <h3 class="font-bold mb-2">No Time to Think</h3>
+                        <p class="text-gray-600">Working IN your business instead of ON your business</p>
+                    </div>
+                </div>
+                
+                <p class="body-lg text-gray-700 italic">
+                    "I built this company to create freedom, but I'm more trapped than when I was an employee."
+                    <br><span class="text-sm">- Every founder, ever</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-16">
+        <div class="mv-container">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="title-bold-3 mb-8">
+                    What If You Had a <span class="text-purple-600">$500K COO</span><br>
+                    Available 24/7 for $20/Month?
+                </h2>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl mb-12">
+                    <h3 class="title-bold-5 mb-6">Meet Your New COO: Claude</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm">✓</span>
+                                </div>
+                                <span>Strategic business analysis in seconds</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm">✓</span>
+                                </div>
+                                <span>Builds custom business tools without developers</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm">✓</span>
+                                </div>
+                                <span>Automates complex decision-making processes</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm">✓</span>
+                                </div>
+                                <span>Never takes vacation or asks for a raise</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm">✓</span>
+                                </div>
+                                <span>Processes infinite information instantly</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm">✓</span>
+                                </div>
+                                <span>Available for complex reasoning 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-16 bg-gray-50">
+        <div class="mv-container">
+            <h2 class="title-bold-3 text-center mb-12">Founders Getting 10X Results with Claude</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="testimonial-card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                            MK
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-bold">Michael Kim</h4>
+                            <p class="text-sm text-gray-600">SaaS Founder, $2M ARR</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Claude helped me build a customer success prediction model in 20 minutes that would have taken our dev team 3 weeks. Prevented $180K in churn this quarter."
+                    </p>
+                    <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <div class="testimonial-card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                            SR
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-bold">Sarah Rodriguez</h4>
+                            <p class="text-sm text-gray-600">E-commerce CEO, $5M Revenue</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "I went from 60-hour weeks to 35 hours while revenue increased 40%. Claude handles all my operational analysis and strategic planning now."
+                    </p>
+                    <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <div class="testimonial-card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                            DL
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-bold">David Liu</h4>
+                            <p class="text-sm text-gray-600">Agency Owner, $3M ARR</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Built a complete client onboarding system with Claude Code. What used to take 8 hours per client now takes 45 minutes. Game changer."
+                    </p>
+                    <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="py-16">
+        <div class="mv-container">
+            <h2 class="title-bold-3 text-center mb-12">
+                The Complete <span class="text-purple-600">Claude Mastery</span> Curriculum
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="curriculum-module p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                            1
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="title-bold-6 mb-2">Claude Workspace Mastery</h3>
+                            <p class="text-gray-700 mb-3">Transform Claude into your strategic business brain with advanced prompting, document analysis, and competitive intelligence workflows.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Advanced Prompting</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Market Research</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Decision Frameworks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="curriculum-module p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                            2
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="title-bold-6 mb-2">Claude Code for Business Builders</h3>
+                            <p class="text-gray-700 mb-3">Build custom business tools, dashboards, and automation systems without hiring developers. Turn ideas into working software in minutes.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Custom Dashboards</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">API Integrations</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Process Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="curriculum-module p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                            3
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="title-bold-6 mb-2">Claude Skills Development</h3>
+                            <p class="text-gray-700 mb-3">Create industry-specific Claude configurations that understand your business context and automate complex workflows.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Custom Workflows</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Business Context</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Reasoning Chains</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="curriculum-module p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">
+                            4
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="title-bold-6 mb-2">The Claude-Powered Business</h3>
+                            <p class="text-gray-700 mb-3">Real case studies of founders using Claude for 10X results, with step-by-step implementation guides and ROI tracking.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Case Studies</span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">ROI Tracking</span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Team Training</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="curriculum-module p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold">
+                            5
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="title-bold-6 mb-2">Advanced Claude Strategies</h3>
+                            <p class="text-gray-700 mb-3">Master multi-step automation, financial modeling, strategic planning, and turn Claude into your virtual board advisor.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Strategic Planning</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Financial Modeling</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Board Advisory</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Stack -->
+    <section class="py-16 bg-gray-50">
+        <div class="mv-container">
+            <h2 class="title-bold-3 text-center mb-12">Everything You Get Today</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="value-stack p-8 rounded-2xl mb-6">
+                    <h3 class="title-bold-6 mb-4">🎯 Core Training Program</h3>
+                    <ul class="space-y-2 mb-4">
+                        <li>✅ 5 Comprehensive Modules (8+ hours of training)</li>
+                        <li>✅ 50+ Claude Prompt Templates for Business</li>
+                        <li>✅ Step-by-Step Implementation Guides</li>
+                        <li>✅ Real Founder Case Studies with Results</li>
+                    </ul>
+                    <div class="text-right font-bold text-lg">Value: $2,997</div>
+                </div>
+                
+                <div class="value-stack p-8 rounded-2xl mb-6">
+                    <h3 class="title-bold-6 mb-4">🛠️ Claude Business Toolkit</h3>
+                    <ul class="space-y-2 mb-4">
+                        <li>✅ 25+ Pre-Built Claude Code Templates</li>
+                        <li>✅ Business Dashboard Generator</li>
+                        <li>✅ Financial Model Templates</li>
+                        <li>✅ Competitive Analysis Framework</li>
+                    </ul>
+                    <div class="text-right font-bold text-lg">Value: $1,497</div>
+                </div>
+                
+                <div class="value-stack p-8 rounded-2xl mb-6">
+                    <h3 class="title-bold-6 mb-4">👥 Founder Community Access</h3>
+                    <ul class="space-y-2 mb-4">
+                        <li>✅ Private Slack Community</li>
+                        <li>✅ Monthly Live Q&A Sessions</li>
+                        <li>✅ Claude Strategy Workshops</li>
+                        <li>✅ Peer Review and Feedback</li>
+                    </ul>
+                    <div class="text-right font-bold text-lg">Value: $497</div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-yellow-400 to-orange-500 p-6 rounded-2xl text-center">
+                    <h3 class="title-bold-5 text-white mb-2">Total Value: $4,991</h3>
+                    <p class="text-white mb-4">Your Investment Today:</p>
+                    <div class="text-4xl font-bold text-white mb-2">
+                        <span class="line-through opacity-60">$997</span> $497
+                    </div>
+                    <p class="text-white font-bold">Save $500 - Early Bird Pricing Ends in 48 Hours!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="py-16">
+        <div class="mv-container">
+            <div class="max-w-3xl mx-auto">
+                <div class="roi-calculator p-8 rounded-2xl text-center">
+                    <h2 class="title-bold-3 mb-8">Your ROI Calculation</h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div>
+                            <h3 class="title-bold-5 mb-2">Time Saved</h3>
+                            <p class="text-2xl font-bold text-blue-600">15+ Hours/Week</p>
+                            <p class="text-sm text-gray-600">Strategic analysis & decision making</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="title-bold-5 mb-2">Value of Your Time</h3>
+                            <p class="text-2xl font-bold text-blue-600">$200/Hour</p>
+                            <p class="text-sm text-gray-600">Conservative founder hourly rate</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="title-bold-5 mb-2">Monthly Value</h3>
+                            <p class="text-2xl font-bold text-green-600">$12,000</p>
+                            <p class="text-sm text-gray-600">15 hours × $200 × 4 weeks</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-100 p-6 rounded-xl">
+                        <h3 class="title-bold-6 mb-2">Conservative Annual ROI</h3>
+                        <p class="text-4xl font-bold text-green-700 mb-2">28,900%</p>
+                        <p class="text-gray-700">
+                            Investment: $497 | Annual Time Value: $144,000<br>
+                            <em>Payback period: 9 days</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objection Handling -->
+    <section class="py-16 bg-gray-50">
+        <div class="mv-container">
+            <h2 class="title-bold-3 text-center mb-12">Common Founder Concerns Answered</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="objection-crusher p-6 rounded-lg">
+                    <h3 class="font-bold mb-2">❓ "I don't have time to learn another tool"</h3>
+                    <p class="text-gray-700">This isn't about learning a tool - it's about getting your time back. Students typically see results within the first week and recoup their time investment within 10 days.</p>
+                </div>
+                
+                <div class="objection-crusher p-6 rounded-lg">
+                    <h3 class="font-bold mb-2">❓ "AI can't understand my specific business"</h3>
+                    <p class="text-gray-700">We teach you how to train Claude on your industry, customers, and business model. It becomes more knowledgeable about your business than most employees.</p>
+                </div>
+                
+                <div class="objection-crusher p-6 rounded-lg">
+                    <h3 class="font-bold mb-2">❓ "What if Claude stops working or changes?"</h3>
+                    <p class="text-gray-700">The strategies you'll learn work across AI platforms. Plus, you'll understand AI so well that adapting to new tools becomes second nature.</p>
+                </div>
+                
+                <div class="objection-crusher p-6 rounded-lg">
+                    <h3 class="font-bold mb-2">❓ "I'm not technical - can I really do this?"</h3>
+                    <p class="text-gray-700">Designed for founders, not developers. If you can send an email, you can master Claude. Our step-by-step approach works for complete beginners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency & Scarcity -->
+    <section class="py-16">
+        <div class="mv-container text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="title-bold-3 mb-8">
+                    <span class="urgency-text">Why You Must Act Now</span>
+                </h2>
+                
+                <div class="bg-red-50 border-2 border-red-200 p-8 rounded-2xl mb-8">
+                    <h3 class="title-bold-5 mb-4 text-red-700">The Founder Advantage Window Is Closing</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div>
+                            <h4 class="font-bold mb-2">🏃‍♂️ Early Adopters (Now)</h4>
+                            <ul class="space-y-1 text-sm">
+                                <li>✅ Massive competitive advantage</li>
+                                <li>✅ Market leadership position</li>
+                                <li>✅ 10X operational efficiency</li>
+                                <li>✅ Higher profit margins</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">🐢 Late Adopters (6 months)</h4>
+                            <ul class="space-y-1 text-sm">
+                                <li>❌ Playing catch-up</li>
+                                <li>❌ Competing on price</li>
+                                <li>❌ Higher costs to implement</li>
+                                <li>❌ Lost market opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-6 font-bold text-red-700">
+                        In 12 months, AI-powered founders will dominate their markets.<br>
+                        Will you be leading or lagging?
+                    </p>
+                </div>
+                
+                <div class="flex items-center justify-center gap-4 mb-8">
+                    <div class="guarantee-badge w-20 h-20 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="font-bold text-sm">30-DAY</div>
+                            <div class="text-xs">GUARANTEE</div>
+                        </div>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="font-bold">Risk-Free Learning</h4>
+                        <p class="text-sm text-gray-600">If you don't see measurable results in 30 days, get your money back. No questions asked.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-center">
+        <div class="mv-container">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="title-bold-2 mb-6">
+                    Ready to Transform Claude Into<br>
+                    Your $500K Chief Operating Officer?
+                </h2>
+                
+                <p class="body-xl mb-8 opacity-90">
+                    Join 2,847+ founders who've already transformed their businesses with Claude mastery.
+                </p>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl mb-8">
+                    <h3 class="title-bold-5 mb-4">🎯 What Happens After You Enroll:</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                            <span>Instant access to all 5 modules</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                            <span>Download the Claude Business Toolkit</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                            <span>Join the private founder community</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                            <span>Start seeing results within 7 days</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="cta-button text-white px-12 py-6 rounded-full text-xl font-bold hover:scale-105 mb-6">
+                    🚀 Transform My Business with Claude - $497
+                </button>
+                
+                <p class="text-sm opacity-80">
+                    ⏰ Early Bird Pricing Ends in 48 Hours | Only 100 Spots Available<br>
+                    ✅ 30-Day Money-Back Guarantee | 🔒 Secure Checkout
+                </p>
+                
+                <div class="mt-8 text-xs opacity-60">
+                    * Individual results may vary. ROI calculations based on average student feedback and case studies.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-8 bg-gray-100 text-center">
+        <div class="mv-container">
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div>🏆 Featured in TechCrunch</div>
+                <div>📈 2,847+ Success Stories</div>
+                <div>⭐ 4.9/5 Average Rating</div>
+                <div>🔒 SSL Secured</div>
+                <div>💳 All Payment Methods</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add some interactive elements for better engagement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate numbers when they come into view
+            const stats = document.querySelectorAll('.stat-number, .founder-stats');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-pulse');
+                    }
+                });
+            });
+            
+            stats.forEach(stat => {
+                observer.observe(stat);
+            });
+            
+            // Add click tracking for CTA buttons
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // In a real implementation, this would track conversions
+                    console.log('CTA clicked:', this.textContent);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
