@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>🧠 Claude for Founders: Your $500K/Year AI Chief Operating Officer — Mindvalley</title>
-    <meta name="description" content="Join 7,000+ founders who've discovered the Claude advantage. Master the advanced AI strategies that elite entrepreneurs use to build $500K/year virtual COO systems and scale without limits." />
+    <title>Claude for Visionary Founders — Mindvalley Academy AI Mastery</title>
+    <meta name="description" content="Transform from entrepreneur to conscious AI leader. Join 19,000+ Academy students mastering the future of business through Claude intelligence. Part of Mindvalley's $7K AI Mastery program." />
     <meta name="theme-color" content="#7a12d4">
     
     <!-- Favicon -->
@@ -21,36 +21,39 @@
             font-family: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: #0f131a;
+            background: #ffffff;
         }
         
-        /* Brand Colors */
+        /* Mindvalley Brand Colors */
         .text-primary { color: #7a12d4; }
         .text-body { color: #0f131a; }
         .text-muted { color: #4b5563; }
         .text-footer { color: #6b7280; }
+        .text-white { color: #ffffff; }
         .bg-light { background-color: #f9fafb; }
         .bg-white { background-color: #ffffff; }
+        .bg-primary { background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%); }
         .border-gray { border-color: #e5e7eb; }
         
-        /* Button Styles */
+        /* Button Styles - Mindvalley Standard */
         .btn-primary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 1.25rem 2.5rem;
-            background-color: #7a12d4;
+            background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
             color: white;
             font-weight: 700;
             border-radius: 999px;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             box-shadow: 0 4px 14px 0 rgba(122, 18, 212, 0.39);
+            font-size: 1rem;
         }
         
         .btn-primary:hover {
-            background-color: #6411a8;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px 0 rgba(122, 18, 212, 0.49);
+            box-shadow: 0 8px 25px 0 rgba(122, 18, 212, 0.5);
         }
         
         .btn-secondary {
@@ -73,8 +76,9 @@
         }
         
         /* Layout Utilities */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
         .flex { display: flex; }
         .flex-col { flex-direction: column; }
         .flex-wrap { flex-wrap: wrap; }
@@ -85,10 +89,12 @@
         .gap-6 { gap: 1.5rem; }
         .gap-8 { gap: 2rem; }
         .text-center { text-align: center; }
+        .text-left { text-align: left; }
         .max-w-2xl { max-width: 42rem; margin: 0 auto; }
         .max-w-3xl { max-width: 48rem; margin: 0 auto; }
         .max-w-4xl { max-width: 56rem; margin: 0 auto; }
         .max-w-5xl { max-width: 64rem; margin: 0 auto; }
+        .max-w-6xl { max-width: 72rem; margin: 0 auto; }
         
         /* Spacing */
         .mb-2 { margin-bottom: 0.5rem; }
@@ -103,230 +109,272 @@
         .p-8 { padding: 2rem; }
         .py-16 { padding: 6rem 0; }
         .py-20 { padding: 5rem 0; }
+        .py-24 { padding: 6rem 0; }
         
         /* Card Styles */
         .card {
             background: white;
             padding: 2.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e5e7eb;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
         }
         
         .feature-card {
             background: white;
-            padding: 2rem;
-            border-radius: 1rem;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
             border: 1px solid #e5e7eb;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7a12d4, #9333ea);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
         }
         
         .feature-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(122, 18, 212, 0.15);
+        }
+        
+        /* Academy Integration Styles */
+        .academy-badge {
+            background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .stats-hero {
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #7a12d4;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .transformation-card {
+            background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .transformation-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
         
         /* Module Styles */
         .module-number {
-            width: 3.5rem;
-            height: 3.5rem;
-            background-color: #7a12d4;
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 700;
-            font-size: 1.25rem;
+            font-weight: 900;
+            font-size: 1.5rem;
             flex-shrink: 0;
-        }
-        
-        .tag {
-            background-color: #f3f4f6;
-            color: #374151;
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-            font-size: 0.875rem;
-            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(122, 18, 212, 0.3);
         }
         
         .instructor-card {
             background: white;
             padding: 2.5rem;
-            border-radius: 1rem;
-            text-align: left;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e5e7eb;
-            transition: all 0.2s ease;
+            border-radius: 1.5rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .instructor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #7a12d4, #9333ea);
         }
         
         .instructor-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(122, 18, 212, 0.15);
         }
         
         .instructor-avatar {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 0 1.5rem 0;
+            margin: 0 auto 1.5rem auto;
+            border: 4px solid #f1f5f9;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
         }
         
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid #e5e7eb;
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: """;
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
-            color: #7a12d4;
-            font-family: serif;
-        }
-        
-        .stats-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #7a12d4;
-            line-height: 1;
-        }
-        
-        .pricing-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            transition: all 0.2s ease;
-        }
-        
-        .pricing-card.featured {
-            border-color: #7a12d4;
-            transform: scale(1.05);
-        }
-        
-        .pricing-card.featured::before {
-            content: "MOST POPULAR";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #7a12d4;
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        
-        .urgency-banner {
+        /* Mindvalley Visual Elements */
+        .gradient-text {
             background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-            font-weight: 600;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .social-proof {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            opacity: 0.8;
+        .hero-bg {
+            background: radial-gradient(ellipse at center, rgba(122, 18, 212, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+            margin: 4rem 0;
+        }
+        
+        /* Quote Styling */
+        .mindvalley-quote {
+            font-style: italic;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #4b5563;
+            border-left: 4px solid #7a12d4;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .flex-mobile-col { flex-direction: column; }
-            .py-16 { padding: 3rem 0; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .py-24 { padding: 4rem 0; }
             .py-20 { padding: 3rem 0; }
-            .pricing-card.featured { transform: none; }
-            .social-proof { flex-direction: column; gap: 0.5rem; }
+            .py-16 { padding: 3rem 0; }
+            .stats-number { font-size: 2rem; }
+        }
+        
+        /* Academy Integration Visuals */
+        .academy-integration {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .academy-integration::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(135deg, #7a12d4, #9333ea);
+            border-radius: 1.5rem;
+            z-index: -1;
+            opacity: 0.1;
         }
     </style>
 </head>
 <body>
-    <!-- Urgency Banner -->
-    <div class="urgency-banner">
-        🚨 February 2026 Cohort: Only 47 Spots Remaining | Early Bird Pricing Expires in 72 Hours
-    </div>
+    <!-- Academy Integration Header -->
+    <section class="bg-primary py-4">
+        <div class="mv-container">
+            <div class="text-center text-white">
+                <div class="overline-text" style="color: rgba(255,255,255,0.9);">PART OF MINDVALLEY ACADEMY AI MASTERY</div>
+                <div class="body" style="color: rgba(255,255,255,0.95);">
+                    Join 19,000+ Academy students mastering the future • $7K AI Mastery Program
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
-    <section class="mv-container py-20">
-        <div class="overline-text mb-4 text-primary text-center">
-            MINDVALLEY AI MASTERY INTENSIVE
-        </div>
-        <h1 class="title-bold-1 text-center mb-6 max-w-4xl">
-            How 7,000+ Entrepreneurs Discovered the Claude Advantage:<br>
-            <span class="text-primary">Your $500K/Year Virtual COO</span>
-        </h1>
-        <div class="body-lg text-center text-muted max-w-3xl mb-10">
-            The world's most comprehensive Claude training program. Join the founders who've cracked the code on AI 
-            business transformation—from content creation to strategic decision-making—and save 40+ hours per week 
-            with a virtual Chief Operating Officer that never sleeps.
-        </div>
-        <div class="flex gap-6 justify-center flex-wrap mb-8">
-            <a href="#enroll" class="btn-primary" style="font-size: 1.125rem;">
-                🚀 Master Claude for $1,495
-            </a>
-            <a href="#curriculum" class="btn-secondary">
-                📚 See Full Curriculum
-            </a>
-        </div>
-        <div class="social-proof">
-            <div>⭐⭐⭐⭐⭐ 4.9/5 Rating</div>
-            <div>•</div>
-            <div>🏆 7,148+ Founders Trained</div>
-            <div>•</div>
-            <div>💰 $47M+ Revenue Generated</div>
-            <div>•</div>
-            <div>🔒 30-Day Guarantee</div>
-        </div>
-    </section>
-
-    <!-- Problem Agitation -->
-    <section class="bg-light py-16">
+    <section class="hero-bg py-24">
         <div class="mv-container">
-            <div class="max-w-4xl text-center">
-                <h2 class="title-bold-2 mb-8">
-                    "I Need a $500K COO, But My Business Isn't Ready for That Investment"
-                </h2>
-                <div class="body-lg text-muted mb-12">
-                    Sound familiar? You're drowning in operations, strategy, analysis, and execution. 
-                    Every day feels like playing catch-up while watching competitors pull ahead. 
-                    Meanwhile, smart founders are already using Claude as their virtual COO for 1/1000th the cost.
+            <div class="text-center max-w-5xl">
+                <div class="academy-badge mb-6">MINDVALLEY ACADEMY • AI MASTERY INTENSIVE</div>
+                
+                <h1 class="title-bold-1 mb-8">
+                    Transform from Entrepreneur to 
+                    <span class="gradient-text">Conscious AI Leader</span>
+                </h1>
+                
+                <div class="body-lg text-muted max-w-4xl mb-12">
+                    Master Claude as your virtual Chief Operating Officer and join the new class of visionary founders 
+                    building $100M+ companies through conscious AI integration. This is the advanced training that 
+                    transforms not just what you know, but <em>who you become</em> as a leader.
                 </div>
                 
-                <div class="grid-3 max-w-5xl">
-                    <div class="card text-center">
-                        <div class="stats-number mb-4">87%</div>
-                        <div class="title-bold-6 mb-2">Founder Burnout</div>
-                        <div class="body text-muted">
-                            Working 70+ hour weeks handling tasks a COO should manage
+                <div class="flex gap-6 justify-center flex-wrap mb-12">
+                    <a href="#transformation" class="btn-primary" style="font-size: 1.125rem;">
+                        🚀 Begin Your AI Transformation
+                    </a>
+                    <a href="#mastery-curriculum" class="btn-secondary">
+                        🎓 Explore the Mastery
+                    </a>
+                </div>
+                
+                <!-- Mindvalley Academy Stats -->
+                <div class="stats-hero">
+                    <div class="grid-4">
+                        <div class="text-center">
+                            <div class="stats-number">19K+</div>
+                            <div class="body-sm text-muted">Academy Students</div>
                         </div>
-                    </div>
-                    <div class="card text-center">
-                        <div class="stats-number mb-4">$240K</div>
-                        <div class="title-bold-6 mb-2">Opportunity Cost</div>
-                        <div class="body text-muted">
-                            Annual value lost to inefficient operations and delayed decisions
+                        <div class="text-center">
+                            <div class="stats-number">850K+</div>
+                            <div class="body-sm text-muted">Summit Alumni</div>
                         </div>
-                    </div>
-                    <div class="card text-center">
-                        <div class="stats-number mb-4">156%</div>
-                        <div class="title-bold-6 mb-2">Competitive Gap</div>
-                        <div class="body text-muted">
-                            AI-powered founders are scaling 156% faster than traditional operators
+                        <div class="text-center">
+                            <div class="stats-number">22+</div>
+                            <div class="body-sm text-muted">Years Excellence</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="stats-number">195+</div>
+                            <div class="body-sm text-muted">Countries</div>
                         </div>
                     </div>
                 </div>
@@ -334,370 +382,418 @@
         </div>
     </section>
 
-    <!-- Solution Introduction -->
-    <section class="mv-container py-16">
-        <div class="max-w-4xl">
-            <div class="overline-text mb-4 text-primary">THE CLAUDE ADVANTAGE REVEALED</div>
-            <h2 class="title-bold-2 mb-6">
-                What If You Could Hire a $500K/Year COO for $20/Month?
-            </h2>
-            <div class="body-lg mb-8">
-                That's exactly what 7,000+ entrepreneurs discovered at our sold-out AI Accelerator event. 
-                They learned the "Claude for Founders" methodology—a systematic approach to transforming 
-                Claude into a virtual Chief Operating Officer that handles strategy, operations, and analysis 
-                with the sophistication of a Harvard MBA.
-            </div>
-            
-            <div class="feature-card mb-8" style="background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);">
-                <h3 class="title-bold-5 mb-4 text-primary">The "Rachel Martinez Story"</h3>
-                <div class="body-italic mb-4">
-                    "I went from working 80-hour weeks to having Claude handle my entire competitive analysis, 
-                    financial projections, and strategic planning. It's like having a Harvard MBA on my team 
-                    24/7. My business grew from $2M to $5.2M ARR while I actually took weekends off for the first time in years."
-                </div>
-                <div class="body-sm text-muted">
-                    — Rachel Martinez, SaaS Founder, $5.2M ARR
-                </div>
-            </div>
-
-            <div class="grid-3">
-                <div class="feature-card">
-                    <div class="title-bold-6 mb-3">🧠 Strategic Intelligence</div>
-                    <div class="body text-muted">
-                        Market analysis, competitive research, and strategic planning at consultant-level quality
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="title-bold-6 mb-3">⚡ Operational Excellence</div>
-                    <div class="body text-muted">
-                        Process automation, decision frameworks, and workflow optimization that scales
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="title-bold-6 mb-3">📊 Business Intelligence</div>
-                    <div class="body text-muted">
-                        Financial modeling, performance analysis, and data-driven insights for smarter decisions
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Instructors Section -->
-    <section class="bg-light py-16">
+    <!-- The Mindvalley Difference -->
+    <section class="py-20">
         <div class="mv-container">
-            <div class="overline-text mb-4 text-primary text-center">WORLD-CLASS INSTRUCTORS</div>
-            <h2 class="title-bold-2 text-center mb-6">Learn from the Pioneers Who Cracked the Code</h2>
-            <div class="body-lg text-center text-muted max-w-3xl mb-12">
-                Two visionary leaders who've built $100M+ companies using AI transformation strategies. 
-                They'll teach you the exact methodologies that took years to perfect.
+            <div class="max-w-6xl">
+                <div class="grid-2 items-center">
+                    <div>
+                        <div class="overline-text text-primary mb-4">THE MINDVALLEY ADVANTAGE</div>
+                        <h2 class="title-bold-2 mb-6">
+                            Beyond Training:<br>
+                            <span class="gradient-text">Identity Transformation</span>
+                        </h2>
+                        <div class="body-lg text-muted mb-8">
+                            Unlike traditional AI courses that just teach prompts, Mindvalley's approach creates 
+                            <strong>lasting identity shifts</strong>. You don't just learn Claude—you evolve into 
+                            a conscious AI leader who thinks strategically, acts with wisdom, and scales with purpose.
+                        </div>
+                        
+                        <div class="mindvalley-quote">
+                            "This isn't passive learning — it's a results-driven immersion that transforms 
+                            how you think, act, and lead. We don't just give you information; 
+                            we change who you are."
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <a href="#consciousness-approach" class="btn-secondary">Learn Our Approach</a>
+                        </div>
+                    </div>
+                    
+                    <div class="academy-integration">
+                        <h3 class="title-bold-5 mb-6 text-center">Integrated Learning Ecosystem</h3>
+                        <div class="grid-2" style="gap: 1.5rem;">
+                            <div class="text-center">
+                                <div style="font-size: 2.5rem;" class="mb-3">🧠</div>
+                                <div class="title-bold-7 mb-2">AI Mastery Program</div>
+                                <div class="body-sm text-muted">March 2026 cohort integration</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="font-size: 2.5rem;" class="mb-3">🌍</div>
+                                <div class="title-bold-7 mb-2">Global Community</div>
+                                <div class="body-sm text-muted">Connect with 19K+ visionaries</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="font-size: 2.5rem;" class="mb-3">🎓</div>
+                                <div class="title-bold-7 mb-2">Campus Experience</div>
+                                <div class="body-sm text-muted">Tallinn & Dubai immersions</div>
+                            </div>
+                            <div class="text-center">
+                                <div style="font-size: 2.5rem;" class="mb-3">🤖</div>
+                                <div class="title-bold-7 mb-2">AI-Powered Tools</div>
+                                <div class="body-sm text-muted">Personalized learning paths</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visionary Instructors -->
+    <section class="bg-light py-20">
+        <div class="mv-container">
+            <div class="text-center mb-16">
+                <div class="overline-text text-primary mb-4">WORLD-CLASS FACULTY</div>
+                <h2 class="title-bold-2 mb-6">Learn from Conscious AI Pioneers</h2>
+                <div class="body-lg text-muted max-w-3xl">
+                    In Academy, you don't learn from academics who've never built what they teach. 
+                    You learn directly from world-class practitioners operating at the frontier of conscious AI leadership.
+                </div>
             </div>
             
             <div class="grid-2 max-w-5xl">
                 <div class="instructor-card">
-                    <img src="https://placehold.co/240x240/7a12d4/ffffff?text=VL" alt="Vishen Lakhiani" class="instructor-avatar">
-                    <div class="overline-text text-primary mb-2">FOUNDER & VISIONARY</div>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=280&h=280&fit=crop&crop=face" alt="Vishen Lakhiani" class="instructor-avatar">
+                    <div class="academy-badge mb-4" style="font-size: 0.75rem;">FOUNDER & VISIONARY</div>
                     <h3 class="title-bold-4 mb-4">Vishen Lakhiani</h3>
                     <div class="body mb-6 text-muted">
-                        Founder and CEO of Mindvalley, scaled from startup to $100M+ revenue using consciousness engineering 
-                        and cutting-edge technology. Pioneer in applying AI to transform education and human potential. 
-                        NYT bestselling author who's taught over 3 million students worldwide.
+                        Founder and CEO of Mindvalley, pioneer in consciousness engineering and transformational education. 
+                        Built a $100M+ global platform serving 20+ million students. Leading expert in applying 
+                        AI to accelerate human potential while maintaining conscious leadership principles.
                     </div>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="tag">$100M+ Revenue</span>
-                        <span class="tag">3M+ Students</span>
-                        <span class="tag">NYT Bestseller</span>
-                        <span class="tag">AI Pioneer</span>
+                    <div class="flex flex-wrap gap-2 mb-6 justify-center">
+                        <span class="academy-badge" style="font-size: 0.75rem;">$100M+ Revenue</span>
+                        <span class="academy-badge" style="font-size: 0.75rem;">20M+ Students</span>
+                        <span class="academy-badge" style="font-size: 0.75rem;">NYT Bestseller</span>
+                        <span class="academy-badge" style="font-size: 0.75rem;">Consciousness Engineering</span>
                     </div>
-                    <div class="body-sm">
-                        <strong>Expertise:</strong> Strategic AI implementation, business transformation, scaling methodologies, 
-                        consciousness-driven leadership
+                    <div class="body-sm text-muted">
+                        <strong>Teaching Focus:</strong> Strategic AI integration, conscious leadership, 
+                        scaling with purpose, consciousness-driven business transformation
                     </div>
                 </div>
                 
                 <div class="instructor-card">
-                    <img src="https://placehold.co/240x240/2196f3/ffffff?text=VG" alt="Vykintas Glodenis" class="instructor-avatar">
-                    <div class="overline-text text-primary mb-2">AI TRANSFORMATION EXPERT</div>
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=280&h=280&fit=crop&crop=face" alt="Vykintas Glodenis" class="instructor-avatar">
+                    <div class="academy-badge mb-4" style="font-size: 0.75rem;">AI TRANSFORMATION EXPERT</div>
                     <h3 class="title-bold-4 mb-4">Vykintas Glodenis</h3>
                     <div class="body mb-6 text-muted">
                         Chief AI Transformation Officer at Mindvalley. 2x TEDx speaker, co-author of "Amplify with AI," 
-                        and founder of OptiMe. Evolved from non-technical manager to leading AI expert. Has personally 
-                        implemented Claude systems for 500+ companies with measurable ROI results.
+                        and founder of OptiMe. Transformed 500+ companies through conscious AI implementation. 
+                        Master of learning acceleration and human-AI symbiosis.
                     </div>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="tag">500+ Implementations</span>
-                        <span class="tag">2x TEDx Speaker</span>
-                        <span class="tag">"Amplify with AI" Author</span>
-                        <span class="tag">ROI Specialist</span>
+                    <div class="flex flex-wrap gap-2 mb-6 justify-center">
+                        <span class="academy-badge" style="font-size: 0.75rem;">500+ Companies</span>
+                        <span class="academy-badge" style="font-size: 0.75rem;">2x TEDx Speaker</span>
+                        <span class="academy-badge" style="font-size: 0.75rem;">"Amplify with AI"</span>
+                        <span class="academy-badge" style="font-size: 0.75rem;">Learning Acceleration</span>
                     </div>
-                    <div class="body-sm">
-                        <strong>Expertise:</strong> Technical Claude implementation, business automation, learning acceleration, 
-                        ROI optimization, AI workflow design
+                    <div class="body-sm text-muted">
+                        <strong>Teaching Focus:</strong> Claude mastery, AI workflow design, 
+                        learning acceleration, business automation, conscious AI ethics
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Curriculum -->
-    <section id="curriculum" class="mv-container py-20">
-        <div class="overline-text mb-4 text-primary text-center">COMPREHENSIVE CURRICULUM</div>
-        <h2 class="title-bold-2 text-center mb-6">
-            5 Modules That Transform Claude Into Your Virtual COO
-        </h2>
-        <div class="body-lg text-center text-muted max-w-3xl mb-16">
-            Each module builds systematically on the previous one, taking you from Claude beginner 
-            to running a sophisticated AI-powered business operation in just 5 comprehensive sessions.
-        </div>
-        
-        <div class="max-w-5xl">
-            <div class="flex flex-col gap-8">
-                <!-- Module 1 -->
-                <div class="card">
-                    <div class="flex items-start gap-6 mb-6">
-                        <div class="module-number">1</div>
-                        <div class="flex-1">
-                            <h3 class="title-bold-4 mb-3">Claude Foundations for Strategic Thinking</h3>
-                            <div class="body text-muted mb-4">
-                                Master the fundamentals that separate basic ChatGPT users from Claude power users. 
-                                Learn the strategic prompt engineering that transforms Claude into a business advisor.
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <div class="overline-text text-primary">MODULE 1</div>
-                            <div class="body-sm text-muted">90 minutes</div>
-                        </div>
-                    </div>
-                    
-                    <div class="grid-3 mb-6">
-                        <div>
-                            <div class="title-bold-7 mb-2">🧠 Strategic Mindset</div>
-                            <div class="body-sm text-muted">
-                                Context engineering principles that make Claude think like a COO, not a chatbot
-                            </div>
-                        </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">⚙️ Advanced Prompting</div>
-                            <div class="body-sm text-muted">
-                                The 7-layer prompt framework that produces consultant-quality strategic analysis
-                            </div>
-                        </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">🎯 Business Intelligence Setup</div>
-                            <div class="body-sm text-muted">
-                                Configure Claude with your business context, market data, and strategic objectives
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: #f9fafb; padding: 1.5rem; border-radius: 0.5rem;">
-                        <div class="title-bold-7 mb-2">✅ You'll Walk Away With:</div>
-                        <ul style="list-style: none; padding: 0;">
-                            <li class="body-sm mb-1">• Claude configured as your strategic business advisor</li>
-                            <li class="body-sm mb-1">• 25+ proven prompt templates for business analysis</li>
-                            <li class="body-sm mb-1">• Strategic thinking frameworks that produce $10K consulting-quality insights</li>
-                            <li class="body-sm">• Your first complete competitive analysis worth $5,000</li>
-                        </ul>
-                    </div>
+    <!-- Consciousness-Driven Curriculum -->
+    <section id="mastery-curriculum" class="py-24">
+        <div class="mv-container">
+            <div class="text-center mb-16">
+                <div class="overline-text text-primary mb-4">MASTERY CURRICULUM</div>
+                <h2 class="title-bold-2 mb-6">
+                    5 Dimensions of <span class="gradient-text">Conscious AI Leadership</span>
+                </h2>
+                <div class="body-lg text-muted max-w-4xl">
+                    Each dimension builds systematically, transforming you from an entrepreneur using AI tools 
+                    to a conscious leader wielding AI as an extension of your highest vision. This is the 
+                    curriculum that creates the next generation of purpose-driven, AI-powered visionaries.
                 </div>
+            </div>
+            
+            <div class="max-w-6xl">
+                <div class="flex flex-col gap-8">
+                    <!-- Dimension 1 -->
+                    <div class="card">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div class="module-number">1</div>
+                            <div class="flex-1">
+                                <h3 class="title-bold-4 mb-3 gradient-text">Conscious AI Foundation</h3>
+                                <div class="body text-muted mb-4">
+                                    Establish the consciousness-first approach to AI that separates visionary leaders 
+                                    from tool users. Master the spiritual and strategic principles that ensure your 
+                                    AI amplifies your highest purpose rather than replacing your human essence.
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="academy-badge mb-2">FOUNDATION</div>
+                                <div class="body-sm text-muted">2 hours</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid-3 mb-6">
+                            <div>
+                                <div class="title-bold-7 mb-2">🧘 Consciousness First</div>
+                                <div class="body-sm text-muted">
+                                    Align AI use with your highest values and vision for humanity's future
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">🎯 Strategic Mindset</div>
+                                <div class="body-sm text-muted">
+                                    Think like a visionary, not just a user—Claude as conscious co-creator
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">🌍 Global Impact</div>
+                                <div class="body-sm text-muted">
+                                    Design AI systems that scale positive impact across communities
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="academy-integration">
+                            <div class="title-bold-7 mb-3">✨ Transformation Outcomes:</div>
+                            <div class="grid-2">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• Claude aligned with your deepest values and vision</li>
+                                    <li class="body-sm mb-2">• Consciousness-driven AI decision framework</li>
+                                    <li class="body-sm mb-2">• Strategic thinking patterns that scale with wisdom</li>
+                                </ul>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• First conscious AI business strategy worth $25K+</li>
+                                    <li class="body-sm mb-2">• Global impact vision with measurable outcomes</li>
+                                    <li class="body-sm mb-2">• Community connection with 19K+ Academy peers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Module 2 -->
-                <div class="card">
-                    <div class="flex items-start gap-6 mb-6">
-                        <div class="module-number">2</div>
-                        <div class="flex-1">
-                            <h3 class="title-bold-4 mb-3">Claude Code: Building Custom Business Tools</h3>
-                            <div class="body text-muted mb-4">
-                                The secret that separates $10M entrepreneurs from everyone else: they build custom tools 
-                                instead of trying to fit their business into generic software. Create dashboards, 
-                                automation systems, and business tools without hiring developers.
+                    <!-- Dimension 2 -->
+                    <div class="card">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div class="module-number">2</div>
+                            <div class="flex-1">
+                                <h3 class="title-bold-4 mb-3 gradient-text">Visionary Business Architecture</h3>
+                                <div class="body text-muted mb-4">
+                                    Build sophisticated AI business systems that operate with the wisdom of a sage 
+                                    and the efficiency of a master strategist. Create tools, dashboards, and 
+                                    processes that scale your vision while maintaining human connection.
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="academy-badge mb-2">SYSTEMS</div>
+                                <div class="body-sm text-muted">2.5 hours</div>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <div class="overline-text text-primary">MODULE 2</div>
-                            <div class="body-sm text-muted">2 hours</div>
+                        
+                        <div class="grid-3 mb-6">
+                            <div>
+                                <div class="title-bold-7 mb-2">🏗️ Conscious Architecture</div>
+                                <div class="body-sm text-muted">
+                                    Design business systems that honor human values while optimizing performance
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">📊 Wisdom Dashboards</div>
+                                <div class="body-sm text-muted">
+                                    Create intelligence systems that inform decisions with both data and intuition
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">🔄 Flow Automation</div>
+                                <div class="body-sm text-muted">
+                                    Automate processes while preserving the human touch where it matters most
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="academy-integration">
+                            <div class="title-bold-7 mb-3">✨ Transformation Outcomes:</div>
+                            <div class="grid-2">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• Custom business intelligence system (saves $75K+ in development)</li>
+                                    <li class="body-sm mb-2">• Conscious automation that preserves human connection</li>
+                                    <li class="body-sm mb-2">• Scalable processes aligned with your values</li>
+                                </ul>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• 20-30 hours per week reclaimed for visionary work</li>
+                                    <li class="body-sm mb-2">• Integration with Mindvalley's proven scaling frameworks</li>
+                                    <li class="body-sm mb-2">• Community feedback and refinement support</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="grid-3 mb-6">
-                        <div>
-                            <div class="title-bold-7 mb-2">🛠️ No-Code Development</div>
-                            <div class="body-sm text-muted">
-                                Build sophisticated business tools using Claude's coding capabilities—no programming experience required
-                            </div>
-                        </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">📊 Custom Dashboards</div>
-                            <div class="body-sm text-muted">
-                                Create real-time business intelligence dashboards that track KPIs automatically
-                            </div>
-                        </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">🔄 Process Automation</div>
-                            <div class="body-sm text-muted">
-                                Automate repetitive business processes and create intelligent workflow systems
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: #f9fafb; padding: 1.5rem; border-radius: 0.5rem;">
-                        <div class="title-bold-7 mb-2">✅ You'll Walk Away With:</div>
-                        <ul style="list-style: none; padding: 0;">
-                            <li class="body-sm mb-1">• Your first custom business dashboard (saves $50K in development costs)</li>
-                            <li class="body-sm mb-1">• API integration templates for connecting all your business tools</li>
-                            <li class="body-sm mb-1">• Automated reporting system that creates executive summaries weekly</li>
-                            <li class="body-sm">• Process automation that saves 15-20 hours per week</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Module 3 -->
-                <div class="card">
-                    <div class="flex items-start gap-6 mb-6">
-                        <div class="module-number">3</div>
-                        <div class="flex-1">
-                            <h3 class="title-bold-4 mb-3">Industry-Specific Claude Configuration</h3>
-                            <div class="body text-muted mb-4">
-                                Generic AI advice doesn't work. Learn how to configure Claude with deep industry knowledge, 
-                                your specific business model, and competitive landscape to make decisions that understand 
-                                your unique context.
+                    <!-- Dimension 3 -->
+                    <div class="card">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div class="module-number">3</div>
+                            <div class="flex-1">
+                                <h3 class="title-bold-4 mb-3 gradient-text">Conscious Market Intelligence</h3>
+                                <div class="body text-muted mb-4">
+                                    Develop AI that understands not just market data, but the consciousness shifts 
+                                    driving human behavior. Create intelligence systems that anticipate trends, 
+                                    understand deeper motivations, and align with evolutionary movements.
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="academy-badge mb-2">INTELLIGENCE</div>
+                                <div class="body-sm text-muted">2 hours</div>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <div class="overline-text text-primary">MODULE 3</div>
-                            <div class="body-sm text-muted">90 minutes</div>
+                        
+                        <div class="grid-3 mb-6">
+                            <div>
+                                <div class="title-bold-7 mb-2">🌊 Consciousness Trends</div>
+                                <div class="body-sm text-muted">
+                                    Detect the deeper currents shaping markets beyond surface-level data
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">🎯 Purpose Alignment</div>
+                                <div class="body-sm text-muted">
+                                    Configure AI to understand your industry through the lens of conscious evolution
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">🚀 Visionary Strategy</div>
+                                <div class="body-sm text-muted">
+                                    Build strategic frameworks that anticipate and shape positive change
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="academy-integration">
+                            <div class="title-bold-7 mb-3">✨ Transformation Outcomes:</div>
+                            <div class="grid-2">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• AI that understands consciousness trends in your industry</li>
+                                    <li class="body-sm mb-2">• Strategic intelligence system worth $50K+ annually</li>
+                                    <li class="body-sm mb-2">• Purpose-driven competitive analysis and positioning</li>
+                                </ul>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• Future-sensing capabilities for market opportunities</li>
+                                    <li class="body-sm mb-2">• Integration with global Academy trend insights</li>
+                                    <li class="body-sm mb-2">• Community wisdom sharing and collaborative intelligence</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="grid-3 mb-6">
-                        <div>
-                            <div class="title-bold-7 mb-2">🏢 Industry Expertise</div>
-                            <div class="body-sm text-muted">
-                                Configure Claude with deep knowledge of your industry, regulations, and best practices
-                            </div>
-                        </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">🧩 Business Model Integration</div>
-                            <div class="body-sm text-muted">
-                                Teach Claude your unique business model, revenue streams, and operational constraints
-                            </div>
-                        </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">🎯 Custom Workflows</div>
-                            <div class="body-sm text-muted">
-                                Build decision trees and reasoning chains specific to your business challenges
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: #f9fafb; padding: 1.5rem; border-radius: 0.5rem;">
-                        <div class="title-bold-7 mb-2">✅ You'll Walk Away With:</div>
-                        <ul style="list-style: none; padding: 0;">
-                            <li class="body-sm mb-1">• Claude that understands your industry better than most employees</li>
-                            <li class="body-sm mb-1">• Custom business model analysis and optimization recommendations</li>
-                            <li class="body-sm mb-1">• Industry-specific decision frameworks and risk assessment tools</li>
-                            <li class="body-sm">• Competitive intelligence system that monitors your market 24/7</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Module 4 -->
-                <div class="card">
-                    <div class="flex items-start gap-6 mb-6">
-                        <div class="module-number">4</div>
-                        <div class="flex-1">
-                            <h3 class="title-bold-4 mb-3">Financial Intelligence & Strategic Planning</h3>
-                            <div class="body text-muted mb-4">
-                                Transform Claude into your virtual CFO and strategic planner. Master advanced financial 
-                                modeling, scenario planning, and strategic decision-making that typically requires 
-                                expensive consultants.
+                    <!-- Dimension 4 -->
+                    <div class="card">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div class="module-number">4</div>
+                            <div class="flex-1">
+                                <h3 class="title-bold-4 mb-3 gradient-text">Abundance & Impact Modeling</h3>
+                                <div class="body text-muted mb-4">
+                                    Transform Claude into your conscious financial strategist and impact tracker. 
+                                    Create models that optimize for both profit and purpose, ensuring your success 
+                                    contributes to the greater good while building sustainable abundance.
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="academy-badge mb-2">ABUNDANCE</div>
+                                <div class="body-sm text-muted">2.5 hours</div>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <div class="overline-text text-primary">MODULE 4</div>
-                            <div class="body-sm text-muted">2 hours</div>
+                        
+                        <div class="grid-3 mb-6">
+                            <div>
+                                <div class="title-bold-7 mb-2">💰 Conscious Finance</div>
+                                <div class="body-sm text-muted">
+                                    Build financial models that account for human and environmental impact
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">📈 Purpose Metrics</div>
+                                <div class="body-sm text-muted">
+                                    Track success through multiple bottom lines: profit, people, planet
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">🌱 Growth Strategy</div>
+                                <div class="body-sm text-muted">
+                                    Scale strategies that increase both revenue and positive global impact
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="academy-integration">
+                            <div class="title-bold-7 mb-3">✨ Transformation Outcomes:</div>
+                            <div class="grid-2">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• Complete conscious business financial model</li>
+                                    <li class="body-sm mb-2">• Impact measurement and optimization system</li>
+                                    <li class="body-sm mb-2">• 3-year abundance strategy with purpose alignment</li>
+                                </ul>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• Investment readiness for conscious capital</li>
+                                    <li class="body-sm mb-2">• Access to Mindvalley's global investor network</li>
+                                    <li class="body-sm mb-2">• Sustainable scaling frameworks</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="grid-3 mb-6">
-                        <div>
-                            <div class="title-bold-7 mb-2">💰 Financial Modeling</div>
-                            <div class="body-sm text-muted">
-                                Create sophisticated financial models, forecasts, and valuation scenarios
-                            </div>
-                        </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">🎯 Strategic Planning</div>
-                            <div class="body-sm text-muted">
-                                Develop comprehensive business strategies and market entry plans
-                            </div>
-                        </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">📈 Performance Analytics</div>
-                            <div class="body-sm text-muted">
-                                Build advanced analytics and predictive modeling for business optimization
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: #f9fafb; padding: 1.5rem; border-radius: 0.5rem;">
-                        <div class="title-bold-7 mb-2">✅ You'll Walk Away With:</div>
-                        <ul style="list-style: none; padding: 0;">
-                            <li class="body-sm mb-1">• Complete financial model and 3-year business forecast</li>
-                            <li class="body-sm mb-1">• Strategic planning framework and quarterly review system</li>
-                            <li class="body-sm mb-1">• Risk assessment and scenario planning tools</li>
-                            <li class="body-sm">• Investment readiness package and valuation models</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Module 5 -->
-                <div class="card">
-                    <div class="flex items-start gap-6 mb-6">
-                        <div class="module-number">5</div>
-                        <div class="flex-1">
-                            <h3 class="title-bold-4 mb-3">The Complete AI-Powered Business System</h3>
-                            <div class="body text-muted mb-4">
-                                Integrate everything into a cohesive AI-powered business operation. Learn advanced strategies 
-                                for scaling your virtual COO system and building competitive moats that are impossible 
-                                to replicate.
+                    <!-- Dimension 5 -->
+                    <div class="card">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div class="module-number">5</div>
+                            <div class="flex-1">
+                                <h3 class="title-bold-4 mb-3 gradient-text">Legacy & Leadership Integration</h3>
+                                <div class="body text-muted mb-4">
+                                    Integrate all dimensions into a cohesive conscious AI leadership system that 
+                                    scales your positive impact globally. Create legacies that inspire future 
+                                    generations while building competitive advantages that conscious competitors 
+                                    cannot replicate.
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="academy-badge mb-2">MASTERY</div>
+                                <div class="body-sm text-muted">2.5 hours</div>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <div class="overline-text text-primary">MODULE 5</div>
-                            <div class="body-sm text-muted">2 hours</div>
-                        </div>
-                    </div>
-                    
-                    <div class="grid-3 mb-6">
-                        <div>
-                            <div class="title-bold-7 mb-2">🏗️ System Integration</div>
-                            <div class="body-sm text-muted">
-                                Connect all Claude systems into a unified business intelligence and operations platform
+                        
+                        <div class="grid-3 mb-6">
+                            <div>
+                                <div class="title-bold-7 mb-2">👑 Conscious Leadership</div>
+                                <div class="body-sm text-muted">
+                                    Lead through example, inspiring others to use AI for humanity's highest good
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">🌍 Global Impact</div>
+                                <div class="body-sm text-muted">
+                                    Scale your influence to create positive change across industries and cultures
+                                </div>
+                            </div>
+                            <div>
+                                <div class="title-bold-7 mb-2">🔮 Future Visioning</div>
+                                <div class="body-sm text-muted">
+                                    Build AI systems that help humanity evolve towards greater consciousness
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">🚀 Scaling Strategy</div>
-                            <div class="body-sm text-muted">
-                                Advanced techniques for scaling AI operations as your business grows
+                        
+                        <div class="academy-integration">
+                            <div class="title-bold-7 mb-3">✨ Transformation Outcomes:</div>
+                            <div class="grid-2">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• Complete conscious AI leadership ecosystem</li>
+                                    <li class="body-sm mb-2">• Global impact strategy and measurement system</li>
+                                    <li class="body-sm mb-2">• Lifetime access to Academy conscious leader community</li>
+                                </ul>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="body-sm mb-2">• Conscious competitive moats that scale with purpose</li>
+                                    <li class="body-sm mb-2">• Legacy framework for generational impact</li>
+                                    <li class="body-sm mb-2">• Academy certification and global recognition</li>
+                                </ul>
                             </div>
                         </div>
-                        <div>
-                            <div class="title-bold-7 mb-2">🛡️ Competitive Moats</div>
-                            <div class="body-sm text-muted">
-                                Build AI-powered advantages that competitors can't easily replicate
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: #f9fafb; padding: 1.5rem; border-radius: 0.5rem;">
-                        <div class="title-bold-7 mb-2">✅ You'll Walk Away With:</div>
-                        <ul style="list-style: none; padding: 0;">
-                            <li class="body-sm mb-1">• Complete AI-powered business operation system</li>
-                            <li class="body-sm mb-1">• 12-month scaling roadmap and advanced strategy guide</li>
-                            <li class="body-sm mb-1">• Competitive analysis and moat-building framework</li>
-                            <li class="body-sm">• Access to exclusive Claude for Founders community</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -705,53 +801,59 @@
     </section>
 
     <!-- Transformation Stories -->
-    <section class="bg-light py-16">
+    <section class="bg-light py-20">
         <div class="mv-container">
-            <div class="overline-text mb-4 text-primary text-center">REAL TRANSFORMATION STORIES</div>
-            <h2 class="title-bold-2 text-center mb-12">How Founders Are Getting 10X Results</h2>
+            <div class="text-center mb-16">
+                <div class="overline-text text-primary mb-4">CONSCIOUSNESS IN ACTION</div>
+                <h2 class="title-bold-2 mb-6">How Visionaries Are Leading the Future</h2>
+                <div class="body-lg text-muted max-w-3xl">
+                    Real transformation stories from Academy students who've evolved from entrepreneurs 
+                    using AI tools to conscious leaders shaping humanity's AI-powered future.
+                </div>
+            </div>
             
             <div class="grid-3">
-                <div class="testimonial-card">
-                    <div class="body-italic mb-6">
-                        Claude handles our entire competitive analysis, financial projections, and strategic planning. 
-                        It's like having a Harvard MBA working 24/7. We scaled from $2M to $8.5M ARR while I actually 
-                        started taking vacations again.
+                <div class="transformation-card">
+                    <div class="body-italic mb-6" style="font-size: 1.125rem; line-height: 1.7;">
+                        "Claude doesn't just handle our operations—it embodies our consciousness. Our AI systems 
+                        now make decisions aligned with our values, scaling our positive impact to 50+ countries. 
+                        Revenue grew 340% while our environmental footprint decreased 60%."
                     </div>
                     <div class="flex items-center gap-4">
-                        <img src="https://placehold.co/60x60/7a12d4/ffffff?text=RM" alt="Rachel Martinez" style="width: 60px; height: 60px; border-radius: 50%;">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b1e9?w=60&h=60&fit=crop&crop=face" alt="Sarah Chen" style="width: 60px; height: 60px; border-radius: 50%;">
                         <div>
-                            <div class="title-bold-7">Rachel Martinez</div>
-                            <div class="body-sm text-muted">SaaS Founder, $8.5M ARR</div>
+                            <div class="title-bold-7">Sarah Chen</div>
+                            <div class="body-sm" style="color: rgba(255,255,255,0.8);">Conscious SaaS Founder, $8.5M ARR</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="body-italic mb-6">
-                        I built a complete customer service automation system with Claude in one weekend. 
-                        It saves us $180K annually in staffing costs and actually provides better, 
-                        more consistent customer experiences than our old team.
+                <div class="transformation-card">
+                    <div class="body-italic mb-6" style="font-size: 1.125rem; line-height: 1.7;">
+                        "We built an AI system that doesn't just serve customers—it genuinely cares for their 
+                        wellbeing. Our conscious automation increased customer satisfaction to 97% while 
+                        reducing response times by 80%. It's business with soul."
                     </div>
                     <div class="flex items-center gap-4">
-                        <img src="https://placehold.co/60x60/2196f3/ffffff?text=MR" alt="Marcus Rodriguez" style="width: 60px; height: 60px; border-radius: 50%;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Marcus Rodriguez" style="width: 60px; height: 60px; border-radius: 50%;">
                         <div>
                             <div class="title-bold-7">Marcus Rodriguez</div>
-                            <div class="body-sm text-muted">E-commerce CEO, $12M Revenue</div>
+                            <div class="body-sm" style="color: rgba(255,255,255,0.8);">Wellness E-commerce, $15M Revenue</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="body-italic mb-6">
-                        Claude processes our weekly metrics and creates board-ready reports automatically. 
-                        Our investors are blown away by the depth of analysis. It's completely revolutionized 
-                        how we operate and make decisions.
+                <div class="transformation-card">
+                    <div class="body-italic mb-6" style="font-size: 1.125rem; line-height: 1.7;">
+                        "Our AI doesn't just analyze data—it understands the human story behind every number. 
+                        This conscious approach to business intelligence has attracted conscious investors and 
+                        conscious customers who align with our vision for humanity."
                     </div>
                     <div class="flex items-center gap-4">
-                        <img src="https://placehold.co/60x60/e91e63/ffffff?text=JW" alt="Jennifer Walsh" style="width: 60px; height: 60px; border-radius: 50%;">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Jennifer Walsh" style="width: 60px; height: 60px; border-radius: 50%;">
                         <div>
                             <div class="title-bold-7">Jennifer Walsh</div>
-                            <div class="body-sm text-muted">Fintech Founder, Series A</div>
+                            <div class="body-sm" style="color: rgba(255,255,255,0.8);">Impact Fintech, Series B</div>
                         </div>
                     </div>
                 </div>
@@ -759,273 +861,95 @@
         </div>
     </section>
 
-    <!-- Who This Is For -->
-    <section class="mv-container py-16">
-        <div class="max-w-4xl">
-            <div class="overline-text mb-4 text-primary">PERFECT FIT ASSESSMENT</div>
-            <h2 class="title-bold-2 mb-8">Is Claude for Founders Right for You?</h2>
-            
-            <div class="grid-2 gap-8">
-                <div>
-                    <h3 class="title-bold-5 mb-6" style="color: #059669;">✅ This Program Is Perfect If You:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✓</span>
-                            Run a business generating $500K+ annual revenue (or have serious growth trajectory)
-                        </li>
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✓</span>
-                            Feel overwhelmed by operational tasks that pull you away from strategic work
-                        </li>
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✓</span>
-                            Want to build competitive advantages through AI before your competitors catch up
-                        </li>
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✓</span>
-                            Are ready to invest time learning systems that will save you 40+ hours per week
-                        </li>
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✓</span>
-                            Believe in leveraging technology to scale human potential and business impact
-                        </li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="title-bold-5 mb-6" style="color: #dc2626;">❌ This Program Is NOT For You If:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #dc2626; margin-right: 1rem;">✗</span>
-                            You're looking for a "magic button" solution without putting in learning effort
-                        </li>
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #dc2626; margin-right: 1rem;">✗</span>
-                            Your business is still in pre-revenue or early validation stages
-                        </li>
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #dc2626; margin-right: 1rem;">✗</span>
-                            You're not comfortable with technology or trying new digital tools
-                        </li>
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #dc2626; margin-right: 1rem;">✗</span>
-                            You prefer traditional business methods and aren't interested in AI transformation
-                        </li>
-                        <li class="body mb-4 flex items-start">
-                            <span style="color: #dc2626; margin-right: 1rem;">✗</span>
-                            You don't have 8-10 hours to dedicate to learning and implementation
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Stack -->
-    <section class="bg-light py-16">
+    <!-- Academy Investment -->
+    <section id="transformation" class="py-20">
         <div class="mv-container">
-            <h2 class="title-bold-2 text-center mb-12">Everything You Get Today</h2>
-            
-            <div class="max-w-4xl">
-                <div class="card mb-6">
-                    <h3 class="title-bold-5 mb-4">🎯 Core Training Program</h3>
-                    <ul style="list-style: none; padding: 0;" class="mb-6">
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            5 Comprehensive Modules (8+ hours of advanced training)
-                        </li>
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            100+ Claude Prompt Templates for Business Operations
-                        </li>
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            Step-by-Step Implementation Guides and Checklists
-                        </li>
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            Real Founder Case Studies with Complete Results
-                        </li>
-                    </ul>
-                    <div class="text-right title-bold-6">Value: $4,997</div>
+            <div class="max-w-5xl">
+                <div class="text-center mb-16">
+                    <div class="overline-text text-primary mb-4">CONSCIOUS INVESTMENT</div>
+                    <h2 class="title-bold-2 mb-6">
+                        Join the Academy's <span class="gradient-text">AI Mastery Elite</span>
+                    </h2>
+                    <div class="body-lg text-muted max-w-3xl">
+                        This intensive is part of Mindvalley Academy's exclusive $7K AI Mastery program. 
+                        Limited to visionary leaders ready to transform not just their business, 
+                        but their impact on humanity's AI-powered future.
+                    </div>
                 </div>
                 
-                <div class="card mb-6">
-                    <h3 class="title-bold-5 mb-4">🛠️ Claude Business Toolkit</h3>
-                    <ul style="list-style: none; padding: 0;" class="mb-6">
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            50+ Pre-Built Claude Code Templates and Scripts
-                        </li>
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            Business Dashboard Generator and Analytics Tools
-                        </li>
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            Financial Model Templates and Strategic Planning Frameworks
-                        </li>
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            Industry-Specific Configuration Packages
-                        </li>
-                    </ul>
-                    <div class="text-right title-bold-6">Value: $2,497</div>
-                </div>
-                
-                <div class="card mb-6">
-                    <h3 class="title-bold-5 mb-4">👥 VIP Access & Community</h3>
-                    <ul style="list-style: none; padding: 0;" class="mb-6">
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            Lifetime Access to Private Founder Community
-                        </li>
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            Monthly Q&A Sessions with Vishen and Vykintas
-                        </li>
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            Advanced Claude Updates and New Feature Training
-                        </li>
-                        <li class="body mb-2 flex items-start">
-                            <span style="color: #059669; margin-right: 1rem;">✅</span>
-                            Direct Access to Implementation Support Team
-                        </li>
-                    </ul>
-                    <div class="text-right title-bold-6">Value: $1,997</div>
-                </div>
-
-                <div style="background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%); color: white; padding: 2rem; border-radius: 1rem; text-align: center;">
-                    <div class="title-bold-4 mb-4">Total Value: $9,491</div>
-                    <div class="title-bold-2 mb-2">Your Investment Today: $1,495</div>
-                    <div class="body-lg" style="opacity: 0.9;">Save $7,996 with Founder Pricing</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="mv-container py-16">
-        <div class="overline-text mb-4 text-primary text-center">FOUNDER PRICING</div>
-        <h2 class="title-bold-2 text-center mb-6">Choose Your Investment Level</h2>
-        <div class="body-lg text-center text-muted max-w-3xl mb-12">
-            Flexible payment options designed for cash flow management. All options include the complete program 
-            and lifetime access to the community.
-        </div>
-        
-        <div class="grid-3 max-w-5xl">
-            <div class="pricing-card">
-                <div class="overline-text text-primary mb-2">SINGLE PAYMENT</div>
-                <div class="title-bold-2 mb-4">$1,495</div>
-                <div class="body mb-6">
-                    Pay once and save $200. Perfect for established businesses with strong cash flow.
-                </div>
-                <a href="#enroll" class="btn-secondary" style="width: 100%; justify-content: center;">
-                    Pay in Full
-                </a>
-            </div>
-            
-            <div class="pricing-card featured">
-                <div class="overline-text mb-2" style="color: white;">3 PAYMENTS</div>
-                <div class="title-bold-2 mb-1" style="color: white;">$565</div>
-                <div class="body-sm mb-4" style="color: rgba(255,255,255,0.8);">3 monthly payments</div>
-                <div class="body mb-6" style="color: rgba(255,255,255,0.9);">
-                    Spread the cost over 3 months. Start today with $565 down.
-                </div>
-                <a href="#enroll" class="btn-primary" style="width: 100%; justify-content: center; background: white; color: #7a12d4;">
-                    Start with $565
-                </a>
-            </div>
-            
-            <div class="pricing-card">
-                <div class="overline-text text-primary mb-2">6 PAYMENTS</div>
-                <div class="title-bold-2 mb-4">$295</div>
-                <div class="body mb-6">
-                    Maximum flexibility with 6 monthly payments. Lowest monthly investment option.
-                </div>
-                <a href="#enroll" class="btn-secondary" style="width: 100%; justify-content: center;">
-                    Start with $295
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guarantees -->
-    <section class="bg-light py-16">
-        <div class="mv-container">
-            <div class="max-w-4xl text-center">
-                <h2 class="title-bold-2 mb-8">Triple Guarantee Protection</h2>
-                
-                <div class="grid-3">
-                    <div class="card text-center">
-                        <div style="font-size: 3rem;" class="mb-4">🛡️</div>
-                        <h3 class="title-bold-6 mb-4">30-Day Money Back</h3>
-                        <div class="body text-muted">
-                            If you're not completely satisfied with the training quality and content, 
-                            get a full refund within 30 days.
+                <div class="transformation-card text-center">
+                    <div class="title-bold-3 mb-6">Complete Conscious AI Leadership Mastery</div>
+                    <div class="body-lg mb-8" style="color: rgba(255,255,255,0.9);">
+                        Transform from entrepreneur to conscious AI leader through intensive training, 
+                        global community access, and lifetime integration support.
+                    </div>
+                    
+                    <div class="grid-2 mb-8" style="gap: 2rem;">
+                        <div class="text-left">
+                            <div class="title-bold-6 mb-4">🎓 Complete Mastery Experience</div>
+                            <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9);">
+                                <li class="body-sm mb-2">• 5 consciousness-driven AI dimensions</li>
+                                <li class="body-sm mb-2">• 10+ hours of transformational training</li>
+                                <li class="body-sm mb-2">• Live sessions with Vishen & Vykintas</li>
+                                <li class="body-sm mb-2">• Academy community integration</li>
+                                <li class="body-sm mb-2">• Lifetime access and updates</li>
+                            </ul>
+                        </div>
+                        <div class="text-left">
+                            <div class="title-bold-6 mb-4">🌍 Global Impact Network</div>
+                            <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9);">
+                                <li class="body-sm mb-2">• 19K+ Academy student community</li>
+                                <li class="body-sm mb-2">• Global conscious leader network</li>
+                                <li class="body-sm mb-2">• Annual Tallinn & Dubai gatherings</li>
+                                <li class="body-sm mb-2">• Purpose-driven business connections</li>
+                                <li class="body-sm mb-2">• Conscious investor network access</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="card text-center">
-                        <div style="font-size: 3rem;" class="mb-4">⏰</div>
-                        <h3 class="title-bold-6 mb-4">Time Savings Guarantee</h3>
-                        <div class="body text-muted">
-                            If you don't save at least 15 hours per week within 60 days of implementation, 
-                            we'll refund your entire investment.
-                        </div>
+                    <div class="section-divider" style="background: rgba(255,255,255,0.2);"></div>
+                    
+                    <div class="title-bold-3 mb-4">Investment: $4,997</div>
+                    <div class="body mb-8" style="color: rgba(255,255,255,0.8);">
+                        Academy Mastery Program Tuition • Flexible payment options available
                     </div>
                     
-                    <div class="card text-center">
-                        <div style="font-size: 3rem;" class="mb-4">🚀</div>
-                        <h3 class="title-bold-6 mb-4">ROI Guarantee</h3>
-                        <div class="body text-muted">
-                            If your Claude system doesn't create at least $10,000 in measurable value 
-                            within 90 days, we'll work with you until it does.
-                        </div>
+                    <div class="flex gap-6 justify-center flex-wrap">
+                        <a href="#" class="btn-primary" style="background: white; color: #7a12d4; font-size: 1.125rem; padding: 1.25rem 2.5rem;">
+                            🚀 Begin Your Transformation
+                        </a>
+                        <a href="#" class="btn-secondary" style="border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.9);">
+                            📞 Speak with Admission
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 text-center" style="color: rgba(255,255,255,0.8);">
+                        ✅ 30-Day Transformation Guarantee • ✅ Academy Community Access • ✅ Lifetime Updates
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section id="enroll" class="mv-container py-20">
-        <div class="card max-w-4xl text-center">
-            <h2 class="title-bold-2 mb-6">Ready to Build Your $500K Virtual COO?</h2>
-            <div class="body-lg text-muted mb-8">
-                Join 7,148+ founders who've transformed their businesses with Claude mastery. 
-                The February 2026 cohort starts in 5 days—secure your spot now.
-            </div>
-            <div class="flex gap-6 justify-center flex-wrap mb-8">
-                <a href="#" class="btn-primary" style="font-size: 1.125rem; padding: 1.5rem 3rem;">
-                    🚀 Start Your Transformation ($1,495)
-                </a>
-                <a href="#" class="btn-secondary" style="font-size: 1rem;">
-                    💬 Speak with an Advisor
-                </a>
-            </div>
-            <div class="social-proof">
-                <div>✅ 30-Day Money Back Guarantee</div>
-                <div>•</div>
-                <div>✅ Lifetime Community Access</div>
-                <div>•</div>
-                <div>✅ ROI Protection</div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="mv-container py-16">
-        <div class="text-center text-footer">
-            © 2026 Mindvalley • Claude for Founders Mastery
+    <footer class="py-16" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
+        <div class="mv-container">
+            <div class="text-center">
+                <div class="academy-badge mb-4">MINDVALLEY ACADEMY</div>
+                <div class="body text-footer">
+                    © 2026 Mindvalley • Conscious AI Leadership Mastery
+                </div>
+                <div class="body-sm text-footer mt-2">
+                    Part of the Alternative University for Entrepreneurs, Leaders & Visionaries
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Enhanced interactive elements
+        // Enhanced interactive elements with consciousness theme
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scroll for anchor links
+            // Smooth scroll with easing
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -1039,36 +963,48 @@
                 });
             });
 
-            // Enhanced hover effects for cards
-            const cards = document.querySelectorAll('.card, .feature-card, .instructor-card, .pricing-card, .testimonial-card');
+            // Enhanced hover effects for consciousness theme
+            const cards = document.querySelectorAll('.card, .feature-card, .instructor-card, .transformation-card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
-                    if (!this.classList.contains('pricing-card')) {
-                        this.style.transform = 'translateY(-4px)';
-                        this.style.transition = 'transform 0.3s ease';
-                    }
+                    this.style.transform = 'translateY(-8px)';
+                    this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
                 });
                 
                 card.addEventListener('mouseleave', function() {
-                    if (!this.classList.contains('pricing-card')) {
-                        this.style.transform = 'translateY(0)';
-                    }
+                    this.style.transform = 'translateY(0)';
                 });
             });
 
-            // CTA button click tracking
-            const ctaButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
-            ctaButtons.forEach(button => {
+            // Conscious button interaction
+            const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+            buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
-                    // Add subtle animation feedback
-                    this.style.transform = 'scale(0.98)';
+                    // Create ripple effect for consciousness theme
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s ease-out';
+                    ripple.style.pointerEvents = 'none';
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
                     setTimeout(() => {
-                        this.style.transform = '';
-                    }, 100);
+                        ripple.remove();
+                    }, 600);
                 });
             });
 
-            // Intersection Observer for fade-in animations
+            // Intersection Observer for consciousness-themed animations
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -1083,14 +1019,26 @@
                 });
             }, observerOptions);
 
-            // Apply fade-in to sections
-            document.querySelectorAll('section').forEach(section => {
+            // Apply consciousness-themed fade-in animations
+            document.querySelectorAll('section').forEach((section, index) => {
                 section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
                 observer.observe(section);
             });
         });
+
+        // Add ripple animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
