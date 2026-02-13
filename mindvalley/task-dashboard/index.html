@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Eliza Task Command Center</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Orbitron', 'system-ui'],
+                        'mono': ['Share Tech Mono', 'monospace'],
+                        'sans': ['Inter', 'system-ui'],
+                    },
+                    colors: {
+                        // Warm Neutral Cyberpunk Palette
+                        'void': '#020712',
+                        'midnight': '#060c20', 
+                        'cadet': '#1a2332',
+                        'jordy': '#4cccff',
+                        'cyan': '#4cccff',
+                        'emerald': '#10b981',
+                        'amber': '#f59e0b',
+                        'crimson': '#ef4444',
+                        // Glass effect colors
+                        'glass-bg': 'rgba(212, 173, 118, 0.08)',
+                        'glass-border': 'rgba(76, 204, 255, 0.2)',
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    },
+                    animation: {
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'slide-in': 'slide-in 0.3s ease-out',
+                        'value-flash': 'value-flash 0.6s ease-out',
+                        'priority-pulse': 'priority-pulse 1.5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(76, 204, 255, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(76, 204, 255, 0.6)' },
+                        },
+                        'shimmer': {
+                            '0%': { backgroundPosition: '200% 0' },
+                            '100%': { backgroundPosition: '-200% 0' },
+                        },
+                        'slide-in': {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'value-flash': {
+                            '0%': { textShadow: '0 0 12px currentColor' },
+                            '100%': { textShadow: 'none' },
+                        },
+                        'priority-pulse': {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.6' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom CSS Variables */
+        :root {
+            --typo-scale: 0.9;
+            --transition-fast: 0.15s;
+            --transition-default: 0.2s;
+            --transition-medium: 0.25s;
+        }
+        
+        @media (min-width: 768px) {
+            :root { --typo-scale: 1; }
+        }
+        
+        /* Glass Panel Effects */
+        .glass-panel {
+            background: linear-gradient(135deg, 
+                rgba(212, 173, 118, 0.1) 0%, 
+                rgba(212, 173, 118, 0.05) 100%);
+            backdrop-filter: blur(16px) saturate(1.8);
+            border: 1px solid rgba(76, 204, 255, 0.2);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-card {
+            background: linear-gradient(135deg,
+                rgba(26, 35, 50, 0.8) 0%,
+                rgba(6, 12, 32, 0.9) 100%);
+            backdrop-filter: blur(12px) saturate(1.5);
+            border: 1px solid rgba(76, 204, 255, 0.15);
+        }
+        
+        /* Neon borders for critical items */
+        .neon-critical {
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            box-shadow: 
+                0 0 10px rgba(239, 68, 68, 0.3),
+                0 0 20px rgba(239, 68, 68, 0.2),
+                inset 0 0 10px rgba(239, 68, 68, 0.1);
+        }
+        
+        .neon-high {
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            box-shadow: 
+                0 0 8px rgba(245, 158, 11, 0.3),
+                inset 0 0 8px rgba(245, 158, 11, 0.1);
+        }
+        
+        /* CRT Scanlines Effect */
+        .crt-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                transparent 50%,
+                rgba(0, 0, 0, 0.03) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+        
+        /* Metric styles */
+        .metric-value {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .label-text {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+        
+        /* Priority indicators */
+        .priority-critical { @apply bg-gradient-to-r from-red-500 to-pink-500; }
+        .priority-high { @apply bg-gradient-to-r from-orange-500 to-amber-500; }
+        .priority-medium { @apply bg-gradient-to-r from-blue-500 to-cyan-500; }
+        .priority-low { @apply bg-gradient-to-r from-green-500 to-emerald-500; }
+        
+        /* Holographic effect for headers */
+        .holographic {
+            background: linear-gradient(45deg, #4cccff, #10b981, #4cccff, #10b981);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        /* Breathing animation for active tasks */
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.02); opacity: 1; }
+        }
+        
+        .active-task {
+            animation: breathe 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-void text-white font-sans min-h-screen relative overflow-x-hidden">
+    <!-- Ambient Background -->
+    <div class="fixed inset-0 bg-gradient-to-br from-midnight via-void to-cadet opacity-90 -z-10"></div>
+    
+    <!-- Floating Orbs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-5">
+        <div class="absolute top-10 right-20 w-32 h-32 bg-jordy rounded-full opacity-10 blur-3xl animate-pulse-glow"></div>
+        <div class="absolute bottom-20 left-10 w-48 h-48 bg-emerald rounded-full opacity-8 blur-3xl animate-pulse-glow" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 w-24 h-24 bg-amber rounded-full opacity-6 blur-2xl animate-pulse-glow" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <!-- CRT Scanlines -->
+    <div class="fixed inset-0 crt-effect pointer-events-none -z-5"></div>
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-6 py-8 relative z-10">
+        <!-- Header -->
+        <header class="mb-8">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-display font-black holographic mb-2">
+                        ELIZA COMMAND
+                    </h1>
+                    <p class="text-jordy/80 font-mono text-sm tracking-wider">
+                        Task Prioritization • Real-time Intelligence • Mission Control
+                    </p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="glass-panel px-4 py-2 rounded-lg">
+                        <div class="label-text text-jordy/70 mb-1">System Status</div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-emerald rounded-full animate-pulse"></div>
+                            <span class="text-emerald font-mono text-sm">OPERATIONAL</span>
+                        </div>
+                    </div>
+                    <button id="refresh-btn" class="glass-panel hover:bg-jordy/10 px-4 py-2 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg">
+                        <span class="font-mono text-sm">↻ REFRESH</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Metrics Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Total Tasks -->
+            <div class="glass-card rounded-xl p-6 hover:scale-105 transition-all duration-200">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="label-text text-jordy/70">TOTAL TASKS</div>
+                    <div class="w-8 h-8 rounded-lg bg-jordy/20 flex items-center justify-center">
+                        <span class="text-lg">📋</span>
+                    </div>
+                </div>
+                <div id="total-tasks" class="metric-value text-3xl text-white mb-1 animate-slide-in">--</div>
+                <div class="text-xs text-gray-400 font-mono">Active in system</div>
+            </div>
+            
+            <!-- Critical Tasks -->
+            <div class="glass-card rounded-xl p-6 hover:scale-105 transition-all duration-200 neon-critical">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="label-text text-red-400">CRITICAL</div>
+                    <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center animate-priority-pulse">
+                        <span class="text-lg">🚨</span>
+                    </div>
+                </div>
+                <div id="critical-tasks" class="metric-value text-3xl text-red-400 mb-1 animate-slide-in">--</div>
+                <div class="text-xs text-gray-400 font-mono">Immediate attention</div>
+            </div>
+            
+            <!-- Completed Tasks -->
+            <div class="glass-card rounded-xl p-6 hover:scale-105 transition-all duration-200">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="label-text text-emerald-400">COMPLETED</div>
+                    <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                        <span class="text-lg">✅</span>
+                    </div>
+                </div>
+                <div id="completed-tasks" class="metric-value text-3xl text-emerald-400 mb-1 animate-slide-in">--</div>
+                <div class="text-xs text-gray-400 font-mono">Successfully finished</div>
+            </div>
+            
+            <!-- System Health -->
+            <div class="glass-card rounded-xl p-6 hover:scale-105 transition-all duration-200">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="label-text text-jordy/70">PRIORITY ENGINE</div>
+                    <div class="w-8 h-8 rounded-lg bg-jordy/20 flex items-center justify-center">
+                        <span class="text-lg">🎯</span>
+                    </div>
+                </div>
+                <div class="metric-value text-3xl text-jordy mb-1 animate-slide-in">ACTIVE</div>
+                <div id="last-updated" class="text-xs text-gray-400 font-mono">Last sync: --</div>
+            </div>
+        </div>
+        
+        <!-- Tasks Container -->
+        <div class="space-y-6">
+            <!-- Critical Tasks Section -->
+            <div id="critical-section" class="glass-panel rounded-2xl p-6" style="display: none;">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center animate-priority-pulse">
+                        <span class="text-xl">🚨</span>
+                    </div>
+                    <h2 class="text-2xl font-display font-bold text-red-400">CRITICAL PRIORITY</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-red-500/50 to-transparent"></div>
+                </div>
+                <div id="critical-tasks-list" class="space-y-4"></div>
+            </div>
+            
+            <!-- High Priority Tasks -->
+            <div id="high-section" class="glass-panel rounded-2xl p-6" style="display: none;">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                        <span class="text-xl">🔥</span>
+                    </div>
+                    <h2 class="text-2xl font-display font-bold text-amber-400">HIGH PRIORITY</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-amber-500/50 to-transparent"></div>
+                </div>
+                <div id="high-tasks-list" class="space-y-4"></div>
+            </div>
+            
+            <!-- Medium Priority Tasks -->
+            <div id="medium-section" class="glass-panel rounded-2xl p-6" style="display: none;">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-jordy/20 flex items-center justify-center">
+                        <span class="text-xl">📝</span>
+                    </div>
+                    <h2 class="text-2xl font-display font-bold text-jordy">MEDIUM PRIORITY</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-jordy/50 to-transparent"></div>
+                </div>
+                <div id="medium-tasks-list" class="space-y-4"></div>
+            </div>
+            
+            <!-- Completed Tasks -->
+            <div id="completed-section" class="glass-panel rounded-2xl p-6" style="display: none;">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                        <span class="text-xl">✅</span>
+                    </div>
+                    <h2 class="text-2xl font-display font-bold text-emerald-400">COMPLETED</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-emerald-500/50 to-transparent"></div>
+                </div>
+                <div id="completed-tasks-list" class="space-y-4"></div>
+            </div>
+        </div>
+        
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-12">
+            <div class="inline-block w-12 h-12 border-4 border-jordy/30 border-t-jordy rounded-full animate-spin mb-4"></div>
+            <div class="text-jordy/80 font-mono">Initializing command interface...</div>
+        </div>
+        
+        <!-- Error State -->
+        <div id="error" class="glass-panel rounded-xl p-8 text-center" style="display: none;">
+            <div class="text-6xl mb-4">⚠️</div>
+            <div class="text-xl font-display font-bold text-amber-400 mb-2">System Offline</div>
+            <div class="text-gray-400 font-mono">Unable to connect to task engine</div>
+            <button onclick="loadTasks()" class="mt-4 glass-card hover:bg-jordy/10 px-6 py-2 rounded-lg transition-all duration-200">
+                <span class="font-mono">RETRY CONNECTION</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        let tasks = [];
+        let metrics = {};
+        
+        // Priority level mappings
+        const priorityConfig = {
+            'critical': { color: 'red', emoji: '🚨', class: 'neon-critical' },
+            'high': { color: 'amber', emoji: '🔥', class: 'neon-high' },
+            'medium': { color: 'jordy', emoji: '📝', class: '' },
+            'low': { color: 'emerald', emoji: '📋', class: '' }
+        };
+        
+        // Task type icons
+        const typeIcons = {
+            'oneoff': '📋',
+            'reminder': '⏰',
+            'recurring': '🔄',
+            'security': '🔒',
+            'business': '💼',
+            'personal': '👤',
+            'executive': '⚡',
+            'coordination': '🤝'
+        };
+        
+        // Load tasks from API
+        async function loadTasks() {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('error').style.display = 'none';
+                
+                const response = await fetch('http://localhost:3456/api/tasks');
+                const data = await response.json();
+                
+                tasks = data.tasks || [];
+                metrics = data.metrics || {};
+                
+                updateMetrics();
+                renderTasks();
+                
+                document.getElementById('loading').style.display = 'none';
+                
+                console.log('Tasks loaded:', tasks.length);
+            } catch (error) {
+                console.error('Error loading tasks:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+        
+        // Update metrics display
+        function updateMetrics() {
+            const totalTasks = tasks.length;
+            const criticalTasks = tasks.filter(t => t.priorityLevel === 'critical').length;
+            const completedTasks = tasks.filter(t => t.state === 'completed').length;
+            
+            // Animate numbers
+            animateNumber('total-tasks', totalTasks);
+            animateNumber('critical-tasks', criticalTasks);
+            animateNumber('completed-tasks', completedTasks);
+            
+            // Update last sync time
+            const now = new Date();
+            document.getElementById('last-updated').textContent = 
+                `Last sync: ${now.toLocaleTimeString()}`;
+        }
+        
+        // Animate number changes
+        function animateNumber(elementId, targetValue) {
+            const element = document.getElementById(elementId);
+            const currentValue = parseInt(element.textContent) || 0;
+            
+            if (currentValue !== targetValue) {
+                element.classList.add('animate-value-flash');
+                element.textContent = targetValue;
+                
+                setTimeout(() => {
+                    element.classList.remove('animate-value-flash');
+                }, 600);
+            }
+        }
+        
+        // Render tasks by priority
+        function renderTasks() {
+            const sections = {
+                'critical': { element: 'critical-tasks-list', section: 'critical-section' },
+                'high': { element: 'high-tasks-list', section: 'high-section' },
+                'medium': { element: 'medium-tasks-list', section: 'medium-section' },
+                'completed': { element: 'completed-tasks-list', section: 'completed-section', filter: t => t.state === 'completed' }
+            };
+            
+            // Clear all sections first
+            Object.values(sections).forEach(({ element, section }) => {
+                document.getElementById(element).innerHTML = '';
+                document.getElementById(section).style.display = 'none';
+            });
+            
+            // Group tasks by priority and state
+            Object.entries(sections).forEach(([priority, config]) => {
+                let filteredTasks;
+                
+                if (config.filter) {
+                    filteredTasks = tasks.filter(config.filter);
+                } else {
+                    filteredTasks = tasks.filter(t => t.priorityLevel === priority && t.state !== 'completed');
+                }
+                
+                if (filteredTasks.length > 0) {
+                    document.getElementById(config.section).style.display = 'block';
+                    document.getElementById(config.element).innerHTML = 
+                        filteredTasks.map(task => renderTaskCard(task)).join('');
+                }
+            });
+        }
+        
+        // Render individual task card
+        function renderTaskCard(task) {
+            const priorityInfo = priorityConfig[task.priorityLevel] || priorityConfig['medium'];
+            const typeIcon = typeIcons[task.category] || typeIcons[task.type] || '📋';
+            const isActive = task.state === 'created' || task.state === 'in_progress';
+            
+            // Format deadline
+            let deadlineText = '';
+            if (task.deadline) {
+                const deadline = new Date(task.deadline);
+                const now = new Date();
+                const diffHours = Math.round((deadline - now) / (1000 * 60 * 60));
+                
+                if (diffHours < 0) {
+                    deadlineText = `<span class="text-red-400">⏰ ${Math.abs(diffHours)}h overdue</span>`;
+                } else if (diffHours < 24) {
+                    deadlineText = `<span class="text-amber-400">⏰ ${diffHours}h remaining</span>`;
+                } else {
+                    const diffDays = Math.ceil(diffHours / 24);
+                    deadlineText = `<span class="text-jordy/70">⏰ ${diffDays}d remaining</span>`;
+                }
+            }
+            
+            // Priority score display
+            const priorityScore = Math.round(task.priority * 100);
+            let priorityBar = '';
+            if (priorityScore > 0) {
+                const barWidth = Math.min(priorityScore, 100);
+                priorityBar = `
+                    <div class="mt-3">
+                        <div class="flex items-center justify-between text-xs mb-1">
+                            <span class="text-gray-400 font-mono">PRIORITY SCORE</span>
+                            <span class="font-mono text-${priorityInfo.color}-400">${priorityScore}%</span>
+                        </div>
+                        <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="priority-${task.priorityLevel} h-full transition-all duration-1000" style="width: ${barWidth}%"></div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            return `
+                <div class="glass-card rounded-xl p-6 hover:scale-[1.02] transition-all duration-200 ${priorityInfo.class} ${isActive ? 'active-task' : ''}">
+                    <div class="flex items-start gap-4">
+                        <div class="text-2xl">${typeIcon}</div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-start justify-between gap-4 mb-2">
+                                <h3 class="font-display font-bold text-lg text-white leading-tight">${task.title}</h3>
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="text-${priorityInfo.color}-400 text-xl">${priorityInfo.emoji}</span>
+                                    <span class="label-text text-${priorityInfo.color}-400">${task.priorityLevel.toUpperCase()}</span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-300 text-sm mb-3 leading-relaxed">${task.description}</p>
+                            
+                            <div class="flex items-center gap-4 text-xs font-mono mb-2">
+                                <span class="text-gray-400">Type: <span class="text-white">${task.type}</span></span>
+                                <span class="text-gray-400">Category: <span class="text-white">${task.category}</span></span>
+                                <span class="text-gray-400">State: <span class="text-emerald-400">${task.state.replace('_', ' ').toUpperCase()}</span></span>
+                            </div>
+                            
+                            ${deadlineText ? `<div class="text-xs font-mono mb-2">${deadlineText}</div>` : ''}
+                            
+                            ${task.requestedBy ? `<div class="text-xs font-mono text-jordy/70">Requested by: ${task.requestedBy}</div>` : ''}
+                            
+                            ${priorityBar}
+                            
+                            ${task.reasoningInsights && task.reasoningInsights.length > 0 ? `
+                                <div class="mt-3 p-3 bg-gray-800/50 rounded-lg">
+                                    <div class="label-text text-jordy/70 mb-2">AI REASONING</div>
+                                    <div class="space-y-1">
+                                        ${task.reasoningInsights.slice(0, 3).map(insight => 
+                                            `<div class="text-xs text-gray-400 font-mono">• ${insight}</div>`
+                                        ).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Auto-refresh functionality
+        function startAutoRefresh() {
+            setInterval(() => {
+                loadTasks();
+            }, 30000); // Refresh every 30 seconds
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTasks();
+            startAutoRefresh();
+            
+            // Refresh button handler
+            document.getElementById('refresh-btn').addEventListener('click', loadTasks);
+        });
+        
+        // Add some dynamic effects
+        setTimeout(() => {
+            // Add floating particles effect
+            const particles = document.createElement('div');
+            particles.className = 'fixed inset-0 pointer-events-none -z-5';
+            particles.innerHTML = Array.from({length: 20}, (_, i) => 
+                `<div class="absolute w-1 h-1 bg-jordy/30 rounded-full animate-pulse" 
+                     style="top: ${Math.random() * 100}%; left: ${Math.random() * 100}%; 
+                            animation-delay: ${Math.random() * 2}s; animation-duration: ${2 + Math.random() * 2}s;"></div>`
+            ).join('');
+            document.body.appendChild(particles);
+        }, 1000);
+    </script>
+</body>
+</html>
