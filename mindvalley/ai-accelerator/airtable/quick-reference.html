@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Reference & Troubleshooting - Airtable AI Automation</title>
+    
+    <!-- Emoji Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    
+    <style>
+        :root {
+            --mv-primary: #6c63ff;
+            --mv-secondary: #ff6b35;
+            --mv-accent: #4ecdc4;
+            --mv-dark: #2d3436;
+            --mv-light: #ddd6fe;
+            --mv-gradient: linear-gradient(135deg, var(--mv-primary), var(--mv-accent));
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--mv-dark);
+            background: #fafafa;
+        }
+
+        .header {
+            background: var(--mv-gradient);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .content {
+            background: white;
+            margin: -2rem auto 2rem;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            color: var(--mv-primary);
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--mv-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--mv-dark);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h4 {
+            color: var(--mv-secondary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #4b5563;
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        .checklist {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 1px solid var(--success);
+            border-left: 5px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .checklist h4 {
+            color: var(--success);
+            margin-top: 0;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .checklist li::before {
+            content: "□";
+            font-size: 1.2rem;
+            color: var(--success);
+            line-height: 1.2;
+        }
+
+        .error-solution {
+            background: #fef2f2;
+            border: 1px solid var(--error);
+            border-left: 5px solid var(--error);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .error-solution h4 {
+            color: var(--error);
+            margin-top: 0;
+        }
+
+        .warning-box {
+            background: #fffbeb;
+            border: 1px solid var(--warning);
+            border-left: 5px solid var(--warning);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h4 {
+            color: var(--warning);
+            margin-top: 0;
+        }
+
+        .code-block {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .template-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(108,99,255,0.1);
+        }
+
+        .template-card h4 {
+            margin-top: 0;
+            color: var(--mv-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .field-type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .field-type-card {
+            background: linear-gradient(135deg, #f8f7ff, #e8e5ff);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(108,99,255,0.2);
+        }
+
+        .field-type-card h4 {
+            color: var(--mv-primary);
+            margin-top: 0;
+        }
+
+        .best-for {
+            background: rgba(108,99,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--mv-primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .quick-examples {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background: var(--mv-primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .toc {
+            background: linear-gradient(135deg, #f8f7ff, #e8e5ff);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: var(--mv-primary);
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        .toc li {
+            margin-bottom: 0.3rem;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: var(--mv-dark);
+        }
+
+        .toc a:hover {
+            color: var(--mv-primary);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem 1rem;
+                position: relative;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .back-link {
+                position: static;
+                display: inline-flex;
+                margin-bottom: 1rem;
+            }
+            
+            .content {
+                margin: 1rem;
+                padding: 2rem 1.5rem;
+            }
+            
+            .template-grid,
+            .field-type-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .toc ul {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="back-link">← Back to Resources</a>
+        <h1>⚡ Quick Reference & Troubleshooting</h1>
+        <p>Essential checklist, solutions for common issues, and ready-to-use templates</p>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="toc">
+                <h3>📋 Quick Navigation</h3>
+                <ul>
+                    <li><a href="#setup">Essential Setup</a></li>
+                    <li><a href="#build-checklist">Quick Build Checklist</a></li>
+                    <li><a href="#field-types">Field Agent Types</a></li>
+                    <li><a href="#troubleshooting">Common Issues & Solutions</a></li>
+                    <li><a href="#prompts">Prompt Templates</a></li>
+                    <li><a href="#testing">Testing Strategy</a></li>
+                    <li><a href="#examples">Ready-to-Use Examples</a></li>
+                </ul>
+            </div>
+
+            <h2 id="setup">🚨 Before You Start - Essential Setup</h2>
+
+            <div class="checklist">
+                <h4>Required Steps (Do These First!)</h4>
+                <ul>
+                    <li><strong>Airtable Account</strong>: Sign up at airtable.com (free plan OK)</li>
+                    <li><strong>Enable AI Features</strong>: Go to workspace settings → Enable AI</li>
+                    <li><strong>Copy Training Template</strong>: Use the link from class (with "/copy" at end)</li>
+                    <li><strong>Select Demo View</strong>: Navigate to Posts table → Demo view</li>
+                </ul>
+            </div>
+
+            <h3>💰 Cost-Saving Settings</h3>
+            <ul>
+                <li><strong>Model Choice</strong>: Select "Claude 4.5 Haiku" (low cost option)</li>
+                <li><strong>Auto-run</strong>: Keep OFF initially to control credit usage</li>
+                <li><strong>Internet Search</strong>: Toggle OFF unless external data needed</li>
+            </ul>
+
+            <h2 id="build-checklist">⚡ Quick Build Checklist</h2>
+
+            <div class="checklist">
+                <h4>Creating AI Field Agent</h4>
+                <ul>
+                    <li>Click the <strong>"+"</strong> button in table view</li>
+                    <li>Select <strong>"Build a field agent"</strong></li>
+                    <li>Choose response type (Long text, Single select, etc.)</li>
+                    <li>Configure AI model (Claude 4.5 Haiku recommended)</li>
+                    <li>Write prompt with field references</li>
+                    <li><strong>Must use "Insert Field" button</strong> for dynamic content</li>
+                    <li>Test on one record before mass generation</li>
+                </ul>
+            </div>
+
+            <h3>Essential Field Reference Format</h3>
+            <div class="code-block">
+Static prompt text + [Insert Field Button] + more context
+
+Example:
+"Create a LinkedIn post based on: [Blog Post] 
+Optimized for audience: [Target Audience]"
+            </div>
+
+            <h2 id="field-types">🛠️ Field Agent Types & Use Cases</h2>
+
+            <div class="field-type-grid">
+                <div class="field-type-card">
+                    <h4>📝 Long Text Responses</h4>
+                    <div class="best-for">Best for: Content creation, summaries, detailed analysis</div>
+                    <div class="quick-examples">
+                        <strong>Examples:</strong><br>
+                        • Blog post → LinkedIn post conversion<br>
+                        • PDF summarization<br>
+                        • Email response drafting<br>
+                        • Product descriptions
+                    </div>
+                </div>
+
+                <div class="field-type-card">
+                    <h4>🏷️ Single Select Responses</h4>
+                    <div class="best-for">Best for: Categorization, classification, status updates</div>
+                    <div class="quick-examples">
+                        <strong>Examples:</strong><br>
+                        • Content category assignment<br>
+                        • Sentiment analysis (Positive/Negative/Neutral)<br>
+                        • Priority levels (High/Medium/Low)<br>
+                        • Approval status (Approved/Rejected/Pending)
+                    </div>
+                </div>
+
+                <div class="field-type-card">
+                    <h4>🔢 Number Responses</h4>
+                    <div class="best-for">Best for: Scoring, ratings, calculations</div>
+                    <div class="quick-examples">
+                        <strong>Examples:</strong><br>
+                        • Content quality scores (1-10)<br>
+                        • Risk assessments<br>
+                        • Performance metrics<br>
+                        • Time estimates
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="troubleshooting">🔧 Common Issues & Solutions</h2>
+
+            <div class="error-solution">
+                <h4>"Can't Create Field" Error</h4>
+                <p><strong>Problem:</strong> Field agent won't save</p>
+                <p><strong>Solution:</strong> Must include at least one field reference using "Insert Field" button</p>
+            </div>
+
+            <div class="error-solution">
+                <h4>High Credit Usage</h4>
+                <p><strong>Problem:</strong> Burning through AI credits too fast</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Switch to Claude 4.5 Haiku (lower cost)</li>
+                    <li>Turn off auto-run</li>
+                    <li>Test on fewer records initially</li>
+                    <li>Disable internet search if not needed</li>
+                </ul>
+            </div>
+
+            <div class="error-solution">
+                <h4>Poor AI Responses</h4>
+                <p><strong>Problem:</strong> Generic or irrelevant outputs</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Add more context fields to prompt</li>
+                    <li>Be more specific in instructions</li>
+                    <li>Include example outputs in prompt</li>
+                    <li>Reference multiple relevant fields</li>
+                </ul>
+            </div>
+
+            <div class="error-solution">
+                <h4>Missing Context</h4>
+                <p><strong>Problem:</strong> AI can't find referenced information</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Verify field names match exactly</li>
+                    <li>Check that referenced fields have data</li>
+                    <li>Ensure field types are compatible</li>
+                    <li>Test with simple single-field reference first</li>
+                </ul>
+            </div>
+
+            <h2 id="prompts">📝 Prompt Templates</h2>
+
+            <div class="template-grid">
+                <div class="template-card">
+                    <h4>✍️ Content Creation Template</h4>
+                    <div class="code-block">
+You're an expert [ROLE]. Create a [OUTPUT TYPE] that:
+- Based on content from: [Source Field]
+- Optimized for: [Audience Field]  
+- Following this tone: [Tone Field]
+- [Additional requirements]
+                    </div>
+                </div>
+
+                <div class="template-card">
+                    <h4>📊 Analysis Template</h4>
+                    <div class="code-block">
+Analyze the following [DATA TYPE]: [Input Field]
+Return only: [Specific Output Format]
+Consider these factors: [Context Fields]
+                    </div>
+                </div>
+
+                <div class="template-card">
+                    <h4>🏷️ Classification Template</h4>
+                    <div class="code-block">
+Classify this [ITEM TYPE]: [Input Field]
+Choose from these options only: [List options]
+Base decision on: [Criteria Fields]
+                    </div>
+                </div>
+            </div>
+
+            <h2>🔗 Database Relationships Quick Guide</h2>
+
+            <h3>Linking Records</h3>
+            <ul>
+                <li><strong>Link Field</strong>: Connects records between different tables</li>
+                <li><strong>Two-way relationship</strong>: Changes appear in both linked tables</li>
+                <li><strong>Example</strong>: Applicant → Position, Position → Multiple Applicants</li>
+            </ul>
+
+            <h3>When to Use Relations</h3>
+            <ul>
+                <li>Connect related data across tables</li>
+                <li>Avoid data duplication</li>
+                <li>Create complex multi-table workflows</li>
+                <li>Enable cross-referencing information</li>
+            </ul>
+
+            <h2>⚙️ Advanced Settings Explained</h2>
+
+            <div class="warning-box">
+                <h4>Internet Search</h4>
+                <p><strong>ON</strong>: AI can search web for additional context</p>
+                <p><strong>OFF</strong>: AI only uses database information</p>
+                <p><strong>Cost</strong>: Adds to per-generation credit usage</p>
+            </div>
+
+            <h3>Google Drive/OneDrive Integration</h3>
+            <ul>
+                <li>Connect documents as additional context</li>
+                <li>Reference brand guidelines, templates, etc.</li>
+                <li>Requires initial authentication setup</li>
+            </ul>
+
+            <h3>Auto-run Options</h3>
+            <ul>
+                <li><strong>Manual</strong>: Generate only when you click</li>
+                <li><strong>Auto</strong>: Generates when new records added</li>
+                <li><strong>Conditional</strong>: Set rules for when to run</li>
+            </ul>
+
+            <h2 id="testing">🎯 Testing Strategy</h2>
+
+            <div class="checklist">
+                <h4><span class="step-number">1</span>Phase 1: Single Record Test</h4>
+                <ul>
+                    <li>Create agent with simple prompt</li>
+                    <li>Test on one record with good data</li>
+                    <li>Verify output quality and format</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4><span class="step-number">2</span>Phase 2: Batch Test</h4>
+                <ul>
+                    <li>Run on 3-5 similar records</li>
+                    <li>Check consistency across outputs</li>
+                    <li>Identify patterns in successes/failures</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4><span class="step-number">3</span>Phase 3: Production Deploy</h4>
+                <ul>
+                    <li>Refine prompt based on test results</li>
+                    <li>Enable auto-run if desired</li>
+                    <li>Monitor credit usage and output quality</li>
+                </ul>
+            </div>
+
+            <h2 id="examples">🚀 Ready-to-Use Examples</h2>
+
+            <div class="template-grid">
+                <div class="template-card">
+                    <h4>📱 Social Media Post Generator</h4>
+                    <p><strong>Field Type:</strong> Long Text</p>
+                    <div class="code-block">
+You're a social media expert. Create an engaging LinkedIn post based on: [Blog Post]. Target audience: [Audience]. Include a compelling hook, 2-3 key insights, and a call to action.
+                    </div>
+                </div>
+
+                <div class="template-card">
+                    <h4>🏷️ Content Categorizer</h4>
+                    <p><strong>Field Type:</strong> Single Select</p>
+                    <p><strong>Options:</strong> Health, Business, Technology, Personal Growth</p>
+                    <div class="code-block">
+Categorize this content: [Content Field]. Choose the most relevant category.
+                    </div>
+                </div>
+
+                <div class="template-card">
+                    <h4>😊 Sentiment Analyzer</h4>
+                    <p><strong>Field Type:</strong> Single Select</p>
+                    <p><strong>Options:</strong> Positive, Negative, Neutral</p>
+                    <div class="code-block">
+Analyze sentiment of this feedback: [Feedback Field]. Return only: Positive, Negative, or Neutral.
+                    </div>
+                </div>
+            </div>
+
+            <h2>🆘 Need Help?</h2>
+
+            <div class="warning-box">
+                <h4>Troubleshooting Steps</h4>
+                <ol>
+                    <li>Check field references are correct</li>
+                    <li>Verify data exists in referenced fields</li>
+                    <li>Test with simpler prompt first</li>
+                    <li>Review credit usage in workspace settings</li>
+                    <li>Ask specific questions in tomorrow's session</li>
+                </ol>
+            </div>
+
+            <h3>Immediate Resources</h3>
+            <ul>
+                <li><strong>Tomorrow's Q&A</strong>: Bring specific technical questions</li>
+                <li><strong>Training Template</strong>: Practice in the demo environment</li>
+                <li><strong>Class Community</strong>: Connect with other learners</li>
+            </ul>
+
+            <div class="checklist">
+                <h4>Remember: AI field agents live in fields but act on individual records horizontally!</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
