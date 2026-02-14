@@ -923,13 +923,32 @@
       </div>
       
       <div class="nav-section">
-        <div class="nav-title">Projects</div>
+        <div class="nav-title">🏠 Core</div>
+        <div class="nav-item" onclick="showView('home'); closeMobileMenu();">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+        </div>
+        
+        <div class="nav-item" onclick="showView('dashboard'); closeMobileMenu();">
+          <span class="nav-icon">📊</span>
+          <span class="nav-text">Dashboard</span>
+        </div>
+        
         <div class="nav-item" onclick="showView('projects'); closeMobileMenu();">
           <span class="nav-icon">📋</span>
-          <span class="nav-text">All Projects</span>
+          <span class="nav-text">Projects</span>
           <span class="nav-count">6</span>
         </div>
         
+        <div class="nav-item" onclick="showView('tasks'); closeMobileMenu();">
+          <span class="nav-icon">✅</span>
+          <span class="nav-text">Tasks</span>
+          <span class="nav-count">24</span>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-title">📚 Projects</div>        
         <div class="nav-item project-item" onclick="showProjectNotes('europe-trip'); closeMobileMenu();">
           <span class="nav-icon">✈️</span>
           <span class="nav-text">Europe Trip 2026</span>
@@ -950,34 +969,34 @@
       </div>
 
       <div class="nav-section">
-        <div class="nav-title">Intelligence</div>
+        <div class="nav-title">🧠 Smart Notes</div>
         <div class="nav-item active" onclick="showView('notes'); closeMobileMenu();">
-          <span class="nav-icon">🧠</span>
-          <span class="nav-text">Neural Notes</span>
+          <span class="nav-icon">📝</span>
+          <span class="nav-text">All Notes</span>
           <span class="nav-count">18</span>
         </div>
         
         <div class="nav-item" onclick="showNoteCategory('travel'); closeMobileMenu();">
           <span class="nav-icon">🚀</span>
-          <span class="nav-text">Travel Data</span>
+          <span class="nav-text">Travel Notes</span>
           <span class="nav-count">4</span>
         </div>
         
         <div class="nav-item" onclick="showNoteCategory('gifts'); closeMobileMenu();">
-          <span class="nav-icon">💎</span>
-          <span class="nav-text">Gift Matrix</span>
+          <span class="nav-icon">💝</span>
+          <span class="nav-text">Gift Ideas</span>
           <span class="nav-count">2</span>
         </div>
         
         <div class="nav-item" onclick="showNoteCategory('contacts'); closeMobileMenu();">
-          <span class="nav-icon">🔗</span>
-          <span class="nav-text">Contact Grid</span>
+          <span class="nav-icon">👥</span>
+          <span class="nav-text">People</span>
           <span class="nav-count">8</span>
         </div>
         
         <div class="nav-item" onclick="showNoteCategory('personal'); closeMobileMenu();">
           <span class="nav-icon">⚡</span>
-          <span class="nav-text">Personal Hub</span>
+          <span class="nav-text">Personal</span>
           <span class="nav-count">4</span>
         </div>
       </div>
@@ -991,11 +1010,20 @@
     <!-- Main Content -->
     <div class="main-content">
       <div class="header glass-strong">
-        <h1 class="header-title" id="pageTitle">NEURAL NOTES</h1>
-        <div class="header-subtitle">AI-Powered Knowledge Management System</div>
+        <div class="prediction-banner" style="background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 245, 0.1)); padding: 12px 16px; border-radius: 12px; margin-bottom: 16px; border: 1px solid rgba(0, 245, 255, 0.2);">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="font-size: 20px;">🧠</span>
+            <div>
+              <div style="font-size: 13px; font-weight: 700; color: #00f5ff;">SMART PREDICTION</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.8);">✈️ Detected travel context → Surfacing airline & hotel notes</div>
+            </div>
+          </div>
+        </div>
+        <h1 class="header-title" id="pageTitle">📝 SMART NOTES</h1>
+        <div class="header-subtitle">AI-Powered Voice-to-Content System</div>
         <div class="header-actions">
-          <button class="btn">🔍 SCAN</button>
-          <button class="btn primary" onclick="showCreateNote()">+ CREATE</button>
+          <button class="btn">🔍 Search</button>
+          <button class="btn primary" onclick="showCreateNote()">🎤 Voice Note</button>
         </div>
       </div>
 
@@ -1004,71 +1032,102 @@
         <div id="notesListView">
           <div class="notes-grid">
             <!-- Frequent Flyer Note -->
-            <div class="note-card glass" onclick="showNoteDetail('frequent-flyer')">
+            <div class="note-card glass" onclick="showNoteDetail('frequent-flyer')" style="border-left: 4px solid #00f5ff;">
               <div class="note-header">
-                <span class="note-icon">🚀</span>
-                <span class="note-title">FREQUENT FLYER MATRIX</span>
+                <span class="note-icon">✈️</span>
+                <span class="note-title">My Airlines & Status</span>
               </div>
               <div class="note-meta">
-                <span class="note-project">Europe Mission 2026</span>
-                <span>● SYNC: 2h ago</span>
+                <span class="note-project">🗂️ Europe Trip 2026</span>
+                <span>📅 Updated 2h ago</span>
               </div>
-              <div class="note-preview">
-                Southwest Airlines [A-LIST] • United Airlines [GOLD STATUS] → Complete airline loyalty program database with status tracking and benefits analysis
+              <div class="note-preview" style="font-family: monospace; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; margin: 8px 0; font-size: 11px;">
+[southwest]<br>
+number = "12345678"<br>
+status = "A-List" ✈️<br>
+companion_pass = true<br>
+<br>
+[united]<br>
+number = "87654321"<br>
+status = "Gold" ⭐<br>
+star_alliance = true
               </div>
               <div class="note-tags">
-                <span class="note-tag"># airlines</span>
-                <span class="note-tag"># travel-ops</span>
-                <span class="note-tag"># loyalty-sys</span>
+                <span class="note-tag">🏷️ airlines</span>
+                <span class="note-tag">🏷️ loyalty</span>
+                <span class="note-tag">🏷️ travel</span>
               </div>
-              <div class="linked-tasks">
-                🔗 LINKED → Book flights to Paris [ACTIVE]
+              <div class="linked-tasks" style="background: rgba(0, 245, 255, 0.05); padding: 8px 12px; border-radius: 8px; margin-top: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">
+                <div style="font-size: 10px; color: rgba(0, 245, 255, 0.7); margin-bottom: 4px;">RELATED TASKS</div>
+                <div style="font-size: 11px;">🎯 <strong>Book Paris flights</strong> → Due Feb 20 <span style="background: #ff4444; color: white; padding: 2px 6px; border-radius: 10px; font-size: 9px;">HIGH</span></div>
+                <div style="font-size: 11px; margin-top: 2px;">📋 <strong>Compare airline prices</strong> → Europe Trip 2026</div>
               </div>
             </div>
 
             <!-- Christmas Gifts Note -->
-            <div class="note-card glass" onclick="showNoteDetail('christmas-gifts')">
+            <div class="note-card glass" onclick="showNoteDetail('christmas-gifts')" style="border-left: 4px solid #ff00f5;">
               <div class="note-header">
-                <span class="note-icon">💎</span>
-                <span class="note-title">HOLIDAY GIFT MATRIX</span>
+                <span class="note-icon">💝</span>
+                <span class="note-title">Holiday Gift Ideas</span>
               </div>
               <div class="note-meta">
-                <span class="note-project">Holiday Protocol</span>
-                <span>● SYNC: 1d ago</span>
+                <span class="note-project">🎄 Holiday Planning</span>
+                <span>📅 Updated 1d ago</span>
               </div>
-              <div class="note-preview">
-                Gift intelligence for family units with budget analysis and procurement links. KitchenAid mixer [MOM] • Photography equipment [DAD]...
+              <div class="note-preview" style="font-family: monospace; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; margin: 8px 0; font-size: 11px;">
+[mom]<br>
+idea = "KitchenAid mixer" 🍰<br>
+budget = "$300-400"<br>
+priority = "high"<br>
+<br>
+[dad]<br>
+idea = "Camera lens" 📸<br>
+budget = "$500-800"<br>
+research_needed = true
               </div>
               <div class="note-tags">
-                <span class="note-tag"># gift-ops</span>
-                <span class="note-tag"># family-tree</span>
-                <span class="note-tag"># procurement</span>
+                <span class="note-tag">🏷️ gifts</span>
+                <span class="note-tag">🏷️ family</span>
+                <span class="note-tag">🏷️ shopping</span>
               </div>
-              <div class="linked-tasks">
-                🔗 LINKED → Christmas procurement mission [PENDING]
+              <div class="linked-tasks" style="background: rgba(255, 0, 245, 0.05); padding: 8px 12px; border-radius: 8px; margin-top: 12px; border: 1px solid rgba(255, 0, 245, 0.1);">
+                <div style="font-size: 10px; color: rgba(255, 0, 245, 0.7); margin-bottom: 4px;">RELATED TASKS</div>
+                <div style="font-size: 11px;">🛒 <strong>Buy mom's mixer</strong> → Due Dec 15 <span style="background: #ff9500; color: white; padding: 2px 6px; border-radius: 10px; font-size: 9px;">MED</span></div>
+                <div style="font-size: 11px; margin-top: 2px;">🔍 <strong>Research camera lenses</strong> → Holiday Planning</div>
               </div>
             </div>
 
             <!-- Wedding Vendors Note -->
-            <div class="note-card glass" onclick="showNoteDetail('wedding-vendors')">
+            <div class="note-card glass" onclick="showNoteDetail('wedding-vendors')" style="border-left: 4px solid #8b5cf6;">
               <div class="note-header">
-                <span class="note-icon">⚡</span>
-                <span class="note-title">WEDDING VENDOR NETWORK</span>
+                <span class="note-icon">💒</span>
+                <span class="note-title">Wedding Vendor Contacts</span>
               </div>
               <div class="note-meta">
-                <span class="note-project">Wedding Operations</span>
-                <span>● SYNC: 3d ago</span>
+                <span class="note-project">💍 Wedding Planning</span>
+                <span>📅 Updated 3d ago</span>
               </div>
-              <div class="note-preview">
-                Complete vendor intelligence network with contact protocols, pricing matrices, and availability status. Sunset Catering • Perfect Photos...
+              <div class="note-preview" style="font-family: monospace; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; margin: 8px 0; font-size: 11px;">
+[catering]<br>
+name = "Sunset Catering" 🌅<br>
+phone = "(555) 123-4567"<br>
+quote = "$75/person"<br>
+status = "pending_decision"<br>
+<br>
+[photography]<br>
+name = "Perfect Photos" 📸<br>
+package = "$2,500 full day"<br>
+available = "June 15, 2024"
               </div>
               <div class="note-tags">
-                <span class="note-tag"># vendor-net</span>
-                <span class="note-tag"># wedding-ops</span>
-                <span class="note-tag"># contact-grid</span>
+                <span class="note-tag">🏷️ vendors</span>
+                <span class="note-tag">🏷️ wedding</span>
+                <span class="note-tag">🏷️ contacts</span>
               </div>
-              <div class="linked-tasks">
-                🔗 LINKED → Choose catering [HIGH] • Book photographer [MEDIUM]
+              <div class="linked-tasks" style="background: rgba(139, 92, 246, 0.05); padding: 8px 12px; border-radius: 8px; margin-top: 12px; border: 1px solid rgba(139, 92, 246, 0.1);">
+                <div style="font-size: 10px; color: rgba(139, 92, 246, 0.7); margin-bottom: 4px;">RELATED TASKS</div>
+                <div style="font-size: 11px;">🍽️ <strong>Decide on catering</strong> → Due Feb 28 <span style="background: #ff4444; color: white; padding: 2px 6px; border-radius: 10px; font-size: 9px;">HIGH</span></div>
+                <div style="font-size: 11px; margin-top: 2px;">📸 <strong>Book photographer</strong> → Wedding Planning <span style="background: #ff9500; color: white; padding: 2px 6px; border-radius: 10px; font-size: 9px;">MED</span></div>
               </div>
             </div>
 
@@ -1140,67 +1199,93 @@
         <div id="noteDetailView" class="hidden">
           <div class="note-detail glass-strong">
             <div class="note-detail-header">
-              <div class="note-detail-title">🚀 FREQUENT FLYER MATRIX</div>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <button onclick="showView('notes')" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 12px; border-radius: 8px; cursor: pointer;">← Back to Notes</button>
+              </div>
+              <div class="note-detail-title">✈️ My Airlines & Status</div>
               <div class="note-detail-meta">
-                <span>Europe Mission 2026</span>
-                <span>SYNC: 2 hours ago</span>
-                <span>🔗 LINKED: Book flights to Paris</span>
+                <span>🗂️ Europe Trip 2026</span>
+                <span>📅 Updated 2 hours ago</span>
+                <span>🎤 Created via voice</span>
               </div>
             </div>
             
             <div class="note-content">
-              <p class="note-description">Complete airline loyalty program database with status tracking, benefits analysis, and strategic utilization protocols</p>
+              <p class="note-description">🗣️ <em>"Add my Southwest A-List status and United Gold status to my travel notes"</em></p>
               
-              <div class="airline-card glass">
-                <div class="airline-name">SOUTHWEST AIRLINES</div>
-                <div class="airline-number"># 12345678</div>
-                <span class="status-badge">A-LIST</span>
-                <div class="airline-details">
-                  <div class="detail-item">
-                    <div>EXPIRATION</div>
-                    <div class="detail-value">December 31, 2026</div>
-                  </div>
-                  <div class="detail-item">
-                    <div>BENEFITS</div>
-                    <div class="detail-value">Companion pass eligible</div>
-                  </div>
+              <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; margin: 20px 0; font-family: monospace; font-size: 14px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="color: #00f5ff; margin-bottom: 12px;"># ✈️ My Airline Status & Numbers</div>
+                <br>
+                <div style="color: #ff6b6b;">[southwest]</div>
+                <div style="padding-left: 20px;">
+                  <div>number = <span style="color: #4ecdc4;">"12345678"</span></div>
+                  <div>status = <span style="color: #4ecdc4;">"A-List"</span> <span style="color: #ffd93d;">✈️</span></div>
+                  <div>companion_pass = <span style="color: #95e1d3;">true</span></div>
+                  <div>expiration = <span style="color: #4ecdc4;">"2026-12-31"</span></div>
+                  <div>benefits = <span style="color: #4ecdc4;">"Free companion travel"</span></div>
                 </div>
-              </div>
-              
-              <div class="airline-card glass">
-                <div class="airline-name">UNITED AIRLINES</div>
-                <div class="airline-number"># 87654321</div>
-                <span class="status-badge">GOLD</span>
-                <div class="airline-details">
-                  <div class="detail-item">
-                    <div>EXPIRATION</div>
-                    <div class="detail-value">October 15, 2026</div>
-                  </div>
-                  <div class="detail-item">
-                    <div>BENEFITS</div>
-                    <div class="detail-value">Star Alliance network access</div>
-                  </div>
+                <br>
+                <div style="color: #ff6b6b;">[united]</div>
+                <div style="padding-left: 20px;">
+                  <div>number = <span style="color: #4ecdc4;">"87654321"</span></div>
+                  <div>status = <span style="color: #4ecdc4;">"Gold"</span> <span style="color: #ffd93d;">⭐</span></div>
+                  <div>star_alliance = <span style="color: #95e1d3;">true</span></div>
+                  <div>expiration = <span style="color: #4ecdc4;">"2026-10-15"</span></div>
+                  <div>benefits = <span style="color: #4ecdc4;">"Priority boarding, lounge access"</span></div>
+                </div>
+                <br>
+                <div style="color: #ff6b6b;">[preferences]</div>
+                <div style="padding-left: 20px;">
+                  <div>primary_airline = <span style="color: #4ecdc4;">"southwest"</span></div>
+                  <div>international = <span style="color: #4ecdc4;">"united"</span></div>
+                  <div>seat_preference = <span style="color: #4ecdc4;">"aisle"</span></div>
                 </div>
               </div>
               
               <div class="quick-access glass">
-                <h3 style="margin-bottom: 16px; color: #ffffff; font-size: 16px; font-weight: 700;">QUICK ACCESS PROTOCOLS</h3>
+                <h3 style="margin-bottom: 16px; color: #ffffff; font-size: 16px; font-weight: 700;">🎯 Quick Access</h3>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                   <div>
-                    <div style="color: rgba(255,255,255,0.6); font-size: 12px; margin-bottom: 4px;">PRIMARY</div>
+                    <div style="color: rgba(255,255,255,0.6); font-size: 12px; margin-bottom: 4px;">🏆 PRIMARY</div>
                     <div style="color: #00f5ff; font-weight: 600;">Southwest Airlines</div>
+                    <div style="font-size: 12px; color: rgba(255,255,255,0.7);">A-List Status ✈️</div>
                   </div>
                   <div>
-                    <div style="color: rgba(255,255,255,0.6); font-size: 12px; margin-bottom: 4px;">BACKUP</div>
+                    <div style="color: rgba(255,255,255,0.6); font-size: 12px; margin-bottom: 4px;">🌍 INTERNATIONAL</div>
                     <div style="color: #ff00f5; font-weight: 600;">United Airlines</div>
+                    <div style="font-size: 12px; color: rgba(255,255,255,0.7);">Gold Status ⭐</div>
                   </div>
                 </div>
               </div>
 
               <div class="linked-tasks-section">
-                <h3 style="margin-bottom: 16px; color: #ffffff; font-size: 16px; font-weight: 700;">LINKED OPERATIONS</h3>
-                <div class="task-link">
-                  🔗 Book flights to Paris → DEADLINE: Feb 20, 2026 [HIGH PRIORITY]
+                <h3 style="margin-bottom: 16px; color: #ffffff; font-size: 16px; font-weight: 700;">🔗 Related Tasks & Projects</h3>
+                
+                <div style="background: rgba(255, 68, 68, 0.1); padding: 16px; border-radius: 12px; margin-bottom: 12px; border: 1px solid rgba(255, 68, 68, 0.2);">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="background: #ff4444; color: white; padding: 2px 8px; border-radius: 12px; font-size: 9px; font-weight: 700;">HIGH</span>
+                    <span style="font-size: 14px; font-weight: 600;">🎯 Book flights to Paris</span>
+                  </div>
+                  <div style="font-size: 12px; color: rgba(255,255,255,0.7);">📅 Due: Feb 20, 2026 • 🗂️ Europe Trip 2026</div>
+                  <div style="font-size: 12px; margin-top: 4px;">Use Southwest A-List for companion pass benefits</div>
+                </div>
+
+                <div style="background: rgba(255, 149, 0, 0.1); padding: 16px; border-radius: 12px; margin-bottom: 12px; border: 1px solid rgba(255, 149, 0, 0.2);">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="background: #ff9500; color: white; padding: 2px 8px; border-radius: 12px; font-size: 9px; font-weight: 700;">MED</span>
+                    <span style="font-size: 14px; font-weight: 600;">📋 Compare airline prices</span>
+                  </div>
+                  <div style="font-size: 12px; color: rgba(255,255,255,0.7);">📅 Due: Feb 18, 2026 • 🗂️ Europe Trip 2026</div>
+                  <div style="font-size: 12px; margin-top: 4px;">Check both Southwest domestic + United international</div>
+                </div>
+
+                <div style="background: rgba(0, 245, 255, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(0, 245, 255, 0.1);">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="background: #00f5ff; color: black; padding: 2px 8px; border-radius: 12px; font-size: 9px; font-weight: 700;">INFO</span>
+                    <span style="font-size: 14px; font-weight: 600;">📊 Monitor status renewal</span>
+                  </div>
+                  <div style="font-size: 12px; color: rgba(255,255,255,0.7);">📅 Next review: Oct 2026 • 🗂️ Personal</div>
+                  <div style="font-size: 12px; margin-top: 4px;">Track flights needed to maintain status levels</div>
                 </div>
               </div>
             </div>
@@ -1213,9 +1298,13 @@
     <div class="voice-overlay" id="voiceOverlay">
       <div class="voice-modal glass-strong">
         <div class="voice-icon">🎤</div>
-        <div class="voice-status" id="voiceStatus">NEURAL LISTENING...</div>
-        <div class="voice-transcript" id="voiceTranscript">Initialize voice command: "Add my Delta frequent flyer number 9876 to travel data matrix"</div>
-        <button class="btn" onclick="closeVoice()">TERMINATE</button>
+        <div class="voice-status" id="voiceStatus">👂 Listening...</div>
+        <div class="voice-transcript" id="voiceTranscript">💬 Try saying: "Add my hotel preferences for Paris" or "Remember John's birthday is March 15th"</div>
+        <div style="margin: 20px 0; padding: 12px; background: rgba(0,245,255,0.1); border-radius: 8px; border: 1px solid rgba(0,245,255,0.2);">
+          <div style="font-size: 11px; color: rgba(0,245,255,0.8); margin-bottom: 6px;">🧠 AI WILL DECIDE:</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.7);">• Note type & format • Emoji & styling • TOML structure • Related tasks</div>
+        </div>
+        <button class="btn" onclick="closeVoice()">❌ Cancel</button>
       </div>
     </div>
   </div>
@@ -1269,28 +1358,44 @@
       
       // Update page title
       const titles = {
-        'projects': 'ALL PROJECTS',
-        'notes': 'NEURAL NOTES'
+        'home': '🏠 Home Dashboard',
+        'dashboard': '📊 Analytics Dashboard', 
+        'projects': '📋 All Projects',
+        'tasks': '✅ Task Manager',
+        'notes': '📝 Smart Notes'
       };
-      document.getElementById('pageTitle').textContent = titles[view] || 'BLINKLIFE';
+      document.getElementById('pageTitle').textContent = titles[view] || '📝 Smart Notes';
       
-      // Show notes list view
+      // Show notes list view (or could show different views for different sections)
       document.getElementById('notesListView').classList.remove('hidden');
       document.getElementById('noteDetailView').classList.add('hidden');
     }
 
     function showNoteCategory(category) {
       const titles = {
-        'travel': 'TRAVEL DATA MATRIX',
-        'gifts': 'GIFT INTELLIGENCE GRID', 
-        'contacts': 'CONTACT NETWORK HUB',
-        'personal': 'PERSONAL DATA VAULT'
+        'travel': '🚀 Travel Notes',
+        'gifts': '💝 Gift Ideas', 
+        'contacts': '👥 People Notes',
+        'personal': '⚡ Personal Notes'
       };
-      document.getElementById('pageTitle').textContent = titles[category] || 'NOTES';
+      document.getElementById('pageTitle').textContent = titles[category] || '📝 Smart Notes';
       
       // Update active nav item
       document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
       event.target.closest('.nav-item').classList.add('active');
+      
+      // Update prediction banner based on category
+      const predictions = {
+        'travel': '✈️ Detected travel context → Showing airline status, hotels & preferences',
+        'gifts': '💝 Holiday season → Surfacing gift ideas and shopping lists',
+        'contacts': '👥 Recent meetings detected → Showing key contact information',
+        'personal': '⚡ Personal focus time → Showing goals and health tracking'
+      };
+      
+      const banner = document.querySelector('.prediction-banner div:last-child div:last-child');
+      if (banner && predictions[category]) {
+        banner.textContent = predictions[category];
+      }
     }
 
     function showProjectNotes(project) {
@@ -1338,13 +1443,22 @@
       
       // Simulate voice recognition
       setTimeout(() => {
-        document.getElementById('voiceStatus').textContent = 'PROCESSING NEURAL INPUT...';
-        document.getElementById('voiceTranscript').innerHTML = '"Add my Delta frequent flyer number 9876 to my Europe mission travel data matrix"';
+        document.getElementById('voiceStatus').textContent = '🧠 AI Processing...';
+        document.getElementById('voiceTranscript').innerHTML = '🎤 <em>"Add my Delta frequent flyer number 9876 for my Europe trip"</em>';
       }, 2000);
       
       setTimeout(() => {
-        document.getElementById('voiceStatus').textContent = 'OPERATION COMPLETE';
-        document.getElementById('voiceTranscript').innerHTML = '✅ ADDED: Delta Airlines #9876 → Europe Mission travel data matrix. Link to flight booking operations? [CONFIRM/DENY]';
+        document.getElementById('voiceStatus').textContent = '🎯 Smart Note Created!';
+        document.getElementById('voiceTranscript').innerHTML = `
+          <div style="text-align: left; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; font-family: monospace; font-size: 11px;">
+            <div style="color: #00f5ff;">✈️ AIRLINE STATUS</div><br>
+            [delta]<br>
+            number = "9876"<br>
+            emoji = "🛫"<br>
+            project = "Europe Trip 2026"
+          </div>
+          <div style="margin-top: 12px; font-size: 12px;">🔗 Auto-linked to "Book Europe flights" task</div>
+        `;
       }, 4000);
     }
 
