@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlinkLife - AI Personal Intelligence Platform</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2d3748;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .phone-container {
+            max-width: 375px;
+            margin: 20px auto;
+            background: #000;
+            border-radius: 25px;
+            padding: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 812px;
+            background: #f8fafc;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .status-bar {
+            height: 44px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .screen {
+            display: none;
+            height: calc(100% - 44px);
+            overflow-y: auto;
+            background: #f8fafc;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .main-content {
+            padding: 20px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .voice-button {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            font-size: 48px;
+            cursor: pointer;
+            margin: 40px auto;
+            display: block;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .voice-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        .voice-button.listening {
+            animation: pulse 2s infinite;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 107, 107, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+        }
+
+        .smart-feed {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .feed-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .feed-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .feed-item:last-child {
+            border-bottom: none;
+        }
+
+        .feed-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .feed-content {
+            flex: 1;
+        }
+
+        .feed-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+
+        .feed-content p {
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .priority-badge {
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .priority-high {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .priority-medium {
+            background: #feebc8;
+            color: #dd6b20;
+        }
+
+        .priority-low {
+            background: #c6f6d5;
+            color: #38a169;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #cbd5e0;
+            border-radius: 4px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .task-checkbox.checked {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: #667eea;
+            color: white;
+        }
+
+        .task-content {
+            flex: 1;
+        }
+
+        .task-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+
+        .task-meta {
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .ai-companion {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .ai-companion:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .quick-action {
+            flex: 1;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            font-size: 12px;
+            color: #4a5568;
+        }
+
+        .quick-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .voice-transcript {
+            background: #edf2f7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        .ai-response {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .personality-creator {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .avatar-selection {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .avatar-option {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #e2e8f0;
+            background: #f7fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .avatar-option.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .personality-traits {
+            margin: 20px 0;
+        }
+
+        .trait-selector {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .trait-selector.selected {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .trait-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .trait-description {
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            height: 60px;
+        }
+
+        .nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            color: #cbd5e0;
+        }
+
+        .nav-item.active {
+            color: #667eea;
+        }
+
+        .nav-label {
+            font-size: 10px;
+            margin-top: 4px;
+            color: #718096;
+        }
+
+        .nav-item.active .nav-label {
+            color: #667eea;
+        }
+
+        .toml-preview {
+            background: #1a202c;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+
+        .toml-comment {
+            color: #68d391;
+        }
+
+        .toml-key {
+            color: #90cdf4;
+        }
+
+        .toml-string {
+            color: #fbb6ce;
+        }
+
+        .toml-number {
+            color: #f6ad55;
+        }
+
+        .relationships-graph {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .graph-node {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 12px;
+            position: relative;
+        }
+
+        .graph-connection {
+            color: #cbd5e0;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+
+        @media (min-width: 768px) {
+            .phone-container {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        <div class="phone-screen">
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <span>9:41</span>
+                <span>BlinkLife</span>
+                <span>100% 🔋</span>
+            </div>
+
+            <!-- Home Screen -->
+            <div class="screen active" id="home">
+                <div class="header">
+                    <h1>Good morning, Vishen!</h1>
+                    <p>Ready to make today extraordinary?</p>
+                </div>
+
+                <div class="main-content">
+                    <!-- Voice Button -->
+                    <button class="voice-button" onclick="startVoiceCapture()">🎤</button>
+                    
+                    <div class="voice-transcript" id="voiceTranscript" style="display:none;">
+                        <strong>You said:</strong> "Add checking flight prices to my Europe trip project for next Tuesday"
+                    </div>
+
+                    <div class="ai-response" id="aiResponse" style="display:none;">
+                        <strong>AI Response:</strong> Perfect! I've added "Check flight prices" to your Europe Trip project with a due date of Tuesday, February 18th. Based on your travel patterns, I suggest booking flights 6-8 weeks before departure for the best prices.
+                    </div>
+
+                    <!-- Smart Feed -->
+                    <div class="smart-feed">
+                        <div class="feed-title">Today's Priorities</div>
+                        <div class="feed-item">
+                            <div class="feed-icon">🎯</div>
+                            <div class="feed-content">
+                                <h4>Marketing Summit venue booking</h4>
+                                <p>Due today • High priority</p>
+                            </div>
+                        </div>
+                        <div class="feed-item">
+                            <div class="feed-icon">✈️</div>
+                            <div class="feed-content">
+                                <h4>Check flight prices for Europe trip</h4>
+                                <p>Due Tuesday • Just added via voice</p>
+                            </div>
+                        </div>
+                        <div class="feed-item">
+                            <div class="feed-icon">💡</div>
+                            <div class="feed-content">
+                                <h4>AI Suggestion: Book Sarah's wine gift</h4>
+                                <p>Based on your Europe trip notes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <button class="quick-action" onclick="showScreen('projects')">
+                            📂<br>Projects
+                        </button>
+                        <button class="quick-action" onclick="showScreen('tasks')">
+                            ✅<br>Tasks
+                        </button>
+                        <button class="quick-action" onclick="showScreen('notes')">
+                            📝<br>Notes
+                        </button>
+                        <button class="quick-action" onclick="showScreen('personality')">
+                            🤖<br>AI Companion
+                        </button>
+                    </div>
+
+                    <!-- Recent Projects -->
+                    <div class="project-card" onclick="showScreen('project-detail')">
+                        <div class="project-header">
+                            <div class="project-title">Marketing Summit 2026</div>
+                            <div class="priority-badge priority-high">High</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 35%;"></div>
+                        </div>
+                        <div class="project-meta">
+                            <span>35% complete</span>
+                            <span>Due Mar 31</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card" onclick="showScreen('project-detail')">
+                        <div class="project-header">
+                            <div class="project-title">Europe Trip Planning</div>
+                            <div class="priority-badge priority-medium">Medium</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 15%;"></div>
+                        </div>
+                        <div class="project-meta">
+                            <span>15% complete</span>
+                            <span>Due Apr 15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Navigation -->
+                <div class="bottom-nav">
+                    <div class="nav-item active" onclick="showScreen('home')">
+                        🏠<div class="nav-label">Home</div>
+                    </div>
+                    <div class="nav-item" onclick="showScreen('projects')">
+                        📂<div class="nav-label">Projects</div>
+                    </div>
+                    <div class="nav-item" onclick="showScreen('insights')">
+                        📊<div class="nav-label">Insights</div>
+                    </div>
+                    <div class="nav-item" onclick="showScreen('settings')">
+                        ⚙️<div class="nav-label">Settings</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Screen -->
+            <div class="screen" id="projects">
+                <div class="header">
+                    <button class="back-btn" onclick="showScreen('home')">← Back</button>
+                    <h1>Projects</h1>
+                    <p>Organize your goals with AI intelligence</p>
+                </div>
+
+                <div class="main-content">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Marketing Summit 2026</div>
+                            <div class="priority-badge priority-high">High</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 35%;"></div>
+                        </div>
+                        <div class="project-meta">
+                            <span>4 of 12 tasks complete</span>
+                            <span>Due Mar 31</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Europe Trip Planning</div>
+                            <div class="priority-badge priority-medium">Medium</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 15%;"></div>
+                        </div>
+                        <div class="project-meta">
+                            <span>2 of 8 tasks complete</span>
+                            <span>Due Apr 15</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">BlinkLife Product Launch</div>
+                            <div class="priority-badge priority-high">High</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                        <div class="project-meta">
+                            <span>12 of 20 tasks complete</span>
+                            <span>Due May 1</span>
+                        </div>
+                    </div>
+
+                    <!-- Relationships Graph -->
+                    <div class="relationships-graph">
+                        <div class="feed-title">Project Relationships</div>
+                        <div style="margin-top: 15px;">
+                            <span class="graph-node">Marketing Summit</span>
+                            <span class="graph-connection">→</span>
+                            <span class="graph-node">BlinkLife Launch</span>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <span class="graph-node">Europe Trip</span>
+                            <span class="graph-connection">📅</span>
+                            <span class="graph-node">Marketing Summit</span>
+                        </div>
+                        <p style="font-size: 12px; color: #718096; margin-top: 10px;">
+                            AI detected timing conflicts and shared resources
+                        </p>
+                    </div>
+
+                    <button class="btn-primary" onclick="createProject()">
+                        + Create New Project
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Detail Screen -->
+            <div class="screen" id="project-detail">
+                <div class="header">
+                    <button class="back-btn" onclick="showScreen('projects')">← Projects</button>
+                    <h1>Marketing Summit 2026</h1>
+                    <p>35% complete • Due Mar 31</p>
+                </div>
+
+                <div class="main-content">
+                    <!-- Tasks List -->
+                    <div class="smart-feed">
+                        <div class="feed-title">Tasks</div>
+                        
+                        <div class="task-item">
+                            <div class="task-checkbox checked">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">Define event theme and objectives</div>
+                                <div class="task-meta">Completed Feb 10 • High priority</div>
+                            </div>
+                        </div>
+
+                        <div class="task-item">
+                            <div class="task-checkbox checked">✓</div>
+                            <div class="task-content">
+                                <div class="task-title">Create initial speaker list</div>
+                                <div class="task-meta">Completed Feb 12 • Medium priority</div>
+                            </div>
+                        </div>
+
+                        <div class="task-item">
+                            <div class="task-checkbox">○</div>
+                            <div class="task-content">
+                                <div class="task-title">Book venue and catering</div>
+                                <div class="task-meta">Due today • High priority</div>
+                            </div>
+                        </div>
+
+                        <div class="task-item">
+                            <div class="task-checkbox">○</div>
+                            <div class="task-content">
+                                <div class="task-title">Send speaker invitations</div>
+                                <div class="task-meta">Due Feb 20 • Medium priority</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TOML Data Preview -->
+                    <div class="smart-feed">
+                        <div class="feed-title">Project Data (TOML)</div>
+                        <div class="toml-preview">
+<span class="toml-comment"># Marketing Summit 2026 Project</span>
+[<span class="toml-key">metadata</span>]
+<span class="toml-key">title</span> = <span class="toml-string">"Marketing Summit 2026"</span>
+<span class="toml-key">category</span> = <span class="toml-string">"events"</span>
+<span class="toml-key">priority</span> = <span class="toml-string">"high"</span>
+<span class="toml-key">deadline</span> = <span class="toml-string">"2026-03-31"</span>
+<span class="toml-key">completion</span> = <span class="toml-number">35</span>
+
+[[<span class="toml-key">tasks</span>]]
+<span class="toml-key">title</span> = <span class="toml-string">"Book venue and catering"</span>
+<span class="toml-key">status</span> = <span class="toml-string">"pending"</span>
+<span class="toml-key">priority</span> = <span class="toml-string">"high"</span>
+<span class="toml-key">due_date</span> = <span class="toml-string">"2026-02-14"</span>
+
+[<span class="toml-key">relationships</span>]
+<span class="toml-key">connected_projects</span> = [<span class="toml-string">"BlinkLife Launch"</span>]
+<span class="toml-key">shared_resources</span> = [<span class="toml-string">"marketing_team"</span>]
+                        </div>
+                    </div>
+
+                    <!-- Voice Input for Tasks -->
+                    <button class="voice-button" style="width: 80px; height: 80px; font-size: 32px;" onclick="addTaskVoice()">🎤</button>
+                    <p style="text-align: center; color: #718096; font-size: 14px; margin-top: 10px;">
+                        Tap to add tasks by voice
+                    </p>
+                </div>
+            </div>
+
+            <!-- AI Personality Creator -->
+            <div class="screen" id="personality">
+                <div class="header">
+                    <button class="back-btn" onclick="showScreen('home')">← Home</button>
+                    <h1>AI Companion</h1>
+                    <p>Create your perfect AI assistant</p>
+                </div>
+
+                <div class="main-content">
+                    <div class="personality-creator">
+                        <h3 style="margin-bottom: 20px;">Choose Your AI's Personality</h3>
+                        
+                        <!-- Avatar Selection -->
+                        <div class="avatar-selection">
+                            <div class="avatar-option selected">🤖</div>
+                            <div class="avatar-option">👨‍💼</div>
+                            <div class="avatar-option">👩‍💼</div>
+                            <div class="avatar-option">🧙‍♂️</div>
+                            <div class="avatar-option">🦄</div>
+                            <div class="avatar-option">🐰</div>
+                        </div>
+
+                        <!-- Personality Traits -->
+                        <div class="personality-traits">
+                            <div class="trait-selector selected">
+                                <div class="trait-title">Supportive & Encouraging</div>
+                                <div class="trait-description">Positive reinforcement and motivation</div>
+                            </div>
+
+                            <div class="trait-selector">
+                                <div class="trait-title">Direct & Efficient</div>
+                                <div class="trait-description">Straight to the point, no fluff</div>
+                            </div>
+
+                            <div class="trait-selector selected">
+                                <div class="trait-title">Business Focused</div>
+                                <div class="trait-description">Expertise in productivity and strategy</div>
+                            </div>
+
+                            <div class="trait-selector">
+                                <div class="trait-title">Creative & Playful</div>
+                                <div class="trait-description">Fun approach with creative suggestions</div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: left; margin: 20px 0;">
+                            <label style="font-weight: 600; color: #2d3748;">AI Name:</label>
+                            <input type="text" value="Alex" style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; margin-top: 8px; font-size: 16px;">
+                        </div>
+
+                        <button class="btn-primary" onclick="savePersonality()">
+                            Save AI Companion
+                        </button>
+
+                        <!-- Preview -->
+                        <div class="ai-response" style="margin-top: 30px;">
+                            <strong>AI Preview:</strong> "Good morning, Vishen! I noticed you have the Marketing Summit venue booking due today. Based on your preferences for downtown locations and 200+ capacity, I found three venues that might be perfect. Would you like me to help you compare them?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insights Screen -->
+            <div class="screen" id="insights">
+                <div class="header">
+                    <button class="back-btn" onclick="showScreen('home')">← Home</button>
+                    <h1>AI Insights</h1>
+                    <p>Intelligent analysis of your patterns</p>
+                </div>
+
+                <div class="main-content">
+                    <!-- Productivity Insights -->
+                    <div class="smart-feed">
+                        <div class="feed-title">Weekly Insights</div>
+                        
+                        <div class="feed-item">
+                            <div class="feed-icon">📈</div>
+                            <div class="feed-content">
+                                <h4>Task completion rate: 78%</h4>
+                                <p>Up 15% from last week • You're on fire!</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">⏰</div>
+                            <div class="feed-content">
+                                <h4>Most productive time: 9-11 AM</h4>
+                                <p>Consider scheduling important tasks then</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">🎯</div>
+                            <div class="feed-content">
+                                <h4>Focus pattern detected</h4>
+                                <p>You work best on 2-3 projects simultaneously</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Predictive Suggestions -->
+                    <div class="smart-feed">
+                        <div class="feed-title">AI Predictions</div>
+                        
+                        <div class="feed-item">
+                            <div class="feed-icon">⚠️</div>
+                            <div class="feed-content">
+                                <h4>Timeline Risk: Marketing Summit</h4>
+                                <p>Venue booking delay may impact other deadlines</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">💡</div>
+                            <div class="feed-content">
+                                <h4>Opportunity: Batch Europe planning</h4>
+                                <p>Plan flights + accommodation together for better deals</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">🔄</div>
+                            <div class="feed-content">
+                                <h4>Pattern: Travel season approaching</h4>
+                                <p>You typically plan 3 trips between April-June</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Network Visualization -->
+                    <div class="relationships-graph">
+                        <div class="feed-title">Project Network</div>
+                        <div style="margin-top: 15px; text-align: center;">
+                            <div style="margin: 10px;">
+                                <span class="graph-node">Marketing Summit</span>
+                            </div>
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <span class="graph-node">BlinkLife Launch</span>
+                                <span class="graph-connection" style="margin: 0 20px;">⟷</span>
+                                <span class="graph-node">Europe Trip</span>
+                            </div>
+                            <div style="margin: 10px;">
+                                <span class="graph-node">Q2 Strategy</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 12px; color: #718096; margin-top: 15px;">
+                            AI detected 4 interconnected projects with shared resources and timeline dependencies
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Screen -->
+            <div class="screen" id="settings">
+                <div class="header">
+                    <button class="back-btn" onclick="showScreen('home')">← Home</button>
+                    <h1>Settings</h1>
+                    <p>Customize your BlinkLife experience</p>
+                </div>
+
+                <div class="main-content">
+                    <div class="smart-feed">
+                        <div class="feed-title">Voice & AI Settings</div>
+                        
+                        <div class="feed-item">
+                            <div class="feed-icon">🎤</div>
+                            <div class="feed-content">
+                                <h4>Voice Recognition Language</h4>
+                                <p>English (US) • Accuracy: 97%</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">🤖</div>
+                            <div class="feed-content">
+                                <h4>AI Personality: Alex</h4>
+                                <p>Supportive, Business-focused • Edit</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">🔔</div>
+                            <div class="feed-content">
+                                <h4>Smart Notifications</h4>
+                                <p>Enabled • Predictive reminders on</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="smart-feed">
+                        <div class="feed-title">Data & Privacy</div>
+                        
+                        <div class="feed-item">
+                            <div class="feed-icon">🔒</div>
+                            <div class="feed-content">
+                                <h4>Data Encryption</h4>
+                                <p>AES-256 • End-to-end encrypted</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">📊</div>
+                            <div class="feed-content">
+                                <h4>Analytics & Learning</h4>
+                                <p>Enabled • Helps AI improve suggestions</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">📤</div>
+                            <div class="feed-content">
+                                <h4>Export Data</h4>
+                                <p>Download all projects, tasks & notes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="smart-feed">
+                        <div class="feed-title">Integration</div>
+                        
+                        <div class="feed-item">
+                            <div class="feed-icon">📅</div>
+                            <div class="feed-content">
+                                <h4>Calendar Sync</h4>
+                                <p>Google Calendar connected</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">📧</div>
+                            <div class="feed-content">
+                                <h4>Email Integration</h4>
+                                <p>Gmail connected • Smart task extraction</p>
+                            </div>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-icon">👥</div>
+                            <div class="feed-content">
+                                <h4>Contacts Sync</h4>
+                                <p>Connected • AI relationship mapping</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentScreen = 'home';
+        let isListening = false;
+
+        function showScreen(screenId) {
+            // Hide all screens
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show selected screen
+            document.getElementById(screenId).classList.add('active');
+            currentScreen = screenId;
+
+            // Update navigation
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            if (screenId === 'home') {
+                document.querySelector('.nav-item').classList.add('active');
+            }
+        }
+
+        function startVoiceCapture() {
+            const button = event.target;
+            const transcript = document.getElementById('voiceTranscript');
+            const response = document.getElementById('aiResponse');
+            
+            if (!isListening) {
+                // Start listening
+                button.classList.add('listening');
+                button.innerHTML = '🎙️';
+                isListening = true;
+                
+                // Simulate voice recognition
+                setTimeout(() => {
+                    button.classList.remove('listening');
+                    button.innerHTML = '🎤';
+                    isListening = false;
+                    
+                    // Show transcript and AI response
+                    transcript.style.display = 'block';
+                    setTimeout(() => {
+                        response.style.display = 'block';
+                    }, 1000);
+                }, 3000);
+            }
+        }
+
+        function addTaskVoice() {
+            const button = event.target;
+            if (!isListening) {
+                button.classList.add('listening');
+                isListening = true;
+                
+                setTimeout(() => {
+                    button.classList.remove('listening');
+                    isListening = false;
+                    alert('Task added: "Send follow-up emails to potential sponsors"');
+                }, 2000);
+            }
+        }
+
+        function createProject() {
+            alert('Voice project creation activated! Say something like: "Create new project for Q2 strategy planning"');
+        }
+
+        function savePersonality() {
+            alert('AI Personality saved successfully! Alex is now ready to assist you.');
+        }
+
+        // Add click handlers for avatar and trait selection
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('avatar-option')) {
+                document.querySelectorAll('.avatar-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                e.target.classList.add('selected');
+            }
+            
+            if (e.target.closest('.trait-selector')) {
+                e.target.closest('.trait-selector').classList.toggle('selected');
+            }
+
+            if (e.target.classList.contains('task-checkbox')) {
+                e.target.classList.toggle('checked');
+                e.target.innerHTML = e.target.classList.contains('checked') ? '✓' : '○';
+            }
+        });
+
+        // Simulate live updates
+        setInterval(() => {
+            if (currentScreen === 'home') {
+                // Update time-sensitive content
+                const smartFeed = document.querySelector('.smart-feed');
+                if (smartFeed && Math.random() > 0.95) {
+                    // Randomly add new AI suggestions
+                    console.log('AI continuously analyzing and providing suggestions...');
+                }
+            }
+        }, 10000);
+    </script>
+</body>
+</html>
