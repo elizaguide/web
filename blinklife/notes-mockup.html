@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlinkLife Notes System - Interactive Mockup</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8fafc;
+      height: 100vh;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background: white;
+      border-right: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .logo {
+      padding: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .nav-section {
+      padding: 1rem;
+    }
+
+    .nav-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 0.25rem;
+    }
+
+    .nav-item:hover {
+      background: #f1f5f9;
+    }
+
+    .nav-item.active {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .nav-icon {
+      margin-right: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .nav-count {
+      margin-left: auto;
+      background: #e2e8f0;
+      color: #64748b;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-weight: 600;
+    }
+
+    .nav-item.active .nav-count {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .project-item {
+      padding-left: 2.5rem;
+      font-size: 0.875rem;
+    }
+
+    .voice-button {
+      margin: 1rem;
+      padding: 1rem;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .voice-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .voice-button.listening {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .header {
+      background: white;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: between;
+      align-items: center;
+    }
+
+    .header-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .header-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+      background: white;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: #f9fafb;
+    }
+
+    .btn.primary {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+
+    .btn.primary:hover {
+      background: #2563eb;
+    }
+
+    .content-area {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    /* Notes List View */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .note-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .note-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .note-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .note-icon {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+
+    .note-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .note-meta {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-bottom: 1rem;
+    }
+
+    .note-project {
+      background: #ede9fe;
+      color: #7c3aed;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      margin-right: 1rem;
+    }
+
+    .note-preview {
+      color: #64748b;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .note-tags {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .note-tag {
+      background: #f1f5f9;
+      color: #475569;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .linked-tasks {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    /* Note Detail View */
+    .note-detail {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .note-detail-header {
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      color: white;
+      padding: 2rem;
+    }
+
+    .note-detail-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .note-detail-meta {
+      opacity: 0.9;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .note-content {
+      padding: 2rem;
+    }
+
+    /* Airline Card Styling */
+    .airline-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-left: 4px solid #3b82f6;
+    }
+
+    .airline-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+
+    .airline-number {
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 1.1rem;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+
+    .status-badge {
+      background: #10b981;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .airline-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .detail-item {
+      color: #64748b;
+    }
+
+    .detail-value {
+      color: #1e293b;
+      font-weight: 500;
+    }
+
+    /* Voice Overlay */
+    .voice-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .voice-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .voice-modal {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      max-width: 400px;
+      margin: 2rem;
+    }
+
+    .voice-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: pulse 2s infinite;
+    }
+
+    .voice-status {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 1rem;
+    }
+
+    .voice-transcript {
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 8px;
+      font-style: italic;
+      color: #64748b;
+      margin-bottom: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 60px;
+      }
+      
+      .sidebar .nav-text {
+        display: none;
+      }
+      
+      .notes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">BlinkLife</div>
+    
+    <div class="nav-section">
+      <div class="nav-title">Projects</div>
+      <div class="nav-item" onclick="showView('projects')">
+        <span class="nav-icon">📋</span>
+        <span class="nav-text">All Projects</span>
+        <span class="nav-count">6</span>
+      </div>
+      
+      <div class="nav-item project-item" onclick="showProjectNotes('europe-trip')">
+        <span class="nav-icon">✈️</span>
+        <span class="nav-text">Europe Trip 2026</span>
+        <span class="nav-count">3</span>
+      </div>
+      
+      <div class="nav-item project-item" onclick="showProjectNotes('wedding')">
+        <span class="nav-icon">💒</span>
+        <span class="nav-text">Wedding Planning</span>
+        <span class="nav-count">5</span>
+      </div>
+      
+      <div class="nav-item project-item" onclick="showProjectNotes('home')">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Home Renovation</span>
+        <span class="nav-count">2</span>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-title">Notes</div>
+      <div class="nav-item active" onclick="showView('notes')">
+        <span class="nav-icon">📄</span>
+        <span class="nav-text">All Notes</span>
+        <span class="nav-count">18</span>
+      </div>
+      
+      <div class="nav-item" onclick="showNoteCategory('travel')">
+        <span class="nav-icon">✈️</span>
+        <span class="nav-text">Travel</span>
+        <span class="nav-count">4</span>
+      </div>
+      
+      <div class="nav-item" onclick="showNoteCategory('gifts')">
+        <span class="nav-icon">🎁</span>
+        <span class="nav-text">Gifts</span>
+        <span class="nav-count">2</span>
+      </div>
+      
+      <div class="nav-item" onclick="showNoteCategory('contacts')">
+        <span class="nav-icon">👥</span>
+        <span class="nav-text">Contacts</span>
+        <span class="nav-count">8</span>
+      </div>
+      
+      <div class="nav-item" onclick="showNoteCategory('personal')">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Personal</span>
+        <span class="nav-count">4</span>
+      </div>
+    </div>
+
+    <button class="voice-button" onclick="activateVoice()">
+      <span class="nav-icon">🎤</span>
+      <span style="margin-left: 0.5rem;">Voice Command</span>
+    </button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <h1 class="header-title" id="pageTitle">All Notes</h1>
+      <div class="header-actions">
+        <button class="btn">Search</button>
+        <button class="btn primary" onclick="showCreateNote()">+ Create Note</button>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <!-- Notes List View -->
+      <div id="notesListView">
+        <div class="notes-grid">
+          <!-- Frequent Flyer Note -->
+          <div class="note-card" onclick="showNoteDetail('frequent-flyer')">
+            <div class="note-header">
+              <span class="note-icon">✈️</span>
+              <span class="note-title">Frequent Flyer Numbers</span>
+            </div>
+            <div class="note-meta">
+              <span class="note-project">Europe Trip 2026</span>
+              <span>Updated 2 hours ago</span>
+            </div>
+            <div class="note-preview">
+              Southwest Airlines (A-List), United Airlines (Gold) - All airline loyalty program numbers and status information
+            </div>
+            <div class="note-tags">
+              <span class="note-tag">airlines</span>
+              <span class="note-tag">travel</span>
+              <span class="note-tag">loyalty</span>
+            </div>
+            <div class="linked-tasks">
+              🔗 Linked to "Book flights to Paris"
+            </div>
+          </div>
+
+          <!-- Christmas Gifts Note -->
+          <div class="note-card" onclick="showNoteDetail('christmas-gifts')">
+            <div class="note-header">
+              <span class="note-icon">🎁</span>
+              <span class="note-title">Christmas Gift Ideas 2026</span>
+            </div>
+            <div class="note-meta">
+              <span class="note-project">Holiday Planning</span>
+              <span>Updated yesterday</span>
+            </div>
+            <div class="note-preview">
+              Gift ideas for family members with budgets and shopping links. KitchenAid mixer for Mom, photography equipment for Dad...
+            </div>
+            <div class="note-tags">
+              <span class="note-tag">christmas</span>
+              <span class="note-tag">family</span>
+              <span class="note-tag">shopping</span>
+            </div>
+            <div class="linked-tasks">
+              🔗 Linked to "Buy Christmas gifts"
+            </div>
+          </div>
+
+          <!-- Wedding Vendors Note -->
+          <div class="note-card" onclick="showNoteDetail('wedding-vendors')">
+            <div class="note-header">
+              <span class="note-icon">📝</span>
+              <span class="note-title">Wedding Vendor Contacts</span>
+            </div>
+            <div class="note-meta">
+              <span class="note-project">Wedding Planning</span>
+              <span>Updated 3 days ago</span>
+            </div>
+            <div class="note-preview">
+              Complete list of wedding vendors with contact information, quotes, and availability. Sunset Catering, Perfect Photos...
+            </div>
+            <div class="note-tags">
+              <span class="note-tag">wedding</span>
+              <span class="note-tag">vendors</span>
+              <span class="note-tag">contacts</span>
+            </div>
+            <div class="linked-tasks">
+              🔗 Linked to "Choose catering", "Book photographer"
+            </div>
+          </div>
+
+          <!-- Hotel Preferences Note -->
+          <div class="note-card" onclick="showNoteDetail('hotel-preferences')">
+            <div class="note-header">
+              <span class="note-icon">🏨</span>
+              <span class="note-title">Hotel Preferences</span>
+            </div>
+            <div class="note-meta">
+              <span class="note-project">Europe Trip 2026</span>
+              <span>Updated 1 week ago</span>
+            </div>
+            <div class="note-preview">
+              Preferred hotel chains, loyalty numbers, room preferences, and special requests for business travel...
+            </div>
+            <div class="note-tags">
+              <span class="note-tag">travel</span>
+              <span class="note-tag">hotels</span>
+              <span class="note-tag">preferences</span>
+            </div>
+          </div>
+
+          <!-- Personal Contacts Note -->
+          <div class="note-card">
+            <div class="note-header">
+              <span class="note-icon">👥</span>
+              <span class="note-title">Family Emergency Contacts</span>
+            </div>
+            <div class="note-meta">
+              <span>Updated 2 weeks ago</span>
+            </div>
+            <div class="note-preview">
+              Important family contact information including doctors, schools, and emergency contacts for travel...
+            </div>
+            <div class="note-tags">
+              <span class="note-tag">family</span>
+              <span class="note-tag">emergency</span>
+              <span class="note-tag">contacts</span>
+            </div>
+          </div>
+
+          <!-- Restaurant Recommendations -->
+          <div class="note-card">
+            <div class="note-header">
+              <span class="note-icon">🍽️</span>
+              <span class="note-title">Paris Restaurant Recommendations</span>
+            </div>
+            <div class="note-meta">
+              <span class="note-project">Europe Trip 2026</span>
+              <span>Updated 3 days ago</span>
+            </div>
+            <div class="note-preview">
+              Must-try restaurants in Paris with reservations info and dietary restrictions notes...
+            </div>
+            <div class="note-tags">
+              <span class="note-tag">paris</span>
+              <span class="note-tag">restaurants</span>
+              <span class="note-tag">travel</span>
+            </div>
+            <div class="linked-tasks">
+              🔗 Linked to "Plan Paris itinerary"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note Detail View (Hidden by default) -->
+      <div id="noteDetailView" class="hidden">
+        <div class="note-detail">
+          <div class="note-detail-header">
+            <div class="note-detail-title">✈️ Frequent Flyer Numbers</div>
+            <div class="note-detail-meta">
+              <span>Europe Trip 2026</span>
+              <span>Updated 2 hours ago</span>
+              <span>🔗 Linked to Book flights to Paris</span>
+            </div>
+          </div>
+          
+          <div class="note-content">
+            <p style="color: #64748b; margin-bottom: 2rem;">All my airline loyalty program numbers and status information</p>
+            
+            <div class="airline-card">
+              <div class="airline-name">Southwest Airlines</div>
+              <div class="airline-number"># 12345678</div>
+              <span class="status-badge">A-List</span>
+              <div class="airline-details">
+                <div class="detail-item">
+                  <strong>Expires:</strong> 
+                  <span class="detail-value">December 31, 2026</span>
+                </div>
+                <div class="detail-item">
+                  <strong>Benefits:</strong> 
+                  <span class="detail-value">Companion pass eligible</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="airline-card">
+              <div class="airline-name">United Airlines</div>
+              <div class="airline-number"># 87654321</div>
+              <span class="status-badge">Gold</span>
+              <div class="airline-details">
+                <div class="detail-item">
+                  <strong>Expires:</strong> 
+                  <span class="detail-value">October 15, 2026</span>
+                </div>
+                <div class="detail-item">
+                  <strong>Benefits:</strong> 
+                  <span class="detail-value">Star Alliance benefits</span>
+                </div>
+              </div>
+            </div>
+            
+            <div style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+              <h3 style="margin-bottom: 1rem; color: #1e293b;">Quick Access</h3>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div>
+                  <strong>Primary:</strong> Southwest Airlines
+                </div>
+                <div>
+                  <strong>Backup:</strong> United Airlines
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
+              <h3 style="margin-bottom: 1rem; color: #1e293b;">Linked Tasks</h3>
+              <div style="background: #ede9fe; padding: 1rem; border-radius: 8px; color: #7c3aed;">
+                🔗 Book flights to Paris - Due Feb 20, 2026
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Voice Overlay -->
+  <div class="voice-overlay" id="voiceOverlay">
+    <div class="voice-modal">
+      <div class="voice-icon">🎤</div>
+      <div class="voice-status" id="voiceStatus">Listening...</div>
+      <div class="voice-transcript" id="voiceTranscript">Say something like "Add my Delta frequent flyer number 9876 to travel notes"</div>
+      <button class="btn" onclick="closeVoice()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    function showView(view) {
+      // Update active nav item
+      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+      event.target.closest('.nav-item').classList.add('active');
+      
+      // Update page title
+      const titles = {
+        'projects': 'All Projects',
+        'notes': 'All Notes'
+      };
+      document.getElementById('pageTitle').textContent = titles[view] || 'BlinkLife';
+      
+      // Show notes list view
+      document.getElementById('notesListView').classList.remove('hidden');
+      document.getElementById('noteDetailView').classList.add('hidden');
+    }
+
+    function showNoteCategory(category) {
+      const titles = {
+        'travel': 'Travel Notes',
+        'gifts': 'Gift Notes', 
+        'contacts': 'Contact Notes',
+        'personal': 'Personal Notes'
+      };
+      document.getElementById('pageTitle').textContent = titles[category] || 'Notes';
+    }
+
+    function showProjectNotes(project) {
+      const titles = {
+        'europe-trip': 'Europe Trip 2026 - Notes',
+        'wedding': 'Wedding Planning - Notes',
+        'home': 'Home Renovation - Notes'
+      };
+      document.getElementById('pageTitle').textContent = titles[project] || 'Project Notes';
+    }
+
+    function showNoteDetail(noteId) {
+      document.getElementById('notesListView').classList.add('hidden');
+      document.getElementById('noteDetailView').classList.remove('hidden');
+      document.getElementById('pageTitle').textContent = 'Frequent Flyer Numbers';
+    }
+
+    function showCreateNote() {
+      alert('Create Note feature would open here with template selection and voice input options');
+    }
+
+    function activateVoice() {
+      document.getElementById('voiceOverlay').classList.add('active');
+      document.querySelector('.voice-button').classList.add('listening');
+      
+      // Simulate voice recognition
+      setTimeout(() => {
+        document.getElementById('voiceStatus').textContent = 'Processing...';
+        document.getElementById('voiceTranscript').innerHTML = '"Add my Delta frequent flyer number 9876 to my Europe trip travel notes"';
+      }, 2000);
+      
+      setTimeout(() => {
+        document.getElementById('voiceStatus').textContent = 'Done!';
+        document.getElementById('voiceTranscript').innerHTML = '✅ Added Delta Airlines #9876 to your Europe Trip travel notes. Would you like me to link this to any tasks?';
+      }, 4000);
+    }
+
+    function closeVoice() {
+      document.getElementById('voiceOverlay').classList.remove('active');
+      document.querySelector('.voice-button').classList.remove('listening');
+      
+      // Reset voice modal
+      setTimeout(() => {
+        document.getElementById('voiceStatus').textContent = 'Listening...';
+        document.getElementById('voiceTranscript').innerHTML = 'Say something like "Add my Delta frequent flyer number 9876 to travel notes"';
+      }, 500);
+    }
+
+    // Close voice overlay when clicking outside
+    document.getElementById('voiceOverlay').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeVoice();
+      }
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Space bar to activate voice
+      if (e.code === 'Space' && !e.target.matches('input, textarea')) {
+        e.preventDefault();
+        activateVoice();
+      }
+      
+      // Escape to close voice
+      if (e.code === 'Escape') {
+        closeVoice();
+      }
+      
+      // Backspace to go back to notes list
+      if (e.code === 'Backspace' && !e.target.matches('input, textarea')) {
+        e.preventDefault();
+        document.getElementById('notesListView').classList.remove('hidden');
+        document.getElementById('noteDetailView').classList.add('hidden');
+        document.getElementById('pageTitle').textContent = 'All Notes';
+      }
+    });
+  </script>
+</body>
+</html>
