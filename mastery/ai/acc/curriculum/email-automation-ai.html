@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Email Automation Mastery — AI Accelerator Curriculum</title>
+  <meta name="description" content="Transform your email experience from manual chaos to intelligent automation. 4-day course using n8n, Zapier, OpenAI API, and Gmail AI." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="stylesheet" href="../../../../public/mindvalley-font.css" />
+  <style>
+    body { margin: 0; padding: 0; background: #ffffff; }
+    .nav { 
+      background: #ffffff; 
+      border-bottom: 1px solid #e5e7eb; 
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+    }
+    .nav-content { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 2rem; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    .nav-logo { font-size: 1.5rem; font-weight: 600; color: #7a12d4; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-link { color: #374151; text-decoration: none; font-weight: 500; }
+    .nav-link:hover { color: #7a12d4; }
+    .hero { 
+      background: linear-gradient(135deg, #7a12d4 0%, #4f46e5 100%); 
+      color: #ffffff; 
+      padding: 4rem 2rem; 
+      text-align: center; 
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; }
+    .hero-title { 
+      font-size: 3rem; 
+      font-weight: 700; 
+      margin-bottom: 1rem; 
+      line-height: 1.2; 
+    }
+    .hero-subtitle { 
+      font-size: 1.25rem; 
+      margin-bottom: 2rem; 
+      opacity: 0.9; 
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .hero-stat {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .hero-stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 2rem; 
+    }
+    .section { 
+      padding: 4rem 0; 
+    }
+    .section-title { 
+      font-size: 2.5rem; 
+      font-weight: 700; 
+      margin-bottom: 2rem; 
+      text-align: center; 
+      color: #1f2937; 
+    }
+    .section-subtitle { 
+      font-size: 1.2rem; 
+      color: #6b7280; 
+      text-align: center; 
+      max-width: 600px; 
+      margin: 0 auto 3rem; 
+    }
+    .day-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+    }
+    .day-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .day-number {
+      background: linear-gradient(135deg, #7a12d4, #4f46e5);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+    }
+    .day-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0;
+    }
+    .day-duration {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-left: auto;
+    }
+    .session {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #f9fafb;
+      border-radius: 12px;
+      border-left: 4px solid #7a12d4;
+    }
+    .session-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    .session-duration {
+      color: #7a12d4;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .learning-objectives {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .objectives-title {
+      font-weight: 600;
+      color: #059669;
+      margin-bottom: 0.5rem;
+    }
+    .code-block {
+      background: #1f2937;
+      color: #e5e7eb;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .tool-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .tool-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .tool-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    .tool-desc {
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+    .success-metrics {
+      background: linear-gradient(135deg, #059669, #10b981);
+      color: white;
+      padding: 3rem;
+      border-radius: 16px;
+      margin: 3rem 0;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .metric {
+      text-align: center;
+    }
+    .metric-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .metric-label {
+      opacity: 0.9;
+    }
+    .cta-section {
+      background: #f9fafb;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 16px;
+    }
+    .cta-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 1rem;
+    }
+    .cta-subtitle {
+      font-size: 1.2rem;
+      color: #6b7280;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #7a12d4, #4f46e5);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    ul, ol { margin: 1rem 0; padding-left: 2rem; }
+    li { margin: 0.5rem 0; }
+    .highlight { background: #fef3c7; padding: 0.2rem 0.4rem; border-radius: 4px; }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2rem; }
+      .section-title { font-size: 2rem; }
+      .container { padding: 0 1rem; }
+      .hero { padding: 3rem 1rem; }
+      .section { padding: 3rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-content">
+      <div class="nav-logo">AI Accelerator</div>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">Curriculum</a>
+        <a href="#overview" class="nav-link">Overview</a>
+        <a href="#tools" class="nav-link">Tools</a>
+        <a href="#outcomes" class="nav-link">Outcomes</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">AI Email Automation Mastery</h1>
+      <p class="hero-subtitle">Transform your email experience from manual chaos to intelligent automation. Learn to build AI-powered email systems without Clawdbot dependency.</p>
+      
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">4 Days</div>
+          <div class="hero-stat-label">Intensive Course</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">80%</div>
+          <div class="hero-stat-label">Email Workflow Automation</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">5+ Hours</div>
+          <div class="hero-stat-label">Daily Time Savings</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">$30/mo</div>
+          <div class="hero-stat-label">Total Tool Cost</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" class="section">
+    <div class="container">
+      <h2 class="section-title">Course Overview</h2>
+      <p class="section-subtitle">Master AI email automation using accessible, cost-effective tools that deliver enterprise-grade results</p>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon">⚡</div>
+          <div class="tool-name">n8n</div>
+          <div class="tool-desc">Visual workflow automation with 2,500 free executions/month</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">🔗</div>
+          <div class="tool-name">Zapier</div>
+          <div class="tool-desc">User-friendly integrations connecting 5000+ apps</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">🤖</div>
+          <div class="tool-name">OpenAI API</div>
+          <div class="tool-desc">Smart email responses and content generation</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon">📧</div>
+          <div class="tool-name">Gmail AI</div>
+          <div class="tool-desc">Built-in smart features and automation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">4-Day Curriculum</h2>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-number">1</div>
+          <div class="day-title">Foundation & Tools Setup</div>
+          <div class="day-duration">3 Hours</div>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Email Automation Landscape</div>
+          <div class="session-duration">45 minutes</div>
+          <div class="learning-objectives">
+            <div class="objectives-title">Learning Objectives:</div>
+            <ul>
+              <li>Understand current email pain points and AI solutions</li>
+              <li>Map personal email workflow inefficiencies</li>
+              <li>Identify automation opportunities</li>
+            </ul>
+          </div>
+          <p><strong>Content Highlights:</strong></p>
+          <ul>
+            <li><strong>Email Workflow Audit:</strong> Track current habits, identify patterns</li>
+            <li><strong>AI Tools Overview:</strong> n8n, Zapier, Gmail AI, OpenAI API, webhooks</li>
+            <li><strong>Success Stories:</strong> Real ROI calculations and productivity metrics</li>
+          </ul>
+        </div>
+
+        <div class="session">
+          <div class="session-title">n8n Setup & First Automation</div>
+          <div class="session-duration">90 minutes</div>
+          <div class="learning-objectives">
+            <div class="objectives-title">Learning Objectives:</div>
+            <ul>
+              <li>Set up n8n account and workspace</li>
+              <li>Connect Gmail securely via OAuth</li>
+              <li>Build first simple email workflow</li>
+            </ul>
+          </div>
+          <p><strong>Hands-On Lab:</strong> Build working email classification system</p>
+          <div class="code-block">
+Workflow: New Gmail → AI Analysis → Auto-Label → Archive/Flag
+          </div>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Advanced n8n Email Workflows</div>
+          <div class="session-duration">45 minutes</div>
+          <p><strong>Build Complex Automations:</strong></p>
+          <ul>
+            <li>Smart email routing by content analysis</li>
+            <li>Auto-response system with AI generation</li>
+            <li>Daily email digest creator</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-number">2</div>
+          <div class="day-title">AI-Powered Responses & Content Generation</div>
+          <div class="day-duration">3 Hours</div>
+        </div>
+
+        <div class="session">
+          <div class="session-title">OpenAI Integration for Email</div>
+          <div class="session-duration">60 minutes</div>
+          <div class="learning-objectives">
+            <div class="objectives-title">Learning Objectives:</div>
+            <ul>
+              <li>Connect OpenAI API to email workflows</li>
+              <li>Generate contextual email responses</li>
+              <li>Customize AI personality for different contexts</li>
+            </ul>
+          </div>
+          <div class="code-block">
+// Example prompt structure
+"Analyze this email and generate a professional response:
+Email: {email_content}
+Sender: {sender_info}
+Context: {previous_thread}
+Tone: {professional/friendly/urgent}"
+          </div>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Smart Email Drafting & Composition</div>
+          <div class="session-duration">60 minutes</div>
+          <p><strong>Advanced Features:</strong></p>
+          <ul>
+            <li>Generate drafts from keywords/bullet points</li>
+            <li>Automated follow-up sequences</li>
+            <li>Personalized mass communications</li>
+            <li>Tone adjustment and cultural adaptation</li>
+          </ul>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Webhook Integration & Real-Time Processing</div>
+          <div class="session-duration">60 minutes</div>
+          <p><strong>Real-Time Use Cases:</strong></p>
+          <ul>
+            <li>VIP email alerts via SMS</li>
+            <li>CRM updates from customer emails</li>
+            <li>Support ticket auto-routing</li>
+            <li>Lead nurturing workflows</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-number">3</div>
+          <div class="day-title">Advanced Automation & Zapier Integration</div>
+          <div class="day-duration">3 Hours</div>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Zapier vs n8n - When to Use What</div>
+          <div class="session-duration">45 minutes</div>
+          <p><strong>Platform Comparison:</strong></p>
+          <ul>
+            <li><strong>n8n:</strong> High flexibility, free tier, steep learning curve</li>
+            <li><strong>Zapier:</strong> User-friendly, 5000+ integrations, $20/mo</li>
+            <li><strong>Use Case Mapping:</strong> Simple vs complex workflows</li>
+          </ul>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Gmail Built-In AI Features</div>
+          <div class="session-duration">60 minutes</div>
+          <p><strong>Gmail AI Arsenal:</strong></p>
+          <ul>
+            <li>Smart Compose & Smart Reply</li>
+            <li>Priority Inbox & Nudges</li>
+            <li>Advanced filtering & Google Scripts</li>
+            <li>Google Workspace integration</li>
+          </ul>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Multi-Platform Email Ecosystem</div>
+          <div class="session-duration">75 minutes</div>
+          <p><strong>Integration Patterns:</strong></p>
+          <ul>
+            <li>Hub and Spoke - Central processing</li>
+            <li>Mirror System - Cross-platform sync</li>
+            <li>Specialization - Platform-specific optimization</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-number">4</div>
+          <div class="day-title">Production Deployment & Advanced Strategies</div>
+          <div class="day-duration">3 Hours</div>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Scaling & Optimization</div>
+          <div class="session-duration">60 minutes</div>
+          <p><strong>Performance Optimization:</strong></p>
+          <ul>
+            <li>Batch processing for efficiency</li>
+            <li>Cost management and monitoring</li>
+            <li>Error handling and recovery</li>
+            <li>Workflow execution statistics</li>
+          </ul>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Advanced AI Strategies</div>
+          <div class="session-duration">60 minutes</div>
+          <p><strong>Advanced Features:</strong></p>
+          <ul>
+            <li>Sentiment analysis integration</li>
+            <li>Learning systems that improve over time</li>
+            <li>Advanced personalization engines</li>
+            <li>Context-aware responses</li>
+          </ul>
+        </div>
+
+        <div class="session">
+          <div class="session-title">Business Integration & ROI Measurement</div>
+          <div class="session-duration">60 minutes</div>
+          <p><strong>Business Integration:</strong></p>
+          <ul>
+            <li>CRM and project management integration</li>
+            <li>ROI measurement framework</li>
+            <li>Team rollout strategy</li>
+            <li>Scaling across organizations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="outcomes" class="success-metrics">
+    <div class="container">
+      <h2 style="color: white; text-align: center; margin-bottom: 3rem;">Success Metrics</h2>
+      <div class="metrics-grid">
+        <div class="metric">
+          <div class="metric-number">85%</div>
+          <div class="metric-label">Email Classification Accuracy</div>
+        </div>
+        <div class="metric">
+          <div class="metric-number">2.6 → 0.5</div>
+          <div class="metric-label">Hours/Day on Email</div>
+        </div>
+        <div class="metric">
+          <div class="metric-number">90%</div>
+          <div class="metric-label">Response Automation</div>
+        </div>
+        <div class="metric">
+          <div class="metric-number">$18K+</div>
+          <div class="metric-label">Annual Value (Time Saved)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-section">
+        <h2 class="cta-title">Ready to Transform Your Email?</h2>
+        <p class="cta-subtitle">Join the AI Accelerator and master email automation in just 4 days</p>
+        <a href="#" class="btn">Start Your Email Automation Journey</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
