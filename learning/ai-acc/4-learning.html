@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learning Clone Mastery — AI Accelerator • Mindvalley</title>
+  <meta name="description" content="Transform any podcast, transcript, or content into personalized learning experiences using Google Notebook LM and your life goals." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="stylesheet" href="../public/mindvalley-font.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    .mv-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    @media (max-width: 768px) {
+      .mv-container { padding: 0 1rem; }
+    }
+    
+    body {
+      font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #0f131a;
+      background: #ffffff;
+    }
+    
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 100;
+      padding: 1rem 0;
+    }
+    
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-brand {
+      font-weight: 700;
+      color: #0f131a;
+      text-decoration: none;
+    }
+    
+    .nav-link {
+      color: #7a12d4;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      transition: background-color 0.2s;
+    }
+    
+    .nav-link:hover {
+      background: #f3f4f6;
+    }
+    
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    
+    .lesson-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #7a12d4;
+      color: white;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero h1 {
+      max-width: 48rem;
+      margin: 0 auto 1.5rem auto;
+    }
+    
+    .hero p {
+      max-width: 40rem;
+      margin: 0 auto;
+      color: #4b5563;
+    }
+    
+    /* Section styles */
+    .section {
+      padding: 5rem 0;
+    }
+    
+    .section-alt {
+      background: #f9fafb;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-title {
+      margin-bottom: 1rem;
+    }
+    
+    .section-subtitle {
+      color: #4b5563;
+      max-width: 40rem;
+      margin: 0 auto;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .content-grid {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+    
+    .content-main {
+      background: white;
+      border-radius: 1rem;
+      padding: 3rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .content-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .sidebar-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .highlight-box {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .highlight-box h3 {
+      margin-bottom: 1rem;
+    }
+    
+    .feature-list {
+      list-style: none;
+      margin: 2rem 0;
+    }
+    
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+    }
+    
+    .feature-list li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+    
+    .code-block {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      font-size: 0.875rem;
+      overflow-x: auto;
+    }
+    
+    .step-number {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      background: #7a12d4;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 2rem;
+      font-weight: 700;
+      margin-right: 1rem;
+    }
+    
+    .step-content {
+      flex: 1;
+    }
+    
+    .steps-list {
+      list-style: none;
+    }
+    
+    .steps-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .quote {
+      border-left: 4px solid #7a12d4;
+      padding: 1rem 0 1rem 2rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #4b5563;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #7a12d4;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: #4b5563;
+    }
+    
+    .cta-section {
+      text-align: center;
+      padding: 4rem 0;
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+      border-radius: 1rem;
+      margin: 4rem 0;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #7a12d4;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      transition: transform 0.2s;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+    }
+    
+    .footer {
+      background: #0f131a;
+      color: #6b7280;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: #7a12d4;
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+    
+    .back-link:hover {
+      color: #6b21a8;
+    }
+    
+    @media (max-width: 768px) {
+      .hero { padding: 4rem 0; }
+      .section { padding: 3rem 0; }
+      .content-main { padding: 2rem; }
+      .sidebar-card { padding: 1.5rem; }
+      .stat-number { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="mv-container">
+      <div class="nav-content">
+        <a href="index.html" class="nav-brand title-bold-6">AI Accelerator</a>
+        <a href="index.html" class="nav-link">← Back to Lessons</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="mv-container">
+      <div class="lesson-badge">DAY 4</div>
+      <h1 class="title-bold-1">Learning Clone Mastery</h1>
+      <p class="body-lg">Transform any podcast, transcript, or content into personalized learning experiences using Google Notebook LM and your life goals</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="mv-container">
+      <a href="index.html" class="back-link">← Back to All Lessons</a>
+      
+      <div class="content-grid">
+        <div class="content-main">
+          <h2 class="title-bold-3" style="margin-bottom: 2rem;">The Learning Revolution</h2>
+          
+          <p class="body-lg" style="margin-bottom: 2rem; color: #4b5563;">
+            Imagine consuming the wisdom of a 3-hour podcast in just 10 minutes, but perfectly customized to your specific goals and life situation. Welcome to the age of learning clones - where AI doesn't just summarize content, it transforms it into your personal curriculum.
+          </p>
+
+          <div class="highlight-box">
+            <h3 class="title-bold-5">🧠 The Tony Stark Moment</h3>
+            <p>Vishen has reached the point where his AI (Eliza) writes Mindvalley's newsletter to 2.5 million people - and nobody can tell it wasn't him. This isn't about replacing human creativity; it's about amplifying your intelligence to superhuman levels.</p>
+          </div>
+
+          <h3 class="title-bold-4" style="margin: 3rem 0 1.5rem 0;">Master Google Notebook LM</h3>
+          
+          <p style="margin-bottom: 2rem;">
+            Google Notebook LM is your gateway to personalized learning. Unlike traditional note-taking, this creates an interactive AI journal that can answer questions, generate insights, and create custom content from any source you feed it.
+          </p>
+
+          <ul class="steps-list">
+            <li>
+              <span class="step-number">1</span>
+              <div class="step-content">
+                <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Setup Your Learning Lab</h4>
+                <p>Go to <strong>notebook.lm.google.com</strong> and create your first notebook. Each notebook becomes a specialized learning environment for different areas of your life.</p>
+              </div>
+            </li>
+            
+            <li>
+              <span class="step-number">2</span>
+              <div class="step-content">
+                <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Feed the Beast</h4>
+                <p>Upload transcripts, PDFs, YouTube links, or paste raw text. The AI processes everything and creates an interactive knowledge base you can query like a super-smart assistant.</p>
+              </div>
+            </li>
+            
+            <li>
+              <span class="step-number">3</span>
+              <div class="step-content">
+                <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Add Your Personal Goals</h4>
+                <p>Upload your Lifebook or personal goals as a separate source. This is the secret sauce - now every piece of content gets analyzed through the lens of YOUR specific objectives.</p>
+              </div>
+            </li>
+            
+            <li>
+              <span class="step-number">4</span>
+              <div class="step-content">
+                <h4 class="title-bold-6" style="margin-bottom: 0.5rem;">Generate Custom Content</h4>
+                <p>Create summaries, infographics, quizzes, mind maps, or even interactive podcasts. Each output is tailored to your learning style and goals.</p>
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="title-bold-4" style="margin: 3rem 0 1.5rem 0;">The Podcast Transformation Protocol</h3>
+          
+          <div class="quote">
+            "In the time it takes a normal human being to listen to one podcast, you could get insights from 10 different podcasts - but each insight customized to you." - Vishen
+          </div>
+
+          <p style="margin-bottom: 2rem;">
+            Here's how to turn any podcast into your personal learning experience:
+          </p>
+
+          <div class="feature-list">
+            <li><strong>Extract Transcripts:</strong> Use YouTube's built-in transcript feature or grab transcripts from podcast platforms</li>
+            <li><strong>Goal Integration:</strong> Ask: "Based on my health goals, what's the most important lesson from this Joe Dispenza podcast?"</li>
+            <li><strong>Custom Summaries:</strong> Get 5-minute actionable insights instead of 3-hour listening sessions</li>
+            <li><strong>Interactive Podcasts:</strong> Generate AI-hosted conversations about the content that you can join</li>
+            <li><strong>Walking Content:</strong> Create downloadable audio summaries for your daily walks</li>
+          </div>
+
+          <h3 class="title-bold-4" style="margin: 3rem 0 1.5rem 0;">Advanced Learning Techniques</h3>
+
+          <p style="margin-bottom: 1.5rem;"><strong>The Multi-Notebook Strategy:</strong></p>
+          <ul class="feature-list" style="margin-bottom: 2rem;">
+            <li>Health Notebook: All wellness content + your health goals</li>
+            <li>Business Notebook: Leadership podcasts + your company vision</li>
+            <li>Relationships Notebook: Psychology content + your relationship goals</li>
+            <li>Learning Notebook: Educational content + your skill development plans</li>
+          </ul>
+
+          <p style="margin-bottom: 1.5rem;"><strong>Content Creation Superpowers:</strong></p>
+          <ul class="feature-list">
+            <li>Generate slide decks for presentations in minutes</li>
+            <li>Create infographics that make complex ideas visual</li>
+            <li>Build quizzes to test your understanding</li>
+            <li>Design mind maps for strategic thinking</li>
+            <li>Produce video overviews for team sharing</li>
+          </ul>
+
+          <div class="highlight-box" style="margin: 3rem 0;">
+            <h3 class="title-bold-5">🎯 The Personalization Edge</h3>
+            <p>The magic happens when you combine any content with your personal goals. Instead of generic advice, you get specific guidance: "Based on your goal of 12% body fat and perfect eyesight, here's what Joe Dispenza's research means for your morning meditation routine."</p>
+          </div>
+
+          <h3 class="title-bold-4" style="margin: 3rem 0 1.5rem 0;">Privacy & Data Considerations</h3>
+
+          <p style="margin-bottom: 1.5rem;">
+            Vishen's transparent approach: He uploads his health goals, blood work, and business strategies because the insights he gains are worth more than the privacy trade-offs.
+          </p>
+
+          <div class="feature-list">
+            <li><strong>What's Safe:</strong> Personal goals, learning content, health data, business strategies</li>
+            <li><strong>What to Avoid:</strong> Client email lists, confidential client data, illegal activities</li>
+            <li><strong>The Rule:</strong> Don't upload other people's private information without consent</li>
+            <li><strong>The Benefit:</strong> Customized insights that can transform your life and business</li>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="content-sidebar">
+          <div class="sidebar-card">
+            <h3 class="title-bold-5" style="margin-bottom: 1rem;">📊 Learning Stats</h3>
+            <div class="stats-grid" style="grid-template-columns: 1fr;">
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 700; color: #7a12d4; margin-bottom: 0.5rem;">90%</div>
+                <div style="color: #4b5563; font-size: 0.875rem;">Time Saved</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 700; color: #7a12d4; margin-bottom: 0.5rem;">10x</div>
+                <div style="color: #4b5563; font-size: 0.875rem;">Learning Speed</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 700; color: #7a12d4; margin-bottom: 0.5rem;">100%</div>
+                <div style="color: #4b5563; font-size: 0.875rem;">Personalized</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3 class="title-bold-5" style="margin-bottom: 1rem;">🛠 Essential Tools</h3>
+            <ul class="feature-list">
+              <li><strong>Google Notebook LM:</strong> Your AI learning assistant</li>
+              <li><strong>YouTube Transcripts:</strong> Built-in transcript extraction</li>
+              <li><strong>Lifebook Integration:</strong> Personal goals as learning filter</li>
+              <li><strong>Audio Downloads:</strong> Walking-friendly content</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h3 class="title-bold-5" style="margin-bottom: 1rem;">⚡ Quick Wins</h3>
+            <ul class="feature-list">
+              <li>Start with your favorite podcast</li>
+              <li>Upload your goals first</li>
+              <li>Ask for 5-minute summaries</li>
+              <li>Generate walking audio</li>
+              <li>Create visual mind maps</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="mv-container">
+      <h2 class="title-bold-3" style="margin-bottom: 1rem;">Ready to 10x Your Learning?</h2>
+      <p class="body-lg" style="margin-bottom: 2rem; opacity: 0.9;">
+        Stop consuming content passively. Start creating your personal learning universe where every piece of content serves your specific goals.
+      </p>
+      <a href="https://notebook.lm.google.com" class="cta-button" target="_blank">Start with Notebook LM →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="mv-container">
+      <p>© Mindvalley • AI Accelerator Program • Day 4: Learning Clone Mastery</p>
+    </div>
+  </footer>
+</body>
+</html>
