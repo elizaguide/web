@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Move to a 4-Day Work Week by the End of This Event. Vishen's proprietary AI-First Method. Free Virtual Event Mar 20-22, 2026.">
+    <meta name="theme-color" content="#7a12d4">
+    <title>AI Summit 2026 - Reclaim Your Time with AI</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%237a12d4'>🤖</text></svg>">
+    
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 6vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 4vw, 1.75rem);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        p {
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            color: #444;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: #7a12d4;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(122, 18, 212, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #5e0aa3;
+            box-shadow: 0 6px 24px rgba(122, 18, 212, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 14px 28px;
+            background: transparent;
+            color: #7a12d4;
+            border: 2px solid #7a12d4;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button-secondary:hover {
+            background: #7a12d4;
+            color: white;
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: none;
+        }
+
+        .sticky-cta.visible {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f4ff 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(122, 18, 212, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .hero-subheadline {
+            font-size: clamp(1rem, 3vw, 1.375rem);
+            font-weight: 400;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        .hero-cta-wrapper {
+            margin-bottom: 50px;
+        }
+
+        .cta-button-primary {
+            padding: 18px 48px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-stats {
+            background: rgba(122, 18, 212, 0.05);
+            border: 1px solid rgba(122, 18, 212, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-row {
+            margin: 15px 0;
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .stat-highlight {
+            color: #7a12d4;
+            font-weight: 700;
+        }
+
+        .timezone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .timezone-item {
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .timezone-region {
+            font-weight: 600;
+            color: #7a12d4;
+            margin-bottom: 4px;
+        }
+
+        .timezone-time {
+            color: #666;
+        }
+
+        /* Hero Image (Mobile Only) */
+        .hero-image {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            max-width: 500px;
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        /* Problem Agitation Section */
+        .problem-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .problem-section h2 {
+            color: #d9534f;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .problem-story {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            background: #fef5f5;
+            border-left: 5px solid #d9534f;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .problem-story p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .problem-checklist {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .problem-checklist li {
+            padding: 10px 0;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .problem-checklist li::before {
+            content: '✓ ';
+            color: #7a12d4;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #7a12d4 0%, #5e0aa3 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 500px;
+        }
+
+        .insight-box p {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .solution-intro {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f4ff 0%, #ffffff 100%);
+        }
+
+        .solution-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #7a12d4;
+        }
+
+        .solution-subheading {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .method-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .step-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #f0f0f0;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .step-card:hover {
+            border-color: #7a12d4;
+            box-shadow: 0 8px 24px rgba(122, 18, 212, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #7a12d4;
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .step-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .outcome-box {
+            background: #7a12d4;
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .outcome-box p {
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Agenda Section */
+        .agenda-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .agenda-section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .agenda-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .day-block {
+            margin-bottom: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f4ff 0%, #fff5f8 100%);
+            border-left: 5px solid #7a12d4;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .day-label {
+            display: inline-block;
+            background: #7a12d4;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .day-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .day-subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .day-highlights {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .day-highlights li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .day-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #7a12d4;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .moment {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #FFD700;
+            margin-top: 20px;
+            font-weight: 600;
+            color: #d9534f;
+        }
+
+        .moment::before {
+            content: '🔥 ';
+        }
+
+        /* Social Proof Section */
+        .social-proof-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f4ff 0%, #ffffff 100%);
+        }
+
+        .social-proof-section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .speaker-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .speaker-card:hover {
+            box-shadow: 0 8px 24px rgba(122, 18, 212, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .speaker-avatar {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #7a12d4 0%, #5e0aa3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .speaker-content {
+            padding: 25px;
+        }
+
+        .speaker-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .speaker-title {
+            font-size: 0.85rem;
+            color: #7a12d4;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .speaker-bio {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .testimonials {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 5px solid #7a12d4;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .testimonial:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .testimonial-quote {
+            font-size: 0.95rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #7a12d4;
+            font-size: 0.9rem;
+        }
+
+        /* Urgency Section */
+        .urgency-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #d9534f 0%, #c9302c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .urgency-section h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .urgency-content {
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .urgency-content p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        .countdown-item {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin: 20px 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #7a12d4 0%, #5e0aa3 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .cta-button-white {
+            display: inline-block;
+            padding: 18px 48px;
+            background: white;
+            color: #7a12d4;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button-white:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: #f8f4ff;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-color: #7a12d4;
+            box-shadow: 0 4px 12px rgba(122, 18, 212, 0.1);
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f4ff;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #7a12d4;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            background: #fafafa;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 25px 25px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="email"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        input[type="email"]:focus,
+        input[type="text"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #7a12d4;
+            box-shadow: 0 0 0 3px rgba(122, 18, 212, 0.1);
+        }
+
+        input[type="email"].error,
+        input[type="text"].error {
+            border-color: #d9534f;
+            box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.1);
+        }
+
+        .error-message {
+            color: #d9534f;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #7a12d4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #9f3dd7;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 40px 20px;
+            }
+
+            .hero-image {
+                display: block;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 10;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-stats {
+                padding: 20px;
+                margin-top: 30px;
+            }
+
+            .timezone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .problem-section,
+            .solution-section,
+            .agenda-section,
+            .social-proof-section,
+            .faq-section {
+                padding: 40px 20px;
+            }
+
+            .method-steps {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sticky-cta {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .cta-button {
+                padding: 14px 24px;
+                font-size: 0.9rem;
+            }
+
+            .faq-question {
+                padding: 18px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .sticky-cta,
+            footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky CTA Button -->
+    <div class="sticky-cta" id="stickyCTA">
+        <button class="cta-button cta-button-primary" onclick="scrollToForm()">
+            Claim Your Free Access
+        </button>
+    </div>
+
+    <!-- SECTION 1: HERO (Above Fold) -->
+    <section class="hero" id="hero">
+        <svg class="hero-image" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#7a12d4;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#5e0aa3;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <circle cx="200" cy="200" r="180" fill="url(#grad1)" opacity="0.1"/>
+            <circle cx="200" cy="200" r="140" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.3"/>
+            <text x="200" y="220" font-size="80" font-weight="bold" fill="#7a12d4" text-anchor="middle" opacity="0.8">⚡</text>
+        </svg>
+        
+        <div class="hero-content">
+            <h1>Move to a 4-Day Work Week by the End of This Event</h1>
+            <p class="hero-subheadline">Vishen's proprietary 5-step AI-First Method cuts 20+ hours from founder's workweeks. Learn it in 3 days. Apply it by Monday.</p>
+            
+            <div class="hero-cta-wrapper">
+                <button class="cta-button cta-button-primary" onclick="scrollToForm()">
+                    Claim Your Free Virtual Access
+                </button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-row">
+                    📅 <span class="stat-highlight">Mar 20-22, 2026</span>
+                </div>
+                <div class="stat-row">
+                    👥 <span class="stat-highlight">150,000+ Registered</span>
+                </div>
+                <div class="stat-row">
+                    🎤 <span class="stat-highlight">4 World-Class Speakers</span>
+                </div>
+                
+                <h3 style="margin-top: 30px; margin-bottom: 20px; font-size: 1rem; text-align: center; color: #1a1a1a;">Your Time Zone:</h3>
+                <div class="timezone-grid">
+                    <div class="timezone-item">
+                        <div class="timezone-region">🇺🇸 Los Angeles</div>
+                        <div class="timezone-time">8:00 AM PST</div>
+                    </div>
+                    <div class="timezone-item">
+                        <div class="timezone-region">🇺🇸 New York</div>
+                        <div class="timezone-time">11:00 AM EST</div>
+                    </div>
+                    <div class="timezone-item">
+                        <div class="timezone-region">🇬🇧 London</div>
+                        <div class="timezone-time">4:00 PM GMT</div>
+                    </div>
+                    <div class="timezone-item">
+                        <div class="timezone-region">🇦🇪 Dubai</div>
+                        <div class="timezone-time">8:00 PM GST</div>
+                    </div>
+                    <div class="timezone-item">
+                        <div class="timezone-region">🇮🇳 Delhi</div>
+                        <div class="timezone-time">9:30 PM IST</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PROBLEM AGITATION -->
+    <section class="problem-section">
+        <div class="container">
+            <h2>You Already Know AI Can Help. So Why Does Your Workweek Still Own You?</h2>
+            
+            <div class="problem-story">
+                <p><strong>You've tried everything:</strong></p>
+                <ul class="problem-checklist">
+                    <li>ChatGPT</li>
+                    <li>Claude</li>
+                    <li>Every AI tool under the sun</li>
+                </ul>
+                <p>And yet... you're still drowning in the same emails. Still running on the same treadmill. Still feeling owned by your business instead of running it.</p>
+                <p><strong>Sound familiar?</strong></p>
+            </div>
+
+            <div class="insight-box">
+                <p>That's not an AI problem. That's a METHOD problem.</p>
+            </div>
+
+            <p class="solution-intro">
+                The entrepreneurs who are actually getting their lives back didn't just adopt new tools.<br>
+                <strong>They discovered a SYSTEM.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SOLUTION REVEAL -->
+    <section class="solution-section">
+        <div class="container">
+            <h2>The AI-First Method: From Overwhelmed to Orchestrator</h2>
+            <p class="solution-subheading">
+                5 sequential steps that turned Vishen's 200-person company into 100 people (with revenue still growing) and cut 1.5 days from his personal workweek.
+            </p>
+
+            <div class="method-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Vision</h3>
+                    <p class="step-description">Know what AI should do for YOU</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Brain</h3>
+                    <p class="step-description">Build an AI that thinks like you</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Team</h3>
+                    <p class="step-description">Deploy AI as co-workers, not tools</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Create</h3>
+                    <p class="step-description">Produce content at scale in your voice</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">System</h3>
+                    <p class="step-description">Put it all together into a living operating system</p>
+                </div>
+            </div>
+
+            <div class="outcome-box">
+                <p>By Day 3, you'll have a complete blueprint for an AI system that handles your email, creates your content, preps your meetings, and frees up 15+ hours every week.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: 3-DAY AGENDA -->
+    <section class="agenda-section">
+        <div class="container">
+            <h2>The 3-Day Transformation</h2>
+            
+            <div class="agenda-timeline">
+                <!-- Day 1 -->
+                <div class="day-block">
+                    <span class="day-label">DAY 1</span>
+                    <h3 class="day-title">See What's Possible</h3>
+                    <p class="day-subtitle">"What would your work look like if AI handled everything that drains you?"</p>
+                    <ul class="day-highlights">
+                        <li>Map where your hours are actually going</li>
+                        <li>Experience the mindset shift from "AI user" to "AI orchestrator"</li>
+                        <li>Discover how AI prevents burnout</li>
+                    </ul>
+                    <div class="moment">THE MOMENT: A breakout exercise that surfaces what you'd do with 15 hours back</div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="day-block">
+                    <span class="day-label">DAY 2</span>
+                    <h3 class="day-title">See It Built</h3>
+                    <p class="day-subtitle">"This is real. And you can build it."</p>
+                    <ul class="day-highlights">
+                        <li>Watch a complete AI Voice Engine built live (20 minutes, writes in a volunteer's voice)</li>
+                        <li>See how AI compresses a week of content into one morning</li>
+                        <li>Watch professional images and video created with AI (no designer, no team)</li>
+                    </ul>
+                    <div class="moment">THE MOMENT: From Prompt to Profit — how AI output becomes real revenue</div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="day-block">
+                    <span class="day-label">DAY 3</span>
+                    <h3 class="day-title">See the Proof</h3>
+                    <p class="day-subtitle">"They did it. You can too."</p>
+                    <ul class="day-highlights">
+                        <li>Real graduates from different industries showcase their AI systems</li>
+                        <li>Build your first AI employee live (step-by-step guidance)</li>
+                        <li>Get a hands-on quick win for Monday morning</li>
+                    </ul>
+                    <div class="moment">THE MOMENT: Vishen's complete method walkthrough (most detailed reveal)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SOCIAL PROOF -->
+    <section class="social-proof-section">
+        <div class="container">
+            <h2>Learn From World-Class Experts</h2>
+            
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-avatar">👨‍💼</div>
+                    <div class="speaker-content">
+                        <div class="speaker-name">Vishen Lakhiani</div>
+                        <div class="speaker-title">Founder & AI Pioneer</div>
+                        <div class="speaker-bio">Built Mindvalley to $100M+ using AI-first strategies and storytelling. Now teaching the exact system that scaled his company while cutting his personal workweek.</div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-avatar">🤖</div>
+                    <div class="speaker-content">
+                        <div class="speaker-name">Vykintas Maknatskis</div>
+                        <div class="speaker-title">Chief AI Transformation Officer</div>
+                        <div class="speaker-bio">Led AI adoption strategies for Fortune 500 companies. Has directly impacted 400K+ users' AI workflows and operational efficiency.</div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-avatar">👩‍💻</div>
+                    <div class="speaker-content">
+                        <div class="speaker-name">Noelle Russell</div>
+                        <div class="speaker-title">AI Team Leader (Microsoft, Amazon, AWS)</div>
+                        <div class="speaker-bio">Built and scaled AI teams at the world's top tech companies. Brings real-world expertise in deploying AI systems at enterprise scale.</div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-avatar">🎨</div>
+                    <div class="speaker-content">
+                        <div class="speaker-name">Manon Dave</div>
+                        <div class="speaker-title">Creative Director (Apple, Disney, Google)</div>
+                        <div class="speaker-bio">Led campaigns for the world's biggest brands. Now showing how AI accelerates creative work while maintaining quality and voice.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <h3 style="margin-bottom: 30px; text-align: center;">Real Transformations From Real Attendees</h3>
+                
+                <div class="testimonial">
+                    <div class="testimonial-quote">
+                        "I implemented the AI-First Method and cut my email response time by 70%. What used to take me 3 hours a day now takes 45 minutes. I finally have breathing room."
+                    </div>
+                    <div class="testimonial-author">— Sarah Chen, CEO of Digital Marketing Agency</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-quote">
+                        "The mindset shift alone was worth it. I went from seeing AI as a tool to understanding it as a co-worker. My business operations completely transformed in 30 days."
+                    </div>
+                    <div class="testimonial-author">— Marcus Johnson, Founder & Coach</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-quote">
+                        "I launched a new content pillar using the AI system we built. Generated 50 pieces of content in one week—all in my voice, all publication-ready. This would've taken my team a month."
+                    </div>
+                    <div class="testimonial-author">— Lisa Wong, Content Director & Entrepreneur</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: URGENCY + FOMO -->
+    <section class="urgency-section">
+        <div class="container">
+            <div class="urgency-badge">🔴 LIVE EVENT — 3 DAYS ONLY</div>
+            <h2>Mar 20-22, 2026</h2>
+            
+            <div class="urgency-content">
+                <p><strong>This is a LIVE event, not a pre-recorded course.</strong></p>
+                <p>You'll be learning alongside 150,000+ entrepreneurs in real-time. Breakout sessions. Live Q&A. Real-time interaction with Vishen and the speakers.</p>
+                <p>Once it's over, it's over. (Replay available later for registered attendees only.)</p>
+            </div>
+
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">3</span>
+                    <span class="countdown-label">DAYS</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">12</span>
+                    <span class="countdown-label">HOURS</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">30</span>
+                    <span class="countdown-label">MINUTES</span>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 0.95rem;">150,000+ spots claimed. <strong>While spots last.</strong></p>
+        </div>
+    </section>
+
+    <!-- SECTION 7: REGISTRATION CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Reclaim 15+ Hours Per Week?</h2>
+            <p>Free virtual access. 3-day intensive. Apply what you learn by Monday.</p>
+            <button class="cta-button-white" onclick="scrollToForm()">
+                Register Now (It's Free)
+            </button>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do I need to be technical?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. This event is designed for entrepreneurs and creators with zero technical background. We focus on mindset and methodology first, then build practical systems. If you can use email and Google Docs, you can do this.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What if I can't attend all 3 days?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Each day builds on the last. For the full transformation, you really want all 3. But we understand life happens. Join what you can, and registered attendees get replay access for 30 days after the event.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is it really free?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, completely free virtual access. There's an in-person component (100 seats at Mindvalley's LA studios) which has a separate ticket, but the 3-day virtual event is 100% free for registered attendees.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What time zone is it in?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We run the same event at multiple times to accommodate global attendees: 8am LA | 11am NY | 4pm London | 8pm Dubai | 9:30pm Delhi. When you register, you'll select your preferred time zone.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Will there be a replay?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>It's a live event first. For the full interactive experience (live Q&A, breakout sessions, real-time energy), you want to attend live. But yes, registered attendees get replay access for 30 days after the event ends.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What if I'm not ready to build AI systems yet?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Day 1 is all mindset. You'll understand WHY AI matters to your business, what's possible, and why most founders get it wrong. Then we build. No prerequisites. Come with curiosity, leave with a system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: REGISTRATION FORM -->
+    <section class="cta-section" id="registration" style="background: linear-gradient(135deg, #f8f4ff 0%, #ffffff 100%); color: #1a1a1a; padding: 80px 20px;">
+        <div class="container" style="max-width: 500px;">
+            <h2 style="color: #1a1a1a; margin-bottom: 10px;">Claim Your Free Access</h2>
+            <p style="color: #666; margin-bottom: 40px;">Join 150,000+ entrepreneurs reclaiming their time.</p>
+
+            <form id="registrationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <input type="text" id="fullName" placeholder="Your Name" required aria-label="Full Name">
+                    <div class="error-message" id="nameError">Please enter your name</div>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="your@email.com" required aria-label="Email Address">
+                    <div class="error-message" id="emailError">Please enter a valid email</div>
+                </div>
+
+                <div class="form-group">
+                    <select id="timezone" required aria-label="Your Time Zone">
+                        <option value="">Select Your Time Zone</option>
+                        <option value="PST">🇺🇸 Los Angeles (PST) - 8:00 AM</option>
+                        <option value="EST">🇺🇸 New York (EST) - 11:00 AM</option>
+                        <option value="GMT">🇬🇧 London (GMT) - 4:00 PM</option>
+                        <option value="GST">🇦🇪 Dubai (GST) - 8:00 PM</option>
+                        <option value="IST">🇮🇳 Delhi (IST) - 9:30 PM</option>
+                        <option value="Other">Other (I'll figure it out)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="cta-button" style="width: 100%; padding: 18px; font-size: 1.05rem; margin-top: 20px;">
+                    Register Now (100% Free)
+                </button>
+
+                <p style="font-size: 0.8rem; color: #999; margin-top: 15px; text-align: center;">
+                    ✓ No spam. ✓ Unsubscribe anytime. ✓ Your email is safe with us.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 15px;">© 2026 Mindvalley AI Summit. All rights reserved.</p>
+            <p>
+                <a href="#privacy">Privacy Policy</a> | 
+                <a href="#terms">Terms of Service</a> | 
+                <a href="#contact">Contact Us</a>
+            </p>
+            <p style="margin-top: 15px; color: #999;">
+                Built with 💜 for entrepreneurs who want their time back.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky CTA Visibility
+        const stickyCTA = document.getElementById('stickyCTA');
+        const heroSection = document.getElementById('hero');
+
+        window.addEventListener('scroll', () => {
+            const heroRect = heroSection.getBoundingClientRect();
+            if (heroRect.bottom < window.innerHeight) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+        });
+
+        // Smooth Scroll to Form
+        function scrollToForm() {
+            const registrationSection = document.getElementById('registration');
+            registrationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById('fullName').focus();
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Toggle current
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Form Validation & Submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const timezone = document.getElementById('timezone').value;
+
+            let isValid = true;
+
+            // Validate Name
+            if (fullName.length < 2) {
+                document.getElementById('nameError').classList.add('show');
+                document.getElementById('fullName').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('nameError').classList.remove('show');
+                document.getElementById('fullName').classList.remove('error');
+            }
+
+            // Validate Email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').classList.add('show');
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('emailError').classList.remove('show');
+                document.getElementById('email').classList.remove('error');
+            }
+
+            if (!isValid) return;
+
+            // Track conversion (GTM hook)
+            if (window.gtag) {
+                gtag('event', 'summit_registration', {
+                    'email': email,
+                    'timezone': timezone,
+                    'event_category': 'engagement',
+                    'event_label': 'AI Summit 2026'
+                });
+            }
+
+            // Success message
+            alert(`Welcome, ${fullName}! Check your email (${email}) for summit details.`);
+            
+            // Reset form
+            document.getElementById('registrationForm').reset();
+        }
+
+        // Countdown Timer (Mock - Replace with real deadline)
+        function updateCountdown() {
+            // Mock countdown to Mar 20, 2026 8:00 AM PT
+            const deadline = new Date('2026-03-20T08:00:00-07:00').getTime();
+            const now = new Date().getTime();
+            const remaining = deadline - now;
+
+            if (remaining > 0) {
+                const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+            }
+        }
+
+        // Update countdown on load and every minute
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+
+        // Analytics Setup (GTM Placeholder)
+        // Replace with your actual GTM ID
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'GTM-XXXXXXX'); // Replace with actual GTM ID
+
+        // Accessibility: Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+        });
+
+        // Page Performance: Lazy Load Images (if added later)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
