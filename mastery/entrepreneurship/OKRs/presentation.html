@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKRs Mastery - Interactive Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #8B5CF6;
+            --color-secondary: #EC4899;
+            --color-dark: #0F172A;
+            --color-light: #F8FAFC;
+            --color-text: #1E293B;
+            --color-border: #E2E8F0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--color-dark);
+            color: var(--color-text);
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: none;
+            animation: slideIn 0.5s ease-in-out;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-content {
+            max-width: 900px;
+            z-index: 10;
+        }
+
+        .slide h1 {
+            font-size: clamp(32px, 6vw, 64px);
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--color-dark);
+        }
+
+        .slide h2 {
+            font-size: clamp(24px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--color-dark);
+        }
+
+        .slide p {
+            font-size: clamp(14px, 2vw, 20px);
+            line-height: 1.8;
+            color: #64748B;
+            margin-bottom: 20px;
+        }
+
+        .slide-list {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+            margin: 30px 0;
+        }
+
+        .slide-list li {
+            font-size: clamp(14px, 2vw, 18px);
+            color: #64748B;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .slide-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        .control-btn {
+            background: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .control-btn:active {
+            transform: translateY(0);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+
+        .logo {
+            position: fixed;
+            top: 30px;
+            left: 40px;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            z-index: 100;
+        }
+
+        .slide-bg-shape {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+        }
+
+        /* Table styling */
+        .okr-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .okr-table th {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .okr-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 14px;
+        }
+
+        .okr-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Example box */
+        .example-box {
+            background: var(--color-light);
+            border-left: 4px solid var(--color-primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .example-box h4 {
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .example-box p {
+            font-size: 14px;
+            color: #64748B;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px 20px;
+            }
+
+            .slide h1 {
+                font-size: 32px;
+            }
+
+            .slide h2 {
+                font-size: 24px;
+            }
+
+            .controls {
+                bottom: 20px;
+                gap: 10px;
+            }
+
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .slide-counter {
+                top: 20px;
+                right: 20px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .logo {
+                top: 20px;
+                left: 20px;
+                font-size: 20px;
+            }
+
+            .okr-table {
+                font-size: 12px;
+            }
+
+            .okr-table th,
+            .okr-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">OKRs 🎯</div>
+    <div class="slide-counter"><span id="current">1</span> / 15</div>
+
+    <div class="presentation-container">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide active">
+            <div class="slide-bg-shape shape-1"></div>
+            <div class="slide-content">
+                <h1>Master the OKR Framework</h1>
+                <p style="font-size: 24px; margin-top: 20px;">The Goal-Setting System That Powers Growth</p>
+                <p style="margin-top: 40px; color: #94A3B8;">Learn how companies like Google, Meta, and Mindvalley set and achieve ambitious goals</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: What are OKRs? -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-2"></div>
+            <div class="slide-content">
+                <h2>What are OKRs?</h2>
+                <p style="margin-top: 30px; margin-bottom: 40px;">OKR = Objectives and Key Results</p>
+                <div class="example-box">
+                    <h4>📌 Objective</h4>
+                    <p>A qualitative, inspiring goal that describes what you want to achieve</p>
+                </div>
+                <div class="example-box">
+                    <h4>📊 Key Results</h4>
+                    <p>3-4 quantifiable, measurable outcomes that define success for that objective</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: OKR vs Goals -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-1"></div>
+            <div class="slide-content">
+                <h2>OKRs vs Traditional Goals</h2>
+                <table class="okr-table">
+                    <tr>
+                        <th>Aspect</th>
+                        <th>OKRs</th>
+                        <th>Traditional Goals</th>
+                    </tr>
+                    <tr>
+                        <td>Scope</td>
+                        <td>Ambitious (60-70% achievable)</td>
+                        <td>Conservative (90%+ achievable)</td>
+                    </tr>
+                    <tr>
+                        <td>Measurement</td>
+                        <td>Quantified (0-1.0 scale)</td>
+                        <td>Often vague</td>
+                    </tr>
+                    <tr>
+                        <td>Frequency</td>
+                        <td>Quarterly cycles</td>
+                        <td>Annual reviews</td>
+                    </tr>
+                    <tr>
+                        <td>Alignment</td>
+                        <td>Company-wide visibility</td>
+                        <td>Siloed by department</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 4: History of OKRs -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-2"></div>
+            <div class="slide-content">
+                <h2>History of OKRs</h2>
+                <ul class="slide-list">
+                    <li><strong>1954:</strong> Peter Drucker invents Management by Objectives (MBO)</li>
+                    <li><strong>1975:</strong> Andy Grove adapts at Intel as OKRs</li>
+                    <li><strong>1999:</strong> John Doerr introduces OKRs to Google (small startup)</li>
+                    <li><strong>2000s-2010s:</strong> Adopted by Meta, LinkedIn, Twitter, Airbnb</li>
+                    <li><strong>2020+:</strong> Widespread adoption across all industries and company sizes</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 5: Why OKRs Work -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-1"></div>
+            <div class="slide-content">
+                <h2>Why OKRs Work</h2>
+                <ul class="slide-list">
+                    <li>💡 <strong>Clarity:</strong> Everyone knows what matters and why</li>
+                    <li>🎯 <strong>Focus:</strong> Limited objectives prevent scattered efforts</li>
+                    <li>📊 <strong>Measurement:</strong> Quantified outcomes enable data-driven decisions</li>
+                    <li>🔄 <strong>Alignment:</strong> Cross-functional teams move in the same direction</li>
+                    <li>🚀 <strong>Ambition:</strong> Stretch goals push innovation and growth</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 6: OKR Structure -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-2"></div>
+            <div class="slide-content">
+                <h2>Anatomy of an OKR</h2>
+                <div style="text-align: left; max-width: 600px; margin: 40px auto;">
+                    <div class="example-box" style="margin-bottom: 20px;">
+                        <h4>Objective: "Become the #1 fitness app"</h4>
+                        <p style="margin-top: 10px;"><strong>Qualitative, inspiring, directional</strong></p>
+                    </div>
+                    <div class="example-box">
+                        <h4>Key Results:</h4>
+                        <p>• Increase daily active users from 500K to 2M (4x growth)</p>
+                        <p>• Achieve 4.8+ app store rating with 100K+ reviews</p>
+                        <p>• Reduce churn rate from 5% to 2% monthly</p>
+                        <p>• Generate $5M ARR from premium subscriptions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Characteristics of Good OKRs -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-1"></div>
+            <div class="slide-content">
+                <h2>Characteristics of Good OKRs</h2>
+                <ul class="slide-list">
+                    <li>✓ <strong>Aspirational:</strong> Should feel exciting and stretch your team</li>
+                    <li>✓ <strong>Measurable:</strong> Quantified with clear success criteria</li>
+                    <li>✓ <strong>Achievable:</strong> Realistic with maximum effort (60-70% success rate)</li>
+                    <li>✓ <strong>Focused:</strong> 3-4 OKRs per team (not 20)</li>
+                    <li>✓ <strong>Time-bound:</strong> Usually quarterly cycles</li>
+                    <li>✓ <strong>Transparent:</strong> Visible to the entire organization</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8: Setting OKRs - Top-Down & Bottom-Up -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-2"></div>
+            <div class="slide-content">
+                <h2>OKR-Setting Process</h2>
+                <div style="text-align: left; max-width: 700px; margin: 40px auto;">
+                    <div class="example-box">
+                        <h4>🔺 Top-Down (Company Level)</h4>
+                        <p>Leadership defines 3-5 company OKRs for the quarter</p>
+                    </div>
+                    <div class="example-box">
+                        <h4>🔻 Bottom-Up (Team Level)</h4>
+                        <p>Teams propose OKRs that support company objectives</p>
+                    </div>
+                    <div class="example-box">
+                        <h4>🤝 Alignment</h4>
+                        <p>Teams negotiate and agree on final OKRs that align with company goals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: OKR Cycle Timeline -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-1"></div>
+            <div class="slide-content">
+                <h2>The OKR Quarterly Cycle</h2>
+                <ul class="slide-list" style="max-width: 650px;">
+                    <li><strong>Weeks 1-2:</strong> Planning & OKR drafting</li>
+                    <li><strong>Week 3:</strong> Review & alignment across teams</li>
+                    <li><strong>Week 4:</strong> Finalize & commit to OKRs</li>
+                    <li><strong>Weeks 5-12:</strong> Weekly check-ins & progress tracking</li>
+                    <li><strong>Week 13:</strong> Quarter-end review & scoring</li>
+                    <li><strong>Week 14:</strong> Retrospective & learning session</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 10: Tracking Progress -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-2"></div>
+            <div class="slide-content">
+                <h2>Tracking & Scoring OKRs</h2>
+                <div style="text-align: left; max-width: 700px; margin: 40px auto;">
+                    <div class="example-box">
+                        <h4>Key Result Scoring</h4>
+                        <p><strong>0.0 - 0.3:</strong> Off track, significant issues</p>
+                        <p><strong>0.4 - 0.6:</strong> On track, some challenges</p>
+                        <p><strong>0.7 - 1.0:</strong> Achieved or exceeded</p>
+                    </div>
+                    <div class="example-box" style="margin-top: 20px;">
+                        <h4>Healthy Target Score</h4>
+                        <p>Teams should score 0.7 on average (not 1.0)</p>
+                        <p>1.0 = goal was too easy. 0.5-0.7 = healthy stretch</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Common Mistakes -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-1"></div>
+            <div class="slide-content">
+                <h2>Common OKR Mistakes</h2>
+                <ul class="slide-list">
+                    <li>❌ Setting too many OKRs (should be 3-4, not 10+)</li>
+                    <li>❌ Making them too easy (should be 0.7-0.8 achievable)</li>
+                    <li>❌ Confusing output with outcome (focus on business impact)</li>
+                    <li>❌ Tying OKRs directly to compensation (kills risk-taking)</li>
+                    <li>❌ Never revisiting or adjusting (world changes quarterly)</li>
+                    <li>❌ Lack of transparency (OKRs must be visible company-wide)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 12: Real-World Example: Google -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-2"></div>
+            <div class="slide-content">
+                <h2>Case Study: Google's OKRs</h2>
+                <div style="text-align: left; max-width: 700px; margin: 40px auto;">
+                    <div class="example-box">
+                        <h4>Search Team Q1 OKRs</h4>
+                        <p><strong>Objective:</strong> Become the fastest search engine</p>
+                        <p style="margin-top: 10px;"><strong>Key Results:</strong></p>
+                        <p>• Reduce average search latency from 120ms to 60ms</p>
+                        <p>• Increase query success rate from 94% to 99%</p>
+                        <p>• Launch 3 new search features with 10M+ monthly usage</p>
+                    </div>
+                </div>
+                <p style="margin-top: 30px;">Google credits OKRs with their explosive growth and innovation culture.</p>
+            </div>
+        </div>
+
+        <!-- Slide 13: Implementation Tips -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-1"></div>
+            <div class="slide-content">
+                <h2>Getting Started with OKRs</h2>
+                <ul class="slide-list">
+                    <li>1️⃣ <strong>Start small:</strong> Begin with leadership team only</li>
+                    <li>2️⃣ <strong>Define your mission:</strong> What is your company truly trying to accomplish?</li>
+                    <li>3️⃣ <strong>Set 3-5 company OKRs:</strong> Make them ambitious but achievable</li>
+                    <li>4️⃣ <strong>Cascade to teams:</strong> Each team proposes OKRs aligned to company goals</li>
+                    <li>5️⃣ <strong>Track weekly:</strong> Check-ins keep momentum and surface blockers</li>
+                    <li>6️⃣ <strong>Reflect quarterly:</strong> Review results and learn for next cycle</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 14: OKR Tools & Resources -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-2"></div>
+            <div class="slide-content">
+                <h2>Tools & Resources</h2>
+                <ul class="slide-list">
+                    <li>📊 <strong>15Five:</strong> Popular OKR tracking platform</li>
+                    <li>🎯 <strong>Ally:</strong> Lightweight OKR management tool</li>
+                    <li>📱 <strong>Google Sheets:</strong> Free template-based approach</li>
+                    <li>📚 <strong>Book:</strong> "Measure What Matters" by John Doerr</li>
+                    <li>🌐 <strong>Online Communities:</strong> OKR meetups and forums</li>
+                    <li>👥 <strong>Consulting:</strong> OKR coaches and facilitators available</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 15: Final Slide -->
+        <div class="slide">
+            <div class="slide-bg-shape shape-1"></div>
+            <div class="slide-bg-shape shape-2"></div>
+            <div class="slide-content">
+                <h1 class="gradient-text">You're Ready to Lead with OKRs</h1>
+                <p style="font-size: 20px; margin-top: 40px;">Next Steps:</p>
+                <ul class="slide-list" style="margin-top: 30px; text-align: center;">
+                    <li style="text-align: center; padding-left: 0;">📖 Review the Student Notes for deeper learning</li>
+                    <li style="text-align: center; padding-left: 0;">👨‍🏫 Explore the Instructor Guide for teaching tips</li>
+                    <li style="text-align: center; padding-left: 0;">🚀 Start defining your first OKRs this week</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" id="prevBtn" onclick="previousSlide()">❮</button>
+        <button class="control-btn" id="nextBtn" onclick="nextSlide()">❯</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        // Mouse/touch support
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            if (touchStartX - touchEndX > 50) nextSlide();
+            if (touchEndX - touchStartX > 50) previousSlide();
+        });
+    </script>
+</body>
+</html>

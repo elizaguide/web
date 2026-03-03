@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKRs Instructor Guide - Teaching Notes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #8B5CF6;
+            --color-secondary: #EC4899;
+            --color-dark: #0F172A;
+            --color-light: #F8FAFC;
+            --color-text: #1E293B;
+            --color-border: #E2E8F0;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-text);
+            line-height: 1.8;
+            background: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            padding: 60px 0;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--color-dark);
+        }
+
+        header p {
+            font-size: 18px;
+            color: #64748B;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--color-primary);
+            color: var(--color-dark);
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--color-dark);
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #475569;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+            color: #475569;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .lesson-box {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%);
+            border-left: 4px solid var(--color-primary);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .lesson-box h4 {
+            margin-top: 0;
+        }
+
+        .time-badge {
+            display: inline-block;
+            background: var(--color-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .talking-points {
+            background: var(--color-light);
+            border-left: 4px solid var(--color-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .talking-points h5 {
+            color: var(--color-secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .activity-card {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            transition: var(--transition);
+        }
+
+        .activity-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .activity-card h4 {
+            margin-top: 0;
+        }
+
+        .tip-box {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .discussion-box {
+            background: #E0F2FE;
+            border-left: 4px solid #0284C7;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: var(--color-light);
+        }
+
+        .slide-notes {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .slide-notes h4 {
+            margin-top: 0;
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 10px;
+        }
+
+        .assessment {
+            background: #F3E8FF;
+            border-left: 4px solid var(--color-primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .assessment h4 {
+            margin-top: 0;
+        }
+
+        footer {
+            background: var(--color-dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>OKRs Instructor Guide 👨‍🏫</h1>
+            <p>Teaching notes, talking points, discussion prompts, and facilitation tips for OKR training</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Overview Section -->
+        <section>
+            <h2>Instructor Overview</h2>
+            
+            <h3>Course Structure</h3>
+            <p>This OKR training module can be delivered in various formats:</p>
+            <table>
+                <tr>
+                    <th>Format</th>
+                    <th>Duration</th>
+                    <th>Best For</th>
+                </tr>
+                <tr>
+                    <td>1-Hour Interactive Session</td>
+                    <td>60 minutes</td>
+                    <td>Team introductions, quick overview</td>
+                </tr>
+                <tr>
+                    <td>Half-Day Workshop</td>
+                    <td>3-4 hours</td>
+                    <td>Leadership teams, deep dive + practice</td>
+                </tr>
+                <tr>
+                    <td>Full-Day Intensive</td>
+                    <td>6-8 hours</td>
+                    <td>Company-wide rollout with exercises</td>
+                </tr>
+                <tr>
+                    <td>Asynchronous Learning</td>
+                    <td>Self-paced</td>
+                    <td>Distributed teams, reference material</td>
+                </tr>
+            </table>
+
+            <h3>Key Learning Outcomes</h3>
+            <p>By the end of this training, students should:</p>
+            <ul>
+                <li>Understand what OKRs are and why they matter</li>
+                <li>Distinguish between Objectives and Key Results</li>
+                <li>Know the difference between outcomes and outputs</li>
+                <li>Be able to write effective, measurable OKRs</li>
+                <li>Understand cascading and alignment across levels</li>
+                <li>Know how to score and track OKRs quarterly</li>
+                <li>Be prepared to implement OKRs in their organization</li>
+            </ul>
+
+            <h3>Facilitation Tips</h3>
+            <div class="tip-box">
+                <strong>🎯 Keep it interactive:</strong> Use case studies, examples, and discussions. Don't just lecture.
+            </div>
+            <div class="tip-box">
+                <strong>🤝 Encourage questions:</strong> Create psychological safety. There are no "dumb questions" about OKRs.
+            </div>
+            <div class="tip-box">
+                <strong>⏱️ Watch your time:</strong> OKR discussions can go deep. Have a timer and stay on track.
+            </div>
+            <div class="tip-box">
+                <strong>📝 Share real examples:</strong> Use your company's OKRs (or Google/Meta examples) to make it concrete.
+            </div>
+            <div class="tip-box">
+                <strong>🔄 Emphasize iterative learning:</strong> First OKRs won't be perfect. That's OK. Learning matters.
+            </div>
+        </section>
+
+        <!-- Slide-by-Slide Guide -->
+        <section>
+            <h2>Slide-by-Slide Teaching Guide</h2>
+
+            <!-- Slide 1 -->
+            <div class="slide-notes">
+                <h4>Slide 1: Title Slide - "Master the OKR Framework"</h4>
+                <span class="time-badge">2-3 min</span>
+                <p><strong>Goal:</strong> Hook the audience and set expectations</p>
+                
+                <div class="talking-points">
+                    <h5>🎤 What to say:</h5>
+                    <p>"Today, we're learning one of the most powerful goal-setting frameworks used by the world's top companies—Google, Meta, Mindvalley, and more. By the end of this session, you'll understand how to set ambitious goals, align your team, and actually achieve them. Let's dive in."</p>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Tip:</strong> Start with energy and enthusiasm. Your excitement about OKRs will spread to the room.
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide-notes">
+                <h4>Slide 2: What are OKRs?</h4>
+                <span class="time-badge">5 min</span>
+                <p><strong>Goal:</strong> Define the core concept clearly</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Key Points:</h5>
+                    <p>"OKR = Objectives and Key Results. That's it. Two simple parts. An Objective is what you want to achieve—it's inspiring and directional. A Key Result is how you measure if you succeeded—it's specific and quantified."</p>
+                </div>
+
+                <div class="discussion-box">
+                    <strong>❓ Check for understanding:</strong> "Can someone give me an example of an objective vs. a key result from their own work?" (Listen for answers, then refine/correct)
+                </div>
+
+                <div class="tip-box">
+                    <strong>Tip:</strong> If they struggle, use the Google example: Objective = "Become the fastest search engine" | Key Result = "Reduce average search latency from 120ms to 60ms"
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide-notes">
+                <h4>Slide 3: OKRs vs Traditional Goals</h4>
+                <span class="time-badge">5 min</span>
+                <p><strong>Goal:</strong> Explain what makes OKRs different</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Key Differences:</h5>
+                    <p>"Traditional goals are usually conservative—you plan to hit 90% or more. OKRs are more ambitious—we expect to hit about 70%. Why? Because if you're hitting 100% of your goals, they're not ambitious enough. OKRs push teams to think bigger and innovate more."</p>
+                </div>
+
+                <div class="discussion-box">
+                    <strong>❓ Discussion Prompt:</strong> "In your current work, are goals set to 90% achievability or 70%? What's the difference in how it feels?"
+                </div>
+
+                <div class="tip-box">
+                    <strong>Tip:</strong> Emphasize the mindset shift. OKRs create a culture of ambition, not just hitting targets.
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide-notes">
+                <h4>Slide 4: History of OKRs</h4>
+                <span class="time-badge">3 min</span>
+                <p><strong>Goal:</strong> Build credibility through history</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Storytelling angle:</h5>
+                    <p>"OKRs didn't just appear. They evolved from Peter Drucker's work in the 1950s, refined by Intel's Andy Grove, and then made famous by Google. The fact that Google has used them since they had 40 employees—and scaled them to 150,000+ employees—tells you something: they work at every company size."</p>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Tip:</strong> History builds trust. People believe in OKRs more when they know Google and Meta use them.
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide-notes">
+                <h4>Slide 5: Why OKRs Work</h4>
+                <span class="time-badge">8 min</span>
+                <p><strong>Goal:</strong> Make the WHY compelling</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Talk through each benefit:</h5>
+                    <p><strong>Clarity:</strong> "No more guessing what matters. Everyone knows the top 3-5 things the company is focused on."</p>
+                    <p><strong>Focus:</strong> "Limited OKRs force teams to say 'no' to distractions. That's powerful."</p>
+                    <p><strong>Measurement:</strong> "You can't manage what you don't measure. OKRs make progress visible and objective."</p>
+                    <p><strong>Alignment:</strong> "Sales knows what product is building. Product knows what sales needs. Marketing supports both. Everyone moves together."</p>
+                    <p><strong>Ambition:</strong> "Stretch goals inspire bigger thinking. Without ambition, teams get bored."</p>
+                </div>
+
+                <div class="discussion-box">
+                    <strong>❓ Discussion Prompt:</strong> "Which benefit resonates most with you? Clarity? Alignment? Measurement?"
+                </div>
+
+                <div class="tip-box">
+                    <strong>Tip:</strong> Let people choose which benefit matters most to them. Different people are motivated differently.
+                </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="slide-notes">
+                <h4>Slide 6: Anatomy of an OKR</h4>
+                <span class="time-badge">10 min</span>
+                <p><strong>Goal:</strong> Teach the structure concretely</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Walk through the anatomy:</h5>
+                    <p>"An OKR has three parts: (1) Objective—what you want to achieve (inspiring), (2) Key Results—how you measure success (specific and quantified, usually 3-4 per objective)."</p>
+                    <p>"Notice the objective is NOT a number. It's directional. 'Become the #1 fitness app.' That excites people."</p>
+                    <p>"But the Key Results are all numbers. 'Grow daily active users from 500K to 2M.' 'Achieve 4.8+ rating.' 'Reduce churn from 5% to 2%.' These tell you exactly what success looks like."</p>
+                </div>
+
+                <div class="activity-card">
+                    <h4>✏️ Exercise: Write Your First OKR (5 min)</h4>
+                    <p>Have students pair up and write one OKR for a project they're working on. Objectives: inspirational. Key Results: 3-4 quantified outcomes. Then share 2-3 examples with the group and give feedback.</p>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Tip:</strong> Many first OKRs will mix activity and outcome. Gently correct: "That sounds like a Key Result, but it's what you're going to DO, not what will change in the business. What's the business impact?"
+                </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="slide-notes">
+                <h4>Slide 7: Characteristics of Good OKRs</h4>
+                <span class="time-badge">8 min</span>
+                <p><strong>Goal:</strong> Teach quality criteria</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Go through each characteristic:</h5>
+                    <p><strong>Aspirational:</strong> "OKRs should make people think 'whoa, that's ambitious!' Not 'that's guaranteed.'"</p>
+                    <p><strong>Achievable:</strong> "But not impossible. 60-70% success rate."</p>
+                    <p><strong>Measurable:</strong> "No vague language. Numbers. Quantified."</p>
+                    <p><strong>Focused:</strong> "Three to five company OKRs. Three to four per team. Not twenty."</p>
+                    <p><strong>Time-bound:</strong> "Usually quarterly. That's fast enough to adapt, slow enough to make progress."</p>
+                    <p><strong>Transparent:</strong> "Everyone sees the OKRs. No secret goals."</p>
+                </div>
+
+                <div class="discussion-box">
+                    <strong>❓ Discussion Prompt:</strong> "Which characteristic do you think most companies struggle with? (Usually it's either 'too many OKRs' or 'not ambitious enough')"
+                </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="slide-notes">
+                <h4>Slide 8: Setting OKRs - Top-Down & Bottom-Up</h4>
+                <span class="time-badge">8 min</span>
+                <p><strong>Goal:</strong> Explain the cascading process</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Two-way dialogue:</h5>
+                    <p>"OKRs aren't set top-down only (that's too rigid) or bottom-up only (that's too chaotic). It's a dialogue."</p>
+                    <p>"(1) Leadership defines company direction. (2) Teams propose how they'll contribute. (3) There's a conversation. 'We want to do X. Can you support Y?' 'Yes, but we also need help with Z.'"</p>
+                    <p>"By the end, there's alignment. Everyone agrees on what matters and how they contribute."</p>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Tip:</strong> Emphasize it's a conversation, not a top-down mandate. This gets people bought in.
+                </div>
+            </div>
+
+            <!-- Slide 9 -->
+            <div class="slide-notes">
+                <h4>Slide 9: OKR Cycle Timeline</h4>
+                <span class="time-badge">5 min</span>
+                <p><strong>Goal:</strong> Show the quarterly rhythm</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Walk through the timeline:</h5>
+                    <p>"A quarter is 13 weeks. In the first two weeks, we plan. In week three and four, we align. Then weeks 5-12, we execute and track progress weekly. In week 13, we score. In week 14, we reflect and learn."</p>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Tip:</strong> Show this on a calendar. Visual = clearer. People see how it fits into their year.
+                </div>
+            </div>
+
+            <!-- Slide 10 -->
+            <div class="slide-notes">
+                <h4>Slide 10: Tracking & Scoring OKRs</h4>
+                <span class="time-badge">8 min</span>
+                <p><strong>Goal:</strong> Teach the scoring scale and healthy targets</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Explain the scoring scale:</h5>
+                    <p>"At the end of the quarter, you score each Key Result from 0.0 to 1.0."</p>
+                    <p>"0.0-0.3 = Off track. Real problems."</p>
+                    <p>"0.4-0.6 = On track but with challenges."</p>
+                    <p>"0.7-1.0 = Achieved. Successful."</p>
+                    <p><strong>The key insight:</strong> "A company average of 0.7 is PERFECT. If you're hitting 0.95 across the board, your goals aren't ambitious enough. If you're hitting 0.4, something is broken."</p>
+                </div>
+
+                <div class="discussion-box">
+                    <strong>❓ Discussion Prompt:</strong> "Why would we want an average score of 0.7, not 1.0? What does that say about the goals we're setting?"
+                </div>
+
+                <div class="tip-box">
+                    <strong>Tip:</strong> This is often surprising to people. Reframe: hitting 70% means you're thinking ambitiously. That's healthy.
+                </div>
+            </div>
+
+            <!-- Slides 11-15 -->
+            <div class="slide-notes">
+                <h4>Slides 11-15: Common Mistakes, Case Studies, Implementation, Wrap-up</h4>
+                <span class="time-badge">20-25 min</span>
+                <p><strong>Goal:</strong> Practical wisdom and closure</p>
+
+                <div class="talking-points">
+                    <h5>🎤 Key talking points:</h5>
+                    <p><strong>Common Mistakes:</strong> Emphasize that "more OKRs" is the #1 mistake. 5 company OKRs max. 4 per team.</p>
+                    <p><strong>Don't tie OKRs to compensation:</strong> This is CRITICAL. If your bonus depends on hitting OKRs, you'll set easy goals. That kills the whole thing.</p>
+                    <p><strong>Case Studies:</strong> Share Google's example. Show how real companies use them.</p>
+                    <p><strong>Closing:</strong> "You're ready to start. Pick a team. Write 3-4 OKRs. Track weekly. Score quarterly. Reflect. Improve. That's it. You'll be amazed at what you achieve."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section>
+            <h2>Interactive Activities & Exercises</h2>
+
+            <h3>Activity 1: OKR vs Not-OKR (15 min)</h3>
+            <div class="activity-card">
+                <h4>Objective: Learn to identify well-formed OKRs</h4>
+                <p><strong>Instructions:</strong></p>
+                <ol>
+                    <li>Show the group 5-6 goal statements</li>
+                    <li>Ask: "Which are OKRs and which are not?"</li>
+                    <li>Discuss as a group why some work and some don't</li>
+                </ol>
+
+                <p style="margin-top: 20px;"><strong>Example Statements:</strong></p>
+                <ul>
+                    <li>"Launch 5 new features" (NOT an OKR—output)</li>
+                    <li>"Double annual revenue from $10M to $20M" (IS an OKR—outcome)</li>
+                    <li>"Improve customer satisfaction" (NOT an OKR—too vague)</li>
+                    <li>"Achieve NPS of 70+" (IS an OKR—measurable outcome)</li>
+                    <li>"Become the market leader" (NOT complete—needs key results)</li>
+                </ul>
+            </div>
+
+            <h3>Activity 2: Write Your Own OKR (20 min)</h3>
+            <div class="activity-card">
+                <h4>Objective: Create a real OKR for their team</h4>
+                <p><strong>Instructions:</strong></p>
+                <ol>
+                    <li>Have individuals or pairs pick a project/goal they're working on</li>
+                    <li>Write one Objective (inspirational, 1 sentence)</li>
+                    <li>Write 3-4 Key Results (measurable, with baseline and target)</li>
+                    <li>Share with the group (2-3 examples)</li>
+                    <li>Give constructive feedback: Is it outcome-focused? Is it ambitious enough? Is it measurable?</li>
+                </ol>
+
+                <p style="margin-top: 20px;"><strong>Template:</strong></p>
+                <p style="background: var(--color-light); padding: 15px; border-radius: 6px; font-family: monospace; font-size: 13px;">
+                    Objective: [Inspirational goal in 1 sentence]<br><br>
+                    Key Results:<br>
+                    • [Metric] from [baseline] to [target]<br>
+                    • [Metric] from [baseline] to [target]<br>
+                    • [Metric] from [baseline] to [target]<br>
+                </p>
+            </div>
+
+            <h3>Activity 3: Cascading Exercise (25 min)</h3>
+            <div class="activity-card">
+                <h4>Objective: Understand how OKRs cascade across teams</h4>
+                <p><strong>Instructions:</strong></p>
+                <ol>
+                    <li>Provide a sample company OKR: "Become the market leader in SaaS productivity"</li>
+                    <li>Break into groups: Sales, Product, Marketing, Operations</li>
+                    <li>Each group writes team OKRs that support the company goal</li>
+                    <li>Present back and discuss alignment: "How does your OKR help the company goal?"</li>
+                </ol>
+
+                <p style="margin-top: 20px;"><strong>Debrief Questions:</strong></p>
+                <ul>
+                    <li>"How did you interpret the company goal?"</li>
+                    <li>"Did all teams' OKRs align to it, or did some diverge?"</li>
+                    <li>"How would you negotiate alignment?"</li>
+                    <li>"What surprised you?"</li>
+                </ul>
+            </div>
+
+            <h3>Activity 4: Retrospective Discussion (20 min)</h3>
+            <div class="activity-card">
+                <h4>Objective: Practice the reflection process</h4>
+                <p><strong>Instructions:</strong></p>
+                <ol>
+                    <li>Present a hypothetical quarter of OKRs and actual results</li>
+                    <li>Ask: "What went well? What didn't? What would you do differently?"</li>
+                    <li>Discuss as a group</li>
+                </ol>
+
+                <p style="margin-top: 20px;"><strong>Example Scenario:</strong></p>
+                <p style="background: var(--color-light); padding: 15px; border-radius: 6px;">
+                    <strong>Sales Team Q1 OKRs:</strong><br>
+                    • Acquire 50 new customers (achieved 40 = 0.8)<br>
+                    • Achieve $5M ARR (achieved $4M = 0.8)<br>
+                    • Reduce sales cycle to 3 months (achieved 4 months = 0.75)<br>
+                    • Improve customer onboarding (0.3 — major blocker)<br><br>
+                    <strong>Questions for discussion:</strong><br>
+                    "What went right? Why did onboarding struggle so much? What would you change next quarter?"
+                </p>
+            </div>
+        </section>
+
+        <!-- Assessment Section -->
+        <section>
+            <h2>Student Assessment Ideas</h2>
+
+            <div class="assessment">
+                <h4>Quick Check: Understanding (5-10 min)</h4>
+                <p><strong>Questions to ask or give as quiz:</strong></p>
+                <ol>
+                    <li>What's the difference between an Objective and a Key Result?</li>
+                    <li>Why should OKRs be 60-70% achievable, not 100%?</li>
+                    <li>What does a score of 0.7 mean? Is that good or bad?</li>
+                    <li>Name two benefits of OKRs</li>
+                    <li>What's the difference between an output and an outcome?</li>
+                </ol>
+            </div>
+
+            <div class="assessment">
+                <h4>Writing Assignment: Draft OKRs (Optional)</h4>
+                <p><strong>Ask students to:</strong></p>
+                <ol>
+                    <li>Pick a real goal from their work or team</li>
+                    <li>Write 1 Objective and 3-4 Key Results</li>
+                    <li>Submit for feedback</li>
+                    <li>Get feedback on: Is it outcome-focused? Ambitious? Measurable?</li>
+                </ol>
+            </div>
+
+            <div class="assessment">
+                <h4>Case Study Analysis</h4>
+                <p><strong>Give students a real company's OKRs and ask:</strong></p>
+                <ol>
+                    <li>Are these good OKRs? Why or why not?</li>
+                    <li>What would you change?</li>
+                    <li>How would you score them?</li>
+                    <li>What blockers might they face?</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section>
+            <h2>Instructor Resources & Tips</h2>
+
+            <h3>Time Management Suggestions</h3>
+            <table>
+                <tr>
+                    <th>Session Format</th>
+                    <th>Allocation</th>
+                </tr>
+                <tr>
+                    <td><strong>60-Minute Session</strong></td>
+                    <td>Slides 1-7 + Exercise (10 min)</td>
+                </tr>
+                <tr>
+                    <td><strong>3-Hour Workshop</strong></td>
+                    <td>All slides + 2 exercises + Q&A</td>
+                </tr>
+                <tr>
+                    <td><strong>Full-Day Intensive</strong></td>
+                    <td>All content + hands-on OKR writing + retrospective practice</td>
+                </tr>
+            </table>
+
+            <h3>Common Questions & Answers</h3>
+            <div class="lesson-box">
+                <h4>Q: "What if circumstances change mid-quarter?"</h4>
+                <p><strong>A:</strong> OKRs aren't completely rigid. If a major client leaves or market shifts dramatically, it's fair to revisit. But don't use this as an excuse to change goals constantly. Try to stay committed for 13 weeks.</p>
+            </div>
+
+            <div class="lesson-box">
+                <h4>Q: "Should OKRs be tied to bonuses?"</h4>
+                <p><strong>A:</strong> NO. This is critical. If your bonus depends on hitting OKRs, you'll set safe, easy goals. That defeats the whole purpose. Use other metrics for compensation, not OKRs.</p>
+            </div>
+
+            <div class="lesson-box">
+                <h4>Q: "What if we achieve less than 0.7 overall?"</h4>
+                <p><strong>A:</strong> That's a red flag. Something is wrong. Either: (1) Goals were set too high, (2) There are organizational blockers, or (3) Execution was poor. Use the retrospective to debug.</p>
+            </div>
+
+            <div class="lesson-box">
+                <h4>Q: "How many OKRs should a small team have?"</h4>
+                <p><strong>A:</strong> 3-4 is the sweet spot for any team, at any size. Even a 2-person team can have 3-4 OKRs. Too many dilutes focus.</p>
+            </div>
+
+            <h3>What to Emphasize</h3>
+            <ul>
+                <li><strong>Focus over quantity:</strong> 5 company OKRs, not 20</li>
+                <li><strong>Ambition over safety:</strong> 0.7 is perfect, 1.0 is a warning sign</li>
+                <li><strong>Outcomes over outputs:</strong> Business impact, not activity</li>
+                <li><strong>Transparency over secrecy:</strong> Everyone sees the OKRs</li>
+                <li><strong>Learning over blame:</strong> Retrospectives are about learning, not punishment</li>
+            </ul>
+
+            <h3>Recommended Reading for Instructors</h3>
+            <ul>
+                <li><strong>"Measure What Matters" by John Doerr</strong> - The definitive OKR book. Read this before teaching.</li>
+                <li><strong>Google's OKR Guides</strong> - Available online, specific to their process</li>
+                <li><strong>Radical Focus by Christina Wodtke</strong> - OKRs told as a parable, very engaging</li>
+                <li><strong>15Five Blog & Ally Blog</strong> - Current case studies and best practices</li>
+            </ul>
+        </section>
+
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">← Back to Home</a>
+            <a href="presentation.html" class="nav-link">View Presentation</a>
+            <a href="student-notes.html" class="nav-link">Student Notes</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mindvalley. All rights reserved.</p>
+            <p><a href="index.html">Home</a> | <a href="presentation.html">Presentation</a> | <a href="student-notes.html">Student Notes</a> | <a href="instructor-notes.html">Instructor Notes</a></p>
+        </div>
+    </footer>
+</body>
+</html>

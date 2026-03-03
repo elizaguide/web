@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKRs Mastery - Mindvalley</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #8B5CF6;
+            --color-secondary: #EC4899;
+            --color-dark: #0F172A;
+            --color-light: #F8FAFC;
+            --color-text: #1E293B;
+            --color-border: #E2E8F0;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            line-height: 1.6;
+            background: #FFFFFF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 20px 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 8vw, 56px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--color-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #64748B;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--color-light);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .hero-image {
+            margin-top: 60px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            max-height: 400px;
+            background: var(--color-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--color-dark);
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #64748B;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--color-light);
+            padding: 40px;
+            border-radius: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--color-dark);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #64748B;
+            line-height: 1.8;
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            padding: 80px 0;
+            background: var(--color-light);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .course-content {
+            padding: 30px;
+        }
+
+        .course-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--color-dark);
+        }
+
+        .course-desc {
+            font-size: 13px;
+            color: #64748B;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .course-link {
+            display: inline-block;
+            color: var(--color-primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .course-link:hover {
+            color: var(--color-secondary);
+            gap: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section a {
+            display: block;
+            font-size: 13px;
+            color: #94A3B8;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #64748B;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 50px 0;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .features-grid,
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">OKRs 🎯</div>
+                <nav>
+                    <a href="#features">Features</a>
+                    <a href="#curriculum">Curriculum</a>
+                    <a href="#footer">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Master the OKR Framework</h1>
+                <p class="hero-subtitle">Learn how to set, track, and achieve ambitious goals that align your entire organization. From CEOs to individual contributors, OKRs transform vague aspirations into measurable outcomes.</p>
+                <div class="button-group">
+                    <a href="presentation.html" class="btn btn-primary">View Presentation</a>
+                    <a href="student-notes.html" class="btn btn-secondary">Study Guide</a>
+                </div>
+                <div class="hero-image">
+                    <svg viewBox="0 0 600 400" style="width: 100%; height: 100%;">
+                        <defs>
+                            <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="300" cy="200" r="150" fill="url(#heroGrad)" opacity="0.2"/>
+                        <circle cx="300" cy="200" r="100" fill="url(#heroGrad)" opacity="0.3"/>
+                        <text x="300" y="210" text-anchor="middle" font-size="48" font-weight="700" fill="#8B5CF6">OKRs</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why OKRs Matter</h2>
+                <p>OKRs (Objectives and Key Results) are the framework used by companies like Google, Meta, and Mindvalley to drive exceptional growth.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Crystal Clear Direction</h3>
+                    <p>Define what truly matters and align your entire team around shared goals. No more confusion about priorities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Measurable Progress</h3>
+                    <p>Track progress with quantifiable key results. Know exactly where you stand and what needs to happen next.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Ambitious Growth</h3>
+                    <p>Set stretch goals that push your team to achieve more. OKRs encourage ambitious thinking and experimentation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Cross-Functional Alignment</h3>
+                    <p>Break silos and ensure every department works toward the same outcomes. Collaboration becomes effortless.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Continuous Learning</h3>
+                    <p>Reflect on results, adapt quickly, and improve your goal-setting process every quarter. Build organizational muscle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Innovation Culture</h3>
+                    <p>Encourage bold ideas and calculated risks. OKRs create psychological safety to pursue breakthrough outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum" id="curriculum">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Learning Journey</h2>
+                <p>Everything you need to understand, implement, and master OKRs in your organization.</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">📊 Presentation</div>
+                    <div class="course-content">
+                        <h3 class="course-title">Interactive Presentation</h3>
+                        <p class="course-desc">15-slide interactive deck covering OKR fundamentals, case studies, and implementation strategies.</p>
+                        <a href="presentation.html" class="course-link">Start Presentation →</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">📖 Study Guide</div>
+                    <div class="course-content">
+                        <h3 class="course-title">Student Notes</h3>
+                        <p class="course-desc">Comprehensive study guide with key concepts, frameworks, examples, and takeaways for independent learning.</p>
+                        <a href="student-notes.html" class="course-link">Read Study Guide →</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">👨‍🏫 Teaching Guide</div>
+                    <div class="course-content">
+                        <h3 class="course-title">Instructor Notes</h3>
+                        <p class="course-desc">In-depth teaching guide with talking points, discussion prompts, and facilitator tips for instructors.</p>
+                        <a href="instructor-notes.html" class="course-link">View Instructor Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>OKRs Training</h4>
+                    <a href="index.html">Overview</a>
+                    <a href="presentation.html">Presentation</a>
+                    <a href="student-notes.html">Study Guide</a>
+                    <a href="instructor-notes.html">Instructor Guide</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#">OKR Templates</a>
+                    <a href="#">Implementation Checklist</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Learning</h4>
+                    <a href="#">Get Started</a>
+                    <a href="#">Best Practices</a>
+                    <a href="#">Common Mistakes</a>
+                    <a href="#">Success Stories</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mindvalley. All rights reserved. | Mastery in Entrepreneurship</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
